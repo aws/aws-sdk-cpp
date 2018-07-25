@@ -35,7 +35,7 @@ AutoRollbackConfiguration::AutoRollbackConfiguration() :
 {
 }
 
-AutoRollbackConfiguration::AutoRollbackConfiguration(const JsonValue& jsonValue) : 
+AutoRollbackConfiguration::AutoRollbackConfiguration(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_eventsHasBeenSet(false)
@@ -43,7 +43,7 @@ AutoRollbackConfiguration::AutoRollbackConfiguration(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-AutoRollbackConfiguration& AutoRollbackConfiguration::operator =(const JsonValue& jsonValue)
+AutoRollbackConfiguration& AutoRollbackConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("enabled"))
   {
@@ -54,7 +54,7 @@ AutoRollbackConfiguration& AutoRollbackConfiguration::operator =(const JsonValue
 
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonValue> eventsJsonList = jsonValue.GetArray("events");
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(AutoRollbackEventMapper::GetAutoRollbackEventForName(eventsJsonList[eventsIndex].AsString()));

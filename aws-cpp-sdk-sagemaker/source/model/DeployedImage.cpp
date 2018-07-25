@@ -35,7 +35,7 @@ DeployedImage::DeployedImage() :
 {
 }
 
-DeployedImage::DeployedImage(const JsonValue& jsonValue) : 
+DeployedImage::DeployedImage(JsonView jsonValue) : 
     m_specifiedImageHasBeenSet(false),
     m_resolvedImageHasBeenSet(false),
     m_resolutionTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ DeployedImage::DeployedImage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeployedImage& DeployedImage::operator =(const JsonValue& jsonValue)
+DeployedImage& DeployedImage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SpecifiedImage"))
   {

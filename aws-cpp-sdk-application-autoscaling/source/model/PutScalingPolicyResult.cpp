@@ -37,7 +37,7 @@ PutScalingPolicyResult::PutScalingPolicyResult(const Aws::AmazonWebServiceResult
 
 PutScalingPolicyResult& PutScalingPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PolicyARN"))
   {
     m_policyARN = jsonValue.GetString("PolicyARN");
@@ -46,7 +46,7 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Alarms"))
   {
-    Array<JsonValue> alarmsJsonList = jsonValue.GetArray("Alarms");
+    Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
     for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
     {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());

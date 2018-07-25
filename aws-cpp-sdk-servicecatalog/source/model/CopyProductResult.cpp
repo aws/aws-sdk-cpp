@@ -37,7 +37,7 @@ CopyProductResult::CopyProductResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CopyProductResult& CopyProductResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CopyProductToken"))
   {
     m_copyProductToken = jsonValue.GetString("CopyProductToken");

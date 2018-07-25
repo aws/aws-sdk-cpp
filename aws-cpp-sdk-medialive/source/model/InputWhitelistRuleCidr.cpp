@@ -33,13 +33,13 @@ InputWhitelistRuleCidr::InputWhitelistRuleCidr() :
 {
 }
 
-InputWhitelistRuleCidr::InputWhitelistRuleCidr(const JsonValue& jsonValue) : 
+InputWhitelistRuleCidr::InputWhitelistRuleCidr(JsonView jsonValue) : 
     m_cidrHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputWhitelistRuleCidr& InputWhitelistRuleCidr::operator =(const JsonValue& jsonValue)
+InputWhitelistRuleCidr& InputWhitelistRuleCidr::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cidr"))
   {

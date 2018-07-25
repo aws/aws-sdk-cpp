@@ -51,7 +51,7 @@ InstanceGroup::InstanceGroup() :
 {
 }
 
-InstanceGroup::InstanceGroup(const JsonValue& jsonValue) : 
+InstanceGroup::InstanceGroup(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_market(MarketType::NOT_SET),
@@ -75,7 +75,7 @@ InstanceGroup::InstanceGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceGroup& InstanceGroup::operator =(const JsonValue& jsonValue)
+InstanceGroup& InstanceGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -142,7 +142,7 @@ InstanceGroup& InstanceGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
@@ -152,7 +152,7 @@ InstanceGroup& InstanceGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EbsBlockDevices"))
   {
-    Array<JsonValue> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
+    Array<JsonView> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
     for(unsigned ebsBlockDevicesIndex = 0; ebsBlockDevicesIndex < ebsBlockDevicesJsonList.GetLength(); ++ebsBlockDevicesIndex)
     {
       m_ebsBlockDevices.push_back(ebsBlockDevicesJsonList[ebsBlockDevicesIndex].AsObject());

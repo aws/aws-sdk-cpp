@@ -37,7 +37,7 @@ PartitionInput::PartitionInput() :
 {
 }
 
-PartitionInput::PartitionInput(const JsonValue& jsonValue) : 
+PartitionInput::PartitionInput(JsonView jsonValue) : 
     m_valuesHasBeenSet(false),
     m_lastAccessTimeHasBeenSet(false),
     m_storageDescriptorHasBeenSet(false),
@@ -47,11 +47,11 @@ PartitionInput::PartitionInput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PartitionInput& PartitionInput::operator =(const JsonValue& jsonValue)
+PartitionInput& PartitionInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
@@ -75,7 +75,7 @@ PartitionInput& PartitionInput::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

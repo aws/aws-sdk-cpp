@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Batch
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     JobDefinition();
-    JobDefinition(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    JobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

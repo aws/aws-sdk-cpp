@@ -36,7 +36,7 @@ ExecutionDetails::ExecutionDetails() :
 {
 }
 
-ExecutionDetails::ExecutionDetails(const JsonValue& jsonValue) : 
+ExecutionDetails::ExecutionDetails(JsonView jsonValue) : 
     m_summaryHasBeenSet(false),
     m_externalExecutionIdHasBeenSet(false),
     m_percentComplete(0),
@@ -45,7 +45,7 @@ ExecutionDetails::ExecutionDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExecutionDetails& ExecutionDetails::operator =(const JsonValue& jsonValue)
+ExecutionDetails& ExecutionDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("summary"))
   {

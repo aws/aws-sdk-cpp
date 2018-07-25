@@ -38,7 +38,7 @@ ActivityTypeConfiguration::ActivityTypeConfiguration() :
 {
 }
 
-ActivityTypeConfiguration::ActivityTypeConfiguration(const JsonValue& jsonValue) : 
+ActivityTypeConfiguration::ActivityTypeConfiguration(JsonView jsonValue) : 
     m_defaultTaskStartToCloseTimeoutHasBeenSet(false),
     m_defaultTaskHeartbeatTimeoutHasBeenSet(false),
     m_defaultTaskListHasBeenSet(false),
@@ -49,7 +49,7 @@ ActivityTypeConfiguration::ActivityTypeConfiguration(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-ActivityTypeConfiguration& ActivityTypeConfiguration::operator =(const JsonValue& jsonValue)
+ActivityTypeConfiguration& ActivityTypeConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("defaultTaskStartToCloseTimeout"))
   {

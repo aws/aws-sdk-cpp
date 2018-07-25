@@ -37,7 +37,7 @@ GetJobTemplateResult::GetJobTemplateResult(const Aws::AmazonWebServiceResult<Jso
 
 GetJobTemplateResult& GetJobTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobTemplate"))
   {
     m_jobTemplate = jsonValue.GetObject("jobTemplate");

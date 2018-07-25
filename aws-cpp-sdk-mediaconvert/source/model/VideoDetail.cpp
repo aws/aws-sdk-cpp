@@ -36,7 +36,7 @@ VideoDetail::VideoDetail() :
 {
 }
 
-VideoDetail::VideoDetail(const JsonValue& jsonValue) : 
+VideoDetail::VideoDetail(JsonView jsonValue) : 
     m_heightInPx(0),
     m_heightInPxHasBeenSet(false),
     m_widthInPx(0),
@@ -45,7 +45,7 @@ VideoDetail::VideoDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VideoDetail& VideoDetail::operator =(const JsonValue& jsonValue)
+VideoDetail& VideoDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("heightInPx"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -42,33 +43,38 @@ namespace Model
   {
   public:
     NetworkConfiguration();
-    NetworkConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    NetworkConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    NetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The VPC subnets and security groups associated with a task.</p>
+     * <p>The VPC subnets and security groups associated with a task.</p> <note> <p>All
+     * specified subnets and security groups must be from the same VPC.</p> </note>
      */
     inline const AwsVpcConfiguration& GetAwsvpcConfiguration() const{ return m_awsvpcConfiguration; }
 
     /**
-     * <p>The VPC subnets and security groups associated with a task.</p>
+     * <p>The VPC subnets and security groups associated with a task.</p> <note> <p>All
+     * specified subnets and security groups must be from the same VPC.</p> </note>
      */
     inline void SetAwsvpcConfiguration(const AwsVpcConfiguration& value) { m_awsvpcConfigurationHasBeenSet = true; m_awsvpcConfiguration = value; }
 
     /**
-     * <p>The VPC subnets and security groups associated with a task.</p>
+     * <p>The VPC subnets and security groups associated with a task.</p> <note> <p>All
+     * specified subnets and security groups must be from the same VPC.</p> </note>
      */
     inline void SetAwsvpcConfiguration(AwsVpcConfiguration&& value) { m_awsvpcConfigurationHasBeenSet = true; m_awsvpcConfiguration = std::move(value); }
 
     /**
-     * <p>The VPC subnets and security groups associated with a task.</p>
+     * <p>The VPC subnets and security groups associated with a task.</p> <note> <p>All
+     * specified subnets and security groups must be from the same VPC.</p> </note>
      */
     inline NetworkConfiguration& WithAwsvpcConfiguration(const AwsVpcConfiguration& value) { SetAwsvpcConfiguration(value); return *this;}
 
     /**
-     * <p>The VPC subnets and security groups associated with a task.</p>
+     * <p>The VPC subnets and security groups associated with a task.</p> <note> <p>All
+     * specified subnets and security groups must be from the same VPC.</p> </note>
      */
     inline NetworkConfiguration& WithAwsvpcConfiguration(AwsVpcConfiguration&& value) { SetAwsvpcConfiguration(std::move(value)); return *this;}
 

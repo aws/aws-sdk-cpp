@@ -34,14 +34,14 @@ RevisionInfo::RevisionInfo() :
 {
 }
 
-RevisionInfo::RevisionInfo(const JsonValue& jsonValue) : 
+RevisionInfo::RevisionInfo(JsonView jsonValue) : 
     m_revisionLocationHasBeenSet(false),
     m_genericRevisionInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RevisionInfo& RevisionInfo::operator =(const JsonValue& jsonValue)
+RevisionInfo& RevisionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("revisionLocation"))
   {

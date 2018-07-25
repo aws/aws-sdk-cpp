@@ -35,7 +35,7 @@ Processor::Processor() :
 {
 }
 
-Processor::Processor(const JsonValue& jsonValue) : 
+Processor::Processor(JsonView jsonValue) : 
     m_type(ProcessorType::NOT_SET),
     m_typeHasBeenSet(false),
     m_parametersHasBeenSet(false)
@@ -43,7 +43,7 @@ Processor::Processor(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Processor& Processor::operator =(const JsonValue& jsonValue)
+Processor& Processor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {
@@ -54,7 +54,7 @@ Processor& Processor::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonValue> parametersJsonList = jsonValue.GetArray("Parameters");
+    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());

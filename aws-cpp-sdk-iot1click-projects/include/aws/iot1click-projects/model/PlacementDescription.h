@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT1ClickProjects
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PlacementDescription();
-    PlacementDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    PlacementDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PlacementDescription(Aws::Utils::Json::JsonView jsonValue);
+    PlacementDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

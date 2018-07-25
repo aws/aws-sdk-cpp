@@ -41,7 +41,7 @@ GraphqlApi::GraphqlApi() :
 {
 }
 
-GraphqlApi::GraphqlApi(const JsonValue& jsonValue) : 
+GraphqlApi::GraphqlApi(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_apiIdHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
@@ -55,7 +55,7 @@ GraphqlApi::GraphqlApi(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GraphqlApi& GraphqlApi::operator =(const JsonValue& jsonValue)
+GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -108,7 +108,7 @@ GraphqlApi& GraphqlApi::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("uris"))
   {
-    Aws::Map<Aws::String, JsonValue> urisJsonMap = jsonValue.GetObject("uris").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> urisJsonMap = jsonValue.GetObject("uris").GetAllObjects();
     for(auto& urisItem : urisJsonMap)
     {
       m_uris[urisItem.first] = urisItem.second.AsString();

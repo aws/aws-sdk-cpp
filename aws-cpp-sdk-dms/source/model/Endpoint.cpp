@@ -56,7 +56,7 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(const JsonValue& jsonValue) : 
+Endpoint::Endpoint(JsonView jsonValue) : 
     m_endpointIdentifierHasBeenSet(false),
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -85,7 +85,7 @@ Endpoint::Endpoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
+Endpoint& Endpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EndpointIdentifier"))
   {

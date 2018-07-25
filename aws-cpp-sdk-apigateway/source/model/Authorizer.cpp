@@ -44,7 +44,7 @@ Authorizer::Authorizer() :
 {
 }
 
-Authorizer::Authorizer(const JsonValue& jsonValue) : 
+Authorizer::Authorizer(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(AuthorizerType::NOT_SET),
@@ -61,7 +61,7 @@ Authorizer::Authorizer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Authorizer& Authorizer::operator =(const JsonValue& jsonValue)
+Authorizer& Authorizer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -86,7 +86,7 @@ Authorizer& Authorizer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("providerARNs"))
   {
-    Array<JsonValue> providerARNsJsonList = jsonValue.GetArray("providerARNs");
+    Array<JsonView> providerARNsJsonList = jsonValue.GetArray("providerARNs");
     for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
     {
       m_providerARNs.push_back(providerARNsJsonList[providerARNsIndex].AsString());

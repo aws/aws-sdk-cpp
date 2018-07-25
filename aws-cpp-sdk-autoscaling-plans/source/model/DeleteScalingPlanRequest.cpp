@@ -45,7 +45,7 @@ Aws::String DeleteScalingPlanRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteScalingPlanRequest::GetRequestSpecificHeaders() const

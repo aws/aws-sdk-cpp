@@ -37,7 +37,7 @@ MappingRule::MappingRule() :
 {
 }
 
-MappingRule::MappingRule(const JsonValue& jsonValue) : 
+MappingRule::MappingRule(JsonView jsonValue) : 
     m_claimHasBeenSet(false),
     m_matchType(MappingRuleMatchType::NOT_SET),
     m_matchTypeHasBeenSet(false),
@@ -47,7 +47,7 @@ MappingRule::MappingRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MappingRule& MappingRule::operator =(const JsonValue& jsonValue)
+MappingRule& MappingRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Claim"))
   {

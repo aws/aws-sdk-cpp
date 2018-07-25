@@ -34,14 +34,14 @@ DescribeImagesFilter::DescribeImagesFilter() :
 {
 }
 
-DescribeImagesFilter::DescribeImagesFilter(const JsonValue& jsonValue) : 
+DescribeImagesFilter::DescribeImagesFilter(JsonView jsonValue) : 
     m_tagStatus(TagStatus::NOT_SET),
     m_tagStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DescribeImagesFilter& DescribeImagesFilter::operator =(const JsonValue& jsonValue)
+DescribeImagesFilter& DescribeImagesFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tagStatus"))
   {

@@ -58,7 +58,7 @@ Aws::String RetryStageExecutionRequest::SerializePayload() const
    payload.WithString("retryMode", StageRetryModeMapper::GetNameForStageRetryMode(m_retryMode));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RetryStageExecutionRequest::GetRequestSpecificHeaders() const

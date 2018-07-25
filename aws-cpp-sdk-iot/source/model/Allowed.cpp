@@ -33,17 +33,17 @@ Allowed::Allowed() :
 {
 }
 
-Allowed::Allowed(const JsonValue& jsonValue) : 
+Allowed::Allowed(JsonView jsonValue) : 
     m_policiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Allowed& Allowed::operator =(const JsonValue& jsonValue)
+Allowed& Allowed::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("policies"))
   {
-    Array<JsonValue> policiesJsonList = jsonValue.GetArray("policies");
+    Array<JsonView> policiesJsonList = jsonValue.GetArray("policies");
     for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
     {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());

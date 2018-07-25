@@ -34,14 +34,14 @@ UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction() :
 {
 }
 
-UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction(const JsonValue& jsonValue) : 
+UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction(JsonView jsonValue) : 
     m_indexNameHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UpdateGlobalSecondaryIndexAction& UpdateGlobalSecondaryIndexAction::operator =(const JsonValue& jsonValue)
+UpdateGlobalSecondaryIndexAction& UpdateGlobalSecondaryIndexAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexName"))
   {

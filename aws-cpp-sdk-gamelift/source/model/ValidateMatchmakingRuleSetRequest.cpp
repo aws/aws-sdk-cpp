@@ -37,7 +37,7 @@ Aws::String ValidateMatchmakingRuleSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ValidateMatchmakingRuleSetRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ DeleteServiceResult::DeleteServiceResult(const Aws::AmazonWebServiceResult<JsonV
 
 DeleteServiceResult& DeleteServiceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetObject("service");

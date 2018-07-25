@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectConnect
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Connection();
-    Connection(const Aws::Utils::Json::JsonValue& jsonValue);
-    Connection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Connection(Aws::Utils::Json::JsonView jsonValue);
+    Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

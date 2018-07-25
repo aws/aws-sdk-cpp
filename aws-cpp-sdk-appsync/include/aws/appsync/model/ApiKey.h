@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppSync
@@ -63,8 +64,8 @@ namespace Model
   {
   public:
     ApiKey();
-    ApiKey(const Aws::Utils::Json::JsonValue& jsonValue);
-    ApiKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ApiKey(Aws::Utils::Json::JsonView jsonValue);
+    ApiKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

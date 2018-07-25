@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ACMPCA
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     CertificateAuthorityConfiguration();
-    CertificateAuthorityConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    CertificateAuthorityConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CertificateAuthorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    CertificateAuthorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

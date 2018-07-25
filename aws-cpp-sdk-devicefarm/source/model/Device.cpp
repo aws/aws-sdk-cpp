@@ -58,7 +58,7 @@ Device::Device() :
 {
 }
 
-Device::Device(const JsonValue& jsonValue) : 
+Device::Device(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
@@ -89,7 +89,7 @@ Device::Device(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Device& Device::operator =(const JsonValue& jsonValue)
+Device& Device::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -226,7 +226,7 @@ Device& Device::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("instances"))
   {
-    Array<JsonValue> instancesJsonList = jsonValue.GetArray("instances");
+    Array<JsonView> instancesJsonList = jsonValue.GetArray("instances");
     for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
     {
       m_instances.push_back(instancesJsonList[instancesIndex].AsObject());

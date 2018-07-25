@@ -42,7 +42,7 @@ AccountLimit::AccountLimit() :
 {
 }
 
-AccountLimit::AccountLimit(const JsonValue& jsonValue) : 
+AccountLimit::AccountLimit(JsonView jsonValue) : 
     m_totalCodeSize(0),
     m_totalCodeSizeHasBeenSet(false),
     m_codeSizeUnzipped(0),
@@ -57,7 +57,7 @@ AccountLimit::AccountLimit(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AccountLimit& AccountLimit::operator =(const JsonValue& jsonValue)
+AccountLimit& AccountLimit::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TotalCodeSize"))
   {

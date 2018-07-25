@@ -42,7 +42,7 @@ User::User() :
 {
 }
 
-User::User(const JsonValue& jsonValue) : 
+User::User(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -57,7 +57,7 @@ User::User(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-User& User::operator =(const JsonValue& jsonValue)
+User& User::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

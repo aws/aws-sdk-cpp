@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchEvents
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     EcsParameters();
-    EcsParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    EcsParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EcsParameters(Aws::Utils::Json::JsonView jsonValue);
+    EcsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

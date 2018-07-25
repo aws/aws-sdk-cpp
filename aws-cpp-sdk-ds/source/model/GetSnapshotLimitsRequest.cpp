@@ -37,7 +37,7 @@ Aws::String GetSnapshotLimitsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetSnapshotLimitsRequest::GetRequestSpecificHeaders() const

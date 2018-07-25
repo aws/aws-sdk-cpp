@@ -39,7 +39,7 @@ UserData::UserData() :
 {
 }
 
-UserData::UserData(const JsonValue& jsonValue) : 
+UserData::UserData(JsonView jsonValue) : 
     m_userArnHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
@@ -51,7 +51,7 @@ UserData::UserData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserData& UserData::operator =(const JsonValue& jsonValue)
+UserData& UserData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserArn"))
   {

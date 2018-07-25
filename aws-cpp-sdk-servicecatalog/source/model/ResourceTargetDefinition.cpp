@@ -37,7 +37,7 @@ ResourceTargetDefinition::ResourceTargetDefinition() :
 {
 }
 
-ResourceTargetDefinition::ResourceTargetDefinition(const JsonValue& jsonValue) : 
+ResourceTargetDefinition::ResourceTargetDefinition(JsonView jsonValue) : 
     m_attribute(ResourceAttribute::NOT_SET),
     m_attributeHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -47,7 +47,7 @@ ResourceTargetDefinition::ResourceTargetDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceTargetDefinition& ResourceTargetDefinition::operator =(const JsonValue& jsonValue)
+ResourceTargetDefinition& ResourceTargetDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Attribute"))
   {

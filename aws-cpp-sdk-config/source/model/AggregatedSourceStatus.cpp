@@ -41,7 +41,7 @@ AggregatedSourceStatus::AggregatedSourceStatus() :
 {
 }
 
-AggregatedSourceStatus::AggregatedSourceStatus(const JsonValue& jsonValue) : 
+AggregatedSourceStatus::AggregatedSourceStatus(JsonView jsonValue) : 
     m_sourceIdHasBeenSet(false),
     m_sourceType(AggregatedSourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
@@ -55,7 +55,7 @@ AggregatedSourceStatus::AggregatedSourceStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AggregatedSourceStatus& AggregatedSourceStatus::operator =(const JsonValue& jsonValue)
+AggregatedSourceStatus& AggregatedSourceStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SourceId"))
   {

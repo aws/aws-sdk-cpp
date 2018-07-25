@@ -37,10 +37,10 @@ DeleteIdentitiesResult::DeleteIdentitiesResult(const Aws::AmazonWebServiceResult
 
 DeleteIdentitiesResult& DeleteIdentitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UnprocessedIdentityIds"))
   {
-    Array<JsonValue> unprocessedIdentityIdsJsonList = jsonValue.GetArray("UnprocessedIdentityIds");
+    Array<JsonView> unprocessedIdentityIdsJsonList = jsonValue.GetArray("UnprocessedIdentityIds");
     for(unsigned unprocessedIdentityIdsIndex = 0; unprocessedIdentityIdsIndex < unprocessedIdentityIdsJsonList.GetLength(); ++unprocessedIdentityIdsIndex)
     {
       m_unprocessedIdentityIds.push_back(unprocessedIdentityIdsJsonList[unprocessedIdentityIdsIndex].AsObject());

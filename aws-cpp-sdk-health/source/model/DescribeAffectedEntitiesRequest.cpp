@@ -59,7 +59,7 @@ Aws::String DescribeAffectedEntitiesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeAffectedEntitiesRequest::GetRequestSpecificHeaders() const

@@ -45,7 +45,7 @@ StreamDescriptionSummary::StreamDescriptionSummary() :
 {
 }
 
-StreamDescriptionSummary::StreamDescriptionSummary(const JsonValue& jsonValue) : 
+StreamDescriptionSummary::StreamDescriptionSummary(JsonView jsonValue) : 
     m_streamNameHasBeenSet(false),
     m_streamARNHasBeenSet(false),
     m_streamStatus(StreamStatus::NOT_SET),
@@ -63,7 +63,7 @@ StreamDescriptionSummary::StreamDescriptionSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamDescriptionSummary& StreamDescriptionSummary::operator =(const JsonValue& jsonValue)
+StreamDescriptionSummary& StreamDescriptionSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StreamName"))
   {
@@ -102,7 +102,7 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("EnhancedMonitoring"))
   {
-    Array<JsonValue> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
+    Array<JsonView> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
     for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
     {
       m_enhancedMonitoring.push_back(enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject());

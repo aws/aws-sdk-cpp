@@ -34,14 +34,14 @@ ValidationWarning::ValidationWarning() :
 {
 }
 
-ValidationWarning::ValidationWarning(const JsonValue& jsonValue) : 
+ValidationWarning::ValidationWarning(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_warningsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ValidationWarning& ValidationWarning::operator =(const JsonValue& jsonValue)
+ValidationWarning& ValidationWarning::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -52,7 +52,7 @@ ValidationWarning& ValidationWarning::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());

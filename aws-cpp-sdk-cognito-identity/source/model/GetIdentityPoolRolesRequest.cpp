@@ -37,7 +37,7 @@ Aws::String GetIdentityPoolRolesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetIdentityPoolRolesRequest::GetRequestSpecificHeaders() const

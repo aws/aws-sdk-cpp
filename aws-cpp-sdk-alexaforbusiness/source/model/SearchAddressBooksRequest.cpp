@@ -69,7 +69,7 @@ Aws::String SearchAddressBooksRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SearchAddressBooksRequest::GetRequestSpecificHeaders() const

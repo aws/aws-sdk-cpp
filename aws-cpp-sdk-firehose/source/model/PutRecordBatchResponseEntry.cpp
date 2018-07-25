@@ -35,7 +35,7 @@ PutRecordBatchResponseEntry::PutRecordBatchResponseEntry() :
 {
 }
 
-PutRecordBatchResponseEntry::PutRecordBatchResponseEntry(const JsonValue& jsonValue) : 
+PutRecordBatchResponseEntry::PutRecordBatchResponseEntry(JsonView jsonValue) : 
     m_recordIdHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ PutRecordBatchResponseEntry::PutRecordBatchResponseEntry(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-PutRecordBatchResponseEntry& PutRecordBatchResponseEntry::operator =(const JsonValue& jsonValue)
+PutRecordBatchResponseEntry& PutRecordBatchResponseEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RecordId"))
   {

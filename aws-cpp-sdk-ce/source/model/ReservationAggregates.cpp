@@ -42,7 +42,7 @@ ReservationAggregates::ReservationAggregates() :
 {
 }
 
-ReservationAggregates::ReservationAggregates(const JsonValue& jsonValue) : 
+ReservationAggregates::ReservationAggregates(JsonView jsonValue) : 
     m_utilizationPercentageHasBeenSet(false),
     m_purchasedHoursHasBeenSet(false),
     m_totalActualHoursHasBeenSet(false),
@@ -57,7 +57,7 @@ ReservationAggregates::ReservationAggregates(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReservationAggregates& ReservationAggregates::operator =(const JsonValue& jsonValue)
+ReservationAggregates& ReservationAggregates::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UtilizationPercentage"))
   {

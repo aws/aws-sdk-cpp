@@ -37,7 +37,7 @@ Aws::String RegisterWebhookWithThirdPartyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RegisterWebhookWithThirdPartyRequest::GetRequestSpecificHeaders() const

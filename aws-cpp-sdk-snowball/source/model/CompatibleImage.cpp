@@ -34,14 +34,14 @@ CompatibleImage::CompatibleImage() :
 {
 }
 
-CompatibleImage::CompatibleImage(const JsonValue& jsonValue) : 
+CompatibleImage::CompatibleImage(JsonView jsonValue) : 
     m_amiIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CompatibleImage& CompatibleImage::operator =(const JsonValue& jsonValue)
+CompatibleImage& CompatibleImage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AmiId"))
   {

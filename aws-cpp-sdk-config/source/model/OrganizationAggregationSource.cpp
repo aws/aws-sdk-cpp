@@ -36,7 +36,7 @@ OrganizationAggregationSource::OrganizationAggregationSource() :
 {
 }
 
-OrganizationAggregationSource::OrganizationAggregationSource(const JsonValue& jsonValue) : 
+OrganizationAggregationSource::OrganizationAggregationSource(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_awsRegionsHasBeenSet(false),
     m_allAwsRegions(false),
@@ -45,7 +45,7 @@ OrganizationAggregationSource::OrganizationAggregationSource(const JsonValue& js
   *this = jsonValue;
 }
 
-OrganizationAggregationSource& OrganizationAggregationSource::operator =(const JsonValue& jsonValue)
+OrganizationAggregationSource& OrganizationAggregationSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RoleArn"))
   {
@@ -56,7 +56,7 @@ OrganizationAggregationSource& OrganizationAggregationSource::operator =(const J
 
   if(jsonValue.ValueExists("AwsRegions"))
   {
-    Array<JsonValue> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
+    Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
     for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
     {
       m_awsRegions.push_back(awsRegionsJsonList[awsRegionsIndex].AsString());

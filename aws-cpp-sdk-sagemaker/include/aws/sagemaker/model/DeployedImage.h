@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -51,8 +52,8 @@ namespace Model
   {
   public:
     DeployedImage();
-    DeployedImage(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeployedImage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeployedImage(Aws::Utils::Json::JsonView jsonValue);
+    DeployedImage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

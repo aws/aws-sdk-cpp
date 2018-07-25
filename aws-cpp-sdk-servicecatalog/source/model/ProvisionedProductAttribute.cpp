@@ -48,7 +48,7 @@ ProvisionedProductAttribute::ProvisionedProductAttribute() :
 {
 }
 
-ProvisionedProductAttribute::ProvisionedProductAttribute(const JsonValue& jsonValue) : 
+ProvisionedProductAttribute::ProvisionedProductAttribute(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_typeHasBeenSet(false),
@@ -69,7 +69,7 @@ ProvisionedProductAttribute::ProvisionedProductAttribute(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(const JsonValue& jsonValue)
+ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -136,7 +136,7 @@ ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(const JsonV
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

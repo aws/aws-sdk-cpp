@@ -37,10 +37,10 @@ GetReservationCoverageResult::GetReservationCoverageResult(const Aws::AmazonWebS
 
 GetReservationCoverageResult& GetReservationCoverageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CoveragesByTime"))
   {
-    Array<JsonValue> coveragesByTimeJsonList = jsonValue.GetArray("CoveragesByTime");
+    Array<JsonView> coveragesByTimeJsonList = jsonValue.GetArray("CoveragesByTime");
     for(unsigned coveragesByTimeIndex = 0; coveragesByTimeIndex < coveragesByTimeJsonList.GetLength(); ++coveragesByTimeIndex)
     {
       m_coveragesByTime.push_back(coveragesByTimeJsonList[coveragesByTimeIndex].AsObject());

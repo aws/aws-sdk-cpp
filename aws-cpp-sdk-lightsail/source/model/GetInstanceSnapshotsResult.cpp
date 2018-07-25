@@ -37,10 +37,10 @@ GetInstanceSnapshotsResult::GetInstanceSnapshotsResult(const Aws::AmazonWebServi
 
 GetInstanceSnapshotsResult& GetInstanceSnapshotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceSnapshots"))
   {
-    Array<JsonValue> instanceSnapshotsJsonList = jsonValue.GetArray("instanceSnapshots");
+    Array<JsonView> instanceSnapshotsJsonList = jsonValue.GetArray("instanceSnapshots");
     for(unsigned instanceSnapshotsIndex = 0; instanceSnapshotsIndex < instanceSnapshotsJsonList.GetLength(); ++instanceSnapshotsIndex)
     {
       m_instanceSnapshots.push_back(instanceSnapshotsJsonList[instanceSnapshotsIndex].AsObject());

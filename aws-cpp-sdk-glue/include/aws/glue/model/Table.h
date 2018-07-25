@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Table();
-    Table(const Aws::Utils::Json::JsonValue& jsonValue);
-    Table& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Table(Aws::Utils::Json::JsonView jsonValue);
+    Table& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

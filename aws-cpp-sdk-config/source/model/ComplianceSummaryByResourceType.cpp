@@ -34,14 +34,14 @@ ComplianceSummaryByResourceType::ComplianceSummaryByResourceType() :
 {
 }
 
-ComplianceSummaryByResourceType::ComplianceSummaryByResourceType(const JsonValue& jsonValue) : 
+ComplianceSummaryByResourceType::ComplianceSummaryByResourceType(JsonView jsonValue) : 
     m_resourceTypeHasBeenSet(false),
     m_complianceSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ComplianceSummaryByResourceType& ComplianceSummaryByResourceType::operator =(const JsonValue& jsonValue)
+ComplianceSummaryByResourceType& ComplianceSummaryByResourceType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceType"))
   {

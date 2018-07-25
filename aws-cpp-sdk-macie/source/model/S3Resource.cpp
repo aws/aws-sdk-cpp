@@ -34,14 +34,14 @@ S3Resource::S3Resource() :
 {
 }
 
-S3Resource::S3Resource(const JsonValue& jsonValue) : 
+S3Resource::S3Resource(JsonView jsonValue) : 
     m_bucketNameHasBeenSet(false),
     m_prefixHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-S3Resource& S3Resource::operator =(const JsonValue& jsonValue)
+S3Resource& S3Resource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bucketName"))
   {

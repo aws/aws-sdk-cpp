@@ -66,7 +66,7 @@ Aws::String ListTaskDefinitionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListTaskDefinitionsRequest::GetRequestSpecificHeaders() const

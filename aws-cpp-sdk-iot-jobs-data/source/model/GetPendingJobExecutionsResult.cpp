@@ -37,10 +37,10 @@ GetPendingJobExecutionsResult::GetPendingJobExecutionsResult(const Aws::AmazonWe
 
 GetPendingJobExecutionsResult& GetPendingJobExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("inProgressJobs"))
   {
-    Array<JsonValue> inProgressJobsJsonList = jsonValue.GetArray("inProgressJobs");
+    Array<JsonView> inProgressJobsJsonList = jsonValue.GetArray("inProgressJobs");
     for(unsigned inProgressJobsIndex = 0; inProgressJobsIndex < inProgressJobsJsonList.GetLength(); ++inProgressJobsIndex)
     {
       m_inProgressJobs.push_back(inProgressJobsJsonList[inProgressJobsIndex].AsObject());
@@ -49,7 +49,7 @@ GetPendingJobExecutionsResult& GetPendingJobExecutionsResult::operator =(const A
 
   if(jsonValue.ValueExists("queuedJobs"))
   {
-    Array<JsonValue> queuedJobsJsonList = jsonValue.GetArray("queuedJobs");
+    Array<JsonView> queuedJobsJsonList = jsonValue.GetArray("queuedJobs");
     for(unsigned queuedJobsIndex = 0; queuedJobsIndex < queuedJobsJsonList.GetLength(); ++queuedJobsIndex)
     {
       m_queuedJobs.push_back(queuedJobsJsonList[queuedJobsIndex].AsObject());

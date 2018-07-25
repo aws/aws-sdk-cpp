@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DeploymentReadyOption();
-    DeploymentReadyOption(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeploymentReadyOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeploymentReadyOption(Aws::Utils::Json::JsonView jsonValue);
+    DeploymentReadyOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -54,7 +54,7 @@ AutomationExecutionMetadata::AutomationExecutionMetadata() :
 {
 }
 
-AutomationExecutionMetadata::AutomationExecutionMetadata(const JsonValue& jsonValue) : 
+AutomationExecutionMetadata::AutomationExecutionMetadata(JsonView jsonValue) : 
     m_automationExecutionIdHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
@@ -81,7 +81,7 @@ AutomationExecutionMetadata::AutomationExecutionMetadata(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(const JsonValue& jsonValue)
+AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AutomationExecutionId"))
   {
@@ -141,10 +141,10 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(const JsonV
 
   if(jsonValue.ValueExists("Outputs"))
   {
-    Aws::Map<Aws::String, JsonValue> outputsJsonMap = jsonValue.GetObject("Outputs").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> outputsJsonMap = jsonValue.GetObject("Outputs").GetAllObjects();
     for(auto& outputsItem : outputsJsonMap)
     {
-      Array<JsonValue> automationParameterValueListJsonList = outputsItem.second.AsArray();
+      Array<JsonView> automationParameterValueListJsonList = outputsItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
@@ -200,7 +200,7 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(const JsonV
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());

@@ -37,7 +37,7 @@ Aws::String DescribeDominantLanguageDetectionJobRequest::SerializePayload() cons
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeDominantLanguageDetectionJobRequest::GetRequestSpecificHeaders() const

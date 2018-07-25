@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     RetentionConfiguration();
-    RetentionConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    RetentionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RetentionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    RetentionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

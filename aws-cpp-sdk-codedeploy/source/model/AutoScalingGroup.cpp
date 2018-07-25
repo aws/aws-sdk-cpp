@@ -34,14 +34,14 @@ AutoScalingGroup::AutoScalingGroup() :
 {
 }
 
-AutoScalingGroup::AutoScalingGroup(const JsonValue& jsonValue) : 
+AutoScalingGroup::AutoScalingGroup(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_hookHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AutoScalingGroup& AutoScalingGroup::operator =(const JsonValue& jsonValue)
+AutoScalingGroup& AutoScalingGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

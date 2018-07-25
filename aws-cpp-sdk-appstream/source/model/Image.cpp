@@ -51,7 +51,7 @@ Image::Image() :
 {
 }
 
-Image::Image(const JsonValue& jsonValue) : 
+Image::Image(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_baseImageArnHasBeenSet(false),
@@ -75,7 +75,7 @@ Image::Image(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Image& Image::operator =(const JsonValue& jsonValue)
+Image& Image::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -149,7 +149,7 @@ Image& Image::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Applications"))
   {
-    Array<JsonValue> applicationsJsonList = jsonValue.GetArray("Applications");
+    Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
     for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());

@@ -34,14 +34,14 @@ WafOverrideAction::WafOverrideAction() :
 {
 }
 
-WafOverrideAction::WafOverrideAction(const JsonValue& jsonValue) : 
+WafOverrideAction::WafOverrideAction(JsonView jsonValue) : 
     m_type(WafOverrideActionType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WafOverrideAction& WafOverrideAction::operator =(const JsonValue& jsonValue)
+WafOverrideAction& WafOverrideAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

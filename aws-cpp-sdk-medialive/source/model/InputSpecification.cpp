@@ -38,7 +38,7 @@ InputSpecification::InputSpecification() :
 {
 }
 
-InputSpecification::InputSpecification(const JsonValue& jsonValue) : 
+InputSpecification::InputSpecification(JsonView jsonValue) : 
     m_codec(InputCodec::NOT_SET),
     m_codecHasBeenSet(false),
     m_maximumBitrate(InputMaximumBitrate::NOT_SET),
@@ -49,7 +49,7 @@ InputSpecification::InputSpecification(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputSpecification& InputSpecification::operator =(const JsonValue& jsonValue)
+InputSpecification& InputSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("codec"))
   {

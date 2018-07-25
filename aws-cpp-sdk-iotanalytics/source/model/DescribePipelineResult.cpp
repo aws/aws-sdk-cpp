@@ -37,7 +37,7 @@ DescribePipelineResult::DescribePipelineResult(const Aws::AmazonWebServiceResult
 
 DescribePipelineResult& DescribePipelineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pipeline"))
   {
     m_pipeline = jsonValue.GetObject("pipeline");

@@ -37,7 +37,7 @@ DescribeJobExecutionResult::DescribeJobExecutionResult(const Aws::AmazonWebServi
 
 DescribeJobExecutionResult& DescribeJobExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("execution"))
   {
     m_execution = jsonValue.GetObject("execution");

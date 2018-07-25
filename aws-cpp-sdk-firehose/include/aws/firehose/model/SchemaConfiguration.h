@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SchemaConfiguration();
-    SchemaConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    SchemaConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SchemaConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    SchemaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

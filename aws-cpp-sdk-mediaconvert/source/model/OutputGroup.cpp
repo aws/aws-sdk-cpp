@@ -36,7 +36,7 @@ OutputGroup::OutputGroup() :
 {
 }
 
-OutputGroup::OutputGroup(const JsonValue& jsonValue) : 
+OutputGroup::OutputGroup(JsonView jsonValue) : 
     m_customNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputGroupSettingsHasBeenSet(false),
@@ -45,7 +45,7 @@ OutputGroup::OutputGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputGroup& OutputGroup::operator =(const JsonValue& jsonValue)
+OutputGroup& OutputGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("customName"))
   {
@@ -70,7 +70,7 @@ OutputGroup& OutputGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("outputs"))
   {
-    Array<JsonValue> outputsJsonList = jsonValue.GetArray("outputs");
+    Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());

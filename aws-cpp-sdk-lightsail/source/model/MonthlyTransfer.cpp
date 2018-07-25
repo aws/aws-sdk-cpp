@@ -34,14 +34,14 @@ MonthlyTransfer::MonthlyTransfer() :
 {
 }
 
-MonthlyTransfer::MonthlyTransfer(const JsonValue& jsonValue) : 
+MonthlyTransfer::MonthlyTransfer(JsonView jsonValue) : 
     m_gbPerMonthAllocated(0),
     m_gbPerMonthAllocatedHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MonthlyTransfer& MonthlyTransfer::operator =(const JsonValue& jsonValue)
+MonthlyTransfer& MonthlyTransfer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("gbPerMonthAllocated"))
   {

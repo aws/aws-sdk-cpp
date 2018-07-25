@@ -45,7 +45,7 @@ Aws::String CreateCoreDefinitionVersionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateCoreDefinitionVersionRequest::GetRequestSpecificHeaders() const

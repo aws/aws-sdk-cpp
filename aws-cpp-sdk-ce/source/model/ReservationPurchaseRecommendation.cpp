@@ -43,7 +43,7 @@ ReservationPurchaseRecommendation::ReservationPurchaseRecommendation() :
 {
 }
 
-ReservationPurchaseRecommendation::ReservationPurchaseRecommendation(const JsonValue& jsonValue) : 
+ReservationPurchaseRecommendation::ReservationPurchaseRecommendation(JsonView jsonValue) : 
     m_accountScope(AccountScope::NOT_SET),
     m_accountScopeHasBeenSet(false),
     m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
@@ -59,7 +59,7 @@ ReservationPurchaseRecommendation::ReservationPurchaseRecommendation(const JsonV
   *this = jsonValue;
 }
 
-ReservationPurchaseRecommendation& ReservationPurchaseRecommendation::operator =(const JsonValue& jsonValue)
+ReservationPurchaseRecommendation& ReservationPurchaseRecommendation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccountScope"))
   {
@@ -98,7 +98,7 @@ ReservationPurchaseRecommendation& ReservationPurchaseRecommendation::operator =
 
   if(jsonValue.ValueExists("RecommendationDetails"))
   {
-    Array<JsonValue> recommendationDetailsJsonList = jsonValue.GetArray("RecommendationDetails");
+    Array<JsonView> recommendationDetailsJsonList = jsonValue.GetArray("RecommendationDetails");
     for(unsigned recommendationDetailsIndex = 0; recommendationDetailsIndex < recommendationDetailsJsonList.GetLength(); ++recommendationDetailsIndex)
     {
       m_recommendationDetails.push_back(recommendationDetailsJsonList[recommendationDetailsIndex].AsObject());

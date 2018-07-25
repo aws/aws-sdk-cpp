@@ -37,7 +37,7 @@ DescribeSchemasResult::DescribeSchemasResult(const Aws::AmazonWebServiceResult<J
 
 DescribeSchemasResult& DescribeSchemasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeSchemasResult& DescribeSchemasResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("Schemas"))
   {
-    Array<JsonValue> schemasJsonList = jsonValue.GetArray("Schemas");
+    Array<JsonView> schemasJsonList = jsonValue.GetArray("Schemas");
     for(unsigned schemasIndex = 0; schemasIndex < schemasJsonList.GetLength(); ++schemasIndex)
     {
       m_schemas.push_back(schemasJsonList[schemasIndex].AsString());

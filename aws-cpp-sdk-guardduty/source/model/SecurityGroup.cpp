@@ -34,14 +34,14 @@ SecurityGroup::SecurityGroup() :
 {
 }
 
-SecurityGroup::SecurityGroup(const JsonValue& jsonValue) : 
+SecurityGroup::SecurityGroup(JsonView jsonValue) : 
     m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SecurityGroup& SecurityGroup::operator =(const JsonValue& jsonValue)
+SecurityGroup& SecurityGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("groupId"))
   {

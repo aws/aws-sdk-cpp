@@ -38,7 +38,7 @@ VocabularyInfo::VocabularyInfo() :
 {
 }
 
-VocabularyInfo::VocabularyInfo(const JsonValue& jsonValue) : 
+VocabularyInfo::VocabularyInfo(JsonView jsonValue) : 
     m_vocabularyNameHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
@@ -49,7 +49,7 @@ VocabularyInfo::VocabularyInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VocabularyInfo& VocabularyInfo::operator =(const JsonValue& jsonValue)
+VocabularyInfo& VocabularyInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VocabularyName"))
   {

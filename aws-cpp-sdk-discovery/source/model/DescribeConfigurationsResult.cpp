@@ -37,13 +37,13 @@ DescribeConfigurationsResult::DescribeConfigurationsResult(const Aws::AmazonWebS
 
 DescribeConfigurationsResult& DescribeConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurations"))
   {
-    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("configurations");
+    Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
-      Aws::Map<Aws::String, JsonValue> describeConfigurationsAttributeJsonMap = configurationsJsonList[configurationsIndex].GetAllObjects();
+      Aws::Map<Aws::String, JsonView> describeConfigurationsAttributeJsonMap = configurationsJsonList[configurationsIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::String> describeConfigurationsAttributeMap;
       for(auto& describeConfigurationsAttributeItem : describeConfigurationsAttributeJsonMap)
       {

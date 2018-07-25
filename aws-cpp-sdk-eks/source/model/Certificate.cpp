@@ -33,13 +33,13 @@ Certificate::Certificate() :
 {
 }
 
-Certificate::Certificate(const JsonValue& jsonValue) : 
+Certificate::Certificate(JsonView jsonValue) : 
     m_dataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Certificate& Certificate::operator =(const JsonValue& jsonValue)
+Certificate& Certificate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("data"))
   {

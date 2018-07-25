@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace TranscribeService
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Settings();
-    Settings(const Aws::Utils::Json::JsonValue& jsonValue);
-    Settings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Settings(Aws::Utils::Json::JsonView jsonValue);
+    Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

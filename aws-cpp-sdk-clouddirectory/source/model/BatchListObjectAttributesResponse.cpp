@@ -34,18 +34,18 @@ BatchListObjectAttributesResponse::BatchListObjectAttributesResponse() :
 {
 }
 
-BatchListObjectAttributesResponse::BatchListObjectAttributesResponse(const JsonValue& jsonValue) : 
+BatchListObjectAttributesResponse::BatchListObjectAttributesResponse(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchListObjectAttributesResponse& BatchListObjectAttributesResponse::operator =(const JsonValue& jsonValue)
+BatchListObjectAttributesResponse& BatchListObjectAttributesResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("Attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());

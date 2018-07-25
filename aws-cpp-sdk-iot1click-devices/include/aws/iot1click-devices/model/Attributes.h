@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT1ClickDevicesService
@@ -34,8 +35,8 @@ namespace Model
   {
   public:
     Attributes();
-    Attributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    Attributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Attributes(Aws::Utils::Json::JsonView jsonValue);
+    Attributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
   };

@@ -37,7 +37,7 @@ ProjectDescription::ProjectDescription() :
 {
 }
 
-ProjectDescription::ProjectDescription(const JsonValue& jsonValue) : 
+ProjectDescription::ProjectDescription(JsonView jsonValue) : 
     m_projectNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -47,7 +47,7 @@ ProjectDescription::ProjectDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProjectDescription& ProjectDescription::operator =(const JsonValue& jsonValue)
+ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("projectName"))
   {

@@ -38,7 +38,7 @@ GlobalTableDescription::GlobalTableDescription() :
 {
 }
 
-GlobalTableDescription::GlobalTableDescription(const JsonValue& jsonValue) : 
+GlobalTableDescription::GlobalTableDescription(JsonView jsonValue) : 
     m_replicationGroupHasBeenSet(false),
     m_globalTableArnHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -49,11 +49,11 @@ GlobalTableDescription::GlobalTableDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GlobalTableDescription& GlobalTableDescription::operator =(const JsonValue& jsonValue)
+GlobalTableDescription& GlobalTableDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReplicationGroup"))
   {
-    Array<JsonValue> replicationGroupJsonList = jsonValue.GetArray("ReplicationGroup");
+    Array<JsonView> replicationGroupJsonList = jsonValue.GetArray("ReplicationGroup");
     for(unsigned replicationGroupIndex = 0; replicationGroupIndex < replicationGroupJsonList.GetLength(); ++replicationGroupIndex)
     {
       m_replicationGroup.push_back(replicationGroupJsonList[replicationGroupIndex].AsObject());

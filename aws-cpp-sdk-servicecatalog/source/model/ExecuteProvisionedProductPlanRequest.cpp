@@ -52,7 +52,7 @@ Aws::String ExecuteProvisionedProductPlanRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ExecuteProvisionedProductPlanRequest::GetRequestSpecificHeaders() const

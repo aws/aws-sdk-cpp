@@ -48,7 +48,7 @@ JobFlowDetail::JobFlowDetail() :
 {
 }
 
-JobFlowDetail::JobFlowDetail(const JsonValue& jsonValue) : 
+JobFlowDetail::JobFlowDetail(JsonView jsonValue) : 
     m_jobFlowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_logUriHasBeenSet(false),
@@ -69,7 +69,7 @@ JobFlowDetail::JobFlowDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobFlowDetail& JobFlowDetail::operator =(const JsonValue& jsonValue)
+JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobFlowId"))
   {
@@ -115,7 +115,7 @@ JobFlowDetail& JobFlowDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Steps"))
   {
-    Array<JsonValue> stepsJsonList = jsonValue.GetArray("Steps");
+    Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
     for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
@@ -125,7 +125,7 @@ JobFlowDetail& JobFlowDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("BootstrapActions"))
   {
-    Array<JsonValue> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
+    Array<JsonView> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
     for(unsigned bootstrapActionsIndex = 0; bootstrapActionsIndex < bootstrapActionsJsonList.GetLength(); ++bootstrapActionsIndex)
     {
       m_bootstrapActions.push_back(bootstrapActionsJsonList[bootstrapActionsIndex].AsObject());
@@ -135,7 +135,7 @@ JobFlowDetail& JobFlowDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SupportedProducts"))
   {
-    Array<JsonValue> supportedProductsJsonList = jsonValue.GetArray("SupportedProducts");
+    Array<JsonView> supportedProductsJsonList = jsonValue.GetArray("SupportedProducts");
     for(unsigned supportedProductsIndex = 0; supportedProductsIndex < supportedProductsJsonList.GetLength(); ++supportedProductsIndex)
     {
       m_supportedProducts.push_back(supportedProductsJsonList[supportedProductsIndex].AsString());

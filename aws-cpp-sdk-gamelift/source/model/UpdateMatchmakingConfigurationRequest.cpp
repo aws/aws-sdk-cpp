@@ -128,7 +128,7 @@ Aws::String UpdateMatchmakingConfigurationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateMatchmakingConfigurationRequest::GetRequestSpecificHeaders() const

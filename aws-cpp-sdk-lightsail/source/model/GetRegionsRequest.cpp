@@ -38,7 +38,7 @@ Aws::String GetRegionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetRegionsRequest::GetRequestSpecificHeaders() const

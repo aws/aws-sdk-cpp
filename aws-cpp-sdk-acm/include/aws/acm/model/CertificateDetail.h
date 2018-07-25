@@ -38,6 +38,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ACM
@@ -55,8 +56,8 @@ namespace Model
   {
   public:
     CertificateDetail();
-    CertificateDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    CertificateDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CertificateDetail(Aws::Utils::Json::JsonView jsonValue);
+    CertificateDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

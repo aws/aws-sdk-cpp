@@ -49,7 +49,7 @@ Table::Table() :
 {
 }
 
-Table::Table(const JsonValue& jsonValue) : 
+Table::Table(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -71,7 +71,7 @@ Table::Table(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Table& Table::operator =(const JsonValue& jsonValue)
+Table& Table::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -145,7 +145,7 @@ Table& Table::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PartitionKeys"))
   {
-    Array<JsonValue> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
+    Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
     for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
     {
       m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
@@ -176,7 +176,7 @@ Table& Table::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

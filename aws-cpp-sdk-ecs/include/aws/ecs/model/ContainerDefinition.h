@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/RepositoryCredentials.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/LinuxParameters.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -36,6 +37,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -53,8 +55,8 @@ namespace Model
   {
   public:
     ContainerDefinition();
-    ContainerDefinition(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContainerDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
+    ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -380,6 +382,32 @@ namespace Model
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
+
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline const RepositoryCredentials& GetRepositoryCredentials() const{ return m_repositoryCredentials; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(const RepositoryCredentials& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = value; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(RepositoryCredentials&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::move(value); }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerDefinition& WithRepositoryCredentials(const RepositoryCredentials& value) { SetRepositoryCredentials(value); return *this;}
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerDefinition& WithRepositoryCredentials(RepositoryCredentials&& value) { SetRepositoryCredentials(std::move(value)); return *this;}
 
 
     /**
@@ -910,8 +938,9 @@ namespace Model
      * the container port in the port mapping.</p> <note> <p>After a task reaches the
      * <code>RUNNING</code> status, manual and automatic host and container port
      * assignments are visible in the <b>Network Bindings</b> section of a container
-     * description for a selected task in the Amazon ECS console, or the
-     * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
+     * description for a selected task in the Amazon ECS console. The assignments are
+     * also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.</p> </note>
      */
     inline const Aws::Vector<PortMapping>& GetPortMappings() const{ return m_portMappings; }
 
@@ -937,8 +966,9 @@ namespace Model
      * the container port in the port mapping.</p> <note> <p>After a task reaches the
      * <code>RUNNING</code> status, manual and automatic host and container port
      * assignments are visible in the <b>Network Bindings</b> section of a container
-     * description for a selected task in the Amazon ECS console, or the
-     * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
+     * description for a selected task in the Amazon ECS console. The assignments are
+     * also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.</p> </note>
      */
     inline void SetPortMappings(const Aws::Vector<PortMapping>& value) { m_portMappingsHasBeenSet = true; m_portMappings = value; }
 
@@ -964,8 +994,9 @@ namespace Model
      * the container port in the port mapping.</p> <note> <p>After a task reaches the
      * <code>RUNNING</code> status, manual and automatic host and container port
      * assignments are visible in the <b>Network Bindings</b> section of a container
-     * description for a selected task in the Amazon ECS console, or the
-     * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
+     * description for a selected task in the Amazon ECS console. The assignments are
+     * also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.</p> </note>
      */
     inline void SetPortMappings(Aws::Vector<PortMapping>&& value) { m_portMappingsHasBeenSet = true; m_portMappings = std::move(value); }
 
@@ -991,8 +1022,9 @@ namespace Model
      * the container port in the port mapping.</p> <note> <p>After a task reaches the
      * <code>RUNNING</code> status, manual and automatic host and container port
      * assignments are visible in the <b>Network Bindings</b> section of a container
-     * description for a selected task in the Amazon ECS console, or the
-     * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
+     * description for a selected task in the Amazon ECS console. The assignments are
+     * also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.</p> </note>
      */
     inline ContainerDefinition& WithPortMappings(const Aws::Vector<PortMapping>& value) { SetPortMappings(value); return *this;}
 
@@ -1018,8 +1050,9 @@ namespace Model
      * the container port in the port mapping.</p> <note> <p>After a task reaches the
      * <code>RUNNING</code> status, manual and automatic host and container port
      * assignments are visible in the <b>Network Bindings</b> section of a container
-     * description for a selected task in the Amazon ECS console, or the
-     * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
+     * description for a selected task in the Amazon ECS console. The assignments are
+     * also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.</p> </note>
      */
     inline ContainerDefinition& WithPortMappings(Aws::Vector<PortMapping>&& value) { SetPortMappings(std::move(value)); return *this;}
 
@@ -1045,8 +1078,9 @@ namespace Model
      * the container port in the port mapping.</p> <note> <p>After a task reaches the
      * <code>RUNNING</code> status, manual and automatic host and container port
      * assignments are visible in the <b>Network Bindings</b> section of a container
-     * description for a selected task in the Amazon ECS console, or the
-     * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
+     * description for a selected task in the Amazon ECS console. The assignments are
+     * also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.</p> </note>
      */
     inline ContainerDefinition& AddPortMappings(const PortMapping& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(value); return *this; }
 
@@ -1072,8 +1106,9 @@ namespace Model
      * the container port in the port mapping.</p> <note> <p>After a task reaches the
      * <code>RUNNING</code> status, manual and automatic host and container port
      * assignments are visible in the <b>Network Bindings</b> section of a container
-     * description for a selected task in the Amazon ECS console, or the
-     * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
+     * description for a selected task in the Amazon ECS console. The assignments are
+     * also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.</p> </note>
      */
     inline ContainerDefinition& AddPortMappings(PortMapping&& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(std::move(value)); return *this; }
 
@@ -2243,8 +2278,8 @@ namespace Model
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. If using the Fargate launch type,
-     * this may be used to list non-Fargate hosts you want the container to talk to.
-     * This parameter maps to <code>ExtraHosts</code> in the <a
+     * this may be used to list non-Fargate hosts to which the container can talk. This
+     * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -2257,8 +2292,8 @@ namespace Model
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. If using the Fargate launch type,
-     * this may be used to list non-Fargate hosts you want the container to talk to.
-     * This parameter maps to <code>ExtraHosts</code> in the <a
+     * this may be used to list non-Fargate hosts to which the container can talk. This
+     * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -2271,8 +2306,8 @@ namespace Model
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. If using the Fargate launch type,
-     * this may be used to list non-Fargate hosts you want the container to talk to.
-     * This parameter maps to <code>ExtraHosts</code> in the <a
+     * this may be used to list non-Fargate hosts to which the container can talk. This
+     * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -2285,8 +2320,8 @@ namespace Model
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. If using the Fargate launch type,
-     * this may be used to list non-Fargate hosts you want the container to talk to.
-     * This parameter maps to <code>ExtraHosts</code> in the <a
+     * this may be used to list non-Fargate hosts to which the container can talk. This
+     * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -2299,8 +2334,8 @@ namespace Model
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. If using the Fargate launch type,
-     * this may be used to list non-Fargate hosts you want the container to talk to.
-     * This parameter maps to <code>ExtraHosts</code> in the <a
+     * this may be used to list non-Fargate hosts to which the container can talk. This
+     * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -2313,8 +2348,8 @@ namespace Model
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. If using the Fargate launch type,
-     * this may be used to list non-Fargate hosts you want the container to talk to.
-     * This parameter maps to <code>ExtraHosts</code> in the <a
+     * this may be used to list non-Fargate hosts to which the container can talk. This
+     * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -2327,8 +2362,8 @@ namespace Model
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. If using the Fargate launch type,
-     * this may be used to list non-Fargate hosts you want the container to talk to.
-     * This parameter maps to <code>ExtraHosts</code> in the <a
+     * this may be used to list non-Fargate hosts to which the container can talk. This
+     * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -3060,6 +3095,9 @@ namespace Model
 
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
+    RepositoryCredentials m_repositoryCredentials;
+    bool m_repositoryCredentialsHasBeenSet;
 
     int m_cpu;
     bool m_cpuHasBeenSet;

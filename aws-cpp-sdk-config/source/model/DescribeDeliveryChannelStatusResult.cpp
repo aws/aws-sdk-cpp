@@ -37,10 +37,10 @@ DescribeDeliveryChannelStatusResult::DescribeDeliveryChannelStatusResult(const A
 
 DescribeDeliveryChannelStatusResult& DescribeDeliveryChannelStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeliveryChannelsStatus"))
   {
-    Array<JsonValue> deliveryChannelsStatusJsonList = jsonValue.GetArray("DeliveryChannelsStatus");
+    Array<JsonView> deliveryChannelsStatusJsonList = jsonValue.GetArray("DeliveryChannelsStatus");
     for(unsigned deliveryChannelsStatusIndex = 0; deliveryChannelsStatusIndex < deliveryChannelsStatusJsonList.GetLength(); ++deliveryChannelsStatusIndex)
     {
       m_deliveryChannelsStatus.push_back(deliveryChannelsStatusJsonList[deliveryChannelsStatusIndex].AsObject());

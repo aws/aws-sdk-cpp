@@ -34,14 +34,14 @@ VirtualGateway::VirtualGateway() :
 {
 }
 
-VirtualGateway::VirtualGateway(const JsonValue& jsonValue) : 
+VirtualGateway::VirtualGateway(JsonView jsonValue) : 
     m_virtualGatewayIdHasBeenSet(false),
     m_virtualGatewayStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VirtualGateway& VirtualGateway::operator =(const JsonValue& jsonValue)
+VirtualGateway& VirtualGateway::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("virtualGatewayId"))
   {

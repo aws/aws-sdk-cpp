@@ -40,7 +40,7 @@ CmafEncryptionSettings::CmafEncryptionSettings() :
 {
 }
 
-CmafEncryptionSettings::CmafEncryptionSettings(const JsonValue& jsonValue) : 
+CmafEncryptionSettings::CmafEncryptionSettings(JsonView jsonValue) : 
     m_constantInitializationVectorHasBeenSet(false),
     m_encryptionMethod(CmafEncryptionType::NOT_SET),
     m_encryptionMethodHasBeenSet(false),
@@ -53,7 +53,7 @@ CmafEncryptionSettings::CmafEncryptionSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CmafEncryptionSettings& CmafEncryptionSettings::operator =(const JsonValue& jsonValue)
+CmafEncryptionSettings& CmafEncryptionSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("constantInitializationVector"))
   {

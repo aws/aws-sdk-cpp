@@ -37,10 +37,10 @@ GetCommentsForPullRequestResult::GetCommentsForPullRequestResult(const Aws::Amaz
 
 GetCommentsForPullRequestResult& GetCommentsForPullRequestResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("commentsForPullRequestData"))
   {
-    Array<JsonValue> commentsForPullRequestDataJsonList = jsonValue.GetArray("commentsForPullRequestData");
+    Array<JsonView> commentsForPullRequestDataJsonList = jsonValue.GetArray("commentsForPullRequestData");
     for(unsigned commentsForPullRequestDataIndex = 0; commentsForPullRequestDataIndex < commentsForPullRequestDataJsonList.GetLength(); ++commentsForPullRequestDataIndex)
     {
       m_commentsForPullRequestData.push_back(commentsForPullRequestDataJsonList[commentsForPullRequestDataIndex].AsObject());

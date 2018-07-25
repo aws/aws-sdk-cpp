@@ -35,7 +35,7 @@ CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration()
 {
 }
 
-CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration(const JsonValue& jsonValue) : 
+CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration(JsonView jsonValue) : 
     m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false),
     m_vpceConfigurationArnsHasBeenSet(false)
@@ -43,7 +43,7 @@ CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration(c
   *this = jsonValue;
 }
 
-CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::operator =(const JsonValue& jsonValue)
+CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("billingMethod"))
   {
@@ -54,7 +54,7 @@ CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::
 
   if(jsonValue.ValueExists("vpceConfigurationArns"))
   {
-    Array<JsonValue> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
+    Array<JsonView> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
     for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
     {
       m_vpceConfigurationArns.push_back(vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString());

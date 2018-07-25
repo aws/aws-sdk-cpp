@@ -28,7 +28,9 @@ namespace Model
     NOT_SET,
     forward,
     authenticate_oidc,
-    authenticate_cognito
+    authenticate_cognito,
+    redirect,
+    fixed_response
   };
 
 namespace ActionTypeEnumMapper

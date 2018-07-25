@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     ReservationResourceSpecification();
-    ReservationResourceSpecification(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReservationResourceSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReservationResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
+    ReservationResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

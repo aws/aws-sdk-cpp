@@ -42,7 +42,7 @@ ScalingInstruction::ScalingInstruction() :
 {
 }
 
-ScalingInstruction::ScalingInstruction(const JsonValue& jsonValue) : 
+ScalingInstruction::ScalingInstruction(JsonView jsonValue) : 
     m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
@@ -57,7 +57,7 @@ ScalingInstruction::ScalingInstruction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalingInstruction& ScalingInstruction::operator =(const JsonValue& jsonValue)
+ScalingInstruction& ScalingInstruction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServiceNamespace"))
   {
@@ -96,7 +96,7 @@ ScalingInstruction& ScalingInstruction::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("TargetTrackingConfigurations"))
   {
-    Array<JsonValue> targetTrackingConfigurationsJsonList = jsonValue.GetArray("TargetTrackingConfigurations");
+    Array<JsonView> targetTrackingConfigurationsJsonList = jsonValue.GetArray("TargetTrackingConfigurations");
     for(unsigned targetTrackingConfigurationsIndex = 0; targetTrackingConfigurationsIndex < targetTrackingConfigurationsJsonList.GetLength(); ++targetTrackingConfigurationsIndex)
     {
       m_targetTrackingConfigurations.push_back(targetTrackingConfigurationsJsonList[targetTrackingConfigurationsIndex].AsObject());

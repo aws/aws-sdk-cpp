@@ -36,7 +36,7 @@ EventFeedbackType::EventFeedbackType() :
 {
 }
 
-EventFeedbackType::EventFeedbackType(const JsonValue& jsonValue) : 
+EventFeedbackType::EventFeedbackType(JsonView jsonValue) : 
     m_feedbackValue(FeedbackValueType::NOT_SET),
     m_feedbackValueHasBeenSet(false),
     m_providerHasBeenSet(false),
@@ -45,7 +45,7 @@ EventFeedbackType::EventFeedbackType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventFeedbackType& EventFeedbackType::operator =(const JsonValue& jsonValue)
+EventFeedbackType& EventFeedbackType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FeedbackValue"))
   {

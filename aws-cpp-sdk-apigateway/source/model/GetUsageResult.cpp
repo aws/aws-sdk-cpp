@@ -37,7 +37,7 @@ GetUsageResult::GetUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 GetUsageResult& GetUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("usagePlanId"))
   {
     m_usagePlanId = jsonValue.GetString("usagePlanId");
@@ -64,15 +64,15 @@ GetUsageResult& GetUsageResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   if(jsonValue.ValueExists("values"))
   {
-    Aws::Map<Aws::String, JsonValue> valuesJsonMap = jsonValue.GetObject("values").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> valuesJsonMap = jsonValue.GetObject("values").GetAllObjects();
     for(auto& valuesItem : valuesJsonMap)
     {
-      Array<JsonValue> listOfUsageJsonList = valuesItem.second.AsArray();
+      Array<JsonView> listOfUsageJsonList = valuesItem.second.AsArray();
       Aws::Vector<Aws::Vector<long long>> listOfUsageList;
       listOfUsageList.reserve((size_t)listOfUsageJsonList.GetLength());
       for(unsigned listOfUsageIndex = 0; listOfUsageIndex < listOfUsageJsonList.GetLength(); ++listOfUsageIndex)
       {
-        Array<JsonValue> listOfLongJsonList = listOfUsageJsonList[listOfUsageIndex].AsArray();
+        Array<JsonView> listOfLongJsonList = listOfUsageJsonList[listOfUsageIndex].AsArray();
         Aws::Vector<long long> listOfLongList;
         listOfLongList.reserve((size_t)listOfLongJsonList.GetLength());
         for(unsigned listOfLongIndex = 0; listOfLongIndex < listOfLongJsonList.GetLength(); ++listOfLongIndex)

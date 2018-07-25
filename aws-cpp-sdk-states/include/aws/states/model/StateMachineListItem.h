@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SFN
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     StateMachineListItem();
-    StateMachineListItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    StateMachineListItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StateMachineListItem(Aws::Utils::Json::JsonView jsonValue);
+    StateMachineListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

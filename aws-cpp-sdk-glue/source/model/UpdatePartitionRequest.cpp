@@ -70,7 +70,7 @@ Aws::String UpdatePartitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdatePartitionRequest::GetRequestSpecificHeaders() const

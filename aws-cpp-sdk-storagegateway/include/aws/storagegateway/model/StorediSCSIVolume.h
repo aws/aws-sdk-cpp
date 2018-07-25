@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     StorediSCSIVolume();
-    StorediSCSIVolume(const Aws::Utils::Json::JsonValue& jsonValue);
-    StorediSCSIVolume& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StorediSCSIVolume(Aws::Utils::Json::JsonView jsonValue);
+    StorediSCSIVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

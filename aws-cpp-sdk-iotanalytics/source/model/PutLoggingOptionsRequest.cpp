@@ -37,7 +37,7 @@ Aws::String PutLoggingOptionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

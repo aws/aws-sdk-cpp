@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     MsSmoothOutputSettings();
-    MsSmoothOutputSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    MsSmoothOutputSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MsSmoothOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    MsSmoothOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

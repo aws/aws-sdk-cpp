@@ -37,7 +37,7 @@ Aws::String DeleteClusterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteClusterRequest::GetRequestSpecificHeaders() const

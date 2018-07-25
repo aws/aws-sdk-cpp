@@ -35,7 +35,7 @@ BatchGetObjectAttributes::BatchGetObjectAttributes() :
 {
 }
 
-BatchGetObjectAttributes::BatchGetObjectAttributes(const JsonValue& jsonValue) : 
+BatchGetObjectAttributes::BatchGetObjectAttributes(JsonView jsonValue) : 
     m_objectReferenceHasBeenSet(false),
     m_schemaFacetHasBeenSet(false),
     m_attributeNamesHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchGetObjectAttributes::BatchGetObjectAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchGetObjectAttributes& BatchGetObjectAttributes::operator =(const JsonValue& jsonValue)
+BatchGetObjectAttributes& BatchGetObjectAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectReference"))
   {
@@ -61,7 +61,7 @@ BatchGetObjectAttributes& BatchGetObjectAttributes::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("AttributeNames"))
   {
-    Array<JsonValue> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
+    Array<JsonView> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
     for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
     {
       m_attributeNames.push_back(attributeNamesJsonList[attributeNamesIndex].AsString());

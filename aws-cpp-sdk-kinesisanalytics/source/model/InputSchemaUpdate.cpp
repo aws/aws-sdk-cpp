@@ -35,7 +35,7 @@ InputSchemaUpdate::InputSchemaUpdate() :
 {
 }
 
-InputSchemaUpdate::InputSchemaUpdate(const JsonValue& jsonValue) : 
+InputSchemaUpdate::InputSchemaUpdate(JsonView jsonValue) : 
     m_recordFormatUpdateHasBeenSet(false),
     m_recordEncodingUpdateHasBeenSet(false),
     m_recordColumnUpdatesHasBeenSet(false)
@@ -43,7 +43,7 @@ InputSchemaUpdate::InputSchemaUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputSchemaUpdate& InputSchemaUpdate::operator =(const JsonValue& jsonValue)
+InputSchemaUpdate& InputSchemaUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RecordFormatUpdate"))
   {
@@ -61,7 +61,7 @@ InputSchemaUpdate& InputSchemaUpdate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("RecordColumnUpdates"))
   {
-    Array<JsonValue> recordColumnUpdatesJsonList = jsonValue.GetArray("RecordColumnUpdates");
+    Array<JsonView> recordColumnUpdatesJsonList = jsonValue.GetArray("RecordColumnUpdates");
     for(unsigned recordColumnUpdatesIndex = 0; recordColumnUpdatesIndex < recordColumnUpdatesJsonList.GetLength(); ++recordColumnUpdatesIndex)
     {
       m_recordColumnUpdates.push_back(recordColumnUpdatesJsonList[recordColumnUpdatesIndex].AsObject());

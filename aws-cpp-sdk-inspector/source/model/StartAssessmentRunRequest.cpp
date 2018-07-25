@@ -44,7 +44,7 @@ Aws::String StartAssessmentRunRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartAssessmentRunRequest::GetRequestSpecificHeaders() const

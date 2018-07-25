@@ -35,7 +35,7 @@ DeviceStatusInfo::DeviceStatusInfo() :
 {
 }
 
-DeviceStatusInfo::DeviceStatusInfo(const JsonValue& jsonValue) : 
+DeviceStatusInfo::DeviceStatusInfo(JsonView jsonValue) : 
     m_deviceStatusDetailsHasBeenSet(false),
     m_connectionStatus(ConnectionStatus::NOT_SET),
     m_connectionStatusHasBeenSet(false)
@@ -43,11 +43,11 @@ DeviceStatusInfo::DeviceStatusInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeviceStatusInfo& DeviceStatusInfo::operator =(const JsonValue& jsonValue)
+DeviceStatusInfo& DeviceStatusInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeviceStatusDetails"))
   {
-    Array<JsonValue> deviceStatusDetailsJsonList = jsonValue.GetArray("DeviceStatusDetails");
+    Array<JsonView> deviceStatusDetailsJsonList = jsonValue.GetArray("DeviceStatusDetails");
     for(unsigned deviceStatusDetailsIndex = 0; deviceStatusDetailsIndex < deviceStatusDetailsJsonList.GetLength(); ++deviceStatusDetailsIndex)
     {
       m_deviceStatusDetails.push_back(deviceStatusDetailsJsonList[deviceStatusDetailsIndex].AsObject());

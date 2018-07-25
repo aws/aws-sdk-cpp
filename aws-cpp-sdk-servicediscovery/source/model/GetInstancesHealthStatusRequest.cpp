@@ -64,7 +64,7 @@ Aws::String GetInstancesHealthStatusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetInstancesHealthStatusRequest::GetRequestSpecificHeaders() const

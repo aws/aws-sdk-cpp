@@ -36,7 +36,7 @@ AwsVpcConfiguration::AwsVpcConfiguration() :
 {
 }
 
-AwsVpcConfiguration::AwsVpcConfiguration(const JsonValue& jsonValue) : 
+AwsVpcConfiguration::AwsVpcConfiguration(JsonView jsonValue) : 
     m_subnetsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_assignPublicIp(AssignPublicIp::NOT_SET),
@@ -45,11 +45,11 @@ AwsVpcConfiguration::AwsVpcConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AwsVpcConfiguration& AwsVpcConfiguration::operator =(const JsonValue& jsonValue)
+AwsVpcConfiguration& AwsVpcConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("subnets"))
   {
-    Array<JsonValue> subnetsJsonList = jsonValue.GetArray("subnets");
+    Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
@@ -59,7 +59,7 @@ AwsVpcConfiguration& AwsVpcConfiguration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonValue> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());

@@ -34,14 +34,14 @@ ApplicationResponse::ApplicationResponse() :
 {
 }
 
-ApplicationResponse::ApplicationResponse(const JsonValue& jsonValue) : 
+ApplicationResponse::ApplicationResponse(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ApplicationResponse& ApplicationResponse::operator =(const JsonValue& jsonValue)
+ApplicationResponse& ApplicationResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

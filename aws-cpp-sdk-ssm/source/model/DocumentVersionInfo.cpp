@@ -39,7 +39,7 @@ DocumentVersionInfo::DocumentVersionInfo() :
 {
 }
 
-DocumentVersionInfo::DocumentVersionInfo(const JsonValue& jsonValue) : 
+DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -51,7 +51,7 @@ DocumentVersionInfo::DocumentVersionInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentVersionInfo& DocumentVersionInfo::operator =(const JsonValue& jsonValue)
+DocumentVersionInfo& DocumentVersionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

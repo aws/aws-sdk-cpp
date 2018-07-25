@@ -74,7 +74,7 @@ Aws::String UpdateInputRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

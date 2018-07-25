@@ -37,7 +37,7 @@ UpdateDocumentationVersionResult::UpdateDocumentationVersionResult(const Aws::Am
 
 UpdateDocumentationVersionResult& UpdateDocumentationVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");

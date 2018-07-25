@@ -35,7 +35,7 @@ MergeMetadata::MergeMetadata() :
 {
 }
 
-MergeMetadata::MergeMetadata(const JsonValue& jsonValue) : 
+MergeMetadata::MergeMetadata(JsonView jsonValue) : 
     m_isMerged(false),
     m_isMergedHasBeenSet(false),
     m_mergedByHasBeenSet(false)
@@ -43,7 +43,7 @@ MergeMetadata::MergeMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MergeMetadata& MergeMetadata::operator =(const JsonValue& jsonValue)
+MergeMetadata& MergeMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("isMerged"))
   {

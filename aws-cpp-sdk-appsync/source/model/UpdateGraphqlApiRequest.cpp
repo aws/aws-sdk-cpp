@@ -66,7 +66,7 @@ Aws::String UpdateGraphqlApiRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

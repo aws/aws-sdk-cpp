@@ -35,7 +35,7 @@ AWSSessionCredentials::AWSSessionCredentials() :
 {
 }
 
-AWSSessionCredentials::AWSSessionCredentials(const JsonValue& jsonValue) : 
+AWSSessionCredentials::AWSSessionCredentials(JsonView jsonValue) : 
     m_accessKeyIdHasBeenSet(false),
     m_secretAccessKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false)
@@ -43,7 +43,7 @@ AWSSessionCredentials::AWSSessionCredentials(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AWSSessionCredentials& AWSSessionCredentials::operator =(const JsonValue& jsonValue)
+AWSSessionCredentials& AWSSessionCredentials::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accessKeyId"))
   {

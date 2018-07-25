@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeStar
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     TeamMember();
-    TeamMember(const Aws::Utils::Json::JsonValue& jsonValue);
-    TeamMember& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TeamMember(Aws::Utils::Json::JsonView jsonValue);
+    TeamMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

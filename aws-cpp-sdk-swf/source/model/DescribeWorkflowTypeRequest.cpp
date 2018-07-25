@@ -44,7 +44,7 @@ Aws::String DescribeWorkflowTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeWorkflowTypeRequest::GetRequestSpecificHeaders() const

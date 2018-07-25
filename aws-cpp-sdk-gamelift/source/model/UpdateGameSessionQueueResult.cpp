@@ -37,7 +37,7 @@ UpdateGameSessionQueueResult::UpdateGameSessionQueueResult(const Aws::AmazonWebS
 
 UpdateGameSessionQueueResult& UpdateGameSessionQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GameSessionQueue"))
   {
     m_gameSessionQueue = jsonValue.GetObject("GameSessionQueue");

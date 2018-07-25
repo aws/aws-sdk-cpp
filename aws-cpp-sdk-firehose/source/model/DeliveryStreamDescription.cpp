@@ -45,7 +45,7 @@ DeliveryStreamDescription::DeliveryStreamDescription() :
 {
 }
 
-DeliveryStreamDescription::DeliveryStreamDescription(const JsonValue& jsonValue) : 
+DeliveryStreamDescription::DeliveryStreamDescription(JsonView jsonValue) : 
     m_deliveryStreamNameHasBeenSet(false),
     m_deliveryStreamARNHasBeenSet(false),
     m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
@@ -63,7 +63,7 @@ DeliveryStreamDescription::DeliveryStreamDescription(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-DeliveryStreamDescription& DeliveryStreamDescription::operator =(const JsonValue& jsonValue)
+DeliveryStreamDescription& DeliveryStreamDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeliveryStreamName"))
   {
@@ -123,7 +123,7 @@ DeliveryStreamDescription& DeliveryStreamDescription::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Destinations"))
   {
-    Array<JsonValue> destinationsJsonList = jsonValue.GetArray("Destinations");
+    Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());

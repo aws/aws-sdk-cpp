@@ -38,7 +38,7 @@ PipelineExecutionSummary::PipelineExecutionSummary() :
 {
 }
 
-PipelineExecutionSummary::PipelineExecutionSummary(const JsonValue& jsonValue) : 
+PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue) : 
     m_pipelineExecutionIdHasBeenSet(false),
     m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -49,7 +49,7 @@ PipelineExecutionSummary::PipelineExecutionSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineExecutionSummary& PipelineExecutionSummary::operator =(const JsonValue& jsonValue)
+PipelineExecutionSummary& PipelineExecutionSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
@@ -81,7 +81,7 @@ PipelineExecutionSummary& PipelineExecutionSummary::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("sourceRevisions"))
   {
-    Array<JsonValue> sourceRevisionsJsonList = jsonValue.GetArray("sourceRevisions");
+    Array<JsonView> sourceRevisionsJsonList = jsonValue.GetArray("sourceRevisions");
     for(unsigned sourceRevisionsIndex = 0; sourceRevisionsIndex < sourceRevisionsJsonList.GetLength(); ++sourceRevisionsIndex)
     {
       m_sourceRevisions.push_back(sourceRevisionsJsonList[sourceRevisionsIndex].AsObject());

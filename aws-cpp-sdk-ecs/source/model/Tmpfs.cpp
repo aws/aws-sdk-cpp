@@ -36,7 +36,7 @@ Tmpfs::Tmpfs() :
 {
 }
 
-Tmpfs::Tmpfs(const JsonValue& jsonValue) : 
+Tmpfs::Tmpfs(JsonView jsonValue) : 
     m_containerPathHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
@@ -45,7 +45,7 @@ Tmpfs::Tmpfs(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Tmpfs& Tmpfs::operator =(const JsonValue& jsonValue)
+Tmpfs& Tmpfs::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerPath"))
   {
@@ -63,7 +63,7 @@ Tmpfs& Tmpfs::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("mountOptions"))
   {
-    Array<JsonValue> mountOptionsJsonList = jsonValue.GetArray("mountOptions");
+    Array<JsonView> mountOptionsJsonList = jsonValue.GetArray("mountOptions");
     for(unsigned mountOptionsIndex = 0; mountOptionsIndex < mountOptionsJsonList.GetLength(); ++mountOptionsIndex)
     {
       m_mountOptions.push_back(mountOptionsJsonList[mountOptionsIndex].AsString());

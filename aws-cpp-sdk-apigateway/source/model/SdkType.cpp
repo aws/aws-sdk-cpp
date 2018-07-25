@@ -36,7 +36,7 @@ SdkType::SdkType() :
 {
 }
 
-SdkType::SdkType(const JsonValue& jsonValue) : 
+SdkType::SdkType(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_friendlyNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -45,7 +45,7 @@ SdkType::SdkType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SdkType& SdkType::operator =(const JsonValue& jsonValue)
+SdkType& SdkType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -70,7 +70,7 @@ SdkType& SdkType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("configurationProperties"))
   {
-    Array<JsonValue> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
+    Array<JsonView> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
     for(unsigned configurationPropertiesIndex = 0; configurationPropertiesIndex < configurationPropertiesJsonList.GetLength(); ++configurationPropertiesIndex)
     {
       m_configurationProperties.push_back(configurationPropertiesJsonList[configurationPropertiesIndex].AsObject());

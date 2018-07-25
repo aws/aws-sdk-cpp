@@ -34,14 +34,14 @@ TimePeriod::TimePeriod() :
 {
 }
 
-TimePeriod::TimePeriod(const JsonValue& jsonValue) : 
+TimePeriod::TimePeriod(JsonView jsonValue) : 
     m_startHasBeenSet(false),
     m_endHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TimePeriod& TimePeriod::operator =(const JsonValue& jsonValue)
+TimePeriod& TimePeriod::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Start"))
   {

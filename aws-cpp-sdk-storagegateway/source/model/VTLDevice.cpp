@@ -37,7 +37,7 @@ VTLDevice::VTLDevice() :
 {
 }
 
-VTLDevice::VTLDevice(const JsonValue& jsonValue) : 
+VTLDevice::VTLDevice(JsonView jsonValue) : 
     m_vTLDeviceARNHasBeenSet(false),
     m_vTLDeviceTypeHasBeenSet(false),
     m_vTLDeviceVendorHasBeenSet(false),
@@ -47,7 +47,7 @@ VTLDevice::VTLDevice(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VTLDevice& VTLDevice::operator =(const JsonValue& jsonValue)
+VTLDevice& VTLDevice::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VTLDeviceARN"))
   {

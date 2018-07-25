@@ -44,7 +44,7 @@ Aws::String GetCommitRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCommitRequest::GetRequestSpecificHeaders() const

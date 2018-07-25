@@ -33,13 +33,13 @@ ScalingTrigger::ScalingTrigger() :
 {
 }
 
-ScalingTrigger::ScalingTrigger(const JsonValue& jsonValue) : 
+ScalingTrigger::ScalingTrigger(JsonView jsonValue) : 
     m_cloudWatchAlarmDefinitionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ScalingTrigger& ScalingTrigger::operator =(const JsonValue& jsonValue)
+ScalingTrigger& ScalingTrigger::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CloudWatchAlarmDefinition"))
   {

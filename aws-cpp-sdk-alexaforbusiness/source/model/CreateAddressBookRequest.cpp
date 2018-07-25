@@ -52,7 +52,7 @@ Aws::String CreateAddressBookRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateAddressBookRequest::GetRequestSpecificHeaders() const

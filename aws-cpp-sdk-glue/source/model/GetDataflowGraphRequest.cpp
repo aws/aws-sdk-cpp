@@ -37,7 +37,7 @@ Aws::String GetDataflowGraphRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDataflowGraphRequest::GetRequestSpecificHeaders() const

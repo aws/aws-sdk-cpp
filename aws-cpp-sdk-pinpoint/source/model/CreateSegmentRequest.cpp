@@ -37,7 +37,7 @@ Aws::String CreateSegmentRequest::SerializePayload() const
    payload = m_writeSegmentRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

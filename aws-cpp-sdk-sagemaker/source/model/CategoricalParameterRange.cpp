@@ -34,14 +34,14 @@ CategoricalParameterRange::CategoricalParameterRange() :
 {
 }
 
-CategoricalParameterRange::CategoricalParameterRange(const JsonValue& jsonValue) : 
+CategoricalParameterRange::CategoricalParameterRange(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CategoricalParameterRange& CategoricalParameterRange::operator =(const JsonValue& jsonValue)
+CategoricalParameterRange& CategoricalParameterRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -52,7 +52,7 @@ CategoricalParameterRange& CategoricalParameterRange::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

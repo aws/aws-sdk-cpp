@@ -34,14 +34,14 @@ TableVersion::TableVersion() :
 {
 }
 
-TableVersion::TableVersion(const JsonValue& jsonValue) : 
+TableVersion::TableVersion(JsonView jsonValue) : 
     m_tableHasBeenSet(false),
     m_versionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TableVersion& TableVersion::operator =(const JsonValue& jsonValue)
+TableVersion& TableVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Table"))
   {

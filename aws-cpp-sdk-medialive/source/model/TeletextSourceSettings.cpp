@@ -33,13 +33,13 @@ TeletextSourceSettings::TeletextSourceSettings() :
 {
 }
 
-TeletextSourceSettings::TeletextSourceSettings(const JsonValue& jsonValue) : 
+TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue) : 
     m_pageNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TeletextSourceSettings& TeletextSourceSettings::operator =(const JsonValue& jsonValue)
+TeletextSourceSettings& TeletextSourceSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pageNumber"))
   {

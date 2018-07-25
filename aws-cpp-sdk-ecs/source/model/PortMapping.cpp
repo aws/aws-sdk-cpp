@@ -38,7 +38,7 @@ PortMapping::PortMapping() :
 {
 }
 
-PortMapping::PortMapping(const JsonValue& jsonValue) : 
+PortMapping::PortMapping(JsonView jsonValue) : 
     m_containerPort(0),
     m_containerPortHasBeenSet(false),
     m_hostPort(0),
@@ -49,7 +49,7 @@ PortMapping::PortMapping(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PortMapping& PortMapping::operator =(const JsonValue& jsonValue)
+PortMapping& PortMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerPort"))
   {

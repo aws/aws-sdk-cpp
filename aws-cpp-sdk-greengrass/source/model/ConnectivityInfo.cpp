@@ -37,7 +37,7 @@ ConnectivityInfo::ConnectivityInfo() :
 {
 }
 
-ConnectivityInfo::ConnectivityInfo(const JsonValue& jsonValue) : 
+ConnectivityInfo::ConnectivityInfo(JsonView jsonValue) : 
     m_hostAddressHasBeenSet(false),
     m_idHasBeenSet(false),
     m_metadataHasBeenSet(false),
@@ -47,7 +47,7 @@ ConnectivityInfo::ConnectivityInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConnectivityInfo& ConnectivityInfo::operator =(const JsonValue& jsonValue)
+ConnectivityInfo& ConnectivityInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("HostAddress"))
   {

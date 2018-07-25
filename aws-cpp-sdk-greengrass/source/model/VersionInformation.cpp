@@ -36,7 +36,7 @@ VersionInformation::VersionInformation() :
 {
 }
 
-VersionInformation::VersionInformation(const JsonValue& jsonValue) : 
+VersionInformation::VersionInformation(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -45,7 +45,7 @@ VersionInformation::VersionInformation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VersionInformation& VersionInformation::operator =(const JsonValue& jsonValue)
+VersionInformation& VersionInformation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {

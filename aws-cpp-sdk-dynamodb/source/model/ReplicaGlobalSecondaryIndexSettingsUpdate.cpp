@@ -36,7 +36,7 @@ ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUp
 {
 }
 
-ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUpdate(const JsonValue& jsonValue) : 
+ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUpdate(JsonView jsonValue) : 
     m_indexNameHasBeenSet(false),
     m_provisionedReadCapacityUnits(0),
     m_provisionedReadCapacityUnitsHasBeenSet(false),
@@ -45,7 +45,7 @@ ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUp
   *this = jsonValue;
 }
 
-ReplicaGlobalSecondaryIndexSettingsUpdate& ReplicaGlobalSecondaryIndexSettingsUpdate::operator =(const JsonValue& jsonValue)
+ReplicaGlobalSecondaryIndexSettingsUpdate& ReplicaGlobalSecondaryIndexSettingsUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexName"))
   {

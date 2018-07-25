@@ -49,7 +49,7 @@ Finding::Finding() :
 {
 }
 
-Finding::Finding(const JsonValue& jsonValue) : 
+Finding::Finding(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_confidence(0.0),
@@ -71,7 +71,7 @@ Finding::Finding(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Finding& Finding::operator =(const JsonValue& jsonValue)
+Finding& Finding::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {

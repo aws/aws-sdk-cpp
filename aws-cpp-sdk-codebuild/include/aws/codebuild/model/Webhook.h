@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Webhook();
-    Webhook(const Aws::Utils::Json::JsonValue& jsonValue);
-    Webhook& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Webhook(Aws::Utils::Json::JsonView jsonValue);
+    Webhook& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

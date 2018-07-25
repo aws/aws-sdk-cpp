@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     ConfigurationAggregator();
-    ConfigurationAggregator(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConfigurationAggregator& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConfigurationAggregator(Aws::Utils::Json::JsonView jsonValue);
+    ConfigurationAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ DescribeRoleAliasResult::DescribeRoleAliasResult(const Aws::AmazonWebServiceResu
 
 DescribeRoleAliasResult& DescribeRoleAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("roleAliasDescription"))
   {
     m_roleAliasDescription = jsonValue.GetObject("roleAliasDescription");

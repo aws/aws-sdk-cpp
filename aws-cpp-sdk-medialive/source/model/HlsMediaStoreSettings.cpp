@@ -42,7 +42,7 @@ HlsMediaStoreSettings::HlsMediaStoreSettings() :
 {
 }
 
-HlsMediaStoreSettings::HlsMediaStoreSettings(const JsonValue& jsonValue) : 
+HlsMediaStoreSettings::HlsMediaStoreSettings(JsonView jsonValue) : 
     m_connectionRetryInterval(0),
     m_connectionRetryIntervalHasBeenSet(false),
     m_filecacheDuration(0),
@@ -57,7 +57,7 @@ HlsMediaStoreSettings::HlsMediaStoreSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsMediaStoreSettings& HlsMediaStoreSettings::operator =(const JsonValue& jsonValue)
+HlsMediaStoreSettings& HlsMediaStoreSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("connectionRetryInterval"))
   {

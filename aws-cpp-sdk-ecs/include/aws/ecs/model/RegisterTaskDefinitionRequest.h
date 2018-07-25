@@ -571,8 +571,8 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but
-     * will be converted to an integer indicating the CPU units when the task
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
      * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
@@ -596,8 +596,8 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but
-     * will be converted to an integer indicating the CPU units when the task
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
      * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
@@ -621,8 +621,8 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but
-     * will be converted to an integer indicating the CPU units when the task
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
      * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
@@ -646,8 +646,8 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but
-     * will be converted to an integer indicating the CPU units when the task
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
      * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
@@ -671,8 +671,8 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but
-     * will be converted to an integer indicating the CPU units when the task
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
      * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
@@ -696,8 +696,8 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but
-     * will be converted to an integer indicating the CPU units when the task
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
      * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
@@ -721,8 +721,8 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but
-     * will be converted to an integer indicating the CPU units when the task
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
      * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
@@ -747,10 +747,10 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but will be
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <note> <p>Task-level CPU and memory parameters are ignored for
-     * Windows containers. We recommend specifying container-level resources for
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
@@ -770,10 +770,10 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but will be
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <note> <p>Task-level CPU and memory parameters are ignored for
-     * Windows containers. We recommend specifying container-level resources for
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
@@ -793,10 +793,10 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but will be
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <note> <p>Task-level CPU and memory parameters are ignored for
-     * Windows containers. We recommend specifying container-level resources for
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
@@ -816,10 +816,10 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but will be
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <note> <p>Task-level CPU and memory parameters are ignored for
-     * Windows containers. We recommend specifying container-level resources for
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
@@ -839,10 +839,10 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but will be
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <note> <p>Task-level CPU and memory parameters are ignored for
-     * Windows containers. We recommend specifying container-level resources for
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
@@ -862,10 +862,10 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but will be
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <note> <p>Task-level CPU and memory parameters are ignored for
-     * Windows containers. We recommend specifying container-level resources for
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
@@ -885,10 +885,10 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but will be
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <note> <p>Task-level CPU and memory parameters are ignored for
-     * Windows containers. We recommend specifying container-level resources for
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of

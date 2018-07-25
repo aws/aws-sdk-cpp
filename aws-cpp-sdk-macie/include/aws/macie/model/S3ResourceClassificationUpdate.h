@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Macie
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     S3ResourceClassificationUpdate();
-    S3ResourceClassificationUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3ResourceClassificationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3ResourceClassificationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    S3ResourceClassificationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

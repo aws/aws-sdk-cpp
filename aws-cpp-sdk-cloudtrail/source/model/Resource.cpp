@@ -34,14 +34,14 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(const JsonValue& jsonValue) : 
+Resource::Resource(JsonView jsonValue) : 
     m_resourceTypeHasBeenSet(false),
     m_resourceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Resource& Resource::operator =(const JsonValue& jsonValue)
+Resource& Resource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceType"))
   {

@@ -37,7 +37,7 @@ IntentMetadata::IntentMetadata() :
 {
 }
 
-IntentMetadata::IntentMetadata(const JsonValue& jsonValue) : 
+IntentMetadata::IntentMetadata(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
@@ -47,7 +47,7 @@ IntentMetadata::IntentMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IntentMetadata& IntentMetadata::operator =(const JsonValue& jsonValue)
+IntentMetadata& IntentMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

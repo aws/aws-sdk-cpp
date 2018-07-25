@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ACM
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ResourceRecord();
-    ResourceRecord(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceRecord& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceRecord(Aws::Utils::Json::JsonView jsonValue);
+    ResourceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

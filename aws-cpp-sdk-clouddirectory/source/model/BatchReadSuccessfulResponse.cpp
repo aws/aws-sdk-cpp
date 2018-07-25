@@ -45,7 +45,7 @@ BatchReadSuccessfulResponse::BatchReadSuccessfulResponse() :
 {
 }
 
-BatchReadSuccessfulResponse::BatchReadSuccessfulResponse(const JsonValue& jsonValue) : 
+BatchReadSuccessfulResponse::BatchReadSuccessfulResponse(JsonView jsonValue) : 
     m_listObjectAttributesHasBeenSet(false),
     m_listObjectChildrenHasBeenSet(false),
     m_getObjectInformationHasBeenSet(false),
@@ -63,7 +63,7 @@ BatchReadSuccessfulResponse::BatchReadSuccessfulResponse(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-BatchReadSuccessfulResponse& BatchReadSuccessfulResponse::operator =(const JsonValue& jsonValue)
+BatchReadSuccessfulResponse& BatchReadSuccessfulResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ListObjectAttributes"))
   {

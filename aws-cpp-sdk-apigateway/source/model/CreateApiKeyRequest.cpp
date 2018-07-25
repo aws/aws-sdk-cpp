@@ -86,7 +86,7 @@ Aws::String CreateApiKeyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

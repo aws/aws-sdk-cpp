@@ -100,7 +100,7 @@ Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
    payload.WithDouble("executionStoppedAt", m_executionStoppedAt.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SubmitTaskStateChangeRequest::GetRequestSpecificHeaders() const

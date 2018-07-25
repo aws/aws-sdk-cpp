@@ -35,7 +35,7 @@ SegmentGroupList::SegmentGroupList() :
 {
 }
 
-SegmentGroupList::SegmentGroupList(const JsonValue& jsonValue) : 
+SegmentGroupList::SegmentGroupList(JsonView jsonValue) : 
     m_groupsHasBeenSet(false),
     m_include(Include::NOT_SET),
     m_includeHasBeenSet(false)
@@ -43,11 +43,11 @@ SegmentGroupList::SegmentGroupList(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SegmentGroupList& SegmentGroupList::operator =(const JsonValue& jsonValue)
+SegmentGroupList& SegmentGroupList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonValue> groupsJsonList = jsonValue.GetArray("Groups");
+    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsObject());

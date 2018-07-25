@@ -43,7 +43,7 @@ FunctionConfiguration::FunctionConfiguration() :
 {
 }
 
-FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) : 
+FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) : 
     m_encodingType(EncodingType::NOT_SET),
     m_encodingTypeHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -59,7 +59,7 @@ FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonValue)
+FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EncodingType"))
   {

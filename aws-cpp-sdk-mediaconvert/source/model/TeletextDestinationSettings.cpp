@@ -33,13 +33,13 @@ TeletextDestinationSettings::TeletextDestinationSettings() :
 {
 }
 
-TeletextDestinationSettings::TeletextDestinationSettings(const JsonValue& jsonValue) : 
+TeletextDestinationSettings::TeletextDestinationSettings(JsonView jsonValue) : 
     m_pageNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TeletextDestinationSettings& TeletextDestinationSettings::operator =(const JsonValue& jsonValue)
+TeletextDestinationSettings& TeletextDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pageNumber"))
   {

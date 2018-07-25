@@ -47,7 +47,7 @@ BatchWriteOperationResponse::BatchWriteOperationResponse() :
 {
 }
 
-BatchWriteOperationResponse::BatchWriteOperationResponse(const JsonValue& jsonValue) : 
+BatchWriteOperationResponse::BatchWriteOperationResponse(JsonView jsonValue) : 
     m_createObjectHasBeenSet(false),
     m_attachObjectHasBeenSet(false),
     m_detachObjectHasBeenSet(false),
@@ -67,7 +67,7 @@ BatchWriteOperationResponse::BatchWriteOperationResponse(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-BatchWriteOperationResponse& BatchWriteOperationResponse::operator =(const JsonValue& jsonValue)
+BatchWriteOperationResponse& BatchWriteOperationResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreateObject"))
   {

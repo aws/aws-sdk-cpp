@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     InventoryDeletionStatusItem();
-    InventoryDeletionStatusItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    InventoryDeletionStatusItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InventoryDeletionStatusItem(Aws::Utils::Json::JsonView jsonValue);
+    InventoryDeletionStatusItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

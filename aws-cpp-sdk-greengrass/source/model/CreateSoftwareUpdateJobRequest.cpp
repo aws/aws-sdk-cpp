@@ -79,7 +79,7 @@ Aws::String CreateSoftwareUpdateJobRequest::SerializePayload() const
    payload.WithString("UpdateTargetsOperatingSystem", UpdateTargetsOperatingSystemMapper::GetNameForUpdateTargetsOperatingSystem(m_updateTargetsOperatingSystem));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateSoftwareUpdateJobRequest::GetRequestSpecificHeaders() const

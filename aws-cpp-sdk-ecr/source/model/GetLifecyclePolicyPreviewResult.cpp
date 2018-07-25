@@ -39,7 +39,7 @@ GetLifecyclePolicyPreviewResult::GetLifecyclePolicyPreviewResult(const Aws::Amaz
 
 GetLifecyclePolicyPreviewResult& GetLifecyclePolicyPreviewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
@@ -72,7 +72,7 @@ GetLifecyclePolicyPreviewResult& GetLifecyclePolicyPreviewResult::operator =(con
 
   if(jsonValue.ValueExists("previewResults"))
   {
-    Array<JsonValue> previewResultsJsonList = jsonValue.GetArray("previewResults");
+    Array<JsonView> previewResultsJsonList = jsonValue.GetArray("previewResults");
     for(unsigned previewResultsIndex = 0; previewResultsIndex < previewResultsJsonList.GetLength(); ++previewResultsIndex)
     {
       m_previewResults.push_back(previewResultsJsonList[previewResultsIndex].AsObject());

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     OTAUpdateFile();
-    OTAUpdateFile(const Aws::Utils::Json::JsonValue& jsonValue);
-    OTAUpdateFile& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OTAUpdateFile(Aws::Utils::Json::JsonView jsonValue);
+    OTAUpdateFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

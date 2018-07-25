@@ -35,7 +35,7 @@ ReferenceDataSource::ReferenceDataSource() :
 {
 }
 
-ReferenceDataSource::ReferenceDataSource(const JsonValue& jsonValue) : 
+ReferenceDataSource::ReferenceDataSource(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_s3ReferenceDataSourceHasBeenSet(false),
     m_referenceSchemaHasBeenSet(false)
@@ -43,7 +43,7 @@ ReferenceDataSource::ReferenceDataSource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReferenceDataSource& ReferenceDataSource::operator =(const JsonValue& jsonValue)
+ReferenceDataSource& ReferenceDataSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TableName"))
   {

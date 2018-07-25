@@ -37,7 +37,7 @@ GetSchemaAsJsonResult::GetSchemaAsJsonResult(const Aws::AmazonWebServiceResult<J
 
 GetSchemaAsJsonResult& GetSchemaAsJsonResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");

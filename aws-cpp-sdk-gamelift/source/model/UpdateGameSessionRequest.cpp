@@ -66,7 +66,7 @@ Aws::String UpdateGameSessionRequest::SerializePayload() const
    payload.WithString("ProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_protectionPolicy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateGameSessionRequest::GetRequestSpecificHeaders() const

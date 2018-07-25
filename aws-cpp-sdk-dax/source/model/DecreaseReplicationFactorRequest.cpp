@@ -69,7 +69,7 @@ Aws::String DecreaseReplicationFactorRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DecreaseReplicationFactorRequest::GetRequestSpecificHeaders() const

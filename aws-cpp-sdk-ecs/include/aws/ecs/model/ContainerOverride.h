@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ContainerOverride();
-    ContainerOverride(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContainerOverride& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContainerOverride(Aws::Utils::Json::JsonView jsonValue);
+    ContainerOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

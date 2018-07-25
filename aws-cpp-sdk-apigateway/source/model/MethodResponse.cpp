@@ -35,7 +35,7 @@ MethodResponse::MethodResponse() :
 {
 }
 
-MethodResponse::MethodResponse(const JsonValue& jsonValue) : 
+MethodResponse::MethodResponse(JsonView jsonValue) : 
     m_statusCodeHasBeenSet(false),
     m_responseParametersHasBeenSet(false),
     m_responseModelsHasBeenSet(false)
@@ -43,7 +43,7 @@ MethodResponse::MethodResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MethodResponse& MethodResponse::operator =(const JsonValue& jsonValue)
+MethodResponse& MethodResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("statusCode"))
   {
@@ -54,7 +54,7 @@ MethodResponse& MethodResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("responseParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
     for(auto& responseParametersItem : responseParametersJsonMap)
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsBool();
@@ -64,7 +64,7 @@ MethodResponse& MethodResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("responseModels"))
   {
-    Aws::Map<Aws::String, JsonValue> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
     for(auto& responseModelsItem : responseModelsJsonMap)
     {
       m_responseModels[responseModelsItem.first] = responseModelsItem.second.AsString();

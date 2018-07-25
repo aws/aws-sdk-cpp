@@ -171,7 +171,7 @@ Aws::String ScanRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ScanRequest::GetRequestSpecificHeaders() const

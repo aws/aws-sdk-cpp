@@ -40,7 +40,7 @@ HlsBasicPutSettings::HlsBasicPutSettings() :
 {
 }
 
-HlsBasicPutSettings::HlsBasicPutSettings(const JsonValue& jsonValue) : 
+HlsBasicPutSettings::HlsBasicPutSettings(JsonView jsonValue) : 
     m_connectionRetryInterval(0),
     m_connectionRetryIntervalHasBeenSet(false),
     m_filecacheDuration(0),
@@ -53,7 +53,7 @@ HlsBasicPutSettings::HlsBasicPutSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsBasicPutSettings& HlsBasicPutSettings::operator =(const JsonValue& jsonValue)
+HlsBasicPutSettings& HlsBasicPutSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("connectionRetryInterval"))
   {

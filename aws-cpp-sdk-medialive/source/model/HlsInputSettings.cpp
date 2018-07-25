@@ -40,7 +40,7 @@ HlsInputSettings::HlsInputSettings() :
 {
 }
 
-HlsInputSettings::HlsInputSettings(const JsonValue& jsonValue) : 
+HlsInputSettings::HlsInputSettings(JsonView jsonValue) : 
     m_bandwidth(0),
     m_bandwidthHasBeenSet(false),
     m_bufferSegments(0),
@@ -53,7 +53,7 @@ HlsInputSettings::HlsInputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsInputSettings& HlsInputSettings::operator =(const JsonValue& jsonValue)
+HlsInputSettings& HlsInputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bandwidth"))
   {

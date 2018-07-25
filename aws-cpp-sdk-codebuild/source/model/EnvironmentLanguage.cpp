@@ -35,7 +35,7 @@ EnvironmentLanguage::EnvironmentLanguage() :
 {
 }
 
-EnvironmentLanguage::EnvironmentLanguage(const JsonValue& jsonValue) : 
+EnvironmentLanguage::EnvironmentLanguage(JsonView jsonValue) : 
     m_language(LanguageType::NOT_SET),
     m_languageHasBeenSet(false),
     m_imagesHasBeenSet(false)
@@ -43,7 +43,7 @@ EnvironmentLanguage::EnvironmentLanguage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EnvironmentLanguage& EnvironmentLanguage::operator =(const JsonValue& jsonValue)
+EnvironmentLanguage& EnvironmentLanguage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("language"))
   {
@@ -54,7 +54,7 @@ EnvironmentLanguage& EnvironmentLanguage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("images"))
   {
-    Array<JsonValue> imagesJsonList = jsonValue.GetArray("images");
+    Array<JsonView> imagesJsonList = jsonValue.GetArray("images");
     for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
     {
       m_images.push_back(imagesJsonList[imagesIndex].AsObject());

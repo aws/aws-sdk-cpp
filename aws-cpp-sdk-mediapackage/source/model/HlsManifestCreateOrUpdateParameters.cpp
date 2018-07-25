@@ -44,7 +44,7 @@ HlsManifestCreateOrUpdateParameters::HlsManifestCreateOrUpdateParameters() :
 {
 }
 
-HlsManifestCreateOrUpdateParameters::HlsManifestCreateOrUpdateParameters(const JsonValue& jsonValue) : 
+HlsManifestCreateOrUpdateParameters::HlsManifestCreateOrUpdateParameters(JsonView jsonValue) : 
     m_adMarkers(AdMarkers::NOT_SET),
     m_adMarkersHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -61,7 +61,7 @@ HlsManifestCreateOrUpdateParameters::HlsManifestCreateOrUpdateParameters(const J
   *this = jsonValue;
 }
 
-HlsManifestCreateOrUpdateParameters& HlsManifestCreateOrUpdateParameters::operator =(const JsonValue& jsonValue)
+HlsManifestCreateOrUpdateParameters& HlsManifestCreateOrUpdateParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adMarkers"))
   {

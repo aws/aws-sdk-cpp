@@ -46,7 +46,7 @@ ChannelSummary::ChannelSummary() :
 {
 }
 
-ChannelSummary::ChannelSummary(const JsonValue& jsonValue) : 
+ChannelSummary::ChannelSummary(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_egressEndpointsHasBeenSet(false),
@@ -65,7 +65,7 @@ ChannelSummary::ChannelSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ChannelSummary& ChannelSummary::operator =(const JsonValue& jsonValue)
+ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -76,7 +76,7 @@ ChannelSummary& ChannelSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonValue> destinationsJsonList = jsonValue.GetArray("destinations");
+    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -86,7 +86,7 @@ ChannelSummary& ChannelSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("egressEndpoints"))
   {
-    Array<JsonValue> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
+    Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
     for(unsigned egressEndpointsIndex = 0; egressEndpointsIndex < egressEndpointsJsonList.GetLength(); ++egressEndpointsIndex)
     {
       m_egressEndpoints.push_back(egressEndpointsJsonList[egressEndpointsIndex].AsObject());
@@ -103,7 +103,7 @@ ChannelSummary& ChannelSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("inputAttachments"))
   {
-    Array<JsonValue> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
+    Array<JsonView> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
     for(unsigned inputAttachmentsIndex = 0; inputAttachmentsIndex < inputAttachmentsJsonList.GetLength(); ++inputAttachmentsIndex)
     {
       m_inputAttachments.push_back(inputAttachmentsJsonList[inputAttachmentsIndex].AsObject());

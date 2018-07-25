@@ -35,7 +35,7 @@ ExportTaskStatus::ExportTaskStatus() :
 {
 }
 
-ExportTaskStatus::ExportTaskStatus(const JsonValue& jsonValue) : 
+ExportTaskStatus::ExportTaskStatus(JsonView jsonValue) : 
     m_code(ExportTaskStatusCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ ExportTaskStatus::ExportTaskStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExportTaskStatus& ExportTaskStatus::operator =(const JsonValue& jsonValue)
+ExportTaskStatus& ExportTaskStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("code"))
   {

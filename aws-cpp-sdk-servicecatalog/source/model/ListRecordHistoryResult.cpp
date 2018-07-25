@@ -37,10 +37,10 @@ ListRecordHistoryResult::ListRecordHistoryResult(const Aws::AmazonWebServiceResu
 
 ListRecordHistoryResult& ListRecordHistoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RecordDetails"))
   {
-    Array<JsonValue> recordDetailsJsonList = jsonValue.GetArray("RecordDetails");
+    Array<JsonView> recordDetailsJsonList = jsonValue.GetArray("RecordDetails");
     for(unsigned recordDetailsIndex = 0; recordDetailsIndex < recordDetailsJsonList.GetLength(); ++recordDetailsIndex)
     {
       m_recordDetails.push_back(recordDetailsJsonList[recordDetailsIndex].AsObject());

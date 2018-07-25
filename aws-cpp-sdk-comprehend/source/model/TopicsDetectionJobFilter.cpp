@@ -37,7 +37,7 @@ TopicsDetectionJobFilter::TopicsDetectionJobFilter() :
 {
 }
 
-TopicsDetectionJobFilter::TopicsDetectionJobFilter(const JsonValue& jsonValue) : 
+TopicsDetectionJobFilter::TopicsDetectionJobFilter(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
@@ -47,7 +47,7 @@ TopicsDetectionJobFilter::TopicsDetectionJobFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TopicsDetectionJobFilter& TopicsDetectionJobFilter::operator =(const JsonValue& jsonValue)
+TopicsDetectionJobFilter& TopicsDetectionJobFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

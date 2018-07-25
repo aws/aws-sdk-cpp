@@ -33,17 +33,17 @@ PatchRuleGroup::PatchRuleGroup() :
 {
 }
 
-PatchRuleGroup::PatchRuleGroup(const JsonValue& jsonValue) : 
+PatchRuleGroup::PatchRuleGroup(JsonView jsonValue) : 
     m_patchRulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PatchRuleGroup& PatchRuleGroup::operator =(const JsonValue& jsonValue)
+PatchRuleGroup& PatchRuleGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PatchRules"))
   {
-    Array<JsonValue> patchRulesJsonList = jsonValue.GetArray("PatchRules");
+    Array<JsonView> patchRulesJsonList = jsonValue.GetArray("PatchRules");
     for(unsigned patchRulesIndex = 0; patchRulesIndex < patchRulesJsonList.GetLength(); ++patchRulesIndex)
     {
       m_patchRules.push_back(patchRulesJsonList[patchRulesIndex].AsObject());

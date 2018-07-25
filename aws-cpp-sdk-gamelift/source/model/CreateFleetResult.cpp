@@ -37,7 +37,7 @@ CreateFleetResult::CreateFleetResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateFleetResult& CreateFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FleetAttributes"))
   {
     m_fleetAttributes = jsonValue.GetObject("FleetAttributes");

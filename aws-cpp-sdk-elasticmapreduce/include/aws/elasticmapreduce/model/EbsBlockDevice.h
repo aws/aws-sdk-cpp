@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     EbsBlockDevice();
-    EbsBlockDevice(const Aws::Utils::Json::JsonValue& jsonValue);
-    EbsBlockDevice& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EbsBlockDevice(Aws::Utils::Json::JsonView jsonValue);
+    EbsBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Shield
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     Mitigation();
-    Mitigation(const Aws::Utils::Json::JsonValue& jsonValue);
-    Mitigation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Mitigation(Aws::Utils::Json::JsonView jsonValue);
+    Mitigation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

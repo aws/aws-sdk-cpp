@@ -37,10 +37,10 @@ DescribeMetricFiltersResult::DescribeMetricFiltersResult(const Aws::AmazonWebSer
 
 DescribeMetricFiltersResult& DescribeMetricFiltersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("metricFilters"))
   {
-    Array<JsonValue> metricFiltersJsonList = jsonValue.GetArray("metricFilters");
+    Array<JsonView> metricFiltersJsonList = jsonValue.GetArray("metricFilters");
     for(unsigned metricFiltersIndex = 0; metricFiltersIndex < metricFiltersJsonList.GetLength(); ++metricFiltersIndex)
     {
       m_metricFilters.push_back(metricFiltersJsonList[metricFiltersIndex].AsObject());

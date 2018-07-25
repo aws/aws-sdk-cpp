@@ -35,7 +35,7 @@ S3ResourceClassificationUpdate::S3ResourceClassificationUpdate() :
 {
 }
 
-S3ResourceClassificationUpdate::S3ResourceClassificationUpdate(const JsonValue& jsonValue) : 
+S3ResourceClassificationUpdate::S3ResourceClassificationUpdate(JsonView jsonValue) : 
     m_bucketNameHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_classificationTypeUpdateHasBeenSet(false)
@@ -43,7 +43,7 @@ S3ResourceClassificationUpdate::S3ResourceClassificationUpdate(const JsonValue& 
   *this = jsonValue;
 }
 
-S3ResourceClassificationUpdate& S3ResourceClassificationUpdate::operator =(const JsonValue& jsonValue)
+S3ResourceClassificationUpdate& S3ResourceClassificationUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bucketName"))
   {

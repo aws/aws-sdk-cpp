@@ -52,7 +52,7 @@ Aws::String ListTargetsForPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListTargetsForPolicyRequest::GetRequestSpecificHeaders() const

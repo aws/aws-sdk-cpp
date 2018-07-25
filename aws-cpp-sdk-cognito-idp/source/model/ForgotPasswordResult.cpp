@@ -37,7 +37,7 @@ ForgotPasswordResult::ForgotPasswordResult(const Aws::AmazonWebServiceResult<Jso
 
 ForgotPasswordResult& ForgotPasswordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CodeDeliveryDetails"))
   {
     m_codeDeliveryDetails = jsonValue.GetObject("CodeDeliveryDetails");

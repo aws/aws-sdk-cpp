@@ -35,7 +35,7 @@ FilterActivity::FilterActivity() :
 {
 }
 
-FilterActivity::FilterActivity(const JsonValue& jsonValue) : 
+FilterActivity::FilterActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_nextHasBeenSet(false)
@@ -43,7 +43,7 @@ FilterActivity::FilterActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FilterActivity& FilterActivity::operator =(const JsonValue& jsonValue)
+FilterActivity& FilterActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

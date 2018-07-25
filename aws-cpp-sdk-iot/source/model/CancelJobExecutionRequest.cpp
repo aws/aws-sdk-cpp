@@ -57,7 +57,7 @@ Aws::String CancelJobExecutionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void CancelJobExecutionRequest::AddQueryStringParameters(URI& uri) const

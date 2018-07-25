@@ -39,7 +39,7 @@ GetAssessmentReportResult::GetAssessmentReportResult(const Aws::AmazonWebService
 
 GetAssessmentReportResult& GetAssessmentReportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReportStatusMapper::GetReportStatusForName(jsonValue.GetString("status"));

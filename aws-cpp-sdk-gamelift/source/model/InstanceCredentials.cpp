@@ -34,14 +34,14 @@ InstanceCredentials::InstanceCredentials() :
 {
 }
 
-InstanceCredentials::InstanceCredentials(const JsonValue& jsonValue) : 
+InstanceCredentials::InstanceCredentials(JsonView jsonValue) : 
     m_userNameHasBeenSet(false),
     m_secretHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceCredentials& InstanceCredentials::operator =(const JsonValue& jsonValue)
+InstanceCredentials& InstanceCredentials::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserName"))
   {

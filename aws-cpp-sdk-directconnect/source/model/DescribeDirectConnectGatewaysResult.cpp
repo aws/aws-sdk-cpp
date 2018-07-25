@@ -37,10 +37,10 @@ DescribeDirectConnectGatewaysResult::DescribeDirectConnectGatewaysResult(const A
 
 DescribeDirectConnectGatewaysResult& DescribeDirectConnectGatewaysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("directConnectGateways"))
   {
-    Array<JsonValue> directConnectGatewaysJsonList = jsonValue.GetArray("directConnectGateways");
+    Array<JsonView> directConnectGatewaysJsonList = jsonValue.GetArray("directConnectGateways");
     for(unsigned directConnectGatewaysIndex = 0; directConnectGatewaysIndex < directConnectGatewaysJsonList.GetLength(); ++directConnectGatewaysIndex)
     {
       m_directConnectGateways.push_back(directConnectGatewaysJsonList[directConnectGatewaysIndex].AsObject());

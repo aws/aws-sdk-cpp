@@ -43,7 +43,7 @@ DescribeChannelResult::DescribeChannelResult(const Aws::AmazonWebServiceResult<J
 
 DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -52,7 +52,7 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonValue> destinationsJsonList = jsonValue.GetArray("destinations");
+    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -61,7 +61,7 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("egressEndpoints"))
   {
-    Array<JsonValue> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
+    Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
     for(unsigned egressEndpointsIndex = 0; egressEndpointsIndex < egressEndpointsJsonList.GetLength(); ++egressEndpointsIndex)
     {
       m_egressEndpoints.push_back(egressEndpointsJsonList[egressEndpointsIndex].AsObject());
@@ -82,7 +82,7 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("inputAttachments"))
   {
-    Array<JsonValue> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
+    Array<JsonView> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
     for(unsigned inputAttachmentsIndex = 0; inputAttachmentsIndex < inputAttachmentsJsonList.GetLength(); ++inputAttachmentsIndex)
     {
       m_inputAttachments.push_back(inputAttachmentsJsonList[inputAttachmentsIndex].AsObject());

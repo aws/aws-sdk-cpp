@@ -35,7 +35,7 @@ NotifyEmailType::NotifyEmailType() :
 {
 }
 
-NotifyEmailType::NotifyEmailType(const JsonValue& jsonValue) : 
+NotifyEmailType::NotifyEmailType(JsonView jsonValue) : 
     m_subjectHasBeenSet(false),
     m_htmlBodyHasBeenSet(false),
     m_textBodyHasBeenSet(false)
@@ -43,7 +43,7 @@ NotifyEmailType::NotifyEmailType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NotifyEmailType& NotifyEmailType::operator =(const JsonValue& jsonValue)
+NotifyEmailType& NotifyEmailType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Subject"))
   {

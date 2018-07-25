@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MachineLearning
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     RDSDataSpec();
-    RDSDataSpec(const Aws::Utils::Json::JsonValue& jsonValue);
-    RDSDataSpec& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RDSDataSpec(Aws::Utils::Json::JsonView jsonValue);
+    RDSDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

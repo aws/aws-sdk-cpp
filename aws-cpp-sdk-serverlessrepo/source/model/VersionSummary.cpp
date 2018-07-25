@@ -36,7 +36,7 @@ VersionSummary::VersionSummary() :
 {
 }
 
-VersionSummary::VersionSummary(const JsonValue& jsonValue) : 
+VersionSummary::VersionSummary(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_semanticVersionHasBeenSet(false),
@@ -45,7 +45,7 @@ VersionSummary::VersionSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VersionSummary& VersionSummary::operator =(const JsonValue& jsonValue)
+VersionSummary& VersionSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("applicationId"))
   {

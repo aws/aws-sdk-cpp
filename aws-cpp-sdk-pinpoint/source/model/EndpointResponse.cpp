@@ -48,7 +48,7 @@ EndpointResponse::EndpointResponse() :
 {
 }
 
-EndpointResponse::EndpointResponse(const JsonValue& jsonValue) : 
+EndpointResponse::EndpointResponse(JsonView jsonValue) : 
     m_addressHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_attributesHasBeenSet(false),
@@ -69,7 +69,7 @@ EndpointResponse::EndpointResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EndpointResponse& EndpointResponse::operator =(const JsonValue& jsonValue)
+EndpointResponse& EndpointResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Address"))
   {
@@ -87,10 +87,10 @@ EndpointResponse& EndpointResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
-      Array<JsonValue> listOf__stringJsonList = attributesItem.second.AsArray();
+      Array<JsonView> listOf__stringJsonList = attributesItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)
@@ -160,7 +160,7 @@ EndpointResponse& EndpointResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Metrics"))
   {
-    Aws::Map<Aws::String, JsonValue> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
     for(auto& metricsItem : metricsJsonMap)
     {
       m_metrics[metricsItem.first] = metricsItem.second.AsDouble();

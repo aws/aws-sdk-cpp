@@ -37,7 +37,7 @@ CreateStreamProcessorResult::CreateStreamProcessorResult(const Aws::AmazonWebSer
 
 CreateStreamProcessorResult& CreateStreamProcessorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StreamProcessorArn"))
   {
     m_streamProcessorArn = jsonValue.GetString("StreamProcessorArn");

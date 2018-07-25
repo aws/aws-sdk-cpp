@@ -35,7 +35,7 @@ LocalSecondaryIndexInfo::LocalSecondaryIndexInfo() :
 {
 }
 
-LocalSecondaryIndexInfo::LocalSecondaryIndexInfo(const JsonValue& jsonValue) : 
+LocalSecondaryIndexInfo::LocalSecondaryIndexInfo(JsonView jsonValue) : 
     m_indexNameHasBeenSet(false),
     m_keySchemaHasBeenSet(false),
     m_projectionHasBeenSet(false)
@@ -43,7 +43,7 @@ LocalSecondaryIndexInfo::LocalSecondaryIndexInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LocalSecondaryIndexInfo& LocalSecondaryIndexInfo::operator =(const JsonValue& jsonValue)
+LocalSecondaryIndexInfo& LocalSecondaryIndexInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexName"))
   {
@@ -54,7 +54,7 @@ LocalSecondaryIndexInfo& LocalSecondaryIndexInfo::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());

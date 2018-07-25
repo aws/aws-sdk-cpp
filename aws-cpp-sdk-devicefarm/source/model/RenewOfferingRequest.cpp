@@ -45,7 +45,7 @@ Aws::String RenewOfferingRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RenewOfferingRequest::GetRequestSpecificHeaders() const

@@ -73,7 +73,7 @@ Aws::String UpdateSecretRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateSecretRequest::GetRequestSpecificHeaders() const

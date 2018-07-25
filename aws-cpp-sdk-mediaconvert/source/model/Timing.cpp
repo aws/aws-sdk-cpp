@@ -35,7 +35,7 @@ Timing::Timing() :
 {
 }
 
-Timing::Timing(const JsonValue& jsonValue) : 
+Timing::Timing(JsonView jsonValue) : 
     m_finishTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_submitTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ Timing::Timing(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Timing& Timing::operator =(const JsonValue& jsonValue)
+Timing& Timing::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("finishTime"))
   {

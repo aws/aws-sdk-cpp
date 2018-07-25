@@ -82,7 +82,7 @@ Aws::String GetCostAndUsageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCostAndUsageRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ StageExecution::StageExecution() :
 {
 }
 
-StageExecution::StageExecution(const JsonValue& jsonValue) : 
+StageExecution::StageExecution(JsonView jsonValue) : 
     m_pipelineExecutionIdHasBeenSet(false),
     m_status(StageExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false)
@@ -43,7 +43,7 @@ StageExecution::StageExecution(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StageExecution& StageExecution::operator =(const JsonValue& jsonValue)
+StageExecution& StageExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {

@@ -53,7 +53,7 @@ JobMetadata::JobMetadata() :
 {
 }
 
-JobMetadata::JobMetadata(const JsonValue& jsonValue) : 
+JobMetadata::JobMetadata(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobState(JobState::NOT_SET),
     m_jobStateHasBeenSet(false),
@@ -79,7 +79,7 @@ JobMetadata::JobMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobMetadata& JobMetadata::operator =(const JsonValue& jsonValue)
+JobMetadata& JobMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobId"))
   {

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     InstanceNetworking();
-    InstanceNetworking(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceNetworking& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceNetworking(Aws::Utils::Json::JsonView jsonValue);
+    InstanceNetworking& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

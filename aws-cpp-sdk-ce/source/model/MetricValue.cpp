@@ -34,14 +34,14 @@ MetricValue::MetricValue() :
 {
 }
 
-MetricValue::MetricValue(const JsonValue& jsonValue) : 
+MetricValue::MetricValue(JsonView jsonValue) : 
     m_amountHasBeenSet(false),
     m_unitHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MetricValue& MetricValue::operator =(const JsonValue& jsonValue)
+MetricValue& MetricValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Amount"))
   {

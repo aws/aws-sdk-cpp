@@ -80,7 +80,7 @@ Aws::String CreateEnvironmentEC2Request::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateEnvironmentEC2Request::GetRequestSpecificHeaders() const

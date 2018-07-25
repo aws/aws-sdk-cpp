@@ -35,7 +35,7 @@ GetConnectionsFilter::GetConnectionsFilter() :
 {
 }
 
-GetConnectionsFilter::GetConnectionsFilter(const JsonValue& jsonValue) : 
+GetConnectionsFilter::GetConnectionsFilter(JsonView jsonValue) : 
     m_matchCriteriaHasBeenSet(false),
     m_connectionType(ConnectionType::NOT_SET),
     m_connectionTypeHasBeenSet(false)
@@ -43,11 +43,11 @@ GetConnectionsFilter::GetConnectionsFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GetConnectionsFilter& GetConnectionsFilter::operator =(const JsonValue& jsonValue)
+GetConnectionsFilter& GetConnectionsFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MatchCriteria"))
   {
-    Array<JsonValue> matchCriteriaJsonList = jsonValue.GetArray("MatchCriteria");
+    Array<JsonView> matchCriteriaJsonList = jsonValue.GetArray("MatchCriteria");
     for(unsigned matchCriteriaIndex = 0; matchCriteriaIndex < matchCriteriaJsonList.GetLength(); ++matchCriteriaIndex)
     {
       m_matchCriteria.push_back(matchCriteriaJsonList[matchCriteriaIndex].AsString());

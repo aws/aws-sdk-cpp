@@ -37,7 +37,7 @@ Action::Action() :
 {
 }
 
-Action::Action(const JsonValue& jsonValue) : 
+Action::Action(JsonView jsonValue) : 
     m_actionTypeHasBeenSet(false),
     m_awsApiCallActionHasBeenSet(false),
     m_dnsRequestActionHasBeenSet(false),
@@ -47,7 +47,7 @@ Action::Action(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Action& Action::operator =(const JsonValue& jsonValue)
+Action& Action::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actionType"))
   {

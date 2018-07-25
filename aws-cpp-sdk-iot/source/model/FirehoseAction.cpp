@@ -35,7 +35,7 @@ FirehoseAction::FirehoseAction() :
 {
 }
 
-FirehoseAction::FirehoseAction(const JsonValue& jsonValue) : 
+FirehoseAction::FirehoseAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_deliveryStreamNameHasBeenSet(false),
     m_separatorHasBeenSet(false)
@@ -43,7 +43,7 @@ FirehoseAction::FirehoseAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FirehoseAction& FirehoseAction::operator =(const JsonValue& jsonValue)
+FirehoseAction& FirehoseAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

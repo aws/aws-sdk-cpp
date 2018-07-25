@@ -37,10 +37,10 @@ DescribeMaintenanceWindowExecutionsResult::DescribeMaintenanceWindowExecutionsRe
 
 DescribeMaintenanceWindowExecutionsResult& DescribeMaintenanceWindowExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WindowExecutions"))
   {
-    Array<JsonValue> windowExecutionsJsonList = jsonValue.GetArray("WindowExecutions");
+    Array<JsonView> windowExecutionsJsonList = jsonValue.GetArray("WindowExecutions");
     for(unsigned windowExecutionsIndex = 0; windowExecutionsIndex < windowExecutionsJsonList.GetLength(); ++windowExecutionsIndex)
     {
       m_windowExecutions.push_back(windowExecutionsJsonList[windowExecutionsIndex].AsObject());

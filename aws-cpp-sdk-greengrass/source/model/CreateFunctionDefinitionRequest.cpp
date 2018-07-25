@@ -46,7 +46,7 @@ Aws::String CreateFunctionDefinitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateFunctionDefinitionRequest::GetRequestSpecificHeaders() const

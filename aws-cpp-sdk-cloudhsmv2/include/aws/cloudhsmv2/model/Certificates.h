@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudHSMV2
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Certificates();
-    Certificates(const Aws::Utils::Json::JsonValue& jsonValue);
-    Certificates& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Certificates(Aws::Utils::Json::JsonView jsonValue);
+    Certificates& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

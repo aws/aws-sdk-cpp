@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Predecessor();
-    Predecessor(const Aws::Utils::Json::JsonValue& jsonValue);
-    Predecessor& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Predecessor(Aws::Utils::Json::JsonView jsonValue);
+    Predecessor& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

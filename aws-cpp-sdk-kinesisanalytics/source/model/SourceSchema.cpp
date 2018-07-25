@@ -35,7 +35,7 @@ SourceSchema::SourceSchema() :
 {
 }
 
-SourceSchema::SourceSchema(const JsonValue& jsonValue) : 
+SourceSchema::SourceSchema(JsonView jsonValue) : 
     m_recordFormatHasBeenSet(false),
     m_recordEncodingHasBeenSet(false),
     m_recordColumnsHasBeenSet(false)
@@ -43,7 +43,7 @@ SourceSchema::SourceSchema(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SourceSchema& SourceSchema::operator =(const JsonValue& jsonValue)
+SourceSchema& SourceSchema::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RecordFormat"))
   {
@@ -61,7 +61,7 @@ SourceSchema& SourceSchema::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("RecordColumns"))
   {
-    Array<JsonValue> recordColumnsJsonList = jsonValue.GetArray("RecordColumns");
+    Array<JsonView> recordColumnsJsonList = jsonValue.GetArray("RecordColumns");
     for(unsigned recordColumnsIndex = 0; recordColumnsIndex < recordColumnsJsonList.GetLength(); ++recordColumnsIndex)
     {
       m_recordColumns.push_back(recordColumnsJsonList[recordColumnsIndex].AsObject());

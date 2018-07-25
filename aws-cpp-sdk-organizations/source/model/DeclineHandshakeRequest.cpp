@@ -37,7 +37,7 @@ Aws::String DeclineHandshakeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeclineHandshakeRequest::GetRequestSpecificHeaders() const

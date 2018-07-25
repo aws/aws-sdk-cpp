@@ -53,7 +53,7 @@ Aws::String DetectLabelsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DetectLabelsRequest::GetRequestSpecificHeaders() const

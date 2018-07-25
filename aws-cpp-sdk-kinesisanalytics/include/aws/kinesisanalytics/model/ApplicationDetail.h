@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisAnalytics
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     ApplicationDetail();
-    ApplicationDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    ApplicationDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
+    ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -33,13 +33,13 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(const JsonValue& jsonValue) : 
+Resource::Resource(JsonView jsonValue) : 
     m_idHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Resource& Resource::operator =(const JsonValue& jsonValue)
+Resource& Resource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

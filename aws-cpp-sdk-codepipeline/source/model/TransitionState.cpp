@@ -37,7 +37,7 @@ TransitionState::TransitionState() :
 {
 }
 
-TransitionState::TransitionState(const JsonValue& jsonValue) : 
+TransitionState::TransitionState(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_lastChangedByHasBeenSet(false),
@@ -47,7 +47,7 @@ TransitionState::TransitionState(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TransitionState& TransitionState::operator =(const JsonValue& jsonValue)
+TransitionState& TransitionState::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("enabled"))
   {

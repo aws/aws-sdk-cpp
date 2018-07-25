@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     LocalSecondaryIndexInfo();
-    LocalSecondaryIndexInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    LocalSecondaryIndexInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LocalSecondaryIndexInfo(Aws::Utils::Json::JsonView jsonValue);
+    LocalSecondaryIndexInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

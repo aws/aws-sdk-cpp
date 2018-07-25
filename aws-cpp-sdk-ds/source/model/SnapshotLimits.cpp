@@ -38,7 +38,7 @@ SnapshotLimits::SnapshotLimits() :
 {
 }
 
-SnapshotLimits::SnapshotLimits(const JsonValue& jsonValue) : 
+SnapshotLimits::SnapshotLimits(JsonView jsonValue) : 
     m_manualSnapshotsLimit(0),
     m_manualSnapshotsLimitHasBeenSet(false),
     m_manualSnapshotsCurrentCount(0),
@@ -49,7 +49,7 @@ SnapshotLimits::SnapshotLimits(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SnapshotLimits& SnapshotLimits::operator =(const JsonValue& jsonValue)
+SnapshotLimits& SnapshotLimits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ManualSnapshotsLimit"))
   {

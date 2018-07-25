@@ -37,7 +37,7 @@ Aws::String DeleteRetentionPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteRetentionPolicyRequest::GetRequestSpecificHeaders() const

@@ -37,10 +37,10 @@ ListBuildsResult::ListBuildsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 ListBuildsResult& ListBuildsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Builds"))
   {
-    Array<JsonValue> buildsJsonList = jsonValue.GetArray("Builds");
+    Array<JsonView> buildsJsonList = jsonValue.GetArray("Builds");
     for(unsigned buildsIndex = 0; buildsIndex < buildsJsonList.GetLength(); ++buildsIndex)
     {
       m_builds.push_back(buildsJsonList[buildsIndex].AsObject());

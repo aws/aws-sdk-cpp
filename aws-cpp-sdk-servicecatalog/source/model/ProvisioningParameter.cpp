@@ -34,14 +34,14 @@ ProvisioningParameter::ProvisioningParameter() :
 {
 }
 
-ProvisioningParameter::ProvisioningParameter(const JsonValue& jsonValue) : 
+ProvisioningParameter::ProvisioningParameter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ProvisioningParameter& ProvisioningParameter::operator =(const JsonValue& jsonValue)
+ProvisioningParameter& ProvisioningParameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

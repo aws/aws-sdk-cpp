@@ -34,14 +34,14 @@ ComputeCapacity::ComputeCapacity() :
 {
 }
 
-ComputeCapacity::ComputeCapacity(const JsonValue& jsonValue) : 
+ComputeCapacity::ComputeCapacity(JsonView jsonValue) : 
     m_desiredInstances(0),
     m_desiredInstancesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ComputeCapacity& ComputeCapacity::operator =(const JsonValue& jsonValue)
+ComputeCapacity& ComputeCapacity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DesiredInstances"))
   {

@@ -52,7 +52,7 @@ Aws::String UpdateTagOptionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateTagOptionRequest::GetRequestSpecificHeaders() const

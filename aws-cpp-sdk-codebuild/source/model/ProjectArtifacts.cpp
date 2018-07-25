@@ -41,7 +41,7 @@ ProjectArtifacts::ProjectArtifacts() :
 {
 }
 
-ProjectArtifacts::ProjectArtifacts(const JsonValue& jsonValue) : 
+ProjectArtifacts::ProjectArtifacts(JsonView jsonValue) : 
     m_type(ArtifactsType::NOT_SET),
     m_typeHasBeenSet(false),
     m_locationHasBeenSet(false),
@@ -55,7 +55,7 @@ ProjectArtifacts::ProjectArtifacts(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProjectArtifacts& ProjectArtifacts::operator =(const JsonValue& jsonValue)
+ProjectArtifacts& ProjectArtifacts::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

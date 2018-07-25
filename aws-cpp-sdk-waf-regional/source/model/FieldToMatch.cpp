@@ -35,7 +35,7 @@ FieldToMatch::FieldToMatch() :
 {
 }
 
-FieldToMatch::FieldToMatch(const JsonValue& jsonValue) : 
+FieldToMatch::FieldToMatch(JsonView jsonValue) : 
     m_type(MatchFieldType::NOT_SET),
     m_typeHasBeenSet(false),
     m_dataHasBeenSet(false)
@@ -43,7 +43,7 @@ FieldToMatch::FieldToMatch(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FieldToMatch& FieldToMatch::operator =(const JsonValue& jsonValue)
+FieldToMatch& FieldToMatch::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

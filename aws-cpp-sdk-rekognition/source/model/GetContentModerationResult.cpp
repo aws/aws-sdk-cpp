@@ -39,7 +39,7 @@ GetContentModerationResult::GetContentModerationResult(const Aws::AmazonWebServi
 
 GetContentModerationResult& GetContentModerationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
@@ -60,7 +60,7 @@ GetContentModerationResult& GetContentModerationResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("ModerationLabels"))
   {
-    Array<JsonValue> moderationLabelsJsonList = jsonValue.GetArray("ModerationLabels");
+    Array<JsonView> moderationLabelsJsonList = jsonValue.GetArray("ModerationLabels");
     for(unsigned moderationLabelsIndex = 0; moderationLabelsIndex < moderationLabelsJsonList.GetLength(); ++moderationLabelsIndex)
     {
       m_moderationLabels.push_back(moderationLabelsJsonList[moderationLabelsIndex].AsObject());

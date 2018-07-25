@@ -37,7 +37,7 @@ GetRateBasedRuleResult::GetRateBasedRuleResult(const Aws::AmazonWebServiceResult
 
 GetRateBasedRuleResult& GetRateBasedRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Rule"))
   {
     m_rule = jsonValue.GetObject("Rule");

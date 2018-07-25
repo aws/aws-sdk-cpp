@@ -104,7 +104,7 @@ Aws::String CreateQualificationTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateQualificationTypeRequest::GetRequestSpecificHeaders() const

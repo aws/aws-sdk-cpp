@@ -35,7 +35,7 @@ StepExecutionFilter::StepExecutionFilter() :
 {
 }
 
-StepExecutionFilter::StepExecutionFilter(const JsonValue& jsonValue) : 
+StepExecutionFilter::StepExecutionFilter(JsonView jsonValue) : 
     m_key(StepExecutionFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false)
@@ -43,7 +43,7 @@ StepExecutionFilter::StepExecutionFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StepExecutionFilter& StepExecutionFilter::operator =(const JsonValue& jsonValue)
+StepExecutionFilter& StepExecutionFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -54,7 +54,7 @@ StepExecutionFilter& StepExecutionFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

@@ -35,7 +35,7 @@ PipelineContext::PipelineContext() :
 {
 }
 
-PipelineContext::PipelineContext(const JsonValue& jsonValue) : 
+PipelineContext::PipelineContext(JsonView jsonValue) : 
     m_pipelineNameHasBeenSet(false),
     m_stageHasBeenSet(false),
     m_actionHasBeenSet(false)
@@ -43,7 +43,7 @@ PipelineContext::PipelineContext(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineContext& PipelineContext::operator =(const JsonValue& jsonValue)
+PipelineContext& PipelineContext::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pipelineName"))
   {

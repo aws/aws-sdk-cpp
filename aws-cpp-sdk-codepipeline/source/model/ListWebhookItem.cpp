@@ -38,7 +38,7 @@ ListWebhookItem::ListWebhookItem() :
 {
 }
 
-ListWebhookItem::ListWebhookItem(const JsonValue& jsonValue) : 
+ListWebhookItem::ListWebhookItem(JsonView jsonValue) : 
     m_definitionHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
@@ -49,7 +49,7 @@ ListWebhookItem::ListWebhookItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ListWebhookItem& ListWebhookItem::operator =(const JsonValue& jsonValue)
+ListWebhookItem& ListWebhookItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("definition"))
   {

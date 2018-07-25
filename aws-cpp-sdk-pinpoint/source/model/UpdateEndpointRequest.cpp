@@ -38,7 +38,7 @@ Aws::String UpdateEndpointRequest::SerializePayload() const
    payload = m_endpointRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

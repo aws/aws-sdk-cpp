@@ -37,7 +37,7 @@ ListReviewPolicyResultsForHITResult::ListReviewPolicyResultsForHITResult(const A
 
 ListReviewPolicyResultsForHITResult& ListReviewPolicyResultsForHITResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HITId"))
   {
     m_hITId = jsonValue.GetString("HITId");

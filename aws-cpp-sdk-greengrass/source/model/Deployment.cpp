@@ -38,7 +38,7 @@ Deployment::Deployment() :
 {
 }
 
-Deployment::Deployment(const JsonValue& jsonValue) : 
+Deployment::Deployment(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
     m_deploymentArnHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
@@ -49,7 +49,7 @@ Deployment::Deployment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Deployment& Deployment::operator =(const JsonValue& jsonValue)
+Deployment& Deployment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreatedAt"))
   {

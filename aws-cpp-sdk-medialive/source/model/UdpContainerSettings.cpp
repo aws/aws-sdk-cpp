@@ -33,13 +33,13 @@ UdpContainerSettings::UdpContainerSettings() :
 {
 }
 
-UdpContainerSettings::UdpContainerSettings(const JsonValue& jsonValue) : 
+UdpContainerSettings::UdpContainerSettings(JsonView jsonValue) : 
     m_m2tsSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UdpContainerSettings& UdpContainerSettings::operator =(const JsonValue& jsonValue)
+UdpContainerSettings& UdpContainerSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("m2tsSettings"))
   {

@@ -37,7 +37,7 @@ InventoryResultItem::InventoryResultItem() :
 {
 }
 
-InventoryResultItem::InventoryResultItem(const JsonValue& jsonValue) : 
+InventoryResultItem::InventoryResultItem(JsonView jsonValue) : 
     m_typeNameHasBeenSet(false),
     m_schemaVersionHasBeenSet(false),
     m_captureTimeHasBeenSet(false),
@@ -47,7 +47,7 @@ InventoryResultItem::InventoryResultItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InventoryResultItem& InventoryResultItem::operator =(const JsonValue& jsonValue)
+InventoryResultItem& InventoryResultItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TypeName"))
   {
@@ -79,10 +79,10 @@ InventoryResultItem& InventoryResultItem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Content"))
   {
-    Array<JsonValue> contentJsonList = jsonValue.GetArray("Content");
+    Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
     for(unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex)
     {
-      Aws::Map<Aws::String, JsonValue> inventoryItemEntryJsonMap = contentJsonList[contentIndex].GetAllObjects();
+      Aws::Map<Aws::String, JsonView> inventoryItemEntryJsonMap = contentJsonList[contentIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::String> inventoryItemEntryMap;
       for(auto& inventoryItemEntryItem : inventoryItemEntryJsonMap)
       {

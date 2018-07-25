@@ -37,10 +37,10 @@ ListSubscriptionDefinitionsResult::ListSubscriptionDefinitionsResult(const Aws::
 
 ListSubscriptionDefinitionsResult& ListSubscriptionDefinitionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Definitions"))
   {
-    Array<JsonValue> definitionsJsonList = jsonValue.GetArray("Definitions");
+    Array<JsonView> definitionsJsonList = jsonValue.GetArray("Definitions");
     for(unsigned definitionsIndex = 0; definitionsIndex < definitionsJsonList.GetLength(); ++definitionsIndex)
     {
       m_definitions.push_back(definitionsJsonList[definitionsIndex].AsObject());

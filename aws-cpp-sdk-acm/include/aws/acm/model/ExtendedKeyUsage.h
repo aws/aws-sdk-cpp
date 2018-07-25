@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ACM
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ExtendedKeyUsage();
-    ExtendedKeyUsage(const Aws::Utils::Json::JsonValue& jsonValue);
-    ExtendedKeyUsage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ExtendedKeyUsage(Aws::Utils::Json::JsonView jsonValue);
+    ExtendedKeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppSync
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     GraphqlApi();
-    GraphqlApi(const Aws::Utils::Json::JsonValue& jsonValue);
-    GraphqlApi& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GraphqlApi(Aws::Utils::Json::JsonView jsonValue);
+    GraphqlApi& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

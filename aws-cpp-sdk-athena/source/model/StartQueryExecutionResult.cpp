@@ -37,7 +37,7 @@ StartQueryExecutionResult::StartQueryExecutionResult(const Aws::AmazonWebService
 
 StartQueryExecutionResult& StartQueryExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("QueryExecutionId"))
   {
     m_queryExecutionId = jsonValue.GetString("QueryExecutionId");

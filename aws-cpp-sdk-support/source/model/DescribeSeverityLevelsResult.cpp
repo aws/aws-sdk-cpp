@@ -37,10 +37,10 @@ DescribeSeverityLevelsResult::DescribeSeverityLevelsResult(const Aws::AmazonWebS
 
 DescribeSeverityLevelsResult& DescribeSeverityLevelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("severityLevels"))
   {
-    Array<JsonValue> severityLevelsJsonList = jsonValue.GetArray("severityLevels");
+    Array<JsonView> severityLevelsJsonList = jsonValue.GetArray("severityLevels");
     for(unsigned severityLevelsIndex = 0; severityLevelsIndex < severityLevelsJsonList.GetLength(); ++severityLevelsIndex)
     {
       m_severityLevels.push_back(severityLevelsJsonList[severityLevelsIndex].AsObject());

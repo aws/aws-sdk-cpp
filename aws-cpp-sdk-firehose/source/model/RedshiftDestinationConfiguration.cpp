@@ -44,7 +44,7 @@ RedshiftDestinationConfiguration::RedshiftDestinationConfiguration() :
 {
 }
 
-RedshiftDestinationConfiguration::RedshiftDestinationConfiguration(const JsonValue& jsonValue) : 
+RedshiftDestinationConfiguration::RedshiftDestinationConfiguration(JsonView jsonValue) : 
     m_roleARNHasBeenSet(false),
     m_clusterJDBCURLHasBeenSet(false),
     m_copyCommandHasBeenSet(false),
@@ -61,7 +61,7 @@ RedshiftDestinationConfiguration::RedshiftDestinationConfiguration(const JsonVal
   *this = jsonValue;
 }
 
-RedshiftDestinationConfiguration& RedshiftDestinationConfiguration::operator =(const JsonValue& jsonValue)
+RedshiftDestinationConfiguration& RedshiftDestinationConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RoleARN"))
   {

@@ -43,7 +43,7 @@ Pipeline::Pipeline() :
 {
 }
 
-Pipeline::Pipeline(const JsonValue& jsonValue) : 
+Pipeline::Pipeline(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -59,7 +59,7 @@ Pipeline::Pipeline(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Pipeline& Pipeline::operator =(const JsonValue& jsonValue)
+Pipeline& Pipeline::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

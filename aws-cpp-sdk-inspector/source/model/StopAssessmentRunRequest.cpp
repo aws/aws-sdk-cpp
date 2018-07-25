@@ -44,7 +44,7 @@ Aws::String StopAssessmentRunRequest::SerializePayload() const
    payload.WithString("stopAction", StopActionMapper::GetNameForStopAction(m_stopAction));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopAssessmentRunRequest::GetRequestSpecificHeaders() const

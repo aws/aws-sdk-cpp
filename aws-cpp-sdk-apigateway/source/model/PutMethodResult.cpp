@@ -39,7 +39,7 @@ PutMethodResult::PutMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 PutMethodResult& PutMethodResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("httpMethod"))
   {
     m_httpMethod = jsonValue.GetString("httpMethod");
@@ -78,7 +78,7 @@ PutMethodResult& PutMethodResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("requestParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> requestParametersJsonMap = jsonValue.GetObject("requestParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> requestParametersJsonMap = jsonValue.GetObject("requestParameters").GetAllObjects();
     for(auto& requestParametersItem : requestParametersJsonMap)
     {
       m_requestParameters[requestParametersItem.first] = requestParametersItem.second.AsBool();
@@ -87,7 +87,7 @@ PutMethodResult& PutMethodResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("requestModels"))
   {
-    Aws::Map<Aws::String, JsonValue> requestModelsJsonMap = jsonValue.GetObject("requestModels").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> requestModelsJsonMap = jsonValue.GetObject("requestModels").GetAllObjects();
     for(auto& requestModelsItem : requestModelsJsonMap)
     {
       m_requestModels[requestModelsItem.first] = requestModelsItem.second.AsString();
@@ -96,7 +96,7 @@ PutMethodResult& PutMethodResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("methodResponses"))
   {
-    Aws::Map<Aws::String, JsonValue> methodResponsesJsonMap = jsonValue.GetObject("methodResponses").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> methodResponsesJsonMap = jsonValue.GetObject("methodResponses").GetAllObjects();
     for(auto& methodResponsesItem : methodResponsesJsonMap)
     {
       m_methodResponses[methodResponsesItem.first] = methodResponsesItem.second.AsObject();
@@ -111,7 +111,7 @@ PutMethodResult& PutMethodResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("authorizationScopes"))
   {
-    Array<JsonValue> authorizationScopesJsonList = jsonValue.GetArray("authorizationScopes");
+    Array<JsonView> authorizationScopesJsonList = jsonValue.GetArray("authorizationScopes");
     for(unsigned authorizationScopesIndex = 0; authorizationScopesIndex < authorizationScopesJsonList.GetLength(); ++authorizationScopesIndex)
     {
       m_authorizationScopes.push_back(authorizationScopesJsonList[authorizationScopesIndex].AsString());

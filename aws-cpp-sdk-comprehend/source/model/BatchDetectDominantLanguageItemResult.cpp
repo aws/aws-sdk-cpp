@@ -35,7 +35,7 @@ BatchDetectDominantLanguageItemResult::BatchDetectDominantLanguageItemResult() :
 {
 }
 
-BatchDetectDominantLanguageItemResult::BatchDetectDominantLanguageItemResult(const JsonValue& jsonValue) : 
+BatchDetectDominantLanguageItemResult::BatchDetectDominantLanguageItemResult(JsonView jsonValue) : 
     m_index(0),
     m_indexHasBeenSet(false),
     m_languagesHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchDetectDominantLanguageItemResult::BatchDetectDominantLanguageItemResult(con
   *this = jsonValue;
 }
 
-BatchDetectDominantLanguageItemResult& BatchDetectDominantLanguageItemResult::operator =(const JsonValue& jsonValue)
+BatchDetectDominantLanguageItemResult& BatchDetectDominantLanguageItemResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Index"))
   {
@@ -54,7 +54,7 @@ BatchDetectDominantLanguageItemResult& BatchDetectDominantLanguageItemResult::op
 
   if(jsonValue.ValueExists("Languages"))
   {
-    Array<JsonValue> languagesJsonList = jsonValue.GetArray("Languages");
+    Array<JsonView> languagesJsonList = jsonValue.GetArray("Languages");
     for(unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex)
     {
       m_languages.push_back(languagesJsonList[languagesIndex].AsObject());

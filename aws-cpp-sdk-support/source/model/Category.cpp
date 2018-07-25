@@ -34,14 +34,14 @@ Category::Category() :
 {
 }
 
-Category::Category(const JsonValue& jsonValue) : 
+Category::Category(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Category& Category::operator =(const JsonValue& jsonValue)
+Category& Category::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("code"))
   {

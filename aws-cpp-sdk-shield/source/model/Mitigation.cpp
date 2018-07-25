@@ -33,13 +33,13 @@ Mitigation::Mitigation() :
 {
 }
 
-Mitigation::Mitigation(const JsonValue& jsonValue) : 
+Mitigation::Mitigation(JsonView jsonValue) : 
     m_mitigationNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Mitigation& Mitigation::operator =(const JsonValue& jsonValue)
+Mitigation& Mitigation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MitigationName"))
   {

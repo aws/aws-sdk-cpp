@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     LoadBalancerInfo();
-    LoadBalancerInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoadBalancerInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoadBalancerInfo(Aws::Utils::Json::JsonView jsonValue);
+    LoadBalancerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

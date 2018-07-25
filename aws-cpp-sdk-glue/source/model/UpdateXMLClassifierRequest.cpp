@@ -35,7 +35,7 @@ UpdateXMLClassifierRequest::UpdateXMLClassifierRequest() :
 {
 }
 
-UpdateXMLClassifierRequest::UpdateXMLClassifierRequest(const JsonValue& jsonValue) : 
+UpdateXMLClassifierRequest::UpdateXMLClassifierRequest(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_classificationHasBeenSet(false),
     m_rowTagHasBeenSet(false)
@@ -43,7 +43,7 @@ UpdateXMLClassifierRequest::UpdateXMLClassifierRequest(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-UpdateXMLClassifierRequest& UpdateXMLClassifierRequest::operator =(const JsonValue& jsonValue)
+UpdateXMLClassifierRequest& UpdateXMLClassifierRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

@@ -38,7 +38,7 @@ Aws::String PutLexiconRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

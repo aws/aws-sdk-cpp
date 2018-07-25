@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationAutoScaling
@@ -56,8 +57,8 @@ namespace Model
   {
   public:
     StepAdjustment();
-    StepAdjustment(const Aws::Utils::Json::JsonValue& jsonValue);
-    StepAdjustment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StepAdjustment(Aws::Utils::Json::JsonView jsonValue);
+    StepAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

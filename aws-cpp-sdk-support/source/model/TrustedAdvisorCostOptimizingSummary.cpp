@@ -36,7 +36,7 @@ TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary() :
 {
 }
 
-TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary(const JsonValue& jsonValue) : 
+TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary(JsonView jsonValue) : 
     m_estimatedMonthlySavings(0.0),
     m_estimatedMonthlySavingsHasBeenSet(false),
     m_estimatedPercentMonthlySavings(0.0),
@@ -45,7 +45,7 @@ TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary(const J
   *this = jsonValue;
 }
 
-TrustedAdvisorCostOptimizingSummary& TrustedAdvisorCostOptimizingSummary::operator =(const JsonValue& jsonValue)
+TrustedAdvisorCostOptimizingSummary& TrustedAdvisorCostOptimizingSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("estimatedMonthlySavings"))
   {

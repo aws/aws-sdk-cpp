@@ -63,7 +63,7 @@ Aws::String ImportKeyMaterialRequest::SerializePayload() const
    payload.WithString("ExpirationModel", ExpirationModelTypeMapper::GetNameForExpirationModelType(m_expirationModel));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ImportKeyMaterialRequest::GetRequestSpecificHeaders() const

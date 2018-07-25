@@ -34,14 +34,14 @@ FailWorkflowExecutionDecisionAttributes::FailWorkflowExecutionDecisionAttributes
 {
 }
 
-FailWorkflowExecutionDecisionAttributes::FailWorkflowExecutionDecisionAttributes(const JsonValue& jsonValue) : 
+FailWorkflowExecutionDecisionAttributes::FailWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
     m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FailWorkflowExecutionDecisionAttributes& FailWorkflowExecutionDecisionAttributes::operator =(const JsonValue& jsonValue)
+FailWorkflowExecutionDecisionAttributes& FailWorkflowExecutionDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("reason"))
   {

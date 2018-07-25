@@ -42,7 +42,7 @@ JobParameters::JobParameters() :
 {
 }
 
-JobParameters::JobParameters(const JsonValue& jsonValue) : 
+JobParameters::JobParameters(JsonView jsonValue) : 
     m_formatHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_archiveIdHasBeenSet(false),
@@ -57,7 +57,7 @@ JobParameters::JobParameters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobParameters& JobParameters::operator =(const JsonValue& jsonValue)
+JobParameters& JobParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Format"))
   {

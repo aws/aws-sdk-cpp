@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaTailor
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     CdnConfiguration();
-    CdnConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    CdnConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CdnConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    CdnConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

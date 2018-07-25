@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     OrcSerDe();
-    OrcSerDe(const Aws::Utils::Json::JsonValue& jsonValue);
-    OrcSerDe& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OrcSerDe(Aws::Utils::Json::JsonView jsonValue);
+    OrcSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

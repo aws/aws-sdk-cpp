@@ -46,7 +46,7 @@ Test::Test() :
 {
 }
 
-Test::Test(const JsonValue& jsonValue) : 
+Test::Test(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(TestType::NOT_SET),
@@ -65,7 +65,7 @@ Test::Test(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Test& Test::operator =(const JsonValue& jsonValue)
+Test& Test::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

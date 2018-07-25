@@ -38,7 +38,7 @@ CloudwatchMetricAction::CloudwatchMetricAction() :
 {
 }
 
-CloudwatchMetricAction::CloudwatchMetricAction(const JsonValue& jsonValue) : 
+CloudwatchMetricAction::CloudwatchMetricAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_metricNamespaceHasBeenSet(false),
     m_metricNameHasBeenSet(false),
@@ -49,7 +49,7 @@ CloudwatchMetricAction::CloudwatchMetricAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CloudwatchMetricAction& CloudwatchMetricAction::operator =(const JsonValue& jsonValue)
+CloudwatchMetricAction& CloudwatchMetricAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

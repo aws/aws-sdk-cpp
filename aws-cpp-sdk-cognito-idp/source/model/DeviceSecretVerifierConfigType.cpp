@@ -34,14 +34,14 @@ DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType() :
 {
 }
 
-DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType(const JsonValue& jsonValue) : 
+DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType(JsonView jsonValue) : 
     m_passwordVerifierHasBeenSet(false),
     m_saltHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeviceSecretVerifierConfigType& DeviceSecretVerifierConfigType::operator =(const JsonValue& jsonValue)
+DeviceSecretVerifierConfigType& DeviceSecretVerifierConfigType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PasswordVerifier"))
   {

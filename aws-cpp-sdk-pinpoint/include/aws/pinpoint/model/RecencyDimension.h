@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RecencyDimension();
-    RecencyDimension(const Aws::Utils::Json::JsonValue& jsonValue);
-    RecencyDimension& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RecencyDimension(Aws::Utils::Json::JsonView jsonValue);
+    RecencyDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

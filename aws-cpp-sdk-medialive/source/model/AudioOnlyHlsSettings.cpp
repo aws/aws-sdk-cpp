@@ -36,7 +36,7 @@ AudioOnlyHlsSettings::AudioOnlyHlsSettings() :
 {
 }
 
-AudioOnlyHlsSettings::AudioOnlyHlsSettings(const JsonValue& jsonValue) : 
+AudioOnlyHlsSettings::AudioOnlyHlsSettings(JsonView jsonValue) : 
     m_audioGroupIdHasBeenSet(false),
     m_audioOnlyImageHasBeenSet(false),
     m_audioTrackType(AudioOnlyHlsTrackType::NOT_SET),
@@ -45,7 +45,7 @@ AudioOnlyHlsSettings::AudioOnlyHlsSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AudioOnlyHlsSettings& AudioOnlyHlsSettings::operator =(const JsonValue& jsonValue)
+AudioOnlyHlsSettings& AudioOnlyHlsSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioGroupId"))
   {

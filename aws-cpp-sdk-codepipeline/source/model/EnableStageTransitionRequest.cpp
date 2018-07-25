@@ -51,7 +51,7 @@ Aws::String EnableStageTransitionRequest::SerializePayload() const
    payload.WithString("transitionType", StageTransitionTypeMapper::GetNameForStageTransitionType(m_transitionType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection EnableStageTransitionRequest::GetRequestSpecificHeaders() const

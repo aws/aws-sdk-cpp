@@ -46,6 +46,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -63,8 +64,8 @@ namespace Model
   {
   public:
     H264Settings();
-    H264Settings(const Aws::Utils::Json::JsonValue& jsonValue);
-    H264Settings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    H264Settings(Aws::Utils::Json::JsonView jsonValue);
+    H264Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

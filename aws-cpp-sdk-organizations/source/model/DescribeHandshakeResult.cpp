@@ -37,7 +37,7 @@ DescribeHandshakeResult::DescribeHandshakeResult(const Aws::AmazonWebServiceResu
 
 DescribeHandshakeResult& DescribeHandshakeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Handshake"))
   {
     m_handshake = jsonValue.GetObject("Handshake");

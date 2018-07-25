@@ -37,10 +37,10 @@ GetBuiltinSlotTypesResult::GetBuiltinSlotTypesResult(const Aws::AmazonWebService
 
 GetBuiltinSlotTypesResult& GetBuiltinSlotTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("slotTypes"))
   {
-    Array<JsonValue> slotTypesJsonList = jsonValue.GetArray("slotTypes");
+    Array<JsonView> slotTypesJsonList = jsonValue.GetArray("slotTypes");
     for(unsigned slotTypesIndex = 0; slotTypesIndex < slotTypesJsonList.GetLength(); ++slotTypesIndex)
     {
       m_slotTypes.push_back(slotTypesJsonList[slotTypesIndex].AsObject());

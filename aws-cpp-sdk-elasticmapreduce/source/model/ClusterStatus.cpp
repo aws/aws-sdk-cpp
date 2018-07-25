@@ -36,7 +36,7 @@ ClusterStatus::ClusterStatus() :
 {
 }
 
-ClusterStatus::ClusterStatus(const JsonValue& jsonValue) : 
+ClusterStatus::ClusterStatus(JsonView jsonValue) : 
     m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
@@ -45,7 +45,7 @@ ClusterStatus::ClusterStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ClusterStatus& ClusterStatus::operator =(const JsonValue& jsonValue)
+ClusterStatus& ClusterStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("State"))
   {

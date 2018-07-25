@@ -37,10 +37,10 @@ ListInstanceProfilesResult::ListInstanceProfilesResult(const Aws::AmazonWebServi
 
 ListInstanceProfilesResult& ListInstanceProfilesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceProfiles"))
   {
-    Array<JsonValue> instanceProfilesJsonList = jsonValue.GetArray("instanceProfiles");
+    Array<JsonView> instanceProfilesJsonList = jsonValue.GetArray("instanceProfiles");
     for(unsigned instanceProfilesIndex = 0; instanceProfilesIndex < instanceProfilesJsonList.GetLength(); ++instanceProfilesIndex)
     {
       m_instanceProfiles.push_back(instanceProfilesJsonList[instanceProfilesIndex].AsObject());

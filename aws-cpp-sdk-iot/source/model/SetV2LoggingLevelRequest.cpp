@@ -44,7 +44,7 @@ Aws::String SetV2LoggingLevelRequest::SerializePayload() const
    payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

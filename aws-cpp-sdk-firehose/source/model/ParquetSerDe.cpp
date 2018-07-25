@@ -44,7 +44,7 @@ ParquetSerDe::ParquetSerDe() :
 {
 }
 
-ParquetSerDe::ParquetSerDe(const JsonValue& jsonValue) : 
+ParquetSerDe::ParquetSerDe(JsonView jsonValue) : 
     m_blockSizeBytes(0),
     m_blockSizeBytesHasBeenSet(false),
     m_pageSizeBytes(0),
@@ -61,7 +61,7 @@ ParquetSerDe::ParquetSerDe(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ParquetSerDe& ParquetSerDe::operator =(const JsonValue& jsonValue)
+ParquetSerDe& ParquetSerDe::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BlockSizeBytes"))
   {

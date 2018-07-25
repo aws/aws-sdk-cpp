@@ -35,7 +35,7 @@ AddressBookData::AddressBookData() :
 {
 }
 
-AddressBookData::AddressBookData(const JsonValue& jsonValue) : 
+AddressBookData::AddressBookData(JsonView jsonValue) : 
     m_addressBookArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -43,7 +43,7 @@ AddressBookData::AddressBookData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AddressBookData& AddressBookData::operator =(const JsonValue& jsonValue)
+AddressBookData& AddressBookData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AddressBookArn"))
   {

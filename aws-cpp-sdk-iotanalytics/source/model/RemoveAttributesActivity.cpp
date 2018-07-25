@@ -35,7 +35,7 @@ RemoveAttributesActivity::RemoveAttributesActivity() :
 {
 }
 
-RemoveAttributesActivity::RemoveAttributesActivity(const JsonValue& jsonValue) : 
+RemoveAttributesActivity::RemoveAttributesActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_nextHasBeenSet(false)
@@ -43,7 +43,7 @@ RemoveAttributesActivity::RemoveAttributesActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RemoveAttributesActivity& RemoveAttributesActivity::operator =(const JsonValue& jsonValue)
+RemoveAttributesActivity& RemoveAttributesActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -54,7 +54,7 @@ RemoveAttributesActivity& RemoveAttributesActivity::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsString());

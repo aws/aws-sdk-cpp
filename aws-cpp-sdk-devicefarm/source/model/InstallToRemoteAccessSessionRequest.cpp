@@ -44,7 +44,7 @@ Aws::String InstallToRemoteAccessSessionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection InstallToRemoteAccessSessionRequest::GetRequestSpecificHeaders() const

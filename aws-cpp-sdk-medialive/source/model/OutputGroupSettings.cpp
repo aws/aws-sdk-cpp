@@ -37,7 +37,7 @@ OutputGroupSettings::OutputGroupSettings() :
 {
 }
 
-OutputGroupSettings::OutputGroupSettings(const JsonValue& jsonValue) : 
+OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) : 
     m_archiveGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
@@ -47,7 +47,7 @@ OutputGroupSettings::OutputGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputGroupSettings& OutputGroupSettings::operator =(const JsonValue& jsonValue)
+OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("archiveGroupSettings"))
   {

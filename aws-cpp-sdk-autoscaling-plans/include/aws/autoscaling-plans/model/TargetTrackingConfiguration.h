@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AutoScalingPlans
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TargetTrackingConfiguration();
-    TargetTrackingConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    TargetTrackingConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TargetTrackingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    TargetTrackingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

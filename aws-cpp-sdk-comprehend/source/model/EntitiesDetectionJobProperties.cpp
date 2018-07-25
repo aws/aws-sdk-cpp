@@ -44,7 +44,7 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties() :
 {
 }
 
-EntitiesDetectionJobProperties::EntitiesDetectionJobProperties(const JsonValue& jsonValue) : 
+EntitiesDetectionJobProperties::EntitiesDetectionJobProperties(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
@@ -61,7 +61,7 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties(const JsonValue& 
   *this = jsonValue;
 }
 
-EntitiesDetectionJobProperties& EntitiesDetectionJobProperties::operator =(const JsonValue& jsonValue)
+EntitiesDetectionJobProperties& EntitiesDetectionJobProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobId"))
   {

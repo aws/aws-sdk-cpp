@@ -75,7 +75,7 @@ Aws::String CreateFilterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisAnalytics
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     MappingParameters();
-    MappingParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    MappingParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MappingParameters(Aws::Utils::Json::JsonView jsonValue);
+    MappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

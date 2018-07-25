@@ -39,7 +39,7 @@ ListVocabulariesResult::ListVocabulariesResult(const Aws::AmazonWebServiceResult
 
 ListVocabulariesResult& ListVocabulariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TranscriptionJobStatusMapper::GetTranscriptionJobStatusForName(jsonValue.GetString("Status"));
@@ -54,7 +54,7 @@ ListVocabulariesResult& ListVocabulariesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Vocabularies"))
   {
-    Array<JsonValue> vocabulariesJsonList = jsonValue.GetArray("Vocabularies");
+    Array<JsonView> vocabulariesJsonList = jsonValue.GetArray("Vocabularies");
     for(unsigned vocabulariesIndex = 0; vocabulariesIndex < vocabulariesJsonList.GetLength(); ++vocabulariesIndex)
     {
       m_vocabularies.push_back(vocabulariesJsonList[vocabulariesIndex].AsObject());

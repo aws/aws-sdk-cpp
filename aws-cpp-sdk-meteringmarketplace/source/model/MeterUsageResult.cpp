@@ -37,7 +37,7 @@ MeterUsageResult::MeterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 MeterUsageResult& MeterUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MeteringRecordId"))
   {
     m_meteringRecordId = jsonValue.GetString("MeteringRecordId");

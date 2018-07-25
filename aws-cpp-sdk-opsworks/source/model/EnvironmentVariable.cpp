@@ -36,7 +36,7 @@ EnvironmentVariable::EnvironmentVariable() :
 {
 }
 
-EnvironmentVariable::EnvironmentVariable(const JsonValue& jsonValue) : 
+EnvironmentVariable::EnvironmentVariable(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_secure(false),
@@ -45,7 +45,7 @@ EnvironmentVariable::EnvironmentVariable(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EnvironmentVariable& EnvironmentVariable::operator =(const JsonValue& jsonValue)
+EnvironmentVariable& EnvironmentVariable::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

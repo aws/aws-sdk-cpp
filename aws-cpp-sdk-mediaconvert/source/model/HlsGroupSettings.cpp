@@ -71,7 +71,7 @@ HlsGroupSettings::HlsGroupSettings() :
 {
 }
 
-HlsGroupSettings::HlsGroupSettings(const JsonValue& jsonValue) : 
+HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) : 
     m_adMarkersHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_captionLanguageMappingsHasBeenSet(false),
@@ -115,11 +115,11 @@ HlsGroupSettings::HlsGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsGroupSettings& HlsGroupSettings::operator =(const JsonValue& jsonValue)
+HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adMarkers"))
   {
-    Array<JsonValue> adMarkersJsonList = jsonValue.GetArray("adMarkers");
+    Array<JsonView> adMarkersJsonList = jsonValue.GetArray("adMarkers");
     for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
     {
       m_adMarkers.push_back(HlsAdMarkersMapper::GetHlsAdMarkersForName(adMarkersJsonList[adMarkersIndex].AsString()));
@@ -136,7 +136,7 @@ HlsGroupSettings& HlsGroupSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("captionLanguageMappings"))
   {
-    Array<JsonValue> captionLanguageMappingsJsonList = jsonValue.GetArray("captionLanguageMappings");
+    Array<JsonView> captionLanguageMappingsJsonList = jsonValue.GetArray("captionLanguageMappings");
     for(unsigned captionLanguageMappingsIndex = 0; captionLanguageMappingsIndex < captionLanguageMappingsJsonList.GetLength(); ++captionLanguageMappingsIndex)
     {
       m_captionLanguageMappings.push_back(captionLanguageMappingsJsonList[captionLanguageMappingsIndex].AsObject());

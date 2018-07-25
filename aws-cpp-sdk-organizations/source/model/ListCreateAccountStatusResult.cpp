@@ -37,10 +37,10 @@ ListCreateAccountStatusResult::ListCreateAccountStatusResult(const Aws::AmazonWe
 
 ListCreateAccountStatusResult& ListCreateAccountStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CreateAccountStatuses"))
   {
-    Array<JsonValue> createAccountStatusesJsonList = jsonValue.GetArray("CreateAccountStatuses");
+    Array<JsonView> createAccountStatusesJsonList = jsonValue.GetArray("CreateAccountStatuses");
     for(unsigned createAccountStatusesIndex = 0; createAccountStatusesIndex < createAccountStatusesJsonList.GetLength(); ++createAccountStatusesIndex)
     {
       m_createAccountStatuses.push_back(createAccountStatusesJsonList[createAccountStatusesIndex].AsObject());

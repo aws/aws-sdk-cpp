@@ -42,7 +42,7 @@ Aws::String CreateResourceGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateResourceGroupRequest::GetRequestSpecificHeaders() const

@@ -33,13 +33,13 @@ AvailabilityZone::AvailabilityZone() :
 {
 }
 
-AvailabilityZone::AvailabilityZone(const JsonValue& jsonValue) : 
+AvailabilityZone::AvailabilityZone(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AvailabilityZone& AvailabilityZone::operator =(const JsonValue& jsonValue)
+AvailabilityZone& AvailabilityZone::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

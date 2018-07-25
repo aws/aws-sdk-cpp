@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     InstanceCountLimits();
-    InstanceCountLimits(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceCountLimits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceCountLimits(Aws::Utils::Json::JsonView jsonValue);
+    InstanceCountLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ DescribeBudgetResult::DescribeBudgetResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeBudgetResult& DescribeBudgetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Budget"))
   {
     m_budget = jsonValue.GetObject("Budget");

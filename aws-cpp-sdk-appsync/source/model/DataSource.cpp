@@ -42,7 +42,7 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(const JsonValue& jsonValue) : 
+DataSource::DataSource(JsonView jsonValue) : 
     m_dataSourceArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -57,7 +57,7 @@ DataSource::DataSource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DataSource& DataSource::operator =(const JsonValue& jsonValue)
+DataSource& DataSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("dataSourceArn"))
   {

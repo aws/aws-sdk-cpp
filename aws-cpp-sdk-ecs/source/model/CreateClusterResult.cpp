@@ -37,7 +37,7 @@ CreateClusterResult::CreateClusterResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateClusterResult& CreateClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("cluster"))
   {
     m_cluster = jsonValue.GetObject("cluster");

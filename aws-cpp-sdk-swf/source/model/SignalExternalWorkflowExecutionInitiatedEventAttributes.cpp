@@ -39,7 +39,7 @@ SignalExternalWorkflowExecutionInitiatedEventAttributes::SignalExternalWorkflowE
 {
 }
 
-SignalExternalWorkflowExecutionInitiatedEventAttributes::SignalExternalWorkflowExecutionInitiatedEventAttributes(const JsonValue& jsonValue) : 
+SignalExternalWorkflowExecutionInitiatedEventAttributes::SignalExternalWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue) : 
     m_workflowIdHasBeenSet(false),
     m_runIdHasBeenSet(false),
     m_signalNameHasBeenSet(false),
@@ -51,7 +51,7 @@ SignalExternalWorkflowExecutionInitiatedEventAttributes::SignalExternalWorkflowE
   *this = jsonValue;
 }
 
-SignalExternalWorkflowExecutionInitiatedEventAttributes& SignalExternalWorkflowExecutionInitiatedEventAttributes::operator =(const JsonValue& jsonValue)
+SignalExternalWorkflowExecutionInitiatedEventAttributes& SignalExternalWorkflowExecutionInitiatedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowId"))
   {

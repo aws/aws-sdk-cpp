@@ -38,7 +38,7 @@ RoomData::RoomData() :
 {
 }
 
-RoomData::RoomData(const JsonValue& jsonValue) : 
+RoomData::RoomData(JsonView jsonValue) : 
     m_roomArnHasBeenSet(false),
     m_roomNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -49,7 +49,7 @@ RoomData::RoomData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RoomData& RoomData::operator =(const JsonValue& jsonValue)
+RoomData& RoomData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RoomArn"))
   {

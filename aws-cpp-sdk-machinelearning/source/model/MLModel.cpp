@@ -57,7 +57,7 @@ MLModel::MLModel() :
 {
 }
 
-MLModel::MLModel(const JsonValue& jsonValue) : 
+MLModel::MLModel(JsonView jsonValue) : 
     m_mLModelIdHasBeenSet(false),
     m_trainingDataSourceIdHasBeenSet(false),
     m_createdByIamUserHasBeenSet(false),
@@ -87,7 +87,7 @@ MLModel::MLModel(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MLModel& MLModel::operator =(const JsonValue& jsonValue)
+MLModel& MLModel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MLModelId"))
   {
@@ -154,7 +154,7 @@ MLModel& MLModel::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("TrainingParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> trainingParametersJsonMap = jsonValue.GetObject("TrainingParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> trainingParametersJsonMap = jsonValue.GetObject("TrainingParameters").GetAllObjects();
     for(auto& trainingParametersItem : trainingParametersJsonMap)
     {
       m_trainingParameters[trainingParametersItem.first] = trainingParametersItem.second.AsString();

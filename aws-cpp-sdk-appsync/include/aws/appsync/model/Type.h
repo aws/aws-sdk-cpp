@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppSync
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Type();
-    Type(const Aws::Utils::Json::JsonValue& jsonValue);
-    Type& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Type(Aws::Utils::Json::JsonView jsonValue);
+    Type& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

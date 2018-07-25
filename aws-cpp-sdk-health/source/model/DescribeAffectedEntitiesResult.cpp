@@ -37,10 +37,10 @@ DescribeAffectedEntitiesResult::DescribeAffectedEntitiesResult(const Aws::Amazon
 
 DescribeAffectedEntitiesResult& DescribeAffectedEntitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entities"))
   {
-    Array<JsonValue> entitiesJsonList = jsonValue.GetArray("entities");
+    Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());

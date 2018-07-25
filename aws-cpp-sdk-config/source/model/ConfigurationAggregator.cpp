@@ -38,7 +38,7 @@ ConfigurationAggregator::ConfigurationAggregator() :
 {
 }
 
-ConfigurationAggregator::ConfigurationAggregator(const JsonValue& jsonValue) : 
+ConfigurationAggregator::ConfigurationAggregator(JsonView jsonValue) : 
     m_configurationAggregatorNameHasBeenSet(false),
     m_configurationAggregatorArnHasBeenSet(false),
     m_accountAggregationSourcesHasBeenSet(false),
@@ -49,7 +49,7 @@ ConfigurationAggregator::ConfigurationAggregator(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigurationAggregator& ConfigurationAggregator::operator =(const JsonValue& jsonValue)
+ConfigurationAggregator& ConfigurationAggregator::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConfigurationAggregatorName"))
   {
@@ -67,7 +67,7 @@ ConfigurationAggregator& ConfigurationAggregator::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("AccountAggregationSources"))
   {
-    Array<JsonValue> accountAggregationSourcesJsonList = jsonValue.GetArray("AccountAggregationSources");
+    Array<JsonView> accountAggregationSourcesJsonList = jsonValue.GetArray("AccountAggregationSources");
     for(unsigned accountAggregationSourcesIndex = 0; accountAggregationSourcesIndex < accountAggregationSourcesJsonList.GetLength(); ++accountAggregationSourcesIndex)
     {
       m_accountAggregationSources.push_back(accountAggregationSourcesJsonList[accountAggregationSourcesIndex].AsObject());

@@ -37,7 +37,7 @@ Aws::String GetUserPoolMfaConfigRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetUserPoolMfaConfigRequest::GetRequestSpecificHeaders() const

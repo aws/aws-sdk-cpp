@@ -34,14 +34,14 @@ PatchOrchestratorFilter::PatchOrchestratorFilter() :
 {
 }
 
-PatchOrchestratorFilter::PatchOrchestratorFilter(const JsonValue& jsonValue) : 
+PatchOrchestratorFilter::PatchOrchestratorFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PatchOrchestratorFilter& PatchOrchestratorFilter::operator =(const JsonValue& jsonValue)
+PatchOrchestratorFilter& PatchOrchestratorFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -52,7 +52,7 @@ PatchOrchestratorFilter& PatchOrchestratorFilter::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

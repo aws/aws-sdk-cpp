@@ -37,10 +37,10 @@ ListThingPrincipalsResult::ListThingPrincipalsResult(const Aws::AmazonWebService
 
 ListThingPrincipalsResult& ListThingPrincipalsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("principals"))
   {
-    Array<JsonValue> principalsJsonList = jsonValue.GetArray("principals");
+    Array<JsonView> principalsJsonList = jsonValue.GetArray("principals");
     for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
     {
       m_principals.push_back(principalsJsonList[principalsIndex].AsString());

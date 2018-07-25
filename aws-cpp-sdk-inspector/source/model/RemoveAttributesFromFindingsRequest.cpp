@@ -54,7 +54,7 @@ Aws::String RemoveAttributesFromFindingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RemoveAttributesFromFindingsRequest::GetRequestSpecificHeaders() const

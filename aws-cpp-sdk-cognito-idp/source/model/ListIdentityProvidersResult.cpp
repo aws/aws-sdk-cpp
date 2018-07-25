@@ -37,10 +37,10 @@ ListIdentityProvidersResult::ListIdentityProvidersResult(const Aws::AmazonWebSer
 
 ListIdentityProvidersResult& ListIdentityProvidersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Providers"))
   {
-    Array<JsonValue> providersJsonList = jsonValue.GetArray("Providers");
+    Array<JsonView> providersJsonList = jsonValue.GetArray("Providers");
     for(unsigned providersIndex = 0; providersIndex < providersJsonList.GetLength(); ++providersIndex)
     {
       m_providers.push_back(providersJsonList[providersIndex].AsObject());

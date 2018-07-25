@@ -37,7 +37,7 @@ Aws::String ListGitHubAccountTokenNamesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListGitHubAccountTokenNamesRequest::GetRequestSpecificHeaders() const

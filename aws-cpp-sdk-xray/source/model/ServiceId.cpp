@@ -36,7 +36,7 @@ ServiceId::ServiceId() :
 {
 }
 
-ServiceId::ServiceId(const JsonValue& jsonValue) : 
+ServiceId::ServiceId(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_namesHasBeenSet(false),
     m_accountIdHasBeenSet(false),
@@ -45,7 +45,7 @@ ServiceId::ServiceId(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServiceId& ServiceId::operator =(const JsonValue& jsonValue)
+ServiceId& ServiceId::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -56,7 +56,7 @@ ServiceId& ServiceId::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Names"))
   {
-    Array<JsonValue> namesJsonList = jsonValue.GetArray("Names");
+    Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
     for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
     {
       m_names.push_back(namesJsonList[namesIndex].AsString());

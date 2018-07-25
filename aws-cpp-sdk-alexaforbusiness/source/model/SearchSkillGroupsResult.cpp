@@ -39,10 +39,10 @@ SearchSkillGroupsResult::SearchSkillGroupsResult(const Aws::AmazonWebServiceResu
 
 SearchSkillGroupsResult& SearchSkillGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SkillGroups"))
   {
-    Array<JsonValue> skillGroupsJsonList = jsonValue.GetArray("SkillGroups");
+    Array<JsonView> skillGroupsJsonList = jsonValue.GetArray("SkillGroups");
     for(unsigned skillGroupsIndex = 0; skillGroupsIndex < skillGroupsJsonList.GetLength(); ++skillGroupsIndex)
     {
       m_skillGroups.push_back(skillGroupsJsonList[skillGroupsIndex].AsObject());

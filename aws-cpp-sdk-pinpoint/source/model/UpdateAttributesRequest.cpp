@@ -33,17 +33,17 @@ UpdateAttributesRequest::UpdateAttributesRequest() :
 {
 }
 
-UpdateAttributesRequest::UpdateAttributesRequest(const JsonValue& jsonValue) : 
+UpdateAttributesRequest::UpdateAttributesRequest(JsonView jsonValue) : 
     m_blacklistHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UpdateAttributesRequest& UpdateAttributesRequest::operator =(const JsonValue& jsonValue)
+UpdateAttributesRequest& UpdateAttributesRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Blacklist"))
   {
-    Array<JsonValue> blacklistJsonList = jsonValue.GetArray("Blacklist");
+    Array<JsonView> blacklistJsonList = jsonValue.GetArray("Blacklist");
     for(unsigned blacklistIndex = 0; blacklistIndex < blacklistJsonList.GetLength(); ++blacklistIndex)
     {
       m_blacklist.push_back(blacklistJsonList[blacklistIndex].AsString());

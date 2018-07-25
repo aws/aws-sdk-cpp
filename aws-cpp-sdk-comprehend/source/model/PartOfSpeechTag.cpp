@@ -36,7 +36,7 @@ PartOfSpeechTag::PartOfSpeechTag() :
 {
 }
 
-PartOfSpeechTag::PartOfSpeechTag(const JsonValue& jsonValue) : 
+PartOfSpeechTag::PartOfSpeechTag(JsonView jsonValue) : 
     m_tag(PartOfSpeechTagType::NOT_SET),
     m_tagHasBeenSet(false),
     m_score(0.0),
@@ -45,7 +45,7 @@ PartOfSpeechTag::PartOfSpeechTag(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PartOfSpeechTag& PartOfSpeechTag::operator =(const JsonValue& jsonValue)
+PartOfSpeechTag& PartOfSpeechTag::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Tag"))
   {

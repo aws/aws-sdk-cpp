@@ -37,7 +37,7 @@ Repository::Repository() :
 {
 }
 
-Repository::Repository(const JsonValue& jsonValue) : 
+Repository::Repository(JsonView jsonValue) : 
     m_repositoryArnHasBeenSet(false),
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
@@ -47,7 +47,7 @@ Repository::Repository(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Repository& Repository::operator =(const JsonValue& jsonValue)
+Repository& Repository::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositoryArn"))
   {

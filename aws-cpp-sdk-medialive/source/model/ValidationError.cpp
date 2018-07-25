@@ -34,14 +34,14 @@ ValidationError::ValidationError() :
 {
 }
 
-ValidationError::ValidationError(const JsonValue& jsonValue) : 
+ValidationError::ValidationError(JsonView jsonValue) : 
     m_elementPathHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ValidationError& ValidationError::operator =(const JsonValue& jsonValue)
+ValidationError& ValidationError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("elementPath"))
   {

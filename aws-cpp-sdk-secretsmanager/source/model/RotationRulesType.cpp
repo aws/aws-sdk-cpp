@@ -34,14 +34,14 @@ RotationRulesType::RotationRulesType() :
 {
 }
 
-RotationRulesType::RotationRulesType(const JsonValue& jsonValue) : 
+RotationRulesType::RotationRulesType(JsonView jsonValue) : 
     m_automaticallyAfterDays(0),
     m_automaticallyAfterDaysHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RotationRulesType& RotationRulesType::operator =(const JsonValue& jsonValue)
+RotationRulesType& RotationRulesType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AutomaticallyAfterDays"))
   {

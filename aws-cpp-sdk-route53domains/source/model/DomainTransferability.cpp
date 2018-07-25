@@ -34,14 +34,14 @@ DomainTransferability::DomainTransferability() :
 {
 }
 
-DomainTransferability::DomainTransferability(const JsonValue& jsonValue) : 
+DomainTransferability::DomainTransferability(JsonView jsonValue) : 
     m_transferable(Transferable::NOT_SET),
     m_transferableHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DomainTransferability& DomainTransferability::operator =(const JsonValue& jsonValue)
+DomainTransferability& DomainTransferability::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Transferable"))
   {

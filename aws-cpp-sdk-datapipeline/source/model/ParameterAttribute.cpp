@@ -34,14 +34,14 @@ ParameterAttribute::ParameterAttribute() :
 {
 }
 
-ParameterAttribute::ParameterAttribute(const JsonValue& jsonValue) : 
+ParameterAttribute::ParameterAttribute(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_stringValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ParameterAttribute& ParameterAttribute::operator =(const JsonValue& jsonValue)
+ParameterAttribute& ParameterAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("key"))
   {

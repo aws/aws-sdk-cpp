@@ -37,7 +37,7 @@ DescribePlacementResult::DescribePlacementResult(const Aws::AmazonWebServiceResu
 
 DescribePlacementResult& DescribePlacementResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("placement"))
   {
     m_placement = jsonValue.GetObject("placement");

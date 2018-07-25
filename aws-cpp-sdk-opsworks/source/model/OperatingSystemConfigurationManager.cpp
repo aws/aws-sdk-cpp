@@ -34,14 +34,14 @@ OperatingSystemConfigurationManager::OperatingSystemConfigurationManager() :
 {
 }
 
-OperatingSystemConfigurationManager::OperatingSystemConfigurationManager(const JsonValue& jsonValue) : 
+OperatingSystemConfigurationManager::OperatingSystemConfigurationManager(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OperatingSystemConfigurationManager& OperatingSystemConfigurationManager::operator =(const JsonValue& jsonValue)
+OperatingSystemConfigurationManager& OperatingSystemConfigurationManager::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

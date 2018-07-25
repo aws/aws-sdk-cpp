@@ -56,7 +56,7 @@ Hdr10Metadata::Hdr10Metadata() :
 {
 }
 
-Hdr10Metadata::Hdr10Metadata(const JsonValue& jsonValue) : 
+Hdr10Metadata::Hdr10Metadata(JsonView jsonValue) : 
     m_bluePrimaryX(0),
     m_bluePrimaryXHasBeenSet(false),
     m_bluePrimaryY(0),
@@ -85,7 +85,7 @@ Hdr10Metadata::Hdr10Metadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Hdr10Metadata& Hdr10Metadata::operator =(const JsonValue& jsonValue)
+Hdr10Metadata& Hdr10Metadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bluePrimaryX"))
   {

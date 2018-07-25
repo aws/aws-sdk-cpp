@@ -48,7 +48,7 @@ MongoDbSettings::MongoDbSettings() :
 {
 }
 
-MongoDbSettings::MongoDbSettings(const JsonValue& jsonValue) : 
+MongoDbSettings::MongoDbSettings(JsonView jsonValue) : 
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_serverNameHasBeenSet(false),
@@ -69,7 +69,7 @@ MongoDbSettings::MongoDbSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MongoDbSettings& MongoDbSettings::operator =(const JsonValue& jsonValue)
+MongoDbSettings& MongoDbSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Username"))
   {

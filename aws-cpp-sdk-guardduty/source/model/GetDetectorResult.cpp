@@ -39,7 +39,7 @@ GetDetectorResult::GetDetectorResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GetDetectorResult& GetDetectorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");

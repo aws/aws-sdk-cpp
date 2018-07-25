@@ -37,7 +37,7 @@ Backup::Backup() :
 {
 }
 
-Backup::Backup(const JsonValue& jsonValue) : 
+Backup::Backup(JsonView jsonValue) : 
     m_backupIdHasBeenSet(false),
     m_backupState(BackupState::NOT_SET),
     m_backupStateHasBeenSet(false),
@@ -47,7 +47,7 @@ Backup::Backup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Backup& Backup::operator =(const JsonValue& jsonValue)
+Backup& Backup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BackupId"))
   {

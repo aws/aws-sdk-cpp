@@ -44,7 +44,7 @@ Aws::String DeregisterPatchBaselineForPatchGroupRequest::SerializePayload() cons
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeregisterPatchBaselineForPatchGroupRequest::GetRequestSpecificHeaders() const

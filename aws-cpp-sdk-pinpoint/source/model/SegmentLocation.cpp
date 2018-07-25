@@ -34,14 +34,14 @@ SegmentLocation::SegmentLocation() :
 {
 }
 
-SegmentLocation::SegmentLocation(const JsonValue& jsonValue) : 
+SegmentLocation::SegmentLocation(JsonView jsonValue) : 
     m_countryHasBeenSet(false),
     m_gPSPointHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SegmentLocation& SegmentLocation::operator =(const JsonValue& jsonValue)
+SegmentLocation& SegmentLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Country"))
   {

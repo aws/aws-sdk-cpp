@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SupportedEndpointType();
-    SupportedEndpointType(const Aws::Utils::Json::JsonValue& jsonValue);
-    SupportedEndpointType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SupportedEndpointType(Aws::Utils::Json::JsonView jsonValue);
+    SupportedEndpointType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

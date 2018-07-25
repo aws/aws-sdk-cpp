@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     SecurityGroup();
-    SecurityGroup(const Aws::Utils::Json::JsonValue& jsonValue);
-    SecurityGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

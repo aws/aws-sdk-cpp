@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentity
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     RoleMapping();
-    RoleMapping(const Aws::Utils::Json::JsonValue& jsonValue);
-    RoleMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RoleMapping(Aws::Utils::Json::JsonView jsonValue);
+    RoleMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

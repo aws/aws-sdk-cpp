@@ -37,7 +37,7 @@ GetFileUploadURLResult::GetFileUploadURLResult(const Aws::AmazonWebServiceResult
 
 GetFileUploadURLResult& GetFileUploadURLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FileUploadURL"))
   {
     m_fileUploadURL = jsonValue.GetString("FileUploadURL");

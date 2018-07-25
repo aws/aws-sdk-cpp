@@ -37,10 +37,10 @@ GetInstancesResult::GetInstancesResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetInstancesResult& GetInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instances"))
   {
-    Array<JsonValue> instancesJsonList = jsonValue.GetArray("instances");
+    Array<JsonView> instancesJsonList = jsonValue.GetArray("instances");
     for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
     {
       m_instances.push_back(instancesJsonList[instancesIndex].AsObject());

@@ -36,7 +36,7 @@ ImageFailure::ImageFailure() :
 {
 }
 
-ImageFailure::ImageFailure(const JsonValue& jsonValue) : 
+ImageFailure::ImageFailure(JsonView jsonValue) : 
     m_imageIdHasBeenSet(false),
     m_failureCode(ImageFailureCode::NOT_SET),
     m_failureCodeHasBeenSet(false),
@@ -45,7 +45,7 @@ ImageFailure::ImageFailure(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ImageFailure& ImageFailure::operator =(const JsonValue& jsonValue)
+ImageFailure& ImageFailure::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("imageId"))
   {

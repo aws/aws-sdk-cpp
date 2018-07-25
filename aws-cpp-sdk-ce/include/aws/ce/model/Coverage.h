@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CostExplorer
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Coverage();
-    Coverage(const Aws::Utils::Json::JsonValue& jsonValue);
-    Coverage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Coverage(Aws::Utils::Json::JsonView jsonValue);
+    Coverage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

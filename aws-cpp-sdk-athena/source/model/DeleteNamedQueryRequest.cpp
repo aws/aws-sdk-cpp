@@ -38,7 +38,7 @@ Aws::String DeleteNamedQueryRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteNamedQueryRequest::GetRequestSpecificHeaders() const

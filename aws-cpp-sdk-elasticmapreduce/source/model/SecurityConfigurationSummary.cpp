@@ -34,14 +34,14 @@ SecurityConfigurationSummary::SecurityConfigurationSummary() :
 {
 }
 
-SecurityConfigurationSummary::SecurityConfigurationSummary(const JsonValue& jsonValue) : 
+SecurityConfigurationSummary::SecurityConfigurationSummary(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SecurityConfigurationSummary& SecurityConfigurationSummary::operator =(const JsonValue& jsonValue)
+SecurityConfigurationSummary& SecurityConfigurationSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

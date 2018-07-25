@@ -39,7 +39,7 @@ BotMetadata::BotMetadata() :
 {
 }
 
-BotMetadata::BotMetadata(const JsonValue& jsonValue) : 
+BotMetadata::BotMetadata(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_status(Status::NOT_SET),
@@ -51,7 +51,7 @@ BotMetadata::BotMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BotMetadata& BotMetadata::operator =(const JsonValue& jsonValue)
+BotMetadata& BotMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

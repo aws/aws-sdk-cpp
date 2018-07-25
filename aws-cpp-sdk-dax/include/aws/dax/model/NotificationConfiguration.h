@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DAX
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     NotificationConfiguration();
-    NotificationConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    NotificationConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

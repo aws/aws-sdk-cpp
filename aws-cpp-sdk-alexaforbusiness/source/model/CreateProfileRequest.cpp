@@ -104,7 +104,7 @@ Aws::String CreateProfileRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateProfileRequest::GetRequestSpecificHeaders() const

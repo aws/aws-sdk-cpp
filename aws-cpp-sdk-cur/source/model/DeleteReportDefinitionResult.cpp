@@ -37,7 +37,7 @@ DeleteReportDefinitionResult::DeleteReportDefinitionResult(const Aws::AmazonWebS
 
 DeleteReportDefinitionResult& DeleteReportDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResponseMessage"))
   {
     m_responseMessage = jsonValue.GetString("ResponseMessage");

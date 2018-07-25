@@ -51,7 +51,7 @@ Crawler::Crawler() :
 {
 }
 
-Crawler::Crawler(const JsonValue& jsonValue) : 
+Crawler::Crawler(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_targetsHasBeenSet(false),
@@ -75,7 +75,7 @@ Crawler::Crawler(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Crawler& Crawler::operator =(const JsonValue& jsonValue)
+Crawler& Crawler::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -114,7 +114,7 @@ Crawler& Crawler::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Classifiers"))
   {
-    Array<JsonValue> classifiersJsonList = jsonValue.GetArray("Classifiers");
+    Array<JsonView> classifiersJsonList = jsonValue.GetArray("Classifiers");
     for(unsigned classifiersIndex = 0; classifiersIndex < classifiersJsonList.GetLength(); ++classifiersIndex)
     {
       m_classifiers.push_back(classifiersJsonList[classifiersIndex].AsString());

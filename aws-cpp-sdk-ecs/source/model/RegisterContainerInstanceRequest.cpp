@@ -89,7 +89,7 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RegisterContainerInstanceRequest::GetRequestSpecificHeaders() const

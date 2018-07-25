@@ -64,7 +64,7 @@ Aws::String GetShardIteratorRequest::SerializePayload() const
    payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetShardIteratorRequest::GetRequestSpecificHeaders() const

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     S3Location();
-    S3Location(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3Location& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3Location(Aws::Utils::Json::JsonView jsonValue);
+    S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

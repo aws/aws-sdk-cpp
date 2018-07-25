@@ -37,7 +37,7 @@ RetrieveTapeRecoveryPointResult::RetrieveTapeRecoveryPointResult(const Aws::Amaz
 
 RetrieveTapeRecoveryPointResult& RetrieveTapeRecoveryPointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TapeARN"))
   {
     m_tapeARN = jsonValue.GetString("TapeARN");

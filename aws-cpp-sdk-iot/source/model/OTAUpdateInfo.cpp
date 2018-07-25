@@ -47,7 +47,7 @@ OTAUpdateInfo::OTAUpdateInfo() :
 {
 }
 
-OTAUpdateInfo::OTAUpdateInfo(const JsonValue& jsonValue) : 
+OTAUpdateInfo::OTAUpdateInfo(JsonView jsonValue) : 
     m_otaUpdateIdHasBeenSet(false),
     m_otaUpdateArnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -67,7 +67,7 @@ OTAUpdateInfo::OTAUpdateInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OTAUpdateInfo& OTAUpdateInfo::operator =(const JsonValue& jsonValue)
+OTAUpdateInfo& OTAUpdateInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("otaUpdateId"))
   {
@@ -106,7 +106,7 @@ OTAUpdateInfo& OTAUpdateInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
@@ -123,7 +123,7 @@ OTAUpdateInfo& OTAUpdateInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("otaUpdateFiles"))
   {
-    Array<JsonValue> otaUpdateFilesJsonList = jsonValue.GetArray("otaUpdateFiles");
+    Array<JsonView> otaUpdateFilesJsonList = jsonValue.GetArray("otaUpdateFiles");
     for(unsigned otaUpdateFilesIndex = 0; otaUpdateFilesIndex < otaUpdateFilesJsonList.GetLength(); ++otaUpdateFilesIndex)
     {
       m_otaUpdateFiles.push_back(otaUpdateFilesJsonList[otaUpdateFilesIndex].AsObject());
@@ -161,7 +161,7 @@ OTAUpdateInfo& OTAUpdateInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("additionalParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> additionalParametersJsonMap = jsonValue.GetObject("additionalParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> additionalParametersJsonMap = jsonValue.GetObject("additionalParameters").GetAllObjects();
     for(auto& additionalParametersItem : additionalParametersJsonMap)
     {
       m_additionalParameters[additionalParametersItem.first] = additionalParametersItem.second.AsString();

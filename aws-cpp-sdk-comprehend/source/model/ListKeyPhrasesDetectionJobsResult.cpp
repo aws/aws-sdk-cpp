@@ -37,10 +37,10 @@ ListKeyPhrasesDetectionJobsResult::ListKeyPhrasesDetectionJobsResult(const Aws::
 
 ListKeyPhrasesDetectionJobsResult& ListKeyPhrasesDetectionJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyPhrasesDetectionJobPropertiesList"))
   {
-    Array<JsonValue> keyPhrasesDetectionJobPropertiesListJsonList = jsonValue.GetArray("KeyPhrasesDetectionJobPropertiesList");
+    Array<JsonView> keyPhrasesDetectionJobPropertiesListJsonList = jsonValue.GetArray("KeyPhrasesDetectionJobPropertiesList");
     for(unsigned keyPhrasesDetectionJobPropertiesListIndex = 0; keyPhrasesDetectionJobPropertiesListIndex < keyPhrasesDetectionJobPropertiesListJsonList.GetLength(); ++keyPhrasesDetectionJobPropertiesListIndex)
     {
       m_keyPhrasesDetectionJobPropertiesList.push_back(keyPhrasesDetectionJobPropertiesListJsonList[keyPhrasesDetectionJobPropertiesListIndex].AsObject());

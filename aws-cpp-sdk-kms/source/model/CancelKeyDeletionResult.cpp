@@ -37,7 +37,7 @@ CancelKeyDeletionResult::CancelKeyDeletionResult(const Aws::AmazonWebServiceResu
 
 CancelKeyDeletionResult& CancelKeyDeletionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");

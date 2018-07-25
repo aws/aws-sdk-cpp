@@ -35,7 +35,7 @@ Compliance::Compliance() :
 {
 }
 
-Compliance::Compliance(const JsonValue& jsonValue) : 
+Compliance::Compliance(JsonView jsonValue) : 
     m_complianceType(ComplianceType::NOT_SET),
     m_complianceTypeHasBeenSet(false),
     m_complianceContributorCountHasBeenSet(false)
@@ -43,7 +43,7 @@ Compliance::Compliance(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Compliance& Compliance::operator =(const JsonValue& jsonValue)
+Compliance& Compliance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceType"))
   {

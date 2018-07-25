@@ -59,7 +59,7 @@ Aws::String ListDeviceEventsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListDeviceEventsRequest::GetRequestSpecificHeaders() const

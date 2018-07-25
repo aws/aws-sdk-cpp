@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoTAnalytics
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     RemoveAttributesActivity();
-    RemoveAttributesActivity(const Aws::Utils::Json::JsonValue& jsonValue);
-    RemoveAttributesActivity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RemoveAttributesActivity(Aws::Utils::Json::JsonView jsonValue);
+    RemoveAttributesActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

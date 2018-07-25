@@ -42,7 +42,7 @@ JobInput::JobInput() :
 {
 }
 
-JobInput::JobInput(const JsonValue& jsonValue) : 
+JobInput::JobInput(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_frameRateHasBeenSet(false),
     m_resolutionHasBeenSet(false),
@@ -57,7 +57,7 @@ JobInput::JobInput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobInput& JobInput::operator =(const JsonValue& jsonValue)
+JobInput& JobInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

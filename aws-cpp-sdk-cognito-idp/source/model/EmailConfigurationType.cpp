@@ -34,14 +34,14 @@ EmailConfigurationType::EmailConfigurationType() :
 {
 }
 
-EmailConfigurationType::EmailConfigurationType(const JsonValue& jsonValue) : 
+EmailConfigurationType::EmailConfigurationType(JsonView jsonValue) : 
     m_sourceArnHasBeenSet(false),
     m_replyToEmailAddressHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EmailConfigurationType& EmailConfigurationType::operator =(const JsonValue& jsonValue)
+EmailConfigurationType& EmailConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SourceArn"))
   {

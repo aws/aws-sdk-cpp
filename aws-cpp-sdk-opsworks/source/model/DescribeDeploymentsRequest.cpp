@@ -56,7 +56,7 @@ Aws::String DescribeDeploymentsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeDeploymentsRequest::GetRequestSpecificHeaders() const

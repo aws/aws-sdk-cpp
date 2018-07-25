@@ -37,7 +37,7 @@ DescribeVTLDevicesResult::DescribeVTLDevicesResult(const Aws::AmazonWebServiceRe
 
 DescribeVTLDevicesResult& DescribeVTLDevicesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
@@ -46,7 +46,7 @@ DescribeVTLDevicesResult& DescribeVTLDevicesResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("VTLDevices"))
   {
-    Array<JsonValue> vTLDevicesJsonList = jsonValue.GetArray("VTLDevices");
+    Array<JsonView> vTLDevicesJsonList = jsonValue.GetArray("VTLDevices");
     for(unsigned vTLDevicesIndex = 0; vTLDevicesIndex < vTLDevicesJsonList.GetLength(); ++vTLDevicesIndex)
     {
       m_vTLDevices.push_back(vTLDevicesJsonList[vTLDevicesIndex].AsObject());

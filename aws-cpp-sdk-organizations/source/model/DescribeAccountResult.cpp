@@ -37,7 +37,7 @@ DescribeAccountResult::DescribeAccountResult(const Aws::AmazonWebServiceResult<J
 
 DescribeAccountResult& DescribeAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Account"))
   {
     m_account = jsonValue.GetObject("Account");

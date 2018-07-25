@@ -48,7 +48,7 @@ FaceDetail::FaceDetail() :
 {
 }
 
-FaceDetail::FaceDetail(const JsonValue& jsonValue) : 
+FaceDetail::FaceDetail(JsonView jsonValue) : 
     m_boundingBoxHasBeenSet(false),
     m_ageRangeHasBeenSet(false),
     m_smileHasBeenSet(false),
@@ -69,7 +69,7 @@ FaceDetail::FaceDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FaceDetail& FaceDetail::operator =(const JsonValue& jsonValue)
+FaceDetail& FaceDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BoundingBox"))
   {
@@ -143,7 +143,7 @@ FaceDetail& FaceDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Emotions"))
   {
-    Array<JsonValue> emotionsJsonList = jsonValue.GetArray("Emotions");
+    Array<JsonView> emotionsJsonList = jsonValue.GetArray("Emotions");
     for(unsigned emotionsIndex = 0; emotionsIndex < emotionsJsonList.GetLength(); ++emotionsIndex)
     {
       m_emotions.push_back(emotionsJsonList[emotionsIndex].AsObject());
@@ -153,7 +153,7 @@ FaceDetail& FaceDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Landmarks"))
   {
-    Array<JsonValue> landmarksJsonList = jsonValue.GetArray("Landmarks");
+    Array<JsonView> landmarksJsonList = jsonValue.GetArray("Landmarks");
     for(unsigned landmarksIndex = 0; landmarksIndex < landmarksJsonList.GetLength(); ++landmarksIndex)
     {
       m_landmarks.push_back(landmarksJsonList[landmarksIndex].AsObject());

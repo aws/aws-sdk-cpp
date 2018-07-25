@@ -37,10 +37,10 @@ DescribeLayersResult::DescribeLayersResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeLayersResult& DescribeLayersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Layers"))
   {
-    Array<JsonValue> layersJsonList = jsonValue.GetArray("Layers");
+    Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
     for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
     {
       m_layers.push_back(layersJsonList[layersIndex].AsObject());

@@ -37,7 +37,7 @@ Aws::String ListHapgsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListHapgsRequest::GetRequestSpecificHeaders() const

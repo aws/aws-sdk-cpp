@@ -37,7 +37,7 @@ DeleteBackupResult::DeleteBackupResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DeleteBackupResult& DeleteBackupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BackupDescription"))
   {
     m_backupDescription = jsonValue.GetObject("BackupDescription");

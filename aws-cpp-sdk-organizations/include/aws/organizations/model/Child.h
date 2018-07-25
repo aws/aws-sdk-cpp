@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Organizations
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Child();
-    Child(const Aws::Utils::Json::JsonValue& jsonValue);
-    Child& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Child(Aws::Utils::Json::JsonView jsonValue);
+    Child& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

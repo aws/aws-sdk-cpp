@@ -37,7 +37,7 @@ GetResourceMetricsResult::GetResourceMetricsResult(const Aws::AmazonWebServiceRe
 
 GetResourceMetricsResult& GetResourceMetricsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AlignedStartTime"))
   {
     m_alignedStartTime = jsonValue.GetDouble("AlignedStartTime");
@@ -58,7 +58,7 @@ GetResourceMetricsResult& GetResourceMetricsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("MetricList"))
   {
-    Array<JsonValue> metricListJsonList = jsonValue.GetArray("MetricList");
+    Array<JsonView> metricListJsonList = jsonValue.GetArray("MetricList");
     for(unsigned metricListIndex = 0; metricListIndex < metricListJsonList.GetLength(); ++metricListIndex)
     {
       m_metricList.push_back(metricListJsonList[metricListIndex].AsObject());

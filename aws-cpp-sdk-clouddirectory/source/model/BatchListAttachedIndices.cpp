@@ -36,7 +36,7 @@ BatchListAttachedIndices::BatchListAttachedIndices() :
 {
 }
 
-BatchListAttachedIndices::BatchListAttachedIndices(const JsonValue& jsonValue) : 
+BatchListAttachedIndices::BatchListAttachedIndices(JsonView jsonValue) : 
     m_targetReferenceHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -45,7 +45,7 @@ BatchListAttachedIndices::BatchListAttachedIndices(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchListAttachedIndices& BatchListAttachedIndices::operator =(const JsonValue& jsonValue)
+BatchListAttachedIndices& BatchListAttachedIndices::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetReference"))
   {

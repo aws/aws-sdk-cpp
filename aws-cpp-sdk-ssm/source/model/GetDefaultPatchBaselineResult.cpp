@@ -39,7 +39,7 @@ GetDefaultPatchBaselineResult::GetDefaultPatchBaselineResult(const Aws::AmazonWe
 
 GetDefaultPatchBaselineResult& GetDefaultPatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BaselineId"))
   {
     m_baselineId = jsonValue.GetString("BaselineId");

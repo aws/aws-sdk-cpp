@@ -35,7 +35,7 @@ ResourceGroup::ResourceGroup() :
 {
 }
 
-ResourceGroup::ResourceGroup(const JsonValue& jsonValue) : 
+ResourceGroup::ResourceGroup(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdAtHasBeenSet(false)
@@ -43,7 +43,7 @@ ResourceGroup::ResourceGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceGroup& ResourceGroup::operator =(const JsonValue& jsonValue)
+ResourceGroup& ResourceGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -54,7 +54,7 @@ ResourceGroup& ResourceGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

@@ -34,14 +34,14 @@ GroupQuery::GroupQuery() :
 {
 }
 
-GroupQuery::GroupQuery(const JsonValue& jsonValue) : 
+GroupQuery::GroupQuery(JsonView jsonValue) : 
     m_groupNameHasBeenSet(false),
     m_resourceQueryHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GroupQuery& GroupQuery::operator =(const JsonValue& jsonValue)
+GroupQuery& GroupQuery::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GroupName"))
   {

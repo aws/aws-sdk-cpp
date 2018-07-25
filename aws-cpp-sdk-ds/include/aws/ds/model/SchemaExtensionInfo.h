@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectoryService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     SchemaExtensionInfo();
-    SchemaExtensionInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    SchemaExtensionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SchemaExtensionInfo(Aws::Utils::Json::JsonView jsonValue);
+    SchemaExtensionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

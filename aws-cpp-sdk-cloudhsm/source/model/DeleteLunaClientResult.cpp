@@ -37,7 +37,7 @@ DeleteLunaClientResult::DeleteLunaClientResult(const Aws::AmazonWebServiceResult
 
 DeleteLunaClientResult& DeleteLunaClientResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");

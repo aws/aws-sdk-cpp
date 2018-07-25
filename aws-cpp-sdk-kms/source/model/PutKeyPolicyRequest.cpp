@@ -59,7 +59,7 @@ Aws::String PutKeyPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutKeyPolicyRequest::GetRequestSpecificHeaders() const

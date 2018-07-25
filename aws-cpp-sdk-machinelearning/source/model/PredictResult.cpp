@@ -37,7 +37,7 @@ PredictResult::PredictResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 PredictResult& PredictResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Prediction"))
   {
     m_prediction = jsonValue.GetObject("Prediction");

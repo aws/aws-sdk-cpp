@@ -37,7 +37,7 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() :
 {
 }
 
-WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(const JsonValue& jsonValue) : 
+WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(JsonView jsonValue) : 
     m_campaignHookHasBeenSet(false),
     m_cloudWatchMetricsEnabled(false),
     m_cloudWatchMetricsEnabledHasBeenSet(false),
@@ -47,7 +47,7 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(const JsonValue
   *this = jsonValue;
 }
 
-WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(const JsonValue& jsonValue)
+WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CampaignHook"))
   {

@@ -41,7 +41,7 @@ IdentityProviderType::IdentityProviderType() :
 {
 }
 
-IdentityProviderType::IdentityProviderType(const JsonValue& jsonValue) : 
+IdentityProviderType::IdentityProviderType(JsonView jsonValue) : 
     m_userPoolIdHasBeenSet(false),
     m_providerNameHasBeenSet(false),
     m_providerType(IdentityProviderTypeType::NOT_SET),
@@ -55,7 +55,7 @@ IdentityProviderType::IdentityProviderType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IdentityProviderType& IdentityProviderType::operator =(const JsonValue& jsonValue)
+IdentityProviderType& IdentityProviderType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserPoolId"))
   {
@@ -80,7 +80,7 @@ IdentityProviderType& IdentityProviderType::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("ProviderDetails"))
   {
-    Aws::Map<Aws::String, JsonValue> providerDetailsJsonMap = jsonValue.GetObject("ProviderDetails").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> providerDetailsJsonMap = jsonValue.GetObject("ProviderDetails").GetAllObjects();
     for(auto& providerDetailsItem : providerDetailsJsonMap)
     {
       m_providerDetails[providerDetailsItem.first] = providerDetailsItem.second.AsString();
@@ -90,7 +90,7 @@ IdentityProviderType& IdentityProviderType::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("AttributeMapping"))
   {
-    Aws::Map<Aws::String, JsonValue> attributeMappingJsonMap = jsonValue.GetObject("AttributeMapping").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributeMappingJsonMap = jsonValue.GetObject("AttributeMapping").GetAllObjects();
     for(auto& attributeMappingItem : attributeMappingJsonMap)
     {
       m_attributeMapping[attributeMappingItem.first] = attributeMappingItem.second.AsString();
@@ -100,7 +100,7 @@ IdentityProviderType& IdentityProviderType::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("IdpIdentifiers"))
   {
-    Array<JsonValue> idpIdentifiersJsonList = jsonValue.GetArray("IdpIdentifiers");
+    Array<JsonView> idpIdentifiersJsonList = jsonValue.GetArray("IdpIdentifiers");
     for(unsigned idpIdentifiersIndex = 0; idpIdentifiersIndex < idpIdentifiersJsonList.GetLength(); ++idpIdentifiersIndex)
     {
       m_idpIdentifiers.push_back(idpIdentifiersJsonList[idpIdentifiersIndex].AsString());

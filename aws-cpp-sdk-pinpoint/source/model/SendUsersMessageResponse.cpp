@@ -35,7 +35,7 @@ SendUsersMessageResponse::SendUsersMessageResponse() :
 {
 }
 
-SendUsersMessageResponse::SendUsersMessageResponse(const JsonValue& jsonValue) : 
+SendUsersMessageResponse::SendUsersMessageResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_requestIdHasBeenSet(false),
     m_resultHasBeenSet(false)
@@ -43,7 +43,7 @@ SendUsersMessageResponse::SendUsersMessageResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SendUsersMessageResponse& SendUsersMessageResponse::operator =(const JsonValue& jsonValue)
+SendUsersMessageResponse& SendUsersMessageResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {
@@ -61,10 +61,10 @@ SendUsersMessageResponse& SendUsersMessageResponse::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("Result"))
   {
-    Aws::Map<Aws::String, JsonValue> resultJsonMap = jsonValue.GetObject("Result").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> resultJsonMap = jsonValue.GetObject("Result").GetAllObjects();
     for(auto& resultItem : resultJsonMap)
     {
-      Aws::Map<Aws::String, JsonValue> mapOfEndpointMessageResultJsonMap = resultItem.second.GetAllObjects();
+      Aws::Map<Aws::String, JsonView> mapOfEndpointMessageResultJsonMap = resultItem.second.GetAllObjects();
       Aws::Map<Aws::String, EndpointMessageResult> mapOfEndpointMessageResultMap;
       for(auto& mapOfEndpointMessageResultItem : mapOfEndpointMessageResultJsonMap)
       {

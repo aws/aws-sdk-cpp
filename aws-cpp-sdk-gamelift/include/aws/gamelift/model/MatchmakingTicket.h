@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     MatchmakingTicket();
-    MatchmakingTicket(const Aws::Utils::Json::JsonValue& jsonValue);
-    MatchmakingTicket& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MatchmakingTicket(Aws::Utils::Json::JsonView jsonValue);
+    MatchmakingTicket& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

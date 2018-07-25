@@ -41,7 +41,7 @@ Entity::Entity() :
 {
 }
 
-Entity::Entity(const JsonValue& jsonValue) : 
+Entity::Entity(JsonView jsonValue) : 
     m_score(0.0),
     m_scoreHasBeenSet(false),
     m_type(EntityType::NOT_SET),
@@ -55,7 +55,7 @@ Entity::Entity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Entity& Entity::operator =(const JsonValue& jsonValue)
+Entity& Entity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Score"))
   {

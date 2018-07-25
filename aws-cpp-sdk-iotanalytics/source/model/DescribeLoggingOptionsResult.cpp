@@ -37,7 +37,7 @@ DescribeLoggingOptionsResult::DescribeLoggingOptionsResult(const Aws::AmazonWebS
 
 DescribeLoggingOptionsResult& DescribeLoggingOptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("loggingOptions"))
   {
     m_loggingOptions = jsonValue.GetObject("loggingOptions");

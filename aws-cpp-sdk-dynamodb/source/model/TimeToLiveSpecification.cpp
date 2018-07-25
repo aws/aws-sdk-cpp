@@ -35,7 +35,7 @@ TimeToLiveSpecification::TimeToLiveSpecification() :
 {
 }
 
-TimeToLiveSpecification::TimeToLiveSpecification(const JsonValue& jsonValue) : 
+TimeToLiveSpecification::TimeToLiveSpecification(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_attributeNameHasBeenSet(false)
@@ -43,7 +43,7 @@ TimeToLiveSpecification::TimeToLiveSpecification(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TimeToLiveSpecification& TimeToLiveSpecification::operator =(const JsonValue& jsonValue)
+TimeToLiveSpecification& TimeToLiveSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

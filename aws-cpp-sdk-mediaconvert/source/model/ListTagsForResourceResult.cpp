@@ -37,7 +37,7 @@ ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebService
 
 ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceTags"))
   {
     m_resourceTags = jsonValue.GetObject("resourceTags");

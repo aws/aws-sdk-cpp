@@ -41,7 +41,7 @@ APNSChannelRequest::APNSChannelRequest() :
 {
 }
 
-APNSChannelRequest::APNSChannelRequest(const JsonValue& jsonValue) : 
+APNSChannelRequest::APNSChannelRequest(JsonView jsonValue) : 
     m_bundleIdHasBeenSet(false),
     m_certificateHasBeenSet(false),
     m_defaultAuthenticationMethodHasBeenSet(false),
@@ -55,7 +55,7 @@ APNSChannelRequest::APNSChannelRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-APNSChannelRequest& APNSChannelRequest::operator =(const JsonValue& jsonValue)
+APNSChannelRequest& APNSChannelRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BundleId"))
   {

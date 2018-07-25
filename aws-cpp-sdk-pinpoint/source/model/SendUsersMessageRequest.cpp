@@ -35,7 +35,7 @@ SendUsersMessageRequest::SendUsersMessageRequest() :
 {
 }
 
-SendUsersMessageRequest::SendUsersMessageRequest(const JsonValue& jsonValue) : 
+SendUsersMessageRequest::SendUsersMessageRequest(JsonView jsonValue) : 
     m_contextHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
     m_usersHasBeenSet(false)
@@ -43,11 +43,11 @@ SendUsersMessageRequest::SendUsersMessageRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SendUsersMessageRequest& SendUsersMessageRequest::operator =(const JsonValue& jsonValue)
+SendUsersMessageRequest& SendUsersMessageRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Context"))
   {
-    Aws::Map<Aws::String, JsonValue> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
     for(auto& contextItem : contextJsonMap)
     {
       m_context[contextItem.first] = contextItem.second.AsString();
@@ -64,7 +64,7 @@ SendUsersMessageRequest& SendUsersMessageRequest::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Users"))
   {
-    Aws::Map<Aws::String, JsonValue> usersJsonMap = jsonValue.GetObject("Users").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> usersJsonMap = jsonValue.GetObject("Users").GetAllObjects();
     for(auto& usersItem : usersJsonMap)
     {
       m_users[usersItem.first] = usersItem.second.AsObject();

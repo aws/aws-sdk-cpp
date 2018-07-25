@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceDiscovery
@@ -34,8 +35,8 @@ namespace Model
   {
   public:
     HealthCheckCustomConfig();
-    HealthCheckCustomConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    HealthCheckCustomConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HealthCheckCustomConfig(Aws::Utils::Json::JsonView jsonValue);
+    HealthCheckCustomConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

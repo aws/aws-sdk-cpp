@@ -41,7 +41,7 @@ InstanceFleetConfig::InstanceFleetConfig() :
 {
 }
 
-InstanceFleetConfig::InstanceFleetConfig(const JsonValue& jsonValue) : 
+InstanceFleetConfig::InstanceFleetConfig(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_instanceFleetType(InstanceFleetType::NOT_SET),
     m_instanceFleetTypeHasBeenSet(false),
@@ -55,7 +55,7 @@ InstanceFleetConfig::InstanceFleetConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceFleetConfig& InstanceFleetConfig::operator =(const JsonValue& jsonValue)
+InstanceFleetConfig& InstanceFleetConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -87,7 +87,7 @@ InstanceFleetConfig& InstanceFleetConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("InstanceTypeConfigs"))
   {
-    Array<JsonValue> instanceTypeConfigsJsonList = jsonValue.GetArray("InstanceTypeConfigs");
+    Array<JsonView> instanceTypeConfigsJsonList = jsonValue.GetArray("InstanceTypeConfigs");
     for(unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength(); ++instanceTypeConfigsIndex)
     {
       m_instanceTypeConfigs.push_back(instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject());

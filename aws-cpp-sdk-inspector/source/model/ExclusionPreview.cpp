@@ -37,7 +37,7 @@ ExclusionPreview::ExclusionPreview() :
 {
 }
 
-ExclusionPreview::ExclusionPreview(const JsonValue& jsonValue) : 
+ExclusionPreview::ExclusionPreview(JsonView jsonValue) : 
     m_titleHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_recommendationHasBeenSet(false),
@@ -47,7 +47,7 @@ ExclusionPreview::ExclusionPreview(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExclusionPreview& ExclusionPreview::operator =(const JsonValue& jsonValue)
+ExclusionPreview& ExclusionPreview::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("title"))
   {
@@ -72,7 +72,7 @@ ExclusionPreview& ExclusionPreview::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("scopes"))
   {
-    Array<JsonValue> scopesJsonList = jsonValue.GetArray("scopes");
+    Array<JsonView> scopesJsonList = jsonValue.GetArray("scopes");
     for(unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex)
     {
       m_scopes.push_back(scopesJsonList[scopesIndex].AsObject());
@@ -82,7 +82,7 @@ ExclusionPreview& ExclusionPreview::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());

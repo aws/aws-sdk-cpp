@@ -38,7 +38,7 @@ SupportedEndpointType::SupportedEndpointType() :
 {
 }
 
-SupportedEndpointType::SupportedEndpointType(const JsonValue& jsonValue) : 
+SupportedEndpointType::SupportedEndpointType(JsonView jsonValue) : 
     m_engineNameHasBeenSet(false),
     m_supportsCDC(false),
     m_supportsCDCHasBeenSet(false),
@@ -49,7 +49,7 @@ SupportedEndpointType::SupportedEndpointType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SupportedEndpointType& SupportedEndpointType::operator =(const JsonValue& jsonValue)
+SupportedEndpointType& SupportedEndpointType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EngineName"))
   {

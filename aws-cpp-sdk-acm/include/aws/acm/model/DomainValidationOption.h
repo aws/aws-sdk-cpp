@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ACM
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     DomainValidationOption();
-    DomainValidationOption(const Aws::Utils::Json::JsonValue& jsonValue);
-    DomainValidationOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DomainValidationOption(Aws::Utils::Json::JsonView jsonValue);
+    DomainValidationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

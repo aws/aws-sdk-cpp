@@ -56,7 +56,7 @@ Reservation::Reservation() :
 {
 }
 
-Reservation::Reservation(const JsonValue& jsonValue) : 
+Reservation::Reservation(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
@@ -85,7 +85,7 @@ Reservation::Reservation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Reservation& Reservation::operator =(const JsonValue& jsonValue)
+Reservation& Reservation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

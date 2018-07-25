@@ -37,7 +37,7 @@ AttachTypedLinkResult::AttachTypedLinkResult(const Aws::AmazonWebServiceResult<J
 
 AttachTypedLinkResult& AttachTypedLinkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TypedLinkSpecifier"))
   {
     m_typedLinkSpecifier = jsonValue.GetObject("TypedLinkSpecifier");

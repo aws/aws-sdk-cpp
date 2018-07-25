@@ -57,7 +57,7 @@ Aws::String ListAssociationsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListAssociationsRequest::GetRequestSpecificHeaders() const

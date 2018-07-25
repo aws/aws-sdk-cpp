@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     OutputChannelMapping();
-    OutputChannelMapping(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputChannelMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputChannelMapping(Aws::Utils::Json::JsonView jsonValue);
+    OutputChannelMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

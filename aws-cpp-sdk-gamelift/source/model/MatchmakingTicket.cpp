@@ -44,7 +44,7 @@ MatchmakingTicket::MatchmakingTicket() :
 {
 }
 
-MatchmakingTicket::MatchmakingTicket(const JsonValue& jsonValue) : 
+MatchmakingTicket::MatchmakingTicket(JsonView jsonValue) : 
     m_ticketIdHasBeenSet(false),
     m_configurationNameHasBeenSet(false),
     m_status(MatchmakingConfigurationStatus::NOT_SET),
@@ -61,7 +61,7 @@ MatchmakingTicket::MatchmakingTicket(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MatchmakingTicket& MatchmakingTicket::operator =(const JsonValue& jsonValue)
+MatchmakingTicket& MatchmakingTicket::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TicketId"))
   {
@@ -114,7 +114,7 @@ MatchmakingTicket& MatchmakingTicket::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Players"))
   {
-    Array<JsonValue> playersJsonList = jsonValue.GetArray("Players");
+    Array<JsonView> playersJsonList = jsonValue.GetArray("Players");
     for(unsigned playersIndex = 0; playersIndex < playersJsonList.GetLength(); ++playersIndex)
     {
       m_players.push_back(playersJsonList[playersIndex].AsObject());

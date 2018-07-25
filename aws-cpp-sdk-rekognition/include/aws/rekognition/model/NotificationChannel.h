@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     NotificationChannel();
-    NotificationChannel(const Aws::Utils::Json::JsonValue& jsonValue);
-    NotificationChannel& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
+    NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -38,7 +38,7 @@ MappingEntry::MappingEntry() :
 {
 }
 
-MappingEntry::MappingEntry(const JsonValue& jsonValue) : 
+MappingEntry::MappingEntry(JsonView jsonValue) : 
     m_sourceTableHasBeenSet(false),
     m_sourcePathHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
@@ -49,7 +49,7 @@ MappingEntry::MappingEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MappingEntry& MappingEntry::operator =(const JsonValue& jsonValue)
+MappingEntry& MappingEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SourceTable"))
   {

@@ -45,7 +45,7 @@ Aws::String GetBlueprintsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetBlueprintsRequest::GetRequestSpecificHeaders() const

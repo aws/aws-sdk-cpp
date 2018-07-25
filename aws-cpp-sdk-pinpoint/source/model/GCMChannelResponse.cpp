@@ -47,7 +47,7 @@ GCMChannelResponse::GCMChannelResponse() :
 {
 }
 
-GCMChannelResponse::GCMChannelResponse(const JsonValue& jsonValue) : 
+GCMChannelResponse::GCMChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_credentialHasBeenSet(false),
@@ -67,7 +67,7 @@ GCMChannelResponse::GCMChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GCMChannelResponse& GCMChannelResponse::operator =(const JsonValue& jsonValue)
+GCMChannelResponse& GCMChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

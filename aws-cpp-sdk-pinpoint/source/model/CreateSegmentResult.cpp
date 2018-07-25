@@ -37,7 +37,7 @@ CreateSegmentResult::CreateSegmentResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateSegmentResult& CreateSegmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_segmentResponse = jsonValue;
 
 

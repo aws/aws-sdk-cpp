@@ -49,7 +49,7 @@ Aws::String RemoveTagsFromResourceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RemoveTagsFromResourceRequest::GetRequestSpecificHeaders() const

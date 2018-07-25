@@ -42,7 +42,7 @@ Aws::String DescribeStorediSCSIVolumesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeStorediSCSIVolumesRequest::GetRequestSpecificHeaders() const

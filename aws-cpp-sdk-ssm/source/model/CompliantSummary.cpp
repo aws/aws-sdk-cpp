@@ -35,7 +35,7 @@ CompliantSummary::CompliantSummary() :
 {
 }
 
-CompliantSummary::CompliantSummary(const JsonValue& jsonValue) : 
+CompliantSummary::CompliantSummary(JsonView jsonValue) : 
     m_compliantCount(0),
     m_compliantCountHasBeenSet(false),
     m_severitySummaryHasBeenSet(false)
@@ -43,7 +43,7 @@ CompliantSummary::CompliantSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CompliantSummary& CompliantSummary::operator =(const JsonValue& jsonValue)
+CompliantSummary& CompliantSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CompliantCount"))
   {

@@ -34,14 +34,14 @@ AggregateComplianceCount::AggregateComplianceCount() :
 {
 }
 
-AggregateComplianceCount::AggregateComplianceCount(const JsonValue& jsonValue) : 
+AggregateComplianceCount::AggregateComplianceCount(JsonView jsonValue) : 
     m_groupNameHasBeenSet(false),
     m_complianceSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AggregateComplianceCount& AggregateComplianceCount::operator =(const JsonValue& jsonValue)
+AggregateComplianceCount& AggregateComplianceCount::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GroupName"))
   {

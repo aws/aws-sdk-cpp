@@ -34,14 +34,14 @@ IpRuleItem::IpRuleItem() :
 {
 }
 
-IpRuleItem::IpRuleItem(const JsonValue& jsonValue) : 
+IpRuleItem::IpRuleItem(JsonView jsonValue) : 
     m_ipRuleHasBeenSet(false),
     m_ruleDescHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-IpRuleItem& IpRuleItem::operator =(const JsonValue& jsonValue)
+IpRuleItem& IpRuleItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ipRule"))
   {

@@ -37,7 +37,7 @@ DescribeSubnetGroupsResult::DescribeSubnetGroupsResult(const Aws::AmazonWebServi
 
 DescribeSubnetGroupsResult& DescribeSubnetGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ DescribeSubnetGroupsResult& DescribeSubnetGroupsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("SubnetGroups"))
   {
-    Array<JsonValue> subnetGroupsJsonList = jsonValue.GetArray("SubnetGroups");
+    Array<JsonView> subnetGroupsJsonList = jsonValue.GetArray("SubnetGroups");
     for(unsigned subnetGroupsIndex = 0; subnetGroupsIndex < subnetGroupsJsonList.GetLength(); ++subnetGroupsIndex)
     {
       m_subnetGroups.push_back(subnetGroupsJsonList[subnetGroupsIndex].AsObject());

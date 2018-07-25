@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EKS
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Certificate();
-    Certificate(const Aws::Utils::Json::JsonValue& jsonValue);
-    Certificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Certificate(Aws::Utils::Json::JsonView jsonValue);
+    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

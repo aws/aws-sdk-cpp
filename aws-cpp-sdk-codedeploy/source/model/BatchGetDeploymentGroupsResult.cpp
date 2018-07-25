@@ -37,10 +37,10 @@ BatchGetDeploymentGroupsResult::BatchGetDeploymentGroupsResult(const Aws::Amazon
 
 BatchGetDeploymentGroupsResult& BatchGetDeploymentGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentGroupsInfo"))
   {
-    Array<JsonValue> deploymentGroupsInfoJsonList = jsonValue.GetArray("deploymentGroupsInfo");
+    Array<JsonView> deploymentGroupsInfoJsonList = jsonValue.GetArray("deploymentGroupsInfo");
     for(unsigned deploymentGroupsInfoIndex = 0; deploymentGroupsInfoIndex < deploymentGroupsInfoJsonList.GetLength(); ++deploymentGroupsInfoIndex)
     {
       m_deploymentGroupsInfo.push_back(deploymentGroupsInfoJsonList[deploymentGroupsInfoIndex].AsObject());

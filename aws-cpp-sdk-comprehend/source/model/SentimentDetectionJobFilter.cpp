@@ -37,7 +37,7 @@ SentimentDetectionJobFilter::SentimentDetectionJobFilter() :
 {
 }
 
-SentimentDetectionJobFilter::SentimentDetectionJobFilter(const JsonValue& jsonValue) : 
+SentimentDetectionJobFilter::SentimentDetectionJobFilter(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
@@ -47,7 +47,7 @@ SentimentDetectionJobFilter::SentimentDetectionJobFilter(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-SentimentDetectionJobFilter& SentimentDetectionJobFilter::operator =(const JsonValue& jsonValue)
+SentimentDetectionJobFilter& SentimentDetectionJobFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

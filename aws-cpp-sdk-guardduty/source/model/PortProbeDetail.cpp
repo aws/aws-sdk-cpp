@@ -34,14 +34,14 @@ PortProbeDetail::PortProbeDetail() :
 {
 }
 
-PortProbeDetail::PortProbeDetail(const JsonValue& jsonValue) : 
+PortProbeDetail::PortProbeDetail(JsonView jsonValue) : 
     m_localPortDetailsHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PortProbeDetail& PortProbeDetail::operator =(const JsonValue& jsonValue)
+PortProbeDetail& PortProbeDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("localPortDetails"))
   {

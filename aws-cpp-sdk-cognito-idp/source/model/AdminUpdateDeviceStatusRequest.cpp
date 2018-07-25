@@ -58,7 +58,7 @@ Aws::String AdminUpdateDeviceStatusRequest::SerializePayload() const
    payload.WithString("DeviceRememberedStatus", DeviceRememberedStatusTypeMapper::GetNameForDeviceRememberedStatusType(m_deviceRememberedStatus));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminUpdateDeviceStatusRequest::GetRequestSpecificHeaders() const

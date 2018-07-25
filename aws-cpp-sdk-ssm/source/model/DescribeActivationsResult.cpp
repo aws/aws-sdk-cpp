@@ -37,10 +37,10 @@ DescribeActivationsResult::DescribeActivationsResult(const Aws::AmazonWebService
 
 DescribeActivationsResult& DescribeActivationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ActivationList"))
   {
-    Array<JsonValue> activationListJsonList = jsonValue.GetArray("ActivationList");
+    Array<JsonView> activationListJsonList = jsonValue.GetArray("ActivationList");
     for(unsigned activationListIndex = 0; activationListIndex < activationListJsonList.GetLength(); ++activationListIndex)
     {
       m_activationList.push_back(activationListJsonList[activationListIndex].AsObject());

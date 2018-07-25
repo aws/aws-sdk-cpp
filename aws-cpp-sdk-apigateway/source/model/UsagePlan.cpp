@@ -39,7 +39,7 @@ UsagePlan::UsagePlan() :
 {
 }
 
-UsagePlan::UsagePlan(const JsonValue& jsonValue) : 
+UsagePlan::UsagePlan(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -51,7 +51,7 @@ UsagePlan::UsagePlan(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UsagePlan& UsagePlan::operator =(const JsonValue& jsonValue)
+UsagePlan& UsagePlan::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -76,7 +76,7 @@ UsagePlan& UsagePlan::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("apiStages"))
   {
-    Array<JsonValue> apiStagesJsonList = jsonValue.GetArray("apiStages");
+    Array<JsonView> apiStagesJsonList = jsonValue.GetArray("apiStages");
     for(unsigned apiStagesIndex = 0; apiStagesIndex < apiStagesJsonList.GetLength(); ++apiStagesIndex)
     {
       m_apiStages.push_back(apiStagesJsonList[apiStagesIndex].AsObject());

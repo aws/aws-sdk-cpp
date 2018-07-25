@@ -52,7 +52,7 @@ ConfigurationItem::ConfigurationItem() :
 {
 }
 
-ConfigurationItem::ConfigurationItem(const JsonValue& jsonValue) : 
+ConfigurationItem::ConfigurationItem(JsonView jsonValue) : 
     m_versionHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_configurationItemCaptureTimeHasBeenSet(false),
@@ -77,7 +77,7 @@ ConfigurationItem::ConfigurationItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigurationItem& ConfigurationItem::operator =(const JsonValue& jsonValue)
+ConfigurationItem& ConfigurationItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("version"))
   {
@@ -172,7 +172,7 @@ ConfigurationItem& ConfigurationItem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
@@ -182,7 +182,7 @@ ConfigurationItem& ConfigurationItem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("relatedEvents"))
   {
-    Array<JsonValue> relatedEventsJsonList = jsonValue.GetArray("relatedEvents");
+    Array<JsonView> relatedEventsJsonList = jsonValue.GetArray("relatedEvents");
     for(unsigned relatedEventsIndex = 0; relatedEventsIndex < relatedEventsJsonList.GetLength(); ++relatedEventsIndex)
     {
       m_relatedEvents.push_back(relatedEventsJsonList[relatedEventsIndex].AsString());
@@ -192,7 +192,7 @@ ConfigurationItem& ConfigurationItem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("relationships"))
   {
-    Array<JsonValue> relationshipsJsonList = jsonValue.GetArray("relationships");
+    Array<JsonView> relationshipsJsonList = jsonValue.GetArray("relationships");
     for(unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex)
     {
       m_relationships.push_back(relationshipsJsonList[relationshipsIndex].AsObject());
@@ -209,7 +209,7 @@ ConfigurationItem& ConfigurationItem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("supplementaryConfiguration"))
   {
-    Aws::Map<Aws::String, JsonValue> supplementaryConfigurationJsonMap = jsonValue.GetObject("supplementaryConfiguration").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> supplementaryConfigurationJsonMap = jsonValue.GetObject("supplementaryConfiguration").GetAllObjects();
     for(auto& supplementaryConfigurationItem : supplementaryConfigurationJsonMap)
     {
       m_supplementaryConfiguration[supplementaryConfigurationItem.first] = supplementaryConfigurationItem.second.AsString();

@@ -39,7 +39,7 @@ RedshiftDataSpec::RedshiftDataSpec() :
 {
 }
 
-RedshiftDataSpec::RedshiftDataSpec(const JsonValue& jsonValue) : 
+RedshiftDataSpec::RedshiftDataSpec(JsonView jsonValue) : 
     m_databaseInformationHasBeenSet(false),
     m_selectSqlQueryHasBeenSet(false),
     m_databaseCredentialsHasBeenSet(false),
@@ -51,7 +51,7 @@ RedshiftDataSpec::RedshiftDataSpec(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RedshiftDataSpec& RedshiftDataSpec::operator =(const JsonValue& jsonValue)
+RedshiftDataSpec& RedshiftDataSpec::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DatabaseInformation"))
   {

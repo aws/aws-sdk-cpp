@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Comprehend
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     DominantLanguageDetectionJobProperties();
-    DominantLanguageDetectionJobProperties(const Aws::Utils::Json::JsonValue& jsonValue);
-    DominantLanguageDetectionJobProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DominantLanguageDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    DominantLanguageDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

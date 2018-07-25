@@ -37,7 +37,7 @@ CreateInputSecurityGroupResult::CreateInputSecurityGroupResult(const Aws::Amazon
 
 CreateInputSecurityGroupResult& CreateInputSecurityGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("securityGroup"))
   {
     m_securityGroup = jsonValue.GetObject("securityGroup");

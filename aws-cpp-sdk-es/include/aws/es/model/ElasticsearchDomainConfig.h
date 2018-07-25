@@ -34,6 +34,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     ElasticsearchDomainConfig();
-    ElasticsearchDomainConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    ElasticsearchDomainConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ElasticsearchDomainConfig(Aws::Utils::Json::JsonView jsonValue);
+    ElasticsearchDomainConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -39,7 +39,7 @@ CreateScalingPlanResult::CreateScalingPlanResult(const Aws::AmazonWebServiceResu
 
 CreateScalingPlanResult& CreateScalingPlanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScalingPlanVersion"))
   {
     m_scalingPlanVersion = jsonValue.GetInt64("ScalingPlanVersion");

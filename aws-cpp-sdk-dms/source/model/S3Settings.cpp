@@ -40,7 +40,7 @@ S3Settings::S3Settings() :
 {
 }
 
-S3Settings::S3Settings(const JsonValue& jsonValue) : 
+S3Settings::S3Settings(JsonView jsonValue) : 
     m_serviceAccessRoleArnHasBeenSet(false),
     m_externalTableDefinitionHasBeenSet(false),
     m_csvRowDelimiterHasBeenSet(false),
@@ -53,7 +53,7 @@ S3Settings::S3Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3Settings& S3Settings::operator =(const JsonValue& jsonValue)
+S3Settings& S3Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {

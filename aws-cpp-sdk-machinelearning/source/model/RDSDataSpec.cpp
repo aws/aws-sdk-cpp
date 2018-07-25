@@ -43,7 +43,7 @@ RDSDataSpec::RDSDataSpec() :
 {
 }
 
-RDSDataSpec::RDSDataSpec(const JsonValue& jsonValue) : 
+RDSDataSpec::RDSDataSpec(JsonView jsonValue) : 
     m_databaseInformationHasBeenSet(false),
     m_selectSqlQueryHasBeenSet(false),
     m_databaseCredentialsHasBeenSet(false),
@@ -59,7 +59,7 @@ RDSDataSpec::RDSDataSpec(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RDSDataSpec& RDSDataSpec::operator =(const JsonValue& jsonValue)
+RDSDataSpec& RDSDataSpec::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DatabaseInformation"))
   {
@@ -133,7 +133,7 @@ RDSDataSpec& RDSDataSpec::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());

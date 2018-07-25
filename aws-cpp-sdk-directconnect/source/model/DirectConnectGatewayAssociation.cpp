@@ -39,7 +39,7 @@ DirectConnectGatewayAssociation::DirectConnectGatewayAssociation() :
 {
 }
 
-DirectConnectGatewayAssociation::DirectConnectGatewayAssociation(const JsonValue& jsonValue) : 
+DirectConnectGatewayAssociation::DirectConnectGatewayAssociation(JsonView jsonValue) : 
     m_directConnectGatewayIdHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false),
     m_virtualGatewayRegionHasBeenSet(false),
@@ -51,7 +51,7 @@ DirectConnectGatewayAssociation::DirectConnectGatewayAssociation(const JsonValue
   *this = jsonValue;
 }
 
-DirectConnectGatewayAssociation& DirectConnectGatewayAssociation::operator =(const JsonValue& jsonValue)
+DirectConnectGatewayAssociation& DirectConnectGatewayAssociation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("directConnectGatewayId"))
   {

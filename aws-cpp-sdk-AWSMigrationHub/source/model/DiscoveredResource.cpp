@@ -34,14 +34,14 @@ DiscoveredResource::DiscoveredResource() :
 {
 }
 
-DiscoveredResource::DiscoveredResource(const JsonValue& jsonValue) : 
+DiscoveredResource::DiscoveredResource(JsonView jsonValue) : 
     m_configurationIdHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DiscoveredResource& DiscoveredResource::operator =(const JsonValue& jsonValue)
+DiscoveredResource& DiscoveredResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConfigurationId"))
   {

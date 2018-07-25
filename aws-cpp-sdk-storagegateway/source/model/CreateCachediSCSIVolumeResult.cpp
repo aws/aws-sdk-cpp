@@ -37,7 +37,7 @@ CreateCachediSCSIVolumeResult::CreateCachediSCSIVolumeResult(const Aws::AmazonWe
 
 CreateCachediSCSIVolumeResult& CreateCachediSCSIVolumeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");

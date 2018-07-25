@@ -37,7 +37,7 @@ Aws::String CreateRealtimeEndpointRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateRealtimeEndpointRequest::GetRequestSpecificHeaders() const

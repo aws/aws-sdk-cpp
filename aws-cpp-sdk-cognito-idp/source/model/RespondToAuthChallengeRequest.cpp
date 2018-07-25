@@ -77,7 +77,7 @@ Aws::String RespondToAuthChallengeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RespondToAuthChallengeRequest::GetRequestSpecificHeaders() const

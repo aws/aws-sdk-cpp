@@ -41,7 +41,7 @@ ResourceChange::ResourceChange() :
 {
 }
 
-ResourceChange::ResourceChange(const JsonValue& jsonValue) : 
+ResourceChange::ResourceChange(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_logicalResourceIdHasBeenSet(false),
@@ -55,7 +55,7 @@ ResourceChange::ResourceChange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceChange& ResourceChange::operator =(const JsonValue& jsonValue)
+ResourceChange& ResourceChange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {
@@ -94,7 +94,7 @@ ResourceChange& ResourceChange::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Scope"))
   {
-    Array<JsonValue> scopeJsonList = jsonValue.GetArray("Scope");
+    Array<JsonView> scopeJsonList = jsonValue.GetArray("Scope");
     for(unsigned scopeIndex = 0; scopeIndex < scopeJsonList.GetLength(); ++scopeIndex)
     {
       m_scope.push_back(ResourceAttributeMapper::GetResourceAttributeForName(scopeJsonList[scopeIndex].AsString()));
@@ -104,7 +104,7 @@ ResourceChange& ResourceChange::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Details"))
   {
-    Array<JsonValue> detailsJsonList = jsonValue.GetArray("Details");
+    Array<JsonView> detailsJsonList = jsonValue.GetArray("Details");
     for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
     {
       m_details.push_back(detailsJsonList[detailsIndex].AsObject());

@@ -124,7 +124,7 @@ Aws::String UpdatePatchBaselineRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdatePatchBaselineRequest::GetRequestSpecificHeaders() const

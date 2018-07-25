@@ -37,13 +37,13 @@ BatchWriteItemResult::BatchWriteItemResult(const Aws::AmazonWebServiceResult<Jso
 
 BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UnprocessedItems"))
   {
-    Aws::Map<Aws::String, JsonValue> unprocessedItemsJsonMap = jsonValue.GetObject("UnprocessedItems").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> unprocessedItemsJsonMap = jsonValue.GetObject("UnprocessedItems").GetAllObjects();
     for(auto& unprocessedItemsItem : unprocessedItemsJsonMap)
     {
-      Array<JsonValue> writeRequestsJsonList = unprocessedItemsItem.second.AsArray();
+      Array<JsonView> writeRequestsJsonList = unprocessedItemsItem.second.AsArray();
       Aws::Vector<WriteRequest> writeRequestsList;
       writeRequestsList.reserve((size_t)writeRequestsJsonList.GetLength());
       for(unsigned writeRequestsIndex = 0; writeRequestsIndex < writeRequestsJsonList.GetLength(); ++writeRequestsIndex)
@@ -56,10 +56,10 @@ BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("ItemCollectionMetrics"))
   {
-    Aws::Map<Aws::String, JsonValue> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
     for(auto& itemCollectionMetricsItem : itemCollectionMetricsJsonMap)
     {
-      Array<JsonValue> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.AsArray();
+      Array<JsonView> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.AsArray();
       Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultipleList;
       itemCollectionMetricsMultipleList.reserve((size_t)itemCollectionMetricsMultipleJsonList.GetLength());
       for(unsigned itemCollectionMetricsMultipleIndex = 0; itemCollectionMetricsMultipleIndex < itemCollectionMetricsMultipleJsonList.GetLength(); ++itemCollectionMetricsMultipleIndex)
@@ -72,7 +72,7 @@ BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
-    Array<JsonValue> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
+    Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
     for(unsigned consumedCapacityIndex = 0; consumedCapacityIndex < consumedCapacityJsonList.GetLength(); ++consumedCapacityIndex)
     {
       m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());

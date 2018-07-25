@@ -44,7 +44,7 @@ Aws::String InitiateLayerUploadRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection InitiateLayerUploadRequest::GetRequestSpecificHeaders() const

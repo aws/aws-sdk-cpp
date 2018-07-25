@@ -37,7 +37,7 @@ DescribeClustersResult::DescribeClustersResult(const Aws::AmazonWebServiceResult
 
 DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Clusters"))
   {
-    Array<JsonValue> clustersJsonList = jsonValue.GetArray("Clusters");
+    Array<JsonView> clustersJsonList = jsonValue.GetArray("Clusters");
     for(unsigned clustersIndex = 0; clustersIndex < clustersJsonList.GetLength(); ++clustersIndex)
     {
       m_clusters.push_back(clustersJsonList[clustersIndex].AsObject());

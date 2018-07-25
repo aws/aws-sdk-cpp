@@ -51,7 +51,7 @@ Aws::String AdminLinkProviderForUserRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminLinkProviderForUserRequest::GetRequestSpecificHeaders() const

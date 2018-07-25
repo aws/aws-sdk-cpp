@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -52,8 +53,8 @@ namespace Model
   {
   public:
     VpcLink();
-    VpcLink(const Aws::Utils::Json::JsonValue& jsonValue);
-    VpcLink& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VpcLink(Aws::Utils::Json::JsonView jsonValue);
+    VpcLink& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

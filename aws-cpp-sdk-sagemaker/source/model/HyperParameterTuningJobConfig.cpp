@@ -37,7 +37,7 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() :
 {
 }
 
-HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(const JsonValue& jsonValue) : 
+HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue) : 
     m_strategy(HyperParameterTuningJobStrategyType::NOT_SET),
     m_strategyHasBeenSet(false),
     m_hyperParameterTuningJobObjectiveHasBeenSet(false),
@@ -47,7 +47,7 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(const JsonValue& js
   *this = jsonValue;
 }
 
-HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator =(const JsonValue& jsonValue)
+HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Strategy"))
   {

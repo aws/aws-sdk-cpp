@@ -33,13 +33,13 @@ InputProcessingConfigurationDescription::InputProcessingConfigurationDescription
 {
 }
 
-InputProcessingConfigurationDescription::InputProcessingConfigurationDescription(const JsonValue& jsonValue) : 
+InputProcessingConfigurationDescription::InputProcessingConfigurationDescription(JsonView jsonValue) : 
     m_inputLambdaProcessorDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputProcessingConfigurationDescription& InputProcessingConfigurationDescription::operator =(const JsonValue& jsonValue)
+InputProcessingConfigurationDescription& InputProcessingConfigurationDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputLambdaProcessorDescription"))
   {

@@ -36,7 +36,7 @@ PersonMatch::PersonMatch() :
 {
 }
 
-PersonMatch::PersonMatch(const JsonValue& jsonValue) : 
+PersonMatch::PersonMatch(JsonView jsonValue) : 
     m_timestamp(0),
     m_timestampHasBeenSet(false),
     m_personHasBeenSet(false),
@@ -45,7 +45,7 @@ PersonMatch::PersonMatch(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PersonMatch& PersonMatch::operator =(const JsonValue& jsonValue)
+PersonMatch& PersonMatch::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {
@@ -63,7 +63,7 @@ PersonMatch& PersonMatch::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("FaceMatches"))
   {
-    Array<JsonValue> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
+    Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
     for(unsigned faceMatchesIndex = 0; faceMatchesIndex < faceMatchesJsonList.GetLength(); ++faceMatchesIndex)
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());

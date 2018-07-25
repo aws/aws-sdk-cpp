@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -52,8 +53,8 @@ namespace Model
   {
   public:
     Recipes();
-    Recipes(const Aws::Utils::Json::JsonValue& jsonValue);
-    Recipes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Recipes(Aws::Utils::Json::JsonView jsonValue);
+    Recipes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

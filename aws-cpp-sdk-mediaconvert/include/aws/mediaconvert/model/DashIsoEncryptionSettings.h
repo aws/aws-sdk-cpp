@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     DashIsoEncryptionSettings();
-    DashIsoEncryptionSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    DashIsoEncryptionSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DashIsoEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    DashIsoEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

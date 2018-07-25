@@ -41,7 +41,7 @@ CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult
 
 CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");

@@ -46,7 +46,7 @@ CustomerAgentInfo::CustomerAgentInfo() :
 {
 }
 
-CustomerAgentInfo::CustomerAgentInfo(const JsonValue& jsonValue) : 
+CustomerAgentInfo::CustomerAgentInfo(JsonView jsonValue) : 
     m_activeAgents(0),
     m_activeAgentsHasBeenSet(false),
     m_healthyAgents(0),
@@ -65,7 +65,7 @@ CustomerAgentInfo::CustomerAgentInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CustomerAgentInfo& CustomerAgentInfo::operator =(const JsonValue& jsonValue)
+CustomerAgentInfo& CustomerAgentInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activeAgents"))
   {

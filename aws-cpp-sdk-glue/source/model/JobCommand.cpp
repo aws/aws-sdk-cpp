@@ -34,14 +34,14 @@ JobCommand::JobCommand() :
 {
 }
 
-JobCommand::JobCommand(const JsonValue& jsonValue) : 
+JobCommand::JobCommand(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_scriptLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JobCommand& JobCommand::operator =(const JsonValue& jsonValue)
+JobCommand& JobCommand::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

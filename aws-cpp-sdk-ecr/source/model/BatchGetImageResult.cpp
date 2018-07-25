@@ -37,10 +37,10 @@ BatchGetImageResult::BatchGetImageResult(const Aws::AmazonWebServiceResult<JsonV
 
 BatchGetImageResult& BatchGetImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("images"))
   {
-    Array<JsonValue> imagesJsonList = jsonValue.GetArray("images");
+    Array<JsonView> imagesJsonList = jsonValue.GetArray("images");
     for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
     {
       m_images.push_back(imagesJsonList[imagesIndex].AsObject());
@@ -49,7 +49,7 @@ BatchGetImageResult& BatchGetImageResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonValue> failuresJsonList = jsonValue.GetArray("failures");
+    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

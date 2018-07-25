@@ -45,7 +45,7 @@ WorkflowExecutionContinuedAsNewEventAttributes::WorkflowExecutionContinuedAsNewE
 {
 }
 
-WorkflowExecutionContinuedAsNewEventAttributes::WorkflowExecutionContinuedAsNewEventAttributes(const JsonValue& jsonValue) : 
+WorkflowExecutionContinuedAsNewEventAttributes::WorkflowExecutionContinuedAsNewEventAttributes(JsonView jsonValue) : 
     m_inputHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false),
@@ -63,7 +63,7 @@ WorkflowExecutionContinuedAsNewEventAttributes::WorkflowExecutionContinuedAsNewE
   *this = jsonValue;
 }
 
-WorkflowExecutionContinuedAsNewEventAttributes& WorkflowExecutionContinuedAsNewEventAttributes::operator =(const JsonValue& jsonValue)
+WorkflowExecutionContinuedAsNewEventAttributes& WorkflowExecutionContinuedAsNewEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("input"))
   {
@@ -123,7 +123,7 @@ WorkflowExecutionContinuedAsNewEventAttributes& WorkflowExecutionContinuedAsNewE
 
   if(jsonValue.ValueExists("tagList"))
   {
-    Array<JsonValue> tagListJsonList = jsonValue.GetArray("tagList");
+    Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
     for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsString());

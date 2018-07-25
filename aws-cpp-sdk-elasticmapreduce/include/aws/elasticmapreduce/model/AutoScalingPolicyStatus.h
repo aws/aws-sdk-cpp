@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AutoScalingPolicyStatus();
-    AutoScalingPolicyStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    AutoScalingPolicyStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AutoScalingPolicyStatus(Aws::Utils::Json::JsonView jsonValue);
+    AutoScalingPolicyStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

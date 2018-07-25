@@ -33,13 +33,13 @@ AvailConfiguration::AvailConfiguration() :
 {
 }
 
-AvailConfiguration::AvailConfiguration(const JsonValue& jsonValue) : 
+AvailConfiguration::AvailConfiguration(JsonView jsonValue) : 
     m_availSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AvailConfiguration& AvailConfiguration::operator =(const JsonValue& jsonValue)
+AvailConfiguration& AvailConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("availSettings"))
   {

@@ -37,7 +37,7 @@ ConfigRuleComplianceFilters::ConfigRuleComplianceFilters() :
 {
 }
 
-ConfigRuleComplianceFilters::ConfigRuleComplianceFilters(const JsonValue& jsonValue) : 
+ConfigRuleComplianceFilters::ConfigRuleComplianceFilters(JsonView jsonValue) : 
     m_configRuleNameHasBeenSet(false),
     m_complianceType(ComplianceType::NOT_SET),
     m_complianceTypeHasBeenSet(false),
@@ -47,7 +47,7 @@ ConfigRuleComplianceFilters::ConfigRuleComplianceFilters(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ConfigRuleComplianceFilters& ConfigRuleComplianceFilters::operator =(const JsonValue& jsonValue)
+ConfigRuleComplianceFilters& ConfigRuleComplianceFilters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConfigRuleName"))
   {

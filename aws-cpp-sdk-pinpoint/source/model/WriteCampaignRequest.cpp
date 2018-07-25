@@ -48,7 +48,7 @@ WriteCampaignRequest::WriteCampaignRequest() :
 {
 }
 
-WriteCampaignRequest::WriteCampaignRequest(const JsonValue& jsonValue) : 
+WriteCampaignRequest::WriteCampaignRequest(JsonView jsonValue) : 
     m_additionalTreatmentsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
@@ -69,11 +69,11 @@ WriteCampaignRequest::WriteCampaignRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WriteCampaignRequest& WriteCampaignRequest::operator =(const JsonValue& jsonValue)
+WriteCampaignRequest& WriteCampaignRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdditionalTreatments"))
   {
-    Array<JsonValue> additionalTreatmentsJsonList = jsonValue.GetArray("AdditionalTreatments");
+    Array<JsonView> additionalTreatmentsJsonList = jsonValue.GetArray("AdditionalTreatments");
     for(unsigned additionalTreatmentsIndex = 0; additionalTreatmentsIndex < additionalTreatmentsJsonList.GetLength(); ++additionalTreatmentsIndex)
     {
       m_additionalTreatments.push_back(additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject());

@@ -66,7 +66,7 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeScalingActivitiesRequest::GetRequestSpecificHeaders() const

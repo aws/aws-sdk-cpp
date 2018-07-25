@@ -37,10 +37,10 @@ DescribeNotificationsForBudgetResult::DescribeNotificationsForBudgetResult(const
 
 DescribeNotificationsForBudgetResult& DescribeNotificationsForBudgetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Notifications"))
   {
-    Array<JsonValue> notificationsJsonList = jsonValue.GetArray("Notifications");
+    Array<JsonView> notificationsJsonList = jsonValue.GetArray("Notifications");
     for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
     {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());

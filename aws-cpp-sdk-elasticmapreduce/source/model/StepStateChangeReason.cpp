@@ -35,7 +35,7 @@ StepStateChangeReason::StepStateChangeReason() :
 {
 }
 
-StepStateChangeReason::StepStateChangeReason(const JsonValue& jsonValue) : 
+StepStateChangeReason::StepStateChangeReason(JsonView jsonValue) : 
     m_code(StepStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ StepStateChangeReason::StepStateChangeReason(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StepStateChangeReason& StepStateChangeReason::operator =(const JsonValue& jsonValue)
+StepStateChangeReason& StepStateChangeReason::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

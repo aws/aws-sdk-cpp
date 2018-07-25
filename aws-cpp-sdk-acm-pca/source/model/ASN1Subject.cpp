@@ -46,7 +46,7 @@ ASN1Subject::ASN1Subject() :
 {
 }
 
-ASN1Subject::ASN1Subject(const JsonValue& jsonValue) : 
+ASN1Subject::ASN1Subject(JsonView jsonValue) : 
     m_countryHasBeenSet(false),
     m_organizationHasBeenSet(false),
     m_organizationalUnitHasBeenSet(false),
@@ -65,7 +65,7 @@ ASN1Subject::ASN1Subject(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ASN1Subject& ASN1Subject::operator =(const JsonValue& jsonValue)
+ASN1Subject& ASN1Subject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Country"))
   {

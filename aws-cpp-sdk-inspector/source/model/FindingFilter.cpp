@@ -40,7 +40,7 @@ FindingFilter::FindingFilter() :
 {
 }
 
-FindingFilter::FindingFilter(const JsonValue& jsonValue) : 
+FindingFilter::FindingFilter(JsonView jsonValue) : 
     m_agentIdsHasBeenSet(false),
     m_autoScalingGroupsHasBeenSet(false),
     m_ruleNamesHasBeenSet(false),
@@ -53,11 +53,11 @@ FindingFilter::FindingFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FindingFilter& FindingFilter::operator =(const JsonValue& jsonValue)
+FindingFilter& FindingFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("agentIds"))
   {
-    Array<JsonValue> agentIdsJsonList = jsonValue.GetArray("agentIds");
+    Array<JsonView> agentIdsJsonList = jsonValue.GetArray("agentIds");
     for(unsigned agentIdsIndex = 0; agentIdsIndex < agentIdsJsonList.GetLength(); ++agentIdsIndex)
     {
       m_agentIds.push_back(agentIdsJsonList[agentIdsIndex].AsString());
@@ -67,7 +67,7 @@ FindingFilter& FindingFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("autoScalingGroups"))
   {
-    Array<JsonValue> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
+    Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
     for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
     {
       m_autoScalingGroups.push_back(autoScalingGroupsJsonList[autoScalingGroupsIndex].AsString());
@@ -77,7 +77,7 @@ FindingFilter& FindingFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ruleNames"))
   {
-    Array<JsonValue> ruleNamesJsonList = jsonValue.GetArray("ruleNames");
+    Array<JsonView> ruleNamesJsonList = jsonValue.GetArray("ruleNames");
     for(unsigned ruleNamesIndex = 0; ruleNamesIndex < ruleNamesJsonList.GetLength(); ++ruleNamesIndex)
     {
       m_ruleNames.push_back(ruleNamesJsonList[ruleNamesIndex].AsString());
@@ -87,7 +87,7 @@ FindingFilter& FindingFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("severities"))
   {
-    Array<JsonValue> severitiesJsonList = jsonValue.GetArray("severities");
+    Array<JsonView> severitiesJsonList = jsonValue.GetArray("severities");
     for(unsigned severitiesIndex = 0; severitiesIndex < severitiesJsonList.GetLength(); ++severitiesIndex)
     {
       m_severities.push_back(SeverityMapper::GetSeverityForName(severitiesJsonList[severitiesIndex].AsString()));
@@ -97,7 +97,7 @@ FindingFilter& FindingFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
-    Array<JsonValue> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
+    Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
     for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
     {
       m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());
@@ -107,7 +107,7 @@ FindingFilter& FindingFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -117,7 +117,7 @@ FindingFilter& FindingFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("userAttributes"))
   {
-    Array<JsonValue> userAttributesJsonList = jsonValue.GetArray("userAttributes");
+    Array<JsonView> userAttributesJsonList = jsonValue.GetArray("userAttributes");
     for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
     {
       m_userAttributes.push_back(userAttributesJsonList[userAttributesIndex].AsObject());

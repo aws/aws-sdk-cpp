@@ -34,14 +34,14 @@ ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig() :
 {
 }
 
-ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig(const JsonValue& jsonValue) : 
+ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig(JsonView jsonValue) : 
     m_endpointHasBeenSet(false),
     m_awsRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ElasticsearchDataSourceConfig& ElasticsearchDataSourceConfig::operator =(const JsonValue& jsonValue)
+ElasticsearchDataSourceConfig& ElasticsearchDataSourceConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("endpoint"))
   {

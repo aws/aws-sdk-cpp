@@ -41,7 +41,7 @@ ProjectDetails::ProjectDetails() :
 {
 }
 
-ProjectDetails::ProjectDetails(const JsonValue& jsonValue) : 
+ProjectDetails::ProjectDetails(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -55,7 +55,7 @@ ProjectDetails::ProjectDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProjectDetails& ProjectDetails::operator =(const JsonValue& jsonValue)
+ProjectDetails& ProjectDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -108,7 +108,7 @@ ProjectDetails& ProjectDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("resources"))
   {
-    Array<JsonValue> resourcesJsonList = jsonValue.GetArray("resources");
+    Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());

@@ -35,7 +35,7 @@ BatchReadException::BatchReadException() :
 {
 }
 
-BatchReadException::BatchReadException(const JsonValue& jsonValue) : 
+BatchReadException::BatchReadException(JsonView jsonValue) : 
     m_type(BatchReadExceptionType::NOT_SET),
     m_typeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchReadException::BatchReadException(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchReadException& BatchReadException::operator =(const JsonValue& jsonValue)
+BatchReadException& BatchReadException::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

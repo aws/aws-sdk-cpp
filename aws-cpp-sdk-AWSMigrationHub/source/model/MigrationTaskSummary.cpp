@@ -40,7 +40,7 @@ MigrationTaskSummary::MigrationTaskSummary() :
 {
 }
 
-MigrationTaskSummary::MigrationTaskSummary(const JsonValue& jsonValue) : 
+MigrationTaskSummary::MigrationTaskSummary(JsonView jsonValue) : 
     m_progressUpdateStreamHasBeenSet(false),
     m_migrationTaskNameHasBeenSet(false),
     m_status(Status::NOT_SET),
@@ -53,7 +53,7 @@ MigrationTaskSummary::MigrationTaskSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MigrationTaskSummary& MigrationTaskSummary::operator =(const JsonValue& jsonValue)
+MigrationTaskSummary& MigrationTaskSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProgressUpdateStream"))
   {

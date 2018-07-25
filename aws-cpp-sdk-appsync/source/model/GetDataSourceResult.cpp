@@ -37,7 +37,7 @@ GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = jsonValue.GetObject("dataSource");

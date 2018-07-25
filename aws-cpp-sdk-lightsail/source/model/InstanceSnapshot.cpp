@@ -49,7 +49,7 @@ InstanceSnapshot::InstanceSnapshot() :
 {
 }
 
-InstanceSnapshot::InstanceSnapshot(const JsonValue& jsonValue) : 
+InstanceSnapshot::InstanceSnapshot(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -71,7 +71,7 @@ InstanceSnapshot::InstanceSnapshot(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceSnapshot& InstanceSnapshot::operator =(const JsonValue& jsonValue)
+InstanceSnapshot& InstanceSnapshot::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -131,7 +131,7 @@ InstanceSnapshot& InstanceSnapshot::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("fromAttachedDisks"))
   {
-    Array<JsonValue> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
+    Array<JsonView> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
     for(unsigned fromAttachedDisksIndex = 0; fromAttachedDisksIndex < fromAttachedDisksJsonList.GetLength(); ++fromAttachedDisksIndex)
     {
       m_fromAttachedDisks.push_back(fromAttachedDisksJsonList[fromAttachedDisksIndex].AsObject());

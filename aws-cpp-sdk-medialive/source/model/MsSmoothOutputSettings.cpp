@@ -33,13 +33,13 @@ MsSmoothOutputSettings::MsSmoothOutputSettings() :
 {
 }
 
-MsSmoothOutputSettings::MsSmoothOutputSettings(const JsonValue& jsonValue) : 
+MsSmoothOutputSettings::MsSmoothOutputSettings(JsonView jsonValue) : 
     m_nameModifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MsSmoothOutputSettings& MsSmoothOutputSettings::operator =(const JsonValue& jsonValue)
+MsSmoothOutputSettings& MsSmoothOutputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("nameModifier"))
   {

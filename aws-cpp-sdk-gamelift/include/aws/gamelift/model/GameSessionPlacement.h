@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -52,8 +53,8 @@ namespace Model
   {
   public:
     GameSessionPlacement();
-    GameSessionPlacement(const Aws::Utils::Json::JsonValue& jsonValue);
-    GameSessionPlacement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GameSessionPlacement(Aws::Utils::Json::JsonView jsonValue);
+    GameSessionPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

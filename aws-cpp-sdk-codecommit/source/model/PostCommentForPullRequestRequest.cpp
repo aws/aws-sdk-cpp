@@ -80,7 +80,7 @@ Aws::String PostCommentForPullRequestRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PostCommentForPullRequestRequest::GetRequestSpecificHeaders() const

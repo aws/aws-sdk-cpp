@@ -41,7 +41,7 @@ Preset::Preset() :
 {
 }
 
-Preset::Preset(const JsonValue& jsonValue) : 
+Preset::Preset(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -55,7 +55,7 @@ Preset::Preset(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Preset& Preset::operator =(const JsonValue& jsonValue)
+Preset& Preset::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

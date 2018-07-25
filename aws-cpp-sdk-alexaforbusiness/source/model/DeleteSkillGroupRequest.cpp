@@ -37,7 +37,7 @@ Aws::String DeleteSkillGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteSkillGroupRequest::GetRequestSpecificHeaders() const

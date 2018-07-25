@@ -47,7 +47,7 @@ CertificateAuthority::CertificateAuthority() :
 {
 }
 
-CertificateAuthority::CertificateAuthority(const JsonValue& jsonValue) : 
+CertificateAuthority::CertificateAuthority(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastStateChangeAtHasBeenSet(false),
@@ -67,7 +67,7 @@ CertificateAuthority::CertificateAuthority(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CertificateAuthority& CertificateAuthority::operator =(const JsonValue& jsonValue)
+CertificateAuthority& CertificateAuthority::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {

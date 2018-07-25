@@ -37,7 +37,7 @@ SetRiskConfigurationResult::SetRiskConfigurationResult(const Aws::AmazonWebServi
 
 SetRiskConfigurationResult& SetRiskConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RiskConfiguration"))
   {
     m_riskConfiguration = jsonValue.GetObject("RiskConfiguration");

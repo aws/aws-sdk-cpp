@@ -45,7 +45,7 @@ Aws::String ListStateMachinesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListStateMachinesRequest::GetRequestSpecificHeaders() const

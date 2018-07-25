@@ -39,7 +39,7 @@ VolumeInfo::VolumeInfo() :
 {
 }
 
-VolumeInfo::VolumeInfo(const JsonValue& jsonValue) : 
+VolumeInfo::VolumeInfo(JsonView jsonValue) : 
     m_volumeARNHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
@@ -51,7 +51,7 @@ VolumeInfo::VolumeInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VolumeInfo& VolumeInfo::operator =(const JsonValue& jsonValue)
+VolumeInfo& VolumeInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeARN"))
   {

@@ -37,7 +37,7 @@ CreateEndpointConfigResult::CreateEndpointConfigResult(const Aws::AmazonWebServi
 
 CreateEndpointConfigResult& CreateEndpointConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EndpointConfigArn"))
   {
     m_endpointConfigArn = jsonValue.GetString("EndpointConfigArn");

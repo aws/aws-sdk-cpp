@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     AutomationExecutionMetadata();
-    AutomationExecutionMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    AutomationExecutionMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AutomationExecutionMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AutomationExecutionMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

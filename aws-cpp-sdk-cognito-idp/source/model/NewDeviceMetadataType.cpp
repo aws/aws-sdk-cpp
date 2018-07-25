@@ -34,14 +34,14 @@ NewDeviceMetadataType::NewDeviceMetadataType() :
 {
 }
 
-NewDeviceMetadataType::NewDeviceMetadataType(const JsonValue& jsonValue) : 
+NewDeviceMetadataType::NewDeviceMetadataType(JsonView jsonValue) : 
     m_deviceKeyHasBeenSet(false),
     m_deviceGroupKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NewDeviceMetadataType& NewDeviceMetadataType::operator =(const JsonValue& jsonValue)
+NewDeviceMetadataType& NewDeviceMetadataType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeviceKey"))
   {

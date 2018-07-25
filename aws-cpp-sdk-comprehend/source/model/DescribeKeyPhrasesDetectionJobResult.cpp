@@ -37,7 +37,7 @@ DescribeKeyPhrasesDetectionJobResult::DescribeKeyPhrasesDetectionJobResult(const
 
 DescribeKeyPhrasesDetectionJobResult& DescribeKeyPhrasesDetectionJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyPhrasesDetectionJobProperties"))
   {
     m_keyPhrasesDetectionJobProperties = jsonValue.GetObject("KeyPhrasesDetectionJobProperties");

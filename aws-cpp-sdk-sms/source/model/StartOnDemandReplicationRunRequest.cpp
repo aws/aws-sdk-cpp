@@ -44,7 +44,7 @@ Aws::String StartOnDemandReplicationRunRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartOnDemandReplicationRunRequest::GetRequestSpecificHeaders() const

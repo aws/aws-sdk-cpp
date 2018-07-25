@@ -37,10 +37,10 @@ ListInstanceGroupsResult::ListInstanceGroupsResult(const Aws::AmazonWebServiceRe
 
 ListInstanceGroupsResult& ListInstanceGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceGroups"))
   {
-    Array<JsonValue> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
+    Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
     for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
     {
       m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());

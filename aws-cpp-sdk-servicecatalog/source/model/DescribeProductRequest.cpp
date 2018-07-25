@@ -44,7 +44,7 @@ Aws::String DescribeProductRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeProductRequest::GetRequestSpecificHeaders() const

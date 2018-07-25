@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudHSMV2
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Hsm();
-    Hsm(const Aws::Utils::Json::JsonValue& jsonValue);
-    Hsm& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Hsm(Aws::Utils::Json::JsonView jsonValue);
+    Hsm& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

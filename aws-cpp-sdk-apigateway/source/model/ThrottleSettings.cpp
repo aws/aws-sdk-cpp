@@ -36,7 +36,7 @@ ThrottleSettings::ThrottleSettings() :
 {
 }
 
-ThrottleSettings::ThrottleSettings(const JsonValue& jsonValue) : 
+ThrottleSettings::ThrottleSettings(JsonView jsonValue) : 
     m_burstLimit(0),
     m_burstLimitHasBeenSet(false),
     m_rateLimit(0.0),
@@ -45,7 +45,7 @@ ThrottleSettings::ThrottleSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ThrottleSettings& ThrottleSettings::operator =(const JsonValue& jsonValue)
+ThrottleSettings& ThrottleSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("burstLimit"))
   {

@@ -35,7 +35,7 @@ PatchSource::PatchSource() :
 {
 }
 
-PatchSource::PatchSource(const JsonValue& jsonValue) : 
+PatchSource::PatchSource(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_productsHasBeenSet(false),
     m_configurationHasBeenSet(false)
@@ -43,7 +43,7 @@ PatchSource::PatchSource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PatchSource& PatchSource::operator =(const JsonValue& jsonValue)
+PatchSource& PatchSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -54,7 +54,7 @@ PatchSource& PatchSource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Products"))
   {
-    Array<JsonValue> productsJsonList = jsonValue.GetArray("Products");
+    Array<JsonView> productsJsonList = jsonValue.GetArray("Products");
     for(unsigned productsIndex = 0; productsIndex < productsJsonList.GetLength(); ++productsIndex)
     {
       m_products.push_back(productsJsonList[productsIndex].AsString());

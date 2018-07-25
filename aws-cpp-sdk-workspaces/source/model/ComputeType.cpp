@@ -34,14 +34,14 @@ ComputeType::ComputeType() :
 {
 }
 
-ComputeType::ComputeType(const JsonValue& jsonValue) : 
+ComputeType::ComputeType(JsonView jsonValue) : 
     m_name(Compute::NOT_SET),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ComputeType& ComputeType::operator =(const JsonValue& jsonValue)
+ComputeType& ComputeType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

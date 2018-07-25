@@ -44,7 +44,7 @@ Aws::String ListAssociatedStacksRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListAssociatedStacksRequest::GetRequestSpecificHeaders() const

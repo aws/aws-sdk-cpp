@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     AnalyticsMetadataType();
-    AnalyticsMetadataType(const Aws::Utils::Json::JsonValue& jsonValue);
-    AnalyticsMetadataType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AnalyticsMetadataType(Aws::Utils::Json::JsonView jsonValue);
+    AnalyticsMetadataType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

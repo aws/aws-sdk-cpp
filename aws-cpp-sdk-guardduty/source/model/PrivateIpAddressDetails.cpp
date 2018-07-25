@@ -34,14 +34,14 @@ PrivateIpAddressDetails::PrivateIpAddressDetails() :
 {
 }
 
-PrivateIpAddressDetails::PrivateIpAddressDetails(const JsonValue& jsonValue) : 
+PrivateIpAddressDetails::PrivateIpAddressDetails(JsonView jsonValue) : 
     m_privateDnsNameHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PrivateIpAddressDetails& PrivateIpAddressDetails::operator =(const JsonValue& jsonValue)
+PrivateIpAddressDetails& PrivateIpAddressDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("privateDnsName"))
   {

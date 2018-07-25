@@ -38,7 +38,7 @@ BundleDetails::BundleDetails() :
 {
 }
 
-BundleDetails::BundleDetails(const JsonValue& jsonValue) : 
+BundleDetails::BundleDetails(JsonView jsonValue) : 
     m_bundleIdHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_versionHasBeenSet(false),
@@ -49,7 +49,7 @@ BundleDetails::BundleDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BundleDetails& BundleDetails::operator =(const JsonValue& jsonValue)
+BundleDetails& BundleDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bundleId"))
   {
@@ -88,7 +88,7 @@ BundleDetails& BundleDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("availablePlatforms"))
   {
-    Array<JsonValue> availablePlatformsJsonList = jsonValue.GetArray("availablePlatforms");
+    Array<JsonView> availablePlatformsJsonList = jsonValue.GetArray("availablePlatforms");
     for(unsigned availablePlatformsIndex = 0; availablePlatformsIndex < availablePlatformsJsonList.GetLength(); ++availablePlatformsIndex)
     {
       m_availablePlatforms.push_back(PlatformMapper::GetPlatformForName(availablePlatformsJsonList[availablePlatformsIndex].AsString()));

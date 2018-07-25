@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     EncryptionConfiguration();
-    EncryptionConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    EncryptionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

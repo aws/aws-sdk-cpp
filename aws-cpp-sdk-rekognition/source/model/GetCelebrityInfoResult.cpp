@@ -37,10 +37,10 @@ GetCelebrityInfoResult::GetCelebrityInfoResult(const Aws::AmazonWebServiceResult
 
 GetCelebrityInfoResult& GetCelebrityInfoResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Urls"))
   {
-    Array<JsonValue> urlsJsonList = jsonValue.GetArray("Urls");
+    Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
     for(unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex)
     {
       m_urls.push_back(urlsJsonList[urlsIndex].AsString());

@@ -39,10 +39,10 @@ IndexFacesResult::IndexFacesResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 IndexFacesResult& IndexFacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FaceRecords"))
   {
-    Array<JsonValue> faceRecordsJsonList = jsonValue.GetArray("FaceRecords");
+    Array<JsonView> faceRecordsJsonList = jsonValue.GetArray("FaceRecords");
     for(unsigned faceRecordsIndex = 0; faceRecordsIndex < faceRecordsJsonList.GetLength(); ++faceRecordsIndex)
     {
       m_faceRecords.push_back(faceRecordsJsonList[faceRecordsIndex].AsObject());

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glacier
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     VaultLockPolicy();
-    VaultLockPolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    VaultLockPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VaultLockPolicy(Aws::Utils::Json::JsonView jsonValue);
+    VaultLockPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

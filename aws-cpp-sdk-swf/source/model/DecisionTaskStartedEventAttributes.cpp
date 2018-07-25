@@ -35,7 +35,7 @@ DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes() :
 {
 }
 
-DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes(const JsonValue& jsonValue) : 
+DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes(JsonView jsonValue) : 
     m_identityHasBeenSet(false),
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false)
@@ -43,7 +43,7 @@ DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes(const Jso
   *this = jsonValue;
 }
 
-DecisionTaskStartedEventAttributes& DecisionTaskStartedEventAttributes::operator =(const JsonValue& jsonValue)
+DecisionTaskStartedEventAttributes& DecisionTaskStartedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("identity"))
   {

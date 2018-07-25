@@ -38,7 +38,7 @@ FacetAttributeDefinition::FacetAttributeDefinition() :
 {
 }
 
-FacetAttributeDefinition::FacetAttributeDefinition(const JsonValue& jsonValue) : 
+FacetAttributeDefinition::FacetAttributeDefinition(JsonView jsonValue) : 
     m_type(FacetAttributeType::NOT_SET),
     m_typeHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
@@ -49,7 +49,7 @@ FacetAttributeDefinition::FacetAttributeDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FacetAttributeDefinition& FacetAttributeDefinition::operator =(const JsonValue& jsonValue)
+FacetAttributeDefinition& FacetAttributeDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {
@@ -74,7 +74,7 @@ FacetAttributeDefinition& FacetAttributeDefinition::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Aws::Map<Aws::String, JsonValue> rulesJsonMap = jsonValue.GetObject("Rules").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> rulesJsonMap = jsonValue.GetObject("Rules").GetAllObjects();
     for(auto& rulesItem : rulesJsonMap)
     {
       m_rules[rulesItem.first] = rulesItem.second.AsObject();

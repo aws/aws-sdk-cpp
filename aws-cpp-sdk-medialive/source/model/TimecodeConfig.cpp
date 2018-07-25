@@ -36,7 +36,7 @@ TimecodeConfig::TimecodeConfig() :
 {
 }
 
-TimecodeConfig::TimecodeConfig(const JsonValue& jsonValue) : 
+TimecodeConfig::TimecodeConfig(JsonView jsonValue) : 
     m_source(TimecodeConfigSource::NOT_SET),
     m_sourceHasBeenSet(false),
     m_syncThreshold(0),
@@ -45,7 +45,7 @@ TimecodeConfig::TimecodeConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TimecodeConfig& TimecodeConfig::operator =(const JsonValue& jsonValue)
+TimecodeConfig& TimecodeConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("source"))
   {

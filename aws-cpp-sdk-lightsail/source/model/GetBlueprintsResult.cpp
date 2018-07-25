@@ -37,10 +37,10 @@ GetBlueprintsResult::GetBlueprintsResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetBlueprintsResult& GetBlueprintsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("blueprints"))
   {
-    Array<JsonValue> blueprintsJsonList = jsonValue.GetArray("blueprints");
+    Array<JsonView> blueprintsJsonList = jsonValue.GetArray("blueprints");
     for(unsigned blueprintsIndex = 0; blueprintsIndex < blueprintsJsonList.GetLength(); ++blueprintsIndex)
     {
       m_blueprints.push_back(blueprintsJsonList[blueprintsIndex].AsObject());

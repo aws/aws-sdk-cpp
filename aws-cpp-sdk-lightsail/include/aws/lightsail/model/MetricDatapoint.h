@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     MetricDatapoint();
-    MetricDatapoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    MetricDatapoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MetricDatapoint(Aws::Utils::Json::JsonView jsonValue);
+    MetricDatapoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

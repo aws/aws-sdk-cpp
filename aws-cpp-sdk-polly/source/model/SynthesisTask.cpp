@@ -50,7 +50,7 @@ SynthesisTask::SynthesisTask() :
 {
 }
 
-SynthesisTask::SynthesisTask(const JsonValue& jsonValue) : 
+SynthesisTask::SynthesisTask(JsonView jsonValue) : 
     m_taskIdHasBeenSet(false),
     m_taskStatus(TaskStatus::NOT_SET),
     m_taskStatusHasBeenSet(false),
@@ -73,7 +73,7 @@ SynthesisTask::SynthesisTask(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SynthesisTask& SynthesisTask::operator =(const JsonValue& jsonValue)
+SynthesisTask& SynthesisTask::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TaskId"))
   {
@@ -126,7 +126,7 @@ SynthesisTask& SynthesisTask::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("LexiconNames"))
   {
-    Array<JsonValue> lexiconNamesJsonList = jsonValue.GetArray("LexiconNames");
+    Array<JsonView> lexiconNamesJsonList = jsonValue.GetArray("LexiconNames");
     for(unsigned lexiconNamesIndex = 0; lexiconNamesIndex < lexiconNamesJsonList.GetLength(); ++lexiconNamesIndex)
     {
       m_lexiconNames.push_back(lexiconNamesJsonList[lexiconNamesIndex].AsString());
@@ -150,7 +150,7 @@ SynthesisTask& SynthesisTask::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SpeechMarkTypes"))
   {
-    Array<JsonValue> speechMarkTypesJsonList = jsonValue.GetArray("SpeechMarkTypes");
+    Array<JsonView> speechMarkTypesJsonList = jsonValue.GetArray("SpeechMarkTypes");
     for(unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex)
     {
       m_speechMarkTypes.push_back(SpeechMarkTypeMapper::GetSpeechMarkTypeForName(speechMarkTypesJsonList[speechMarkTypesIndex].AsString()));

@@ -33,17 +33,17 @@ OutputChannelMapping::OutputChannelMapping() :
 {
 }
 
-OutputChannelMapping::OutputChannelMapping(const JsonValue& jsonValue) : 
+OutputChannelMapping::OutputChannelMapping(JsonView jsonValue) : 
     m_inputChannelsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputChannelMapping& OutputChannelMapping::operator =(const JsonValue& jsonValue)
+OutputChannelMapping& OutputChannelMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("inputChannels"))
   {
-    Array<JsonValue> inputChannelsJsonList = jsonValue.GetArray("inputChannels");
+    Array<JsonView> inputChannelsJsonList = jsonValue.GetArray("inputChannels");
     for(unsigned inputChannelsIndex = 0; inputChannelsIndex < inputChannelsJsonList.GetLength(); ++inputChannelsIndex)
     {
       m_inputChannels.push_back(inputChannelsJsonList[inputChannelsIndex].AsInteger());

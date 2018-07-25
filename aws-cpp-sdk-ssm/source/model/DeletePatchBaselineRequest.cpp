@@ -37,7 +37,7 @@ Aws::String DeletePatchBaselineRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeletePatchBaselineRequest::GetRequestSpecificHeaders() const

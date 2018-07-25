@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     NotebookInstanceLifecycleConfigSummary();
-    NotebookInstanceLifecycleConfigSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    NotebookInstanceLifecycleConfigSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NotebookInstanceLifecycleConfigSummary(Aws::Utils::Json::JsonView jsonValue);
+    NotebookInstanceLifecycleConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

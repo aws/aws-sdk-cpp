@@ -47,7 +47,7 @@ StorageDescriptor::StorageDescriptor() :
 {
 }
 
-StorageDescriptor::StorageDescriptor(const JsonValue& jsonValue) : 
+StorageDescriptor::StorageDescriptor(JsonView jsonValue) : 
     m_columnsHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_inputFormatHasBeenSet(false),
@@ -67,11 +67,11 @@ StorageDescriptor::StorageDescriptor(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StorageDescriptor& StorageDescriptor::operator =(const JsonValue& jsonValue)
+StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Columns"))
   {
-    Array<JsonValue> columnsJsonList = jsonValue.GetArray("Columns");
+    Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
     {
       m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
@@ -123,7 +123,7 @@ StorageDescriptor& StorageDescriptor::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("BucketColumns"))
   {
-    Array<JsonValue> bucketColumnsJsonList = jsonValue.GetArray("BucketColumns");
+    Array<JsonView> bucketColumnsJsonList = jsonValue.GetArray("BucketColumns");
     for(unsigned bucketColumnsIndex = 0; bucketColumnsIndex < bucketColumnsJsonList.GetLength(); ++bucketColumnsIndex)
     {
       m_bucketColumns.push_back(bucketColumnsJsonList[bucketColumnsIndex].AsString());
@@ -133,7 +133,7 @@ StorageDescriptor& StorageDescriptor::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SortColumns"))
   {
-    Array<JsonValue> sortColumnsJsonList = jsonValue.GetArray("SortColumns");
+    Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("SortColumns");
     for(unsigned sortColumnsIndex = 0; sortColumnsIndex < sortColumnsJsonList.GetLength(); ++sortColumnsIndex)
     {
       m_sortColumns.push_back(sortColumnsJsonList[sortColumnsIndex].AsObject());
@@ -143,7 +143,7 @@ StorageDescriptor& StorageDescriptor::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Kinesis
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SequenceNumberRange();
-    SequenceNumberRange(const Aws::Utils::Json::JsonValue& jsonValue);
-    SequenceNumberRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SequenceNumberRange(Aws::Utils::Json::JsonView jsonValue);
+    SequenceNumberRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

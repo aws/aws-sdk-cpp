@@ -51,7 +51,7 @@ Aws::String GetCommandInvocationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCommandInvocationRequest::GetRequestSpecificHeaders() const

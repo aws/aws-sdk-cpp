@@ -92,7 +92,7 @@ Mpeg2Settings::Mpeg2Settings() :
 {
 }
 
-Mpeg2Settings::Mpeg2Settings(const JsonValue& jsonValue) : 
+Mpeg2Settings::Mpeg2Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(Mpeg2AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
     m_bitrate(0),
@@ -157,7 +157,7 @@ Mpeg2Settings::Mpeg2Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Mpeg2Settings& Mpeg2Settings::operator =(const JsonValue& jsonValue)
+Mpeg2Settings& Mpeg2Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adaptiveQuantization"))
   {

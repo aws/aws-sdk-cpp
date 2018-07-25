@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace XRay
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ServiceId();
-    ServiceId(const Aws::Utils::Json::JsonValue& jsonValue);
-    ServiceId& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ServiceId(Aws::Utils::Json::JsonView jsonValue);
+    ServiceId& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorksCM
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     Backup();
-    Backup(const Aws::Utils::Json::JsonValue& jsonValue);
-    Backup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Backup(Aws::Utils::Json::JsonView jsonValue);
+    Backup& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

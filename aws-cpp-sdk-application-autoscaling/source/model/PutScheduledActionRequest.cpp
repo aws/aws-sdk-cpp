@@ -84,7 +84,7 @@ Aws::String PutScheduledActionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutScheduledActionRequest::GetRequestSpecificHeaders() const

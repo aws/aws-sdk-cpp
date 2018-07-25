@@ -34,14 +34,14 @@ RedshiftDatabase::RedshiftDatabase() :
 {
 }
 
-RedshiftDatabase::RedshiftDatabase(const JsonValue& jsonValue) : 
+RedshiftDatabase::RedshiftDatabase(JsonView jsonValue) : 
     m_databaseNameHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RedshiftDatabase& RedshiftDatabase::operator =(const JsonValue& jsonValue)
+RedshiftDatabase& RedshiftDatabase::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DatabaseName"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Relationship();
-    Relationship(const Aws::Utils::Json::JsonValue& jsonValue);
-    Relationship& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Relationship(Aws::Utils::Json::JsonView jsonValue);
+    Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

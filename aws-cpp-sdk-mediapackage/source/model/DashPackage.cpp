@@ -47,7 +47,7 @@ DashPackage::DashPackage() :
 {
 }
 
-DashPackage::DashPackage(const JsonValue& jsonValue) : 
+DashPackage::DashPackage(JsonView jsonValue) : 
     m_encryptionHasBeenSet(false),
     m_manifestWindowSeconds(0),
     m_manifestWindowSecondsHasBeenSet(false),
@@ -67,7 +67,7 @@ DashPackage::DashPackage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DashPackage& DashPackage::operator =(const JsonValue& jsonValue)
+DashPackage& DashPackage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("encryption"))
   {
@@ -99,7 +99,7 @@ DashPackage& DashPackage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("periodTriggers"))
   {
-    Array<JsonValue> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
+    Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
     for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
     {
       m_periodTriggers.push_back(__PeriodTriggersElementMapper::Get__PeriodTriggersElementForName(periodTriggersJsonList[periodTriggersIndex].AsString()));

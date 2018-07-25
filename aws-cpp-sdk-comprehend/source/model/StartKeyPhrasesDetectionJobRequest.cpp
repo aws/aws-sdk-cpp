@@ -73,7 +73,7 @@ Aws::String StartKeyPhrasesDetectionJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartKeyPhrasesDetectionJobRequest::GetRequestSpecificHeaders() const

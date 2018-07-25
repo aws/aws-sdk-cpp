@@ -37,7 +37,7 @@ LambdaActivity::LambdaActivity() :
 {
 }
 
-LambdaActivity::LambdaActivity(const JsonValue& jsonValue) : 
+LambdaActivity::LambdaActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_lambdaNameHasBeenSet(false),
     m_batchSize(0),
@@ -47,7 +47,7 @@ LambdaActivity::LambdaActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LambdaActivity& LambdaActivity::operator =(const JsonValue& jsonValue)
+LambdaActivity& LambdaActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

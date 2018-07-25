@@ -38,7 +38,7 @@ TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail() :
 {
 }
 
-TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail(const JsonValue& jsonValue) : 
+TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail(JsonView jsonValue) : 
     m_statusHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
@@ -49,7 +49,7 @@ TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail(const JsonValue& json
   *this = jsonValue;
 }
 
-TrustedAdvisorResourceDetail& TrustedAdvisorResourceDetail::operator =(const JsonValue& jsonValue)
+TrustedAdvisorResourceDetail& TrustedAdvisorResourceDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("status"))
   {
@@ -81,7 +81,7 @@ TrustedAdvisorResourceDetail& TrustedAdvisorResourceDetail::operator =(const Jso
 
   if(jsonValue.ValueExists("metadata"))
   {
-    Array<JsonValue> metadataJsonList = jsonValue.GetArray("metadata");
+    Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
     for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
     {
       m_metadata.push_back(metadataJsonList[metadataIndex].AsString());

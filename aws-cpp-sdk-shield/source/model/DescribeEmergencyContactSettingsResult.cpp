@@ -37,10 +37,10 @@ DescribeEmergencyContactSettingsResult::DescribeEmergencyContactSettingsResult(c
 
 DescribeEmergencyContactSettingsResult& DescribeEmergencyContactSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EmergencyContactList"))
   {
-    Array<JsonValue> emergencyContactListJsonList = jsonValue.GetArray("EmergencyContactList");
+    Array<JsonView> emergencyContactListJsonList = jsonValue.GetArray("EmergencyContactList");
     for(unsigned emergencyContactListIndex = 0; emergencyContactListIndex < emergencyContactListJsonList.GetLength(); ++emergencyContactListIndex)
     {
       m_emergencyContactList.push_back(emergencyContactListJsonList[emergencyContactListIndex].AsObject());

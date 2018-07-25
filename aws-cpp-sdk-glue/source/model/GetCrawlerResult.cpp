@@ -37,7 +37,7 @@ GetCrawlerResult::GetCrawlerResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetCrawlerResult& GetCrawlerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Crawler"))
   {
     m_crawler = jsonValue.GetObject("Crawler");

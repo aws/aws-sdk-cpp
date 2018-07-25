@@ -41,7 +41,7 @@ GetThreatIntelSetResult::GetThreatIntelSetResult(const Aws::AmazonWebServiceResu
 
 GetThreatIntelSetResult& GetThreatIntelSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("format"))
   {
     m_format = ThreatIntelSetFormatMapper::GetThreatIntelSetFormatForName(jsonValue.GetString("format"));

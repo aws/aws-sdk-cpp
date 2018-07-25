@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ReplicaSettingsDescription();
-    ReplicaSettingsDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReplicaSettingsDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReplicaSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
+    ReplicaSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

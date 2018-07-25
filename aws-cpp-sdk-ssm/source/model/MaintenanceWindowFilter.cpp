@@ -34,14 +34,14 @@ MaintenanceWindowFilter::MaintenanceWindowFilter() :
 {
 }
 
-MaintenanceWindowFilter::MaintenanceWindowFilter(const JsonValue& jsonValue) : 
+MaintenanceWindowFilter::MaintenanceWindowFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MaintenanceWindowFilter& MaintenanceWindowFilter::operator =(const JsonValue& jsonValue)
+MaintenanceWindowFilter& MaintenanceWindowFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -52,7 +52,7 @@ MaintenanceWindowFilter& MaintenanceWindowFilter::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

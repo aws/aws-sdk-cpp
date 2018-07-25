@@ -37,10 +37,10 @@ DescribeCommentsResult::DescribeCommentsResult(const Aws::AmazonWebServiceResult
 
 DescribeCommentsResult& DescribeCommentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Comments"))
   {
-    Array<JsonValue> commentsJsonList = jsonValue.GetArray("Comments");
+    Array<JsonView> commentsJsonList = jsonValue.GetArray("Comments");
     for(unsigned commentsIndex = 0; commentsIndex < commentsJsonList.GetLength(); ++commentsIndex)
     {
       m_comments.push_back(commentsJsonList[commentsIndex].AsObject());

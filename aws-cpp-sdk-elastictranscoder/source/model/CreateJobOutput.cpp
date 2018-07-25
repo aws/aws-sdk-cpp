@@ -42,7 +42,7 @@ CreateJobOutput::CreateJobOutput() :
 {
 }
 
-CreateJobOutput::CreateJobOutput(const JsonValue& jsonValue) : 
+CreateJobOutput::CreateJobOutput(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_thumbnailPatternHasBeenSet(false),
     m_thumbnailEncryptionHasBeenSet(false),
@@ -57,7 +57,7 @@ CreateJobOutput::CreateJobOutput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CreateJobOutput& CreateJobOutput::operator =(const JsonValue& jsonValue)
+CreateJobOutput& CreateJobOutput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -103,7 +103,7 @@ CreateJobOutput& CreateJobOutput::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Watermarks"))
   {
-    Array<JsonValue> watermarksJsonList = jsonValue.GetArray("Watermarks");
+    Array<JsonView> watermarksJsonList = jsonValue.GetArray("Watermarks");
     for(unsigned watermarksIndex = 0; watermarksIndex < watermarksJsonList.GetLength(); ++watermarksIndex)
     {
       m_watermarks.push_back(watermarksJsonList[watermarksIndex].AsObject());

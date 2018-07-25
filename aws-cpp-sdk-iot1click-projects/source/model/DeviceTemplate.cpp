@@ -34,14 +34,14 @@ DeviceTemplate::DeviceTemplate() :
 {
 }
 
-DeviceTemplate::DeviceTemplate(const JsonValue& jsonValue) : 
+DeviceTemplate::DeviceTemplate(JsonView jsonValue) : 
     m_deviceTypeHasBeenSet(false),
     m_callbackOverridesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeviceTemplate& DeviceTemplate::operator =(const JsonValue& jsonValue)
+DeviceTemplate& DeviceTemplate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deviceType"))
   {
@@ -52,7 +52,7 @@ DeviceTemplate& DeviceTemplate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("callbackOverrides"))
   {
-    Aws::Map<Aws::String, JsonValue> callbackOverridesJsonMap = jsonValue.GetObject("callbackOverrides").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> callbackOverridesJsonMap = jsonValue.GetObject("callbackOverrides").GetAllObjects();
     for(auto& callbackOverridesItem : callbackOverridesJsonMap)
     {
       m_callbackOverrides[callbackOverridesItem.first] = callbackOverridesItem.second.AsString();

@@ -42,7 +42,7 @@ Policy::Policy() :
 {
 }
 
-Policy::Policy(const JsonValue& jsonValue) : 
+Policy::Policy(JsonView jsonValue) : 
     m_policyIdHasBeenSet(false),
     m_policyNameHasBeenSet(false),
     m_policyUpdateTokenHasBeenSet(false),
@@ -57,7 +57,7 @@ Policy::Policy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Policy& Policy::operator =(const JsonValue& jsonValue)
+Policy& Policy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyId"))
   {
@@ -96,7 +96,7 @@ Policy& Policy::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ResourceTags"))
   {
-    Array<JsonValue> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
+    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());

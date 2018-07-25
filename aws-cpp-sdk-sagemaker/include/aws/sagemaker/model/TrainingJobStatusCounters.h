@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     TrainingJobStatusCounters();
-    TrainingJobStatusCounters(const Aws::Utils::Json::JsonValue& jsonValue);
-    TrainingJobStatusCounters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TrainingJobStatusCounters(Aws::Utils::Json::JsonView jsonValue);
+    TrainingJobStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

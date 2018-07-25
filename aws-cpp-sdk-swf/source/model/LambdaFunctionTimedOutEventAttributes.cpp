@@ -38,7 +38,7 @@ LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes() :
 {
 }
 
-LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes(const JsonValue& jsonValue) : 
+LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes(JsonView jsonValue) : 
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
     m_startedEventId(0),
@@ -49,7 +49,7 @@ LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes(con
   *this = jsonValue;
 }
 
-LambdaFunctionTimedOutEventAttributes& LambdaFunctionTimedOutEventAttributes::operator =(const JsonValue& jsonValue)
+LambdaFunctionTimedOutEventAttributes& LambdaFunctionTimedOutEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("scheduledEventId"))
   {

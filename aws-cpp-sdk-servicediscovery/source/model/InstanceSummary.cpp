@@ -34,14 +34,14 @@ InstanceSummary::InstanceSummary() :
 {
 }
 
-InstanceSummary::InstanceSummary(const JsonValue& jsonValue) : 
+InstanceSummary::InstanceSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceSummary& InstanceSummary::operator =(const JsonValue& jsonValue)
+InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -52,7 +52,7 @@ InstanceSummary& InstanceSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

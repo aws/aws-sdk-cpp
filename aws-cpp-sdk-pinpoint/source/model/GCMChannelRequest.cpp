@@ -35,7 +35,7 @@ GCMChannelRequest::GCMChannelRequest() :
 {
 }
 
-GCMChannelRequest::GCMChannelRequest(const JsonValue& jsonValue) : 
+GCMChannelRequest::GCMChannelRequest(JsonView jsonValue) : 
     m_apiKeyHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false)
@@ -43,7 +43,7 @@ GCMChannelRequest::GCMChannelRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GCMChannelRequest& GCMChannelRequest::operator =(const JsonValue& jsonValue)
+GCMChannelRequest& GCMChannelRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApiKey"))
   {

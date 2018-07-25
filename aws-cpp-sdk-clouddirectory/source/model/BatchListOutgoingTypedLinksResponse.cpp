@@ -34,18 +34,18 @@ BatchListOutgoingTypedLinksResponse::BatchListOutgoingTypedLinksResponse() :
 {
 }
 
-BatchListOutgoingTypedLinksResponse::BatchListOutgoingTypedLinksResponse(const JsonValue& jsonValue) : 
+BatchListOutgoingTypedLinksResponse::BatchListOutgoingTypedLinksResponse(JsonView jsonValue) : 
     m_typedLinkSpecifiersHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchListOutgoingTypedLinksResponse& BatchListOutgoingTypedLinksResponse::operator =(const JsonValue& jsonValue)
+BatchListOutgoingTypedLinksResponse& BatchListOutgoingTypedLinksResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TypedLinkSpecifiers"))
   {
-    Array<JsonValue> typedLinkSpecifiersJsonList = jsonValue.GetArray("TypedLinkSpecifiers");
+    Array<JsonView> typedLinkSpecifiersJsonList = jsonValue.GetArray("TypedLinkSpecifiers");
     for(unsigned typedLinkSpecifiersIndex = 0; typedLinkSpecifiersIndex < typedLinkSpecifiersJsonList.GetLength(); ++typedLinkSpecifiersIndex)
     {
       m_typedLinkSpecifiers.push_back(typedLinkSpecifiersJsonList[typedLinkSpecifiersIndex].AsObject());

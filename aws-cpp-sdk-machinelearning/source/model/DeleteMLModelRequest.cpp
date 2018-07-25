@@ -37,7 +37,7 @@ Aws::String DeleteMLModelRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteMLModelRequest::GetRequestSpecificHeaders() const

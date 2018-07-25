@@ -39,10 +39,10 @@ SearchAddressBooksResult::SearchAddressBooksResult(const Aws::AmazonWebServiceRe
 
 SearchAddressBooksResult& SearchAddressBooksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AddressBooks"))
   {
-    Array<JsonValue> addressBooksJsonList = jsonValue.GetArray("AddressBooks");
+    Array<JsonView> addressBooksJsonList = jsonValue.GetArray("AddressBooks");
     for(unsigned addressBooksIndex = 0; addressBooksIndex < addressBooksJsonList.GetLength(); ++addressBooksIndex)
     {
       m_addressBooks.push_back(addressBooksJsonList[addressBooksIndex].AsObject());

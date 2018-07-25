@@ -37,7 +37,7 @@ AnnotationValue::AnnotationValue() :
 {
 }
 
-AnnotationValue::AnnotationValue(const JsonValue& jsonValue) : 
+AnnotationValue::AnnotationValue(JsonView jsonValue) : 
     m_numberValue(0.0),
     m_numberValueHasBeenSet(false),
     m_booleanValue(false),
@@ -47,7 +47,7 @@ AnnotationValue::AnnotationValue(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AnnotationValue& AnnotationValue::operator =(const JsonValue& jsonValue)
+AnnotationValue& AnnotationValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NumberValue"))
   {

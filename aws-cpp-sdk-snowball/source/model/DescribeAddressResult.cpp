@@ -37,7 +37,7 @@ DescribeAddressResult::DescribeAddressResult(const Aws::AmazonWebServiceResult<J
 
 DescribeAddressResult& DescribeAddressResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");

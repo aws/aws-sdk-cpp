@@ -51,7 +51,7 @@ Aws::String ListTagsForStreamRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

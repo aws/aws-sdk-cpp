@@ -42,7 +42,7 @@ EC2InstanceDetails::EC2InstanceDetails() :
 {
 }
 
-EC2InstanceDetails::EC2InstanceDetails(const JsonValue& jsonValue) : 
+EC2InstanceDetails::EC2InstanceDetails(JsonView jsonValue) : 
     m_familyHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -57,7 +57,7 @@ EC2InstanceDetails::EC2InstanceDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EC2InstanceDetails& EC2InstanceDetails::operator =(const JsonValue& jsonValue)
+EC2InstanceDetails& EC2InstanceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Family"))
   {

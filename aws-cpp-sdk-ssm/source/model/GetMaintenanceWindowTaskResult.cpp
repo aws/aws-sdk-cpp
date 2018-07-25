@@ -41,7 +41,7 @@ GetMaintenanceWindowTaskResult::GetMaintenanceWindowTaskResult(const Aws::Amazon
 
 GetMaintenanceWindowTaskResult& GetMaintenanceWindowTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");
@@ -56,7 +56,7 @@ GetMaintenanceWindowTaskResult& GetMaintenanceWindowTaskResult::operator =(const
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -83,7 +83,7 @@ GetMaintenanceWindowTaskResult& GetMaintenanceWindowTaskResult::operator =(const
 
   if(jsonValue.ValueExists("TaskParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> taskParametersJsonMap = jsonValue.GetObject("TaskParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> taskParametersJsonMap = jsonValue.GetObject("TaskParameters").GetAllObjects();
     for(auto& taskParametersItem : taskParametersJsonMap)
     {
       m_taskParameters[taskParametersItem.first] = taskParametersItem.second.AsObject();

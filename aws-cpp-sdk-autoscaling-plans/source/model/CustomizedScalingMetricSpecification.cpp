@@ -38,7 +38,7 @@ CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification() :
 {
 }
 
-CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification(const JsonValue& jsonValue) : 
+CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification(JsonView jsonValue) : 
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
@@ -49,7 +49,7 @@ CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification(const
   *this = jsonValue;
 }
 
-CustomizedScalingMetricSpecification& CustomizedScalingMetricSpecification::operator =(const JsonValue& jsonValue)
+CustomizedScalingMetricSpecification& CustomizedScalingMetricSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MetricName"))
   {
@@ -67,7 +67,7 @@ CustomizedScalingMetricSpecification& CustomizedScalingMetricSpecification::oper
 
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonValue> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());

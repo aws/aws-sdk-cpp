@@ -35,7 +35,7 @@ PipelineOutputConfig::PipelineOutputConfig() :
 {
 }
 
-PipelineOutputConfig::PipelineOutputConfig(const JsonValue& jsonValue) : 
+PipelineOutputConfig::PipelineOutputConfig(JsonView jsonValue) : 
     m_bucketHasBeenSet(false),
     m_storageClassHasBeenSet(false),
     m_permissionsHasBeenSet(false)
@@ -43,7 +43,7 @@ PipelineOutputConfig::PipelineOutputConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineOutputConfig& PipelineOutputConfig::operator =(const JsonValue& jsonValue)
+PipelineOutputConfig& PipelineOutputConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Bucket"))
   {
@@ -61,7 +61,7 @@ PipelineOutputConfig& PipelineOutputConfig::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("Permissions"))
   {
-    Array<JsonValue> permissionsJsonList = jsonValue.GetArray("Permissions");
+    Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
     for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());

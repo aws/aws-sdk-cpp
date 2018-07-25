@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaPackage
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     OriginEndpoint();
-    OriginEndpoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    OriginEndpoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OriginEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    OriginEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

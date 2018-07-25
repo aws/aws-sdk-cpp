@@ -37,7 +37,7 @@ DescribeReplicationTasksResult::DescribeReplicationTasksResult(const Aws::Amazon
 
 DescribeReplicationTasksResult& DescribeReplicationTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeReplicationTasksResult& DescribeReplicationTasksResult::operator =(const
 
   if(jsonValue.ValueExists("ReplicationTasks"))
   {
-    Array<JsonValue> replicationTasksJsonList = jsonValue.GetArray("ReplicationTasks");
+    Array<JsonView> replicationTasksJsonList = jsonValue.GetArray("ReplicationTasks");
     for(unsigned replicationTasksIndex = 0; replicationTasksIndex < replicationTasksJsonList.GetLength(); ++replicationTasksIndex)
     {
       m_replicationTasks.push_back(replicationTasksJsonList[replicationTasksIndex].AsObject());

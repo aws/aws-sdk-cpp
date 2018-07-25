@@ -35,7 +35,7 @@ UserPoolClientDescription::UserPoolClientDescription() :
 {
 }
 
-UserPoolClientDescription::UserPoolClientDescription(const JsonValue& jsonValue) : 
+UserPoolClientDescription::UserPoolClientDescription(JsonView jsonValue) : 
     m_clientIdHasBeenSet(false),
     m_userPoolIdHasBeenSet(false),
     m_clientNameHasBeenSet(false)
@@ -43,7 +43,7 @@ UserPoolClientDescription::UserPoolClientDescription(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-UserPoolClientDescription& UserPoolClientDescription::operator =(const JsonValue& jsonValue)
+UserPoolClientDescription& UserPoolClientDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClientId"))
   {

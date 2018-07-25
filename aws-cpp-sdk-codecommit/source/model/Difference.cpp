@@ -36,7 +36,7 @@ Difference::Difference() :
 {
 }
 
-Difference::Difference(const JsonValue& jsonValue) : 
+Difference::Difference(JsonView jsonValue) : 
     m_beforeBlobHasBeenSet(false),
     m_afterBlobHasBeenSet(false),
     m_changeType(ChangeTypeEnum::NOT_SET),
@@ -45,7 +45,7 @@ Difference::Difference(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Difference& Difference::operator =(const JsonValue& jsonValue)
+Difference& Difference::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("beforeBlob"))
   {

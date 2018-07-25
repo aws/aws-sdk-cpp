@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Commit();
-    Commit(const Aws::Utils::Json::JsonValue& jsonValue);
-    Commit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Commit(Aws::Utils::Json::JsonView jsonValue);
+    Commit& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

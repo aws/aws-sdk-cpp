@@ -33,13 +33,13 @@ InputFormatConfiguration::InputFormatConfiguration() :
 {
 }
 
-InputFormatConfiguration::InputFormatConfiguration(const JsonValue& jsonValue) : 
+InputFormatConfiguration::InputFormatConfiguration(JsonView jsonValue) : 
     m_deserializerHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputFormatConfiguration& InputFormatConfiguration::operator =(const JsonValue& jsonValue)
+InputFormatConfiguration& InputFormatConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Deserializer"))
   {

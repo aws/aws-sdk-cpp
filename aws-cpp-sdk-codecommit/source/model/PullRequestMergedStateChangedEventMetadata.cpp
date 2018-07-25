@@ -35,7 +35,7 @@ PullRequestMergedStateChangedEventMetadata::PullRequestMergedStateChangedEventMe
 {
 }
 
-PullRequestMergedStateChangedEventMetadata::PullRequestMergedStateChangedEventMetadata(const JsonValue& jsonValue) : 
+PullRequestMergedStateChangedEventMetadata::PullRequestMergedStateChangedEventMetadata(JsonView jsonValue) : 
     m_repositoryNameHasBeenSet(false),
     m_destinationReferenceHasBeenSet(false),
     m_mergeMetadataHasBeenSet(false)
@@ -43,7 +43,7 @@ PullRequestMergedStateChangedEventMetadata::PullRequestMergedStateChangedEventMe
   *this = jsonValue;
 }
 
-PullRequestMergedStateChangedEventMetadata& PullRequestMergedStateChangedEventMetadata::operator =(const JsonValue& jsonValue)
+PullRequestMergedStateChangedEventMetadata& PullRequestMergedStateChangedEventMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositoryName"))
   {

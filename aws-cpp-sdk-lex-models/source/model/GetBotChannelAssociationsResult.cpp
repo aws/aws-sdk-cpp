@@ -37,10 +37,10 @@ GetBotChannelAssociationsResult::GetBotChannelAssociationsResult(const Aws::Amaz
 
 GetBotChannelAssociationsResult& GetBotChannelAssociationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("botChannelAssociations"))
   {
-    Array<JsonValue> botChannelAssociationsJsonList = jsonValue.GetArray("botChannelAssociations");
+    Array<JsonView> botChannelAssociationsJsonList = jsonValue.GetArray("botChannelAssociations");
     for(unsigned botChannelAssociationsIndex = 0; botChannelAssociationsIndex < botChannelAssociationsJsonList.GetLength(); ++botChannelAssociationsIndex)
     {
       m_botChannelAssociations.push_back(botChannelAssociationsJsonList[botChannelAssociationsIndex].AsObject());

@@ -39,7 +39,7 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(const JsonValue& jsonValue) : 
+Destination::Destination(JsonView jsonValue) : 
     m_destinationNameHasBeenSet(false),
     m_targetArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -51,7 +51,7 @@ Destination::Destination(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Destination& Destination::operator =(const JsonValue& jsonValue)
+Destination& Destination::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("destinationName"))
   {

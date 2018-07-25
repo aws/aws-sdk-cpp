@@ -37,7 +37,7 @@ UpdatePullRequestStatusResult::UpdatePullRequestStatusResult(const Aws::AmazonWe
 
 UpdatePullRequestStatusResult& UpdatePullRequestStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pullRequest"))
   {
     m_pullRequest = jsonValue.GetObject("pullRequest");

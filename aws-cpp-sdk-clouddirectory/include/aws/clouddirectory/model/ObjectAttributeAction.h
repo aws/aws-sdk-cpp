@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ObjectAttributeAction();
-    ObjectAttributeAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    ObjectAttributeAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ObjectAttributeAction(Aws::Utils::Json::JsonView jsonValue);
+    ObjectAttributeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

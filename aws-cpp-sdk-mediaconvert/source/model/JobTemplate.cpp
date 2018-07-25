@@ -42,7 +42,7 @@ JobTemplate::JobTemplate() :
 {
 }
 
-JobTemplate::JobTemplate(const JsonValue& jsonValue) : 
+JobTemplate::JobTemplate(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -57,7 +57,7 @@ JobTemplate::JobTemplate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobTemplate& JobTemplate::operator =(const JsonValue& jsonValue)
+JobTemplate& JobTemplate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

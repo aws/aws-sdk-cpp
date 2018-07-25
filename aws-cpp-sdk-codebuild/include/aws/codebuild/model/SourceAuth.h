@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     SourceAuth();
-    SourceAuth(const Aws::Utils::Json::JsonValue& jsonValue);
-    SourceAuth& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SourceAuth(Aws::Utils::Json::JsonView jsonValue);
+    SourceAuth& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

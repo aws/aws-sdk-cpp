@@ -48,7 +48,7 @@ Aws::String GetEffectivePoliciesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void GetEffectivePoliciesRequest::AddQueryStringParameters(URI& uri) const

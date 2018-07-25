@@ -38,7 +38,7 @@ UserDefinedFunctionInput::UserDefinedFunctionInput() :
 {
 }
 
-UserDefinedFunctionInput::UserDefinedFunctionInput(const JsonValue& jsonValue) : 
+UserDefinedFunctionInput::UserDefinedFunctionInput(JsonView jsonValue) : 
     m_functionNameHasBeenSet(false),
     m_classNameHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
@@ -49,7 +49,7 @@ UserDefinedFunctionInput::UserDefinedFunctionInput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserDefinedFunctionInput& UserDefinedFunctionInput::operator =(const JsonValue& jsonValue)
+UserDefinedFunctionInput& UserDefinedFunctionInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FunctionName"))
   {
@@ -81,7 +81,7 @@ UserDefinedFunctionInput& UserDefinedFunctionInput::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("ResourceUris"))
   {
-    Array<JsonValue> resourceUrisJsonList = jsonValue.GetArray("ResourceUris");
+    Array<JsonView> resourceUrisJsonList = jsonValue.GetArray("ResourceUris");
     for(unsigned resourceUrisIndex = 0; resourceUrisIndex < resourceUrisJsonList.GetLength(); ++resourceUrisIndex)
     {
       m_resourceUris.push_back(resourceUrisJsonList[resourceUrisIndex].AsObject());

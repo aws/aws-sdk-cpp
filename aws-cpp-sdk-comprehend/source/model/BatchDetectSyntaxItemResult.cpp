@@ -35,7 +35,7 @@ BatchDetectSyntaxItemResult::BatchDetectSyntaxItemResult() :
 {
 }
 
-BatchDetectSyntaxItemResult::BatchDetectSyntaxItemResult(const JsonValue& jsonValue) : 
+BatchDetectSyntaxItemResult::BatchDetectSyntaxItemResult(JsonView jsonValue) : 
     m_index(0),
     m_indexHasBeenSet(false),
     m_syntaxTokensHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchDetectSyntaxItemResult::BatchDetectSyntaxItemResult(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-BatchDetectSyntaxItemResult& BatchDetectSyntaxItemResult::operator =(const JsonValue& jsonValue)
+BatchDetectSyntaxItemResult& BatchDetectSyntaxItemResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Index"))
   {
@@ -54,7 +54,7 @@ BatchDetectSyntaxItemResult& BatchDetectSyntaxItemResult::operator =(const JsonV
 
   if(jsonValue.ValueExists("SyntaxTokens"))
   {
-    Array<JsonValue> syntaxTokensJsonList = jsonValue.GetArray("SyntaxTokens");
+    Array<JsonView> syntaxTokensJsonList = jsonValue.GetArray("SyntaxTokens");
     for(unsigned syntaxTokensIndex = 0; syntaxTokensIndex < syntaxTokensJsonList.GetLength(); ++syntaxTokensIndex)
     {
       m_syntaxTokens.push_back(syntaxTokensJsonList[syntaxTokensIndex].AsObject());

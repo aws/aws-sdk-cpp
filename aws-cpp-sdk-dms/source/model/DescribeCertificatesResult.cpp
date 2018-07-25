@@ -37,7 +37,7 @@ DescribeCertificatesResult::DescribeCertificatesResult(const Aws::AmazonWebServi
 
 DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("Certificates"))
   {
-    Array<JsonValue> certificatesJsonList = jsonValue.GetArray("Certificates");
+    Array<JsonView> certificatesJsonList = jsonValue.GetArray("Certificates");
     for(unsigned certificatesIndex = 0; certificatesIndex < certificatesJsonList.GetLength(); ++certificatesIndex)
     {
       m_certificates.push_back(certificatesJsonList[certificatesIndex].AsObject());

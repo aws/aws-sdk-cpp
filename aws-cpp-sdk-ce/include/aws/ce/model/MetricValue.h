@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CostExplorer
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     MetricValue();
-    MetricValue(const Aws::Utils::Json::JsonValue& jsonValue);
-    MetricValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MetricValue(Aws::Utils::Json::JsonView jsonValue);
+    MetricValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

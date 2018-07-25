@@ -39,7 +39,7 @@ DeleteEventSourceMappingResult::DeleteEventSourceMappingResult(const Aws::Amazon
 
 DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UUID"))
   {
     m_uUID = jsonValue.GetString("UUID");

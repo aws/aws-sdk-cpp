@@ -34,14 +34,14 @@ ComplianceByConfigRule::ComplianceByConfigRule() :
 {
 }
 
-ComplianceByConfigRule::ComplianceByConfigRule(const JsonValue& jsonValue) : 
+ComplianceByConfigRule::ComplianceByConfigRule(JsonView jsonValue) : 
     m_configRuleNameHasBeenSet(false),
     m_complianceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ComplianceByConfigRule& ComplianceByConfigRule::operator =(const JsonValue& jsonValue)
+ComplianceByConfigRule& ComplianceByConfigRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConfigRuleName"))
   {

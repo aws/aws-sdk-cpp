@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace LexModelBuildingService
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     FollowUpPrompt();
-    FollowUpPrompt(const Aws::Utils::Json::JsonValue& jsonValue);
-    FollowUpPrompt& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FollowUpPrompt(Aws::Utils::Json::JsonView jsonValue);
+    FollowUpPrompt& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

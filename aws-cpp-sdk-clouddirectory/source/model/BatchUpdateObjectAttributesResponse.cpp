@@ -33,13 +33,13 @@ BatchUpdateObjectAttributesResponse::BatchUpdateObjectAttributesResponse() :
 {
 }
 
-BatchUpdateObjectAttributesResponse::BatchUpdateObjectAttributesResponse(const JsonValue& jsonValue) : 
+BatchUpdateObjectAttributesResponse::BatchUpdateObjectAttributesResponse(JsonView jsonValue) : 
     m_objectIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchUpdateObjectAttributesResponse& BatchUpdateObjectAttributesResponse::operator =(const JsonValue& jsonValue)
+BatchUpdateObjectAttributesResponse& BatchUpdateObjectAttributesResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {

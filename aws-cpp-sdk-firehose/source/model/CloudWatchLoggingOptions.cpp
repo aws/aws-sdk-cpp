@@ -36,7 +36,7 @@ CloudWatchLoggingOptions::CloudWatchLoggingOptions() :
 {
 }
 
-CloudWatchLoggingOptions::CloudWatchLoggingOptions(const JsonValue& jsonValue) : 
+CloudWatchLoggingOptions::CloudWatchLoggingOptions(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
@@ -45,7 +45,7 @@ CloudWatchLoggingOptions::CloudWatchLoggingOptions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CloudWatchLoggingOptions& CloudWatchLoggingOptions::operator =(const JsonValue& jsonValue)
+CloudWatchLoggingOptions& CloudWatchLoggingOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

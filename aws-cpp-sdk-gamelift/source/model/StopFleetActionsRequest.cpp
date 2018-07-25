@@ -49,7 +49,7 @@ Aws::String StopFleetActionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopFleetActionsRequest::GetRequestSpecificHeaders() const

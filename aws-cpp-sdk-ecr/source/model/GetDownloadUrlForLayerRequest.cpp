@@ -51,7 +51,7 @@ Aws::String GetDownloadUrlForLayerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDownloadUrlForLayerRequest::GetRequestSpecificHeaders() const

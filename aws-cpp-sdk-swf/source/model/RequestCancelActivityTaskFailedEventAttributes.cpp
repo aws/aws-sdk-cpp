@@ -37,7 +37,7 @@ RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedE
 {
 }
 
-RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedEventAttributes(const JsonValue& jsonValue) : 
+RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedEventAttributes(JsonView jsonValue) : 
     m_activityIdHasBeenSet(false),
     m_cause(RequestCancelActivityTaskFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
@@ -47,7 +47,7 @@ RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedE
   *this = jsonValue;
 }
 
-RequestCancelActivityTaskFailedEventAttributes& RequestCancelActivityTaskFailedEventAttributes::operator =(const JsonValue& jsonValue)
+RequestCancelActivityTaskFailedEventAttributes& RequestCancelActivityTaskFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activityId"))
   {

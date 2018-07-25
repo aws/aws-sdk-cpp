@@ -44,7 +44,7 @@ Aws::String DeleteRateBasedRuleRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteRateBasedRuleRequest::GetRequestSpecificHeaders() const

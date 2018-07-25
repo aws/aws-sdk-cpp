@@ -37,7 +37,7 @@ CreateNotebookInstanceResult::CreateNotebookInstanceResult(const Aws::AmazonWebS
 
 CreateNotebookInstanceResult& CreateNotebookInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NotebookInstanceArn"))
   {
     m_notebookInstanceArn = jsonValue.GetString("NotebookInstanceArn");

@@ -37,7 +37,7 @@ TagOptionDetail::TagOptionDetail() :
 {
 }
 
-TagOptionDetail::TagOptionDetail(const JsonValue& jsonValue) : 
+TagOptionDetail::TagOptionDetail(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_active(false),
@@ -47,7 +47,7 @@ TagOptionDetail::TagOptionDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TagOptionDetail& TagOptionDetail::operator =(const JsonValue& jsonValue)
+TagOptionDetail& TagOptionDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

@@ -37,7 +37,7 @@ DescribeActivityTypeResult::DescribeActivityTypeResult(const Aws::AmazonWebServi
 
 DescribeActivityTypeResult& DescribeActivityTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("typeInfo"))
   {
     m_typeInfo = jsonValue.GetObject("typeInfo");

@@ -35,7 +35,7 @@ Bucket::Bucket() :
 {
 }
 
-Bucket::Bucket(const JsonValue& jsonValue) : 
+Bucket::Bucket(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false)
@@ -43,7 +43,7 @@ Bucket::Bucket(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Bucket& Bucket::operator =(const JsonValue& jsonValue)
+Bucket& Bucket::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("value"))
   {

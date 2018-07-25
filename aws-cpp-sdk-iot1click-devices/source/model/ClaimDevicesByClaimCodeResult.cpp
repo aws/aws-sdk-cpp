@@ -39,7 +39,7 @@ ClaimDevicesByClaimCodeResult::ClaimDevicesByClaimCodeResult(const Aws::AmazonWe
 
 ClaimDevicesByClaimCodeResult& ClaimDevicesByClaimCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("claimCode"))
   {
     m_claimCode = jsonValue.GetString("claimCode");

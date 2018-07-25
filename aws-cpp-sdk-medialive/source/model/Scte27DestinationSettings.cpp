@@ -32,12 +32,12 @@ Scte27DestinationSettings::Scte27DestinationSettings()
 {
 }
 
-Scte27DestinationSettings::Scte27DestinationSettings(const JsonValue& jsonValue)
+Scte27DestinationSettings::Scte27DestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-Scte27DestinationSettings& Scte27DestinationSettings::operator =(const JsonValue& jsonValue)
+Scte27DestinationSettings& Scte27DestinationSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

@@ -36,7 +36,7 @@ EventRiskType::EventRiskType() :
 {
 }
 
-EventRiskType::EventRiskType(const JsonValue& jsonValue) : 
+EventRiskType::EventRiskType(JsonView jsonValue) : 
     m_riskDecision(RiskDecisionType::NOT_SET),
     m_riskDecisionHasBeenSet(false),
     m_riskLevel(RiskLevelType::NOT_SET),
@@ -45,7 +45,7 @@ EventRiskType::EventRiskType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventRiskType& EventRiskType::operator =(const JsonValue& jsonValue)
+EventRiskType& EventRiskType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RiskDecision"))
   {

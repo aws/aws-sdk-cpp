@@ -37,7 +37,7 @@ PutPlaybackConfigurationResult::PutPlaybackConfigurationResult(const Aws::Amazon
 
 PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AdDecisionServerUrl"))
   {
     m_adDecisionServerUrl = jsonValue.GetString("AdDecisionServerUrl");

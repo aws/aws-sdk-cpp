@@ -35,7 +35,7 @@ ActivityTaskCancelRequestedEventAttributes::ActivityTaskCancelRequestedEventAttr
 {
 }
 
-ActivityTaskCancelRequestedEventAttributes::ActivityTaskCancelRequestedEventAttributes(const JsonValue& jsonValue) : 
+ActivityTaskCancelRequestedEventAttributes::ActivityTaskCancelRequestedEventAttributes(JsonView jsonValue) : 
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false),
     m_activityIdHasBeenSet(false)
@@ -43,7 +43,7 @@ ActivityTaskCancelRequestedEventAttributes::ActivityTaskCancelRequestedEventAttr
   *this = jsonValue;
 }
 
-ActivityTaskCancelRequestedEventAttributes& ActivityTaskCancelRequestedEventAttributes::operator =(const JsonValue& jsonValue)
+ActivityTaskCancelRequestedEventAttributes& ActivityTaskCancelRequestedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {

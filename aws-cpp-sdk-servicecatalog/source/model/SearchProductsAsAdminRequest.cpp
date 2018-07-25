@@ -97,7 +97,7 @@ Aws::String SearchProductsAsAdminRequest::SerializePayload() const
    payload.WithString("ProductSource", ProductSourceMapper::GetNameForProductSource(m_productSource));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SearchProductsAsAdminRequest::GetRequestSpecificHeaders() const

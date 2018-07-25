@@ -34,14 +34,14 @@ BatchReadOperationResponse::BatchReadOperationResponse() :
 {
 }
 
-BatchReadOperationResponse::BatchReadOperationResponse(const JsonValue& jsonValue) : 
+BatchReadOperationResponse::BatchReadOperationResponse(JsonView jsonValue) : 
     m_successfulResponseHasBeenSet(false),
     m_exceptionResponseHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchReadOperationResponse& BatchReadOperationResponse::operator =(const JsonValue& jsonValue)
+BatchReadOperationResponse& BatchReadOperationResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SuccessfulResponse"))
   {

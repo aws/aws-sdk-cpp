@@ -35,7 +35,7 @@ RemotePortDetails::RemotePortDetails() :
 {
 }
 
-RemotePortDetails::RemotePortDetails(const JsonValue& jsonValue) : 
+RemotePortDetails::RemotePortDetails(JsonView jsonValue) : 
     m_port(0),
     m_portHasBeenSet(false),
     m_portNameHasBeenSet(false)
@@ -43,7 +43,7 @@ RemotePortDetails::RemotePortDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RemotePortDetails& RemotePortDetails::operator =(const JsonValue& jsonValue)
+RemotePortDetails& RemotePortDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("port"))
   {

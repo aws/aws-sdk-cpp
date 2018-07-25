@@ -34,14 +34,14 @@ DestinationSchema::DestinationSchema() :
 {
 }
 
-DestinationSchema::DestinationSchema(const JsonValue& jsonValue) : 
+DestinationSchema::DestinationSchema(JsonView jsonValue) : 
     m_recordFormatType(RecordFormatType::NOT_SET),
     m_recordFormatTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DestinationSchema& DestinationSchema::operator =(const JsonValue& jsonValue)
+DestinationSchema& DestinationSchema::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RecordFormatType"))
   {

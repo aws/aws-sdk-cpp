@@ -37,7 +37,7 @@ TransformOutput::TransformOutput() :
 {
 }
 
-TransformOutput::TransformOutput(const JsonValue& jsonValue) : 
+TransformOutput::TransformOutput(JsonView jsonValue) : 
     m_s3OutputPathHasBeenSet(false),
     m_acceptHasBeenSet(false),
     m_assembleWith(AssemblyType::NOT_SET),
@@ -47,7 +47,7 @@ TransformOutput::TransformOutput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TransformOutput& TransformOutput::operator =(const JsonValue& jsonValue)
+TransformOutput& TransformOutput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3OutputPath"))
   {

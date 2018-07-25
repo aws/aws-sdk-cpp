@@ -38,7 +38,7 @@ StepSummary::StepSummary() :
 {
 }
 
-StepSummary::StepSummary(const JsonValue& jsonValue) : 
+StepSummary::StepSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_configHasBeenSet(false),
@@ -49,7 +49,7 @@ StepSummary::StepSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StepSummary& StepSummary::operator =(const JsonValue& jsonValue)
+StepSummary& StepSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

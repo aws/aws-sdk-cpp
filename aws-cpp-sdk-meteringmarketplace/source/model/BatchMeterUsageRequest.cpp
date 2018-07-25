@@ -49,7 +49,7 @@ Aws::String BatchMeterUsageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchMeterUsageRequest::GetRequestSpecificHeaders() const

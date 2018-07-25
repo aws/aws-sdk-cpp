@@ -37,7 +37,7 @@ Facet::Facet() :
 {
 }
 
-Facet::Facet(const JsonValue& jsonValue) : 
+Facet::Facet(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_objectType(ObjectType::NOT_SET),
     m_objectTypeHasBeenSet(false),
@@ -47,7 +47,7 @@ Facet::Facet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Facet& Facet::operator =(const JsonValue& jsonValue)
+Facet& Facet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

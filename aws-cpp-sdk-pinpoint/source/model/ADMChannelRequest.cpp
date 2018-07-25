@@ -36,7 +36,7 @@ ADMChannelRequest::ADMChannelRequest() :
 {
 }
 
-ADMChannelRequest::ADMChannelRequest(const JsonValue& jsonValue) : 
+ADMChannelRequest::ADMChannelRequest(JsonView jsonValue) : 
     m_clientIdHasBeenSet(false),
     m_clientSecretHasBeenSet(false),
     m_enabled(false),
@@ -45,7 +45,7 @@ ADMChannelRequest::ADMChannelRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ADMChannelRequest& ADMChannelRequest::operator =(const JsonValue& jsonValue)
+ADMChannelRequest& ADMChannelRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClientId"))
   {

@@ -36,7 +36,7 @@ ChapInfo::ChapInfo() :
 {
 }
 
-ChapInfo::ChapInfo(const JsonValue& jsonValue) : 
+ChapInfo::ChapInfo(JsonView jsonValue) : 
     m_targetARNHasBeenSet(false),
     m_secretToAuthenticateInitiatorHasBeenSet(false),
     m_initiatorNameHasBeenSet(false),
@@ -45,7 +45,7 @@ ChapInfo::ChapInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ChapInfo& ChapInfo::operator =(const JsonValue& jsonValue)
+ChapInfo& ChapInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetARN"))
   {

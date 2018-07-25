@@ -42,7 +42,7 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig() :
 {
 }
 
-ElasticsearchDomainConfig::ElasticsearchDomainConfig(const JsonValue& jsonValue) : 
+ElasticsearchDomainConfig::ElasticsearchDomainConfig(JsonView jsonValue) : 
     m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
@@ -57,7 +57,7 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(const JsonValue& jsonValue)
+ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ElasticsearchVersion"))
   {

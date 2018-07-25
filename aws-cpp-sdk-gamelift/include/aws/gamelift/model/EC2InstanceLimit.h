@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     EC2InstanceLimit();
-    EC2InstanceLimit(const Aws::Utils::Json::JsonValue& jsonValue);
-    EC2InstanceLimit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EC2InstanceLimit(Aws::Utils::Json::JsonView jsonValue);
+    EC2InstanceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

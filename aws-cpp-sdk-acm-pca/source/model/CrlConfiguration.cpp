@@ -38,7 +38,7 @@ CrlConfiguration::CrlConfiguration() :
 {
 }
 
-CrlConfiguration::CrlConfiguration(const JsonValue& jsonValue) : 
+CrlConfiguration::CrlConfiguration(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_expirationInDays(0),
@@ -49,7 +49,7 @@ CrlConfiguration::CrlConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CrlConfiguration& CrlConfiguration::operator =(const JsonValue& jsonValue)
+CrlConfiguration& CrlConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

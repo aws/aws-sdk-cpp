@@ -43,7 +43,7 @@ MaintenanceWindowRunCommandParameters::MaintenanceWindowRunCommandParameters() :
 {
 }
 
-MaintenanceWindowRunCommandParameters::MaintenanceWindowRunCommandParameters(const JsonValue& jsonValue) : 
+MaintenanceWindowRunCommandParameters::MaintenanceWindowRunCommandParameters(JsonView jsonValue) : 
     m_commentHasBeenSet(false),
     m_documentHashHasBeenSet(false),
     m_documentHashType(DocumentHashType::NOT_SET),
@@ -59,7 +59,7 @@ MaintenanceWindowRunCommandParameters::MaintenanceWindowRunCommandParameters(con
   *this = jsonValue;
 }
 
-MaintenanceWindowRunCommandParameters& MaintenanceWindowRunCommandParameters::operator =(const JsonValue& jsonValue)
+MaintenanceWindowRunCommandParameters& MaintenanceWindowRunCommandParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Comment"))
   {
@@ -105,10 +105,10 @@ MaintenanceWindowRunCommandParameters& MaintenanceWindowRunCommandParameters::op
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonValue> parameterValueListJsonList = parametersItem.second.AsArray();
+      Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> parameterValueListList;
       parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)

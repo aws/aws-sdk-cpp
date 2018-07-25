@@ -37,10 +37,10 @@ ListProvisionedProductPlansResult::ListProvisionedProductPlansResult(const Aws::
 
 ListProvisionedProductPlansResult& ListProvisionedProductPlansResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisionedProductPlans"))
   {
-    Array<JsonValue> provisionedProductPlansJsonList = jsonValue.GetArray("ProvisionedProductPlans");
+    Array<JsonView> provisionedProductPlansJsonList = jsonValue.GetArray("ProvisionedProductPlans");
     for(unsigned provisionedProductPlansIndex = 0; provisionedProductPlansIndex < provisionedProductPlansJsonList.GetLength(); ++provisionedProductPlansIndex)
     {
       m_provisionedProductPlans.push_back(provisionedProductPlansJsonList[provisionedProductPlansIndex].AsObject());

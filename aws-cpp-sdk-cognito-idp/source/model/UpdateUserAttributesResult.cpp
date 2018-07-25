@@ -37,10 +37,10 @@ UpdateUserAttributesResult::UpdateUserAttributesResult(const Aws::AmazonWebServi
 
 UpdateUserAttributesResult& UpdateUserAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CodeDeliveryDetailsList"))
   {
-    Array<JsonValue> codeDeliveryDetailsListJsonList = jsonValue.GetArray("CodeDeliveryDetailsList");
+    Array<JsonView> codeDeliveryDetailsListJsonList = jsonValue.GetArray("CodeDeliveryDetailsList");
     for(unsigned codeDeliveryDetailsListIndex = 0; codeDeliveryDetailsListIndex < codeDeliveryDetailsListJsonList.GetLength(); ++codeDeliveryDetailsListIndex)
     {
       m_codeDeliveryDetailsList.push_back(codeDeliveryDetailsListJsonList[codeDeliveryDetailsListIndex].AsObject());

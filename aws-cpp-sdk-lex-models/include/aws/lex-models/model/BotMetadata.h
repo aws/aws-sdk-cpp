@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace LexModelBuildingService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     BotMetadata();
-    BotMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    BotMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BotMetadata(Aws::Utils::Json::JsonView jsonValue);
+    BotMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

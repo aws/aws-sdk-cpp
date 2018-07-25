@@ -37,7 +37,7 @@ DescribeReplicationInstanceTaskLogsResult::DescribeReplicationInstanceTaskLogsRe
 
 DescribeReplicationInstanceTaskLogsResult& DescribeReplicationInstanceTaskLogsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReplicationInstanceArn"))
   {
     m_replicationInstanceArn = jsonValue.GetString("ReplicationInstanceArn");
@@ -46,7 +46,7 @@ DescribeReplicationInstanceTaskLogsResult& DescribeReplicationInstanceTaskLogsRe
 
   if(jsonValue.ValueExists("ReplicationInstanceTaskLogs"))
   {
-    Array<JsonValue> replicationInstanceTaskLogsJsonList = jsonValue.GetArray("ReplicationInstanceTaskLogs");
+    Array<JsonView> replicationInstanceTaskLogsJsonList = jsonValue.GetArray("ReplicationInstanceTaskLogs");
     for(unsigned replicationInstanceTaskLogsIndex = 0; replicationInstanceTaskLogsIndex < replicationInstanceTaskLogsJsonList.GetLength(); ++replicationInstanceTaskLogsIndex)
     {
       m_replicationInstanceTaskLogs.push_back(replicationInstanceTaskLogsJsonList[replicationInstanceTaskLogsIndex].AsObject());

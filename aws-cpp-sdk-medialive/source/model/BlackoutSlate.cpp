@@ -39,7 +39,7 @@ BlackoutSlate::BlackoutSlate() :
 {
 }
 
-BlackoutSlate::BlackoutSlate(const JsonValue& jsonValue) : 
+BlackoutSlate::BlackoutSlate(JsonView jsonValue) : 
     m_blackoutSlateImageHasBeenSet(false),
     m_networkEndBlackout(BlackoutSlateNetworkEndBlackout::NOT_SET),
     m_networkEndBlackoutHasBeenSet(false),
@@ -51,7 +51,7 @@ BlackoutSlate::BlackoutSlate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BlackoutSlate& BlackoutSlate::operator =(const JsonValue& jsonValue)
+BlackoutSlate& BlackoutSlate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("blackoutSlateImage"))
   {

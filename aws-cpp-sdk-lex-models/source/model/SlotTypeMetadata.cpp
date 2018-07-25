@@ -37,7 +37,7 @@ SlotTypeMetadata::SlotTypeMetadata() :
 {
 }
 
-SlotTypeMetadata::SlotTypeMetadata(const JsonValue& jsonValue) : 
+SlotTypeMetadata::SlotTypeMetadata(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
@@ -47,7 +47,7 @@ SlotTypeMetadata::SlotTypeMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SlotTypeMetadata& SlotTypeMetadata::operator =(const JsonValue& jsonValue)
+SlotTypeMetadata& SlotTypeMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

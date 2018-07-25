@@ -35,14 +35,14 @@ Attachment::Attachment() :
 {
 }
 
-Attachment::Attachment(const JsonValue& jsonValue) : 
+Attachment::Attachment(JsonView jsonValue) : 
     m_fileNameHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Attachment& Attachment::operator =(const JsonValue& jsonValue)
+Attachment& Attachment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fileName"))
   {

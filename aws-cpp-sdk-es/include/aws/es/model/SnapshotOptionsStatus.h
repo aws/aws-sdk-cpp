@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SnapshotOptionsStatus();
-    SnapshotOptionsStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    SnapshotOptionsStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SnapshotOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    SnapshotOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

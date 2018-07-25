@@ -37,10 +37,10 @@ ListAssociationVersionsResult::ListAssociationVersionsResult(const Aws::AmazonWe
 
 ListAssociationVersionsResult& ListAssociationVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociationVersions"))
   {
-    Array<JsonValue> associationVersionsJsonList = jsonValue.GetArray("AssociationVersions");
+    Array<JsonView> associationVersionsJsonList = jsonValue.GetArray("AssociationVersions");
     for(unsigned associationVersionsIndex = 0; associationVersionsIndex < associationVersionsJsonList.GetLength(); ++associationVersionsIndex)
     {
       m_associationVersions.push_back(associationVersionsJsonList[associationVersionsIndex].AsObject());

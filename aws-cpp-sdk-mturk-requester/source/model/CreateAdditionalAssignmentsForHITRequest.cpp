@@ -52,7 +52,7 @@ Aws::String CreateAdditionalAssignmentsForHITRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateAdditionalAssignmentsForHITRequest::GetRequestSpecificHeaders() const

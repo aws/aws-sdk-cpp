@@ -77,7 +77,7 @@ Aws::String CreateJobTemplateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

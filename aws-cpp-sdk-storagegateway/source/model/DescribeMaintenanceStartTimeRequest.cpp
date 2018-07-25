@@ -37,7 +37,7 @@ Aws::String DescribeMaintenanceStartTimeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeMaintenanceStartTimeRequest::GetRequestSpecificHeaders() const

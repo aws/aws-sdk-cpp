@@ -170,7 +170,7 @@ Aws::String SendCommandRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SendCommandRequest::GetRequestSpecificHeaders() const

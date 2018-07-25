@@ -51,7 +51,7 @@ Aws::String ReportTaskRunnerHeartbeatRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ReportTaskRunnerHeartbeatRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ DescribeStepResult::DescribeStepResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DescribeStepResult& DescribeStepResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Step"))
   {
     m_step = jsonValue.GetObject("Step");

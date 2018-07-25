@@ -33,17 +33,17 @@ HlsIngest::HlsIngest() :
 {
 }
 
-HlsIngest::HlsIngest(const JsonValue& jsonValue) : 
+HlsIngest::HlsIngest(JsonView jsonValue) : 
     m_ingestEndpointsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HlsIngest& HlsIngest::operator =(const JsonValue& jsonValue)
+HlsIngest& HlsIngest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ingestEndpoints"))
   {
-    Array<JsonValue> ingestEndpointsJsonList = jsonValue.GetArray("ingestEndpoints");
+    Array<JsonView> ingestEndpointsJsonList = jsonValue.GetArray("ingestEndpoints");
     for(unsigned ingestEndpointsIndex = 0; ingestEndpointsIndex < ingestEndpointsJsonList.GetLength(); ++ingestEndpointsIndex)
     {
       m_ingestEndpoints.push_back(ingestEndpointsJsonList[ingestEndpointsIndex].AsObject());

@@ -39,7 +39,7 @@ DeviceDescription::DeviceDescription() :
 {
 }
 
-DeviceDescription::DeviceDescription(const JsonValue& jsonValue) : 
+DeviceDescription::DeviceDescription(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_enabled(false),
@@ -51,11 +51,11 @@ DeviceDescription::DeviceDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeviceDescription& DeviceDescription::operator =(const JsonValue& jsonValue)
+DeviceDescription& DeviceDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

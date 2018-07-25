@@ -37,10 +37,10 @@ ListActionTypesResult::ListActionTypesResult(const Aws::AmazonWebServiceResult<J
 
 ListActionTypesResult& ListActionTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("actionTypes"))
   {
-    Array<JsonValue> actionTypesJsonList = jsonValue.GetArray("actionTypes");
+    Array<JsonView> actionTypesJsonList = jsonValue.GetArray("actionTypes");
     for(unsigned actionTypesIndex = 0; actionTypesIndex < actionTypesJsonList.GetLength(); ++actionTypesIndex)
     {
       m_actionTypes.push_back(actionTypesJsonList[actionTypesIndex].AsObject());

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace XRay
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AnnotationValue();
-    AnnotationValue(const Aws::Utils::Json::JsonValue& jsonValue);
-    AnnotationValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AnnotationValue(Aws::Utils::Json::JsonView jsonValue);
+    AnnotationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

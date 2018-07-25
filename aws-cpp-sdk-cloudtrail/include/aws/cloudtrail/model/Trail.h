@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudTrail
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     Trail();
-    Trail(const Aws::Utils::Json::JsonValue& jsonValue);
-    Trail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Trail(Aws::Utils::Json::JsonView jsonValue);
+    Trail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

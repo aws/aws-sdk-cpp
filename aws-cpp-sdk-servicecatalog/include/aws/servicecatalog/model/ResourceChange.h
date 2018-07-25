@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     ResourceChange();
-    ResourceChange(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceChange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceChange(Aws::Utils::Json::JsonView jsonValue);
+    ResourceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -42,7 +42,7 @@ ReplicaSettingsDescription::ReplicaSettingsDescription() :
 {
 }
 
-ReplicaSettingsDescription::ReplicaSettingsDescription(const JsonValue& jsonValue) : 
+ReplicaSettingsDescription::ReplicaSettingsDescription(JsonView jsonValue) : 
     m_regionNameHasBeenSet(false),
     m_replicaStatus(ReplicaStatus::NOT_SET),
     m_replicaStatusHasBeenSet(false),
@@ -57,7 +57,7 @@ ReplicaSettingsDescription::ReplicaSettingsDescription(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ReplicaSettingsDescription& ReplicaSettingsDescription::operator =(const JsonValue& jsonValue)
+ReplicaSettingsDescription& ReplicaSettingsDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RegionName"))
   {
@@ -103,7 +103,7 @@ ReplicaSettingsDescription& ReplicaSettingsDescription::operator =(const JsonVal
 
   if(jsonValue.ValueExists("ReplicaGlobalSecondaryIndexSettings"))
   {
-    Array<JsonValue> replicaGlobalSecondaryIndexSettingsJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexSettings");
+    Array<JsonView> replicaGlobalSecondaryIndexSettingsJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexSettings");
     for(unsigned replicaGlobalSecondaryIndexSettingsIndex = 0; replicaGlobalSecondaryIndexSettingsIndex < replicaGlobalSecondaryIndexSettingsJsonList.GetLength(); ++replicaGlobalSecondaryIndexSettingsIndex)
     {
       m_replicaGlobalSecondaryIndexSettings.push_back(replicaGlobalSecondaryIndexSettingsJsonList[replicaGlobalSecondaryIndexSettingsIndex].AsObject());

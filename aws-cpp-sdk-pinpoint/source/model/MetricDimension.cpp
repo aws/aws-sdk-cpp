@@ -35,7 +35,7 @@ MetricDimension::MetricDimension() :
 {
 }
 
-MetricDimension::MetricDimension(const JsonValue& jsonValue) : 
+MetricDimension::MetricDimension(JsonView jsonValue) : 
     m_comparisonOperatorHasBeenSet(false),
     m_value(0.0),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ MetricDimension::MetricDimension(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MetricDimension& MetricDimension::operator =(const JsonValue& jsonValue)
+MetricDimension& MetricDimension::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComparisonOperator"))
   {

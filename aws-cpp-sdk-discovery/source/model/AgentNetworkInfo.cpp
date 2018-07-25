@@ -34,14 +34,14 @@ AgentNetworkInfo::AgentNetworkInfo() :
 {
 }
 
-AgentNetworkInfo::AgentNetworkInfo(const JsonValue& jsonValue) : 
+AgentNetworkInfo::AgentNetworkInfo(JsonView jsonValue) : 
     m_ipAddressHasBeenSet(false),
     m_macAddressHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AgentNetworkInfo& AgentNetworkInfo::operator =(const JsonValue& jsonValue)
+AgentNetworkInfo& AgentNetworkInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ipAddress"))
   {

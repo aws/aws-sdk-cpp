@@ -41,7 +41,7 @@ ProjectEnvironment::ProjectEnvironment() :
 {
 }
 
-ProjectEnvironment::ProjectEnvironment(const JsonValue& jsonValue) : 
+ProjectEnvironment::ProjectEnvironment(JsonView jsonValue) : 
     m_type(EnvironmentType::NOT_SET),
     m_typeHasBeenSet(false),
     m_imageHasBeenSet(false),
@@ -55,7 +55,7 @@ ProjectEnvironment::ProjectEnvironment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProjectEnvironment& ProjectEnvironment::operator =(const JsonValue& jsonValue)
+ProjectEnvironment& ProjectEnvironment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {
@@ -80,7 +80,7 @@ ProjectEnvironment& ProjectEnvironment::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("environmentVariables"))
   {
-    Array<JsonValue> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
+    Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
     for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
     {
       m_environmentVariables.push_back(environmentVariablesJsonList[environmentVariablesIndex].AsObject());

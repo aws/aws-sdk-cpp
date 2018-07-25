@@ -37,10 +37,10 @@ ListEndpointConfigsResult::ListEndpointConfigsResult(const Aws::AmazonWebService
 
 ListEndpointConfigsResult& ListEndpointConfigsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EndpointConfigs"))
   {
-    Array<JsonValue> endpointConfigsJsonList = jsonValue.GetArray("EndpointConfigs");
+    Array<JsonView> endpointConfigsJsonList = jsonValue.GetArray("EndpointConfigs");
     for(unsigned endpointConfigsIndex = 0; endpointConfigsIndex < endpointConfigsJsonList.GetLength(); ++endpointConfigsIndex)
     {
       m_endpointConfigs.push_back(endpointConfigsJsonList[endpointConfigsIndex].AsObject());

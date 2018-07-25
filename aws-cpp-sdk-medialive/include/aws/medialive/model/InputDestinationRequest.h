@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     InputDestinationRequest();
-    InputDestinationRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputDestinationRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputDestinationRequest(Aws::Utils::Json::JsonView jsonValue);
+    InputDestinationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

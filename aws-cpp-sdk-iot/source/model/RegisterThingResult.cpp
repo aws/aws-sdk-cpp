@@ -37,7 +37,7 @@ RegisterThingResult::RegisterThingResult(const Aws::AmazonWebServiceResult<JsonV
 
 RegisterThingResult& RegisterThingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("certificatePem"))
   {
     m_certificatePem = jsonValue.GetString("certificatePem");
@@ -46,7 +46,7 @@ RegisterThingResult& RegisterThingResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("resourceArns"))
   {
-    Aws::Map<Aws::String, JsonValue> resourceArnsJsonMap = jsonValue.GetObject("resourceArns").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> resourceArnsJsonMap = jsonValue.GetObject("resourceArns").GetAllObjects();
     for(auto& resourceArnsItem : resourceArnsJsonMap)
     {
       m_resourceArns[resourceArnsItem.first] = resourceArnsItem.second.AsString();

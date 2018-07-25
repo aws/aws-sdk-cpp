@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchLogs
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     RejectedLogEventsInfo();
-    RejectedLogEventsInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    RejectedLogEventsInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RejectedLogEventsInfo(Aws::Utils::Json::JsonView jsonValue);
+    RejectedLogEventsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

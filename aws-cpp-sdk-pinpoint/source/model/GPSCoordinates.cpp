@@ -36,7 +36,7 @@ GPSCoordinates::GPSCoordinates() :
 {
 }
 
-GPSCoordinates::GPSCoordinates(const JsonValue& jsonValue) : 
+GPSCoordinates::GPSCoordinates(JsonView jsonValue) : 
     m_latitude(0.0),
     m_latitudeHasBeenSet(false),
     m_longitude(0.0),
@@ -45,7 +45,7 @@ GPSCoordinates::GPSCoordinates(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GPSCoordinates& GPSCoordinates::operator =(const JsonValue& jsonValue)
+GPSCoordinates& GPSCoordinates::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Latitude"))
   {

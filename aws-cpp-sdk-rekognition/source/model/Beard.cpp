@@ -36,7 +36,7 @@ Beard::Beard() :
 {
 }
 
-Beard::Beard(const JsonValue& jsonValue) : 
+Beard::Beard(JsonView jsonValue) : 
     m_value(false),
     m_valueHasBeenSet(false),
     m_confidence(0.0),
@@ -45,7 +45,7 @@ Beard::Beard(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Beard& Beard::operator =(const JsonValue& jsonValue)
+Beard& Beard::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

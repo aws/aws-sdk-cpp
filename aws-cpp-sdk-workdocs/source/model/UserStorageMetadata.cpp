@@ -35,7 +35,7 @@ UserStorageMetadata::UserStorageMetadata() :
 {
 }
 
-UserStorageMetadata::UserStorageMetadata(const JsonValue& jsonValue) : 
+UserStorageMetadata::UserStorageMetadata(JsonView jsonValue) : 
     m_storageUtilizedInBytes(0),
     m_storageUtilizedInBytesHasBeenSet(false),
     m_storageRuleHasBeenSet(false)
@@ -43,7 +43,7 @@ UserStorageMetadata::UserStorageMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserStorageMetadata& UserStorageMetadata::operator =(const JsonValue& jsonValue)
+UserStorageMetadata& UserStorageMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StorageUtilizedInBytes"))
   {

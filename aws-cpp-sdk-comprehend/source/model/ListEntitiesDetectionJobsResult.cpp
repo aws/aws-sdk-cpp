@@ -37,10 +37,10 @@ ListEntitiesDetectionJobsResult::ListEntitiesDetectionJobsResult(const Aws::Amaz
 
 ListEntitiesDetectionJobsResult& ListEntitiesDetectionJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EntitiesDetectionJobPropertiesList"))
   {
-    Array<JsonValue> entitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("EntitiesDetectionJobPropertiesList");
+    Array<JsonView> entitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("EntitiesDetectionJobPropertiesList");
     for(unsigned entitiesDetectionJobPropertiesListIndex = 0; entitiesDetectionJobPropertiesListIndex < entitiesDetectionJobPropertiesListJsonList.GetLength(); ++entitiesDetectionJobPropertiesListIndex)
     {
       m_entitiesDetectionJobPropertiesList.push_back(entitiesDetectionJobPropertiesListJsonList[entitiesDetectionJobPropertiesListIndex].AsObject());

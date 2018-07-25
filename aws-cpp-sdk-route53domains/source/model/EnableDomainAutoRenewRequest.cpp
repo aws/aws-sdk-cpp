@@ -37,7 +37,7 @@ Aws::String EnableDomainAutoRenewRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection EnableDomainAutoRenewRequest::GetRequestSpecificHeaders() const

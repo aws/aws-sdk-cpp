@@ -36,7 +36,7 @@ DeploymentReadyOption::DeploymentReadyOption() :
 {
 }
 
-DeploymentReadyOption::DeploymentReadyOption(const JsonValue& jsonValue) : 
+DeploymentReadyOption::DeploymentReadyOption(JsonView jsonValue) : 
     m_actionOnTimeout(DeploymentReadyAction::NOT_SET),
     m_actionOnTimeoutHasBeenSet(false),
     m_waitTimeInMinutes(0),
@@ -45,7 +45,7 @@ DeploymentReadyOption::DeploymentReadyOption(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeploymentReadyOption& DeploymentReadyOption::operator =(const JsonValue& jsonValue)
+DeploymentReadyOption& DeploymentReadyOption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actionOnTimeout"))
   {

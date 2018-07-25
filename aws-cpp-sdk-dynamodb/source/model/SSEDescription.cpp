@@ -37,7 +37,7 @@ SSEDescription::SSEDescription() :
 {
 }
 
-SSEDescription::SSEDescription(const JsonValue& jsonValue) : 
+SSEDescription::SSEDescription(JsonView jsonValue) : 
     m_status(SSEStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_sSEType(SSEType::NOT_SET),
@@ -47,7 +47,7 @@ SSEDescription::SSEDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SSEDescription& SSEDescription::operator =(const JsonValue& jsonValue)
+SSEDescription& SSEDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Status"))
   {

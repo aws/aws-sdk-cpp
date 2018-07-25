@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     IntegerParameterRange();
-    IntegerParameterRange(const Aws::Utils::Json::JsonValue& jsonValue);
-    IntegerParameterRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -34,14 +34,14 @@ GroupMetadata::GroupMetadata() :
 {
 }
 
-GroupMetadata::GroupMetadata(const JsonValue& jsonValue) : 
+GroupMetadata::GroupMetadata(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GroupMetadata& GroupMetadata::operator =(const JsonValue& jsonValue)
+GroupMetadata& GroupMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

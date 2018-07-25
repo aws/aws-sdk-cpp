@@ -39,7 +39,7 @@ PutRecordResult::PutRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 PutRecordResult& PutRecordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ShardId"))
   {
     m_shardId = jsonValue.GetString("ShardId");

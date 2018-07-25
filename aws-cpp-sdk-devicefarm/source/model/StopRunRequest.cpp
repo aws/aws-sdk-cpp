@@ -37,7 +37,7 @@ Aws::String StopRunRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopRunRequest::GetRequestSpecificHeaders() const

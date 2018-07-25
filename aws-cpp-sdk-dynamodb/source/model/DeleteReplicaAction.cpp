@@ -33,13 +33,13 @@ DeleteReplicaAction::DeleteReplicaAction() :
 {
 }
 
-DeleteReplicaAction::DeleteReplicaAction(const JsonValue& jsonValue) : 
+DeleteReplicaAction::DeleteReplicaAction(JsonView jsonValue) : 
     m_regionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeleteReplicaAction& DeleteReplicaAction::operator =(const JsonValue& jsonValue)
+DeleteReplicaAction& DeleteReplicaAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RegionName"))
   {

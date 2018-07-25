@@ -37,7 +37,7 @@ Aws::String GetTestRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetTestRequest::GetRequestSpecificHeaders() const

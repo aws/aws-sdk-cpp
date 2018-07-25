@@ -44,7 +44,7 @@ ScheduledAction::ScheduledAction() :
 {
 }
 
-ScheduledAction::ScheduledAction(const JsonValue& jsonValue) : 
+ScheduledAction::ScheduledAction(JsonView jsonValue) : 
     m_scheduledActionNameHasBeenSet(false),
     m_scheduledActionARNHasBeenSet(false),
     m_serviceNamespace(ServiceNamespace::NOT_SET),
@@ -61,7 +61,7 @@ ScheduledAction::ScheduledAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScheduledAction& ScheduledAction::operator =(const JsonValue& jsonValue)
+ScheduledAction& ScheduledAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ScheduledActionName"))
   {

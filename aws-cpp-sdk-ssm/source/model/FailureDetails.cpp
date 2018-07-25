@@ -35,7 +35,7 @@ FailureDetails::FailureDetails() :
 {
 }
 
-FailureDetails::FailureDetails(const JsonValue& jsonValue) : 
+FailureDetails::FailureDetails(JsonView jsonValue) : 
     m_failureStageHasBeenSet(false),
     m_failureTypeHasBeenSet(false),
     m_detailsHasBeenSet(false)
@@ -43,7 +43,7 @@ FailureDetails::FailureDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FailureDetails& FailureDetails::operator =(const JsonValue& jsonValue)
+FailureDetails& FailureDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FailureStage"))
   {
@@ -61,10 +61,10 @@ FailureDetails& FailureDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Details"))
   {
-    Aws::Map<Aws::String, JsonValue> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
     for(auto& detailsItem : detailsJsonMap)
     {
-      Array<JsonValue> automationParameterValueListJsonList = detailsItem.second.AsArray();
+      Array<JsonView> automationParameterValueListJsonList = detailsItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)

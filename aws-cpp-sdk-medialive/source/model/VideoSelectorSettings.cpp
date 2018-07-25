@@ -34,14 +34,14 @@ VideoSelectorSettings::VideoSelectorSettings() :
 {
 }
 
-VideoSelectorSettings::VideoSelectorSettings(const JsonValue& jsonValue) : 
+VideoSelectorSettings::VideoSelectorSettings(JsonView jsonValue) : 
     m_videoSelectorPidHasBeenSet(false),
     m_videoSelectorProgramIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VideoSelectorSettings& VideoSelectorSettings::operator =(const JsonValue& jsonValue)
+VideoSelectorSettings& VideoSelectorSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("videoSelectorPid"))
   {

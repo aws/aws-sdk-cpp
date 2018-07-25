@@ -39,7 +39,7 @@ VerifySoftwareTokenResult::VerifySoftwareTokenResult(const Aws::AmazonWebService
 
 VerifySoftwareTokenResult& VerifySoftwareTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VerifySoftwareTokenResponseTypeMapper::GetVerifySoftwareTokenResponseTypeForName(jsonValue.GetString("Status"));

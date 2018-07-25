@@ -37,10 +37,10 @@ ListLunaClientsResult::ListLunaClientsResult(const Aws::AmazonWebServiceResult<J
 
 ListLunaClientsResult& ListLunaClientsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ClientList"))
   {
-    Array<JsonValue> clientListJsonList = jsonValue.GetArray("ClientList");
+    Array<JsonView> clientListJsonList = jsonValue.GetArray("ClientList");
     for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
     {
       m_clientList.push_back(clientListJsonList[clientListIndex].AsString());

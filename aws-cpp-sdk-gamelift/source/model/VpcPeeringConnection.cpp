@@ -38,7 +38,7 @@ VpcPeeringConnection::VpcPeeringConnection() :
 {
 }
 
-VpcPeeringConnection::VpcPeeringConnection(const JsonValue& jsonValue) : 
+VpcPeeringConnection::VpcPeeringConnection(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_ipV4CidrBlockHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
@@ -49,7 +49,7 @@ VpcPeeringConnection::VpcPeeringConnection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VpcPeeringConnection& VpcPeeringConnection::operator =(const JsonValue& jsonValue)
+VpcPeeringConnection& VpcPeeringConnection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {

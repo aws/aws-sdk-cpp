@@ -34,14 +34,14 @@ LambdaFunctionTimedOutEventDetails::LambdaFunctionTimedOutEventDetails() :
 {
 }
 
-LambdaFunctionTimedOutEventDetails::LambdaFunctionTimedOutEventDetails(const JsonValue& jsonValue) : 
+LambdaFunctionTimedOutEventDetails::LambdaFunctionTimedOutEventDetails(JsonView jsonValue) : 
     m_errorHasBeenSet(false),
     m_causeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaFunctionTimedOutEventDetails& LambdaFunctionTimedOutEventDetails::operator =(const JsonValue& jsonValue)
+LambdaFunctionTimedOutEventDetails& LambdaFunctionTimedOutEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("error"))
   {

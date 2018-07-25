@@ -41,7 +41,7 @@ ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSetti
 {
 }
 
-ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSettingsDescription(const JsonValue& jsonValue) : 
+ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSettingsDescription(JsonView jsonValue) : 
     m_indexNameHasBeenSet(false),
     m_indexStatus(IndexStatus::NOT_SET),
     m_indexStatusHasBeenSet(false),
@@ -55,7 +55,7 @@ ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSetti
   *this = jsonValue;
 }
 
-ReplicaGlobalSecondaryIndexSettingsDescription& ReplicaGlobalSecondaryIndexSettingsDescription::operator =(const JsonValue& jsonValue)
+ReplicaGlobalSecondaryIndexSettingsDescription& ReplicaGlobalSecondaryIndexSettingsDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexName"))
   {

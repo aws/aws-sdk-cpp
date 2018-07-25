@@ -37,10 +37,10 @@ ListDeviceEventsResult::ListDeviceEventsResult(const Aws::AmazonWebServiceResult
 
 ListDeviceEventsResult& ListDeviceEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeviceEvents"))
   {
-    Array<JsonValue> deviceEventsJsonList = jsonValue.GetArray("DeviceEvents");
+    Array<JsonView> deviceEventsJsonList = jsonValue.GetArray("DeviceEvents");
     for(unsigned deviceEventsIndex = 0; deviceEventsIndex < deviceEventsJsonList.GetLength(); ++deviceEventsIndex)
     {
       m_deviceEvents.push_back(deviceEventsJsonList[deviceEventsIndex].AsObject());

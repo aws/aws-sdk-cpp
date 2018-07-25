@@ -39,7 +39,7 @@ DescribeSecretResult::DescribeSecretResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
@@ -108,7 +108,7 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -117,10 +117,10 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("VersionIdsToStages"))
   {
-    Aws::Map<Aws::String, JsonValue> versionIdsToStagesJsonMap = jsonValue.GetObject("VersionIdsToStages").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> versionIdsToStagesJsonMap = jsonValue.GetObject("VersionIdsToStages").GetAllObjects();
     for(auto& versionIdsToStagesItem : versionIdsToStagesJsonMap)
     {
-      Array<JsonValue> secretVersionStagesTypeJsonList = versionIdsToStagesItem.second.AsArray();
+      Array<JsonView> secretVersionStagesTypeJsonList = versionIdsToStagesItem.second.AsArray();
       Aws::Vector<Aws::String> secretVersionStagesTypeList;
       secretVersionStagesTypeList.reserve((size_t)secretVersionStagesTypeJsonList.GetLength());
       for(unsigned secretVersionStagesTypeIndex = 0; secretVersionStagesTypeIndex < secretVersionStagesTypeJsonList.GetLength(); ++secretVersionStagesTypeIndex)

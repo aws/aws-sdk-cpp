@@ -39,7 +39,7 @@ DescribeCopyProductStatusResult::DescribeCopyProductStatusResult(const Aws::Amaz
 
 DescribeCopyProductStatusResult& DescribeCopyProductStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CopyProductStatus"))
   {
     m_copyProductStatus = CopyProductStatusMapper::GetCopyProductStatusForName(jsonValue.GetString("CopyProductStatus"));

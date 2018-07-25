@@ -37,7 +37,7 @@ PipelineSummary::PipelineSummary() :
 {
 }
 
-PipelineSummary::PipelineSummary(const JsonValue& jsonValue) : 
+PipelineSummary::PipelineSummary(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
@@ -47,7 +47,7 @@ PipelineSummary::PipelineSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineSummary& PipelineSummary::operator =(const JsonValue& jsonValue)
+PipelineSummary& PipelineSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

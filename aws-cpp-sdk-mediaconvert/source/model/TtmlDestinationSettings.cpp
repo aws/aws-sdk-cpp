@@ -34,14 +34,14 @@ TtmlDestinationSettings::TtmlDestinationSettings() :
 {
 }
 
-TtmlDestinationSettings::TtmlDestinationSettings(const JsonValue& jsonValue) : 
+TtmlDestinationSettings::TtmlDestinationSettings(JsonView jsonValue) : 
     m_stylePassthrough(TtmlStylePassthrough::NOT_SET),
     m_stylePassthroughHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TtmlDestinationSettings& TtmlDestinationSettings::operator =(const JsonValue& jsonValue)
+TtmlDestinationSettings& TtmlDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("stylePassthrough"))
   {

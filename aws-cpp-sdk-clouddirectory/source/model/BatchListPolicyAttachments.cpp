@@ -36,7 +36,7 @@ BatchListPolicyAttachments::BatchListPolicyAttachments() :
 {
 }
 
-BatchListPolicyAttachments::BatchListPolicyAttachments(const JsonValue& jsonValue) : 
+BatchListPolicyAttachments::BatchListPolicyAttachments(JsonView jsonValue) : 
     m_policyReferenceHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -45,7 +45,7 @@ BatchListPolicyAttachments::BatchListPolicyAttachments(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-BatchListPolicyAttachments& BatchListPolicyAttachments::operator =(const JsonValue& jsonValue)
+BatchListPolicyAttachments& BatchListPolicyAttachments::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyReference"))
   {

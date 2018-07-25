@@ -142,7 +142,7 @@ Aws::String CreateSMBFileShareRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateSMBFileShareRequest::GetRequestSpecificHeaders() const

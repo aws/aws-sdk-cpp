@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     DeviceType();
-    DeviceType(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeviceType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeviceType(Aws::Utils::Json::JsonView jsonValue);
+    DeviceType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

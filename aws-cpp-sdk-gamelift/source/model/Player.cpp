@@ -36,7 +36,7 @@ Player::Player() :
 {
 }
 
-Player::Player(const JsonValue& jsonValue) : 
+Player::Player(JsonView jsonValue) : 
     m_playerIdHasBeenSet(false),
     m_playerAttributesHasBeenSet(false),
     m_teamHasBeenSet(false),
@@ -45,7 +45,7 @@ Player::Player(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Player& Player::operator =(const JsonValue& jsonValue)
+Player& Player::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PlayerId"))
   {
@@ -56,7 +56,7 @@ Player& Player::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PlayerAttributes"))
   {
-    Aws::Map<Aws::String, JsonValue> playerAttributesJsonMap = jsonValue.GetObject("PlayerAttributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> playerAttributesJsonMap = jsonValue.GetObject("PlayerAttributes").GetAllObjects();
     for(auto& playerAttributesItem : playerAttributesJsonMap)
     {
       m_playerAttributes[playerAttributesItem.first] = playerAttributesItem.second.AsObject();
@@ -73,7 +73,7 @@ Player& Player::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("LatencyInMs"))
   {
-    Aws::Map<Aws::String, JsonValue> latencyInMsJsonMap = jsonValue.GetObject("LatencyInMs").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> latencyInMsJsonMap = jsonValue.GetObject("LatencyInMs").GetAllObjects();
     for(auto& latencyInMsItem : latencyInMsJsonMap)
     {
       m_latencyInMs[latencyInMsItem.first] = latencyInMsItem.second.AsInteger();

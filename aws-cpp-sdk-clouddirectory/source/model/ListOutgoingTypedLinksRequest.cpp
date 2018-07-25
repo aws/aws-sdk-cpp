@@ -80,7 +80,7 @@ Aws::String ListOutgoingTypedLinksRequest::SerializePayload() const
    payload.WithString("ConsistencyLevel", ConsistencyLevelMapper::GetNameForConsistencyLevel(m_consistencyLevel));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListOutgoingTypedLinksRequest::GetRequestSpecificHeaders() const

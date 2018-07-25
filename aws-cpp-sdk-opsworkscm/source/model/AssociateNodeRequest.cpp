@@ -56,7 +56,7 @@ Aws::String AssociateNodeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateNodeRequest::GetRequestSpecificHeaders() const

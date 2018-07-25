@@ -40,7 +40,7 @@ AutoScalingSettingsUpdate::AutoScalingSettingsUpdate() :
 {
 }
 
-AutoScalingSettingsUpdate::AutoScalingSettingsUpdate(const JsonValue& jsonValue) : 
+AutoScalingSettingsUpdate::AutoScalingSettingsUpdate(JsonView jsonValue) : 
     m_minimumUnits(0),
     m_minimumUnitsHasBeenSet(false),
     m_maximumUnits(0),
@@ -53,7 +53,7 @@ AutoScalingSettingsUpdate::AutoScalingSettingsUpdate(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-AutoScalingSettingsUpdate& AutoScalingSettingsUpdate::operator =(const JsonValue& jsonValue)
+AutoScalingSettingsUpdate& AutoScalingSettingsUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MinimumUnits"))
   {

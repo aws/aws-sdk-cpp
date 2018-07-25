@@ -35,7 +35,7 @@ GroupDefinition::GroupDefinition() :
 {
 }
 
-GroupDefinition::GroupDefinition(const JsonValue& jsonValue) : 
+GroupDefinition::GroupDefinition(JsonView jsonValue) : 
     m_type(GroupDefinitionType::NOT_SET),
     m_typeHasBeenSet(false),
     m_keyHasBeenSet(false)
@@ -43,7 +43,7 @@ GroupDefinition::GroupDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GroupDefinition& GroupDefinition::operator =(const JsonValue& jsonValue)
+GroupDefinition& GroupDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

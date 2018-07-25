@@ -39,7 +39,7 @@ ListReviewableHITsResult::ListReviewableHITsResult(const Aws::AmazonWebServiceRe
 
 ListReviewableHITsResult& ListReviewableHITsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -54,7 +54,7 @@ ListReviewableHITsResult& ListReviewableHITsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("HITs"))
   {
-    Array<JsonValue> hITsJsonList = jsonValue.GetArray("HITs");
+    Array<JsonView> hITsJsonList = jsonValue.GetArray("HITs");
     for(unsigned hITsIndex = 0; hITsIndex < hITsJsonList.GetLength(); ++hITsIndex)
     {
       m_hITs.push_back(hITsJsonList[hITsIndex].AsObject());

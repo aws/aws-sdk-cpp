@@ -35,7 +35,7 @@ ResourceLocation::ResourceLocation() :
 {
 }
 
-ResourceLocation::ResourceLocation(const JsonValue& jsonValue) : 
+ResourceLocation::ResourceLocation(JsonView jsonValue) : 
     m_availabilityZoneHasBeenSet(false),
     m_regionName(RegionName::NOT_SET),
     m_regionNameHasBeenSet(false)
@@ -43,7 +43,7 @@ ResourceLocation::ResourceLocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceLocation& ResourceLocation::operator =(const JsonValue& jsonValue)
+ResourceLocation& ResourceLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("availabilityZone"))
   {

@@ -37,7 +37,7 @@ DescribeIdentityProviderResult::DescribeIdentityProviderResult(const Aws::Amazon
 
 DescribeIdentityProviderResult& DescribeIdentityProviderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityProvider"))
   {
     m_identityProvider = jsonValue.GetObject("IdentityProvider");

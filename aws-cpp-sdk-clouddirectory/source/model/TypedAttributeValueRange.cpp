@@ -38,7 +38,7 @@ TypedAttributeValueRange::TypedAttributeValueRange() :
 {
 }
 
-TypedAttributeValueRange::TypedAttributeValueRange(const JsonValue& jsonValue) : 
+TypedAttributeValueRange::TypedAttributeValueRange(JsonView jsonValue) : 
     m_startMode(RangeMode::NOT_SET),
     m_startModeHasBeenSet(false),
     m_startValueHasBeenSet(false),
@@ -49,7 +49,7 @@ TypedAttributeValueRange::TypedAttributeValueRange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TypedAttributeValueRange& TypedAttributeValueRange::operator =(const JsonValue& jsonValue)
+TypedAttributeValueRange& TypedAttributeValueRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartMode"))
   {

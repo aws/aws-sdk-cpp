@@ -37,7 +37,7 @@ ModifyReplicationTaskResult::ModifyReplicationTaskResult(const Aws::AmazonWebSer
 
 ModifyReplicationTaskResult& ModifyReplicationTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReplicationTask"))
   {
     m_replicationTask = jsonValue.GetObject("ReplicationTask");

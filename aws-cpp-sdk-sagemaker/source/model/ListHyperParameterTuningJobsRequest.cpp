@@ -97,7 +97,7 @@ Aws::String ListHyperParameterTuningJobsRequest::SerializePayload() const
    payload.WithString("StatusEquals", HyperParameterTuningJobStatusMapper::GetNameForHyperParameterTuningJobStatus(m_statusEquals));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListHyperParameterTuningJobsRequest::GetRequestSpecificHeaders() const

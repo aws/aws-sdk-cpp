@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     BaiduMessage();
-    BaiduMessage(const Aws::Utils::Json::JsonValue& jsonValue);
-    BaiduMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BaiduMessage(Aws::Utils::Json::JsonView jsonValue);
+    BaiduMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

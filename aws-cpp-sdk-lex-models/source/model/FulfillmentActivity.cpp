@@ -35,7 +35,7 @@ FulfillmentActivity::FulfillmentActivity() :
 {
 }
 
-FulfillmentActivity::FulfillmentActivity(const JsonValue& jsonValue) : 
+FulfillmentActivity::FulfillmentActivity(JsonView jsonValue) : 
     m_type(FulfillmentActivityType::NOT_SET),
     m_typeHasBeenSet(false),
     m_codeHookHasBeenSet(false)
@@ -43,7 +43,7 @@ FulfillmentActivity::FulfillmentActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FulfillmentActivity& FulfillmentActivity::operator =(const JsonValue& jsonValue)
+FulfillmentActivity& FulfillmentActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

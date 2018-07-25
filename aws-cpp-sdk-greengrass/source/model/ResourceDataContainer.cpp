@@ -36,7 +36,7 @@ ResourceDataContainer::ResourceDataContainer() :
 {
 }
 
-ResourceDataContainer::ResourceDataContainer(const JsonValue& jsonValue) : 
+ResourceDataContainer::ResourceDataContainer(JsonView jsonValue) : 
     m_localDeviceResourceDataHasBeenSet(false),
     m_localVolumeResourceDataHasBeenSet(false),
     m_s3MachineLearningModelResourceDataHasBeenSet(false),
@@ -45,7 +45,7 @@ ResourceDataContainer::ResourceDataContainer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceDataContainer& ResourceDataContainer::operator =(const JsonValue& jsonValue)
+ResourceDataContainer& ResourceDataContainer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LocalDeviceResourceData"))
   {

@@ -34,14 +34,14 @@ CompromisedCredentialsActionsType::CompromisedCredentialsActionsType() :
 {
 }
 
-CompromisedCredentialsActionsType::CompromisedCredentialsActionsType(const JsonValue& jsonValue) : 
+CompromisedCredentialsActionsType::CompromisedCredentialsActionsType(JsonView jsonValue) : 
     m_eventAction(CompromisedCredentialsEventActionType::NOT_SET),
     m_eventActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CompromisedCredentialsActionsType& CompromisedCredentialsActionsType::operator =(const JsonValue& jsonValue)
+CompromisedCredentialsActionsType& CompromisedCredentialsActionsType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EventAction"))
   {

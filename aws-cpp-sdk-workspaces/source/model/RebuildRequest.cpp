@@ -33,13 +33,13 @@ RebuildRequest::RebuildRequest() :
 {
 }
 
-RebuildRequest::RebuildRequest(const JsonValue& jsonValue) : 
+RebuildRequest::RebuildRequest(JsonView jsonValue) : 
     m_workspaceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RebuildRequest& RebuildRequest::operator =(const JsonValue& jsonValue)
+RebuildRequest& RebuildRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkspaceId"))
   {

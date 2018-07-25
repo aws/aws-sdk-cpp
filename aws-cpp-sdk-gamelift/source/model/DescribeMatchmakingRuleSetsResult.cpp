@@ -37,10 +37,10 @@ DescribeMatchmakingRuleSetsResult::DescribeMatchmakingRuleSetsResult(const Aws::
 
 DescribeMatchmakingRuleSetsResult& DescribeMatchmakingRuleSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RuleSets"))
   {
-    Array<JsonValue> ruleSetsJsonList = jsonValue.GetArray("RuleSets");
+    Array<JsonView> ruleSetsJsonList = jsonValue.GetArray("RuleSets");
     for(unsigned ruleSetsIndex = 0; ruleSetsIndex < ruleSetsJsonList.GetLength(); ++ruleSetsIndex)
     {
       m_ruleSets.push_back(ruleSetsJsonList[ruleSetsIndex].AsObject());

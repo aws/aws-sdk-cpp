@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SpekeKeyProvider();
-    SpekeKeyProvider(const Aws::Utils::Json::JsonValue& jsonValue);
-    SpekeKeyProvider& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SpekeKeyProvider(Aws::Utils::Json::JsonView jsonValue);
+    SpekeKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

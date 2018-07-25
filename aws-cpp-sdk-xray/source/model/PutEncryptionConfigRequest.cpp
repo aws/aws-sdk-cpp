@@ -44,7 +44,7 @@ Aws::String PutEncryptionConfigRequest::SerializePayload() const
    payload.WithString("Type", EncryptionTypeMapper::GetNameForEncryptionType(m_type));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

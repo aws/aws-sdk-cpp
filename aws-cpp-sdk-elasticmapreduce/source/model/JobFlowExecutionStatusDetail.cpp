@@ -39,7 +39,7 @@ JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() :
 {
 }
 
-JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(const JsonValue& jsonValue) : 
+JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(JsonView jsonValue) : 
     m_state(JobFlowExecutionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -51,7 +51,7 @@ JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(const JsonValue& json
   *this = jsonValue;
 }
 
-JobFlowExecutionStatusDetail& JobFlowExecutionStatusDetail::operator =(const JsonValue& jsonValue)
+JobFlowExecutionStatusDetail& JobFlowExecutionStatusDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("State"))
   {

@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     BatchAttachPolicyResponse();
-    BatchAttachPolicyResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchAttachPolicyResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchAttachPolicyResponse(Aws::Utils::Json::JsonView jsonValue);
+    BatchAttachPolicyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
   };

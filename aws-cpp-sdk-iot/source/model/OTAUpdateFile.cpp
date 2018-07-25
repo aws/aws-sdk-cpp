@@ -37,7 +37,7 @@ OTAUpdateFile::OTAUpdateFile() :
 {
 }
 
-OTAUpdateFile::OTAUpdateFile(const JsonValue& jsonValue) : 
+OTAUpdateFile::OTAUpdateFile(JsonView jsonValue) : 
     m_fileNameHasBeenSet(false),
     m_fileVersionHasBeenSet(false),
     m_fileSourceHasBeenSet(false),
@@ -47,7 +47,7 @@ OTAUpdateFile::OTAUpdateFile(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OTAUpdateFile& OTAUpdateFile::operator =(const JsonValue& jsonValue)
+OTAUpdateFile& OTAUpdateFile::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fileName"))
   {
@@ -79,7 +79,7 @@ OTAUpdateFile& OTAUpdateFile::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

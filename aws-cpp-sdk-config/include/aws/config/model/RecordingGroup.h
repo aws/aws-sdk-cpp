@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -66,8 +67,8 @@ namespace Model
   {
   public:
     RecordingGroup();
-    RecordingGroup(const Aws::Utils::Json::JsonValue& jsonValue);
-    RecordingGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RecordingGroup(Aws::Utils::Json::JsonView jsonValue);
+    RecordingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

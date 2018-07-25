@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     TapeArchive();
-    TapeArchive(const Aws::Utils::Json::JsonValue& jsonValue);
-    TapeArchive& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TapeArchive(Aws::Utils::Json::JsonView jsonValue);
+    TapeArchive& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

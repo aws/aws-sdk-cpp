@@ -37,7 +37,7 @@ ListEventSourceMappingsResult::ListEventSourceMappingsResult(const Aws::AmazonWe
 
 ListEventSourceMappingsResult& ListEventSourceMappingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListEventSourceMappingsResult& ListEventSourceMappingsResult::operator =(const A
 
   if(jsonValue.ValueExists("EventSourceMappings"))
   {
-    Array<JsonValue> eventSourceMappingsJsonList = jsonValue.GetArray("EventSourceMappings");
+    Array<JsonView> eventSourceMappingsJsonList = jsonValue.GetArray("EventSourceMappings");
     for(unsigned eventSourceMappingsIndex = 0; eventSourceMappingsIndex < eventSourceMappingsJsonList.GetLength(); ++eventSourceMappingsIndex)
     {
       m_eventSourceMappings.push_back(eventSourceMappingsJsonList[eventSourceMappingsIndex].AsObject());

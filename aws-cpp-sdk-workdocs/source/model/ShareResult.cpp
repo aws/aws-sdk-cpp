@@ -39,7 +39,7 @@ ShareResult::ShareResult() :
 {
 }
 
-ShareResult::ShareResult(const JsonValue& jsonValue) : 
+ShareResult::ShareResult(JsonView jsonValue) : 
     m_principalIdHasBeenSet(false),
     m_role(RoleType::NOT_SET),
     m_roleHasBeenSet(false),
@@ -51,7 +51,7 @@ ShareResult::ShareResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ShareResult& ShareResult::operator =(const JsonValue& jsonValue)
+ShareResult& ShareResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PrincipalId"))
   {

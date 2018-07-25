@@ -35,7 +35,7 @@ FaceSearchSettings::FaceSearchSettings() :
 {
 }
 
-FaceSearchSettings::FaceSearchSettings(const JsonValue& jsonValue) : 
+FaceSearchSettings::FaceSearchSettings(JsonView jsonValue) : 
     m_collectionIdHasBeenSet(false),
     m_faceMatchThreshold(0.0),
     m_faceMatchThresholdHasBeenSet(false)
@@ -43,7 +43,7 @@ FaceSearchSettings::FaceSearchSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FaceSearchSettings& FaceSearchSettings::operator =(const JsonValue& jsonValue)
+FaceSearchSettings& FaceSearchSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CollectionId"))
   {

@@ -37,7 +37,7 @@ Aws::String DeleteDevicePoolRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteDevicePoolRequest::GetRequestSpecificHeaders() const

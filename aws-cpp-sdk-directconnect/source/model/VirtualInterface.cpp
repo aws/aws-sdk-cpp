@@ -56,7 +56,7 @@ VirtualInterface::VirtualInterface() :
 {
 }
 
-VirtualInterface::VirtualInterface(const JsonValue& jsonValue) : 
+VirtualInterface::VirtualInterface(JsonView jsonValue) : 
     m_ownerAccountHasBeenSet(false),
     m_virtualInterfaceIdHasBeenSet(false),
     m_locationHasBeenSet(false),
@@ -85,7 +85,7 @@ VirtualInterface::VirtualInterface(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VirtualInterface& VirtualInterface::operator =(const JsonValue& jsonValue)
+VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ownerAccount"))
   {
@@ -208,7 +208,7 @@ VirtualInterface& VirtualInterface::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("routeFilterPrefixes"))
   {
-    Array<JsonValue> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
+    Array<JsonView> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
     for(unsigned routeFilterPrefixesIndex = 0; routeFilterPrefixesIndex < routeFilterPrefixesJsonList.GetLength(); ++routeFilterPrefixesIndex)
     {
       m_routeFilterPrefixes.push_back(routeFilterPrefixesJsonList[routeFilterPrefixesIndex].AsObject());
@@ -218,7 +218,7 @@ VirtualInterface& VirtualInterface::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("bgpPeers"))
   {
-    Array<JsonValue> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
+    Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
     for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
     {
       m_bgpPeers.push_back(bgpPeersJsonList[bgpPeersIndex].AsObject());

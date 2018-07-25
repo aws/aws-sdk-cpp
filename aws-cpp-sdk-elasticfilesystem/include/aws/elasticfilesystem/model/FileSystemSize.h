@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EFS
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     FileSystemSize();
-    FileSystemSize(const Aws::Utils::Json::JsonValue& jsonValue);
-    FileSystemSize& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FileSystemSize(Aws::Utils::Json::JsonView jsonValue);
+    FileSystemSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

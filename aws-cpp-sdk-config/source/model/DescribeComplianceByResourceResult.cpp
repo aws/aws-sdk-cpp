@@ -37,10 +37,10 @@ DescribeComplianceByResourceResult::DescribeComplianceByResourceResult(const Aws
 
 DescribeComplianceByResourceResult& DescribeComplianceByResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceByResources"))
   {
-    Array<JsonValue> complianceByResourcesJsonList = jsonValue.GetArray("ComplianceByResources");
+    Array<JsonView> complianceByResourcesJsonList = jsonValue.GetArray("ComplianceByResources");
     for(unsigned complianceByResourcesIndex = 0; complianceByResourcesIndex < complianceByResourcesJsonList.GetLength(); ++complianceByResourcesIndex)
     {
       m_complianceByResources.push_back(complianceByResourcesJsonList[complianceByResourcesIndex].AsObject());

@@ -38,7 +38,7 @@ StreamSelection::StreamSelection() :
 {
 }
 
-StreamSelection::StreamSelection(const JsonValue& jsonValue) : 
+StreamSelection::StreamSelection(JsonView jsonValue) : 
     m_maxVideoBitsPerSecond(0),
     m_maxVideoBitsPerSecondHasBeenSet(false),
     m_minVideoBitsPerSecond(0),
@@ -49,7 +49,7 @@ StreamSelection::StreamSelection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamSelection& StreamSelection::operator =(const JsonValue& jsonValue)
+StreamSelection& StreamSelection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("maxVideoBitsPerSecond"))
   {

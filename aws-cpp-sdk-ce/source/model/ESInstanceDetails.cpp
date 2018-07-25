@@ -39,7 +39,7 @@ ESInstanceDetails::ESInstanceDetails() :
 {
 }
 
-ESInstanceDetails::ESInstanceDetails(const JsonValue& jsonValue) : 
+ESInstanceDetails::ESInstanceDetails(JsonView jsonValue) : 
     m_instanceClassHasBeenSet(false),
     m_instanceSizeHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -51,7 +51,7 @@ ESInstanceDetails::ESInstanceDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ESInstanceDetails& ESInstanceDetails::operator =(const JsonValue& jsonValue)
+ESInstanceDetails& ESInstanceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceClass"))
   {

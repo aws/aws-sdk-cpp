@@ -36,7 +36,7 @@ TimeBasedLinear::TimeBasedLinear() :
 {
 }
 
-TimeBasedLinear::TimeBasedLinear(const JsonValue& jsonValue) : 
+TimeBasedLinear::TimeBasedLinear(JsonView jsonValue) : 
     m_linearPercentage(0),
     m_linearPercentageHasBeenSet(false),
     m_linearInterval(0),
@@ -45,7 +45,7 @@ TimeBasedLinear::TimeBasedLinear(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TimeBasedLinear& TimeBasedLinear::operator =(const JsonValue& jsonValue)
+TimeBasedLinear& TimeBasedLinear::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("linearPercentage"))
   {

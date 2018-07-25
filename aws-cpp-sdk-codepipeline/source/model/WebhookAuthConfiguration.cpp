@@ -34,14 +34,14 @@ WebhookAuthConfiguration::WebhookAuthConfiguration() :
 {
 }
 
-WebhookAuthConfiguration::WebhookAuthConfiguration(const JsonValue& jsonValue) : 
+WebhookAuthConfiguration::WebhookAuthConfiguration(JsonView jsonValue) : 
     m_allowedIPRangeHasBeenSet(false),
     m_secretTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WebhookAuthConfiguration& WebhookAuthConfiguration::operator =(const JsonValue& jsonValue)
+WebhookAuthConfiguration& WebhookAuthConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AllowedIPRange"))
   {

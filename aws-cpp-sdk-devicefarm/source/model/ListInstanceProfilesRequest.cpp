@@ -45,7 +45,7 @@ Aws::String ListInstanceProfilesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListInstanceProfilesRequest::GetRequestSpecificHeaders() const

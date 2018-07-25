@@ -39,7 +39,7 @@ DetectSentimentResult::DetectSentimentResult(const Aws::AmazonWebServiceResult<J
 
 DetectSentimentResult& DetectSentimentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Sentiment"))
   {
     m_sentiment = SentimentTypeMapper::GetSentimentTypeForName(jsonValue.GetString("Sentiment"));

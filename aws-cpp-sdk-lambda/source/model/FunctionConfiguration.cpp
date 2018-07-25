@@ -55,7 +55,7 @@ FunctionConfiguration::FunctionConfiguration() :
 {
 }
 
-FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) : 
+FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) : 
     m_functionNameHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_runtime(Runtime::NOT_SET),
@@ -83,7 +83,7 @@ FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonValue)
+FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FunctionName"))
   {

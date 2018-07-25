@@ -94,7 +94,7 @@ Aws::String ListTasksRequest::SerializePayload() const
    payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListTasksRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ NonCompliantSummary::NonCompliantSummary() :
 {
 }
 
-NonCompliantSummary::NonCompliantSummary(const JsonValue& jsonValue) : 
+NonCompliantSummary::NonCompliantSummary(JsonView jsonValue) : 
     m_nonCompliantCount(0),
     m_nonCompliantCountHasBeenSet(false),
     m_severitySummaryHasBeenSet(false)
@@ -43,7 +43,7 @@ NonCompliantSummary::NonCompliantSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NonCompliantSummary& NonCompliantSummary::operator =(const JsonValue& jsonValue)
+NonCompliantSummary& NonCompliantSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NonCompliantCount"))
   {

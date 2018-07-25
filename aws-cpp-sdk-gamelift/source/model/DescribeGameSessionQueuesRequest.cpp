@@ -57,7 +57,7 @@ Aws::String DescribeGameSessionQueuesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeGameSessionQueuesRequest::GetRequestSpecificHeaders() const

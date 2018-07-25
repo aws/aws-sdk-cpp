@@ -34,14 +34,14 @@ AccessLogSettings::AccessLogSettings() :
 {
 }
 
-AccessLogSettings::AccessLogSettings(const JsonValue& jsonValue) : 
+AccessLogSettings::AccessLogSettings(JsonView jsonValue) : 
     m_formatHasBeenSet(false),
     m_destinationArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AccessLogSettings& AccessLogSettings::operator =(const JsonValue& jsonValue)
+AccessLogSettings& AccessLogSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("format"))
   {

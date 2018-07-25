@@ -37,10 +37,10 @@ ListEventSubscriptionsResult::ListEventSubscriptionsResult(const Aws::AmazonWebS
 
 ListEventSubscriptionsResult& ListEventSubscriptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("subscriptions"))
   {
-    Array<JsonValue> subscriptionsJsonList = jsonValue.GetArray("subscriptions");
+    Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("subscriptions");
     for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
     {
       m_subscriptions.push_back(subscriptionsJsonList[subscriptionsIndex].AsObject());

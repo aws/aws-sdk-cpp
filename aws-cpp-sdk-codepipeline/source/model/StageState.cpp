@@ -36,7 +36,7 @@ StageState::StageState() :
 {
 }
 
-StageState::StageState(const JsonValue& jsonValue) : 
+StageState::StageState(JsonView jsonValue) : 
     m_stageNameHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
     m_actionStatesHasBeenSet(false),
@@ -45,7 +45,7 @@ StageState::StageState(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StageState& StageState::operator =(const JsonValue& jsonValue)
+StageState& StageState::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("stageName"))
   {
@@ -63,7 +63,7 @@ StageState& StageState::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("actionStates"))
   {
-    Array<JsonValue> actionStatesJsonList = jsonValue.GetArray("actionStates");
+    Array<JsonView> actionStatesJsonList = jsonValue.GetArray("actionStates");
     for(unsigned actionStatesIndex = 0; actionStatesIndex < actionStatesJsonList.GetLength(); ++actionStatesIndex)
     {
       m_actionStates.push_back(actionStatesJsonList[actionStatesIndex].AsObject());

@@ -36,7 +36,7 @@ SanitizationWarning::SanitizationWarning() :
 {
 }
 
-SanitizationWarning::SanitizationWarning(const JsonValue& jsonValue) : 
+SanitizationWarning::SanitizationWarning(JsonView jsonValue) : 
     m_attributeNameHasBeenSet(false),
     m_elementNameHasBeenSet(false),
     m_reason(SanitizationWarningReason::NOT_SET),
@@ -45,7 +45,7 @@ SanitizationWarning::SanitizationWarning(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SanitizationWarning& SanitizationWarning::operator =(const JsonValue& jsonValue)
+SanitizationWarning& SanitizationWarning::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attributeName"))
   {

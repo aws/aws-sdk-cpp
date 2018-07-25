@@ -35,7 +35,7 @@ S3OutputLocation::S3OutputLocation() :
 {
 }
 
-S3OutputLocation::S3OutputLocation(const JsonValue& jsonValue) : 
+S3OutputLocation::S3OutputLocation(JsonView jsonValue) : 
     m_outputS3RegionHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
     m_outputS3KeyPrefixHasBeenSet(false)
@@ -43,7 +43,7 @@ S3OutputLocation::S3OutputLocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3OutputLocation& S3OutputLocation::operator =(const JsonValue& jsonValue)
+S3OutputLocation& S3OutputLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OutputS3Region"))
   {

@@ -46,7 +46,7 @@ SecretListEntry::SecretListEntry() :
 {
 }
 
-SecretListEntry::SecretListEntry(const JsonValue& jsonValue) : 
+SecretListEntry::SecretListEntry(JsonView jsonValue) : 
     m_aRNHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -65,7 +65,7 @@ SecretListEntry::SecretListEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SecretListEntry& SecretListEntry::operator =(const JsonValue& jsonValue)
+SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ARN"))
   {
@@ -146,7 +146,7 @@ SecretListEntry& SecretListEntry::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -156,10 +156,10 @@ SecretListEntry& SecretListEntry::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecretVersionsToStages"))
   {
-    Aws::Map<Aws::String, JsonValue> secretVersionsToStagesJsonMap = jsonValue.GetObject("SecretVersionsToStages").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> secretVersionsToStagesJsonMap = jsonValue.GetObject("SecretVersionsToStages").GetAllObjects();
     for(auto& secretVersionsToStagesItem : secretVersionsToStagesJsonMap)
     {
-      Array<JsonValue> secretVersionStagesTypeJsonList = secretVersionsToStagesItem.second.AsArray();
+      Array<JsonView> secretVersionStagesTypeJsonList = secretVersionsToStagesItem.second.AsArray();
       Aws::Vector<Aws::String> secretVersionStagesTypeList;
       secretVersionStagesTypeList.reserve((size_t)secretVersionStagesTypeJsonList.GetLength());
       for(unsigned secretVersionStagesTypeIndex = 0; secretVersionStagesTypeIndex < secretVersionStagesTypeJsonList.GetLength(); ++secretVersionStagesTypeIndex)

@@ -38,7 +38,7 @@ EntityFilter::EntityFilter() :
 {
 }
 
-EntityFilter::EntityFilter(const JsonValue& jsonValue) : 
+EntityFilter::EntityFilter(JsonView jsonValue) : 
     m_eventArnsHasBeenSet(false),
     m_entityArnsHasBeenSet(false),
     m_entityValuesHasBeenSet(false),
@@ -49,11 +49,11 @@ EntityFilter::EntityFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EntityFilter& EntityFilter::operator =(const JsonValue& jsonValue)
+EntityFilter& EntityFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventArns"))
   {
-    Array<JsonValue> eventArnsJsonList = jsonValue.GetArray("eventArns");
+    Array<JsonView> eventArnsJsonList = jsonValue.GetArray("eventArns");
     for(unsigned eventArnsIndex = 0; eventArnsIndex < eventArnsJsonList.GetLength(); ++eventArnsIndex)
     {
       m_eventArns.push_back(eventArnsJsonList[eventArnsIndex].AsString());
@@ -63,7 +63,7 @@ EntityFilter& EntityFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("entityArns"))
   {
-    Array<JsonValue> entityArnsJsonList = jsonValue.GetArray("entityArns");
+    Array<JsonView> entityArnsJsonList = jsonValue.GetArray("entityArns");
     for(unsigned entityArnsIndex = 0; entityArnsIndex < entityArnsJsonList.GetLength(); ++entityArnsIndex)
     {
       m_entityArns.push_back(entityArnsJsonList[entityArnsIndex].AsString());
@@ -73,7 +73,7 @@ EntityFilter& EntityFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("entityValues"))
   {
-    Array<JsonValue> entityValuesJsonList = jsonValue.GetArray("entityValues");
+    Array<JsonView> entityValuesJsonList = jsonValue.GetArray("entityValues");
     for(unsigned entityValuesIndex = 0; entityValuesIndex < entityValuesJsonList.GetLength(); ++entityValuesIndex)
     {
       m_entityValues.push_back(entityValuesJsonList[entityValuesIndex].AsString());
@@ -83,7 +83,7 @@ EntityFilter& EntityFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("lastUpdatedTimes"))
   {
-    Array<JsonValue> lastUpdatedTimesJsonList = jsonValue.GetArray("lastUpdatedTimes");
+    Array<JsonView> lastUpdatedTimesJsonList = jsonValue.GetArray("lastUpdatedTimes");
     for(unsigned lastUpdatedTimesIndex = 0; lastUpdatedTimesIndex < lastUpdatedTimesJsonList.GetLength(); ++lastUpdatedTimesIndex)
     {
       m_lastUpdatedTimes.push_back(lastUpdatedTimesJsonList[lastUpdatedTimesIndex].AsObject());
@@ -93,10 +93,10 @@ EntityFilter& EntityFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
-      Aws::Map<Aws::String, JsonValue> tagSetJsonMap = tagsJsonList[tagsIndex].GetAllObjects();
+      Aws::Map<Aws::String, JsonView> tagSetJsonMap = tagsJsonList[tagsIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::String> tagSetMap;
       for(auto& tagSetItem : tagSetJsonMap)
       {
@@ -109,7 +109,7 @@ EntityFilter& EntityFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("statusCodes"))
   {
-    Array<JsonValue> statusCodesJsonList = jsonValue.GetArray("statusCodes");
+    Array<JsonView> statusCodesJsonList = jsonValue.GetArray("statusCodes");
     for(unsigned statusCodesIndex = 0; statusCodesIndex < statusCodesJsonList.GetLength(); ++statusCodesIndex)
     {
       m_statusCodes.push_back(EntityStatusCodeMapper::GetEntityStatusCodeForName(statusCodesJsonList[statusCodesIndex].AsString()));

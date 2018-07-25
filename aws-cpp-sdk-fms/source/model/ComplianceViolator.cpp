@@ -36,7 +36,7 @@ ComplianceViolator::ComplianceViolator() :
 {
 }
 
-ComplianceViolator::ComplianceViolator(const JsonValue& jsonValue) : 
+ComplianceViolator::ComplianceViolator(JsonView jsonValue) : 
     m_resourceIdHasBeenSet(false),
     m_violationReason(ViolationReason::NOT_SET),
     m_violationReasonHasBeenSet(false),
@@ -45,7 +45,7 @@ ComplianceViolator::ComplianceViolator(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComplianceViolator& ComplianceViolator::operator =(const JsonValue& jsonValue)
+ComplianceViolator& ComplianceViolator::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceId"))
   {

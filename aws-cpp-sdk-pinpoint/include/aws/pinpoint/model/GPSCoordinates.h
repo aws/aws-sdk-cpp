@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     GPSCoordinates();
-    GPSCoordinates(const Aws::Utils::Json::JsonValue& jsonValue);
-    GPSCoordinates& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GPSCoordinates(Aws::Utils::Json::JsonView jsonValue);
+    GPSCoordinates& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -36,7 +36,7 @@ FailedItemDetails::FailedItemDetails() :
 {
 }
 
-FailedItemDetails::FailedItemDetails(const JsonValue& jsonValue) : 
+FailedItemDetails::FailedItemDetails(JsonView jsonValue) : 
     m_failureCode(FailedItemErrorCode::NOT_SET),
     m_failureCodeHasBeenSet(false),
     m_retryable(false),
@@ -45,7 +45,7 @@ FailedItemDetails::FailedItemDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FailedItemDetails& FailedItemDetails::operator =(const JsonValue& jsonValue)
+FailedItemDetails& FailedItemDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("failureCode"))
   {

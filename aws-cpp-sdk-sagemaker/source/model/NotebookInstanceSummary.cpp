@@ -42,7 +42,7 @@ NotebookInstanceSummary::NotebookInstanceSummary() :
 {
 }
 
-NotebookInstanceSummary::NotebookInstanceSummary(const JsonValue& jsonValue) : 
+NotebookInstanceSummary::NotebookInstanceSummary(JsonView jsonValue) : 
     m_notebookInstanceNameHasBeenSet(false),
     m_notebookInstanceArnHasBeenSet(false),
     m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
@@ -57,7 +57,7 @@ NotebookInstanceSummary::NotebookInstanceSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NotebookInstanceSummary& NotebookInstanceSummary::operator =(const JsonValue& jsonValue)
+NotebookInstanceSummary& NotebookInstanceSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NotebookInstanceName"))
   {

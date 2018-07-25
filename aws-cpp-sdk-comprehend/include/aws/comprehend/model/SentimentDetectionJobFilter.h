@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Comprehend
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     SentimentDetectionJobFilter();
-    SentimentDetectionJobFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    SentimentDetectionJobFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SentimentDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
+    SentimentDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

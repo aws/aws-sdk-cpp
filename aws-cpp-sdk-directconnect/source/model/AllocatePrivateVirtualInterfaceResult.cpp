@@ -47,7 +47,7 @@ AllocatePrivateVirtualInterfaceResult::AllocatePrivateVirtualInterfaceResult(con
 
 AllocatePrivateVirtualInterfaceResult& AllocatePrivateVirtualInterfaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
@@ -152,7 +152,7 @@ AllocatePrivateVirtualInterfaceResult& AllocatePrivateVirtualInterfaceResult::op
 
   if(jsonValue.ValueExists("routeFilterPrefixes"))
   {
-    Array<JsonValue> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
+    Array<JsonView> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
     for(unsigned routeFilterPrefixesIndex = 0; routeFilterPrefixesIndex < routeFilterPrefixesJsonList.GetLength(); ++routeFilterPrefixesIndex)
     {
       m_routeFilterPrefixes.push_back(routeFilterPrefixesJsonList[routeFilterPrefixesIndex].AsObject());
@@ -161,7 +161,7 @@ AllocatePrivateVirtualInterfaceResult& AllocatePrivateVirtualInterfaceResult::op
 
   if(jsonValue.ValueExists("bgpPeers"))
   {
-    Array<JsonValue> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
+    Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
     for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
     {
       m_bgpPeers.push_back(bgpPeersJsonList[bgpPeersIndex].AsObject());

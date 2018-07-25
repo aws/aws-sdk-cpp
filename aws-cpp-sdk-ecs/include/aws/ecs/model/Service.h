@@ -37,6 +37,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -53,14 +54,14 @@ namespace Model
   {
   public:
     Service();
-    Service(const Aws::Utils::Json::JsonValue& jsonValue);
-    Service& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Service(Aws::Utils::Json::JsonView jsonValue);
+    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -70,7 +71,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -80,7 +81,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -90,7 +91,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -100,7 +101,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -110,7 +111,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -120,7 +121,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -133,7 +134,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
@@ -141,7 +142,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
@@ -149,7 +150,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
@@ -157,7 +158,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
@@ -165,7 +166,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
@@ -173,7 +174,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
@@ -181,7 +182,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -867,35 +868,35 @@ namespace Model
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline Service& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline Service& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}

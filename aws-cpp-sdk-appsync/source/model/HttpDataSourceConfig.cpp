@@ -33,13 +33,13 @@ HttpDataSourceConfig::HttpDataSourceConfig() :
 {
 }
 
-HttpDataSourceConfig::HttpDataSourceConfig(const JsonValue& jsonValue) : 
+HttpDataSourceConfig::HttpDataSourceConfig(JsonView jsonValue) : 
     m_endpointHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HttpDataSourceConfig& HttpDataSourceConfig::operator =(const JsonValue& jsonValue)
+HttpDataSourceConfig& HttpDataSourceConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("endpoint"))
   {

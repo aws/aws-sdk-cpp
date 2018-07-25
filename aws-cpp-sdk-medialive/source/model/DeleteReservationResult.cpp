@@ -51,7 +51,7 @@ DeleteReservationResult::DeleteReservationResult(const Aws::AmazonWebServiceResu
 
 DeleteReservationResult& DeleteReservationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");

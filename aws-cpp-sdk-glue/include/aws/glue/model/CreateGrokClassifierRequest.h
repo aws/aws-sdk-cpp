@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     CreateGrokClassifierRequest();
-    CreateGrokClassifierRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    CreateGrokClassifierRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CreateGrokClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
+    CreateGrokClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

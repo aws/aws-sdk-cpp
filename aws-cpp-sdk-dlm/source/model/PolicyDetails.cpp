@@ -35,7 +35,7 @@ PolicyDetails::PolicyDetails() :
 {
 }
 
-PolicyDetails::PolicyDetails(const JsonValue& jsonValue) : 
+PolicyDetails::PolicyDetails(JsonView jsonValue) : 
     m_resourceTypesHasBeenSet(false),
     m_targetTagsHasBeenSet(false),
     m_schedulesHasBeenSet(false)
@@ -43,11 +43,11 @@ PolicyDetails::PolicyDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PolicyDetails& PolicyDetails::operator =(const JsonValue& jsonValue)
+PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceTypes"))
   {
-    Array<JsonValue> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
+    Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
     for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
     {
       m_resourceTypes.push_back(ResourceTypeValuesMapper::GetResourceTypeValuesForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
@@ -57,7 +57,7 @@ PolicyDetails& PolicyDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("TargetTags"))
   {
-    Array<JsonValue> targetTagsJsonList = jsonValue.GetArray("TargetTags");
+    Array<JsonView> targetTagsJsonList = jsonValue.GetArray("TargetTags");
     for(unsigned targetTagsIndex = 0; targetTagsIndex < targetTagsJsonList.GetLength(); ++targetTagsIndex)
     {
       m_targetTags.push_back(targetTagsJsonList[targetTagsIndex].AsObject());
@@ -67,7 +67,7 @@ PolicyDetails& PolicyDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Schedules"))
   {
-    Array<JsonValue> schedulesJsonList = jsonValue.GetArray("Schedules");
+    Array<JsonView> schedulesJsonList = jsonValue.GetArray("Schedules");
     for(unsigned schedulesIndex = 0; schedulesIndex < schedulesJsonList.GetLength(); ++schedulesIndex)
     {
       m_schedules.push_back(schedulesJsonList[schedulesIndex].AsObject());

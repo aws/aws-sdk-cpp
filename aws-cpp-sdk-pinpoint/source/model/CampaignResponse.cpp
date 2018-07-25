@@ -56,7 +56,7 @@ CampaignResponse::CampaignResponse() :
 {
 }
 
-CampaignResponse::CampaignResponse(const JsonValue& jsonValue) : 
+CampaignResponse::CampaignResponse(JsonView jsonValue) : 
     m_additionalTreatmentsHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -85,11 +85,11 @@ CampaignResponse::CampaignResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CampaignResponse& CampaignResponse::operator =(const JsonValue& jsonValue)
+CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdditionalTreatments"))
   {
-    Array<JsonValue> additionalTreatmentsJsonList = jsonValue.GetArray("AdditionalTreatments");
+    Array<JsonView> additionalTreatmentsJsonList = jsonValue.GetArray("AdditionalTreatments");
     for(unsigned additionalTreatmentsIndex = 0; additionalTreatmentsIndex < additionalTreatmentsJsonList.GetLength(); ++additionalTreatmentsIndex)
     {
       m_additionalTreatments.push_back(additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject());

@@ -38,7 +38,7 @@ Face::Face() :
 {
 }
 
-Face::Face(const JsonValue& jsonValue) : 
+Face::Face(JsonView jsonValue) : 
     m_faceIdHasBeenSet(false),
     m_boundingBoxHasBeenSet(false),
     m_imageIdHasBeenSet(false),
@@ -49,7 +49,7 @@ Face::Face(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Face& Face::operator =(const JsonValue& jsonValue)
+Face& Face::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FaceId"))
   {

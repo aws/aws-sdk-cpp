@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     Scte20SourceSettings();
-    Scte20SourceSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    Scte20SourceSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Scte20SourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    Scte20SourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

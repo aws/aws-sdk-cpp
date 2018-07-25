@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Snowball
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     ClusterMetadata();
-    ClusterMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    ClusterMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ClusterMetadata(Aws::Utils::Json::JsonView jsonValue);
+    ClusterMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

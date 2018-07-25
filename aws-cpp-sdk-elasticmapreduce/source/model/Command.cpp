@@ -35,7 +35,7 @@ Command::Command() :
 {
 }
 
-Command::Command(const JsonValue& jsonValue) : 
+Command::Command(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_scriptPathHasBeenSet(false),
     m_argsHasBeenSet(false)
@@ -43,7 +43,7 @@ Command::Command(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Command& Command::operator =(const JsonValue& jsonValue)
+Command& Command::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -61,7 +61,7 @@ Command& Command::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Args"))
   {
-    Array<JsonValue> argsJsonList = jsonValue.GetArray("Args");
+    Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
     for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
     {
       m_args.push_back(argsJsonList[argsIndex].AsString());

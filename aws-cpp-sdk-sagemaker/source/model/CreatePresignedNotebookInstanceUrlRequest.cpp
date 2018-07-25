@@ -45,7 +45,7 @@ Aws::String CreatePresignedNotebookInstanceUrlRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreatePresignedNotebookInstanceUrlRequest::GetRequestSpecificHeaders() const

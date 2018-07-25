@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MarketplaceMetering
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     UsageRecordResult();
-    UsageRecordResult(const Aws::Utils::Json::JsonValue& jsonValue);
-    UsageRecordResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UsageRecordResult(Aws::Utils::Json::JsonView jsonValue);
+    UsageRecordResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     HyperParameterTuningJobSummary();
-    HyperParameterTuningJobSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    HyperParameterTuningJobSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HyperParameterTuningJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    HyperParameterTuningJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

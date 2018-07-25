@@ -37,7 +37,7 @@ Aws::String UpdateAdmChannelRequest::SerializePayload() const
    payload = m_aDMChannelRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

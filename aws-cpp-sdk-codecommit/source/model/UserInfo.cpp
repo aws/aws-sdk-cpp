@@ -35,7 +35,7 @@ UserInfo::UserInfo() :
 {
 }
 
-UserInfo::UserInfo(const JsonValue& jsonValue) : 
+UserInfo::UserInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_dateHasBeenSet(false)
@@ -43,7 +43,7 @@ UserInfo::UserInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserInfo& UserInfo::operator =(const JsonValue& jsonValue)
+UserInfo& UserInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

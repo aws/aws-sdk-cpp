@@ -41,7 +41,7 @@ CreateVocabularyResult::CreateVocabularyResult(const Aws::AmazonWebServiceResult
 
 CreateVocabularyResult& CreateVocabularyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");

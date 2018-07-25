@@ -56,7 +56,7 @@ Aws::String GetCredentialsForIdentityRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCredentialsForIdentityRequest::GetRequestSpecificHeaders() const

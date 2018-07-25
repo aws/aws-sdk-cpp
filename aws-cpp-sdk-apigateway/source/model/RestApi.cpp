@@ -45,7 +45,7 @@ RestApi::RestApi() :
 {
 }
 
-RestApi::RestApi(const JsonValue& jsonValue) : 
+RestApi::RestApi(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -63,7 +63,7 @@ RestApi::RestApi(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RestApi& RestApi::operator =(const JsonValue& jsonValue)
+RestApi& RestApi::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -102,7 +102,7 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
@@ -112,7 +112,7 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("binaryMediaTypes"))
   {
-    Array<JsonValue> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
+    Array<JsonView> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
     for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
     {
       m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());

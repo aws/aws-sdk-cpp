@@ -34,18 +34,18 @@ ItemCollectionMetrics::ItemCollectionMetrics() :
 {
 }
 
-ItemCollectionMetrics::ItemCollectionMetrics(const JsonValue& jsonValue) : 
+ItemCollectionMetrics::ItemCollectionMetrics(JsonView jsonValue) : 
     m_itemCollectionKeyHasBeenSet(false),
     m_sizeEstimateRangeGBHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ItemCollectionMetrics& ItemCollectionMetrics::operator =(const JsonValue& jsonValue)
+ItemCollectionMetrics& ItemCollectionMetrics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ItemCollectionKey"))
   {
-    Aws::Map<Aws::String, JsonValue> itemCollectionKeyJsonMap = jsonValue.GetObject("ItemCollectionKey").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> itemCollectionKeyJsonMap = jsonValue.GetObject("ItemCollectionKey").GetAllObjects();
     for(auto& itemCollectionKeyItem : itemCollectionKeyJsonMap)
     {
       m_itemCollectionKey[itemCollectionKeyItem.first] = itemCollectionKeyItem.second.AsObject();
@@ -55,7 +55,7 @@ ItemCollectionMetrics& ItemCollectionMetrics::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("SizeEstimateRangeGB"))
   {
-    Array<JsonValue> sizeEstimateRangeGBJsonList = jsonValue.GetArray("SizeEstimateRangeGB");
+    Array<JsonView> sizeEstimateRangeGBJsonList = jsonValue.GetArray("SizeEstimateRangeGB");
     for(unsigned sizeEstimateRangeGBIndex = 0; sizeEstimateRangeGBIndex < sizeEstimateRangeGBJsonList.GetLength(); ++sizeEstimateRangeGBIndex)
     {
       m_sizeEstimateRangeGB.push_back(sizeEstimateRangeGBJsonList[sizeEstimateRangeGBIndex].AsDouble());

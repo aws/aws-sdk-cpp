@@ -39,7 +39,7 @@ ProvisioningArtifactParameter::ProvisioningArtifactParameter() :
 {
 }
 
-ProvisioningArtifactParameter::ProvisioningArtifactParameter(const JsonValue& jsonValue) : 
+ProvisioningArtifactParameter::ProvisioningArtifactParameter(JsonView jsonValue) : 
     m_parameterKeyHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
     m_parameterTypeHasBeenSet(false),
@@ -51,7 +51,7 @@ ProvisioningArtifactParameter::ProvisioningArtifactParameter(const JsonValue& js
   *this = jsonValue;
 }
 
-ProvisioningArtifactParameter& ProvisioningArtifactParameter::operator =(const JsonValue& jsonValue)
+ProvisioningArtifactParameter& ProvisioningArtifactParameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterKey"))
   {

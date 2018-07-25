@@ -69,7 +69,7 @@ Aws::String GetEntitlementsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetEntitlementsRequest::GetRequestSpecificHeaders() const

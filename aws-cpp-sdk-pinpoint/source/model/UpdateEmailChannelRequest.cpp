@@ -37,7 +37,7 @@ Aws::String UpdateEmailChannelRequest::SerializePayload() const
    payload = m_emailChannelRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

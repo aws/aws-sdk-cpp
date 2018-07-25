@@ -37,7 +37,7 @@ UserMetadata::UserMetadata() :
 {
 }
 
-UserMetadata::UserMetadata(const JsonValue& jsonValue) : 
+UserMetadata::UserMetadata(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_givenNameHasBeenSet(false),
@@ -47,7 +47,7 @@ UserMetadata::UserMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserMetadata& UserMetadata::operator =(const JsonValue& jsonValue)
+UserMetadata& UserMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

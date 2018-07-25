@@ -58,7 +58,7 @@ Aws::String GetTableVersionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetTableVersionRequest::GetRequestSpecificHeaders() const

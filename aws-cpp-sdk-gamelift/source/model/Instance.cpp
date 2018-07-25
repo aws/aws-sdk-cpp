@@ -42,7 +42,7 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(const JsonValue& jsonValue) : 
+Instance::Instance(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
@@ -57,7 +57,7 @@ Instance::Instance(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Instance& Instance::operator =(const JsonValue& jsonValue)
+Instance& Instance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {

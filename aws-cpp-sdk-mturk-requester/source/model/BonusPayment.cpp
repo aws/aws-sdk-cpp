@@ -37,7 +37,7 @@ BonusPayment::BonusPayment() :
 {
 }
 
-BonusPayment::BonusPayment(const JsonValue& jsonValue) : 
+BonusPayment::BonusPayment(JsonView jsonValue) : 
     m_workerIdHasBeenSet(false),
     m_bonusAmountHasBeenSet(false),
     m_assignmentIdHasBeenSet(false),
@@ -47,7 +47,7 @@ BonusPayment::BonusPayment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BonusPayment& BonusPayment::operator =(const JsonValue& jsonValue)
+BonusPayment& BonusPayment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkerId"))
   {

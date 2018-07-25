@@ -52,7 +52,7 @@ Aws::String GetFaceDetectionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetFaceDetectionRequest::GetRequestSpecificHeaders() const

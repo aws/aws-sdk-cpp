@@ -34,14 +34,14 @@ RDSDatabaseCredentials::RDSDatabaseCredentials() :
 {
 }
 
-RDSDatabaseCredentials::RDSDatabaseCredentials(const JsonValue& jsonValue) : 
+RDSDatabaseCredentials::RDSDatabaseCredentials(JsonView jsonValue) : 
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RDSDatabaseCredentials& RDSDatabaseCredentials::operator =(const JsonValue& jsonValue)
+RDSDatabaseCredentials& RDSDatabaseCredentials::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Username"))
   {

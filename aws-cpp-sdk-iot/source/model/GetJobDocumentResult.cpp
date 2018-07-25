@@ -37,7 +37,7 @@ GetJobDocumentResult::GetJobDocumentResult(const Aws::AmazonWebServiceResult<Jso
 
 GetJobDocumentResult& GetJobDocumentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetString("document");

@@ -34,14 +34,14 @@ EBSOptionsStatus::EBSOptionsStatus() :
 {
 }
 
-EBSOptionsStatus::EBSOptionsStatus(const JsonValue& jsonValue) : 
+EBSOptionsStatus::EBSOptionsStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EBSOptionsStatus& EBSOptionsStatus::operator =(const JsonValue& jsonValue)
+EBSOptionsStatus& EBSOptionsStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {

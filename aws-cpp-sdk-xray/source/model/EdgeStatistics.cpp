@@ -40,7 +40,7 @@ EdgeStatistics::EdgeStatistics() :
 {
 }
 
-EdgeStatistics::EdgeStatistics(const JsonValue& jsonValue) : 
+EdgeStatistics::EdgeStatistics(JsonView jsonValue) : 
     m_okCount(0),
     m_okCountHasBeenSet(false),
     m_errorStatisticsHasBeenSet(false),
@@ -53,7 +53,7 @@ EdgeStatistics::EdgeStatistics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EdgeStatistics& EdgeStatistics::operator =(const JsonValue& jsonValue)
+EdgeStatistics& EdgeStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OkCount"))
   {

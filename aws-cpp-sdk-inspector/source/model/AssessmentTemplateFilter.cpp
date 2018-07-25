@@ -35,7 +35,7 @@ AssessmentTemplateFilter::AssessmentTemplateFilter() :
 {
 }
 
-AssessmentTemplateFilter::AssessmentTemplateFilter(const JsonValue& jsonValue) : 
+AssessmentTemplateFilter::AssessmentTemplateFilter(JsonView jsonValue) : 
     m_namePatternHasBeenSet(false),
     m_durationRangeHasBeenSet(false),
     m_rulesPackageArnsHasBeenSet(false)
@@ -43,7 +43,7 @@ AssessmentTemplateFilter::AssessmentTemplateFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssessmentTemplateFilter& AssessmentTemplateFilter::operator =(const JsonValue& jsonValue)
+AssessmentTemplateFilter& AssessmentTemplateFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("namePattern"))
   {
@@ -61,7 +61,7 @@ AssessmentTemplateFilter& AssessmentTemplateFilter::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
-    Array<JsonValue> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
+    Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
     for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
     {
       m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());

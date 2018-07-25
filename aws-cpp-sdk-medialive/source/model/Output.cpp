@@ -37,7 +37,7 @@ Output::Output() :
 {
 }
 
-Output::Output(const JsonValue& jsonValue) : 
+Output::Output(JsonView jsonValue) : 
     m_audioDescriptionNamesHasBeenSet(false),
     m_captionDescriptionNamesHasBeenSet(false),
     m_outputNameHasBeenSet(false),
@@ -47,11 +47,11 @@ Output::Output(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Output& Output::operator =(const JsonValue& jsonValue)
+Output& Output::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioDescriptionNames"))
   {
-    Array<JsonValue> audioDescriptionNamesJsonList = jsonValue.GetArray("audioDescriptionNames");
+    Array<JsonView> audioDescriptionNamesJsonList = jsonValue.GetArray("audioDescriptionNames");
     for(unsigned audioDescriptionNamesIndex = 0; audioDescriptionNamesIndex < audioDescriptionNamesJsonList.GetLength(); ++audioDescriptionNamesIndex)
     {
       m_audioDescriptionNames.push_back(audioDescriptionNamesJsonList[audioDescriptionNamesIndex].AsString());
@@ -61,7 +61,7 @@ Output& Output::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("captionDescriptionNames"))
   {
-    Array<JsonValue> captionDescriptionNamesJsonList = jsonValue.GetArray("captionDescriptionNames");
+    Array<JsonView> captionDescriptionNamesJsonList = jsonValue.GetArray("captionDescriptionNames");
     for(unsigned captionDescriptionNamesIndex = 0; captionDescriptionNamesIndex < captionDescriptionNamesJsonList.GetLength(); ++captionDescriptionNamesIndex)
     {
       m_captionDescriptionNames.push_back(captionDescriptionNamesJsonList[captionDescriptionNamesIndex].AsString());

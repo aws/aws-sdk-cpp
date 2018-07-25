@@ -37,10 +37,10 @@ ListOfferingTransactionsResult::ListOfferingTransactionsResult(const Aws::Amazon
 
 ListOfferingTransactionsResult& ListOfferingTransactionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("offeringTransactions"))
   {
-    Array<JsonValue> offeringTransactionsJsonList = jsonValue.GetArray("offeringTransactions");
+    Array<JsonView> offeringTransactionsJsonList = jsonValue.GetArray("offeringTransactions");
     for(unsigned offeringTransactionsIndex = 0; offeringTransactionsIndex < offeringTransactionsJsonList.GetLength(); ++offeringTransactionsIndex)
     {
       m_offeringTransactions.push_back(offeringTransactionsJsonList[offeringTransactionsIndex].AsObject());

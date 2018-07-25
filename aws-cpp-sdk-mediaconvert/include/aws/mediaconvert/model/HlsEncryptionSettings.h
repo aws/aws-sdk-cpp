@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     HlsEncryptionSettings();
-    HlsEncryptionSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    HlsEncryptionSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HlsEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    HlsEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

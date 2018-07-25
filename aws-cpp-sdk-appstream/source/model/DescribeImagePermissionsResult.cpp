@@ -37,7 +37,7 @@ DescribeImagePermissionsResult::DescribeImagePermissionsResult(const Aws::Amazon
 
 DescribeImagePermissionsResult& DescribeImagePermissionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -46,7 +46,7 @@ DescribeImagePermissionsResult& DescribeImagePermissionsResult::operator =(const
 
   if(jsonValue.ValueExists("SharedImagePermissionsList"))
   {
-    Array<JsonValue> sharedImagePermissionsListJsonList = jsonValue.GetArray("SharedImagePermissionsList");
+    Array<JsonView> sharedImagePermissionsListJsonList = jsonValue.GetArray("SharedImagePermissionsList");
     for(unsigned sharedImagePermissionsListIndex = 0; sharedImagePermissionsListIndex < sharedImagePermissionsListJsonList.GetLength(); ++sharedImagePermissionsListIndex)
     {
       m_sharedImagePermissionsList.push_back(sharedImagePermissionsListJsonList[sharedImagePermissionsListIndex].AsObject());

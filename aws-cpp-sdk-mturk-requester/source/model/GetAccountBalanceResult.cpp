@@ -37,7 +37,7 @@ GetAccountBalanceResult::GetAccountBalanceResult(const Aws::AmazonWebServiceResu
 
 GetAccountBalanceResult& GetAccountBalanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AvailableBalance"))
   {
     m_availableBalance = jsonValue.GetString("AvailableBalance");

@@ -39,6 +39,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -71,8 +72,8 @@ namespace Model
   {
   public:
     FaceDetail();
-    FaceDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    FaceDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FaceDetail(Aws::Utils::Json::JsonView jsonValue);
+    FaceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

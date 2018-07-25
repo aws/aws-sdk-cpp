@@ -37,7 +37,7 @@ StartReplicationTaskAssessmentResult::StartReplicationTaskAssessmentResult(const
 
 StartReplicationTaskAssessmentResult& StartReplicationTaskAssessmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReplicationTask"))
   {
     m_replicationTask = jsonValue.GetObject("ReplicationTask");

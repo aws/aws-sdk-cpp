@@ -37,10 +37,10 @@ ListProgressUpdateStreamsResult::ListProgressUpdateStreamsResult(const Aws::Amaz
 
 ListProgressUpdateStreamsResult& ListProgressUpdateStreamsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProgressUpdateStreamSummaryList"))
   {
-    Array<JsonValue> progressUpdateStreamSummaryListJsonList = jsonValue.GetArray("ProgressUpdateStreamSummaryList");
+    Array<JsonView> progressUpdateStreamSummaryListJsonList = jsonValue.GetArray("ProgressUpdateStreamSummaryList");
     for(unsigned progressUpdateStreamSummaryListIndex = 0; progressUpdateStreamSummaryListIndex < progressUpdateStreamSummaryListJsonList.GetLength(); ++progressUpdateStreamSummaryListIndex)
     {
       m_progressUpdateStreamSummaryList.push_back(progressUpdateStreamSummaryListJsonList[progressUpdateStreamSummaryListIndex].AsObject());

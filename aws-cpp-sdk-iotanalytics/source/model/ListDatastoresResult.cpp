@@ -37,10 +37,10 @@ ListDatastoresResult::ListDatastoresResult(const Aws::AmazonWebServiceResult<Jso
 
 ListDatastoresResult& ListDatastoresResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("datastoreSummaries"))
   {
-    Array<JsonValue> datastoreSummariesJsonList = jsonValue.GetArray("datastoreSummaries");
+    Array<JsonView> datastoreSummariesJsonList = jsonValue.GetArray("datastoreSummaries");
     for(unsigned datastoreSummariesIndex = 0; datastoreSummariesIndex < datastoreSummariesJsonList.GetLength(); ++datastoreSummariesIndex)
     {
       m_datastoreSummaries.push_back(datastoreSummariesJsonList[datastoreSummariesIndex].AsObject());

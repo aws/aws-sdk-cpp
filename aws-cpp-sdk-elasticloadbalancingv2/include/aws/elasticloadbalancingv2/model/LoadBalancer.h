@@ -237,7 +237,7 @@ namespace Model
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
      * DNS name of an Internet-facing load balancer is publicly resolvable to the
      * public IP addresses of the nodes. Therefore, Internet-facing load balancers can
-     * route requests from clients over the Internet.</p> <p>The nodes of an internal
+     * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can only route requests from clients with
@@ -249,7 +249,7 @@ namespace Model
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
      * DNS name of an Internet-facing load balancer is publicly resolvable to the
      * public IP addresses of the nodes. Therefore, Internet-facing load balancers can
-     * route requests from clients over the Internet.</p> <p>The nodes of an internal
+     * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can only route requests from clients with
@@ -261,7 +261,7 @@ namespace Model
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
      * DNS name of an Internet-facing load balancer is publicly resolvable to the
      * public IP addresses of the nodes. Therefore, Internet-facing load balancers can
-     * route requests from clients over the Internet.</p> <p>The nodes of an internal
+     * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can only route requests from clients with
@@ -273,7 +273,7 @@ namespace Model
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
      * DNS name of an Internet-facing load balancer is publicly resolvable to the
      * public IP addresses of the nodes. Therefore, Internet-facing load balancers can
-     * route requests from clients over the Internet.</p> <p>The nodes of an internal
+     * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can only route requests from clients with
@@ -285,7 +285,7 @@ namespace Model
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
      * DNS name of an Internet-facing load balancer is publicly resolvable to the
      * public IP addresses of the nodes. Therefore, Internet-facing load balancers can
-     * route requests from clients over the Internet.</p> <p>The nodes of an internal
+     * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
      * Therefore, internal load balancers can only route requests from clients with

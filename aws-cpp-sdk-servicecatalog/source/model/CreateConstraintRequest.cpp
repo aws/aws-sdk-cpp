@@ -80,7 +80,7 @@ Aws::String CreateConstraintRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateConstraintRequest::GetRequestSpecificHeaders() const

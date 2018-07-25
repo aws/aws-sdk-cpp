@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Mobile
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     BundleDetails();
-    BundleDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    BundleDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BundleDetails(Aws::Utils::Json::JsonView jsonValue);
+    BundleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

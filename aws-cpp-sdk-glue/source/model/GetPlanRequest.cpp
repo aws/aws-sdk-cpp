@@ -75,7 +75,7 @@ Aws::String GetPlanRequest::SerializePayload() const
    payload.WithString("Language", LanguageMapper::GetNameForLanguage(m_language));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetPlanRequest::GetRequestSpecificHeaders() const

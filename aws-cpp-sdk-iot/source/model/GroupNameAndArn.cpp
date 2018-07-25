@@ -34,14 +34,14 @@ GroupNameAndArn::GroupNameAndArn() :
 {
 }
 
-GroupNameAndArn::GroupNameAndArn(const JsonValue& jsonValue) : 
+GroupNameAndArn::GroupNameAndArn(JsonView jsonValue) : 
     m_groupNameHasBeenSet(false),
     m_groupArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GroupNameAndArn& GroupNameAndArn::operator =(const JsonValue& jsonValue)
+GroupNameAndArn& GroupNameAndArn::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("groupName"))
   {

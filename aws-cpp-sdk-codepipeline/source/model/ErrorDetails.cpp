@@ -34,14 +34,14 @@ ErrorDetails::ErrorDetails() :
 {
 }
 
-ErrorDetails::ErrorDetails(const JsonValue& jsonValue) : 
+ErrorDetails::ErrorDetails(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ErrorDetails& ErrorDetails::operator =(const JsonValue& jsonValue)
+ErrorDetails& ErrorDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("code"))
   {

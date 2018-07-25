@@ -45,7 +45,7 @@ ReservedElasticsearchInstanceOffering::ReservedElasticsearchInstanceOffering() :
 {
 }
 
-ReservedElasticsearchInstanceOffering::ReservedElasticsearchInstanceOffering(const JsonValue& jsonValue) : 
+ReservedElasticsearchInstanceOffering::ReservedElasticsearchInstanceOffering(JsonView jsonValue) : 
     m_reservedElasticsearchInstanceOfferingIdHasBeenSet(false),
     m_elasticsearchInstanceType(ESPartitionInstanceType::NOT_SET),
     m_elasticsearchInstanceTypeHasBeenSet(false),
@@ -63,7 +63,7 @@ ReservedElasticsearchInstanceOffering::ReservedElasticsearchInstanceOffering(con
   *this = jsonValue;
 }
 
-ReservedElasticsearchInstanceOffering& ReservedElasticsearchInstanceOffering::operator =(const JsonValue& jsonValue)
+ReservedElasticsearchInstanceOffering& ReservedElasticsearchInstanceOffering::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReservedElasticsearchInstanceOfferingId"))
   {
@@ -116,7 +116,7 @@ ReservedElasticsearchInstanceOffering& ReservedElasticsearchInstanceOffering::op
 
   if(jsonValue.ValueExists("RecurringCharges"))
   {
-    Array<JsonValue> recurringChargesJsonList = jsonValue.GetArray("RecurringCharges");
+    Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("RecurringCharges");
     for(unsigned recurringChargesIndex = 0; recurringChargesIndex < recurringChargesJsonList.GetLength(); ++recurringChargesIndex)
     {
       m_recurringCharges.push_back(recurringChargesJsonList[recurringChargesIndex].AsObject());

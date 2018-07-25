@@ -36,7 +36,7 @@ Validity::Validity() :
 {
 }
 
-Validity::Validity(const JsonValue& jsonValue) : 
+Validity::Validity(JsonView jsonValue) : 
     m_value(0),
     m_valueHasBeenSet(false),
     m_type(ValidityPeriodType::NOT_SET),
@@ -45,7 +45,7 @@ Validity::Validity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Validity& Validity::operator =(const JsonValue& jsonValue)
+Validity& Validity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

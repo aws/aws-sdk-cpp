@@ -37,7 +37,7 @@ GetDeviceInstanceResult::GetDeviceInstanceResult(const Aws::AmazonWebServiceResu
 
 GetDeviceInstanceResult& GetDeviceInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deviceInstance"))
   {
     m_deviceInstance = jsonValue.GetObject("deviceInstance");

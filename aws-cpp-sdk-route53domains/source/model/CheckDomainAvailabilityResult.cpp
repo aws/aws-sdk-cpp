@@ -39,7 +39,7 @@ CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const Aws::AmazonWe
 
 CheckDomainAvailabilityResult& CheckDomainAvailabilityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Availability"))
   {
     m_availability = DomainAvailabilityMapper::GetDomainAvailabilityForName(jsonValue.GetString("Availability"));

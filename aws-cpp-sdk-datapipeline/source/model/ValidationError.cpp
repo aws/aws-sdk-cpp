@@ -34,14 +34,14 @@ ValidationError::ValidationError() :
 {
 }
 
-ValidationError::ValidationError(const JsonValue& jsonValue) : 
+ValidationError::ValidationError(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_errorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ValidationError& ValidationError::operator =(const JsonValue& jsonValue)
+ValidationError& ValidationError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -52,7 +52,7 @@ ValidationError& ValidationError::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonValue> errorsJsonList = jsonValue.GetArray("errors");
+    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsString());

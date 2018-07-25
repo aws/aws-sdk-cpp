@@ -51,7 +51,7 @@ Aws::String GetDataEndpointRequest::SerializePayload() const
    payload.WithString("APIName", APINameMapper::GetNameForAPIName(m_aPIName));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

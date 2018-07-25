@@ -39,7 +39,7 @@ DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
@@ -54,7 +54,7 @@ DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

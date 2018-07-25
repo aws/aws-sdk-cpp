@@ -40,7 +40,7 @@ DirectConnectGateway::DirectConnectGateway() :
 {
 }
 
-DirectConnectGateway::DirectConnectGateway(const JsonValue& jsonValue) : 
+DirectConnectGateway::DirectConnectGateway(JsonView jsonValue) : 
     m_directConnectGatewayIdHasBeenSet(false),
     m_directConnectGatewayNameHasBeenSet(false),
     m_amazonSideAsn(0),
@@ -53,7 +53,7 @@ DirectConnectGateway::DirectConnectGateway(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DirectConnectGateway& DirectConnectGateway::operator =(const JsonValue& jsonValue)
+DirectConnectGateway& DirectConnectGateway::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("directConnectGatewayId"))
   {

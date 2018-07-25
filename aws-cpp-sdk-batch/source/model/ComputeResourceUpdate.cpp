@@ -38,7 +38,7 @@ ComputeResourceUpdate::ComputeResourceUpdate() :
 {
 }
 
-ComputeResourceUpdate::ComputeResourceUpdate(const JsonValue& jsonValue) : 
+ComputeResourceUpdate::ComputeResourceUpdate(JsonView jsonValue) : 
     m_minvCpus(0),
     m_minvCpusHasBeenSet(false),
     m_maxvCpus(0),
@@ -49,7 +49,7 @@ ComputeResourceUpdate::ComputeResourceUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComputeResourceUpdate& ComputeResourceUpdate::operator =(const JsonValue& jsonValue)
+ComputeResourceUpdate& ComputeResourceUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("minvCpus"))
   {

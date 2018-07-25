@@ -38,7 +38,7 @@ MssPackage::MssPackage() :
 {
 }
 
-MssPackage::MssPackage(const JsonValue& jsonValue) : 
+MssPackage::MssPackage(JsonView jsonValue) : 
     m_encryptionHasBeenSet(false),
     m_manifestWindowSeconds(0),
     m_manifestWindowSecondsHasBeenSet(false),
@@ -49,7 +49,7 @@ MssPackage::MssPackage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MssPackage& MssPackage::operator =(const JsonValue& jsonValue)
+MssPackage& MssPackage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("encryption"))
   {

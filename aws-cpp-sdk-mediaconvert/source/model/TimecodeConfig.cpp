@@ -37,7 +37,7 @@ TimecodeConfig::TimecodeConfig() :
 {
 }
 
-TimecodeConfig::TimecodeConfig(const JsonValue& jsonValue) : 
+TimecodeConfig::TimecodeConfig(JsonView jsonValue) : 
     m_anchorHasBeenSet(false),
     m_source(TimecodeSource::NOT_SET),
     m_sourceHasBeenSet(false),
@@ -47,7 +47,7 @@ TimecodeConfig::TimecodeConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TimecodeConfig& TimecodeConfig::operator =(const JsonValue& jsonValue)
+TimecodeConfig& TimecodeConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("anchor"))
   {

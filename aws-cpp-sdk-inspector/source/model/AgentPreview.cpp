@@ -41,7 +41,7 @@ AgentPreview::AgentPreview() :
 {
 }
 
-AgentPreview::AgentPreview(const JsonValue& jsonValue) : 
+AgentPreview::AgentPreview(JsonView jsonValue) : 
     m_hostnameHasBeenSet(false),
     m_agentIdHasBeenSet(false),
     m_autoScalingGroupHasBeenSet(false),
@@ -55,7 +55,7 @@ AgentPreview::AgentPreview(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AgentPreview& AgentPreview::operator =(const JsonValue& jsonValue)
+AgentPreview& AgentPreview::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("hostname"))
   {

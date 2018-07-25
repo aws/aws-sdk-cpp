@@ -34,14 +34,14 @@ AudioPidSelection::AudioPidSelection() :
 {
 }
 
-AudioPidSelection::AudioPidSelection(const JsonValue& jsonValue) : 
+AudioPidSelection::AudioPidSelection(JsonView jsonValue) : 
     m_pid(0),
     m_pidHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AudioPidSelection& AudioPidSelection::operator =(const JsonValue& jsonValue)
+AudioPidSelection& AudioPidSelection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pid"))
   {

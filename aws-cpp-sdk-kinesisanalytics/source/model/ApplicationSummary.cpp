@@ -36,7 +36,7 @@ ApplicationSummary::ApplicationSummary() :
 {
 }
 
-ApplicationSummary::ApplicationSummary(const JsonValue& jsonValue) : 
+ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
     m_applicationNameHasBeenSet(false),
     m_applicationARNHasBeenSet(false),
     m_applicationStatus(ApplicationStatus::NOT_SET),
@@ -45,7 +45,7 @@ ApplicationSummary::ApplicationSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApplicationSummary& ApplicationSummary::operator =(const JsonValue& jsonValue)
+ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationName"))
   {

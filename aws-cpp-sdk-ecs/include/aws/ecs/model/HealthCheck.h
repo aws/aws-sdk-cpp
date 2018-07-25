@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     HealthCheck();
-    HealthCheck(const Aws::Utils::Json::JsonValue& jsonValue);
-    HealthCheck& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HealthCheck(Aws::Utils::Json::JsonView jsonValue);
+    HealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -193,21 +194,21 @@ namespace Model
     /**
      * <p>The time period in seconds to wait for a health check to succeed before it is
      * considered a failure. You may specify between 2 and 60 seconds. The default
-     * value is 5 seconds.</p>
+     * value is 5.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The time period in seconds to wait for a health check to succeed before it is
      * considered a failure. You may specify between 2 and 60 seconds. The default
-     * value is 5 seconds.</p>
+     * value is 5.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The time period in seconds to wait for a health check to succeed before it is
      * considered a failure. You may specify between 2 and 60 seconds. The default
-     * value is 5 seconds.</p>
+     * value is 5.</p>
      */
     inline HealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
 
@@ -215,21 +216,21 @@ namespace Model
     /**
      * <p>The number of times to retry a failed health check before the container is
      * considered unhealthy. You may specify between 1 and 10 retries. The default
-     * value is 3 retries.</p>
+     * value is 3.</p>
      */
     inline int GetRetries() const{ return m_retries; }
 
     /**
      * <p>The number of times to retry a failed health check before the container is
      * considered unhealthy. You may specify between 1 and 10 retries. The default
-     * value is 3 retries.</p>
+     * value is 3.</p>
      */
     inline void SetRetries(int value) { m_retriesHasBeenSet = true; m_retries = value; }
 
     /**
      * <p>The number of times to retry a failed health check before the container is
      * considered unhealthy. You may specify between 1 and 10 retries. The default
-     * value is 3 retries.</p>
+     * value is 3.</p>
      */
     inline HealthCheck& WithRetries(int value) { SetRetries(value); return *this;}
 

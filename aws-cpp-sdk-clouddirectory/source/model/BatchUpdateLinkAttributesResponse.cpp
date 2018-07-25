@@ -32,12 +32,12 @@ BatchUpdateLinkAttributesResponse::BatchUpdateLinkAttributesResponse()
 {
 }
 
-BatchUpdateLinkAttributesResponse::BatchUpdateLinkAttributesResponse(const JsonValue& jsonValue)
+BatchUpdateLinkAttributesResponse::BatchUpdateLinkAttributesResponse(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-BatchUpdateLinkAttributesResponse& BatchUpdateLinkAttributesResponse::operator =(const JsonValue& jsonValue)
+BatchUpdateLinkAttributesResponse& BatchUpdateLinkAttributesResponse::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

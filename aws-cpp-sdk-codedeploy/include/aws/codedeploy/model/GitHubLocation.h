@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     GitHubLocation();
-    GitHubLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    GitHubLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GitHubLocation(Aws::Utils::Json::JsonView jsonValue);
+    GitHubLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

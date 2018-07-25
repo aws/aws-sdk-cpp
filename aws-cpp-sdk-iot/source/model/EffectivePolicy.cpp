@@ -35,7 +35,7 @@ EffectivePolicy::EffectivePolicy() :
 {
 }
 
-EffectivePolicy::EffectivePolicy(const JsonValue& jsonValue) : 
+EffectivePolicy::EffectivePolicy(JsonView jsonValue) : 
     m_policyNameHasBeenSet(false),
     m_policyArnHasBeenSet(false),
     m_policyDocumentHasBeenSet(false)
@@ -43,7 +43,7 @@ EffectivePolicy::EffectivePolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EffectivePolicy& EffectivePolicy::operator =(const JsonValue& jsonValue)
+EffectivePolicy& EffectivePolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("policyName"))
   {

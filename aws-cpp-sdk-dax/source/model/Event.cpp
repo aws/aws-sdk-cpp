@@ -37,7 +37,7 @@ Event::Event() :
 {
 }
 
-Event::Event(const JsonValue& jsonValue) : 
+Event::Event(JsonView jsonValue) : 
     m_sourceNameHasBeenSet(false),
     m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
@@ -47,7 +47,7 @@ Event::Event(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Event& Event::operator =(const JsonValue& jsonValue)
+Event& Event::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SourceName"))
   {

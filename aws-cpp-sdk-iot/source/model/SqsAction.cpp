@@ -36,7 +36,7 @@ SqsAction::SqsAction() :
 {
 }
 
-SqsAction::SqsAction(const JsonValue& jsonValue) : 
+SqsAction::SqsAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_queueUrlHasBeenSet(false),
     m_useBase64(false),
@@ -45,7 +45,7 @@ SqsAction::SqsAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SqsAction& SqsAction::operator =(const JsonValue& jsonValue)
+SqsAction& SqsAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

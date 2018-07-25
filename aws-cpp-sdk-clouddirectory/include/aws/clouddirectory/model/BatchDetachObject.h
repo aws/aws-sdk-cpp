@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     BatchDetachObject();
-    BatchDetachObject(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchDetachObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchDetachObject(Aws::Utils::Json::JsonView jsonValue);
+    BatchDetachObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -41,10 +41,10 @@ GetDimensionValuesResult::GetDimensionValuesResult(const Aws::AmazonWebServiceRe
 
 GetDimensionValuesResult& GetDimensionValuesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DimensionValues"))
   {
-    Array<JsonValue> dimensionValuesJsonList = jsonValue.GetArray("DimensionValues");
+    Array<JsonView> dimensionValuesJsonList = jsonValue.GetArray("DimensionValues");
     for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)
     {
       m_dimensionValues.push_back(dimensionValuesJsonList[dimensionValuesIndex].AsObject());

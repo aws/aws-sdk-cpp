@@ -35,7 +35,7 @@ BlockerDeclaration::BlockerDeclaration() :
 {
 }
 
-BlockerDeclaration::BlockerDeclaration(const JsonValue& jsonValue) : 
+BlockerDeclaration::BlockerDeclaration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_type(BlockerType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -43,7 +43,7 @@ BlockerDeclaration::BlockerDeclaration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BlockerDeclaration& BlockerDeclaration::operator =(const JsonValue& jsonValue)
+BlockerDeclaration& BlockerDeclaration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

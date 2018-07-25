@@ -38,7 +38,7 @@ Expression::Expression() :
 {
 }
 
-Expression::Expression(const JsonValue& jsonValue) : 
+Expression::Expression(JsonView jsonValue) : 
     m_orHasBeenSet(false),
     m_andHasBeenSet(false),
     m_not(1),
@@ -49,11 +49,11 @@ Expression::Expression(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Expression& Expression::operator =(const JsonValue& jsonValue)
+Expression& Expression::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Or"))
   {
-    Array<JsonValue> orJsonList = jsonValue.GetArray("Or");
+    Array<JsonView> orJsonList = jsonValue.GetArray("Or");
     for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
     {
       m_or.push_back(orJsonList[orIndex].AsObject());
@@ -63,7 +63,7 @@ Expression& Expression::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("And"))
   {
-    Array<JsonValue> andJsonList = jsonValue.GetArray("And");
+    Array<JsonView> andJsonList = jsonValue.GetArray("And");
     for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
     {
       m_and.push_back(andJsonList[andIndex].AsObject());

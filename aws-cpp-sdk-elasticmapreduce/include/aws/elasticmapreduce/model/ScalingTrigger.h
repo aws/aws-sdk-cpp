@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ScalingTrigger();
-    ScalingTrigger(const Aws::Utils::Json::JsonValue& jsonValue);
-    ScalingTrigger& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ScalingTrigger(Aws::Utils::Json::JsonView jsonValue);
+    ScalingTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

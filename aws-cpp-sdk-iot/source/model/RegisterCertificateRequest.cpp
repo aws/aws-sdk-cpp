@@ -51,7 +51,7 @@ Aws::String RegisterCertificateRequest::SerializePayload() const
    payload.WithString("status", CertificateStatusMapper::GetNameForCertificateStatus(m_status));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

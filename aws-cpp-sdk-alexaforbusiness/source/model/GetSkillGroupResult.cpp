@@ -37,7 +37,7 @@ GetSkillGroupResult::GetSkillGroupResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetSkillGroupResult& GetSkillGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SkillGroup"))
   {
     m_skillGroup = jsonValue.GetObject("SkillGroup");

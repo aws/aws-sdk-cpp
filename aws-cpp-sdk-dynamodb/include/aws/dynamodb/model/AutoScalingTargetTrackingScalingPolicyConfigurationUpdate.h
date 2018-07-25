@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     AutoScalingTargetTrackingScalingPolicyConfigurationUpdate();
-    AutoScalingTargetTrackingScalingPolicyConfigurationUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AutoScalingTargetTrackingScalingPolicyConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

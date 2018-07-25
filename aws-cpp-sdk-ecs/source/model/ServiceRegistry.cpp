@@ -38,7 +38,7 @@ ServiceRegistry::ServiceRegistry() :
 {
 }
 
-ServiceRegistry::ServiceRegistry(const JsonValue& jsonValue) : 
+ServiceRegistry::ServiceRegistry(JsonView jsonValue) : 
     m_registryArnHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -49,7 +49,7 @@ ServiceRegistry::ServiceRegistry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServiceRegistry& ServiceRegistry::operator =(const JsonValue& jsonValue)
+ServiceRegistry& ServiceRegistry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("registryArn"))
   {

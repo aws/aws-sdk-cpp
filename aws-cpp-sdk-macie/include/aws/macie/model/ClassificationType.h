@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Macie
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ClassificationType();
-    ClassificationType(const Aws::Utils::Json::JsonValue& jsonValue);
-    ClassificationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ClassificationType(Aws::Utils::Json::JsonView jsonValue);
+    ClassificationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

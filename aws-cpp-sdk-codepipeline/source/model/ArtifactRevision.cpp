@@ -38,7 +38,7 @@ ArtifactRevision::ArtifactRevision() :
 {
 }
 
-ArtifactRevision::ArtifactRevision(const JsonValue& jsonValue) : 
+ArtifactRevision::ArtifactRevision(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
     m_revisionChangeIdentifierHasBeenSet(false),
@@ -49,7 +49,7 @@ ArtifactRevision::ArtifactRevision(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ArtifactRevision& ArtifactRevision::operator =(const JsonValue& jsonValue)
+ArtifactRevision& ArtifactRevision::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

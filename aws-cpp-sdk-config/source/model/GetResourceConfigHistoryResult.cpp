@@ -37,10 +37,10 @@ GetResourceConfigHistoryResult::GetResourceConfigHistoryResult(const Aws::Amazon
 
 GetResourceConfigHistoryResult& GetResourceConfigHistoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurationItems"))
   {
-    Array<JsonValue> configurationItemsJsonList = jsonValue.GetArray("configurationItems");
+    Array<JsonView> configurationItemsJsonList = jsonValue.GetArray("configurationItems");
     for(unsigned configurationItemsIndex = 0; configurationItemsIndex < configurationItemsJsonList.GetLength(); ++configurationItemsIndex)
     {
       m_configurationItems.push_back(configurationItemsJsonList[configurationItemsIndex].AsObject());

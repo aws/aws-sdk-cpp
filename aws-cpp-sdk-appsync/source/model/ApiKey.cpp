@@ -36,7 +36,7 @@ ApiKey::ApiKey() :
 {
 }
 
-ApiKey::ApiKey(const JsonValue& jsonValue) : 
+ApiKey::ApiKey(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_expires(0),
@@ -45,7 +45,7 @@ ApiKey::ApiKey(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApiKey& ApiKey::operator =(const JsonValue& jsonValue)
+ApiKey& ApiKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

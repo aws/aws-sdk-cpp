@@ -35,7 +35,7 @@ InstanceTimeline::InstanceTimeline() :
 {
 }
 
-InstanceTimeline::InstanceTimeline(const JsonValue& jsonValue) : 
+InstanceTimeline::InstanceTimeline(JsonView jsonValue) : 
     m_creationDateTimeHasBeenSet(false),
     m_readyDateTimeHasBeenSet(false),
     m_endDateTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ InstanceTimeline::InstanceTimeline(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceTimeline& InstanceTimeline::operator =(const JsonValue& jsonValue)
+InstanceTimeline& InstanceTimeline::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreationDateTime"))
   {

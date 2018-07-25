@@ -34,14 +34,14 @@ AutoScalingPolicyDescription::AutoScalingPolicyDescription() :
 {
 }
 
-AutoScalingPolicyDescription::AutoScalingPolicyDescription(const JsonValue& jsonValue) : 
+AutoScalingPolicyDescription::AutoScalingPolicyDescription(JsonView jsonValue) : 
     m_policyNameHasBeenSet(false),
     m_targetTrackingScalingPolicyConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AutoScalingPolicyDescription& AutoScalingPolicyDescription::operator =(const JsonValue& jsonValue)
+AutoScalingPolicyDescription& AutoScalingPolicyDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyName"))
   {

@@ -35,7 +35,7 @@ CloudWatchLoggingOptionDescription::CloudWatchLoggingOptionDescription() :
 {
 }
 
-CloudWatchLoggingOptionDescription::CloudWatchLoggingOptionDescription(const JsonValue& jsonValue) : 
+CloudWatchLoggingOptionDescription::CloudWatchLoggingOptionDescription(JsonView jsonValue) : 
     m_cloudWatchLoggingOptionIdHasBeenSet(false),
     m_logStreamARNHasBeenSet(false),
     m_roleARNHasBeenSet(false)
@@ -43,7 +43,7 @@ CloudWatchLoggingOptionDescription::CloudWatchLoggingOptionDescription(const Jso
   *this = jsonValue;
 }
 
-CloudWatchLoggingOptionDescription& CloudWatchLoggingOptionDescription::operator =(const JsonValue& jsonValue)
+CloudWatchLoggingOptionDescription& CloudWatchLoggingOptionDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CloudWatchLoggingOptionId"))
   {

@@ -34,14 +34,14 @@ NotificationProperty::NotificationProperty() :
 {
 }
 
-NotificationProperty::NotificationProperty(const JsonValue& jsonValue) : 
+NotificationProperty::NotificationProperty(JsonView jsonValue) : 
     m_notifyDelayAfter(0),
     m_notifyDelayAfterHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NotificationProperty& NotificationProperty::operator =(const JsonValue& jsonValue)
+NotificationProperty& NotificationProperty::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NotifyDelayAfter"))
   {

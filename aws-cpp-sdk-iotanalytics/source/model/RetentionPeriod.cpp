@@ -36,7 +36,7 @@ RetentionPeriod::RetentionPeriod() :
 {
 }
 
-RetentionPeriod::RetentionPeriod(const JsonValue& jsonValue) : 
+RetentionPeriod::RetentionPeriod(JsonView jsonValue) : 
     m_unlimited(false),
     m_unlimitedHasBeenSet(false),
     m_numberOfDays(0),
@@ -45,7 +45,7 @@ RetentionPeriod::RetentionPeriod(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RetentionPeriod& RetentionPeriod::operator =(const JsonValue& jsonValue)
+RetentionPeriod& RetentionPeriod::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("unlimited"))
   {

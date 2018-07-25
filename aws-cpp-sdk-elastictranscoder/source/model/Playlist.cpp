@@ -39,7 +39,7 @@ Playlist::Playlist() :
 {
 }
 
-Playlist::Playlist(const JsonValue& jsonValue) : 
+Playlist::Playlist(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_outputKeysHasBeenSet(false),
@@ -51,7 +51,7 @@ Playlist::Playlist(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Playlist& Playlist::operator =(const JsonValue& jsonValue)
+Playlist& Playlist::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -69,7 +69,7 @@ Playlist& Playlist::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("OutputKeys"))
   {
-    Array<JsonValue> outputKeysJsonList = jsonValue.GetArray("OutputKeys");
+    Array<JsonView> outputKeysJsonList = jsonValue.GetArray("OutputKeys");
     for(unsigned outputKeysIndex = 0; outputKeysIndex < outputKeysJsonList.GetLength(); ++outputKeysIndex)
     {
       m_outputKeys.push_back(outputKeysJsonList[outputKeysIndex].AsString());

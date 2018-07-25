@@ -92,7 +92,7 @@ Aws::String CreateDevEndpointRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDevEndpointRequest::GetRequestSpecificHeaders() const

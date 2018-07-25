@@ -44,7 +44,7 @@ SeveritySummary::SeveritySummary() :
 {
 }
 
-SeveritySummary::SeveritySummary(const JsonValue& jsonValue) : 
+SeveritySummary::SeveritySummary(JsonView jsonValue) : 
     m_criticalCount(0),
     m_criticalCountHasBeenSet(false),
     m_highCount(0),
@@ -61,7 +61,7 @@ SeveritySummary::SeveritySummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SeveritySummary& SeveritySummary::operator =(const JsonValue& jsonValue)
+SeveritySummary& SeveritySummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CriticalCount"))
   {

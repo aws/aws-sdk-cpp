@@ -37,7 +37,7 @@ GetTagValuesResult::GetTagValuesResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetTagValuesResult& GetTagValuesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PaginationToken"))
   {
     m_paginationToken = jsonValue.GetString("PaginationToken");
@@ -46,7 +46,7 @@ GetTagValuesResult& GetTagValuesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("TagValues"))
   {
-    Array<JsonValue> tagValuesJsonList = jsonValue.GetArray("TagValues");
+    Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
     for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
     {
       m_tagValues.push_back(tagValuesJsonList[tagValuesIndex].AsString());

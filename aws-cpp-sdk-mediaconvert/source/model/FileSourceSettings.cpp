@@ -37,7 +37,7 @@ FileSourceSettings::FileSourceSettings() :
 {
 }
 
-FileSourceSettings::FileSourceSettings(const JsonValue& jsonValue) : 
+FileSourceSettings::FileSourceSettings(JsonView jsonValue) : 
     m_convert608To708(FileSourceConvert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
     m_sourceFileHasBeenSet(false),
@@ -47,7 +47,7 @@ FileSourceSettings::FileSourceSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FileSourceSettings& FileSourceSettings::operator =(const JsonValue& jsonValue)
+FileSourceSettings& FileSourceSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("convert608To708"))
   {

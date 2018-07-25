@@ -37,7 +37,7 @@ Aws::String UpdateApnsVoipSandboxChannelRequest::SerializePayload() const
    payload = m_aPNSVoipSandboxChannelRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

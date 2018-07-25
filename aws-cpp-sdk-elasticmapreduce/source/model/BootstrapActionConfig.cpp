@@ -34,14 +34,14 @@ BootstrapActionConfig::BootstrapActionConfig() :
 {
 }
 
-BootstrapActionConfig::BootstrapActionConfig(const JsonValue& jsonValue) : 
+BootstrapActionConfig::BootstrapActionConfig(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_scriptBootstrapActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BootstrapActionConfig& BootstrapActionConfig::operator =(const JsonValue& jsonValue)
+BootstrapActionConfig& BootstrapActionConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

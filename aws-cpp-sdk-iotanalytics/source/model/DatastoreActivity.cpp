@@ -34,14 +34,14 @@ DatastoreActivity::DatastoreActivity() :
 {
 }
 
-DatastoreActivity::DatastoreActivity(const JsonValue& jsonValue) : 
+DatastoreActivity::DatastoreActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_datastoreNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DatastoreActivity& DatastoreActivity::operator =(const JsonValue& jsonValue)
+DatastoreActivity& DatastoreActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

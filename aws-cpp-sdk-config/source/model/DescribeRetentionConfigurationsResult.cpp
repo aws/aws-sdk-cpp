@@ -37,10 +37,10 @@ DescribeRetentionConfigurationsResult::DescribeRetentionConfigurationsResult(con
 
 DescribeRetentionConfigurationsResult& DescribeRetentionConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RetentionConfigurations"))
   {
-    Array<JsonValue> retentionConfigurationsJsonList = jsonValue.GetArray("RetentionConfigurations");
+    Array<JsonView> retentionConfigurationsJsonList = jsonValue.GetArray("RetentionConfigurations");
     for(unsigned retentionConfigurationsIndex = 0; retentionConfigurationsIndex < retentionConfigurationsJsonList.GetLength(); ++retentionConfigurationsIndex)
     {
       m_retentionConfigurations.push_back(retentionConfigurationsJsonList[retentionConfigurationsIndex].AsObject());

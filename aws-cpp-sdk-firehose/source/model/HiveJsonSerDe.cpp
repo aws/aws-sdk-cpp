@@ -33,17 +33,17 @@ HiveJsonSerDe::HiveJsonSerDe() :
 {
 }
 
-HiveJsonSerDe::HiveJsonSerDe(const JsonValue& jsonValue) : 
+HiveJsonSerDe::HiveJsonSerDe(JsonView jsonValue) : 
     m_timestampFormatsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HiveJsonSerDe& HiveJsonSerDe::operator =(const JsonValue& jsonValue)
+HiveJsonSerDe& HiveJsonSerDe::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimestampFormats"))
   {
-    Array<JsonValue> timestampFormatsJsonList = jsonValue.GetArray("TimestampFormats");
+    Array<JsonView> timestampFormatsJsonList = jsonValue.GetArray("TimestampFormats");
     for(unsigned timestampFormatsIndex = 0; timestampFormatsIndex < timestampFormatsJsonList.GetLength(); ++timestampFormatsIndex)
     {
       m_timestampFormats.push_back(timestampFormatsJsonList[timestampFormatsIndex].AsString());

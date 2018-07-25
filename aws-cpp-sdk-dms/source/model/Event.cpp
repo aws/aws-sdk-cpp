@@ -38,7 +38,7 @@ Event::Event() :
 {
 }
 
-Event::Event(const JsonValue& jsonValue) : 
+Event::Event(JsonView jsonValue) : 
     m_sourceIdentifierHasBeenSet(false),
     m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
@@ -49,7 +49,7 @@ Event::Event(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Event& Event::operator =(const JsonValue& jsonValue)
+Event& Event::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SourceIdentifier"))
   {
@@ -74,7 +74,7 @@ Event& Event::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EventCategories"))
   {
-    Array<JsonValue> eventCategoriesJsonList = jsonValue.GetArray("EventCategories");
+    Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("EventCategories");
     for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
     {
       m_eventCategories.push_back(eventCategoriesJsonList[eventCategoriesIndex].AsString());

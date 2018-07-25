@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CostExplorer
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     DimensionValuesWithAttributes();
-    DimensionValuesWithAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    DimensionValuesWithAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DimensionValuesWithAttributes(Aws::Utils::Json::JsonView jsonValue);
+    DimensionValuesWithAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

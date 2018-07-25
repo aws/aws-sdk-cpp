@@ -39,7 +39,7 @@ Aws::String GetFacetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetFacetRequest::GetRequestSpecificHeaders() const

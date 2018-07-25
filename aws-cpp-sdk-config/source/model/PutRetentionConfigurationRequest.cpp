@@ -38,7 +38,7 @@ Aws::String PutRetentionConfigurationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutRetentionConfigurationRequest::GetRequestSpecificHeaders() const

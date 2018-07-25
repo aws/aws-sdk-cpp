@@ -42,7 +42,7 @@ Device::Device() :
 {
 }
 
-Device::Device(const JsonValue& jsonValue) : 
+Device::Device(JsonView jsonValue) : 
     m_deviceArnHasBeenSet(false),
     m_deviceSerialNumberHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
@@ -57,7 +57,7 @@ Device::Device(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Device& Device::operator =(const JsonValue& jsonValue)
+Device& Device::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeviceArn"))
   {

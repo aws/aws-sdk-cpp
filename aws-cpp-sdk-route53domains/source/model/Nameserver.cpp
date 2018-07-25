@@ -34,14 +34,14 @@ Nameserver::Nameserver() :
 {
 }
 
-Nameserver::Nameserver(const JsonValue& jsonValue) : 
+Nameserver::Nameserver(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_glueIpsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Nameserver& Nameserver::operator =(const JsonValue& jsonValue)
+Nameserver& Nameserver::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -52,7 +52,7 @@ Nameserver& Nameserver::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("GlueIps"))
   {
-    Array<JsonValue> glueIpsJsonList = jsonValue.GetArray("GlueIps");
+    Array<JsonView> glueIpsJsonList = jsonValue.GetArray("GlueIps");
     for(unsigned glueIpsIndex = 0; glueIpsIndex < glueIpsJsonList.GetLength(); ++glueIpsIndex)
     {
       m_glueIps.push_back(glueIpsJsonList[glueIpsIndex].AsString());

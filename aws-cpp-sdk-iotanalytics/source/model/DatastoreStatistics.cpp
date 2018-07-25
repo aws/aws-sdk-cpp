@@ -33,13 +33,13 @@ DatastoreStatistics::DatastoreStatistics() :
 {
 }
 
-DatastoreStatistics::DatastoreStatistics(const JsonValue& jsonValue) : 
+DatastoreStatistics::DatastoreStatistics(JsonView jsonValue) : 
     m_sizeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DatastoreStatistics& DatastoreStatistics::operator =(const JsonValue& jsonValue)
+DatastoreStatistics& DatastoreStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("size"))
   {

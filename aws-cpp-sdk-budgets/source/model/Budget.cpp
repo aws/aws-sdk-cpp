@@ -42,7 +42,7 @@ Budget::Budget() :
 {
 }
 
-Budget::Budget(const JsonValue& jsonValue) : 
+Budget::Budget(JsonView jsonValue) : 
     m_budgetNameHasBeenSet(false),
     m_budgetLimitHasBeenSet(false),
     m_costFiltersHasBeenSet(false),
@@ -57,7 +57,7 @@ Budget::Budget(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Budget& Budget::operator =(const JsonValue& jsonValue)
+Budget& Budget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BudgetName"))
   {
@@ -75,10 +75,10 @@ Budget& Budget::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CostFilters"))
   {
-    Aws::Map<Aws::String, JsonValue> costFiltersJsonMap = jsonValue.GetObject("CostFilters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> costFiltersJsonMap = jsonValue.GetObject("CostFilters").GetAllObjects();
     for(auto& costFiltersItem : costFiltersJsonMap)
     {
-      Array<JsonValue> dimensionValuesJsonList = costFiltersItem.second.AsArray();
+      Array<JsonView> dimensionValuesJsonList = costFiltersItem.second.AsArray();
       Aws::Vector<Aws::String> dimensionValuesList;
       dimensionValuesList.reserve((size_t)dimensionValuesJsonList.GetLength());
       for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)

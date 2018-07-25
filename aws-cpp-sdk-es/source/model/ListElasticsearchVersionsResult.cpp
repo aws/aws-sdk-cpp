@@ -37,10 +37,10 @@ ListElasticsearchVersionsResult::ListElasticsearchVersionsResult(const Aws::Amaz
 
 ListElasticsearchVersionsResult& ListElasticsearchVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ElasticsearchVersions"))
   {
-    Array<JsonValue> elasticsearchVersionsJsonList = jsonValue.GetArray("ElasticsearchVersions");
+    Array<JsonView> elasticsearchVersionsJsonList = jsonValue.GetArray("ElasticsearchVersions");
     for(unsigned elasticsearchVersionsIndex = 0; elasticsearchVersionsIndex < elasticsearchVersionsJsonList.GetLength(); ++elasticsearchVersionsIndex)
     {
       m_elasticsearchVersions.push_back(elasticsearchVersionsJsonList[elasticsearchVersionsIndex].AsString());

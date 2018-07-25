@@ -70,7 +70,7 @@ Aws::String GetReservationUtilizationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetReservationUtilizationRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ PutRepositoryTriggersResult::PutRepositoryTriggersResult(const Aws::AmazonWebSer
 
 PutRepositoryTriggersResult& PutRepositoryTriggersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurationId"))
   {
     m_configurationId = jsonValue.GetString("configurationId");

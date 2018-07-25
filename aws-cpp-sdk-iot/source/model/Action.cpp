@@ -46,7 +46,7 @@ Action::Action() :
 {
 }
 
-Action::Action(const JsonValue& jsonValue) : 
+Action::Action(JsonView jsonValue) : 
     m_dynamoDBHasBeenSet(false),
     m_dynamoDBv2HasBeenSet(false),
     m_lambdaHasBeenSet(false),
@@ -65,7 +65,7 @@ Action::Action(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Action& Action::operator =(const JsonValue& jsonValue)
+Action& Action::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("dynamoDB"))
   {

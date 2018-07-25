@@ -38,7 +38,7 @@ GenerateDataKeyResult::GenerateDataKeyResult(const Aws::AmazonWebServiceResult<J
 
 GenerateDataKeyResult& GenerateDataKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CiphertextBlob"))
   {
     m_ciphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextBlob"));

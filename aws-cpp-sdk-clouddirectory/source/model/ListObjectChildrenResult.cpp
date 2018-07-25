@@ -37,10 +37,10 @@ ListObjectChildrenResult::ListObjectChildrenResult(const Aws::AmazonWebServiceRe
 
 ListObjectChildrenResult& ListObjectChildrenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Children"))
   {
-    Aws::Map<Aws::String, JsonValue> childrenJsonMap = jsonValue.GetObject("Children").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> childrenJsonMap = jsonValue.GetObject("Children").GetAllObjects();
     for(auto& childrenItem : childrenJsonMap)
     {
       m_children[childrenItem.first] = childrenItem.second.AsString();

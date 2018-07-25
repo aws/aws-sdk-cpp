@@ -37,7 +37,7 @@ PhoneNumberValidateResult::PhoneNumberValidateResult(const Aws::AmazonWebService
 
 PhoneNumberValidateResult& PhoneNumberValidateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_numberValidateResponse = jsonValue;
 
 

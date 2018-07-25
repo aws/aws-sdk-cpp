@@ -37,7 +37,7 @@ DownloadDefaultKeyPairResult::DownloadDefaultKeyPairResult(const Aws::AmazonWebS
 
 DownloadDefaultKeyPairResult& DownloadDefaultKeyPairResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("publicKeyBase64"))
   {
     m_publicKeyBase64 = jsonValue.GetString("publicKeyBase64");

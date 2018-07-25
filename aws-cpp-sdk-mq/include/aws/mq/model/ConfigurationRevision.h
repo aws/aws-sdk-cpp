@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MQ
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ConfigurationRevision();
-    ConfigurationRevision(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConfigurationRevision& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConfigurationRevision(Aws::Utils::Json::JsonView jsonValue);
+    ConfigurationRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     CoreDefinitionVersion();
-    CoreDefinitionVersion(const Aws::Utils::Json::JsonValue& jsonValue);
-    CoreDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CoreDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    CoreDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

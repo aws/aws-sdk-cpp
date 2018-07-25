@@ -37,7 +37,7 @@ Aws::String InvalidateProjectCacheRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection InvalidateProjectCacheRequest::GetRequestSpecificHeaders() const

@@ -37,10 +37,10 @@ DescribeAccountAttributesResult::DescribeAccountAttributesResult(const Aws::Amaz
 
 DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountQuotas"))
   {
-    Array<JsonValue> accountQuotasJsonList = jsonValue.GetArray("AccountQuotas");
+    Array<JsonView> accountQuotasJsonList = jsonValue.GetArray("AccountQuotas");
     for(unsigned accountQuotasIndex = 0; accountQuotasIndex < accountQuotasJsonList.GetLength(); ++accountQuotasIndex)
     {
       m_accountQuotas.push_back(accountQuotasJsonList[accountQuotasIndex].AsObject());

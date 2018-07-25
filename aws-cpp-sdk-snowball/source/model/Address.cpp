@@ -47,7 +47,7 @@ Address::Address() :
 {
 }
 
-Address::Address(const JsonValue& jsonValue) : 
+Address::Address(JsonView jsonValue) : 
     m_addressIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_companyHasBeenSet(false),
@@ -67,7 +67,7 @@ Address::Address(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Address& Address::operator =(const JsonValue& jsonValue)
+Address& Address::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AddressId"))
   {

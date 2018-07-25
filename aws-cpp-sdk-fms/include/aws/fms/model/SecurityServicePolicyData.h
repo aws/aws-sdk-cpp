@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace FMS
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     SecurityServicePolicyData();
-    SecurityServicePolicyData(const Aws::Utils::Json::JsonValue& jsonValue);
-    SecurityServicePolicyData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SecurityServicePolicyData(Aws::Utils::Json::JsonView jsonValue);
+    SecurityServicePolicyData& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

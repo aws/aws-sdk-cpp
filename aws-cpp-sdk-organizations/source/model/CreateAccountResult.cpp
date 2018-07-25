@@ -37,7 +37,7 @@ CreateAccountResult::CreateAccountResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateAccountResult& CreateAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CreateAccountStatus"))
   {
     m_createAccountStatus = jsonValue.GetObject("CreateAccountStatus");

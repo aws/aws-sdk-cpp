@@ -34,14 +34,14 @@ ResponseResourceMetricKey::ResponseResourceMetricKey() :
 {
 }
 
-ResponseResourceMetricKey::ResponseResourceMetricKey(const JsonValue& jsonValue) : 
+ResponseResourceMetricKey::ResponseResourceMetricKey(JsonView jsonValue) : 
     m_metricHasBeenSet(false),
     m_dimensionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResponseResourceMetricKey& ResponseResourceMetricKey::operator =(const JsonValue& jsonValue)
+ResponseResourceMetricKey& ResponseResourceMetricKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Metric"))
   {
@@ -52,7 +52,7 @@ ResponseResourceMetricKey& ResponseResourceMetricKey::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Aws::Map<Aws::String, JsonValue> dimensionsJsonMap = jsonValue.GetObject("Dimensions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> dimensionsJsonMap = jsonValue.GetObject("Dimensions").GetAllObjects();
     for(auto& dimensionsItem : dimensionsJsonMap)
     {
       m_dimensions[dimensionsItem.first] = dimensionsItem.second.AsString();

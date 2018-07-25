@@ -34,14 +34,14 @@ InstanceNetworking::InstanceNetworking() :
 {
 }
 
-InstanceNetworking::InstanceNetworking(const JsonValue& jsonValue) : 
+InstanceNetworking::InstanceNetworking(JsonView jsonValue) : 
     m_monthlyTransferHasBeenSet(false),
     m_portsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceNetworking& InstanceNetworking::operator =(const JsonValue& jsonValue)
+InstanceNetworking& InstanceNetworking::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("monthlyTransfer"))
   {
@@ -52,7 +52,7 @@ InstanceNetworking& InstanceNetworking::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ports"))
   {
-    Array<JsonValue> portsJsonList = jsonValue.GetArray("ports");
+    Array<JsonView> portsJsonList = jsonValue.GetArray("ports");
     for(unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex)
     {
       m_ports.push_back(portsJsonList[portsIndex].AsObject());

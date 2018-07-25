@@ -35,7 +35,7 @@ MFAOptionType::MFAOptionType() :
 {
 }
 
-MFAOptionType::MFAOptionType(const JsonValue& jsonValue) : 
+MFAOptionType::MFAOptionType(JsonView jsonValue) : 
     m_deliveryMedium(DeliveryMediumType::NOT_SET),
     m_deliveryMediumHasBeenSet(false),
     m_attributeNameHasBeenSet(false)
@@ -43,7 +43,7 @@ MFAOptionType::MFAOptionType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MFAOptionType& MFAOptionType::operator =(const JsonValue& jsonValue)
+MFAOptionType& MFAOptionType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeliveryMedium"))
   {

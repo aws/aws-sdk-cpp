@@ -48,7 +48,7 @@ Lag::Lag() :
 {
 }
 
-Lag::Lag(const JsonValue& jsonValue) : 
+Lag::Lag(JsonView jsonValue) : 
     m_connectionsBandwidthHasBeenSet(false),
     m_numberOfConnections(0),
     m_numberOfConnectionsHasBeenSet(false),
@@ -69,7 +69,7 @@ Lag::Lag(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Lag& Lag::operator =(const JsonValue& jsonValue)
+Lag& Lag::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("connectionsBandwidth"))
   {
@@ -143,7 +143,7 @@ Lag& Lag::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("connections"))
   {
-    Array<JsonValue> connectionsJsonList = jsonValue.GetArray("connections");
+    Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
     for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
     {
       m_connections.push_back(connectionsJsonList[connectionsIndex].AsObject());

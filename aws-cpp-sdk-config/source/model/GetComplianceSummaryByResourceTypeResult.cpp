@@ -37,10 +37,10 @@ GetComplianceSummaryByResourceTypeResult::GetComplianceSummaryByResourceTypeResu
 
 GetComplianceSummaryByResourceTypeResult& GetComplianceSummaryByResourceTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceSummariesByResourceType"))
   {
-    Array<JsonValue> complianceSummariesByResourceTypeJsonList = jsonValue.GetArray("ComplianceSummariesByResourceType");
+    Array<JsonView> complianceSummariesByResourceTypeJsonList = jsonValue.GetArray("ComplianceSummariesByResourceType");
     for(unsigned complianceSummariesByResourceTypeIndex = 0; complianceSummariesByResourceTypeIndex < complianceSummariesByResourceTypeJsonList.GetLength(); ++complianceSummariesByResourceTypeIndex)
     {
       m_complianceSummariesByResourceType.push_back(complianceSummariesByResourceTypeJsonList[complianceSummariesByResourceTypeIndex].AsObject());

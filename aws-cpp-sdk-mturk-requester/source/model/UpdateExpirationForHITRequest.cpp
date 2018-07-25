@@ -43,7 +43,7 @@ Aws::String UpdateExpirationForHITRequest::SerializePayload() const
    payload.WithDouble("ExpireAt", m_expireAt.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateExpirationForHITRequest::GetRequestSpecificHeaders() const

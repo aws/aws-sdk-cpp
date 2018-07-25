@@ -37,7 +37,7 @@ CreateCommentResult::CreateCommentResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateCommentResult& CreateCommentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Comment"))
   {
     m_comment = jsonValue.GetObject("Comment");

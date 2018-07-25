@@ -37,10 +37,10 @@ DescribeEnvironmentsResult::DescribeEnvironmentsResult(const Aws::AmazonWebServi
 
 DescribeEnvironmentsResult& DescribeEnvironmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("environments"))
   {
-    Array<JsonValue> environmentsJsonList = jsonValue.GetArray("environments");
+    Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
     for(unsigned environmentsIndex = 0; environmentsIndex < environmentsJsonList.GetLength(); ++environmentsIndex)
     {
       m_environments.push_back(environmentsJsonList[environmentsIndex].AsObject());

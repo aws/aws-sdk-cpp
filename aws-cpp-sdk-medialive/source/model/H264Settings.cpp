@@ -102,7 +102,7 @@ H264Settings::H264Settings() :
 {
 }
 
-H264Settings::H264Settings(const JsonValue& jsonValue) : 
+H264Settings::H264Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(H264AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
     m_afdSignaling(AfdSignaling::NOT_SET),
@@ -177,7 +177,7 @@ H264Settings::H264Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-H264Settings& H264Settings::operator =(const JsonValue& jsonValue)
+H264Settings& H264Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adaptiveQuantization"))
   {

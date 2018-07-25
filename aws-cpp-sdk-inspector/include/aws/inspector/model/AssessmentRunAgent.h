@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     AssessmentRunAgent();
-    AssessmentRunAgent(const Aws::Utils::Json::JsonValue& jsonValue);
-    AssessmentRunAgent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AssessmentRunAgent(Aws::Utils::Json::JsonView jsonValue);
+    AssessmentRunAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -43,7 +43,7 @@ RDSInstanceDetails::RDSInstanceDetails() :
 {
 }
 
-RDSInstanceDetails::RDSInstanceDetails(const JsonValue& jsonValue) : 
+RDSInstanceDetails::RDSInstanceDetails(JsonView jsonValue) : 
     m_familyHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -59,7 +59,7 @@ RDSInstanceDetails::RDSInstanceDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RDSInstanceDetails& RDSInstanceDetails::operator =(const JsonValue& jsonValue)
+RDSInstanceDetails& RDSInstanceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Family"))
   {

@@ -37,7 +37,7 @@ CreateDirectoryResult::CreateDirectoryResult(const Aws::AmazonWebServiceResult<J
 
 CreateDirectoryResult& CreateDirectoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DirectoryArn"))
   {
     m_directoryArn = jsonValue.GetString("DirectoryArn");

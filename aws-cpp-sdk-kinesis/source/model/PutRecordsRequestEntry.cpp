@@ -36,7 +36,7 @@ PutRecordsRequestEntry::PutRecordsRequestEntry() :
 {
 }
 
-PutRecordsRequestEntry::PutRecordsRequestEntry(const JsonValue& jsonValue) : 
+PutRecordsRequestEntry::PutRecordsRequestEntry(JsonView jsonValue) : 
     m_dataHasBeenSet(false),
     m_explicitHashKeyHasBeenSet(false),
     m_partitionKeyHasBeenSet(false)
@@ -44,7 +44,7 @@ PutRecordsRequestEntry::PutRecordsRequestEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PutRecordsRequestEntry& PutRecordsRequestEntry::operator =(const JsonValue& jsonValue)
+PutRecordsRequestEntry& PutRecordsRequestEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Data"))
   {

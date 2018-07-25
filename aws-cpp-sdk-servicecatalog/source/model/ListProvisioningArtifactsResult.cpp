@@ -37,10 +37,10 @@ ListProvisioningArtifactsResult::ListProvisioningArtifactsResult(const Aws::Amaz
 
 ListProvisioningArtifactsResult& ListProvisioningArtifactsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisioningArtifactDetails"))
   {
-    Array<JsonValue> provisioningArtifactDetailsJsonList = jsonValue.GetArray("ProvisioningArtifactDetails");
+    Array<JsonView> provisioningArtifactDetailsJsonList = jsonValue.GetArray("ProvisioningArtifactDetails");
     for(unsigned provisioningArtifactDetailsIndex = 0; provisioningArtifactDetailsIndex < provisioningArtifactDetailsJsonList.GetLength(); ++provisioningArtifactDetailsIndex)
     {
       m_provisioningArtifactDetails.push_back(provisioningArtifactDetailsJsonList[provisioningArtifactDetailsIndex].AsObject());

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     EffectivePolicy();
-    EffectivePolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    EffectivePolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EffectivePolicy(Aws::Utils::Json::JsonView jsonValue);
+    EffectivePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -35,7 +35,7 @@ AuthorizationData::AuthorizationData() :
 {
 }
 
-AuthorizationData::AuthorizationData(const JsonValue& jsonValue) : 
+AuthorizationData::AuthorizationData(JsonView jsonValue) : 
     m_authorizationTokenHasBeenSet(false),
     m_expiresAtHasBeenSet(false),
     m_proxyEndpointHasBeenSet(false)
@@ -43,7 +43,7 @@ AuthorizationData::AuthorizationData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AuthorizationData& AuthorizationData::operator =(const JsonValue& jsonValue)
+AuthorizationData& AuthorizationData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("authorizationToken"))
   {

@@ -38,7 +38,7 @@ Aws::String StartSchemaCreationRequest::SerializePayload() const
    payload.WithString("definition", HashingUtils::Base64Encode(m_definition));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

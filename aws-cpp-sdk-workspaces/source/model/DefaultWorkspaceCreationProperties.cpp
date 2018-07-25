@@ -40,7 +40,7 @@ DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties() :
 {
 }
 
-DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(const JsonValue& jsonValue) : 
+DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(JsonView jsonValue) : 
     m_enableWorkDocs(false),
     m_enableWorkDocsHasBeenSet(false),
     m_enableInternetAccess(false),
@@ -53,7 +53,7 @@ DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(const Jso
   *this = jsonValue;
 }
 
-DefaultWorkspaceCreationProperties& DefaultWorkspaceCreationProperties::operator =(const JsonValue& jsonValue)
+DefaultWorkspaceCreationProperties& DefaultWorkspaceCreationProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EnableWorkDocs"))
   {

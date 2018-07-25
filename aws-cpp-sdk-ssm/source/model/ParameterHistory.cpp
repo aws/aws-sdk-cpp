@@ -43,7 +43,7 @@ ParameterHistory::ParameterHistory() :
 {
 }
 
-ParameterHistory::ParameterHistory(const JsonValue& jsonValue) : 
+ParameterHistory::ParameterHistory(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_type(ParameterType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -59,7 +59,7 @@ ParameterHistory::ParameterHistory(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ParameterHistory& ParameterHistory::operator =(const JsonValue& jsonValue)
+ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

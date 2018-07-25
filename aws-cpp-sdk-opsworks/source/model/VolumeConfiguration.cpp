@@ -44,7 +44,7 @@ VolumeConfiguration::VolumeConfiguration() :
 {
 }
 
-VolumeConfiguration::VolumeConfiguration(const JsonValue& jsonValue) : 
+VolumeConfiguration::VolumeConfiguration(JsonView jsonValue) : 
     m_mountPointHasBeenSet(false),
     m_raidLevel(0),
     m_raidLevelHasBeenSet(false),
@@ -61,7 +61,7 @@ VolumeConfiguration::VolumeConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VolumeConfiguration& VolumeConfiguration::operator =(const JsonValue& jsonValue)
+VolumeConfiguration& VolumeConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MountPoint"))
   {

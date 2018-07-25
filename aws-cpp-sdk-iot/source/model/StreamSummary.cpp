@@ -37,7 +37,7 @@ StreamSummary::StreamSummary() :
 {
 }
 
-StreamSummary::StreamSummary(const JsonValue& jsonValue) : 
+StreamSummary::StreamSummary(JsonView jsonValue) : 
     m_streamIdHasBeenSet(false),
     m_streamArnHasBeenSet(false),
     m_streamVersion(0),
@@ -47,7 +47,7 @@ StreamSummary::StreamSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamSummary& StreamSummary::operator =(const JsonValue& jsonValue)
+StreamSummary& StreamSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("streamId"))
   {

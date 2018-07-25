@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ParquetSerDe();
-    ParquetSerDe(const Aws::Utils::Json::JsonValue& jsonValue);
-    ParquetSerDe& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ParquetSerDe(Aws::Utils::Json::JsonView jsonValue);
+    ParquetSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

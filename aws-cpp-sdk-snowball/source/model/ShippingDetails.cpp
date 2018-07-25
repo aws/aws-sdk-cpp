@@ -36,7 +36,7 @@ ShippingDetails::ShippingDetails() :
 {
 }
 
-ShippingDetails::ShippingDetails(const JsonValue& jsonValue) : 
+ShippingDetails::ShippingDetails(JsonView jsonValue) : 
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
     m_inboundShipmentHasBeenSet(false),
@@ -45,7 +45,7 @@ ShippingDetails::ShippingDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ShippingDetails& ShippingDetails::operator =(const JsonValue& jsonValue)
+ShippingDetails& ShippingDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ShippingOption"))
   {

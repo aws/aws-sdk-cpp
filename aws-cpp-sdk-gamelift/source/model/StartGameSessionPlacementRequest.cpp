@@ -102,7 +102,7 @@ Aws::String StartGameSessionPlacementRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartGameSessionPlacementRequest::GetRequestSpecificHeaders() const

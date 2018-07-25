@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     RepositoryTrigger();
-    RepositoryTrigger(const Aws::Utils::Json::JsonValue& jsonValue);
-    RepositoryTrigger& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RepositoryTrigger(Aws::Utils::Json::JsonView jsonValue);
+    RepositoryTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

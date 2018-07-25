@@ -36,7 +36,7 @@ ClassificationType::ClassificationType() :
 {
 }
 
-ClassificationType::ClassificationType(const JsonValue& jsonValue) : 
+ClassificationType::ClassificationType(JsonView jsonValue) : 
     m_oneTime(S3OneTimeClassificationType::NOT_SET),
     m_oneTimeHasBeenSet(false),
     m_continuous(S3ContinuousClassificationType::NOT_SET),
@@ -45,7 +45,7 @@ ClassificationType::ClassificationType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ClassificationType& ClassificationType::operator =(const JsonValue& jsonValue)
+ClassificationType& ClassificationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("oneTime"))
   {

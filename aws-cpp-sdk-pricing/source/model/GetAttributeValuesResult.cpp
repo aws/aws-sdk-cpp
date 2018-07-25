@@ -37,10 +37,10 @@ GetAttributeValuesResult::GetAttributeValuesResult(const Aws::AmazonWebServiceRe
 
 GetAttributeValuesResult& GetAttributeValuesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AttributeValues"))
   {
-    Array<JsonValue> attributeValuesJsonList = jsonValue.GetArray("AttributeValues");
+    Array<JsonView> attributeValuesJsonList = jsonValue.GetArray("AttributeValues");
     for(unsigned attributeValuesIndex = 0; attributeValuesIndex < attributeValuesJsonList.GetLength(); ++attributeValuesIndex)
     {
       m_attributeValues.push_back(attributeValuesJsonList[attributeValuesIndex].AsObject());

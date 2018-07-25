@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     InstanceInformation();
-    InstanceInformation(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceInformation(Aws::Utils::Json::JsonView jsonValue);
+    InstanceInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

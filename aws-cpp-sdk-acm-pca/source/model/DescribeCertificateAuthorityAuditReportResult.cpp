@@ -39,7 +39,7 @@ DescribeCertificateAuthorityAuditReportResult::DescribeCertificateAuthorityAudit
 
 DescribeCertificateAuthorityAuditReportResult& DescribeCertificateAuthorityAuditReportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AuditReportStatus"))
   {
     m_auditReportStatus = AuditReportStatusMapper::GetAuditReportStatusForName(jsonValue.GetString("AuditReportStatus"));

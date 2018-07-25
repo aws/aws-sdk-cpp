@@ -37,7 +37,7 @@ CreateExclusionsPreviewResult::CreateExclusionsPreviewResult(const Aws::AmazonWe
 
 CreateExclusionsPreviewResult& CreateExclusionsPreviewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("previewToken"))
   {
     m_previewToken = jsonValue.GetString("previewToken");

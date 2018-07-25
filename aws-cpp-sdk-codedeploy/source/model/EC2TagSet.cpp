@@ -33,20 +33,20 @@ EC2TagSet::EC2TagSet() :
 {
 }
 
-EC2TagSet::EC2TagSet(const JsonValue& jsonValue) : 
+EC2TagSet::EC2TagSet(JsonView jsonValue) : 
     m_ec2TagSetListHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EC2TagSet& EC2TagSet::operator =(const JsonValue& jsonValue)
+EC2TagSet& EC2TagSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ec2TagSetList"))
   {
-    Array<JsonValue> ec2TagSetListJsonList = jsonValue.GetArray("ec2TagSetList");
+    Array<JsonView> ec2TagSetListJsonList = jsonValue.GetArray("ec2TagSetList");
     for(unsigned ec2TagSetListIndex = 0; ec2TagSetListIndex < ec2TagSetListJsonList.GetLength(); ++ec2TagSetListIndex)
     {
-      Array<JsonValue> eC2TagFilterListJsonList = ec2TagSetListJsonList[ec2TagSetListIndex].AsArray();
+      Array<JsonView> eC2TagFilterListJsonList = ec2TagSetListJsonList[ec2TagSetListIndex].AsArray();
       Aws::Vector<EC2TagFilter> eC2TagFilterListList;
       eC2TagFilterListList.reserve((size_t)eC2TagFilterListJsonList.GetLength());
       for(unsigned eC2TagFilterListIndex = 0; eC2TagFilterListIndex < eC2TagFilterListJsonList.GetLength(); ++eC2TagFilterListIndex)

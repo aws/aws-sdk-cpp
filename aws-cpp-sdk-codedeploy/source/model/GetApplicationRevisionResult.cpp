@@ -37,7 +37,7 @@ GetApplicationRevisionResult::GetApplicationRevisionResult(const Aws::AmazonWebS
 
 GetApplicationRevisionResult& GetApplicationRevisionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");

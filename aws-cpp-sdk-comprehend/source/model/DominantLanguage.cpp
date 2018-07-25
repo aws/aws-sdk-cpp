@@ -35,7 +35,7 @@ DominantLanguage::DominantLanguage() :
 {
 }
 
-DominantLanguage::DominantLanguage(const JsonValue& jsonValue) : 
+DominantLanguage::DominantLanguage(JsonView jsonValue) : 
     m_languageCodeHasBeenSet(false),
     m_score(0.0),
     m_scoreHasBeenSet(false)
@@ -43,7 +43,7 @@ DominantLanguage::DominantLanguage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DominantLanguage& DominantLanguage::operator =(const JsonValue& jsonValue)
+DominantLanguage& DominantLanguage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LanguageCode"))
   {

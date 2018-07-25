@@ -35,7 +35,7 @@ ParameterStringFilter::ParameterStringFilter() :
 {
 }
 
-ParameterStringFilter::ParameterStringFilter(const JsonValue& jsonValue) : 
+ParameterStringFilter::ParameterStringFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_optionHasBeenSet(false),
     m_valuesHasBeenSet(false)
@@ -43,7 +43,7 @@ ParameterStringFilter::ParameterStringFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ParameterStringFilter& ParameterStringFilter::operator =(const JsonValue& jsonValue)
+ParameterStringFilter& ParameterStringFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -61,7 +61,7 @@ ParameterStringFilter& ParameterStringFilter::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

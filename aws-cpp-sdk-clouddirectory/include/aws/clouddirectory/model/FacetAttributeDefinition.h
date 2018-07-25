@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     FacetAttributeDefinition();
-    FacetAttributeDefinition(const Aws::Utils::Json::JsonValue& jsonValue);
-    FacetAttributeDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FacetAttributeDefinition(Aws::Utils::Json::JsonView jsonValue);
+    FacetAttributeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

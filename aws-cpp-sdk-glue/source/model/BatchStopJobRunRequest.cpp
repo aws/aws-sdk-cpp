@@ -49,7 +49,7 @@ Aws::String BatchStopJobRunRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchStopJobRunRequest::GetRequestSpecificHeaders() const

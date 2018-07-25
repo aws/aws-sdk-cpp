@@ -38,7 +38,7 @@ EvaluationResult::EvaluationResult() :
 {
 }
 
-EvaluationResult::EvaluationResult(const JsonValue& jsonValue) : 
+EvaluationResult::EvaluationResult(JsonView jsonValue) : 
     m_complianceStatus(PolicyComplianceStatusType::NOT_SET),
     m_complianceStatusHasBeenSet(false),
     m_violatorCount(0),
@@ -49,7 +49,7 @@ EvaluationResult::EvaluationResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EvaluationResult& EvaluationResult::operator =(const JsonValue& jsonValue)
+EvaluationResult& EvaluationResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceStatus"))
   {

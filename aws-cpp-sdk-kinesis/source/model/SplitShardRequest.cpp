@@ -51,7 +51,7 @@ Aws::String SplitShardRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SplitShardRequest::GetRequestSpecificHeaders() const

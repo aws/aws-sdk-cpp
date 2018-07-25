@@ -101,7 +101,7 @@ Aws::String DescribeCasesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeCasesRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ ListSpeechSynthesisTasksResult::ListSpeechSynthesisTasksResult(const Aws::Amazon
 
 ListSpeechSynthesisTasksResult& ListSpeechSynthesisTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ ListSpeechSynthesisTasksResult& ListSpeechSynthesisTasksResult::operator =(const
 
   if(jsonValue.ValueExists("SynthesisTasks"))
   {
-    Array<JsonValue> synthesisTasksJsonList = jsonValue.GetArray("SynthesisTasks");
+    Array<JsonView> synthesisTasksJsonList = jsonValue.GetArray("SynthesisTasks");
     for(unsigned synthesisTasksIndex = 0; synthesisTasksIndex < synthesisTasksJsonList.GetLength(); ++synthesisTasksIndex)
     {
       m_synthesisTasks.push_back(synthesisTasksJsonList[synthesisTasksIndex].AsObject());

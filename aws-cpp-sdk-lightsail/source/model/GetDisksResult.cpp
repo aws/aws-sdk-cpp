@@ -37,10 +37,10 @@ GetDisksResult::GetDisksResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 GetDisksResult& GetDisksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("disks"))
   {
-    Array<JsonValue> disksJsonList = jsonValue.GetArray("disks");
+    Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
     for(unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex)
     {
       m_disks.push_back(disksJsonList[disksIndex].AsObject());

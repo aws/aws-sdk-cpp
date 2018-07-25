@@ -41,10 +41,10 @@ ListIdentityPoolUsageResult::ListIdentityPoolUsageResult(const Aws::AmazonWebSer
 
 ListIdentityPoolUsageResult& ListIdentityPoolUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityPoolUsages"))
   {
-    Array<JsonValue> identityPoolUsagesJsonList = jsonValue.GetArray("IdentityPoolUsages");
+    Array<JsonView> identityPoolUsagesJsonList = jsonValue.GetArray("IdentityPoolUsages");
     for(unsigned identityPoolUsagesIndex = 0; identityPoolUsagesIndex < identityPoolUsagesJsonList.GetLength(); ++identityPoolUsagesIndex)
     {
       m_identityPoolUsages.push_back(identityPoolUsagesJsonList[identityPoolUsagesIndex].AsObject());

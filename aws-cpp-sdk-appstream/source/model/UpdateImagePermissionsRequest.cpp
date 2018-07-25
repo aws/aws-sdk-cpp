@@ -51,7 +51,7 @@ Aws::String UpdateImagePermissionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateImagePermissionsRequest::GetRequestSpecificHeaders() const

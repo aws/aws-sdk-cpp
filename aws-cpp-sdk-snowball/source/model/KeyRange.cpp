@@ -34,14 +34,14 @@ KeyRange::KeyRange() :
 {
 }
 
-KeyRange::KeyRange(const JsonValue& jsonValue) : 
+KeyRange::KeyRange(JsonView jsonValue) : 
     m_beginMarkerHasBeenSet(false),
     m_endMarkerHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KeyRange& KeyRange::operator =(const JsonValue& jsonValue)
+KeyRange& KeyRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BeginMarker"))
   {

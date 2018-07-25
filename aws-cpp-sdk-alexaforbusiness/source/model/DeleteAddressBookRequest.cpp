@@ -37,7 +37,7 @@ Aws::String DeleteAddressBookRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteAddressBookRequest::GetRequestSpecificHeaders() const

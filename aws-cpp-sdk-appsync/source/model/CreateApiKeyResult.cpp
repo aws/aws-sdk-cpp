@@ -37,7 +37,7 @@ CreateApiKeyResult::CreateApiKeyResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CreateApiKeyResult& CreateApiKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("apiKey"))
   {
     m_apiKey = jsonValue.GetObject("apiKey");

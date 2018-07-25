@@ -52,7 +52,7 @@ Aws::String ListGlobalTablesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListGlobalTablesRequest::GetRequestSpecificHeaders() const

@@ -49,7 +49,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteTagsRequest::GetRequestSpecificHeaders() const

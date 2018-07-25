@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ProvisionedThroughputDescription();
-    ProvisionedThroughputDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProvisionedThroughputDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProvisionedThroughputDescription(Aws::Utils::Json::JsonView jsonValue);
+    ProvisionedThroughputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

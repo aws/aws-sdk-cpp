@@ -38,7 +38,7 @@ Node::Node() :
 {
 }
 
-Node::Node(const JsonValue& jsonValue) : 
+Node::Node(JsonView jsonValue) : 
     m_nodeIdHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_nodeCreateTimeHasBeenSet(false),
@@ -49,7 +49,7 @@ Node::Node(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Node& Node::operator =(const JsonValue& jsonValue)
+Node& Node::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NodeId"))
   {

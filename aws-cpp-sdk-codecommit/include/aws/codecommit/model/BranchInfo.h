@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     BranchInfo();
-    BranchInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    BranchInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BranchInfo(Aws::Utils::Json::JsonView jsonValue);
+    BranchInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

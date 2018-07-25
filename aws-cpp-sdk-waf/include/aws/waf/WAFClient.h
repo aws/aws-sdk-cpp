@@ -112,11 +112,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth

@@ -45,7 +45,7 @@ Aws::String DeleteFileShareRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteFileShareRequest::GetRequestSpecificHeaders() const

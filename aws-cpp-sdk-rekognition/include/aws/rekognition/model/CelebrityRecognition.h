@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     CelebrityRecognition();
-    CelebrityRecognition(const Aws::Utils::Json::JsonValue& jsonValue);
-    CelebrityRecognition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CelebrityRecognition(Aws::Utils::Json::JsonView jsonValue);
+    CelebrityRecognition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

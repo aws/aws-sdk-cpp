@@ -36,7 +36,7 @@ InstanceFleetStatus::InstanceFleetStatus() :
 {
 }
 
-InstanceFleetStatus::InstanceFleetStatus(const JsonValue& jsonValue) : 
+InstanceFleetStatus::InstanceFleetStatus(JsonView jsonValue) : 
     m_state(InstanceFleetState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
@@ -45,7 +45,7 @@ InstanceFleetStatus::InstanceFleetStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceFleetStatus& InstanceFleetStatus::operator =(const JsonValue& jsonValue)
+InstanceFleetStatus& InstanceFleetStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("State"))
   {

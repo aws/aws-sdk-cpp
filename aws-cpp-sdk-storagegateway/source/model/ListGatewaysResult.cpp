@@ -37,10 +37,10 @@ ListGatewaysResult::ListGatewaysResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListGatewaysResult& ListGatewaysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Gateways"))
   {
-    Array<JsonValue> gatewaysJsonList = jsonValue.GetArray("Gateways");
+    Array<JsonView> gatewaysJsonList = jsonValue.GetArray("Gateways");
     for(unsigned gatewaysIndex = 0; gatewaysIndex < gatewaysJsonList.GetLength(); ++gatewaysIndex)
     {
       m_gateways.push_back(gatewaysJsonList[gatewaysIndex].AsObject());

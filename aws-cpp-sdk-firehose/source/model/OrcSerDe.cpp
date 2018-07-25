@@ -51,7 +51,7 @@ OrcSerDe::OrcSerDe() :
 {
 }
 
-OrcSerDe::OrcSerDe(const JsonValue& jsonValue) : 
+OrcSerDe::OrcSerDe(JsonView jsonValue) : 
     m_stripeSizeBytes(0),
     m_stripeSizeBytesHasBeenSet(false),
     m_blockSizeBytes(0),
@@ -75,7 +75,7 @@ OrcSerDe::OrcSerDe(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OrcSerDe& OrcSerDe::operator =(const JsonValue& jsonValue)
+OrcSerDe& OrcSerDe::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StripeSizeBytes"))
   {
@@ -121,7 +121,7 @@ OrcSerDe& OrcSerDe::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("BloomFilterColumns"))
   {
-    Array<JsonValue> bloomFilterColumnsJsonList = jsonValue.GetArray("BloomFilterColumns");
+    Array<JsonView> bloomFilterColumnsJsonList = jsonValue.GetArray("BloomFilterColumns");
     for(unsigned bloomFilterColumnsIndex = 0; bloomFilterColumnsIndex < bloomFilterColumnsJsonList.GetLength(); ++bloomFilterColumnsIndex)
     {
       m_bloomFilterColumns.push_back(bloomFilterColumnsJsonList[bloomFilterColumnsIndex].AsString());

@@ -37,10 +37,10 @@ CancelStepsResult::CancelStepsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CancelStepsResult& CancelStepsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CancelStepsInfoList"))
   {
-    Array<JsonValue> cancelStepsInfoListJsonList = jsonValue.GetArray("CancelStepsInfoList");
+    Array<JsonView> cancelStepsInfoListJsonList = jsonValue.GetArray("CancelStepsInfoList");
     for(unsigned cancelStepsInfoListIndex = 0; cancelStepsInfoListIndex < cancelStepsInfoListJsonList.GetLength(); ++cancelStepsInfoListIndex)
     {
       m_cancelStepsInfoList.push_back(cancelStepsInfoListJsonList[cancelStepsInfoListIndex].AsObject());

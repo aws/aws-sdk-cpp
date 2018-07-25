@@ -34,14 +34,14 @@ Ec2AmiResource::Ec2AmiResource() :
 {
 }
 
-Ec2AmiResource::Ec2AmiResource(const JsonValue& jsonValue) : 
+Ec2AmiResource::Ec2AmiResource(JsonView jsonValue) : 
     m_amiIdHasBeenSet(false),
     m_snowballAmiIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Ec2AmiResource& Ec2AmiResource::operator =(const JsonValue& jsonValue)
+Ec2AmiResource& Ec2AmiResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AmiId"))
   {

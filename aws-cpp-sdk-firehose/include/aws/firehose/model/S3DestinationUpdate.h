@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     S3DestinationUpdate();
-    S3DestinationUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3DestinationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3DestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    S3DestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

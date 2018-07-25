@@ -37,7 +37,7 @@ ListLocalDisksResult::ListLocalDisksResult(const Aws::AmazonWebServiceResult<Jso
 
 ListLocalDisksResult& ListLocalDisksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
@@ -46,7 +46,7 @@ ListLocalDisksResult& ListLocalDisksResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Disks"))
   {
-    Array<JsonValue> disksJsonList = jsonValue.GetArray("Disks");
+    Array<JsonView> disksJsonList = jsonValue.GetArray("Disks");
     for(unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex)
     {
       m_disks.push_back(disksJsonList[disksIndex].AsObject());

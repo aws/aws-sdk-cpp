@@ -33,13 +33,13 @@ DnsProperties::DnsProperties() :
 {
 }
 
-DnsProperties::DnsProperties(const JsonValue& jsonValue) : 
+DnsProperties::DnsProperties(JsonView jsonValue) : 
     m_hostedZoneIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DnsProperties& DnsProperties::operator =(const JsonValue& jsonValue)
+DnsProperties& DnsProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("HostedZoneId"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     CanarySettings();
-    CanarySettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    CanarySettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CanarySettings(Aws::Utils::Json::JsonView jsonValue);
+    CanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

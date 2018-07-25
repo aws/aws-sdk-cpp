@@ -37,7 +37,7 @@ RegisterEcsClusterResult::RegisterEcsClusterResult(const Aws::AmazonWebServiceRe
 
 RegisterEcsClusterResult& RegisterEcsClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EcsClusterArn"))
   {
     m_ecsClusterArn = jsonValue.GetString("EcsClusterArn");

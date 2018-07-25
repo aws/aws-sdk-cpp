@@ -35,7 +35,7 @@ Device::Device() :
 {
 }
 
-Device::Device(const JsonValue& jsonValue) : 
+Device::Device(JsonView jsonValue) : 
     m_hostPathHasBeenSet(false),
     m_containerPathHasBeenSet(false),
     m_permissionsHasBeenSet(false)
@@ -43,7 +43,7 @@ Device::Device(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Device& Device::operator =(const JsonValue& jsonValue)
+Device& Device::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("hostPath"))
   {
@@ -61,7 +61,7 @@ Device& Device::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("permissions"))
   {
-    Array<JsonValue> permissionsJsonList = jsonValue.GetArray("permissions");
+    Array<JsonView> permissionsJsonList = jsonValue.GetArray("permissions");
     for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
     {
       m_permissions.push_back(DeviceCgroupPermissionMapper::GetDeviceCgroupPermissionForName(permissionsJsonList[permissionsIndex].AsString()));

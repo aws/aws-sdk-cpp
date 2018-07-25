@@ -49,7 +49,7 @@ ProvisionedProductPlanDetails::ProvisionedProductPlanDetails() :
 {
 }
 
-ProvisionedProductPlanDetails::ProvisionedProductPlanDetails(const JsonValue& jsonValue) : 
+ProvisionedProductPlanDetails::ProvisionedProductPlanDetails(JsonView jsonValue) : 
     m_createdTimeHasBeenSet(false),
     m_pathIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
@@ -71,7 +71,7 @@ ProvisionedProductPlanDetails::ProvisionedProductPlanDetails(const JsonValue& js
   *this = jsonValue;
 }
 
-ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(const JsonValue& jsonValue)
+ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreatedTime"))
   {
@@ -152,7 +152,7 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(const J
 
   if(jsonValue.ValueExists("NotificationArns"))
   {
-    Array<JsonValue> notificationArnsJsonList = jsonValue.GetArray("NotificationArns");
+    Array<JsonView> notificationArnsJsonList = jsonValue.GetArray("NotificationArns");
     for(unsigned notificationArnsIndex = 0; notificationArnsIndex < notificationArnsJsonList.GetLength(); ++notificationArnsIndex)
     {
       m_notificationArns.push_back(notificationArnsJsonList[notificationArnsIndex].AsString());
@@ -162,7 +162,7 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(const J
 
   if(jsonValue.ValueExists("ProvisioningParameters"))
   {
-    Array<JsonValue> provisioningParametersJsonList = jsonValue.GetArray("ProvisioningParameters");
+    Array<JsonView> provisioningParametersJsonList = jsonValue.GetArray("ProvisioningParameters");
     for(unsigned provisioningParametersIndex = 0; provisioningParametersIndex < provisioningParametersJsonList.GetLength(); ++provisioningParametersIndex)
     {
       m_provisioningParameters.push_back(provisioningParametersJsonList[provisioningParametersIndex].AsObject());
@@ -172,7 +172,7 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(const J
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

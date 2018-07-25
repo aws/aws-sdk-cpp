@@ -35,7 +35,7 @@ Subscriber::Subscriber() :
 {
 }
 
-Subscriber::Subscriber(const JsonValue& jsonValue) : 
+Subscriber::Subscriber(JsonView jsonValue) : 
     m_subscriptionType(SubscriptionType::NOT_SET),
     m_subscriptionTypeHasBeenSet(false),
     m_addressHasBeenSet(false)
@@ -43,7 +43,7 @@ Subscriber::Subscriber(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Subscriber& Subscriber::operator =(const JsonValue& jsonValue)
+Subscriber& Subscriber::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SubscriptionType"))
   {

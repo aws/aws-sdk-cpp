@@ -37,7 +37,7 @@ ListCreatedArtifactsResult::ListCreatedArtifactsResult(const Aws::AmazonWebServi
 
 ListCreatedArtifactsResult& ListCreatedArtifactsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ ListCreatedArtifactsResult& ListCreatedArtifactsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("CreatedArtifactList"))
   {
-    Array<JsonValue> createdArtifactListJsonList = jsonValue.GetArray("CreatedArtifactList");
+    Array<JsonView> createdArtifactListJsonList = jsonValue.GetArray("CreatedArtifactList");
     for(unsigned createdArtifactListIndex = 0; createdArtifactListIndex < createdArtifactListJsonList.GetLength(); ++createdArtifactListIndex)
     {
       m_createdArtifactList.push_back(createdArtifactListJsonList[createdArtifactListIndex].AsObject());

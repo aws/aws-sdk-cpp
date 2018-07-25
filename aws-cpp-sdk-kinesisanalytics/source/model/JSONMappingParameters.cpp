@@ -33,13 +33,13 @@ JSONMappingParameters::JSONMappingParameters() :
 {
 }
 
-JSONMappingParameters::JSONMappingParameters(const JsonValue& jsonValue) : 
+JSONMappingParameters::JSONMappingParameters(JsonView jsonValue) : 
     m_recordRowPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JSONMappingParameters& JSONMappingParameters::operator =(const JsonValue& jsonValue)
+JSONMappingParameters& JSONMappingParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RecordRowPath"))
   {

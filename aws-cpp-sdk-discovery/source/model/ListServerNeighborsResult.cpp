@@ -39,10 +39,10 @@ ListServerNeighborsResult::ListServerNeighborsResult(const Aws::AmazonWebService
 
 ListServerNeighborsResult& ListServerNeighborsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("neighbors"))
   {
-    Array<JsonValue> neighborsJsonList = jsonValue.GetArray("neighbors");
+    Array<JsonView> neighborsJsonList = jsonValue.GetArray("neighbors");
     for(unsigned neighborsIndex = 0; neighborsIndex < neighborsJsonList.GetLength(); ++neighborsIndex)
     {
       m_neighbors.push_back(neighborsJsonList[neighborsIndex].AsObject());

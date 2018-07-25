@@ -39,7 +39,7 @@ EvaluationResult::EvaluationResult() :
 {
 }
 
-EvaluationResult::EvaluationResult(const JsonValue& jsonValue) : 
+EvaluationResult::EvaluationResult(JsonView jsonValue) : 
     m_evaluationResultIdentifierHasBeenSet(false),
     m_complianceType(ComplianceType::NOT_SET),
     m_complianceTypeHasBeenSet(false),
@@ -51,7 +51,7 @@ EvaluationResult::EvaluationResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EvaluationResult& EvaluationResult::operator =(const JsonValue& jsonValue)
+EvaluationResult& EvaluationResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EvaluationResultIdentifier"))
   {

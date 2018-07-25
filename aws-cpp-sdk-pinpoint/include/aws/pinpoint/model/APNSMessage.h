@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     APNSMessage();
-    APNSMessage(const Aws::Utils::Json::JsonValue& jsonValue);
-    APNSMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    APNSMessage(Aws::Utils::Json::JsonView jsonValue);
+    APNSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

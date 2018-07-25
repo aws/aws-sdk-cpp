@@ -34,14 +34,14 @@ RepublishAction::RepublishAction() :
 {
 }
 
-RepublishAction::RepublishAction(const JsonValue& jsonValue) : 
+RepublishAction::RepublishAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_topicHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RepublishAction& RepublishAction::operator =(const JsonValue& jsonValue)
+RepublishAction& RepublishAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

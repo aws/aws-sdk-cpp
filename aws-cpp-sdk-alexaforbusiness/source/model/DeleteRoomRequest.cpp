@@ -37,7 +37,7 @@ Aws::String DeleteRoomRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteRoomRequest::GetRequestSpecificHeaders() const

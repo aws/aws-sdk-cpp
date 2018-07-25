@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     ByteMatchTuple();
-    ByteMatchTuple(const Aws::Utils::Json::JsonValue& jsonValue);
-    ByteMatchTuple& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ByteMatchTuple(Aws::Utils::Json::JsonView jsonValue);
+    ByteMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

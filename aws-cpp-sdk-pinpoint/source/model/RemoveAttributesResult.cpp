@@ -37,7 +37,7 @@ RemoveAttributesResult::RemoveAttributesResult(const Aws::AmazonWebServiceResult
 
 RemoveAttributesResult& RemoveAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_attributesResource = jsonValue;
 
 

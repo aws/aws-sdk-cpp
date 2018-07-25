@@ -38,7 +38,7 @@ Event::Event() :
 {
 }
 
-Event::Event(const JsonValue& jsonValue) : 
+Event::Event(JsonView jsonValue) : 
     m_eventTypeHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_sessionHasBeenSet(false),
@@ -49,7 +49,7 @@ Event::Event(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Event& Event::operator =(const JsonValue& jsonValue)
+Event& Event::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventType"))
   {
@@ -81,7 +81,7 @@ Event& Event::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
@@ -91,7 +91,7 @@ Event& Event::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("metrics"))
   {
-    Aws::Map<Aws::String, JsonValue> metricsJsonMap = jsonValue.GetObject("metrics").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("metrics").GetAllObjects();
     for(auto& metricsItem : metricsJsonMap)
     {
       m_metrics[metricsItem.first] = metricsItem.second.AsDouble();

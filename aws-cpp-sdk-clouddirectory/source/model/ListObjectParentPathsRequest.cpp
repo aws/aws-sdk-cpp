@@ -54,7 +54,7 @@ Aws::String ListObjectParentPathsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListObjectParentPathsRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ EntityAggregate::EntityAggregate() :
 {
 }
 
-EntityAggregate::EntityAggregate(const JsonValue& jsonValue) : 
+EntityAggregate::EntityAggregate(JsonView jsonValue) : 
     m_eventArnHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false)
@@ -43,7 +43,7 @@ EntityAggregate::EntityAggregate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EntityAggregate& EntityAggregate::operator =(const JsonValue& jsonValue)
+EntityAggregate& EntityAggregate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventArn"))
   {

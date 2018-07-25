@@ -49,7 +49,7 @@ Aws::String RemoveTagsFromCertificateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RemoveTagsFromCertificateRequest::GetRequestSpecificHeaders() const

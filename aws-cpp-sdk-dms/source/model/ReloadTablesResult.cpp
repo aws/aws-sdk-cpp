@@ -37,7 +37,7 @@ ReloadTablesResult::ReloadTablesResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ReloadTablesResult& ReloadTablesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReplicationTaskArn"))
   {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");

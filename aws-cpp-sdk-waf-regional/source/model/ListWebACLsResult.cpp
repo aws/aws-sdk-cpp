@@ -37,7 +37,7 @@ ListWebACLsResult::ListWebACLsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListWebACLsResult& ListWebACLsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListWebACLsResult& ListWebACLsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("WebACLs"))
   {
-    Array<JsonValue> webACLsJsonList = jsonValue.GetArray("WebACLs");
+    Array<JsonView> webACLsJsonList = jsonValue.GetArray("WebACLs");
     for(unsigned webACLsIndex = 0; webACLsIndex < webACLsJsonList.GetLength(); ++webACLsIndex)
     {
       m_webACLs.push_back(webACLsJsonList[webACLsIndex].AsObject());

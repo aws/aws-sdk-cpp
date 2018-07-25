@@ -36,7 +36,7 @@ WorkspacesIpGroup::WorkspacesIpGroup() :
 {
 }
 
-WorkspacesIpGroup::WorkspacesIpGroup(const JsonValue& jsonValue) : 
+WorkspacesIpGroup::WorkspacesIpGroup(JsonView jsonValue) : 
     m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_groupDescHasBeenSet(false),
@@ -45,7 +45,7 @@ WorkspacesIpGroup::WorkspacesIpGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WorkspacesIpGroup& WorkspacesIpGroup::operator =(const JsonValue& jsonValue)
+WorkspacesIpGroup& WorkspacesIpGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("groupId"))
   {
@@ -70,7 +70,7 @@ WorkspacesIpGroup& WorkspacesIpGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("userRules"))
   {
-    Array<JsonValue> userRulesJsonList = jsonValue.GetArray("userRules");
+    Array<JsonView> userRulesJsonList = jsonValue.GetArray("userRules");
     for(unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex)
     {
       m_userRules.push_back(userRulesJsonList[userRulesIndex].AsObject());

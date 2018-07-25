@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -56,8 +57,8 @@ namespace Model
   {
   public:
     RequestCancelExternalWorkflowExecutionDecisionAttributes();
-    RequestCancelExternalWorkflowExecutionDecisionAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    RequestCancelExternalWorkflowExecutionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RequestCancelExternalWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    RequestCancelExternalWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

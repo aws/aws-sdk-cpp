@@ -35,7 +35,7 @@ Limits::Limits() :
 {
 }
 
-Limits::Limits(const JsonValue& jsonValue) : 
+Limits::Limits(JsonView jsonValue) : 
     m_storageTypesHasBeenSet(false),
     m_instanceLimitsHasBeenSet(false),
     m_additionalLimitsHasBeenSet(false)
@@ -43,11 +43,11 @@ Limits::Limits(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Limits& Limits::operator =(const JsonValue& jsonValue)
+Limits& Limits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StorageTypes"))
   {
-    Array<JsonValue> storageTypesJsonList = jsonValue.GetArray("StorageTypes");
+    Array<JsonView> storageTypesJsonList = jsonValue.GetArray("StorageTypes");
     for(unsigned storageTypesIndex = 0; storageTypesIndex < storageTypesJsonList.GetLength(); ++storageTypesIndex)
     {
       m_storageTypes.push_back(storageTypesJsonList[storageTypesIndex].AsObject());
@@ -64,7 +64,7 @@ Limits& Limits::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AdditionalLimits"))
   {
-    Array<JsonValue> additionalLimitsJsonList = jsonValue.GetArray("AdditionalLimits");
+    Array<JsonView> additionalLimitsJsonList = jsonValue.GetArray("AdditionalLimits");
     for(unsigned additionalLimitsIndex = 0; additionalLimitsIndex < additionalLimitsJsonList.GetLength(); ++additionalLimitsIndex)
     {
       m_additionalLimits.push_back(additionalLimitsJsonList[additionalLimitsIndex].AsObject());

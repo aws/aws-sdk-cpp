@@ -37,7 +37,7 @@ DisableEnhancedMonitoringResult::DisableEnhancedMonitoringResult(const Aws::Amaz
 
 DisableEnhancedMonitoringResult& DisableEnhancedMonitoringResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
@@ -46,7 +46,7 @@ DisableEnhancedMonitoringResult& DisableEnhancedMonitoringResult::operator =(con
 
   if(jsonValue.ValueExists("CurrentShardLevelMetrics"))
   {
-    Array<JsonValue> currentShardLevelMetricsJsonList = jsonValue.GetArray("CurrentShardLevelMetrics");
+    Array<JsonView> currentShardLevelMetricsJsonList = jsonValue.GetArray("CurrentShardLevelMetrics");
     for(unsigned currentShardLevelMetricsIndex = 0; currentShardLevelMetricsIndex < currentShardLevelMetricsJsonList.GetLength(); ++currentShardLevelMetricsIndex)
     {
       m_currentShardLevelMetrics.push_back(MetricsNameMapper::GetMetricsNameForName(currentShardLevelMetricsJsonList[currentShardLevelMetricsIndex].AsString()));
@@ -55,7 +55,7 @@ DisableEnhancedMonitoringResult& DisableEnhancedMonitoringResult::operator =(con
 
   if(jsonValue.ValueExists("DesiredShardLevelMetrics"))
   {
-    Array<JsonValue> desiredShardLevelMetricsJsonList = jsonValue.GetArray("DesiredShardLevelMetrics");
+    Array<JsonView> desiredShardLevelMetricsJsonList = jsonValue.GetArray("DesiredShardLevelMetrics");
     for(unsigned desiredShardLevelMetricsIndex = 0; desiredShardLevelMetricsIndex < desiredShardLevelMetricsJsonList.GetLength(); ++desiredShardLevelMetricsIndex)
     {
       m_desiredShardLevelMetrics.push_back(MetricsNameMapper::GetMetricsNameForName(desiredShardLevelMetricsJsonList[desiredShardLevelMetricsIndex].AsString()));

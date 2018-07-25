@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaStore
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Container();
-    Container(const Aws::Utils::Json::JsonValue& jsonValue);
-    Container& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Container(Aws::Utils::Json::JsonView jsonValue);
+    Container& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

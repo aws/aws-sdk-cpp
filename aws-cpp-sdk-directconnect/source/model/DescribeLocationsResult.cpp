@@ -37,10 +37,10 @@ DescribeLocationsResult::DescribeLocationsResult(const Aws::AmazonWebServiceResu
 
 DescribeLocationsResult& DescribeLocationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("locations"))
   {
-    Array<JsonValue> locationsJsonList = jsonValue.GetArray("locations");
+    Array<JsonView> locationsJsonList = jsonValue.GetArray("locations");
     for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
     {
       m_locations.push_back(locationsJsonList[locationsIndex].AsObject());

@@ -37,10 +37,10 @@ ListImagesResult::ListImagesResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 ListImagesResult& ListImagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("imageIds"))
   {
-    Array<JsonValue> imageIdsJsonList = jsonValue.GetArray("imageIds");
+    Array<JsonView> imageIdsJsonList = jsonValue.GetArray("imageIds");
     for(unsigned imageIdsIndex = 0; imageIdsIndex < imageIdsJsonList.GetLength(); ++imageIdsIndex)
     {
       m_imageIds.push_back(imageIdsJsonList[imageIdsIndex].AsObject());

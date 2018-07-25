@@ -43,7 +43,7 @@ ProjectSource::ProjectSource() :
 {
 }
 
-ProjectSource::ProjectSource(const JsonValue& jsonValue) : 
+ProjectSource::ProjectSource(JsonView jsonValue) : 
     m_type(SourceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_locationHasBeenSet(false),
@@ -59,7 +59,7 @@ ProjectSource::ProjectSource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProjectSource& ProjectSource::operator =(const JsonValue& jsonValue)
+ProjectSource& ProjectSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

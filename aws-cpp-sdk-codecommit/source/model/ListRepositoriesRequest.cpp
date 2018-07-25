@@ -51,7 +51,7 @@ Aws::String ListRepositoriesRequest::SerializePayload() const
    payload.WithString("order", OrderEnumMapper::GetNameForOrderEnum(m_order));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListRepositoriesRequest::GetRequestSpecificHeaders() const

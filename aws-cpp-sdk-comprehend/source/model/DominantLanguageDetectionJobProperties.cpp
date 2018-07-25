@@ -42,7 +42,7 @@ DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties()
 {
 }
 
-DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties(const JsonValue& jsonValue) : 
+DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
@@ -57,7 +57,7 @@ DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties(c
   *this = jsonValue;
 }
 
-DominantLanguageDetectionJobProperties& DominantLanguageDetectionJobProperties::operator =(const JsonValue& jsonValue)
+DominantLanguageDetectionJobProperties& DominantLanguageDetectionJobProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobId"))
   {

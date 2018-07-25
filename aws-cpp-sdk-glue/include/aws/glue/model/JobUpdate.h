@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     JobUpdate();
-    JobUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobUpdate(Aws::Utils::Json::JsonView jsonValue);
+    JobUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

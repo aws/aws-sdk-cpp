@@ -37,7 +37,7 @@ Aws::String UpdateSubscriptionRequest::SerializePayload() const
    payload.WithString("AutoRenew", AutoRenewMapper::GetNameForAutoRenew(m_autoRenew));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateSubscriptionRequest::GetRequestSpecificHeaders() const

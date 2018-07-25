@@ -35,7 +35,7 @@ BlobMetadata::BlobMetadata() :
 {
 }
 
-BlobMetadata::BlobMetadata(const JsonValue& jsonValue) : 
+BlobMetadata::BlobMetadata(JsonView jsonValue) : 
     m_blobIdHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_modeHasBeenSet(false)
@@ -43,7 +43,7 @@ BlobMetadata::BlobMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BlobMetadata& BlobMetadata::operator =(const JsonValue& jsonValue)
+BlobMetadata& BlobMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("blobId"))
   {

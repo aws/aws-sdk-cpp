@@ -37,7 +37,7 @@ Aws::String DeprecateDomainRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeprecateDomainRequest::GetRequestSpecificHeaders() const

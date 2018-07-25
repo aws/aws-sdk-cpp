@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -57,8 +58,8 @@ namespace Model
   {
   public:
     MaintenanceWindowStepFunctionsParameters();
-    MaintenanceWindowStepFunctionsParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    MaintenanceWindowStepFunctionsParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MaintenanceWindowStepFunctionsParameters(Aws::Utils::Json::JsonView jsonValue);
+    MaintenanceWindowStepFunctionsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

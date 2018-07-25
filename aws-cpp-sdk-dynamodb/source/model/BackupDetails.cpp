@@ -39,7 +39,7 @@ BackupDetails::BackupDetails() :
 {
 }
 
-BackupDetails::BackupDetails(const JsonValue& jsonValue) : 
+BackupDetails::BackupDetails(JsonView jsonValue) : 
     m_backupArnHasBeenSet(false),
     m_backupNameHasBeenSet(false),
     m_backupSizeBytes(0),
@@ -51,7 +51,7 @@ BackupDetails::BackupDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BackupDetails& BackupDetails::operator =(const JsonValue& jsonValue)
+BackupDetails& BackupDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BackupArn"))
   {

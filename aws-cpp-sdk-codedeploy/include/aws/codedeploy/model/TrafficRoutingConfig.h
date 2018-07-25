@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     TrafficRoutingConfig();
-    TrafficRoutingConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    TrafficRoutingConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TrafficRoutingConfig(Aws::Utils::Json::JsonView jsonValue);
+    TrafficRoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

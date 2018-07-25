@@ -33,13 +33,13 @@ NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook() :
 {
 }
 
-NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook(const JsonValue& jsonValue) : 
+NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook(JsonView jsonValue) : 
     m_contentHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NotebookInstanceLifecycleHook& NotebookInstanceLifecycleHook::operator =(const JsonValue& jsonValue)
+NotebookInstanceLifecycleHook& NotebookInstanceLifecycleHook::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Content"))
   {

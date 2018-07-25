@@ -35,14 +35,14 @@ CodeSigningSignature::CodeSigningSignature() :
 {
 }
 
-CodeSigningSignature::CodeSigningSignature(const JsonValue& jsonValue) : 
+CodeSigningSignature::CodeSigningSignature(JsonView jsonValue) : 
     m_streamHasBeenSet(false),
     m_inlineDocumentHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CodeSigningSignature& CodeSigningSignature::operator =(const JsonValue& jsonValue)
+CodeSigningSignature& CodeSigningSignature::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("stream"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppSync
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     OpenIDConnectConfig();
-    OpenIDConnectConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    OpenIDConnectConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OpenIDConnectConfig(Aws::Utils::Json::JsonView jsonValue);
+    OpenIDConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

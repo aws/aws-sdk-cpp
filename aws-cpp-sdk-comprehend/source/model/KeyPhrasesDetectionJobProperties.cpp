@@ -44,7 +44,7 @@ KeyPhrasesDetectionJobProperties::KeyPhrasesDetectionJobProperties() :
 {
 }
 
-KeyPhrasesDetectionJobProperties::KeyPhrasesDetectionJobProperties(const JsonValue& jsonValue) : 
+KeyPhrasesDetectionJobProperties::KeyPhrasesDetectionJobProperties(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
@@ -61,7 +61,7 @@ KeyPhrasesDetectionJobProperties::KeyPhrasesDetectionJobProperties(const JsonVal
   *this = jsonValue;
 }
 
-KeyPhrasesDetectionJobProperties& KeyPhrasesDetectionJobProperties::operator =(const JsonValue& jsonValue)
+KeyPhrasesDetectionJobProperties& KeyPhrasesDetectionJobProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobId"))
   {

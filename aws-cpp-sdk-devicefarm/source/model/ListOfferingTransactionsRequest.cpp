@@ -37,7 +37,7 @@ Aws::String ListOfferingTransactionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListOfferingTransactionsRequest::GetRequestSpecificHeaders() const

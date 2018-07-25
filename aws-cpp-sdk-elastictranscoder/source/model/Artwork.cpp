@@ -39,7 +39,7 @@ Artwork::Artwork() :
 {
 }
 
-Artwork::Artwork(const JsonValue& jsonValue) : 
+Artwork::Artwork(JsonView jsonValue) : 
     m_inputKeyHasBeenSet(false),
     m_maxWidthHasBeenSet(false),
     m_maxHeightHasBeenSet(false),
@@ -51,7 +51,7 @@ Artwork::Artwork(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Artwork& Artwork::operator =(const JsonValue& jsonValue)
+Artwork& Artwork::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputKey"))
   {

@@ -34,14 +34,14 @@ RuleSummary::RuleSummary() :
 {
 }
 
-RuleSummary::RuleSummary(const JsonValue& jsonValue) : 
+RuleSummary::RuleSummary(JsonView jsonValue) : 
     m_ruleIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RuleSummary& RuleSummary::operator =(const JsonValue& jsonValue)
+RuleSummary& RuleSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RuleId"))
   {

@@ -36,7 +36,7 @@ Principal::Principal() :
 {
 }
 
-Principal::Principal(const JsonValue& jsonValue) : 
+Principal::Principal(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_type(PrincipalType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -45,7 +45,7 @@ Principal::Principal(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Principal& Principal::operator =(const JsonValue& jsonValue)
+Principal& Principal::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -63,7 +63,7 @@ Principal& Principal::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Roles"))
   {
-    Array<JsonValue> rolesJsonList = jsonValue.GetArray("Roles");
+    Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
     for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
     {
       m_roles.push_back(rolesJsonList[rolesIndex].AsObject());

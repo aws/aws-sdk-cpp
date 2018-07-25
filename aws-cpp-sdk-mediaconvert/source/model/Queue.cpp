@@ -45,7 +45,7 @@ Queue::Queue() :
 {
 }
 
-Queue::Queue(const JsonValue& jsonValue) : 
+Queue::Queue(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -63,7 +63,7 @@ Queue::Queue(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Queue& Queue::operator =(const JsonValue& jsonValue)
+Queue& Queue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

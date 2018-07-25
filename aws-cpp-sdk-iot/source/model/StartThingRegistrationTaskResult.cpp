@@ -37,7 +37,7 @@ StartThingRegistrationTaskResult::StartThingRegistrationTaskResult(const Aws::Am
 
 StartThingRegistrationTaskResult& StartThingRegistrationTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");

@@ -37,7 +37,7 @@ Aws::String DescribeTransformJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTransformJobRequest::GetRequestSpecificHeaders() const

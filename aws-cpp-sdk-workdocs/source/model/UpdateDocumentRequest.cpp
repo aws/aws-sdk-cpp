@@ -54,7 +54,7 @@ Aws::String UpdateDocumentRequest::SerializePayload() const
    payload.WithString("ResourceState", ResourceStateTypeMapper::GetNameForResourceStateType(m_resourceState));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateDocumentRequest::GetRequestSpecificHeaders() const

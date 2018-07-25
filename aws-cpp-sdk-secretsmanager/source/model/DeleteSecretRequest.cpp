@@ -45,7 +45,7 @@ Aws::String DeleteSecretRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteSecretRequest::GetRequestSpecificHeaders() const

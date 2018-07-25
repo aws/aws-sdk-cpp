@@ -33,13 +33,13 @@ LifecycleEventConfiguration::LifecycleEventConfiguration() :
 {
 }
 
-LifecycleEventConfiguration::LifecycleEventConfiguration(const JsonValue& jsonValue) : 
+LifecycleEventConfiguration::LifecycleEventConfiguration(JsonView jsonValue) : 
     m_shutdownHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LifecycleEventConfiguration& LifecycleEventConfiguration::operator =(const JsonValue& jsonValue)
+LifecycleEventConfiguration& LifecycleEventConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Shutdown"))
   {

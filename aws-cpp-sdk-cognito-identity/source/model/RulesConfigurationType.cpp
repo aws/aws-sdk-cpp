@@ -33,17 +33,17 @@ RulesConfigurationType::RulesConfigurationType() :
 {
 }
 
-RulesConfigurationType::RulesConfigurationType(const JsonValue& jsonValue) : 
+RulesConfigurationType::RulesConfigurationType(JsonView jsonValue) : 
     m_rulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RulesConfigurationType& RulesConfigurationType::operator =(const JsonValue& jsonValue)
+RulesConfigurationType& RulesConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonValue> rulesJsonList = jsonValue.GetArray("Rules");
+    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

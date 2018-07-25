@@ -33,13 +33,13 @@ DynamoDBTarget::DynamoDBTarget() :
 {
 }
 
-DynamoDBTarget::DynamoDBTarget(const JsonValue& jsonValue) : 
+DynamoDBTarget::DynamoDBTarget(JsonView jsonValue) : 
     m_pathHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DynamoDBTarget& DynamoDBTarget::operator =(const JsonValue& jsonValue)
+DynamoDBTarget& DynamoDBTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Path"))
   {

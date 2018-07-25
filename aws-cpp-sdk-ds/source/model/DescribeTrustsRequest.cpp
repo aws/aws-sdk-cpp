@@ -64,7 +64,7 @@ Aws::String DescribeTrustsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTrustsRequest::GetRequestSpecificHeaders() const

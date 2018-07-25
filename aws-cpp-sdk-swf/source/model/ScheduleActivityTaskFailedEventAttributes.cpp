@@ -38,7 +38,7 @@ ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttrib
 {
 }
 
-ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttributes(const JsonValue& jsonValue) : 
+ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttributes(JsonView jsonValue) : 
     m_activityTypeHasBeenSet(false),
     m_activityIdHasBeenSet(false),
     m_cause(ScheduleActivityTaskFailedCause::NOT_SET),
@@ -49,7 +49,7 @@ ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttrib
   *this = jsonValue;
 }
 
-ScheduleActivityTaskFailedEventAttributes& ScheduleActivityTaskFailedEventAttributes::operator =(const JsonValue& jsonValue)
+ScheduleActivityTaskFailedEventAttributes& ScheduleActivityTaskFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activityType"))
   {

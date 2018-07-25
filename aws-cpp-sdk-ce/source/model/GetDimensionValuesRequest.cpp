@@ -65,7 +65,7 @@ Aws::String GetDimensionValuesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDimensionValuesRequest::GetRequestSpecificHeaders() const

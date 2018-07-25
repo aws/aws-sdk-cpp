@@ -40,7 +40,7 @@ RoleAliasDescription::RoleAliasDescription() :
 {
 }
 
-RoleAliasDescription::RoleAliasDescription(const JsonValue& jsonValue) : 
+RoleAliasDescription::RoleAliasDescription(JsonView jsonValue) : 
     m_roleAliasHasBeenSet(false),
     m_roleAliasArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -53,7 +53,7 @@ RoleAliasDescription::RoleAliasDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RoleAliasDescription& RoleAliasDescription::operator =(const JsonValue& jsonValue)
+RoleAliasDescription& RoleAliasDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleAlias"))
   {

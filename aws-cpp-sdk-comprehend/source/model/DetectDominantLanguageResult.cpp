@@ -37,10 +37,10 @@ DetectDominantLanguageResult::DetectDominantLanguageResult(const Aws::AmazonWebS
 
 DetectDominantLanguageResult& DetectDominantLanguageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Languages"))
   {
-    Array<JsonValue> languagesJsonList = jsonValue.GetArray("Languages");
+    Array<JsonView> languagesJsonList = jsonValue.GetArray("Languages");
     for(unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex)
     {
       m_languages.push_back(languagesJsonList[languagesIndex].AsObject());

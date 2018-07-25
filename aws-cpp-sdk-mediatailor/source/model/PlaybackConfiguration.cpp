@@ -37,7 +37,7 @@ PlaybackConfiguration::PlaybackConfiguration() :
 {
 }
 
-PlaybackConfiguration::PlaybackConfiguration(const JsonValue& jsonValue) : 
+PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -47,7 +47,7 @@ PlaybackConfiguration::PlaybackConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlaybackConfiguration& PlaybackConfiguration::operator =(const JsonValue& jsonValue)
+PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdDecisionServerUrl"))
   {

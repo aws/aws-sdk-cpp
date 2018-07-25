@@ -33,13 +33,13 @@ BatchDetachTypedLink::BatchDetachTypedLink() :
 {
 }
 
-BatchDetachTypedLink::BatchDetachTypedLink(const JsonValue& jsonValue) : 
+BatchDetachTypedLink::BatchDetachTypedLink(JsonView jsonValue) : 
     m_typedLinkSpecifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchDetachTypedLink& BatchDetachTypedLink::operator =(const JsonValue& jsonValue)
+BatchDetachTypedLink& BatchDetachTypedLink::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TypedLinkSpecifier"))
   {

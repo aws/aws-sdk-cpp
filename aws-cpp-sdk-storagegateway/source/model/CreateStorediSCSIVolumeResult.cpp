@@ -39,7 +39,7 @@ CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult(const Aws::AmazonWe
 
 CreateStorediSCSIVolumeResult& CreateStorediSCSIVolumeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");

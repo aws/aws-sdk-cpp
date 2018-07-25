@@ -34,14 +34,14 @@ GitHubLocation::GitHubLocation() :
 {
 }
 
-GitHubLocation::GitHubLocation(const JsonValue& jsonValue) : 
+GitHubLocation::GitHubLocation(JsonView jsonValue) : 
     m_repositoryHasBeenSet(false),
     m_commitIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GitHubLocation& GitHubLocation::operator =(const JsonValue& jsonValue)
+GitHubLocation& GitHubLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repository"))
   {

@@ -38,7 +38,7 @@ VmServer::VmServer() :
 {
 }
 
-VmServer::VmServer(const JsonValue& jsonValue) : 
+VmServer::VmServer(JsonView jsonValue) : 
     m_vmServerAddressHasBeenSet(false),
     m_vmNameHasBeenSet(false),
     m_vmManagerNameHasBeenSet(false),
@@ -49,7 +49,7 @@ VmServer::VmServer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VmServer& VmServer::operator =(const JsonValue& jsonValue)
+VmServer& VmServer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("vmServerAddress"))
   {

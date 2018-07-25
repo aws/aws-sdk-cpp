@@ -49,7 +49,7 @@ RaidArray::RaidArray() :
 {
 }
 
-RaidArray::RaidArray(const JsonValue& jsonValue) : 
+RaidArray::RaidArray(JsonView jsonValue) : 
     m_raidArrayIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -71,7 +71,7 @@ RaidArray::RaidArray(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RaidArray& RaidArray::operator =(const JsonValue& jsonValue)
+RaidArray& RaidArray::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RaidArrayId"))
   {

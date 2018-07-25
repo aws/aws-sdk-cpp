@@ -79,7 +79,7 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(const JsonValue& jsonValue) : 
+Instance::Instance(JsonView jsonValue) : 
     m_agentVersionHasBeenSet(false),
     m_amiIdHasBeenSet(false),
     m_architecture(Architecture::NOT_SET),
@@ -131,7 +131,7 @@ Instance::Instance(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Instance& Instance::operator =(const JsonValue& jsonValue)
+Instance& Instance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AgentVersion"))
   {
@@ -177,7 +177,7 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("BlockDeviceMappings"))
   {
-    Array<JsonValue> blockDeviceMappingsJsonList = jsonValue.GetArray("BlockDeviceMappings");
+    Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("BlockDeviceMappings");
     for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
     {
       m_blockDeviceMappings.push_back(blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject());
@@ -278,7 +278,7 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("LayerIds"))
   {
-    Array<JsonValue> layerIdsJsonList = jsonValue.GetArray("LayerIds");
+    Array<JsonView> layerIdsJsonList = jsonValue.GetArray("LayerIds");
     for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
     {
       m_layerIds.push_back(layerIdsJsonList[layerIdsIndex].AsString());
@@ -365,7 +365,7 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());

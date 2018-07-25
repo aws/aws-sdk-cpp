@@ -36,7 +36,7 @@ MathActivity::MathActivity() :
 {
 }
 
-MathActivity::MathActivity(const JsonValue& jsonValue) : 
+MathActivity::MathActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_attributeHasBeenSet(false),
     m_mathHasBeenSet(false),
@@ -45,7 +45,7 @@ MathActivity::MathActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MathActivity& MathActivity::operator =(const JsonValue& jsonValue)
+MathActivity& MathActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

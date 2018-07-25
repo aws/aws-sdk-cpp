@@ -35,7 +35,7 @@ CodeGenEdge::CodeGenEdge() :
 {
 }
 
-CodeGenEdge::CodeGenEdge(const JsonValue& jsonValue) : 
+CodeGenEdge::CodeGenEdge(JsonView jsonValue) : 
     m_sourceHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_targetParameterHasBeenSet(false)
@@ -43,7 +43,7 @@ CodeGenEdge::CodeGenEdge(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CodeGenEdge& CodeGenEdge::operator =(const JsonValue& jsonValue)
+CodeGenEdge& CodeGenEdge::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Source"))
   {

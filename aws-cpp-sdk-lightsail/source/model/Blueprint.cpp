@@ -48,7 +48,7 @@ Blueprint::Blueprint() :
 {
 }
 
-Blueprint::Blueprint(const JsonValue& jsonValue) : 
+Blueprint::Blueprint(JsonView jsonValue) : 
     m_blueprintIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_groupHasBeenSet(false),
@@ -69,7 +69,7 @@ Blueprint::Blueprint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Blueprint& Blueprint::operator =(const JsonValue& jsonValue)
+Blueprint& Blueprint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("blueprintId"))
   {

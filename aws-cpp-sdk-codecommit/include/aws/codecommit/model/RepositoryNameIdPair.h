@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     RepositoryNameIdPair();
-    RepositoryNameIdPair(const Aws::Utils::Json::JsonValue& jsonValue);
-    RepositoryNameIdPair& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RepositoryNameIdPair(Aws::Utils::Json::JsonView jsonValue);
+    RepositoryNameIdPair& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

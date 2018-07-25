@@ -35,7 +35,7 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(const JsonValue& jsonValue) : 
+Resource::Resource(JsonView jsonValue) : 
     m_accessKeyDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
@@ -43,7 +43,7 @@ Resource::Resource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Resource& Resource::operator =(const JsonValue& jsonValue)
+Resource& Resource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accessKeyDetails"))
   {

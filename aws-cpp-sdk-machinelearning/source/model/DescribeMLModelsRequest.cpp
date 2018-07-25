@@ -108,7 +108,7 @@ Aws::String DescribeMLModelsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeMLModelsRequest::GetRequestSpecificHeaders() const

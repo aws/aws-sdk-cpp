@@ -34,18 +34,18 @@ ApplicationsResponse::ApplicationsResponse() :
 {
 }
 
-ApplicationsResponse::ApplicationsResponse(const JsonValue& jsonValue) : 
+ApplicationsResponse::ApplicationsResponse(JsonView jsonValue) : 
     m_itemHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ApplicationsResponse& ApplicationsResponse::operator =(const JsonValue& jsonValue)
+ApplicationsResponse& ApplicationsResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Item"))
   {
-    Array<JsonValue> itemJsonList = jsonValue.GetArray("Item");
+    Array<JsonView> itemJsonList = jsonValue.GetArray("Item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_item.push_back(itemJsonList[itemIndex].AsObject());

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     StorageGatewayError();
-    StorageGatewayError(const Aws::Utils::Json::JsonValue& jsonValue);
-    StorageGatewayError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StorageGatewayError(Aws::Utils::Json::JsonView jsonValue);
+    StorageGatewayError& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

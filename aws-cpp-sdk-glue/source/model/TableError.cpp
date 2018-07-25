@@ -34,14 +34,14 @@ TableError::TableError() :
 {
 }
 
-TableError::TableError(const JsonValue& jsonValue) : 
+TableError::TableError(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_errorDetailHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TableError& TableError::operator =(const JsonValue& jsonValue)
+TableError& TableError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TableName"))
   {

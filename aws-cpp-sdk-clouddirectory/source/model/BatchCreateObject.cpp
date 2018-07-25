@@ -37,7 +37,7 @@ BatchCreateObject::BatchCreateObject() :
 {
 }
 
-BatchCreateObject::BatchCreateObject(const JsonValue& jsonValue) : 
+BatchCreateObject::BatchCreateObject(JsonView jsonValue) : 
     m_schemaFacetHasBeenSet(false),
     m_objectAttributeListHasBeenSet(false),
     m_parentReferenceHasBeenSet(false),
@@ -47,11 +47,11 @@ BatchCreateObject::BatchCreateObject(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchCreateObject& BatchCreateObject::operator =(const JsonValue& jsonValue)
+BatchCreateObject& BatchCreateObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaFacet"))
   {
-    Array<JsonValue> schemaFacetJsonList = jsonValue.GetArray("SchemaFacet");
+    Array<JsonView> schemaFacetJsonList = jsonValue.GetArray("SchemaFacet");
     for(unsigned schemaFacetIndex = 0; schemaFacetIndex < schemaFacetJsonList.GetLength(); ++schemaFacetIndex)
     {
       m_schemaFacet.push_back(schemaFacetJsonList[schemaFacetIndex].AsObject());
@@ -61,7 +61,7 @@ BatchCreateObject& BatchCreateObject::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ObjectAttributeList"))
   {
-    Array<JsonValue> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
+    Array<JsonView> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
     for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
     {
       m_objectAttributeList.push_back(objectAttributeListJsonList[objectAttributeListIndex].AsObject());

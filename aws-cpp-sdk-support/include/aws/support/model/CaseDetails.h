@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Support
@@ -68,8 +69,8 @@ namespace Model
   {
   public:
     CaseDetails();
-    CaseDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    CaseDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CaseDetails(Aws::Utils::Json::JsonView jsonValue);
+    CaseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

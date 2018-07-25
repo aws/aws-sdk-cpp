@@ -51,7 +51,7 @@ Aws::String EvaluateExpressionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection EvaluateExpressionRequest::GetRequestSpecificHeaders() const

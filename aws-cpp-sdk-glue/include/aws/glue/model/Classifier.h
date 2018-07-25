@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -51,8 +52,8 @@ namespace Model
   {
   public:
     Classifier();
-    Classifier(const Aws::Utils::Json::JsonValue& jsonValue);
-    Classifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Classifier(Aws::Utils::Json::JsonView jsonValue);
+    Classifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

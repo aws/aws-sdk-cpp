@@ -38,7 +38,7 @@ JsonClassifier::JsonClassifier() :
 {
 }
 
-JsonClassifier::JsonClassifier(const JsonValue& jsonValue) : 
+JsonClassifier::JsonClassifier(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
@@ -49,7 +49,7 @@ JsonClassifier::JsonClassifier(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JsonClassifier& JsonClassifier::operator =(const JsonValue& jsonValue)
+JsonClassifier& JsonClassifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

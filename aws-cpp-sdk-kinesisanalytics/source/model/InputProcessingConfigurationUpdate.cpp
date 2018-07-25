@@ -33,13 +33,13 @@ InputProcessingConfigurationUpdate::InputProcessingConfigurationUpdate() :
 {
 }
 
-InputProcessingConfigurationUpdate::InputProcessingConfigurationUpdate(const JsonValue& jsonValue) : 
+InputProcessingConfigurationUpdate::InputProcessingConfigurationUpdate(JsonView jsonValue) : 
     m_inputLambdaProcessorUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputProcessingConfigurationUpdate& InputProcessingConfigurationUpdate::operator =(const JsonValue& jsonValue)
+InputProcessingConfigurationUpdate& InputProcessingConfigurationUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputLambdaProcessorUpdate"))
   {

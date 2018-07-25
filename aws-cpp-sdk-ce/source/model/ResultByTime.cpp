@@ -37,7 +37,7 @@ ResultByTime::ResultByTime() :
 {
 }
 
-ResultByTime::ResultByTime(const JsonValue& jsonValue) : 
+ResultByTime::ResultByTime(JsonView jsonValue) : 
     m_timePeriodHasBeenSet(false),
     m_totalHasBeenSet(false),
     m_groupsHasBeenSet(false),
@@ -47,7 +47,7 @@ ResultByTime::ResultByTime(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResultByTime& ResultByTime::operator =(const JsonValue& jsonValue)
+ResultByTime& ResultByTime::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimePeriod"))
   {
@@ -58,7 +58,7 @@ ResultByTime& ResultByTime::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Total"))
   {
-    Aws::Map<Aws::String, JsonValue> totalJsonMap = jsonValue.GetObject("Total").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> totalJsonMap = jsonValue.GetObject("Total").GetAllObjects();
     for(auto& totalItem : totalJsonMap)
     {
       m_total[totalItem.first] = totalItem.second.AsObject();
@@ -68,7 +68,7 @@ ResultByTime& ResultByTime::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonValue> groupsJsonList = jsonValue.GetArray("Groups");
+    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsObject());

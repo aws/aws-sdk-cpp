@@ -35,7 +35,7 @@ RegexPatternSetUpdate::RegexPatternSetUpdate() :
 {
 }
 
-RegexPatternSetUpdate::RegexPatternSetUpdate(const JsonValue& jsonValue) : 
+RegexPatternSetUpdate::RegexPatternSetUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_regexPatternStringHasBeenSet(false)
@@ -43,7 +43,7 @@ RegexPatternSetUpdate::RegexPatternSetUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RegexPatternSetUpdate& RegexPatternSetUpdate::operator =(const JsonValue& jsonValue)
+RegexPatternSetUpdate& RegexPatternSetUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

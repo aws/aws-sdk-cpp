@@ -37,7 +37,7 @@ Aws::String ListLocalDisksRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListLocalDisksRequest::GetRequestSpecificHeaders() const

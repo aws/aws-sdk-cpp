@@ -36,7 +36,7 @@ StepConfig::StepConfig() :
 {
 }
 
-StepConfig::StepConfig(const JsonValue& jsonValue) : 
+StepConfig::StepConfig(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_actionOnFailure(ActionOnFailure::NOT_SET),
     m_actionOnFailureHasBeenSet(false),
@@ -45,7 +45,7 @@ StepConfig::StepConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StepConfig& StepConfig::operator =(const JsonValue& jsonValue)
+StepConfig& StepConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

@@ -37,7 +37,7 @@ Aws::String StopCrawlerScheduleRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopCrawlerScheduleRequest::GetRequestSpecificHeaders() const

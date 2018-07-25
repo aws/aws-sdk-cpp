@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     RemoteIpDetails();
-    RemoteIpDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    RemoteIpDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RemoteIpDetails(Aws::Utils::Json::JsonView jsonValue);
+    RemoteIpDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

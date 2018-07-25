@@ -35,7 +35,7 @@ ServiceChange::ServiceChange() :
 {
 }
 
-ServiceChange::ServiceChange(const JsonValue& jsonValue) : 
+ServiceChange::ServiceChange(JsonView jsonValue) : 
     m_descriptionHasBeenSet(false),
     m_dnsConfigHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false)
@@ -43,7 +43,7 @@ ServiceChange::ServiceChange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServiceChange& ServiceChange::operator =(const JsonValue& jsonValue)
+ServiceChange& ServiceChange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Description"))
   {

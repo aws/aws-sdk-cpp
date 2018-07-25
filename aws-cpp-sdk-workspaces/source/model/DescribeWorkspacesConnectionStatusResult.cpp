@@ -37,10 +37,10 @@ DescribeWorkspacesConnectionStatusResult::DescribeWorkspacesConnectionStatusResu
 
 DescribeWorkspacesConnectionStatusResult& DescribeWorkspacesConnectionStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WorkspacesConnectionStatus"))
   {
-    Array<JsonValue> workspacesConnectionStatusJsonList = jsonValue.GetArray("WorkspacesConnectionStatus");
+    Array<JsonView> workspacesConnectionStatusJsonList = jsonValue.GetArray("WorkspacesConnectionStatus");
     for(unsigned workspacesConnectionStatusIndex = 0; workspacesConnectionStatusIndex < workspacesConnectionStatusJsonList.GetLength(); ++workspacesConnectionStatusIndex)
     {
       m_workspacesConnectionStatus.push_back(workspacesConnectionStatusJsonList[workspacesConnectionStatusIndex].AsObject());

@@ -60,7 +60,7 @@ Aws::String ListSecretVersionIdsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListSecretVersionIdsRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ InvokeDeviceMethodResult::InvokeDeviceMethodResult(const Aws::AmazonWebServiceRe
 
 InvokeDeviceMethodResult& InvokeDeviceMethodResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deviceMethodResponse"))
   {
     m_deviceMethodResponse = jsonValue.GetString("deviceMethodResponse");

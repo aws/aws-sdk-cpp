@@ -36,7 +36,7 @@ Notifications::Notifications() :
 {
 }
 
-Notifications::Notifications(const JsonValue& jsonValue) : 
+Notifications::Notifications(JsonView jsonValue) : 
     m_progressingHasBeenSet(false),
     m_completedHasBeenSet(false),
     m_warningHasBeenSet(false),
@@ -45,7 +45,7 @@ Notifications::Notifications(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Notifications& Notifications::operator =(const JsonValue& jsonValue)
+Notifications& Notifications::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Progressing"))
   {

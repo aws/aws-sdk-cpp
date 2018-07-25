@@ -35,7 +35,7 @@ FragmentSelector::FragmentSelector() :
 {
 }
 
-FragmentSelector::FragmentSelector(const JsonValue& jsonValue) : 
+FragmentSelector::FragmentSelector(JsonView jsonValue) : 
     m_fragmentSelectorType(FragmentSelectorType::NOT_SET),
     m_fragmentSelectorTypeHasBeenSet(false),
     m_timestampRangeHasBeenSet(false)
@@ -43,7 +43,7 @@ FragmentSelector::FragmentSelector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FragmentSelector& FragmentSelector::operator =(const JsonValue& jsonValue)
+FragmentSelector& FragmentSelector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FragmentSelectorType"))
   {

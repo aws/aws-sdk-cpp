@@ -37,7 +37,7 @@ VPCEConfiguration::VPCEConfiguration() :
 {
 }
 
-VPCEConfiguration::VPCEConfiguration(const JsonValue& jsonValue) : 
+VPCEConfiguration::VPCEConfiguration(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_vpceConfigurationNameHasBeenSet(false),
     m_vpceServiceNameHasBeenSet(false),
@@ -47,7 +47,7 @@ VPCEConfiguration::VPCEConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VPCEConfiguration& VPCEConfiguration::operator =(const JsonValue& jsonValue)
+VPCEConfiguration& VPCEConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

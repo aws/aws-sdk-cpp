@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -53,8 +54,8 @@ namespace Model
   {
   public:
     IPSet();
-    IPSet(const Aws::Utils::Json::JsonValue& jsonValue);
-    IPSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    IPSet(Aws::Utils::Json::JsonView jsonValue);
+    IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -42,7 +42,7 @@ Stack::Stack() :
 {
 }
 
-Stack::Stack(const JsonValue& jsonValue) : 
+Stack::Stack(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -57,7 +57,7 @@ Stack::Stack(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Stack& Stack::operator =(const JsonValue& jsonValue)
+Stack& Stack::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {
@@ -96,7 +96,7 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("StorageConnectors"))
   {
-    Array<JsonValue> storageConnectorsJsonList = jsonValue.GetArray("StorageConnectors");
+    Array<JsonView> storageConnectorsJsonList = jsonValue.GetArray("StorageConnectors");
     for(unsigned storageConnectorsIndex = 0; storageConnectorsIndex < storageConnectorsJsonList.GetLength(); ++storageConnectorsIndex)
     {
       m_storageConnectors.push_back(storageConnectorsJsonList[storageConnectorsIndex].AsObject());
@@ -120,7 +120,7 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("StackErrors"))
   {
-    Array<JsonValue> stackErrorsJsonList = jsonValue.GetArray("StackErrors");
+    Array<JsonView> stackErrorsJsonList = jsonValue.GetArray("StackErrors");
     for(unsigned stackErrorsIndex = 0; stackErrorsIndex < stackErrorsJsonList.GetLength(); ++stackErrorsIndex)
     {
       m_stackErrors.push_back(stackErrorsJsonList[stackErrorsIndex].AsObject());
@@ -130,7 +130,7 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("UserSettings"))
   {
-    Array<JsonValue> userSettingsJsonList = jsonValue.GetArray("UserSettings");
+    Array<JsonView> userSettingsJsonList = jsonValue.GetArray("UserSettings");
     for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
     {
       m_userSettings.push_back(userSettingsJsonList[userSettingsIndex].AsObject());

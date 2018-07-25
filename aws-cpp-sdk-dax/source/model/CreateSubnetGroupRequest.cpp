@@ -56,7 +56,7 @@ Aws::String CreateSubnetGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateSubnetGroupRequest::GetRequestSpecificHeaders() const

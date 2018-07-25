@@ -37,7 +37,7 @@ DisableDirectoryResult::DisableDirectoryResult(const Aws::AmazonWebServiceResult
 
 DisableDirectoryResult& DisableDirectoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DirectoryArn"))
   {
     m_directoryArn = jsonValue.GetString("DirectoryArn");

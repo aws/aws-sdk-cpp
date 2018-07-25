@@ -35,7 +35,7 @@ LoggingInfo::LoggingInfo() :
 {
 }
 
-LoggingInfo::LoggingInfo(const JsonValue& jsonValue) : 
+LoggingInfo::LoggingInfo(JsonView jsonValue) : 
     m_s3BucketNameHasBeenSet(false),
     m_s3KeyPrefixHasBeenSet(false),
     m_s3RegionHasBeenSet(false)
@@ -43,7 +43,7 @@ LoggingInfo::LoggingInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LoggingInfo& LoggingInfo::operator =(const JsonValue& jsonValue)
+LoggingInfo& LoggingInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3BucketName"))
   {

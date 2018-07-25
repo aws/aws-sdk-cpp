@@ -89,7 +89,7 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateStackRequest::GetRequestSpecificHeaders() const

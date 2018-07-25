@@ -35,7 +35,7 @@ LocalVolumeResourceData::LocalVolumeResourceData() :
 {
 }
 
-LocalVolumeResourceData::LocalVolumeResourceData(const JsonValue& jsonValue) : 
+LocalVolumeResourceData::LocalVolumeResourceData(JsonView jsonValue) : 
     m_destinationPathHasBeenSet(false),
     m_groupOwnerSettingHasBeenSet(false),
     m_sourcePathHasBeenSet(false)
@@ -43,7 +43,7 @@ LocalVolumeResourceData::LocalVolumeResourceData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LocalVolumeResourceData& LocalVolumeResourceData::operator =(const JsonValue& jsonValue)
+LocalVolumeResourceData& LocalVolumeResourceData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DestinationPath"))
   {

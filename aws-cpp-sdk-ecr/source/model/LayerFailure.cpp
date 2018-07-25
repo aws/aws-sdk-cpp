@@ -36,7 +36,7 @@ LayerFailure::LayerFailure() :
 {
 }
 
-LayerFailure::LayerFailure(const JsonValue& jsonValue) : 
+LayerFailure::LayerFailure(JsonView jsonValue) : 
     m_layerDigestHasBeenSet(false),
     m_failureCode(LayerFailureCode::NOT_SET),
     m_failureCodeHasBeenSet(false),
@@ -45,7 +45,7 @@ LayerFailure::LayerFailure(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LayerFailure& LayerFailure::operator =(const JsonValue& jsonValue)
+LayerFailure& LayerFailure::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("layerDigest"))
   {

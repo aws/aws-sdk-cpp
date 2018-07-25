@@ -35,7 +35,7 @@ AttributeValueUpdate::AttributeValueUpdate() :
 {
 }
 
-AttributeValueUpdate::AttributeValueUpdate(const JsonValue& jsonValue) : 
+AttributeValueUpdate::AttributeValueUpdate(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
     m_action(AttributeAction::NOT_SET),
     m_actionHasBeenSet(false)
@@ -43,7 +43,7 @@ AttributeValueUpdate::AttributeValueUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttributeValueUpdate& AttributeValueUpdate::operator =(const JsonValue& jsonValue)
+AttributeValueUpdate& AttributeValueUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

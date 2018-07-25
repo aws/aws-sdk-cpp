@@ -35,7 +35,7 @@ TriggerConfig::TriggerConfig() :
 {
 }
 
-TriggerConfig::TriggerConfig(const JsonValue& jsonValue) : 
+TriggerConfig::TriggerConfig(JsonView jsonValue) : 
     m_triggerNameHasBeenSet(false),
     m_triggerTargetArnHasBeenSet(false),
     m_triggerEventsHasBeenSet(false)
@@ -43,7 +43,7 @@ TriggerConfig::TriggerConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TriggerConfig& TriggerConfig::operator =(const JsonValue& jsonValue)
+TriggerConfig& TriggerConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("triggerName"))
   {
@@ -61,7 +61,7 @@ TriggerConfig& TriggerConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("triggerEvents"))
   {
-    Array<JsonValue> triggerEventsJsonList = jsonValue.GetArray("triggerEvents");
+    Array<JsonView> triggerEventsJsonList = jsonValue.GetArray("triggerEvents");
     for(unsigned triggerEventsIndex = 0; triggerEventsIndex < triggerEventsJsonList.GetLength(); ++triggerEventsIndex)
     {
       m_triggerEvents.push_back(TriggerEventTypeMapper::GetTriggerEventTypeForName(triggerEventsJsonList[triggerEventsIndex].AsString()));

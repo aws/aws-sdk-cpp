@@ -37,7 +37,7 @@ Directory::Directory() :
 {
 }
 
-Directory::Directory(const JsonValue& jsonValue) : 
+Directory::Directory(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_directoryArnHasBeenSet(false),
     m_state(DirectoryState::NOT_SET),
@@ -47,7 +47,7 @@ Directory::Directory(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Directory& Directory::operator =(const JsonValue& jsonValue)
+Directory& Directory::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

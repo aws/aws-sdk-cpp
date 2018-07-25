@@ -41,7 +41,7 @@ AssessmentRunNotification::AssessmentRunNotification() :
 {
 }
 
-AssessmentRunNotification::AssessmentRunNotification(const JsonValue& jsonValue) : 
+AssessmentRunNotification::AssessmentRunNotification(JsonView jsonValue) : 
     m_dateHasBeenSet(false),
     m_event(InspectorEvent::NOT_SET),
     m_eventHasBeenSet(false),
@@ -55,7 +55,7 @@ AssessmentRunNotification::AssessmentRunNotification(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-AssessmentRunNotification& AssessmentRunNotification::operator =(const JsonValue& jsonValue)
+AssessmentRunNotification& AssessmentRunNotification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("date"))
   {

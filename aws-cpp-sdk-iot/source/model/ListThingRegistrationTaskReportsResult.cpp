@@ -39,10 +39,10 @@ ListThingRegistrationTaskReportsResult::ListThingRegistrationTaskReportsResult(c
 
 ListThingRegistrationTaskReportsResult& ListThingRegistrationTaskReportsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceLinks"))
   {
-    Array<JsonValue> resourceLinksJsonList = jsonValue.GetArray("resourceLinks");
+    Array<JsonView> resourceLinksJsonList = jsonValue.GetArray("resourceLinks");
     for(unsigned resourceLinksIndex = 0; resourceLinksIndex < resourceLinksJsonList.GetLength(); ++resourceLinksIndex)
     {
       m_resourceLinks.push_back(resourceLinksJsonList[resourceLinksIndex].AsString());

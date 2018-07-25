@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECR
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ImageIdentifier();
-    ImageIdentifier(const Aws::Utils::Json::JsonValue& jsonValue);
-    ImageIdentifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ImageIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    ImageIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

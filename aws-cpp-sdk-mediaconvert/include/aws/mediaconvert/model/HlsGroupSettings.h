@@ -40,6 +40,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -57,8 +58,8 @@ namespace Model
   {
   public:
     HlsGroupSettings();
-    HlsGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    HlsGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

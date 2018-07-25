@@ -55,7 +55,7 @@ FleetAttributes::FleetAttributes() :
 {
 }
 
-FleetAttributes::FleetAttributes(const JsonValue& jsonValue) : 
+FleetAttributes::FleetAttributes(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_fleetArnHasBeenSet(false),
     m_fleetType(FleetType::NOT_SET),
@@ -83,7 +83,7 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
+FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {
@@ -171,7 +171,7 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("LogPaths"))
   {
-    Array<JsonValue> logPathsJsonList = jsonValue.GetArray("LogPaths");
+    Array<JsonView> logPathsJsonList = jsonValue.GetArray("LogPaths");
     for(unsigned logPathsIndex = 0; logPathsIndex < logPathsJsonList.GetLength(); ++logPathsIndex)
     {
       m_logPaths.push_back(logPathsJsonList[logPathsIndex].AsString());
@@ -202,7 +202,7 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("MetricGroups"))
   {
-    Array<JsonValue> metricGroupsJsonList = jsonValue.GetArray("MetricGroups");
+    Array<JsonView> metricGroupsJsonList = jsonValue.GetArray("MetricGroups");
     for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
     {
       m_metricGroups.push_back(metricGroupsJsonList[metricGroupsIndex].AsString());
@@ -212,7 +212,7 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("StoppedActions"))
   {
-    Array<JsonValue> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
+    Array<JsonView> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
     for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
     {
       m_stoppedActions.push_back(FleetActionMapper::GetFleetActionForName(stoppedActionsJsonList[stoppedActionsIndex].AsString()));

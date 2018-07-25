@@ -52,7 +52,7 @@ Aws::String DeleteApplicationInputProcessingConfigurationRequest::SerializePaylo
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteApplicationInputProcessingConfigurationRequest::GetRequestSpecificHeaders() const

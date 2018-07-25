@@ -49,7 +49,7 @@ Aws::String TagLogGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection TagLogGroupRequest::GetRequestSpecificHeaders() const

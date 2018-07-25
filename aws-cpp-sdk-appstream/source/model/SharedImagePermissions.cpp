@@ -34,14 +34,14 @@ SharedImagePermissions::SharedImagePermissions() :
 {
 }
 
-SharedImagePermissions::SharedImagePermissions(const JsonValue& jsonValue) : 
+SharedImagePermissions::SharedImagePermissions(JsonView jsonValue) : 
     m_sharedAccountIdHasBeenSet(false),
     m_imagePermissionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SharedImagePermissions& SharedImagePermissions::operator =(const JsonValue& jsonValue)
+SharedImagePermissions& SharedImagePermissions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sharedAccountId"))
   {

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     CommandPlugin();
-    CommandPlugin(const Aws::Utils::Json::JsonValue& jsonValue);
-    CommandPlugin& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CommandPlugin(Aws::Utils::Json::JsonView jsonValue);
+    CommandPlugin& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

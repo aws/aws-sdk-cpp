@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace PI
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     DimensionKeyDescription();
-    DimensionKeyDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    DimensionKeyDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DimensionKeyDescription(Aws::Utils::Json::JsonView jsonValue);
+    DimensionKeyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

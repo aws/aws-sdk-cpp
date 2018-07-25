@@ -34,14 +34,14 @@ GeoMatchSetSummary::GeoMatchSetSummary() :
 {
 }
 
-GeoMatchSetSummary::GeoMatchSetSummary(const JsonValue& jsonValue) : 
+GeoMatchSetSummary::GeoMatchSetSummary(JsonView jsonValue) : 
     m_geoMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GeoMatchSetSummary& GeoMatchSetSummary::operator =(const JsonValue& jsonValue)
+GeoMatchSetSummary& GeoMatchSetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GeoMatchSetId"))
   {

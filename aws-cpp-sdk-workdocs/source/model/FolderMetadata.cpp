@@ -46,7 +46,7 @@ FolderMetadata::FolderMetadata() :
 {
 }
 
-FolderMetadata::FolderMetadata(const JsonValue& jsonValue) : 
+FolderMetadata::FolderMetadata(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
@@ -65,7 +65,7 @@ FolderMetadata::FolderMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FolderMetadata& FolderMetadata::operator =(const JsonValue& jsonValue)
+FolderMetadata& FolderMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -125,7 +125,7 @@ FolderMetadata& FolderMetadata::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonValue> labelsJsonList = jsonValue.GetArray("Labels");
+    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());

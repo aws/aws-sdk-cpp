@@ -37,10 +37,10 @@ DescribeAggregationAuthorizationsResult::DescribeAggregationAuthorizationsResult
 
 DescribeAggregationAuthorizationsResult& DescribeAggregationAuthorizationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregationAuthorizations"))
   {
-    Array<JsonValue> aggregationAuthorizationsJsonList = jsonValue.GetArray("AggregationAuthorizations");
+    Array<JsonView> aggregationAuthorizationsJsonList = jsonValue.GetArray("AggregationAuthorizations");
     for(unsigned aggregationAuthorizationsIndex = 0; aggregationAuthorizationsIndex < aggregationAuthorizationsJsonList.GetLength(); ++aggregationAuthorizationsIndex)
     {
       m_aggregationAuthorizations.push_back(aggregationAuthorizationsJsonList[aggregationAuthorizationsIndex].AsObject());

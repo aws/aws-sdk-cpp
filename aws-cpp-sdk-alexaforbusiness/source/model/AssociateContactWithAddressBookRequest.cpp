@@ -44,7 +44,7 @@ Aws::String AssociateContactWithAddressBookRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateContactWithAddressBookRequest::GetRequestSpecificHeaders() const

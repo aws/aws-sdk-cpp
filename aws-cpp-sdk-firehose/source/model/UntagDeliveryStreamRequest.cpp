@@ -49,7 +49,7 @@ Aws::String UntagDeliveryStreamRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UntagDeliveryStreamRequest::GetRequestSpecificHeaders() const

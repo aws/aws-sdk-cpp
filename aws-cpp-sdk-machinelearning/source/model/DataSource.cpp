@@ -55,7 +55,7 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(const JsonValue& jsonValue) : 
+DataSource::DataSource(JsonView jsonValue) : 
     m_dataSourceIdHasBeenSet(false),
     m_dataLocationS3HasBeenSet(false),
     m_dataRearrangementHasBeenSet(false),
@@ -83,7 +83,7 @@ DataSource::DataSource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DataSource& DataSource::operator =(const JsonValue& jsonValue)
+DataSource& DataSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DataSourceId"))
   {

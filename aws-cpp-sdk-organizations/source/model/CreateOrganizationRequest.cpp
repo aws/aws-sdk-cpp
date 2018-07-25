@@ -37,7 +37,7 @@ Aws::String CreateOrganizationRequest::SerializePayload() const
    payload.WithString("FeatureSet", OrganizationFeatureSetMapper::GetNameForOrganizationFeatureSet(m_featureSet));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateOrganizationRequest::GetRequestSpecificHeaders() const

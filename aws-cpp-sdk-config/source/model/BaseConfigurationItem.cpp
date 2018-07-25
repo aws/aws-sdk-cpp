@@ -48,7 +48,7 @@ BaseConfigurationItem::BaseConfigurationItem() :
 {
 }
 
-BaseConfigurationItem::BaseConfigurationItem(const JsonValue& jsonValue) : 
+BaseConfigurationItem::BaseConfigurationItem(JsonView jsonValue) : 
     m_versionHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_configurationItemCaptureTimeHasBeenSet(false),
@@ -69,7 +69,7 @@ BaseConfigurationItem::BaseConfigurationItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BaseConfigurationItem& BaseConfigurationItem::operator =(const JsonValue& jsonValue)
+BaseConfigurationItem& BaseConfigurationItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("version"))
   {
@@ -164,7 +164,7 @@ BaseConfigurationItem& BaseConfigurationItem::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("supplementaryConfiguration"))
   {
-    Aws::Map<Aws::String, JsonValue> supplementaryConfigurationJsonMap = jsonValue.GetObject("supplementaryConfiguration").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> supplementaryConfigurationJsonMap = jsonValue.GetObject("supplementaryConfiguration").GetAllObjects();
     for(auto& supplementaryConfigurationItem : supplementaryConfigurationJsonMap)
     {
       m_supplementaryConfiguration[supplementaryConfigurationItem.first] = supplementaryConfigurationItem.second.AsString();

@@ -38,7 +38,7 @@ ThingDocument::ThingDocument() :
 {
 }
 
-ThingDocument::ThingDocument(const JsonValue& jsonValue) : 
+ThingDocument::ThingDocument(JsonView jsonValue) : 
     m_thingNameHasBeenSet(false),
     m_thingIdHasBeenSet(false),
     m_thingTypeNameHasBeenSet(false),
@@ -49,7 +49,7 @@ ThingDocument::ThingDocument(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ThingDocument& ThingDocument::operator =(const JsonValue& jsonValue)
+ThingDocument& ThingDocument::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("thingName"))
   {
@@ -74,7 +74,7 @@ ThingDocument& ThingDocument::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("thingGroupNames"))
   {
-    Array<JsonValue> thingGroupNamesJsonList = jsonValue.GetArray("thingGroupNames");
+    Array<JsonView> thingGroupNamesJsonList = jsonValue.GetArray("thingGroupNames");
     for(unsigned thingGroupNamesIndex = 0; thingGroupNamesIndex < thingGroupNamesJsonList.GetLength(); ++thingGroupNamesIndex)
     {
       m_thingGroupNames.push_back(thingGroupNamesJsonList[thingGroupNamesIndex].AsString());
@@ -84,7 +84,7 @@ ThingDocument& ThingDocument::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

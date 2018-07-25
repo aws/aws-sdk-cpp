@@ -44,7 +44,7 @@ Aws::String GetThirdPartyJobDetailsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetThirdPartyJobDetailsRequest::GetRequestSpecificHeaders() const

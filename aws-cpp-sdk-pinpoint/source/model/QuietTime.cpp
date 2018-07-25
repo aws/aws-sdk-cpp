@@ -34,14 +34,14 @@ QuietTime::QuietTime() :
 {
 }
 
-QuietTime::QuietTime(const JsonValue& jsonValue) : 
+QuietTime::QuietTime(JsonView jsonValue) : 
     m_endHasBeenSet(false),
     m_startHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-QuietTime& QuietTime::operator =(const JsonValue& jsonValue)
+QuietTime& QuietTime::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("End"))
   {

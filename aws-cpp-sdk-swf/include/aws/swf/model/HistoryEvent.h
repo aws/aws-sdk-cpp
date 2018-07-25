@@ -80,6 +80,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -190,8 +191,8 @@ namespace Model
   {
   public:
     HistoryEvent();
-    HistoryEvent(const Aws::Utils::Json::JsonValue& jsonValue);
-    HistoryEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
+    HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

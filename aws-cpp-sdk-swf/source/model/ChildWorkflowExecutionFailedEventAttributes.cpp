@@ -40,7 +40,7 @@ ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAt
 {
 }
 
-ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAttributes(const JsonValue& jsonValue) : 
+ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
     m_workflowExecutionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_reasonHasBeenSet(false),
@@ -53,7 +53,7 @@ ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAt
   *this = jsonValue;
 }
 
-ChildWorkflowExecutionFailedEventAttributes& ChildWorkflowExecutionFailedEventAttributes::operator =(const JsonValue& jsonValue)
+ChildWorkflowExecutionFailedEventAttributes& ChildWorkflowExecutionFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowExecution"))
   {

@@ -35,7 +35,7 @@ CmafEncryption::CmafEncryption() :
 {
 }
 
-CmafEncryption::CmafEncryption(const JsonValue& jsonValue) : 
+CmafEncryption::CmafEncryption(JsonView jsonValue) : 
     m_keyRotationIntervalSeconds(0),
     m_keyRotationIntervalSecondsHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
@@ -43,7 +43,7 @@ CmafEncryption::CmafEncryption(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CmafEncryption& CmafEncryption::operator =(const JsonValue& jsonValue)
+CmafEncryption& CmafEncryption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("keyRotationIntervalSeconds"))
   {

@@ -35,7 +35,7 @@ AutoScalingPolicyStatus::AutoScalingPolicyStatus() :
 {
 }
 
-AutoScalingPolicyStatus::AutoScalingPolicyStatus(const JsonValue& jsonValue) : 
+AutoScalingPolicyStatus::AutoScalingPolicyStatus(JsonView jsonValue) : 
     m_state(AutoScalingPolicyState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false)
@@ -43,7 +43,7 @@ AutoScalingPolicyStatus::AutoScalingPolicyStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AutoScalingPolicyStatus& AutoScalingPolicyStatus::operator =(const JsonValue& jsonValue)
+AutoScalingPolicyStatus& AutoScalingPolicyStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("State"))
   {

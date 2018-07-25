@@ -34,14 +34,14 @@ Selector::Selector() :
 {
 }
 
-Selector::Selector(const JsonValue& jsonValue) : 
+Selector::Selector(JsonView jsonValue) : 
     m_fieldNameHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Selector& Selector::operator =(const JsonValue& jsonValue)
+Selector& Selector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fieldName"))
   {

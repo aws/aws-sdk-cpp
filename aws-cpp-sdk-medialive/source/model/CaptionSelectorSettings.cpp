@@ -38,7 +38,7 @@ CaptionSelectorSettings::CaptionSelectorSettings() :
 {
 }
 
-CaptionSelectorSettings::CaptionSelectorSettings(const JsonValue& jsonValue) : 
+CaptionSelectorSettings::CaptionSelectorSettings(JsonView jsonValue) : 
     m_aribSourceSettingsHasBeenSet(false),
     m_dvbSubSourceSettingsHasBeenSet(false),
     m_embeddedSourceSettingsHasBeenSet(false),
@@ -49,7 +49,7 @@ CaptionSelectorSettings::CaptionSelectorSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionSelectorSettings& CaptionSelectorSettings::operator =(const JsonValue& jsonValue)
+CaptionSelectorSettings& CaptionSelectorSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("aribSourceSettings"))
   {

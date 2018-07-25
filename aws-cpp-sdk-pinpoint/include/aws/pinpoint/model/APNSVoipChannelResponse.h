@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     APNSVoipChannelResponse();
-    APNSVoipChannelResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    APNSVoipChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    APNSVoipChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    APNSVoipChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

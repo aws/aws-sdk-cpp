@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaPackage
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     CmafPackageCreateOrUpdateParameters();
-    CmafPackageCreateOrUpdateParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    CmafPackageCreateOrUpdateParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CmafPackageCreateOrUpdateParameters(Aws::Utils::Json::JsonView jsonValue);
+    CmafPackageCreateOrUpdateParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

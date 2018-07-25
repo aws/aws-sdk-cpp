@@ -35,7 +35,7 @@ EventAggregate::EventAggregate() :
 {
 }
 
-EventAggregate::EventAggregate(const JsonValue& jsonValue) : 
+EventAggregate::EventAggregate(JsonView jsonValue) : 
     m_aggregateValueHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false)
@@ -43,7 +43,7 @@ EventAggregate::EventAggregate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventAggregate& EventAggregate::operator =(const JsonValue& jsonValue)
+EventAggregate& EventAggregate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("aggregateValue"))
   {

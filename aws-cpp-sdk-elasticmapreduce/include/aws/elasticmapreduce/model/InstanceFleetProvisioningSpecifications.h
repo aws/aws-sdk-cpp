@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     InstanceFleetProvisioningSpecifications();
-    InstanceFleetProvisioningSpecifications(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceFleetProvisioningSpecifications& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceFleetProvisioningSpecifications(Aws::Utils::Json::JsonView jsonValue);
+    InstanceFleetProvisioningSpecifications& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

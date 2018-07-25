@@ -37,10 +37,10 @@ GetDevicesInPlacementResult::GetDevicesInPlacementResult(const Aws::AmazonWebSer
 
 GetDevicesInPlacementResult& GetDevicesInPlacementResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("devices"))
   {
-    Aws::Map<Aws::String, JsonValue> devicesJsonMap = jsonValue.GetObject("devices").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> devicesJsonMap = jsonValue.GetObject("devices").GetAllObjects();
     for(auto& devicesItem : devicesJsonMap)
     {
       m_devices[devicesItem.first] = devicesItem.second.AsString();

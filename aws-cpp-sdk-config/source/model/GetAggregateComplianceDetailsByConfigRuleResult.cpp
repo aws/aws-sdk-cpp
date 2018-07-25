@@ -37,10 +37,10 @@ GetAggregateComplianceDetailsByConfigRuleResult::GetAggregateComplianceDetailsBy
 
 GetAggregateComplianceDetailsByConfigRuleResult& GetAggregateComplianceDetailsByConfigRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregateEvaluationResults"))
   {
-    Array<JsonValue> aggregateEvaluationResultsJsonList = jsonValue.GetArray("AggregateEvaluationResults");
+    Array<JsonView> aggregateEvaluationResultsJsonList = jsonValue.GetArray("AggregateEvaluationResults");
     for(unsigned aggregateEvaluationResultsIndex = 0; aggregateEvaluationResultsIndex < aggregateEvaluationResultsJsonList.GetLength(); ++aggregateEvaluationResultsIndex)
     {
       m_aggregateEvaluationResults.push_back(aggregateEvaluationResultsJsonList[aggregateEvaluationResultsIndex].AsObject());

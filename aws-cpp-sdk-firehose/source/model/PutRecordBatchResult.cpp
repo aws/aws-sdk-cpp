@@ -39,7 +39,7 @@ PutRecordBatchResult::PutRecordBatchResult(const Aws::AmazonWebServiceResult<Jso
 
 PutRecordBatchResult& PutRecordBatchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedPutCount"))
   {
     m_failedPutCount = jsonValue.GetInteger("FailedPutCount");
@@ -48,7 +48,7 @@ PutRecordBatchResult& PutRecordBatchResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("RequestResponses"))
   {
-    Array<JsonValue> requestResponsesJsonList = jsonValue.GetArray("RequestResponses");
+    Array<JsonView> requestResponsesJsonList = jsonValue.GetArray("RequestResponses");
     for(unsigned requestResponsesIndex = 0; requestResponsesIndex < requestResponsesJsonList.GetLength(); ++requestResponsesIndex)
     {
       m_requestResponses.push_back(requestResponsesJsonList[requestResponsesIndex].AsObject());

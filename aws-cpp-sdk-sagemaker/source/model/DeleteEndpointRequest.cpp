@@ -37,7 +37,7 @@ Aws::String DeleteEndpointRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteEndpointRequest::GetRequestSpecificHeaders() const

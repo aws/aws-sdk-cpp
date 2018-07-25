@@ -39,7 +39,7 @@ CaptionSourceSettings::CaptionSourceSettings() :
 {
 }
 
-CaptionSourceSettings::CaptionSourceSettings(const JsonValue& jsonValue) : 
+CaptionSourceSettings::CaptionSourceSettings(JsonView jsonValue) : 
     m_ancillarySourceSettingsHasBeenSet(false),
     m_dvbSubSourceSettingsHasBeenSet(false),
     m_embeddedSourceSettingsHasBeenSet(false),
@@ -51,7 +51,7 @@ CaptionSourceSettings::CaptionSourceSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionSourceSettings& CaptionSourceSettings::operator =(const JsonValue& jsonValue)
+CaptionSourceSettings& CaptionSourceSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ancillarySourceSettings"))
   {

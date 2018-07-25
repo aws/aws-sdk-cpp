@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     Country();
-    Country(const Aws::Utils::Json::JsonValue& jsonValue);
-    Country& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Country(Aws::Utils::Json::JsonView jsonValue);
+    Country& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

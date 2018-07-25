@@ -44,7 +44,7 @@ SegmentResponse::SegmentResponse() :
 {
 }
 
-SegmentResponse::SegmentResponse(const JsonValue& jsonValue) : 
+SegmentResponse::SegmentResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
@@ -61,7 +61,7 @@ SegmentResponse::SegmentResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SegmentResponse& SegmentResponse::operator =(const JsonValue& jsonValue)
+SegmentResponse& SegmentResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

@@ -49,7 +49,7 @@ Aws::String DescribeConfigRulesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeConfigRulesRequest::GetRequestSpecificHeaders() const

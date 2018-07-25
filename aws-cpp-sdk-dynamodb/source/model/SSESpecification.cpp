@@ -34,14 +34,14 @@ SSESpecification::SSESpecification() :
 {
 }
 
-SSESpecification::SSESpecification(const JsonValue& jsonValue) : 
+SSESpecification::SSESpecification(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SSESpecification& SSESpecification::operator =(const JsonValue& jsonValue)
+SSESpecification& SSESpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

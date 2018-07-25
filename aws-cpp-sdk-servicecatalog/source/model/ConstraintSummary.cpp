@@ -34,14 +34,14 @@ ConstraintSummary::ConstraintSummary() :
 {
 }
 
-ConstraintSummary::ConstraintSummary(const JsonValue& jsonValue) : 
+ConstraintSummary::ConstraintSummary(JsonView jsonValue) : 
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ConstraintSummary& ConstraintSummary::operator =(const JsonValue& jsonValue)
+ConstraintSummary& ConstraintSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

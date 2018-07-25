@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -52,8 +53,8 @@ namespace Model
   {
   public:
     RegexMatchTuple();
-    RegexMatchTuple(const Aws::Utils::Json::JsonValue& jsonValue);
-    RegexMatchTuple& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RegexMatchTuple(Aws::Utils::Json::JsonView jsonValue);
+    RegexMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

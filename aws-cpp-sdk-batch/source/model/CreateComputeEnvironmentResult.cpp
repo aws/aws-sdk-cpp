@@ -37,7 +37,7 @@ CreateComputeEnvironmentResult::CreateComputeEnvironmentResult(const Aws::Amazon
 
 CreateComputeEnvironmentResult& CreateComputeEnvironmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("computeEnvironmentName"))
   {
     m_computeEnvironmentName = jsonValue.GetString("computeEnvironmentName");

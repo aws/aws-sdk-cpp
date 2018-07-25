@@ -52,7 +52,7 @@ Aws::String SetV2LoggingOptionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

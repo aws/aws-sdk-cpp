@@ -35,7 +35,7 @@ CloudWatchOutputConfig::CloudWatchOutputConfig() :
 {
 }
 
-CloudWatchOutputConfig::CloudWatchOutputConfig(const JsonValue& jsonValue) : 
+CloudWatchOutputConfig::CloudWatchOutputConfig(JsonView jsonValue) : 
     m_cloudWatchLogGroupNameHasBeenSet(false),
     m_cloudWatchOutputEnabled(false),
     m_cloudWatchOutputEnabledHasBeenSet(false)
@@ -43,7 +43,7 @@ CloudWatchOutputConfig::CloudWatchOutputConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CloudWatchOutputConfig& CloudWatchOutputConfig::operator =(const JsonValue& jsonValue)
+CloudWatchOutputConfig& CloudWatchOutputConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CloudWatchLogGroupName"))
   {

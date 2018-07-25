@@ -34,14 +34,14 @@ HLSTimestampRange::HLSTimestampRange() :
 {
 }
 
-HLSTimestampRange::HLSTimestampRange(const JsonValue& jsonValue) : 
+HLSTimestampRange::HLSTimestampRange(JsonView jsonValue) : 
     m_startTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HLSTimestampRange& HLSTimestampRange::operator =(const JsonValue& jsonValue)
+HLSTimestampRange& HLSTimestampRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartTimestamp"))
   {

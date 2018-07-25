@@ -33,13 +33,13 @@ ObjectReference::ObjectReference() :
 {
 }
 
-ObjectReference::ObjectReference(const JsonValue& jsonValue) : 
+ObjectReference::ObjectReference(JsonView jsonValue) : 
     m_selectorHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ObjectReference& ObjectReference::operator =(const JsonValue& jsonValue)
+ObjectReference& ObjectReference::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Selector"))
   {

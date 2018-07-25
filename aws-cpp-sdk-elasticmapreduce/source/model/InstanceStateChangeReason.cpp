@@ -35,7 +35,7 @@ InstanceStateChangeReason::InstanceStateChangeReason() :
 {
 }
 
-InstanceStateChangeReason::InstanceStateChangeReason(const JsonValue& jsonValue) : 
+InstanceStateChangeReason::InstanceStateChangeReason(JsonView jsonValue) : 
     m_code(InstanceStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ InstanceStateChangeReason::InstanceStateChangeReason(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-InstanceStateChangeReason& InstanceStateChangeReason::operator =(const JsonValue& jsonValue)
+InstanceStateChangeReason& InstanceStateChangeReason::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

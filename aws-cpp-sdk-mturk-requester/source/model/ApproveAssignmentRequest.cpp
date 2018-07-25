@@ -52,7 +52,7 @@ Aws::String ApproveAssignmentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ApproveAssignmentRequest::GetRequestSpecificHeaders() const

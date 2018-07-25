@@ -38,7 +38,7 @@ RiskConfigurationType::RiskConfigurationType() :
 {
 }
 
-RiskConfigurationType::RiskConfigurationType(const JsonValue& jsonValue) : 
+RiskConfigurationType::RiskConfigurationType(JsonView jsonValue) : 
     m_userPoolIdHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_compromisedCredentialsRiskConfigurationHasBeenSet(false),
@@ -49,7 +49,7 @@ RiskConfigurationType::RiskConfigurationType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RiskConfigurationType& RiskConfigurationType::operator =(const JsonValue& jsonValue)
+RiskConfigurationType& RiskConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserPoolId"))
   {

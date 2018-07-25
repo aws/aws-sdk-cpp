@@ -47,7 +47,7 @@ Message::Message() :
 {
 }
 
-Message::Message(const JsonValue& jsonValue) : 
+Message::Message(JsonView jsonValue) : 
     m_action(Action::NOT_SET),
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
@@ -67,7 +67,7 @@ Message::Message(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Message& Message::operator =(const JsonValue& jsonValue)
+Message& Message::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

@@ -35,7 +35,7 @@ AccountTakeoverActionsType::AccountTakeoverActionsType() :
 {
 }
 
-AccountTakeoverActionsType::AccountTakeoverActionsType(const JsonValue& jsonValue) : 
+AccountTakeoverActionsType::AccountTakeoverActionsType(JsonView jsonValue) : 
     m_lowActionHasBeenSet(false),
     m_mediumActionHasBeenSet(false),
     m_highActionHasBeenSet(false)
@@ -43,7 +43,7 @@ AccountTakeoverActionsType::AccountTakeoverActionsType(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-AccountTakeoverActionsType& AccountTakeoverActionsType::operator =(const JsonValue& jsonValue)
+AccountTakeoverActionsType& AccountTakeoverActionsType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LowAction"))
   {

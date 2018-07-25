@@ -33,13 +33,13 @@ TerminateRequest::TerminateRequest() :
 {
 }
 
-TerminateRequest::TerminateRequest(const JsonValue& jsonValue) : 
+TerminateRequest::TerminateRequest(JsonView jsonValue) : 
     m_workspaceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TerminateRequest& TerminateRequest::operator =(const JsonValue& jsonValue)
+TerminateRequest& TerminateRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkspaceId"))
   {

@@ -35,7 +35,7 @@ ComplianceSummaryItem::ComplianceSummaryItem() :
 {
 }
 
-ComplianceSummaryItem::ComplianceSummaryItem(const JsonValue& jsonValue) : 
+ComplianceSummaryItem::ComplianceSummaryItem(JsonView jsonValue) : 
     m_complianceTypeHasBeenSet(false),
     m_compliantSummaryHasBeenSet(false),
     m_nonCompliantSummaryHasBeenSet(false)
@@ -43,7 +43,7 @@ ComplianceSummaryItem::ComplianceSummaryItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComplianceSummaryItem& ComplianceSummaryItem::operator =(const JsonValue& jsonValue)
+ComplianceSummaryItem& ComplianceSummaryItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceType"))
   {

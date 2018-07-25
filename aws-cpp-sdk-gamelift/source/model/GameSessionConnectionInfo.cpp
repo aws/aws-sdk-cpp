@@ -37,7 +37,7 @@ GameSessionConnectionInfo::GameSessionConnectionInfo() :
 {
 }
 
-GameSessionConnectionInfo::GameSessionConnectionInfo(const JsonValue& jsonValue) : 
+GameSessionConnectionInfo::GameSessionConnectionInfo(JsonView jsonValue) : 
     m_gameSessionArnHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
@@ -47,7 +47,7 @@ GameSessionConnectionInfo::GameSessionConnectionInfo(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-GameSessionConnectionInfo& GameSessionConnectionInfo::operator =(const JsonValue& jsonValue)
+GameSessionConnectionInfo& GameSessionConnectionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GameSessionArn"))
   {
@@ -72,7 +72,7 @@ GameSessionConnectionInfo& GameSessionConnectionInfo::operator =(const JsonValue
 
   if(jsonValue.ValueExists("MatchedPlayerSessions"))
   {
-    Array<JsonValue> matchedPlayerSessionsJsonList = jsonValue.GetArray("MatchedPlayerSessions");
+    Array<JsonView> matchedPlayerSessionsJsonList = jsonValue.GetArray("MatchedPlayerSessions");
     for(unsigned matchedPlayerSessionsIndex = 0; matchedPlayerSessionsIndex < matchedPlayerSessionsJsonList.GetLength(); ++matchedPlayerSessionsIndex)
     {
       m_matchedPlayerSessions.push_back(matchedPlayerSessionsJsonList[matchedPlayerSessionsIndex].AsObject());

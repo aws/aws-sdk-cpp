@@ -36,7 +36,7 @@ HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification() :
 {
 }
 
-HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification(const JsonValue& jsonValue) : 
+HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification(JsonView jsonValue) : 
     m_trainingImageHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
     m_trainingInputModeHasBeenSet(false),
@@ -45,7 +45,7 @@ HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification(const
   *this = jsonValue;
 }
 
-HyperParameterAlgorithmSpecification& HyperParameterAlgorithmSpecification::operator =(const JsonValue& jsonValue)
+HyperParameterAlgorithmSpecification& HyperParameterAlgorithmSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TrainingImage"))
   {
@@ -63,7 +63,7 @@ HyperParameterAlgorithmSpecification& HyperParameterAlgorithmSpecification::oper
 
   if(jsonValue.ValueExists("MetricDefinitions"))
   {
-    Array<JsonValue> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
+    Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
     for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
     {
       m_metricDefinitions.push_back(metricDefinitionsJsonList[metricDefinitionsIndex].AsObject());

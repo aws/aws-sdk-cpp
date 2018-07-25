@@ -34,14 +34,14 @@ StackConfigurationManager::StackConfigurationManager() :
 {
 }
 
-StackConfigurationManager::StackConfigurationManager(const JsonValue& jsonValue) : 
+StackConfigurationManager::StackConfigurationManager(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StackConfigurationManager& StackConfigurationManager::operator =(const JsonValue& jsonValue)
+StackConfigurationManager& StackConfigurationManager::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

@@ -37,10 +37,10 @@ ListSchemaExtensionsResult::ListSchemaExtensionsResult(const Aws::AmazonWebServi
 
 ListSchemaExtensionsResult& ListSchemaExtensionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaExtensionsInfo"))
   {
-    Array<JsonValue> schemaExtensionsInfoJsonList = jsonValue.GetArray("SchemaExtensionsInfo");
+    Array<JsonView> schemaExtensionsInfoJsonList = jsonValue.GetArray("SchemaExtensionsInfo");
     for(unsigned schemaExtensionsInfoIndex = 0; schemaExtensionsInfoIndex < schemaExtensionsInfoJsonList.GetLength(); ++schemaExtensionsInfoIndex)
     {
       m_schemaExtensionsInfo.push_back(schemaExtensionsInfoJsonList[schemaExtensionsInfoIndex].AsObject());

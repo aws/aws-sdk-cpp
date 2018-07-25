@@ -37,7 +37,7 @@ Settings::Settings() :
 {
 }
 
-Settings::Settings(const JsonValue& jsonValue) : 
+Settings::Settings(JsonView jsonValue) : 
     m_vocabularyNameHasBeenSet(false),
     m_showSpeakerLabels(false),
     m_showSpeakerLabelsHasBeenSet(false),
@@ -47,7 +47,7 @@ Settings::Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Settings& Settings::operator =(const JsonValue& jsonValue)
+Settings& Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VocabularyName"))
   {

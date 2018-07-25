@@ -37,7 +37,7 @@ StartMatchBackfillResult::StartMatchBackfillResult(const Aws::AmazonWebServiceRe
 
 StartMatchBackfillResult& StartMatchBackfillResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MatchmakingTicket"))
   {
     m_matchmakingTicket = jsonValue.GetObject("MatchmakingTicket");

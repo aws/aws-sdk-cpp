@@ -34,14 +34,14 @@ RetainRule::RetainRule() :
 {
 }
 
-RetainRule::RetainRule(const JsonValue& jsonValue) : 
+RetainRule::RetainRule(JsonView jsonValue) : 
     m_count(0),
     m_countHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RetainRule& RetainRule::operator =(const JsonValue& jsonValue)
+RetainRule& RetainRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Count"))
   {

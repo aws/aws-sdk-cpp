@@ -40,7 +40,7 @@ AttackDetail::AttackDetail() :
 {
 }
 
-AttackDetail::AttackDetail(const JsonValue& jsonValue) : 
+AttackDetail::AttackDetail(JsonView jsonValue) : 
     m_attackIdHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_subResourcesHasBeenSet(false),
@@ -53,7 +53,7 @@ AttackDetail::AttackDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttackDetail& AttackDetail::operator =(const JsonValue& jsonValue)
+AttackDetail& AttackDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttackId"))
   {
@@ -71,7 +71,7 @@ AttackDetail& AttackDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SubResources"))
   {
-    Array<JsonValue> subResourcesJsonList = jsonValue.GetArray("SubResources");
+    Array<JsonView> subResourcesJsonList = jsonValue.GetArray("SubResources");
     for(unsigned subResourcesIndex = 0; subResourcesIndex < subResourcesJsonList.GetLength(); ++subResourcesIndex)
     {
       m_subResources.push_back(subResourcesJsonList[subResourcesIndex].AsObject());
@@ -95,7 +95,7 @@ AttackDetail& AttackDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AttackCounters"))
   {
-    Array<JsonValue> attackCountersJsonList = jsonValue.GetArray("AttackCounters");
+    Array<JsonView> attackCountersJsonList = jsonValue.GetArray("AttackCounters");
     for(unsigned attackCountersIndex = 0; attackCountersIndex < attackCountersJsonList.GetLength(); ++attackCountersIndex)
     {
       m_attackCounters.push_back(attackCountersJsonList[attackCountersIndex].AsObject());
@@ -105,7 +105,7 @@ AttackDetail& AttackDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AttackProperties"))
   {
-    Array<JsonValue> attackPropertiesJsonList = jsonValue.GetArray("AttackProperties");
+    Array<JsonView> attackPropertiesJsonList = jsonValue.GetArray("AttackProperties");
     for(unsigned attackPropertiesIndex = 0; attackPropertiesIndex < attackPropertiesJsonList.GetLength(); ++attackPropertiesIndex)
     {
       m_attackProperties.push_back(attackPropertiesJsonList[attackPropertiesIndex].AsObject());
@@ -115,7 +115,7 @@ AttackDetail& AttackDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Mitigations"))
   {
-    Array<JsonValue> mitigationsJsonList = jsonValue.GetArray("Mitigations");
+    Array<JsonView> mitigationsJsonList = jsonValue.GetArray("Mitigations");
     for(unsigned mitigationsIndex = 0; mitigationsIndex < mitigationsJsonList.GetLength(); ++mitigationsIndex)
     {
       m_mitigations.push_back(mitigationsJsonList[mitigationsIndex].AsObject());

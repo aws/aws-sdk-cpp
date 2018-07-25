@@ -44,7 +44,7 @@ Aws::String DeleteDomainEntryRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteDomainEntryRequest::GetRequestSpecificHeaders() const

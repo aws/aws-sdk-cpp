@@ -49,7 +49,7 @@ CreateFileSystemResult::CreateFileSystemResult(const Aws::AmazonWebServiceResult
 
 CreateFileSystemResult& CreateFileSystemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");

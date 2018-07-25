@@ -51,7 +51,7 @@ Aws::String CreateResourceRequest::SerializePayload() const
    payload.WithString("Type", ResourceTypeMapper::GetNameForResourceType(m_type));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateResourceRequest::GetRequestSpecificHeaders() const

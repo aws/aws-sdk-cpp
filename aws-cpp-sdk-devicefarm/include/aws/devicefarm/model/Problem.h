@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Problem();
-    Problem(const Aws::Utils::Json::JsonValue& jsonValue);
-    Problem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Problem(Aws::Utils::Json::JsonView jsonValue);
+    Problem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

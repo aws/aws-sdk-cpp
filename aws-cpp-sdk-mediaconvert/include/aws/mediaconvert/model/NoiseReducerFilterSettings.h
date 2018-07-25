@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     NoiseReducerFilterSettings();
-    NoiseReducerFilterSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    NoiseReducerFilterSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NoiseReducerFilterSettings(Aws::Utils::Json::JsonView jsonValue);
+    NoiseReducerFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

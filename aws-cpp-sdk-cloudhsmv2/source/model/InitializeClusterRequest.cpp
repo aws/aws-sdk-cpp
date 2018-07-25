@@ -51,7 +51,7 @@ Aws::String InitializeClusterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection InitializeClusterRequest::GetRequestSpecificHeaders() const

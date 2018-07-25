@@ -38,7 +38,7 @@ DeviceMinutes::DeviceMinutes() :
 {
 }
 
-DeviceMinutes::DeviceMinutes(const JsonValue& jsonValue) : 
+DeviceMinutes::DeviceMinutes(JsonView jsonValue) : 
     m_total(0.0),
     m_totalHasBeenSet(false),
     m_metered(0.0),
@@ -49,7 +49,7 @@ DeviceMinutes::DeviceMinutes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeviceMinutes& DeviceMinutes::operator =(const JsonValue& jsonValue)
+DeviceMinutes& DeviceMinutes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("total"))
   {

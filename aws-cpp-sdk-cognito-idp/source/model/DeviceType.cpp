@@ -37,7 +37,7 @@ DeviceType::DeviceType() :
 {
 }
 
-DeviceType::DeviceType(const JsonValue& jsonValue) : 
+DeviceType::DeviceType(JsonView jsonValue) : 
     m_deviceKeyHasBeenSet(false),
     m_deviceAttributesHasBeenSet(false),
     m_deviceCreateDateHasBeenSet(false),
@@ -47,7 +47,7 @@ DeviceType::DeviceType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeviceType& DeviceType::operator =(const JsonValue& jsonValue)
+DeviceType& DeviceType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeviceKey"))
   {
@@ -58,7 +58,7 @@ DeviceType& DeviceType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DeviceAttributes"))
   {
-    Array<JsonValue> deviceAttributesJsonList = jsonValue.GetArray("DeviceAttributes");
+    Array<JsonView> deviceAttributesJsonList = jsonValue.GetArray("DeviceAttributes");
     for(unsigned deviceAttributesIndex = 0; deviceAttributesIndex < deviceAttributesJsonList.GetLength(); ++deviceAttributesIndex)
     {
       m_deviceAttributes.push_back(deviceAttributesJsonList[deviceAttributesIndex].AsObject());

@@ -60,7 +60,7 @@ Server::Server() :
 {
 }
 
-Server::Server(const JsonValue& jsonValue) : 
+Server::Server(JsonView jsonValue) : 
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
     m_backupRetentionCount(0),
@@ -93,7 +93,7 @@ Server::Server(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Server& Server::operator =(const JsonValue& jsonValue)
+Server& Server::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AssociatePublicIpAddress"))
   {
@@ -160,7 +160,7 @@ Server& Server::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EngineAttributes"))
   {
-    Array<JsonValue> engineAttributesJsonList = jsonValue.GetArray("EngineAttributes");
+    Array<JsonView> engineAttributesJsonList = jsonValue.GetArray("EngineAttributes");
     for(unsigned engineAttributesIndex = 0; engineAttributesIndex < engineAttributesJsonList.GetLength(); ++engineAttributesIndex)
     {
       m_engineAttributes.push_back(engineAttributesJsonList[engineAttributesIndex].AsObject());
@@ -219,7 +219,7 @@ Server& Server::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -250,7 +250,7 @@ Server& Server::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());

@@ -45,7 +45,7 @@ HlsManifest::HlsManifest() :
 {
 }
 
-HlsManifest::HlsManifest(const JsonValue& jsonValue) : 
+HlsManifest::HlsManifest(JsonView jsonValue) : 
     m_adMarkers(AdMarkers::NOT_SET),
     m_adMarkersHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -63,7 +63,7 @@ HlsManifest::HlsManifest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsManifest& HlsManifest::operator =(const JsonValue& jsonValue)
+HlsManifest& HlsManifest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adMarkers"))
   {

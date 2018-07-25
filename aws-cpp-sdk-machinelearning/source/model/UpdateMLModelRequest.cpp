@@ -52,7 +52,7 @@ Aws::String UpdateMLModelRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateMLModelRequest::GetRequestSpecificHeaders() const

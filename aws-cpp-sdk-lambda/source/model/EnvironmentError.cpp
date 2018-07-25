@@ -34,14 +34,14 @@ EnvironmentError::EnvironmentError() :
 {
 }
 
-EnvironmentError::EnvironmentError(const JsonValue& jsonValue) : 
+EnvironmentError::EnvironmentError(JsonView jsonValue) : 
     m_errorCodeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EnvironmentError& EnvironmentError::operator =(const JsonValue& jsonValue)
+EnvironmentError& EnvironmentError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ErrorCode"))
   {

@@ -37,10 +37,10 @@ ListApiKeysResult::ListApiKeysResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListApiKeysResult& ListApiKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("apiKeys"))
   {
-    Array<JsonValue> apiKeysJsonList = jsonValue.GetArray("apiKeys");
+    Array<JsonView> apiKeysJsonList = jsonValue.GetArray("apiKeys");
     for(unsigned apiKeysIndex = 0; apiKeysIndex < apiKeysJsonList.GetLength(); ++apiKeysIndex)
     {
       m_apiKeys.push_back(apiKeysJsonList[apiKeysIndex].AsObject());

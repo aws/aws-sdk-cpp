@@ -40,7 +40,7 @@ ElastiCacheInstanceDetails::ElastiCacheInstanceDetails() :
 {
 }
 
-ElastiCacheInstanceDetails::ElastiCacheInstanceDetails(const JsonValue& jsonValue) : 
+ElastiCacheInstanceDetails::ElastiCacheInstanceDetails(JsonView jsonValue) : 
     m_familyHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -53,7 +53,7 @@ ElastiCacheInstanceDetails::ElastiCacheInstanceDetails(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ElastiCacheInstanceDetails& ElastiCacheInstanceDetails::operator =(const JsonValue& jsonValue)
+ElastiCacheInstanceDetails& ElastiCacheInstanceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Family"))
   {

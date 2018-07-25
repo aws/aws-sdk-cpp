@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     ResourceLimits();
-    ResourceLimits(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceLimits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceLimits(Aws::Utils::Json::JsonView jsonValue);
+    ResourceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

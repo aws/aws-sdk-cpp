@@ -37,7 +37,7 @@ CreateExportJobResult::CreateExportJobResult(const Aws::AmazonWebServiceResult<J
 
 CreateExportJobResult& CreateExportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_exportJobResponse = jsonValue;
 
 

@@ -52,7 +52,7 @@ JobDetail::JobDetail() :
 {
 }
 
-JobDetail::JobDetail(const JsonValue& jsonValue) : 
+JobDetail::JobDetail(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobQueueHasBeenSet(false),
@@ -77,7 +77,7 @@ JobDetail::JobDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobDetail& JobDetail::operator =(const JsonValue& jsonValue)
+JobDetail& JobDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobName"))
   {
@@ -109,7 +109,7 @@ JobDetail& JobDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attempts"))
   {
-    Array<JsonValue> attemptsJsonList = jsonValue.GetArray("attempts");
+    Array<JsonView> attemptsJsonList = jsonValue.GetArray("attempts");
     for(unsigned attemptsIndex = 0; attemptsIndex < attemptsJsonList.GetLength(); ++attemptsIndex)
     {
       m_attempts.push_back(attemptsJsonList[attemptsIndex].AsObject());
@@ -154,7 +154,7 @@ JobDetail& JobDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("dependsOn"))
   {
-    Array<JsonValue> dependsOnJsonList = jsonValue.GetArray("dependsOn");
+    Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
     for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
     {
       m_dependsOn.push_back(dependsOnJsonList[dependsOnIndex].AsObject());
@@ -171,7 +171,7 @@ JobDetail& JobDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

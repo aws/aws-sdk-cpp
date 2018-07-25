@@ -37,10 +37,10 @@ DisassociateS3ResourcesResult::DisassociateS3ResourcesResult(const Aws::AmazonWe
 
 DisassociateS3ResourcesResult& DisassociateS3ResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("failedS3Resources"))
   {
-    Array<JsonValue> failedS3ResourcesJsonList = jsonValue.GetArray("failedS3Resources");
+    Array<JsonView> failedS3ResourcesJsonList = jsonValue.GetArray("failedS3Resources");
     for(unsigned failedS3ResourcesIndex = 0; failedS3ResourcesIndex < failedS3ResourcesJsonList.GetLength(); ++failedS3ResourcesIndex)
     {
       m_failedS3Resources.push_back(failedS3ResourcesJsonList[failedS3ResourcesIndex].AsObject());

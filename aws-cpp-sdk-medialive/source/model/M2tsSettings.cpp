@@ -107,7 +107,7 @@ M2tsSettings::M2tsSettings() :
 {
 }
 
-M2tsSettings::M2tsSettings(const JsonValue& jsonValue) : 
+M2tsSettings::M2tsSettings(JsonView jsonValue) : 
     m_absentInputAudioBehavior(M2tsAbsentInputAudioBehavior::NOT_SET),
     m_absentInputAudioBehaviorHasBeenSet(false),
     m_arib(M2tsArib::NOT_SET),
@@ -187,7 +187,7 @@ M2tsSettings::M2tsSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
+M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("absentInputAudioBehavior"))
   {

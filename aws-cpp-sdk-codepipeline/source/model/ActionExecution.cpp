@@ -43,7 +43,7 @@ ActionExecution::ActionExecution() :
 {
 }
 
-ActionExecution::ActionExecution(const JsonValue& jsonValue) : 
+ActionExecution::ActionExecution(JsonView jsonValue) : 
     m_status(ActionExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
@@ -59,7 +59,7 @@ ActionExecution::ActionExecution(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActionExecution& ActionExecution::operator =(const JsonValue& jsonValue)
+ActionExecution& ActionExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("status"))
   {

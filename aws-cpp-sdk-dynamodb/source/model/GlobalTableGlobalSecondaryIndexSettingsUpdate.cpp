@@ -36,7 +36,7 @@ GlobalTableGlobalSecondaryIndexSettingsUpdate::GlobalTableGlobalSecondaryIndexSe
 {
 }
 
-GlobalTableGlobalSecondaryIndexSettingsUpdate::GlobalTableGlobalSecondaryIndexSettingsUpdate(const JsonValue& jsonValue) : 
+GlobalTableGlobalSecondaryIndexSettingsUpdate::GlobalTableGlobalSecondaryIndexSettingsUpdate(JsonView jsonValue) : 
     m_indexNameHasBeenSet(false),
     m_provisionedWriteCapacityUnits(0),
     m_provisionedWriteCapacityUnitsHasBeenSet(false),
@@ -45,7 +45,7 @@ GlobalTableGlobalSecondaryIndexSettingsUpdate::GlobalTableGlobalSecondaryIndexSe
   *this = jsonValue;
 }
 
-GlobalTableGlobalSecondaryIndexSettingsUpdate& GlobalTableGlobalSecondaryIndexSettingsUpdate::operator =(const JsonValue& jsonValue)
+GlobalTableGlobalSecondaryIndexSettingsUpdate& GlobalTableGlobalSecondaryIndexSettingsUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexName"))
   {

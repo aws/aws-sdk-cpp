@@ -35,7 +35,7 @@ SerDeInfo::SerDeInfo() :
 {
 }
 
-SerDeInfo::SerDeInfo(const JsonValue& jsonValue) : 
+SerDeInfo::SerDeInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_serializationLibraryHasBeenSet(false),
     m_parametersHasBeenSet(false)
@@ -43,7 +43,7 @@ SerDeInfo::SerDeInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SerDeInfo& SerDeInfo::operator =(const JsonValue& jsonValue)
+SerDeInfo& SerDeInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -61,7 +61,7 @@ SerDeInfo& SerDeInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

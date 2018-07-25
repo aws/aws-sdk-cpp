@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudSearchDomain
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DocumentServiceWarning();
-    DocumentServiceWarning(const Aws::Utils::Json::JsonValue& jsonValue);
-    DocumentServiceWarning& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DocumentServiceWarning(Aws::Utils::Json::JsonView jsonValue);
+    DocumentServiceWarning& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

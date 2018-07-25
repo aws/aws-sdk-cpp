@@ -34,14 +34,14 @@ DimensionValuesWithAttributes::DimensionValuesWithAttributes() :
 {
 }
 
-DimensionValuesWithAttributes::DimensionValuesWithAttributes(const JsonValue& jsonValue) : 
+DimensionValuesWithAttributes::DimensionValuesWithAttributes(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DimensionValuesWithAttributes& DimensionValuesWithAttributes::operator =(const JsonValue& jsonValue)
+DimensionValuesWithAttributes& DimensionValuesWithAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {
@@ -52,7 +52,7 @@ DimensionValuesWithAttributes& DimensionValuesWithAttributes::operator =(const J
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

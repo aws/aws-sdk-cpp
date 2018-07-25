@@ -37,10 +37,10 @@ ListResolversResult::ListResolversResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListResolversResult& ListResolversResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resolvers"))
   {
-    Array<JsonValue> resolversJsonList = jsonValue.GetArray("resolvers");
+    Array<JsonView> resolversJsonList = jsonValue.GetArray("resolvers");
     for(unsigned resolversIndex = 0; resolversIndex < resolversJsonList.GetLength(); ++resolversIndex)
     {
       m_resolvers.push_back(resolversJsonList[resolversIndex].AsObject());

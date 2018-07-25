@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     SizeConstraintSet();
-    SizeConstraintSet(const Aws::Utils::Json::JsonValue& jsonValue);
-    SizeConstraintSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SizeConstraintSet(Aws::Utils::Json::JsonView jsonValue);
+    SizeConstraintSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

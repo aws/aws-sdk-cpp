@@ -44,7 +44,7 @@ Connector::Connector() :
 {
 }
 
-Connector::Connector(const JsonValue& jsonValue) : 
+Connector::Connector(JsonView jsonValue) : 
     m_connectorIdHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_status(ConnectorStatus::NOT_SET),
@@ -61,7 +61,7 @@ Connector::Connector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Connector& Connector::operator =(const JsonValue& jsonValue)
+Connector& Connector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("connectorId"))
   {
@@ -86,7 +86,7 @@ Connector& Connector::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("capabilityList"))
   {
-    Array<JsonValue> capabilityListJsonList = jsonValue.GetArray("capabilityList");
+    Array<JsonView> capabilityListJsonList = jsonValue.GetArray("capabilityList");
     for(unsigned capabilityListIndex = 0; capabilityListIndex < capabilityListJsonList.GetLength(); ++capabilityListIndex)
     {
       m_capabilityList.push_back(ConnectorCapabilityMapper::GetConnectorCapabilityForName(capabilityListJsonList[capabilityListIndex].AsString()));

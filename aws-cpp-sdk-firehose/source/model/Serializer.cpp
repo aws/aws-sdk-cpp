@@ -34,14 +34,14 @@ Serializer::Serializer() :
 {
 }
 
-Serializer::Serializer(const JsonValue& jsonValue) : 
+Serializer::Serializer(JsonView jsonValue) : 
     m_parquetSerDeHasBeenSet(false),
     m_orcSerDeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Serializer& Serializer::operator =(const JsonValue& jsonValue)
+Serializer& Serializer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParquetSerDe"))
   {

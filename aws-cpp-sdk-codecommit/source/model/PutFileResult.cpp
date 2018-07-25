@@ -37,7 +37,7 @@ PutFileResult::PutFileResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 PutFileResult& PutFileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("commitId"))
   {
     m_commitId = jsonValue.GetString("commitId");

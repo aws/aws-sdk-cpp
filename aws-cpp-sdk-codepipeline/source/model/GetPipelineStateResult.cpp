@@ -39,7 +39,7 @@ GetPipelineStateResult::GetPipelineStateResult(const Aws::AmazonWebServiceResult
 
 GetPipelineStateResult& GetPipelineStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pipelineName"))
   {
     m_pipelineName = jsonValue.GetString("pipelineName");
@@ -54,7 +54,7 @@ GetPipelineStateResult& GetPipelineStateResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("stageStates"))
   {
-    Array<JsonValue> stageStatesJsonList = jsonValue.GetArray("stageStates");
+    Array<JsonView> stageStatesJsonList = jsonValue.GetArray("stageStates");
     for(unsigned stageStatesIndex = 0; stageStatesIndex < stageStatesJsonList.GetLength(); ++stageStatesIndex)
     {
       m_stageStates.push_back(stageStatesJsonList[stageStatesIndex].AsObject());

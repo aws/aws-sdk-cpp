@@ -34,14 +34,14 @@ LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes() :
 {
 }
 
-LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes(const JsonValue& jsonValue) : 
+LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes(JsonView jsonValue) : 
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaFunctionStartedEventAttributes& LambdaFunctionStartedEventAttributes::operator =(const JsonValue& jsonValue)
+LambdaFunctionStartedEventAttributes& LambdaFunctionStartedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("scheduledEventId"))
   {

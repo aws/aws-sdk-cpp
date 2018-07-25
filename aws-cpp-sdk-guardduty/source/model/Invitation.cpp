@@ -36,7 +36,7 @@ Invitation::Invitation() :
 {
 }
 
-Invitation::Invitation(const JsonValue& jsonValue) : 
+Invitation::Invitation(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_invitationIdHasBeenSet(false),
     m_invitedAtHasBeenSet(false),
@@ -45,7 +45,7 @@ Invitation::Invitation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Invitation& Invitation::operator =(const JsonValue& jsonValue)
+Invitation& Invitation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {

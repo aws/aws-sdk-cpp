@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     InputFormatConfiguration();
-    InputFormatConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputFormatConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    InputFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

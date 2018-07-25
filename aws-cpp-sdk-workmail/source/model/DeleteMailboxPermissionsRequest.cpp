@@ -51,7 +51,7 @@ Aws::String DeleteMailboxPermissionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteMailboxPermissionsRequest::GetRequestSpecificHeaders() const

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaPackage
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     CmafEncryption();
-    CmafEncryption(const Aws::Utils::Json::JsonValue& jsonValue);
-    CmafEncryption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CmafEncryption(Aws::Utils::Json::JsonView jsonValue);
+    CmafEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ Aws::String DescribeCertificateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeCertificateRequest::GetRequestSpecificHeaders() const

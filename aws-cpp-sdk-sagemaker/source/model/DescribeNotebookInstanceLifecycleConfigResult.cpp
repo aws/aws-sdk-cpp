@@ -37,7 +37,7 @@ DescribeNotebookInstanceLifecycleConfigResult::DescribeNotebookInstanceLifecycle
 
 DescribeNotebookInstanceLifecycleConfigResult& DescribeNotebookInstanceLifecycleConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigArn"))
   {
     m_notebookInstanceLifecycleConfigArn = jsonValue.GetString("NotebookInstanceLifecycleConfigArn");
@@ -52,7 +52,7 @@ DescribeNotebookInstanceLifecycleConfigResult& DescribeNotebookInstanceLifecycle
 
   if(jsonValue.ValueExists("OnCreate"))
   {
-    Array<JsonValue> onCreateJsonList = jsonValue.GetArray("OnCreate");
+    Array<JsonView> onCreateJsonList = jsonValue.GetArray("OnCreate");
     for(unsigned onCreateIndex = 0; onCreateIndex < onCreateJsonList.GetLength(); ++onCreateIndex)
     {
       m_onCreate.push_back(onCreateJsonList[onCreateIndex].AsObject());
@@ -61,7 +61,7 @@ DescribeNotebookInstanceLifecycleConfigResult& DescribeNotebookInstanceLifecycle
 
   if(jsonValue.ValueExists("OnStart"))
   {
-    Array<JsonValue> onStartJsonList = jsonValue.GetArray("OnStart");
+    Array<JsonView> onStartJsonList = jsonValue.GetArray("OnStart");
     for(unsigned onStartIndex = 0; onStartIndex < onStartJsonList.GetLength(); ++onStartIndex)
     {
       m_onStart.push_back(onStartJsonList[onStartIndex].AsObject());

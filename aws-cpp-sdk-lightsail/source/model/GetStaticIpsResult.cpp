@@ -37,10 +37,10 @@ GetStaticIpsResult::GetStaticIpsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetStaticIpsResult& GetStaticIpsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("staticIps"))
   {
-    Array<JsonValue> staticIpsJsonList = jsonValue.GetArray("staticIps");
+    Array<JsonView> staticIpsJsonList = jsonValue.GetArray("staticIps");
     for(unsigned staticIpsIndex = 0; staticIpsIndex < staticIpsJsonList.GetLength(); ++staticIpsIndex)
     {
       m_staticIps.push_back(staticIpsJsonList[staticIpsIndex].AsObject());

@@ -50,7 +50,7 @@ AacSettings::AacSettings() :
 {
 }
 
-AacSettings::AacSettings(const JsonValue& jsonValue) : 
+AacSettings::AacSettings(JsonView jsonValue) : 
     m_bitrate(0.0),
     m_bitrateHasBeenSet(false),
     m_codingMode(AacCodingMode::NOT_SET),
@@ -73,7 +73,7 @@ AacSettings::AacSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AacSettings& AacSettings::operator =(const JsonValue& jsonValue)
+AacSettings& AacSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bitrate"))
   {

@@ -34,14 +34,14 @@ IamInstanceProfile::IamInstanceProfile() :
 {
 }
 
-IamInstanceProfile::IamInstanceProfile(const JsonValue& jsonValue) : 
+IamInstanceProfile::IamInstanceProfile(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_idHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-IamInstanceProfile& IamInstanceProfile::operator =(const JsonValue& jsonValue)
+IamInstanceProfile& IamInstanceProfile::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

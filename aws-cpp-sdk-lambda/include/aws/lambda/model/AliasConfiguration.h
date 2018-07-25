@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     AliasConfiguration();
-    AliasConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    AliasConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AliasConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AliasConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

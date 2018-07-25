@@ -52,7 +52,7 @@ Aws::String ListFacesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListFacesRequest::GetRequestSpecificHeaders() const

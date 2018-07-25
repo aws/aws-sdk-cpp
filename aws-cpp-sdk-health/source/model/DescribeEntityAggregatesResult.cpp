@@ -37,10 +37,10 @@ DescribeEntityAggregatesResult::DescribeEntityAggregatesResult(const Aws::Amazon
 
 DescribeEntityAggregatesResult& DescribeEntityAggregatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entityAggregates"))
   {
-    Array<JsonValue> entityAggregatesJsonList = jsonValue.GetArray("entityAggregates");
+    Array<JsonView> entityAggregatesJsonList = jsonValue.GetArray("entityAggregates");
     for(unsigned entityAggregatesIndex = 0; entityAggregatesIndex < entityAggregatesJsonList.GetLength(); ++entityAggregatesIndex)
     {
       m_entityAggregates.push_back(entityAggregatesJsonList[entityAggregatesIndex].AsObject());

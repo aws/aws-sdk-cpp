@@ -37,7 +37,7 @@ Aws::String DeleteReplicationJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteReplicationJobRequest::GetRequestSpecificHeaders() const

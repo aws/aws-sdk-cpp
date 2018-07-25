@@ -33,17 +33,17 @@ ResourceDefinitionVersion::ResourceDefinitionVersion() :
 {
 }
 
-ResourceDefinitionVersion::ResourceDefinitionVersion(const JsonValue& jsonValue) : 
+ResourceDefinitionVersion::ResourceDefinitionVersion(JsonView jsonValue) : 
     m_resourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourceDefinitionVersion& ResourceDefinitionVersion::operator =(const JsonValue& jsonValue)
+ResourceDefinitionVersion& ResourceDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonValue> resourcesJsonList = jsonValue.GetArray("Resources");
+    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());

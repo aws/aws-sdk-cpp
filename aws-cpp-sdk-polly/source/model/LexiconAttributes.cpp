@@ -41,7 +41,7 @@ LexiconAttributes::LexiconAttributes() :
 {
 }
 
-LexiconAttributes::LexiconAttributes(const JsonValue& jsonValue) : 
+LexiconAttributes::LexiconAttributes(JsonView jsonValue) : 
     m_alphabetHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
@@ -55,7 +55,7 @@ LexiconAttributes::LexiconAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LexiconAttributes& LexiconAttributes::operator =(const JsonValue& jsonValue)
+LexiconAttributes& LexiconAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Alphabet"))
   {

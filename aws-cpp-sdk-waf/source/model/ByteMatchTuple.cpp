@@ -39,7 +39,7 @@ ByteMatchTuple::ByteMatchTuple() :
 {
 }
 
-ByteMatchTuple::ByteMatchTuple(const JsonValue& jsonValue) : 
+ByteMatchTuple::ByteMatchTuple(JsonView jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
     m_targetStringHasBeenSet(false),
     m_textTransformation(TextTransformation::NOT_SET),
@@ -50,7 +50,7 @@ ByteMatchTuple::ByteMatchTuple(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ByteMatchTuple& ByteMatchTuple::operator =(const JsonValue& jsonValue)
+ByteMatchTuple& ByteMatchTuple::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FieldToMatch"))
   {

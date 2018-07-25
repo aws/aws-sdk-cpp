@@ -37,7 +37,7 @@ DescribeEventsResult::DescribeEventsResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeEventsResult& DescribeEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ DescribeEventsResult& DescribeEventsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Events"))
   {
-    Array<JsonValue> eventsJsonList = jsonValue.GetArray("Events");
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());

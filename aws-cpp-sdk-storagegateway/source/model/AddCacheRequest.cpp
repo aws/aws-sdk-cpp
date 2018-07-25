@@ -49,7 +49,7 @@ Aws::String AddCacheRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddCacheRequest::GetRequestSpecificHeaders() const

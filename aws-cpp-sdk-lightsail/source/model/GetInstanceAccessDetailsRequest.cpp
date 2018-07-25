@@ -44,7 +44,7 @@ Aws::String GetInstanceAccessDetailsRequest::SerializePayload() const
    payload.WithString("protocol", InstanceAccessProtocolMapper::GetNameForInstanceAccessProtocol(m_protocol));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetInstanceAccessDetailsRequest::GetRequestSpecificHeaders() const

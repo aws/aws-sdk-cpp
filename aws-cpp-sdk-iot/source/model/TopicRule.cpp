@@ -41,7 +41,7 @@ TopicRule::TopicRule() :
 {
 }
 
-TopicRule::TopicRule(const JsonValue& jsonValue) : 
+TopicRule::TopicRule(JsonView jsonValue) : 
     m_ruleNameHasBeenSet(false),
     m_sqlHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -55,7 +55,7 @@ TopicRule::TopicRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TopicRule& TopicRule::operator =(const JsonValue& jsonValue)
+TopicRule& TopicRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ruleName"))
   {
@@ -87,7 +87,7 @@ TopicRule& TopicRule::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonValue> actionsJsonList = jsonValue.GetArray("actions");
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());

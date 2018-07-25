@@ -36,7 +36,7 @@ SourceRevision::SourceRevision() :
 {
 }
 
-SourceRevision::SourceRevision(const JsonValue& jsonValue) : 
+SourceRevision::SourceRevision(JsonView jsonValue) : 
     m_actionNameHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
     m_revisionSummaryHasBeenSet(false),
@@ -45,7 +45,7 @@ SourceRevision::SourceRevision(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SourceRevision& SourceRevision::operator =(const JsonValue& jsonValue)
+SourceRevision& SourceRevision::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actionName"))
   {

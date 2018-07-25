@@ -36,7 +36,7 @@ ComplianceStringFilter::ComplianceStringFilter() :
 {
 }
 
-ComplianceStringFilter::ComplianceStringFilter(const JsonValue& jsonValue) : 
+ComplianceStringFilter::ComplianceStringFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false),
     m_type(ComplianceQueryOperatorType::NOT_SET),
@@ -45,7 +45,7 @@ ComplianceStringFilter::ComplianceStringFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComplianceStringFilter& ComplianceStringFilter::operator =(const JsonValue& jsonValue)
+ComplianceStringFilter& ComplianceStringFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -56,7 +56,7 @@ ComplianceStringFilter& ComplianceStringFilter::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

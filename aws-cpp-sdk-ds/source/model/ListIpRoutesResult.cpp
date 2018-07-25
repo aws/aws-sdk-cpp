@@ -37,10 +37,10 @@ ListIpRoutesResult::ListIpRoutesResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListIpRoutesResult& ListIpRoutesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IpRoutesInfo"))
   {
-    Array<JsonValue> ipRoutesInfoJsonList = jsonValue.GetArray("IpRoutesInfo");
+    Array<JsonView> ipRoutesInfoJsonList = jsonValue.GetArray("IpRoutesInfo");
     for(unsigned ipRoutesInfoIndex = 0; ipRoutesInfoIndex < ipRoutesInfoJsonList.GetLength(); ++ipRoutesInfoIndex)
     {
       m_ipRoutesInfo.push_back(ipRoutesInfoJsonList[ipRoutesInfoIndex].AsObject());

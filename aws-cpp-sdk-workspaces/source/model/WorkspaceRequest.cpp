@@ -42,7 +42,7 @@ WorkspaceRequest::WorkspaceRequest() :
 {
 }
 
-WorkspaceRequest::WorkspaceRequest(const JsonValue& jsonValue) : 
+WorkspaceRequest::WorkspaceRequest(JsonView jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
@@ -57,7 +57,7 @@ WorkspaceRequest::WorkspaceRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WorkspaceRequest& WorkspaceRequest::operator =(const JsonValue& jsonValue)
+WorkspaceRequest& WorkspaceRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryId"))
   {
@@ -110,7 +110,7 @@ WorkspaceRequest& WorkspaceRequest::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

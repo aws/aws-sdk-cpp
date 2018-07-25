@@ -33,17 +33,17 @@ LoggerDefinitionVersion::LoggerDefinitionVersion() :
 {
 }
 
-LoggerDefinitionVersion::LoggerDefinitionVersion(const JsonValue& jsonValue) : 
+LoggerDefinitionVersion::LoggerDefinitionVersion(JsonView jsonValue) : 
     m_loggersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LoggerDefinitionVersion& LoggerDefinitionVersion::operator =(const JsonValue& jsonValue)
+LoggerDefinitionVersion& LoggerDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Loggers"))
   {
-    Array<JsonValue> loggersJsonList = jsonValue.GetArray("Loggers");
+    Array<JsonView> loggersJsonList = jsonValue.GetArray("Loggers");
     for(unsigned loggersIndex = 0; loggersIndex < loggersJsonList.GetLength(); ++loggersIndex)
     {
       m_loggers.push_back(loggersJsonList[loggersIndex].AsObject());

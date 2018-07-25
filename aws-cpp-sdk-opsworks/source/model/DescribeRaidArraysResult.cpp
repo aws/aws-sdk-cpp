@@ -37,10 +37,10 @@ DescribeRaidArraysResult::DescribeRaidArraysResult(const Aws::AmazonWebServiceRe
 
 DescribeRaidArraysResult& DescribeRaidArraysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RaidArrays"))
   {
-    Array<JsonValue> raidArraysJsonList = jsonValue.GetArray("RaidArrays");
+    Array<JsonView> raidArraysJsonList = jsonValue.GetArray("RaidArrays");
     for(unsigned raidArraysIndex = 0; raidArraysIndex < raidArraysJsonList.GetLength(); ++raidArraysIndex)
     {
       m_raidArrays.push_back(raidArraysJsonList[raidArraysIndex].AsObject());

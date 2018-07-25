@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     OutputDestinationSettings();
-    OutputDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    OutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

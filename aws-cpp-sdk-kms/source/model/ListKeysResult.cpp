@@ -39,10 +39,10 @@ ListKeysResult::ListKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 ListKeysResult& ListKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonValue> keysJsonList = jsonValue.GetArray("Keys");
+    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
       m_keys.push_back(keysJsonList[keysIndex].AsObject());

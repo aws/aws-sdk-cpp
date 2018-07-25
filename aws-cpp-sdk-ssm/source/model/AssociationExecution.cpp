@@ -40,7 +40,7 @@ AssociationExecution::AssociationExecution() :
 {
 }
 
-AssociationExecution::AssociationExecution(const JsonValue& jsonValue) : 
+AssociationExecution::AssociationExecution(JsonView jsonValue) : 
     m_associationIdHasBeenSet(false),
     m_associationVersionHasBeenSet(false),
     m_executionIdHasBeenSet(false),
@@ -53,7 +53,7 @@ AssociationExecution::AssociationExecution(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssociationExecution& AssociationExecution::operator =(const JsonValue& jsonValue)
+AssociationExecution& AssociationExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AssociationId"))
   {

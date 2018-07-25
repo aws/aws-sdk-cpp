@@ -42,7 +42,7 @@ Handshake::Handshake() :
 {
 }
 
-Handshake::Handshake(const JsonValue& jsonValue) : 
+Handshake::Handshake(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_partiesHasBeenSet(false),
@@ -57,7 +57,7 @@ Handshake::Handshake(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Handshake& Handshake::operator =(const JsonValue& jsonValue)
+Handshake& Handshake::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -75,7 +75,7 @@ Handshake& Handshake::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parties"))
   {
-    Array<JsonValue> partiesJsonList = jsonValue.GetArray("Parties");
+    Array<JsonView> partiesJsonList = jsonValue.GetArray("Parties");
     for(unsigned partiesIndex = 0; partiesIndex < partiesJsonList.GetLength(); ++partiesIndex)
     {
       m_parties.push_back(partiesJsonList[partiesIndex].AsObject());
@@ -113,7 +113,7 @@ Handshake& Handshake::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonValue> resourcesJsonList = jsonValue.GetArray("Resources");
+    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());

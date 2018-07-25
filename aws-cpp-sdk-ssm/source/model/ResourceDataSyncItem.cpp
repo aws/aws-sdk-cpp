@@ -40,7 +40,7 @@ ResourceDataSyncItem::ResourceDataSyncItem() :
 {
 }
 
-ResourceDataSyncItem::ResourceDataSyncItem(const JsonValue& jsonValue) : 
+ResourceDataSyncItem::ResourceDataSyncItem(JsonView jsonValue) : 
     m_syncNameHasBeenSet(false),
     m_s3DestinationHasBeenSet(false),
     m_lastSyncTimeHasBeenSet(false),
@@ -53,7 +53,7 @@ ResourceDataSyncItem::ResourceDataSyncItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceDataSyncItem& ResourceDataSyncItem::operator =(const JsonValue& jsonValue)
+ResourceDataSyncItem& ResourceDataSyncItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SyncName"))
   {

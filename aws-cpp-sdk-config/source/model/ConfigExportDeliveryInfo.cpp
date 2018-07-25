@@ -39,7 +39,7 @@ ConfigExportDeliveryInfo::ConfigExportDeliveryInfo() :
 {
 }
 
-ConfigExportDeliveryInfo::ConfigExportDeliveryInfo(const JsonValue& jsonValue) : 
+ConfigExportDeliveryInfo::ConfigExportDeliveryInfo(JsonView jsonValue) : 
     m_lastStatus(DeliveryStatus::NOT_SET),
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
@@ -51,7 +51,7 @@ ConfigExportDeliveryInfo::ConfigExportDeliveryInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigExportDeliveryInfo& ConfigExportDeliveryInfo::operator =(const JsonValue& jsonValue)
+ConfigExportDeliveryInfo& ConfigExportDeliveryInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("lastStatus"))
   {

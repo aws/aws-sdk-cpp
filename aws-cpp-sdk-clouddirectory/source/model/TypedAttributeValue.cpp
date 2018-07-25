@@ -39,7 +39,7 @@ TypedAttributeValue::TypedAttributeValue() :
 {
 }
 
-TypedAttributeValue::TypedAttributeValue(const JsonValue& jsonValue) : 
+TypedAttributeValue::TypedAttributeValue(JsonView jsonValue) : 
     m_stringValueHasBeenSet(false),
     m_binaryValueHasBeenSet(false),
     m_booleanValue(false),
@@ -50,7 +50,7 @@ TypedAttributeValue::TypedAttributeValue(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TypedAttributeValue& TypedAttributeValue::operator =(const JsonValue& jsonValue)
+TypedAttributeValue& TypedAttributeValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StringValue"))
   {

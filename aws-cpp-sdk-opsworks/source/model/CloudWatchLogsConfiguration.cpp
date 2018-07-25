@@ -35,7 +35,7 @@ CloudWatchLogsConfiguration::CloudWatchLogsConfiguration() :
 {
 }
 
-CloudWatchLogsConfiguration::CloudWatchLogsConfiguration(const JsonValue& jsonValue) : 
+CloudWatchLogsConfiguration::CloudWatchLogsConfiguration(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_logStreamsHasBeenSet(false)
@@ -43,7 +43,7 @@ CloudWatchLogsConfiguration::CloudWatchLogsConfiguration(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-CloudWatchLogsConfiguration& CloudWatchLogsConfiguration::operator =(const JsonValue& jsonValue)
+CloudWatchLogsConfiguration& CloudWatchLogsConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {
@@ -54,7 +54,7 @@ CloudWatchLogsConfiguration& CloudWatchLogsConfiguration::operator =(const JsonV
 
   if(jsonValue.ValueExists("LogStreams"))
   {
-    Array<JsonValue> logStreamsJsonList = jsonValue.GetArray("LogStreams");
+    Array<JsonView> logStreamsJsonList = jsonValue.GetArray("LogStreams");
     for(unsigned logStreamsIndex = 0; logStreamsIndex < logStreamsJsonList.GetLength(); ++logStreamsIndex)
     {
       m_logStreams.push_back(logStreamsJsonList[logStreamsIndex].AsObject());

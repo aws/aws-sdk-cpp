@@ -55,7 +55,7 @@ InstanceInformation::InstanceInformation() :
 {
 }
 
-InstanceInformation::InstanceInformation(const JsonValue& jsonValue) : 
+InstanceInformation::InstanceInformation(JsonView jsonValue) : 
     m_instanceIdHasBeenSet(false),
     m_pingStatus(PingStatus::NOT_SET),
     m_pingStatusHasBeenSet(false),
@@ -83,7 +83,7 @@ InstanceInformation::InstanceInformation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceInformation& InstanceInformation::operator =(const JsonValue& jsonValue)
+InstanceInformation& InstanceInformation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceId"))
   {

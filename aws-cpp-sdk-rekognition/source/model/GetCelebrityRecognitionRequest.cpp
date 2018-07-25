@@ -59,7 +59,7 @@ Aws::String GetCelebrityRecognitionRequest::SerializePayload() const
    payload.WithString("SortBy", CelebrityRecognitionSortByMapper::GetNameForCelebrityRecognitionSortBy(m_sortBy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCelebrityRecognitionRequest::GetRequestSpecificHeaders() const

@@ -34,14 +34,14 @@ S3Target::S3Target() :
 {
 }
 
-S3Target::S3Target(const JsonValue& jsonValue) : 
+S3Target::S3Target(JsonView jsonValue) : 
     m_pathHasBeenSet(false),
     m_exclusionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-S3Target& S3Target::operator =(const JsonValue& jsonValue)
+S3Target& S3Target::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Path"))
   {
@@ -52,7 +52,7 @@ S3Target& S3Target::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Exclusions"))
   {
-    Array<JsonValue> exclusionsJsonList = jsonValue.GetArray("Exclusions");
+    Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
     for(unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex)
     {
       m_exclusions.push_back(exclusionsJsonList[exclusionsIndex].AsString());

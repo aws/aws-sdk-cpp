@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     UdpContainerSettings();
-    UdpContainerSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    UdpContainerSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UdpContainerSettings(Aws::Utils::Json::JsonView jsonValue);
+    UdpContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

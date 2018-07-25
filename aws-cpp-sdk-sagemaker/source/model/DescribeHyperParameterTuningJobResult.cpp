@@ -39,7 +39,7 @@ DescribeHyperParameterTuningJobResult::DescribeHyperParameterTuningJobResult(con
 
 DescribeHyperParameterTuningJobResult& DescribeHyperParameterTuningJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HyperParameterTuningJobName"))
   {
     m_hyperParameterTuningJobName = jsonValue.GetString("HyperParameterTuningJobName");

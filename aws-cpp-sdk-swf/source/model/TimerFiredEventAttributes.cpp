@@ -35,7 +35,7 @@ TimerFiredEventAttributes::TimerFiredEventAttributes() :
 {
 }
 
-TimerFiredEventAttributes::TimerFiredEventAttributes(const JsonValue& jsonValue) : 
+TimerFiredEventAttributes::TimerFiredEventAttributes(JsonView jsonValue) : 
     m_timerIdHasBeenSet(false),
     m_startedEventId(0),
     m_startedEventIdHasBeenSet(false)
@@ -43,7 +43,7 @@ TimerFiredEventAttributes::TimerFiredEventAttributes(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-TimerFiredEventAttributes& TimerFiredEventAttributes::operator =(const JsonValue& jsonValue)
+TimerFiredEventAttributes& TimerFiredEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timerId"))
   {

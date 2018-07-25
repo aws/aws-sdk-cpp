@@ -60,7 +60,7 @@ Command::Command() :
 {
 }
 
-Command::Command(const JsonValue& jsonValue) : 
+Command::Command(JsonView jsonValue) : 
     m_commandIdHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
@@ -93,7 +93,7 @@ Command::Command(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Command& Command::operator =(const JsonValue& jsonValue)
+Command& Command::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CommandId"))
   {
@@ -132,10 +132,10 @@ Command& Command::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonValue> parameterValueListJsonList = parametersItem.second.AsArray();
+      Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> parameterValueListList;
       parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
@@ -149,7 +149,7 @@ Command& Command::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("InstanceIds"))
   {
-    Array<JsonValue> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
+    Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
     for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
     {
       m_instanceIds.push_back(instanceIdsJsonList[instanceIdsIndex].AsString());
@@ -159,7 +159,7 @@ Command& Command::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());

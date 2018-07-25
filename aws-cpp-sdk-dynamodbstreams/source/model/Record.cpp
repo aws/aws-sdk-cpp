@@ -39,7 +39,7 @@ Record::Record() :
 {
 }
 
-Record::Record(const JsonValue& jsonValue) : 
+Record::Record(JsonView jsonValue) : 
     m_eventIDHasBeenSet(false),
     m_eventName(OperationType::NOT_SET),
     m_eventNameHasBeenSet(false),
@@ -51,7 +51,7 @@ Record::Record(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Record& Record::operator =(const JsonValue& jsonValue)
+Record& Record::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventID"))
   {

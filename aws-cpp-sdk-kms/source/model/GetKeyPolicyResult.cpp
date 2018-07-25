@@ -37,7 +37,7 @@ GetKeyPolicyResult::GetKeyPolicyResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetKeyPolicyResult& GetKeyPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");

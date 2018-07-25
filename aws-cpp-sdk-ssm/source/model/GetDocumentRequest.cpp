@@ -51,7 +51,7 @@ Aws::String GetDocumentRequest::SerializePayload() const
    payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDocumentRequest::GetRequestSpecificHeaders() const

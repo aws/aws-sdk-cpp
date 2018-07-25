@@ -37,7 +37,7 @@ CreateResourceResult::CreateResourceResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateResourceResult& CreateResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");

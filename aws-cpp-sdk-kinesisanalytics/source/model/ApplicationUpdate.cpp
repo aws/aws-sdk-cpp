@@ -37,7 +37,7 @@ ApplicationUpdate::ApplicationUpdate() :
 {
 }
 
-ApplicationUpdate::ApplicationUpdate(const JsonValue& jsonValue) : 
+ApplicationUpdate::ApplicationUpdate(JsonView jsonValue) : 
     m_inputUpdatesHasBeenSet(false),
     m_applicationCodeUpdateHasBeenSet(false),
     m_outputUpdatesHasBeenSet(false),
@@ -47,11 +47,11 @@ ApplicationUpdate::ApplicationUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApplicationUpdate& ApplicationUpdate::operator =(const JsonValue& jsonValue)
+ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputUpdates"))
   {
-    Array<JsonValue> inputUpdatesJsonList = jsonValue.GetArray("InputUpdates");
+    Array<JsonView> inputUpdatesJsonList = jsonValue.GetArray("InputUpdates");
     for(unsigned inputUpdatesIndex = 0; inputUpdatesIndex < inputUpdatesJsonList.GetLength(); ++inputUpdatesIndex)
     {
       m_inputUpdates.push_back(inputUpdatesJsonList[inputUpdatesIndex].AsObject());
@@ -68,7 +68,7 @@ ApplicationUpdate& ApplicationUpdate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("OutputUpdates"))
   {
-    Array<JsonValue> outputUpdatesJsonList = jsonValue.GetArray("OutputUpdates");
+    Array<JsonView> outputUpdatesJsonList = jsonValue.GetArray("OutputUpdates");
     for(unsigned outputUpdatesIndex = 0; outputUpdatesIndex < outputUpdatesJsonList.GetLength(); ++outputUpdatesIndex)
     {
       m_outputUpdates.push_back(outputUpdatesJsonList[outputUpdatesIndex].AsObject());
@@ -78,7 +78,7 @@ ApplicationUpdate& ApplicationUpdate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ReferenceDataSourceUpdates"))
   {
-    Array<JsonValue> referenceDataSourceUpdatesJsonList = jsonValue.GetArray("ReferenceDataSourceUpdates");
+    Array<JsonView> referenceDataSourceUpdatesJsonList = jsonValue.GetArray("ReferenceDataSourceUpdates");
     for(unsigned referenceDataSourceUpdatesIndex = 0; referenceDataSourceUpdatesIndex < referenceDataSourceUpdatesJsonList.GetLength(); ++referenceDataSourceUpdatesIndex)
     {
       m_referenceDataSourceUpdates.push_back(referenceDataSourceUpdatesJsonList[referenceDataSourceUpdatesIndex].AsObject());
@@ -88,7 +88,7 @@ ApplicationUpdate& ApplicationUpdate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CloudWatchLoggingOptionUpdates"))
   {
-    Array<JsonValue> cloudWatchLoggingOptionUpdatesJsonList = jsonValue.GetArray("CloudWatchLoggingOptionUpdates");
+    Array<JsonView> cloudWatchLoggingOptionUpdatesJsonList = jsonValue.GetArray("CloudWatchLoggingOptionUpdates");
     for(unsigned cloudWatchLoggingOptionUpdatesIndex = 0; cloudWatchLoggingOptionUpdatesIndex < cloudWatchLoggingOptionUpdatesJsonList.GetLength(); ++cloudWatchLoggingOptionUpdatesIndex)
     {
       m_cloudWatchLoggingOptionUpdates.push_back(cloudWatchLoggingOptionUpdatesJsonList[cloudWatchLoggingOptionUpdatesIndex].AsObject());

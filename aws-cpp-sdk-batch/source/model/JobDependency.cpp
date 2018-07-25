@@ -35,7 +35,7 @@ JobDependency::JobDependency() :
 {
 }
 
-JobDependency::JobDependency(const JsonValue& jsonValue) : 
+JobDependency::JobDependency(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_type(ArrayJobDependency::NOT_SET),
     m_typeHasBeenSet(false)
@@ -43,7 +43,7 @@ JobDependency::JobDependency(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobDependency& JobDependency::operator =(const JsonValue& jsonValue)
+JobDependency& JobDependency::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobId"))
   {

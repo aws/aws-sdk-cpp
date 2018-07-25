@@ -37,10 +37,10 @@ ListFragmentsResult::ListFragmentsResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListFragmentsResult& ListFragmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Fragments"))
   {
-    Array<JsonValue> fragmentsJsonList = jsonValue.GetArray("Fragments");
+    Array<JsonView> fragmentsJsonList = jsonValue.GetArray("Fragments");
     for(unsigned fragmentsIndex = 0; fragmentsIndex < fragmentsJsonList.GetLength(); ++fragmentsIndex)
     {
       m_fragments.push_back(fragmentsJsonList[fragmentsIndex].AsObject());

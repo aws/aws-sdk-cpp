@@ -37,7 +37,7 @@ AssociateTeamMemberResult::AssociateTeamMemberResult(const Aws::AmazonWebService
 
 AssociateTeamMemberResult& AssociateTeamMemberResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");

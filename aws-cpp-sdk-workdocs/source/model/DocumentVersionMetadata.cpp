@@ -47,7 +47,7 @@ DocumentVersionMetadata::DocumentVersionMetadata() :
 {
 }
 
-DocumentVersionMetadata::DocumentVersionMetadata(const JsonValue& jsonValue) : 
+DocumentVersionMetadata::DocumentVersionMetadata(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
@@ -67,7 +67,7 @@ DocumentVersionMetadata::DocumentVersionMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentVersionMetadata& DocumentVersionMetadata::operator =(const JsonValue& jsonValue)
+DocumentVersionMetadata& DocumentVersionMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -148,7 +148,7 @@ DocumentVersionMetadata& DocumentVersionMetadata::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Thumbnail"))
   {
-    Aws::Map<Aws::String, JsonValue> thumbnailJsonMap = jsonValue.GetObject("Thumbnail").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> thumbnailJsonMap = jsonValue.GetObject("Thumbnail").GetAllObjects();
     for(auto& thumbnailItem : thumbnailJsonMap)
     {
       m_thumbnail[DocumentThumbnailTypeMapper::GetDocumentThumbnailTypeForName(thumbnailItem.first)] = thumbnailItem.second.AsString();
@@ -158,7 +158,7 @@ DocumentVersionMetadata& DocumentVersionMetadata::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Source"))
   {
-    Aws::Map<Aws::String, JsonValue> sourceJsonMap = jsonValue.GetObject("Source").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> sourceJsonMap = jsonValue.GetObject("Source").GetAllObjects();
     for(auto& sourceItem : sourceJsonMap)
     {
       m_source[DocumentSourceTypeMapper::GetDocumentSourceTypeForName(sourceItem.first)] = sourceItem.second.AsString();

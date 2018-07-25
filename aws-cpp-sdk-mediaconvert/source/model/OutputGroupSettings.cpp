@@ -39,7 +39,7 @@ OutputGroupSettings::OutputGroupSettings() :
 {
 }
 
-OutputGroupSettings::OutputGroupSettings(const JsonValue& jsonValue) : 
+OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) : 
     m_cmafGroupSettingsHasBeenSet(false),
     m_dashIsoGroupSettingsHasBeenSet(false),
     m_fileGroupSettingsHasBeenSet(false),
@@ -51,7 +51,7 @@ OutputGroupSettings::OutputGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputGroupSettings& OutputGroupSettings::operator =(const JsonValue& jsonValue)
+OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cmafGroupSettings"))
   {

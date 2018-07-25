@@ -37,10 +37,10 @@ BatchPutMessageResult::BatchPutMessageResult(const Aws::AmazonWebServiceResult<J
 
 BatchPutMessageResult& BatchPutMessageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("batchPutMessageErrorEntries"))
   {
-    Array<JsonValue> batchPutMessageErrorEntriesJsonList = jsonValue.GetArray("batchPutMessageErrorEntries");
+    Array<JsonView> batchPutMessageErrorEntriesJsonList = jsonValue.GetArray("batchPutMessageErrorEntries");
     for(unsigned batchPutMessageErrorEntriesIndex = 0; batchPutMessageErrorEntriesIndex < batchPutMessageErrorEntriesJsonList.GetLength(); ++batchPutMessageErrorEntriesIndex)
     {
       m_batchPutMessageErrorEntries.push_back(batchPutMessageErrorEntriesJsonList[batchPutMessageErrorEntriesIndex].AsObject());

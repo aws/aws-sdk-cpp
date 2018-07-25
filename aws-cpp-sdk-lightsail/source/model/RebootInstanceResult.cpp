@@ -37,10 +37,10 @@ RebootInstanceResult::RebootInstanceResult(const Aws::AmazonWebServiceResult<Jso
 
 RebootInstanceResult& RebootInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("operations"))
   {
-    Array<JsonValue> operationsJsonList = jsonValue.GetArray("operations");
+    Array<JsonView> operationsJsonList = jsonValue.GetArray("operations");
     for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
     {
       m_operations.push_back(operationsJsonList[operationsIndex].AsObject());

@@ -34,14 +34,14 @@ CognitoOptionsStatus::CognitoOptionsStatus() :
 {
 }
 
-CognitoOptionsStatus::CognitoOptionsStatus(const JsonValue& jsonValue) : 
+CognitoOptionsStatus::CognitoOptionsStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CognitoOptionsStatus& CognitoOptionsStatus::operator =(const JsonValue& jsonValue)
+CognitoOptionsStatus& CognitoOptionsStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {

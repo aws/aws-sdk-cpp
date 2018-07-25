@@ -34,14 +34,14 @@ AuthorizerSummary::AuthorizerSummary() :
 {
 }
 
-AuthorizerSummary::AuthorizerSummary(const JsonValue& jsonValue) : 
+AuthorizerSummary::AuthorizerSummary(JsonView jsonValue) : 
     m_authorizerNameHasBeenSet(false),
     m_authorizerArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AuthorizerSummary& AuthorizerSummary::operator =(const JsonValue& jsonValue)
+AuthorizerSummary& AuthorizerSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("authorizerName"))
   {

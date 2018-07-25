@@ -37,10 +37,10 @@ DeleteParametersResult::DeleteParametersResult(const Aws::AmazonWebServiceResult
 
 DeleteParametersResult& DeleteParametersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeletedParameters"))
   {
-    Array<JsonValue> deletedParametersJsonList = jsonValue.GetArray("DeletedParameters");
+    Array<JsonView> deletedParametersJsonList = jsonValue.GetArray("DeletedParameters");
     for(unsigned deletedParametersIndex = 0; deletedParametersIndex < deletedParametersJsonList.GetLength(); ++deletedParametersIndex)
     {
       m_deletedParameters.push_back(deletedParametersJsonList[deletedParametersIndex].AsString());
@@ -49,7 +49,7 @@ DeleteParametersResult& DeleteParametersResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("InvalidParameters"))
   {
-    Array<JsonValue> invalidParametersJsonList = jsonValue.GetArray("InvalidParameters");
+    Array<JsonView> invalidParametersJsonList = jsonValue.GetArray("InvalidParameters");
     for(unsigned invalidParametersIndex = 0; invalidParametersIndex < invalidParametersJsonList.GetLength(); ++invalidParametersIndex)
     {
       m_invalidParameters.push_back(invalidParametersJsonList[invalidParametersIndex].AsString());

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     AccountSettings();
-    AccountSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    AccountSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AccountSettings(Aws::Utils::Json::JsonView jsonValue);
+    AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

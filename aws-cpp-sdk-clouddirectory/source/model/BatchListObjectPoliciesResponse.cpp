@@ -34,18 +34,18 @@ BatchListObjectPoliciesResponse::BatchListObjectPoliciesResponse() :
 {
 }
 
-BatchListObjectPoliciesResponse::BatchListObjectPoliciesResponse(const JsonValue& jsonValue) : 
+BatchListObjectPoliciesResponse::BatchListObjectPoliciesResponse(JsonView jsonValue) : 
     m_attachedPolicyIdsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchListObjectPoliciesResponse& BatchListObjectPoliciesResponse::operator =(const JsonValue& jsonValue)
+BatchListObjectPoliciesResponse& BatchListObjectPoliciesResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttachedPolicyIds"))
   {
-    Array<JsonValue> attachedPolicyIdsJsonList = jsonValue.GetArray("AttachedPolicyIds");
+    Array<JsonView> attachedPolicyIdsJsonList = jsonValue.GetArray("AttachedPolicyIds");
     for(unsigned attachedPolicyIdsIndex = 0; attachedPolicyIdsIndex < attachedPolicyIdsJsonList.GetLength(); ++attachedPolicyIdsIndex)
     {
       m_attachedPolicyIds.push_back(attachedPolicyIdsJsonList[attachedPolicyIdsIndex].AsString());

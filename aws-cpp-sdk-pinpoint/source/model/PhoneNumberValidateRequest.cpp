@@ -36,7 +36,7 @@ Aws::String PhoneNumberValidateRequest::SerializePayload() const
    payload = m_numberValidateRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

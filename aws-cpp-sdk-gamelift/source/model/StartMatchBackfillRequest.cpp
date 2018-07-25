@@ -63,7 +63,7 @@ Aws::String StartMatchBackfillRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartMatchBackfillRequest::GetRequestSpecificHeaders() const

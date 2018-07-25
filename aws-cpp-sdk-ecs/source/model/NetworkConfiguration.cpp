@@ -33,13 +33,13 @@ NetworkConfiguration::NetworkConfiguration() :
 {
 }
 
-NetworkConfiguration::NetworkConfiguration(const JsonValue& jsonValue) : 
+NetworkConfiguration::NetworkConfiguration(JsonView jsonValue) : 
     m_awsvpcConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NetworkConfiguration& NetworkConfiguration::operator =(const JsonValue& jsonValue)
+NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("awsvpcConfiguration"))
   {

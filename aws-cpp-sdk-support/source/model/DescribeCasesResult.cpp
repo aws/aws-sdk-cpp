@@ -37,10 +37,10 @@ DescribeCasesResult::DescribeCasesResult(const Aws::AmazonWebServiceResult<JsonV
 
 DescribeCasesResult& DescribeCasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("cases"))
   {
-    Array<JsonValue> casesJsonList = jsonValue.GetArray("cases");
+    Array<JsonView> casesJsonList = jsonValue.GetArray("cases");
     for(unsigned casesIndex = 0; casesIndex < casesJsonList.GetLength(); ++casesIndex)
     {
       m_cases.push_back(casesJsonList[casesIndex].AsObject());

@@ -58,7 +58,7 @@ Aws::String UpdateComputeEnvironmentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

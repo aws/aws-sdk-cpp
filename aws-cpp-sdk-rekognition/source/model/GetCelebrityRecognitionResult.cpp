@@ -39,7 +39,7 @@ GetCelebrityRecognitionResult::GetCelebrityRecognitionResult(const Aws::AmazonWe
 
 GetCelebrityRecognitionResult& GetCelebrityRecognitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
@@ -66,7 +66,7 @@ GetCelebrityRecognitionResult& GetCelebrityRecognitionResult::operator =(const A
 
   if(jsonValue.ValueExists("Celebrities"))
   {
-    Array<JsonValue> celebritiesJsonList = jsonValue.GetArray("Celebrities");
+    Array<JsonView> celebritiesJsonList = jsonValue.GetArray("Celebrities");
     for(unsigned celebritiesIndex = 0; celebritiesIndex < celebritiesJsonList.GetLength(); ++celebritiesIndex)
     {
       m_celebrities.push_back(celebritiesJsonList[celebritiesIndex].AsObject());

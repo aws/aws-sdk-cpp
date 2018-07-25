@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     HiveJsonSerDe();
-    HiveJsonSerDe(const Aws::Utils::Json::JsonValue& jsonValue);
-    HiveJsonSerDe& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HiveJsonSerDe(Aws::Utils::Json::JsonView jsonValue);
+    HiveJsonSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

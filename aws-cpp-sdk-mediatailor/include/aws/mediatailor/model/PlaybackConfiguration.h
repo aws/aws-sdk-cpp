@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaTailor
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     PlaybackConfiguration();
-    PlaybackConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    PlaybackConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PlaybackConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    PlaybackConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

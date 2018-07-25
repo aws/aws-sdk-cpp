@@ -37,7 +37,7 @@ Aws::String DeleteMaintenanceWindowRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteMaintenanceWindowRequest::GetRequestSpecificHeaders() const

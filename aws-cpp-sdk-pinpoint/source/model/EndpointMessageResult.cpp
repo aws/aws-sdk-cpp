@@ -40,7 +40,7 @@ EndpointMessageResult::EndpointMessageResult() :
 {
 }
 
-EndpointMessageResult::EndpointMessageResult(const JsonValue& jsonValue) : 
+EndpointMessageResult::EndpointMessageResult(JsonView jsonValue) : 
     m_addressHasBeenSet(false),
     m_deliveryStatus(DeliveryStatus::NOT_SET),
     m_deliveryStatusHasBeenSet(false),
@@ -53,7 +53,7 @@ EndpointMessageResult::EndpointMessageResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EndpointMessageResult& EndpointMessageResult::operator =(const JsonValue& jsonValue)
+EndpointMessageResult& EndpointMessageResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Address"))
   {

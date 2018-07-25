@@ -37,7 +37,7 @@ CreateProvisionedProductPlanResult::CreateProvisionedProductPlanResult(const Aws
 
 CreateProvisionedProductPlanResult& CreateProvisionedProductPlanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PlanName"))
   {
     m_planName = jsonValue.GetString("PlanName");

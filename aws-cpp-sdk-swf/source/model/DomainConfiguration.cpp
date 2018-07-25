@@ -33,13 +33,13 @@ DomainConfiguration::DomainConfiguration() :
 {
 }
 
-DomainConfiguration::DomainConfiguration(const JsonValue& jsonValue) : 
+DomainConfiguration::DomainConfiguration(JsonView jsonValue) : 
     m_workflowExecutionRetentionPeriodInDaysHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DomainConfiguration& DomainConfiguration::operator =(const JsonValue& jsonValue)
+DomainConfiguration& DomainConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowExecutionRetentionPeriodInDays"))
   {

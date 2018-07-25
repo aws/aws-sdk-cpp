@@ -54,7 +54,7 @@ GameSession::GameSession() :
 {
 }
 
-GameSession::GameSession(const JsonValue& jsonValue) : 
+GameSession::GameSession(JsonView jsonValue) : 
     m_gameSessionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
@@ -81,7 +81,7 @@ GameSession::GameSession(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GameSession& GameSession::operator =(const JsonValue& jsonValue)
+GameSession& GameSession::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GameSessionId"))
   {
@@ -148,7 +148,7 @@ GameSession& GameSession::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("GameProperties"))
   {
-    Array<JsonValue> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
+    Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
     for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
     {
       m_gameProperties.push_back(gamePropertiesJsonList[gamePropertiesIndex].AsObject());

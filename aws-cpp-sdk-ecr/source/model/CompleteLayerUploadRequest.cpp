@@ -63,7 +63,7 @@ Aws::String CompleteLayerUploadRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CompleteLayerUploadRequest::GetRequestSpecificHeaders() const

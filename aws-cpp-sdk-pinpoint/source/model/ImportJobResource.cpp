@@ -43,7 +43,7 @@ ImportJobResource::ImportJobResource() :
 {
 }
 
-ImportJobResource::ImportJobResource(const JsonValue& jsonValue) : 
+ImportJobResource::ImportJobResource(JsonView jsonValue) : 
     m_defineSegment(false),
     m_defineSegmentHasBeenSet(false),
     m_externalIdHasBeenSet(false),
@@ -59,7 +59,7 @@ ImportJobResource::ImportJobResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ImportJobResource& ImportJobResource::operator =(const JsonValue& jsonValue)
+ImportJobResource& ImportJobResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DefineSegment"))
   {

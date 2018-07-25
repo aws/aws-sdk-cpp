@@ -37,7 +37,7 @@ DescribeParameterGroupsResult::DescribeParameterGroupsResult(const Aws::AmazonWe
 
 DescribeParameterGroupsResult& DescribeParameterGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ DescribeParameterGroupsResult& DescribeParameterGroupsResult::operator =(const A
 
   if(jsonValue.ValueExists("ParameterGroups"))
   {
-    Array<JsonValue> parameterGroupsJsonList = jsonValue.GetArray("ParameterGroups");
+    Array<JsonView> parameterGroupsJsonList = jsonValue.GetArray("ParameterGroups");
     for(unsigned parameterGroupsIndex = 0; parameterGroupsIndex < parameterGroupsJsonList.GetLength(); ++parameterGroupsIndex)
     {
       m_parameterGroups.push_back(parameterGroupsJsonList[parameterGroupsIndex].AsObject());

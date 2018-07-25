@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Comprehend
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     BatchItemError();
-    BatchItemError(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchItemError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchItemError(Aws::Utils::Json::JsonView jsonValue);
+    BatchItemError& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

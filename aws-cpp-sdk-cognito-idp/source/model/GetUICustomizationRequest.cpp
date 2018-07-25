@@ -44,7 +44,7 @@ Aws::String GetUICustomizationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetUICustomizationRequest::GetRequestSpecificHeaders() const

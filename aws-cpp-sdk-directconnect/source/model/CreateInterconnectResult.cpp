@@ -39,7 +39,7 @@ CreateInterconnectResult::CreateInterconnectResult(const Aws::AmazonWebServiceRe
 
 CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("interconnectId"))
   {
     m_interconnectId = jsonValue.GetString("interconnectId");

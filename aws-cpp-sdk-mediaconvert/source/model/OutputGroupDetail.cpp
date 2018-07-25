@@ -33,17 +33,17 @@ OutputGroupDetail::OutputGroupDetail() :
 {
 }
 
-OutputGroupDetail::OutputGroupDetail(const JsonValue& jsonValue) : 
+OutputGroupDetail::OutputGroupDetail(JsonView jsonValue) : 
     m_outputDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputGroupDetail& OutputGroupDetail::operator =(const JsonValue& jsonValue)
+OutputGroupDetail& OutputGroupDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("outputDetails"))
   {
-    Array<JsonValue> outputDetailsJsonList = jsonValue.GetArray("outputDetails");
+    Array<JsonView> outputDetailsJsonList = jsonValue.GetArray("outputDetails");
     for(unsigned outputDetailsIndex = 0; outputDetailsIndex < outputDetailsJsonList.GetLength(); ++outputDetailsIndex)
     {
       m_outputDetails.push_back(outputDetailsJsonList[outputDetailsIndex].AsObject());

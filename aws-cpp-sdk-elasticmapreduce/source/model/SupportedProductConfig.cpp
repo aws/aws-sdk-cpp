@@ -34,14 +34,14 @@ SupportedProductConfig::SupportedProductConfig() :
 {
 }
 
-SupportedProductConfig::SupportedProductConfig(const JsonValue& jsonValue) : 
+SupportedProductConfig::SupportedProductConfig(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SupportedProductConfig& SupportedProductConfig::operator =(const JsonValue& jsonValue)
+SupportedProductConfig& SupportedProductConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -52,7 +52,7 @@ SupportedProductConfig& SupportedProductConfig::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("Args"))
   {
-    Array<JsonValue> argsJsonList = jsonValue.GetArray("Args");
+    Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
     for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
     {
       m_args.push_back(argsJsonList[argsIndex].AsString());

@@ -37,10 +37,10 @@ ListTransformJobsResult::ListTransformJobsResult(const Aws::AmazonWebServiceResu
 
 ListTransformJobsResult& ListTransformJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TransformJobSummaries"))
   {
-    Array<JsonValue> transformJobSummariesJsonList = jsonValue.GetArray("TransformJobSummaries");
+    Array<JsonView> transformJobSummariesJsonList = jsonValue.GetArray("TransformJobSummaries");
     for(unsigned transformJobSummariesIndex = 0; transformJobSummariesIndex < transformJobSummariesJsonList.GetLength(); ++transformJobSummariesIndex)
     {
       m_transformJobSummaries.push_back(transformJobSummariesJsonList[transformJobSummariesIndex].AsObject());

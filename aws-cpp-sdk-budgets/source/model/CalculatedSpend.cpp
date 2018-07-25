@@ -34,14 +34,14 @@ CalculatedSpend::CalculatedSpend() :
 {
 }
 
-CalculatedSpend::CalculatedSpend(const JsonValue& jsonValue) : 
+CalculatedSpend::CalculatedSpend(JsonView jsonValue) : 
     m_actualSpendHasBeenSet(false),
     m_forecastedSpendHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CalculatedSpend& CalculatedSpend::operator =(const JsonValue& jsonValue)
+CalculatedSpend& CalculatedSpend::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ActualSpend"))
   {

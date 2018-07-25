@@ -37,7 +37,7 @@ GetVaultAccessPolicyResult::GetVaultAccessPolicyResult(const Aws::AmazonWebServi
 
 GetVaultAccessPolicyResult& GetVaultAccessPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_policy = jsonValue;
 
 

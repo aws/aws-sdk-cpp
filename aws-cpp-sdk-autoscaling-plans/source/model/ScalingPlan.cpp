@@ -42,7 +42,7 @@ ScalingPlan::ScalingPlan() :
 {
 }
 
-ScalingPlan::ScalingPlan(const JsonValue& jsonValue) : 
+ScalingPlan::ScalingPlan(JsonView jsonValue) : 
     m_scalingPlanNameHasBeenSet(false),
     m_scalingPlanVersion(0),
     m_scalingPlanVersionHasBeenSet(false),
@@ -57,7 +57,7 @@ ScalingPlan::ScalingPlan(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalingPlan& ScalingPlan::operator =(const JsonValue& jsonValue)
+ScalingPlan& ScalingPlan::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ScalingPlanName"))
   {
@@ -82,7 +82,7 @@ ScalingPlan& ScalingPlan::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ScalingInstructions"))
   {
-    Array<JsonValue> scalingInstructionsJsonList = jsonValue.GetArray("ScalingInstructions");
+    Array<JsonView> scalingInstructionsJsonList = jsonValue.GetArray("ScalingInstructions");
     for(unsigned scalingInstructionsIndex = 0; scalingInstructionsIndex < scalingInstructionsJsonList.GetLength(); ++scalingInstructionsIndex)
     {
       m_scalingInstructions.push_back(scalingInstructionsJsonList[scalingInstructionsIndex].AsObject());

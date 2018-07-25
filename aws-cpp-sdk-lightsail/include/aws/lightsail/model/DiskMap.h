@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     DiskMap();
-    DiskMap(const Aws::Utils::Json::JsonValue& jsonValue);
-    DiskMap& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DiskMap(Aws::Utils::Json::JsonView jsonValue);
+    DiskMap& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

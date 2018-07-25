@@ -56,7 +56,7 @@ Aws::String ReloadTablesRequest::SerializePayload() const
    payload.WithString("ReloadOption", ReloadOptionValueMapper::GetNameForReloadOptionValue(m_reloadOption));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ReloadTablesRequest::GetRequestSpecificHeaders() const

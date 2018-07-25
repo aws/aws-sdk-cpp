@@ -37,7 +37,7 @@ VideoSelector::VideoSelector() :
 {
 }
 
-VideoSelector::VideoSelector(const JsonValue& jsonValue) : 
+VideoSelector::VideoSelector(JsonView jsonValue) : 
     m_colorSpace(VideoSelectorColorSpace::NOT_SET),
     m_colorSpaceHasBeenSet(false),
     m_colorSpaceUsage(VideoSelectorColorSpaceUsage::NOT_SET),
@@ -47,7 +47,7 @@ VideoSelector::VideoSelector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VideoSelector& VideoSelector::operator =(const JsonValue& jsonValue)
+VideoSelector& VideoSelector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("colorSpace"))
   {

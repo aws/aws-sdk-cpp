@@ -37,7 +37,7 @@ CreateJobPlaylist::CreateJobPlaylist() :
 {
 }
 
-CreateJobPlaylist::CreateJobPlaylist(const JsonValue& jsonValue) : 
+CreateJobPlaylist::CreateJobPlaylist(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_outputKeysHasBeenSet(false),
@@ -47,7 +47,7 @@ CreateJobPlaylist::CreateJobPlaylist(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CreateJobPlaylist& CreateJobPlaylist::operator =(const JsonValue& jsonValue)
+CreateJobPlaylist& CreateJobPlaylist::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -65,7 +65,7 @@ CreateJobPlaylist& CreateJobPlaylist::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("OutputKeys"))
   {
-    Array<JsonValue> outputKeysJsonList = jsonValue.GetArray("OutputKeys");
+    Array<JsonView> outputKeysJsonList = jsonValue.GetArray("OutputKeys");
     for(unsigned outputKeysIndex = 0; outputKeysIndex < outputKeysJsonList.GetLength(); ++outputKeysIndex)
     {
       m_outputKeys.push_back(outputKeysJsonList[outputKeysIndex].AsString());

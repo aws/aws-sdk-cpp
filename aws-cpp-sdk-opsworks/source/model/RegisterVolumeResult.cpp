@@ -37,7 +37,7 @@ RegisterVolumeResult::RegisterVolumeResult(const Aws::AmazonWebServiceResult<Jso
 
 RegisterVolumeResult& RegisterVolumeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VolumeId"))
   {
     m_volumeId = jsonValue.GetString("VolumeId");

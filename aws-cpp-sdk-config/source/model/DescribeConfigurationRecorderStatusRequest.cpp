@@ -42,7 +42,7 @@ Aws::String DescribeConfigurationRecorderStatusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeConfigurationRecorderStatusRequest::GetRequestSpecificHeaders() const

@@ -37,10 +37,10 @@ DescribeConditionalForwardersResult::DescribeConditionalForwardersResult(const A
 
 DescribeConditionalForwardersResult& DescribeConditionalForwardersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConditionalForwarders"))
   {
-    Array<JsonValue> conditionalForwardersJsonList = jsonValue.GetArray("ConditionalForwarders");
+    Array<JsonView> conditionalForwardersJsonList = jsonValue.GetArray("ConditionalForwarders");
     for(unsigned conditionalForwardersIndex = 0; conditionalForwardersIndex < conditionalForwardersJsonList.GetLength(); ++conditionalForwardersIndex)
     {
       m_conditionalForwarders.push_back(conditionalForwardersJsonList[conditionalForwardersIndex].AsObject());

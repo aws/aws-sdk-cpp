@@ -39,7 +39,7 @@ Permission::Permission() :
 {
 }
 
-Permission::Permission(const JsonValue& jsonValue) : 
+Permission::Permission(JsonView jsonValue) : 
     m_stackIdHasBeenSet(false),
     m_iamUserArnHasBeenSet(false),
     m_allowSsh(false),
@@ -51,7 +51,7 @@ Permission::Permission(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Permission& Permission::operator =(const JsonValue& jsonValue)
+Permission& Permission::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StackId"))
   {

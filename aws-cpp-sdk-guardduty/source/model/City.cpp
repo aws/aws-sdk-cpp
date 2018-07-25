@@ -33,13 +33,13 @@ City::City() :
 {
 }
 
-City::City(const JsonValue& jsonValue) : 
+City::City(JsonView jsonValue) : 
     m_cityNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-City& City::operator =(const JsonValue& jsonValue)
+City& City::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cityName"))
   {

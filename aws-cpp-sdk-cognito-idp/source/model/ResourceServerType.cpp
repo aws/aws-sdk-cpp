@@ -36,7 +36,7 @@ ResourceServerType::ResourceServerType() :
 {
 }
 
-ResourceServerType::ResourceServerType(const JsonValue& jsonValue) : 
+ResourceServerType::ResourceServerType(JsonView jsonValue) : 
     m_userPoolIdHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -45,7 +45,7 @@ ResourceServerType::ResourceServerType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceServerType& ResourceServerType::operator =(const JsonValue& jsonValue)
+ResourceServerType& ResourceServerType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserPoolId"))
   {
@@ -70,7 +70,7 @@ ResourceServerType& ResourceServerType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Scopes"))
   {
-    Array<JsonValue> scopesJsonList = jsonValue.GetArray("Scopes");
+    Array<JsonView> scopesJsonList = jsonValue.GetArray("Scopes");
     for(unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex)
     {
       m_scopes.push_back(scopesJsonList[scopesIndex].AsObject());

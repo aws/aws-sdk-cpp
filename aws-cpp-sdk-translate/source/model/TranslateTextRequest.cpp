@@ -51,7 +51,7 @@ Aws::String TranslateTextRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection TranslateTextRequest::GetRequestSpecificHeaders() const

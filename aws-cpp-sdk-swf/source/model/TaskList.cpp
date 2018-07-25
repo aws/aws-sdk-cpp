@@ -33,13 +33,13 @@ TaskList::TaskList() :
 {
 }
 
-TaskList::TaskList(const JsonValue& jsonValue) : 
+TaskList::TaskList(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TaskList& TaskList::operator =(const JsonValue& jsonValue)
+TaskList& TaskList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

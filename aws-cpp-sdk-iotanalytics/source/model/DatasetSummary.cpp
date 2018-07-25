@@ -37,7 +37,7 @@ DatasetSummary::DatasetSummary() :
 {
 }
 
-DatasetSummary::DatasetSummary(const JsonValue& jsonValue) : 
+DatasetSummary::DatasetSummary(JsonView jsonValue) : 
     m_datasetNameHasBeenSet(false),
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -47,7 +47,7 @@ DatasetSummary::DatasetSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DatasetSummary& DatasetSummary::operator =(const JsonValue& jsonValue)
+DatasetSummary& DatasetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("datasetName"))
   {

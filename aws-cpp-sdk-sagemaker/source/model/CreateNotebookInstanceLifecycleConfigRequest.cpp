@@ -61,7 +61,7 @@ Aws::String CreateNotebookInstanceLifecycleConfigRequest::SerializePayload() con
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateNotebookInstanceLifecycleConfigRequest::GetRequestSpecificHeaders() const

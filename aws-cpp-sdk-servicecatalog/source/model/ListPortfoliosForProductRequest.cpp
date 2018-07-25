@@ -59,7 +59,7 @@ Aws::String ListPortfoliosForProductRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListPortfoliosForProductRequest::GetRequestSpecificHeaders() const

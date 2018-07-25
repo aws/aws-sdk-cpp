@@ -40,7 +40,7 @@ ChildWorkflowExecutionTimedOutEventAttributes::ChildWorkflowExecutionTimedOutEve
 {
 }
 
-ChildWorkflowExecutionTimedOutEventAttributes::ChildWorkflowExecutionTimedOutEventAttributes(const JsonValue& jsonValue) : 
+ChildWorkflowExecutionTimedOutEventAttributes::ChildWorkflowExecutionTimedOutEventAttributes(JsonView jsonValue) : 
     m_workflowExecutionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_timeoutType(WorkflowExecutionTimeoutType::NOT_SET),
@@ -53,7 +53,7 @@ ChildWorkflowExecutionTimedOutEventAttributes::ChildWorkflowExecutionTimedOutEve
   *this = jsonValue;
 }
 
-ChildWorkflowExecutionTimedOutEventAttributes& ChildWorkflowExecutionTimedOutEventAttributes::operator =(const JsonValue& jsonValue)
+ChildWorkflowExecutionTimedOutEventAttributes& ChildWorkflowExecutionTimedOutEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowExecution"))
   {

@@ -37,10 +37,10 @@ ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebService
 
 ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

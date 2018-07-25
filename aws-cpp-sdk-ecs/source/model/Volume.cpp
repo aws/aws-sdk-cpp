@@ -34,14 +34,14 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(const JsonValue& jsonValue) : 
+Volume::Volume(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_hostHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Volume& Volume::operator =(const JsonValue& jsonValue)
+Volume& Volume::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

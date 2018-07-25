@@ -37,7 +37,7 @@ DetachObjectResult::DetachObjectResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DetachObjectResult& DetachObjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DetachedObjectIdentifier"))
   {
     m_detachedObjectIdentifier = jsonValue.GetString("DetachedObjectIdentifier");

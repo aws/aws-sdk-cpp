@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     EBSOptionsStatus();
-    EBSOptionsStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    EBSOptionsStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EBSOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    EBSOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

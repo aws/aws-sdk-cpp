@@ -37,7 +37,7 @@ DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonV
 
 DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");

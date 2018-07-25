@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkDocs
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     DocumentVersionMetadata();
-    DocumentVersionMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    DocumentVersionMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DocumentVersionMetadata(Aws::Utils::Json::JsonView jsonValue);
+    DocumentVersionMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

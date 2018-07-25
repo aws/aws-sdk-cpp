@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisAnalytics
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     InputStartingPositionConfiguration();
-    InputStartingPositionConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputStartingPositionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputStartingPositionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    InputStartingPositionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

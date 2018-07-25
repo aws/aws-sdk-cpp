@@ -36,7 +36,7 @@ ResourceChangeDetail::ResourceChangeDetail() :
 {
 }
 
-ResourceChangeDetail::ResourceChangeDetail(const JsonValue& jsonValue) : 
+ResourceChangeDetail::ResourceChangeDetail(JsonView jsonValue) : 
     m_targetHasBeenSet(false),
     m_evaluation(EvaluationType::NOT_SET),
     m_evaluationHasBeenSet(false),
@@ -45,7 +45,7 @@ ResourceChangeDetail::ResourceChangeDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceChangeDetail& ResourceChangeDetail::operator =(const JsonValue& jsonValue)
+ResourceChangeDetail& ResourceChangeDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Target"))
   {

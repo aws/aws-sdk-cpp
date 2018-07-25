@@ -44,7 +44,7 @@ BackendConnectionErrors::BackendConnectionErrors() :
 {
 }
 
-BackendConnectionErrors::BackendConnectionErrors(const JsonValue& jsonValue) : 
+BackendConnectionErrors::BackendConnectionErrors(JsonView jsonValue) : 
     m_timeoutCount(0),
     m_timeoutCountHasBeenSet(false),
     m_connectionRefusedCount(0),
@@ -61,7 +61,7 @@ BackendConnectionErrors::BackendConnectionErrors(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BackendConnectionErrors& BackendConnectionErrors::operator =(const JsonValue& jsonValue)
+BackendConnectionErrors& BackendConnectionErrors::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimeoutCount"))
   {

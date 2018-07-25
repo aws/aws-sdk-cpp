@@ -33,13 +33,13 @@ RevocationConfiguration::RevocationConfiguration() :
 {
 }
 
-RevocationConfiguration::RevocationConfiguration(const JsonValue& jsonValue) : 
+RevocationConfiguration::RevocationConfiguration(JsonView jsonValue) : 
     m_crlConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RevocationConfiguration& RevocationConfiguration::operator =(const JsonValue& jsonValue)
+RevocationConfiguration& RevocationConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CrlConfiguration"))
   {

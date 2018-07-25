@@ -95,7 +95,7 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateEventSubscriptionRequest::GetRequestSpecificHeaders() const

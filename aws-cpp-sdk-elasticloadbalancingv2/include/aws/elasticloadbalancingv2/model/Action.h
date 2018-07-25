@@ -20,6 +20,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/AuthenticateOidcActionConfig.h>
 #include <aws/elasticloadbalancingv2/model/AuthenticateCognitoActionConfig.h>
+#include <aws/elasticloadbalancingv2/model/RedirectActionConfig.h>
+#include <aws/elasticloadbalancingv2/model/FixedResponseActionConfig.h>
 #include <utility>
 
 namespace Aws
@@ -53,84 +55,80 @@ namespace Model
 
 
     /**
-     * <p>The type of action. Each rule must include one forward action.</p>
+     * <p>The type of action. Each rule must include exactly one of the following types
+     * of actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p>
      */
     inline const ActionTypeEnum& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of action. Each rule must include one forward action.</p>
+     * <p>The type of action. Each rule must include exactly one of the following types
+     * of actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p>
      */
     inline void SetType(const ActionTypeEnum& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of action. Each rule must include one forward action.</p>
+     * <p>The type of action. Each rule must include exactly one of the following types
+     * of actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p>
      */
     inline void SetType(ActionTypeEnum&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of action. Each rule must include one forward action.</p>
+     * <p>The type of action. Each rule must include exactly one of the following types
+     * of actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p>
      */
     inline Action& WithType(const ActionTypeEnum& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of action. Each rule must include one forward action.</p>
+     * <p>The type of action. Each rule must include exactly one of the following types
+     * of actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p>
      */
     inline Action& WithType(ActionTypeEnum&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p> <p>For a default rule, the
-     * protocol of the target group must be HTTP or HTTPS for an Application Load
-     * Balancer or TCP for a Network Load Balancer.</p>
+     * <code>Type</code> is <code>forward</code>.</p>
      */
     inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p> <p>For a default rule, the
-     * protocol of the target group must be HTTP or HTTPS for an Application Load
-     * Balancer or TCP for a Network Load Balancer.</p>
+     * <code>Type</code> is <code>forward</code>.</p>
      */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p> <p>For a default rule, the
-     * protocol of the target group must be HTTP or HTTPS for an Application Load
-     * Balancer or TCP for a Network Load Balancer.</p>
+     * <code>Type</code> is <code>forward</code>.</p>
      */
     inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p> <p>For a default rule, the
-     * protocol of the target group must be HTTP or HTTPS for an Application Load
-     * Balancer or TCP for a Network Load Balancer.</p>
+     * <code>Type</code> is <code>forward</code>.</p>
      */
     inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p> <p>For a default rule, the
-     * protocol of the target group must be HTTP or HTTPS for an Application Load
-     * Balancer or TCP for a Network Load Balancer.</p>
+     * <code>Type</code> is <code>forward</code>.</p>
      */
     inline Action& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p> <p>For a default rule, the
-     * protocol of the target group must be HTTP or HTTPS for an Application Load
-     * Balancer or TCP for a Network Load Balancer.</p>
+     * <code>Type</code> is <code>forward</code>.</p>
      */
     inline Action& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p> <p>For a default rule, the
-     * protocol of the target group must be HTTP or HTTPS for an Application Load
-     * Balancer or TCP for a Network Load Balancer.</p>
+     * <code>Type</code> is <code>forward</code>.</p>
      */
     inline Action& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
@@ -205,23 +203,93 @@ namespace Model
     /**
      * <p>The order for the action. This value is required for rules with multiple
      * actions. The action with the lowest value for order is performed first. The
-     * forward action must be performed last.</p>
+     * final action to be performed must be a <code>forward</code> or a
+     * <code>fixed-response</code> action.</p>
      */
     inline int GetOrder() const{ return m_order; }
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
      * actions. The action with the lowest value for order is performed first. The
-     * forward action must be performed last.</p>
+     * final action to be performed must be a <code>forward</code> or a
+     * <code>fixed-response</code> action.</p>
      */
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
      * actions. The action with the lowest value for order is performed first. The
-     * forward action must be performed last.</p>
+     * final action to be performed must be a <code>forward</code> or a
+     * <code>fixed-response</code> action.</p>
      */
     inline Action& WithOrder(int value) { SetOrder(value); return *this;}
+
+
+    /**
+     * <p>[Application Load Balancer] Information for creating a redirect action.
+     * Specify only when <code>Type</code> is <code>redirect</code>.</p>
+     */
+    inline const RedirectActionConfig& GetRedirectConfig() const{ return m_redirectConfig; }
+
+    /**
+     * <p>[Application Load Balancer] Information for creating a redirect action.
+     * Specify only when <code>Type</code> is <code>redirect</code>.</p>
+     */
+    inline void SetRedirectConfig(const RedirectActionConfig& value) { m_redirectConfigHasBeenSet = true; m_redirectConfig = value; }
+
+    /**
+     * <p>[Application Load Balancer] Information for creating a redirect action.
+     * Specify only when <code>Type</code> is <code>redirect</code>.</p>
+     */
+    inline void SetRedirectConfig(RedirectActionConfig&& value) { m_redirectConfigHasBeenSet = true; m_redirectConfig = std::move(value); }
+
+    /**
+     * <p>[Application Load Balancer] Information for creating a redirect action.
+     * Specify only when <code>Type</code> is <code>redirect</code>.</p>
+     */
+    inline Action& WithRedirectConfig(const RedirectActionConfig& value) { SetRedirectConfig(value); return *this;}
+
+    /**
+     * <p>[Application Load Balancer] Information for creating a redirect action.
+     * Specify only when <code>Type</code> is <code>redirect</code>.</p>
+     */
+    inline Action& WithRedirectConfig(RedirectActionConfig&& value) { SetRedirectConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[Application Load Balancer] Information for creating an action that returns a
+     * custom HTTP response. Specify only when <code>Type</code> is
+     * <code>fixed-response</code>.</p>
+     */
+    inline const FixedResponseActionConfig& GetFixedResponseConfig() const{ return m_fixedResponseConfig; }
+
+    /**
+     * <p>[Application Load Balancer] Information for creating an action that returns a
+     * custom HTTP response. Specify only when <code>Type</code> is
+     * <code>fixed-response</code>.</p>
+     */
+    inline void SetFixedResponseConfig(const FixedResponseActionConfig& value) { m_fixedResponseConfigHasBeenSet = true; m_fixedResponseConfig = value; }
+
+    /**
+     * <p>[Application Load Balancer] Information for creating an action that returns a
+     * custom HTTP response. Specify only when <code>Type</code> is
+     * <code>fixed-response</code>.</p>
+     */
+    inline void SetFixedResponseConfig(FixedResponseActionConfig&& value) { m_fixedResponseConfigHasBeenSet = true; m_fixedResponseConfig = std::move(value); }
+
+    /**
+     * <p>[Application Load Balancer] Information for creating an action that returns a
+     * custom HTTP response. Specify only when <code>Type</code> is
+     * <code>fixed-response</code>.</p>
+     */
+    inline Action& WithFixedResponseConfig(const FixedResponseActionConfig& value) { SetFixedResponseConfig(value); return *this;}
+
+    /**
+     * <p>[Application Load Balancer] Information for creating an action that returns a
+     * custom HTTP response. Specify only when <code>Type</code> is
+     * <code>fixed-response</code>.</p>
+     */
+    inline Action& WithFixedResponseConfig(FixedResponseActionConfig&& value) { SetFixedResponseConfig(std::move(value)); return *this;}
 
   private:
 
@@ -239,6 +307,12 @@ namespace Model
 
     int m_order;
     bool m_orderHasBeenSet;
+
+    RedirectActionConfig m_redirectConfig;
+    bool m_redirectConfigHasBeenSet;
+
+    FixedResponseActionConfig m_fixedResponseConfig;
+    bool m_fixedResponseConfigHasBeenSet;
   };
 
 } // namespace Model

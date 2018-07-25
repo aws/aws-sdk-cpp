@@ -33,17 +33,17 @@ FindingStatistics::FindingStatistics() :
 {
 }
 
-FindingStatistics::FindingStatistics(const JsonValue& jsonValue) : 
+FindingStatistics::FindingStatistics(JsonView jsonValue) : 
     m_countBySeverityHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FindingStatistics& FindingStatistics::operator =(const JsonValue& jsonValue)
+FindingStatistics& FindingStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("countBySeverity"))
   {
-    Aws::Map<Aws::String, JsonValue> countBySeverityJsonMap = jsonValue.GetObject("countBySeverity").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> countBySeverityJsonMap = jsonValue.GetObject("countBySeverity").GetAllObjects();
     for(auto& countBySeverityItem : countBySeverityJsonMap)
     {
       m_countBySeverity[countBySeverityItem.first] = countBySeverityItem.second.AsInteger();

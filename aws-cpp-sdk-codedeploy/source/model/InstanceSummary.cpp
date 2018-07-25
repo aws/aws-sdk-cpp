@@ -40,7 +40,7 @@ InstanceSummary::InstanceSummary() :
 {
 }
 
-InstanceSummary::InstanceSummary(const JsonValue& jsonValue) : 
+InstanceSummary::InstanceSummary(JsonView jsonValue) : 
     m_deploymentIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_status(InstanceStatus::NOT_SET),
@@ -53,7 +53,7 @@ InstanceSummary::InstanceSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceSummary& InstanceSummary::operator =(const JsonValue& jsonValue)
+InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deploymentId"))
   {
@@ -85,7 +85,7 @@ InstanceSummary& InstanceSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("lifecycleEvents"))
   {
-    Array<JsonValue> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
+    Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
     for(unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex)
     {
       m_lifecycleEvents.push_back(lifecycleEventsJsonList[lifecycleEventsIndex].AsObject());

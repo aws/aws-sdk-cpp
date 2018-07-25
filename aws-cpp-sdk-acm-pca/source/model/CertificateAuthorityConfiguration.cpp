@@ -37,7 +37,7 @@ CertificateAuthorityConfiguration::CertificateAuthorityConfiguration() :
 {
 }
 
-CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(const JsonValue& jsonValue) : 
+CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(JsonView jsonValue) : 
     m_keyAlgorithm(KeyAlgorithm::NOT_SET),
     m_keyAlgorithmHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithm::NOT_SET),
@@ -47,7 +47,7 @@ CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(const JsonV
   *this = jsonValue;
 }
 
-CertificateAuthorityConfiguration& CertificateAuthorityConfiguration::operator =(const JsonValue& jsonValue)
+CertificateAuthorityConfiguration& CertificateAuthorityConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("KeyAlgorithm"))
   {

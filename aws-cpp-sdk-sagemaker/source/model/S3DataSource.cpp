@@ -37,7 +37,7 @@ S3DataSource::S3DataSource() :
 {
 }
 
-S3DataSource::S3DataSource(const JsonValue& jsonValue) : 
+S3DataSource::S3DataSource(JsonView jsonValue) : 
     m_s3DataType(S3DataType::NOT_SET),
     m_s3DataTypeHasBeenSet(false),
     m_s3UriHasBeenSet(false),
@@ -47,7 +47,7 @@ S3DataSource::S3DataSource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3DataSource& S3DataSource::operator =(const JsonValue& jsonValue)
+S3DataSource& S3DataSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3DataType"))
   {

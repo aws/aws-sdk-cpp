@@ -71,7 +71,7 @@ Aws::String GetProductsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetProductsRequest::GetRequestSpecificHeaders() const

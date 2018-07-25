@@ -34,14 +34,14 @@ MetricKeyDataPoints::MetricKeyDataPoints() :
 {
 }
 
-MetricKeyDataPoints::MetricKeyDataPoints(const JsonValue& jsonValue) : 
+MetricKeyDataPoints::MetricKeyDataPoints(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_dataPointsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MetricKeyDataPoints& MetricKeyDataPoints::operator =(const JsonValue& jsonValue)
+MetricKeyDataPoints& MetricKeyDataPoints::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -52,7 +52,7 @@ MetricKeyDataPoints& MetricKeyDataPoints::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DataPoints"))
   {
-    Array<JsonValue> dataPointsJsonList = jsonValue.GetArray("DataPoints");
+    Array<JsonView> dataPointsJsonList = jsonValue.GetArray("DataPoints");
     for(unsigned dataPointsIndex = 0; dataPointsIndex < dataPointsJsonList.GetLength(); ++dataPointsIndex)
     {
       m_dataPoints.push_back(dataPointsJsonList[dataPointsIndex].AsObject());

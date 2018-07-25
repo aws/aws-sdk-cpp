@@ -34,14 +34,14 @@ DeviceEvent::DeviceEvent() :
 {
 }
 
-DeviceEvent::DeviceEvent(const JsonValue& jsonValue) : 
+DeviceEvent::DeviceEvent(JsonView jsonValue) : 
     m_deviceHasBeenSet(false),
     m_stdEventHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeviceEvent& DeviceEvent::operator =(const JsonValue& jsonValue)
+DeviceEvent& DeviceEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("device"))
   {

@@ -33,17 +33,17 @@ MaintenanceWindowTaskParameterValueExpression::MaintenanceWindowTaskParameterVal
 {
 }
 
-MaintenanceWindowTaskParameterValueExpression::MaintenanceWindowTaskParameterValueExpression(const JsonValue& jsonValue) : 
+MaintenanceWindowTaskParameterValueExpression::MaintenanceWindowTaskParameterValueExpression(JsonView jsonValue) : 
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MaintenanceWindowTaskParameterValueExpression& MaintenanceWindowTaskParameterValueExpression::operator =(const JsonValue& jsonValue)
+MaintenanceWindowTaskParameterValueExpression& MaintenanceWindowTaskParameterValueExpression::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

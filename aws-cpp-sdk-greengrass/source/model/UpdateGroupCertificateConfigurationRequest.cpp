@@ -38,7 +38,7 @@ Aws::String UpdateGroupCertificateConfigurationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

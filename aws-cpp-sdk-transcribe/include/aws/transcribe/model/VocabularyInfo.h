@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace TranscribeService
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     VocabularyInfo();
-    VocabularyInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    VocabularyInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VocabularyInfo(Aws::Utils::Json::JsonView jsonValue);
+    VocabularyInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

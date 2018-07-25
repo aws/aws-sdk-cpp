@@ -37,7 +37,7 @@ DescribeAssociationResult::DescribeAssociationResult(const Aws::AmazonWebService
 
 DescribeAssociationResult& DescribeAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociationDescription"))
   {
     m_associationDescription = jsonValue.GetObject("AssociationDescription");

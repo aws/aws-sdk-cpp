@@ -37,7 +37,7 @@ UpdateCommentResult::UpdateCommentResult(const Aws::AmazonWebServiceResult<JsonV
 
 UpdateCommentResult& UpdateCommentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetObject("comment");

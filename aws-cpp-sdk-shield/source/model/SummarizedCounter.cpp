@@ -42,7 +42,7 @@ SummarizedCounter::SummarizedCounter() :
 {
 }
 
-SummarizedCounter::SummarizedCounter(const JsonValue& jsonValue) : 
+SummarizedCounter::SummarizedCounter(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_max(0.0),
     m_maxHasBeenSet(false),
@@ -57,7 +57,7 @@ SummarizedCounter::SummarizedCounter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SummarizedCounter& SummarizedCounter::operator =(const JsonValue& jsonValue)
+SummarizedCounter& SummarizedCounter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

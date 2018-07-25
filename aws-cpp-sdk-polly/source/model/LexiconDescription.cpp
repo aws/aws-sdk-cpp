@@ -34,14 +34,14 @@ LexiconDescription::LexiconDescription() :
 {
 }
 
-LexiconDescription::LexiconDescription(const JsonValue& jsonValue) : 
+LexiconDescription::LexiconDescription(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LexiconDescription& LexiconDescription::operator =(const JsonValue& jsonValue)
+LexiconDescription& LexiconDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

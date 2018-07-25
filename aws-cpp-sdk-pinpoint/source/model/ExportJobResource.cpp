@@ -37,7 +37,7 @@ ExportJobResource::ExportJobResource() :
 {
 }
 
-ExportJobResource::ExportJobResource(const JsonValue& jsonValue) : 
+ExportJobResource::ExportJobResource(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_s3UrlPrefixHasBeenSet(false),
     m_segmentIdHasBeenSet(false),
@@ -47,7 +47,7 @@ ExportJobResource::ExportJobResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExportJobResource& ExportJobResource::operator =(const JsonValue& jsonValue)
+ExportJobResource& ExportJobResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RoleArn"))
   {

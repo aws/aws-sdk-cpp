@@ -39,7 +39,7 @@ PatchComplianceData::PatchComplianceData() :
 {
 }
 
-PatchComplianceData::PatchComplianceData(const JsonValue& jsonValue) : 
+PatchComplianceData::PatchComplianceData(JsonView jsonValue) : 
     m_titleHasBeenSet(false),
     m_kBIdHasBeenSet(false),
     m_classificationHasBeenSet(false),
@@ -51,7 +51,7 @@ PatchComplianceData::PatchComplianceData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PatchComplianceData& PatchComplianceData::operator =(const JsonValue& jsonValue)
+PatchComplianceData& PatchComplianceData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Title"))
   {

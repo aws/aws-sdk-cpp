@@ -37,7 +37,7 @@ Aws::String StopKeyPhrasesDetectionJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopKeyPhrasesDetectionJobRequest::GetRequestSpecificHeaders() const

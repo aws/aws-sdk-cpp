@@ -34,18 +34,18 @@ ReservationCoverageGroup::ReservationCoverageGroup() :
 {
 }
 
-ReservationCoverageGroup::ReservationCoverageGroup(const JsonValue& jsonValue) : 
+ReservationCoverageGroup::ReservationCoverageGroup(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
     m_coverageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ReservationCoverageGroup& ReservationCoverageGroup::operator =(const JsonValue& jsonValue)
+ReservationCoverageGroup& ReservationCoverageGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

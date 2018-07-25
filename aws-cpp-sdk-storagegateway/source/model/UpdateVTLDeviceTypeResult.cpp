@@ -37,7 +37,7 @@ UpdateVTLDeviceTypeResult::UpdateVTLDeviceTypeResult(const Aws::AmazonWebService
 
 UpdateVTLDeviceTypeResult& UpdateVTLDeviceTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VTLDeviceARN"))
   {
     m_vTLDeviceARN = jsonValue.GetString("VTLDeviceARN");

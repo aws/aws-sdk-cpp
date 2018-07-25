@@ -43,7 +43,7 @@ ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate() :
 {
 }
 
-ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate(const JsonValue& jsonValue) : 
+ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate(JsonView jsonValue) : 
     m_roleARNHasBeenSet(false),
     m_domainARNHasBeenSet(false),
     m_indexNameHasBeenSet(false),
@@ -59,7 +59,7 @@ ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate(const JsonValue& 
   *this = jsonValue;
 }
 
-ElasticsearchDestinationUpdate& ElasticsearchDestinationUpdate::operator =(const JsonValue& jsonValue)
+ElasticsearchDestinationUpdate& ElasticsearchDestinationUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RoleARN"))
   {

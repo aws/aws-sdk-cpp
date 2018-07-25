@@ -34,14 +34,14 @@ XssMatchSetSummary::XssMatchSetSummary() :
 {
 }
 
-XssMatchSetSummary::XssMatchSetSummary(const JsonValue& jsonValue) : 
+XssMatchSetSummary::XssMatchSetSummary(JsonView jsonValue) : 
     m_xssMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-XssMatchSetSummary& XssMatchSetSummary::operator =(const JsonValue& jsonValue)
+XssMatchSetSummary& XssMatchSetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("XssMatchSetId"))
   {

@@ -47,7 +47,7 @@ AudioSelector::AudioSelector() :
 {
 }
 
-AudioSelector::AudioSelector(const JsonValue& jsonValue) : 
+AudioSelector::AudioSelector(JsonView jsonValue) : 
     m_customLanguageCodeHasBeenSet(false),
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
@@ -67,7 +67,7 @@ AudioSelector::AudioSelector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AudioSelector& AudioSelector::operator =(const JsonValue& jsonValue)
+AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("customLanguageCode"))
   {
@@ -106,7 +106,7 @@ AudioSelector& AudioSelector::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("pids"))
   {
-    Array<JsonValue> pidsJsonList = jsonValue.GetArray("pids");
+    Array<JsonView> pidsJsonList = jsonValue.GetArray("pids");
     for(unsigned pidsIndex = 0; pidsIndex < pidsJsonList.GetLength(); ++pidsIndex)
     {
       m_pids.push_back(pidsJsonList[pidsIndex].AsInteger());
@@ -137,7 +137,7 @@ AudioSelector& AudioSelector::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tracks"))
   {
-    Array<JsonValue> tracksJsonList = jsonValue.GetArray("tracks");
+    Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
     for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
     {
       m_tracks.push_back(tracksJsonList[tracksIndex].AsInteger());

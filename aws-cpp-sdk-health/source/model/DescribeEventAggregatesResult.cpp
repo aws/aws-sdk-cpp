@@ -37,10 +37,10 @@ DescribeEventAggregatesResult::DescribeEventAggregatesResult(const Aws::AmazonWe
 
 DescribeEventAggregatesResult& DescribeEventAggregatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eventAggregates"))
   {
-    Array<JsonValue> eventAggregatesJsonList = jsonValue.GetArray("eventAggregates");
+    Array<JsonView> eventAggregatesJsonList = jsonValue.GetArray("eventAggregates");
     for(unsigned eventAggregatesIndex = 0; eventAggregatesIndex < eventAggregatesJsonList.GetLength(); ++eventAggregatesIndex)
     {
       m_eventAggregates.push_back(eventAggregatesJsonList[eventAggregatesIndex].AsObject());

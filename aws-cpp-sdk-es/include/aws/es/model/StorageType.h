@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     StorageType();
-    StorageType(const Aws::Utils::Json::JsonValue& jsonValue);
-    StorageType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StorageType(Aws::Utils::Json::JsonView jsonValue);
+    StorageType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

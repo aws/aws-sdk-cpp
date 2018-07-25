@@ -37,10 +37,10 @@ BatchDeleteConnectionResult::BatchDeleteConnectionResult(const Aws::AmazonWebSer
 
 BatchDeleteConnectionResult& BatchDeleteConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Succeeded"))
   {
-    Array<JsonValue> succeededJsonList = jsonValue.GetArray("Succeeded");
+    Array<JsonView> succeededJsonList = jsonValue.GetArray("Succeeded");
     for(unsigned succeededIndex = 0; succeededIndex < succeededJsonList.GetLength(); ++succeededIndex)
     {
       m_succeeded.push_back(succeededJsonList[succeededIndex].AsString());
@@ -49,7 +49,7 @@ BatchDeleteConnectionResult& BatchDeleteConnectionResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Aws::Map<Aws::String, JsonValue> errorsJsonMap = jsonValue.GetObject("Errors").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> errorsJsonMap = jsonValue.GetObject("Errors").GetAllObjects();
     for(auto& errorsItem : errorsJsonMap)
     {
       m_errors[errorsItem.first] = errorsItem.second.AsObject();

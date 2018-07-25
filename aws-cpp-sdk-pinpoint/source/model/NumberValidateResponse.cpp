@@ -47,7 +47,7 @@ NumberValidateResponse::NumberValidateResponse() :
 {
 }
 
-NumberValidateResponse::NumberValidateResponse(const JsonValue& jsonValue) : 
+NumberValidateResponse::NumberValidateResponse(JsonView jsonValue) : 
     m_carrierHasBeenSet(false),
     m_cityHasBeenSet(false),
     m_cleansedPhoneNumberE164HasBeenSet(false),
@@ -67,7 +67,7 @@ NumberValidateResponse::NumberValidateResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NumberValidateResponse& NumberValidateResponse::operator =(const JsonValue& jsonValue)
+NumberValidateResponse& NumberValidateResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Carrier"))
   {

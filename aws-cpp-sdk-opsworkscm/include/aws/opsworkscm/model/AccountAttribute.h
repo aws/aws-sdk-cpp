@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorksCM
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     AccountAttribute();
-    AccountAttribute(const Aws::Utils::Json::JsonValue& jsonValue);
-    AccountAttribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AccountAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AccountAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

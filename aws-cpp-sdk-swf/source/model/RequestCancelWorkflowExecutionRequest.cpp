@@ -51,7 +51,7 @@ Aws::String RequestCancelWorkflowExecutionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RequestCancelWorkflowExecutionRequest::GetRequestSpecificHeaders() const

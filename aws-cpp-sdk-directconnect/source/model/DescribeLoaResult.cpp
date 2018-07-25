@@ -40,7 +40,7 @@ DescribeLoaResult::DescribeLoaResult(const Aws::AmazonWebServiceResult<JsonValue
 
 DescribeLoaResult& DescribeLoaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("loaContent"))
   {
     m_loaContent = HashingUtils::Base64Decode(jsonValue.GetString("loaContent"));

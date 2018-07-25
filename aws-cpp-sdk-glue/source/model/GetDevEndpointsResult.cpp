@@ -37,10 +37,10 @@ GetDevEndpointsResult::GetDevEndpointsResult(const Aws::AmazonWebServiceResult<J
 
 GetDevEndpointsResult& GetDevEndpointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DevEndpoints"))
   {
-    Array<JsonValue> devEndpointsJsonList = jsonValue.GetArray("DevEndpoints");
+    Array<JsonView> devEndpointsJsonList = jsonValue.GetArray("DevEndpoints");
     for(unsigned devEndpointsIndex = 0; devEndpointsIndex < devEndpointsJsonList.GetLength(); ++devEndpointsIndex)
     {
       m_devEndpoints.push_back(devEndpointsJsonList[devEndpointsIndex].AsObject());

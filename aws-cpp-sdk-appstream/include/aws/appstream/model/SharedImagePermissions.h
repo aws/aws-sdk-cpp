@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     SharedImagePermissions();
-    SharedImagePermissions(const Aws::Utils::Json::JsonValue& jsonValue);
-    SharedImagePermissions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SharedImagePermissions(Aws::Utils::Json::JsonView jsonValue);
+    SharedImagePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

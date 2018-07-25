@@ -35,7 +35,7 @@ FailedCreateWorkspaceRequest::FailedCreateWorkspaceRequest() :
 {
 }
 
-FailedCreateWorkspaceRequest::FailedCreateWorkspaceRequest(const JsonValue& jsonValue) : 
+FailedCreateWorkspaceRequest::FailedCreateWorkspaceRequest(JsonView jsonValue) : 
     m_workspaceRequestHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ FailedCreateWorkspaceRequest::FailedCreateWorkspaceRequest(const JsonValue& json
   *this = jsonValue;
 }
 
-FailedCreateWorkspaceRequest& FailedCreateWorkspaceRequest::operator =(const JsonValue& jsonValue)
+FailedCreateWorkspaceRequest& FailedCreateWorkspaceRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkspaceRequest"))
   {

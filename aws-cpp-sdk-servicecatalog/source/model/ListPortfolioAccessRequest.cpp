@@ -44,7 +44,7 @@ Aws::String ListPortfolioAccessRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListPortfolioAccessRequest::GetRequestSpecificHeaders() const

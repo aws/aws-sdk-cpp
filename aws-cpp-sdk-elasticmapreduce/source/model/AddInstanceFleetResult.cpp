@@ -37,7 +37,7 @@ AddInstanceFleetResult::AddInstanceFleetResult(const Aws::AmazonWebServiceResult
 
 AddInstanceFleetResult& AddInstanceFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");

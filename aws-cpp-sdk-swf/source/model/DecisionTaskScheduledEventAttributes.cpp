@@ -35,7 +35,7 @@ DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes() :
 {
 }
 
-DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes(const JsonValue& jsonValue) : 
+DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes(JsonView jsonValue) : 
     m_taskListHasBeenSet(false),
     m_taskPriorityHasBeenSet(false),
     m_startToCloseTimeoutHasBeenSet(false)
@@ -43,7 +43,7 @@ DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes(const
   *this = jsonValue;
 }
 
-DecisionTaskScheduledEventAttributes& DecisionTaskScheduledEventAttributes::operator =(const JsonValue& jsonValue)
+DecisionTaskScheduledEventAttributes& DecisionTaskScheduledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("taskList"))
   {

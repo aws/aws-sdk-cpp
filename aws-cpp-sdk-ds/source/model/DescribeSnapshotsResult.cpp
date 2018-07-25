@@ -37,10 +37,10 @@ DescribeSnapshotsResult::DescribeSnapshotsResult(const Aws::AmazonWebServiceResu
 
 DescribeSnapshotsResult& DescribeSnapshotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Snapshots"))
   {
-    Array<JsonValue> snapshotsJsonList = jsonValue.GetArray("Snapshots");
+    Array<JsonView> snapshotsJsonList = jsonValue.GetArray("Snapshots");
     for(unsigned snapshotsIndex = 0; snapshotsIndex < snapshotsJsonList.GetLength(); ++snapshotsIndex)
     {
       m_snapshots.push_back(snapshotsJsonList[snapshotsIndex].AsObject());

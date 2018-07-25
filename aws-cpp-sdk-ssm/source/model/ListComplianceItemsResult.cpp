@@ -37,10 +37,10 @@ ListComplianceItemsResult::ListComplianceItemsResult(const Aws::AmazonWebService
 
 ListComplianceItemsResult& ListComplianceItemsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceItems"))
   {
-    Array<JsonValue> complianceItemsJsonList = jsonValue.GetArray("ComplianceItems");
+    Array<JsonView> complianceItemsJsonList = jsonValue.GetArray("ComplianceItems");
     for(unsigned complianceItemsIndex = 0; complianceItemsIndex < complianceItemsJsonList.GetLength(); ++complianceItemsIndex)
     {
       m_complianceItems.push_back(complianceItemsJsonList[complianceItemsIndex].AsObject());

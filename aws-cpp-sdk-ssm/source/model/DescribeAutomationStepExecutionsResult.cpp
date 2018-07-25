@@ -37,10 +37,10 @@ DescribeAutomationStepExecutionsResult::DescribeAutomationStepExecutionsResult(c
 
 DescribeAutomationStepExecutionsResult& DescribeAutomationStepExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StepExecutions"))
   {
-    Array<JsonValue> stepExecutionsJsonList = jsonValue.GetArray("StepExecutions");
+    Array<JsonView> stepExecutionsJsonList = jsonValue.GetArray("StepExecutions");
     for(unsigned stepExecutionsIndex = 0; stepExecutionsIndex < stepExecutionsJsonList.GetLength(); ++stepExecutionsIndex)
     {
       m_stepExecutions.push_back(stepExecutionsJsonList[stepExecutionsIndex].AsObject());

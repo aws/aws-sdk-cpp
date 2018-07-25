@@ -37,10 +37,10 @@ ListCompatibleImagesResult::ListCompatibleImagesResult(const Aws::AmazonWebServi
 
 ListCompatibleImagesResult& ListCompatibleImagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CompatibleImages"))
   {
-    Array<JsonValue> compatibleImagesJsonList = jsonValue.GetArray("CompatibleImages");
+    Array<JsonView> compatibleImagesJsonList = jsonValue.GetArray("CompatibleImages");
     for(unsigned compatibleImagesIndex = 0; compatibleImagesIndex < compatibleImagesJsonList.GetLength(); ++compatibleImagesIndex)
     {
       m_compatibleImages.push_back(compatibleImagesJsonList[compatibleImagesIndex].AsObject());

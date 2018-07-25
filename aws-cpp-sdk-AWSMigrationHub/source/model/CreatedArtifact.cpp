@@ -34,14 +34,14 @@ CreatedArtifact::CreatedArtifact() :
 {
 }
 
-CreatedArtifact::CreatedArtifact(const JsonValue& jsonValue) : 
+CreatedArtifact::CreatedArtifact(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CreatedArtifact& CreatedArtifact::operator =(const JsonValue& jsonValue)
+CreatedArtifact& CreatedArtifact::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

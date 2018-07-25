@@ -36,7 +36,7 @@ ReprocessingSummary::ReprocessingSummary() :
 {
 }
 
-ReprocessingSummary::ReprocessingSummary(const JsonValue& jsonValue) : 
+ReprocessingSummary::ReprocessingSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_status(ReprocessingStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -45,7 +45,7 @@ ReprocessingSummary::ReprocessingSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReprocessingSummary& ReprocessingSummary::operator =(const JsonValue& jsonValue)
+ReprocessingSummary& ReprocessingSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

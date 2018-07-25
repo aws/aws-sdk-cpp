@@ -42,7 +42,7 @@ InstanceAccessDetails::InstanceAccessDetails() :
 {
 }
 
-InstanceAccessDetails::InstanceAccessDetails(const JsonValue& jsonValue) : 
+InstanceAccessDetails::InstanceAccessDetails(JsonView jsonValue) : 
     m_certKeyHasBeenSet(false),
     m_expiresAtHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
@@ -57,7 +57,7 @@ InstanceAccessDetails::InstanceAccessDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceAccessDetails& InstanceAccessDetails::operator =(const JsonValue& jsonValue)
+InstanceAccessDetails& InstanceAccessDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("certKey"))
   {

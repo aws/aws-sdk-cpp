@@ -33,13 +33,13 @@ InputSerialization::InputSerialization() :
 {
 }
 
-InputSerialization::InputSerialization(const JsonValue& jsonValue) : 
+InputSerialization::InputSerialization(JsonView jsonValue) : 
     m_csvHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputSerialization& InputSerialization::operator =(const JsonValue& jsonValue)
+InputSerialization& InputSerialization::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("csv"))
   {

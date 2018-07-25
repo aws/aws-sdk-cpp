@@ -49,7 +49,7 @@ Aws::String UntagResourceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -35,7 +35,7 @@ VolumeFrom::VolumeFrom() :
 {
 }
 
-VolumeFrom::VolumeFrom(const JsonValue& jsonValue) : 
+VolumeFrom::VolumeFrom(JsonView jsonValue) : 
     m_sourceContainerHasBeenSet(false),
     m_readOnly(false),
     m_readOnlyHasBeenSet(false)
@@ -43,7 +43,7 @@ VolumeFrom::VolumeFrom(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VolumeFrom& VolumeFrom::operator =(const JsonValue& jsonValue)
+VolumeFrom& VolumeFrom::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sourceContainer"))
   {

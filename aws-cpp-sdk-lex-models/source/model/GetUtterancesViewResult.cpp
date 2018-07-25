@@ -37,7 +37,7 @@ GetUtterancesViewResult::GetUtterancesViewResult(const Aws::AmazonWebServiceResu
 
 GetUtterancesViewResult& GetUtterancesViewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("botName"))
   {
     m_botName = jsonValue.GetString("botName");
@@ -46,7 +46,7 @@ GetUtterancesViewResult& GetUtterancesViewResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("utterances"))
   {
-    Array<JsonValue> utterancesJsonList = jsonValue.GetArray("utterances");
+    Array<JsonView> utterancesJsonList = jsonValue.GetArray("utterances");
     for(unsigned utterancesIndex = 0; utterancesIndex < utterancesJsonList.GetLength(); ++utterancesIndex)
     {
       m_utterances.push_back(utterancesJsonList[utterancesIndex].AsObject());

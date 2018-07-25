@@ -56,7 +56,7 @@ Aws::String ModifyHapgRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ModifyHapgRequest::GetRequestSpecificHeaders() const

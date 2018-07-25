@@ -37,7 +37,7 @@ ExportBundleResult::ExportBundleResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ExportBundleResult& ExportBundleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("downloadUrl"))
   {
     m_downloadUrl = jsonValue.GetString("downloadUrl");

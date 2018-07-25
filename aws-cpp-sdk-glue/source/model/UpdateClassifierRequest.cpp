@@ -51,7 +51,7 @@ Aws::String UpdateClassifierRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateClassifierRequest::GetRequestSpecificHeaders() const

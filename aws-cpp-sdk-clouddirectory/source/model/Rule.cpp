@@ -35,7 +35,7 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(const JsonValue& jsonValue) : 
+Rule::Rule(JsonView jsonValue) : 
     m_type(RuleType::NOT_SET),
     m_typeHasBeenSet(false),
     m_parametersHasBeenSet(false)
@@ -43,7 +43,7 @@ Rule::Rule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Rule& Rule::operator =(const JsonValue& jsonValue)
+Rule& Rule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {
@@ -54,7 +54,7 @@ Rule& Rule::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

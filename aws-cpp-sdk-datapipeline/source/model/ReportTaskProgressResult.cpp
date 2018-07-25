@@ -39,7 +39,7 @@ ReportTaskProgressResult::ReportTaskProgressResult(const Aws::AmazonWebServiceRe
 
 ReportTaskProgressResult& ReportTaskProgressResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("canceled"))
   {
     m_canceled = jsonValue.GetBool("canceled");

@@ -37,7 +37,7 @@ Aws::String DeleteUserProfileRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteUserProfileRequest::GetRequestSpecificHeaders() const

@@ -117,7 +117,7 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

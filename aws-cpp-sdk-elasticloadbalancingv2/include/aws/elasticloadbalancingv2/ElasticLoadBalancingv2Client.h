@@ -672,7 +672,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
-         * deleted when you delete the load balancer it is attached to using
+         * deleted when you delete the load balancer to which it is attached, using
          * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
          * API Reference</a></p>
@@ -681,7 +681,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
-         * deleted when you delete the load balancer it is attached to using
+         * deleted when you delete the load balancer to which it is attached, using
          * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
          * API Reference</a></p>
@@ -692,7 +692,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
-         * deleted when you delete the load balancer it is attached to using
+         * deleted when you delete the load balancer to which it is attached, using
          * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
          * API Reference</a></p>
@@ -1515,8 +1515,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Note that Network
-         * Load Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
+         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          */
@@ -1524,8 +1524,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Note that Network
-         * Load Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
+         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          *
@@ -1535,8 +1535,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Note that Network
-         * Load Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
+         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          *
@@ -1581,8 +1581,8 @@ namespace Model
         /**
          * <p>Associates the specified security groups with the specified Application Load
          * Balancer. The specified security groups override the previously associated
-         * security groups.</p> <p>Note that you can't specify a security group for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * security groups.</p> <p>You can't specify a security group for a Network Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
          * API Reference</a></p>
          */
@@ -1591,8 +1591,8 @@ namespace Model
         /**
          * <p>Associates the specified security groups with the specified Application Load
          * Balancer. The specified security groups override the previously associated
-         * security groups.</p> <p>Note that you can't specify a security group for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * security groups.</p> <p>You can't specify a security group for a Network Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
          * API Reference</a></p>
          *
@@ -1603,8 +1603,8 @@ namespace Model
         /**
          * <p>Associates the specified security groups with the specified Application Load
          * Balancer. The specified security groups override the previously associated
-         * security groups.</p> <p>Note that you can't specify a security group for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * security groups.</p> <p>You can't specify a security group for a Network Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
          * API Reference</a></p>
          *
@@ -1615,8 +1615,8 @@ namespace Model
         /**
          * <p>Enables the Availability Zone for the specified public subnets for the
          * specified Application Load Balancer. The specified subnets replace the
-         * previously enabled subnets.</p> <p>Note that you can't change the subnets for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
+         * Load Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          */
@@ -1625,8 +1625,8 @@ namespace Model
         /**
          * <p>Enables the Availability Zone for the specified public subnets for the
          * specified Application Load Balancer. The specified subnets replace the
-         * previously enabled subnets.</p> <p>Note that you can't change the subnets for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
+         * Load Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          *
@@ -1637,8 +1637,8 @@ namespace Model
         /**
          * <p>Enables the Availability Zone for the specified public subnets for the
          * specified Application Load Balancer. The specified subnets replace the
-         * previously enabled subnets.</p> <p>Note that you can't change the subnets for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
+         * Load Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          *

@@ -34,14 +34,14 @@ DiskMap::DiskMap() :
 {
 }
 
-DiskMap::DiskMap(const JsonValue& jsonValue) : 
+DiskMap::DiskMap(JsonView jsonValue) : 
     m_originalDiskPathHasBeenSet(false),
     m_newDiskNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DiskMap& DiskMap::operator =(const JsonValue& jsonValue)
+DiskMap& DiskMap::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("originalDiskPath"))
   {

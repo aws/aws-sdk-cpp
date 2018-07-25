@@ -52,7 +52,7 @@ Aws::String NotifyApplicationStateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection NotifyApplicationStateRequest::GetRequestSpecificHeaders() const

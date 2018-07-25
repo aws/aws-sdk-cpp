@@ -40,7 +40,7 @@ ComputeCapacityStatus::ComputeCapacityStatus() :
 {
 }
 
-ComputeCapacityStatus::ComputeCapacityStatus(const JsonValue& jsonValue) : 
+ComputeCapacityStatus::ComputeCapacityStatus(JsonView jsonValue) : 
     m_desired(0),
     m_desiredHasBeenSet(false),
     m_running(0),
@@ -53,7 +53,7 @@ ComputeCapacityStatus::ComputeCapacityStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComputeCapacityStatus& ComputeCapacityStatus::operator =(const JsonValue& jsonValue)
+ComputeCapacityStatus& ComputeCapacityStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Desired"))
   {

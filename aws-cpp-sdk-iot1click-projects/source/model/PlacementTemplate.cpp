@@ -34,18 +34,18 @@ PlacementTemplate::PlacementTemplate() :
 {
 }
 
-PlacementTemplate::PlacementTemplate(const JsonValue& jsonValue) : 
+PlacementTemplate::PlacementTemplate(JsonView jsonValue) : 
     m_defaultAttributesHasBeenSet(false),
     m_deviceTemplatesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PlacementTemplate& PlacementTemplate::operator =(const JsonValue& jsonValue)
+PlacementTemplate& PlacementTemplate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("defaultAttributes"))
   {
-    Aws::Map<Aws::String, JsonValue> defaultAttributesJsonMap = jsonValue.GetObject("defaultAttributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> defaultAttributesJsonMap = jsonValue.GetObject("defaultAttributes").GetAllObjects();
     for(auto& defaultAttributesItem : defaultAttributesJsonMap)
     {
       m_defaultAttributes[defaultAttributesItem.first] = defaultAttributesItem.second.AsString();
@@ -55,7 +55,7 @@ PlacementTemplate& PlacementTemplate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("deviceTemplates"))
   {
-    Aws::Map<Aws::String, JsonValue> deviceTemplatesJsonMap = jsonValue.GetObject("deviceTemplates").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> deviceTemplatesJsonMap = jsonValue.GetObject("deviceTemplates").GetAllObjects();
     for(auto& deviceTemplatesItem : deviceTemplatesJsonMap)
     {
       m_deviceTemplates[deviceTemplatesItem.first] = deviceTemplatesItem.second.AsObject();

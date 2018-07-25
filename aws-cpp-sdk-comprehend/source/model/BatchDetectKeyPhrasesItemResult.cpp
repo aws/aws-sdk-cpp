@@ -35,7 +35,7 @@ BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult() :
 {
 }
 
-BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult(const JsonValue& jsonValue) : 
+BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult(JsonView jsonValue) : 
     m_index(0),
     m_indexHasBeenSet(false),
     m_keyPhrasesHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult(const JsonValue
   *this = jsonValue;
 }
 
-BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator =(const JsonValue& jsonValue)
+BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Index"))
   {
@@ -54,7 +54,7 @@ BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator =(con
 
   if(jsonValue.ValueExists("KeyPhrases"))
   {
-    Array<JsonValue> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
+    Array<JsonView> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
     for(unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex)
     {
       m_keyPhrases.push_back(keyPhrasesJsonList[keyPhrasesIndex].AsObject());

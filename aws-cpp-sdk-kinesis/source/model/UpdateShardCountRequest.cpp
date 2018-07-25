@@ -52,7 +52,7 @@ Aws::String UpdateShardCountRequest::SerializePayload() const
    payload.WithString("ScalingType", ScalingTypeMapper::GetNameForScalingType(m_scalingType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateShardCountRequest::GetRequestSpecificHeaders() const

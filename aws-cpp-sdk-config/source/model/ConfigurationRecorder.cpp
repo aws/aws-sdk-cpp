@@ -35,7 +35,7 @@ ConfigurationRecorder::ConfigurationRecorder() :
 {
 }
 
-ConfigurationRecorder::ConfigurationRecorder(const JsonValue& jsonValue) : 
+ConfigurationRecorder::ConfigurationRecorder(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_recordingGroupHasBeenSet(false)
@@ -43,7 +43,7 @@ ConfigurationRecorder::ConfigurationRecorder(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigurationRecorder& ConfigurationRecorder::operator =(const JsonValue& jsonValue)
+ConfigurationRecorder& ConfigurationRecorder::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

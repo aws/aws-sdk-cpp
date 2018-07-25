@@ -38,7 +38,7 @@ CanarySettings::CanarySettings() :
 {
 }
 
-CanarySettings::CanarySettings(const JsonValue& jsonValue) : 
+CanarySettings::CanarySettings(JsonView jsonValue) : 
     m_percentTraffic(0.0),
     m_percentTrafficHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
@@ -49,7 +49,7 @@ CanarySettings::CanarySettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CanarySettings& CanarySettings::operator =(const JsonValue& jsonValue)
+CanarySettings& CanarySettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("percentTraffic"))
   {
@@ -67,7 +67,7 @@ CanarySettings& CanarySettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("stageVariableOverrides"))
   {
-    Aws::Map<Aws::String, JsonValue> stageVariableOverridesJsonMap = jsonValue.GetObject("stageVariableOverrides").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> stageVariableOverridesJsonMap = jsonValue.GetObject("stageVariableOverrides").GetAllObjects();
     for(auto& stageVariableOverridesItem : stageVariableOverridesJsonMap)
     {
       m_stageVariableOverrides[stageVariableOverridesItem.first] = stageVariableOverridesItem.second.AsString();

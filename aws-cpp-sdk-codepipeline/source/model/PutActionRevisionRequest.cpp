@@ -58,7 +58,7 @@ Aws::String PutActionRevisionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutActionRevisionRequest::GetRequestSpecificHeaders() const

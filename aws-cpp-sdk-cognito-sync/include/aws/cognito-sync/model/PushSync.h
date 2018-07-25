@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoSync
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PushSync();
-    PushSync(const Aws::Utils::Json::JsonValue& jsonValue);
-    PushSync& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PushSync(Aws::Utils::Json::JsonView jsonValue);
+    PushSync& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

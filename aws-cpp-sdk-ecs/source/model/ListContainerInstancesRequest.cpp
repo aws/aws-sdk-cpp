@@ -66,7 +66,7 @@ Aws::String ListContainerInstancesRequest::SerializePayload() const
    payload.WithString("status", ContainerInstanceStatusMapper::GetNameForContainerInstanceStatus(m_status));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListContainerInstancesRequest::GetRequestSpecificHeaders() const

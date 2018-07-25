@@ -37,7 +37,7 @@ DescribeRecordResult::DescribeRecordResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeRecordResult& DescribeRecordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RecordDetail"))
   {
     m_recordDetail = jsonValue.GetObject("RecordDetail");
@@ -46,7 +46,7 @@ DescribeRecordResult& DescribeRecordResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("RecordOutputs"))
   {
-    Array<JsonValue> recordOutputsJsonList = jsonValue.GetArray("RecordOutputs");
+    Array<JsonView> recordOutputsJsonList = jsonValue.GetArray("RecordOutputs");
     for(unsigned recordOutputsIndex = 0; recordOutputsIndex < recordOutputsJsonList.GetLength(); ++recordOutputsIndex)
     {
       m_recordOutputs.push_back(recordOutputsJsonList[recordOutputsIndex].AsObject());

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Shield
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     AttackSummary();
-    AttackSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    AttackSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AttackSummary(Aws::Utils::Json::JsonView jsonValue);
+    AttackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

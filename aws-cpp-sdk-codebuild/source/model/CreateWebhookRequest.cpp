@@ -44,7 +44,7 @@ Aws::String CreateWebhookRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateWebhookRequest::GetRequestSpecificHeaders() const

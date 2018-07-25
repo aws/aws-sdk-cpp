@@ -34,14 +34,14 @@ ThirdPartyJob::ThirdPartyJob() :
 {
 }
 
-ThirdPartyJob::ThirdPartyJob(const JsonValue& jsonValue) : 
+ThirdPartyJob::ThirdPartyJob(JsonView jsonValue) : 
     m_clientIdHasBeenSet(false),
     m_jobIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ThirdPartyJob& ThirdPartyJob::operator =(const JsonValue& jsonValue)
+ThirdPartyJob& ThirdPartyJob::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("clientId"))
   {

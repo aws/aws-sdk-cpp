@@ -37,10 +37,10 @@ DescribeTimeBasedAutoScalingResult::DescribeTimeBasedAutoScalingResult(const Aws
 
 DescribeTimeBasedAutoScalingResult& DescribeTimeBasedAutoScalingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TimeBasedAutoScalingConfigurations"))
   {
-    Array<JsonValue> timeBasedAutoScalingConfigurationsJsonList = jsonValue.GetArray("TimeBasedAutoScalingConfigurations");
+    Array<JsonView> timeBasedAutoScalingConfigurationsJsonList = jsonValue.GetArray("TimeBasedAutoScalingConfigurations");
     for(unsigned timeBasedAutoScalingConfigurationsIndex = 0; timeBasedAutoScalingConfigurationsIndex < timeBasedAutoScalingConfigurationsJsonList.GetLength(); ++timeBasedAutoScalingConfigurationsIndex)
     {
       m_timeBasedAutoScalingConfigurations.push_back(timeBasedAutoScalingConfigurationsJsonList[timeBasedAutoScalingConfigurationsIndex].AsObject());

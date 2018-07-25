@@ -39,7 +39,7 @@ ListWorkerBlocksResult::ListWorkerBlocksResult(const Aws::AmazonWebServiceResult
 
 ListWorkerBlocksResult& ListWorkerBlocksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -54,7 +54,7 @@ ListWorkerBlocksResult& ListWorkerBlocksResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("WorkerBlocks"))
   {
-    Array<JsonValue> workerBlocksJsonList = jsonValue.GetArray("WorkerBlocks");
+    Array<JsonView> workerBlocksJsonList = jsonValue.GetArray("WorkerBlocks");
     for(unsigned workerBlocksIndex = 0; workerBlocksIndex < workerBlocksJsonList.GetLength(); ++workerBlocksIndex)
     {
       m_workerBlocks.push_back(workerBlocksJsonList[workerBlocksIndex].AsObject());

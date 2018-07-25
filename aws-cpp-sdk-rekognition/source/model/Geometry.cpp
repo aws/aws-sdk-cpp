@@ -34,14 +34,14 @@ Geometry::Geometry() :
 {
 }
 
-Geometry::Geometry(const JsonValue& jsonValue) : 
+Geometry::Geometry(JsonView jsonValue) : 
     m_boundingBoxHasBeenSet(false),
     m_polygonHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Geometry& Geometry::operator =(const JsonValue& jsonValue)
+Geometry& Geometry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BoundingBox"))
   {
@@ -52,7 +52,7 @@ Geometry& Geometry::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Polygon"))
   {
-    Array<JsonValue> polygonJsonList = jsonValue.GetArray("Polygon");
+    Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
     for(unsigned polygonIndex = 0; polygonIndex < polygonJsonList.GetLength(); ++polygonIndex)
     {
       m_polygon.push_back(polygonJsonList[polygonIndex].AsObject());

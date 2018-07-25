@@ -35,7 +35,7 @@ HLSFragmentSelector::HLSFragmentSelector() :
 {
 }
 
-HLSFragmentSelector::HLSFragmentSelector(const JsonValue& jsonValue) : 
+HLSFragmentSelector::HLSFragmentSelector(JsonView jsonValue) : 
     m_fragmentSelectorType(HLSFragmentSelectorType::NOT_SET),
     m_fragmentSelectorTypeHasBeenSet(false),
     m_timestampRangeHasBeenSet(false)
@@ -43,7 +43,7 @@ HLSFragmentSelector::HLSFragmentSelector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HLSFragmentSelector& HLSFragmentSelector::operator =(const JsonValue& jsonValue)
+HLSFragmentSelector& HLSFragmentSelector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FragmentSelectorType"))
   {

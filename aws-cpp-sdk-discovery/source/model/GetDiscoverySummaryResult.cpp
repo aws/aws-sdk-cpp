@@ -45,7 +45,7 @@ GetDiscoverySummaryResult::GetDiscoverySummaryResult(const Aws::AmazonWebService
 
 GetDiscoverySummaryResult& GetDiscoverySummaryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("servers"))
   {
     m_servers = jsonValue.GetInt64("servers");

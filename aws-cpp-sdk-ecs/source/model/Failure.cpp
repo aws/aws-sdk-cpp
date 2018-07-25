@@ -34,14 +34,14 @@ Failure::Failure() :
 {
 }
 
-Failure::Failure(const JsonValue& jsonValue) : 
+Failure::Failure(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_reasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Failure& Failure::operator =(const JsonValue& jsonValue)
+Failure& Failure::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

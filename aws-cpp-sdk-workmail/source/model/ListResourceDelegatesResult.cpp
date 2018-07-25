@@ -37,10 +37,10 @@ ListResourceDelegatesResult::ListResourceDelegatesResult(const Aws::AmazonWebSer
 
 ListResourceDelegatesResult& ListResourceDelegatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Delegates"))
   {
-    Array<JsonValue> delegatesJsonList = jsonValue.GetArray("Delegates");
+    Array<JsonView> delegatesJsonList = jsonValue.GetArray("Delegates");
     for(unsigned delegatesIndex = 0; delegatesIndex < delegatesJsonList.GetLength(); ++delegatesIndex)
     {
       m_delegates.push_back(delegatesJsonList[delegatesIndex].AsObject());

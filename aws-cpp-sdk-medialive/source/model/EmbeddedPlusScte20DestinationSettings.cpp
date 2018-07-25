@@ -32,12 +32,12 @@ EmbeddedPlusScte20DestinationSettings::EmbeddedPlusScte20DestinationSettings()
 {
 }
 
-EmbeddedPlusScte20DestinationSettings::EmbeddedPlusScte20DestinationSettings(const JsonValue& jsonValue)
+EmbeddedPlusScte20DestinationSettings::EmbeddedPlusScte20DestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-EmbeddedPlusScte20DestinationSettings& EmbeddedPlusScte20DestinationSettings::operator =(const JsonValue& jsonValue)
+EmbeddedPlusScte20DestinationSettings& EmbeddedPlusScte20DestinationSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

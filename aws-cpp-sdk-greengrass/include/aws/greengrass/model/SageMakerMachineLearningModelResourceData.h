@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SageMakerMachineLearningModelResourceData();
-    SageMakerMachineLearningModelResourceData(const Aws::Utils::Json::JsonValue& jsonValue);
-    SageMakerMachineLearningModelResourceData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SageMakerMachineLearningModelResourceData(Aws::Utils::Json::JsonView jsonValue);
+    SageMakerMachineLearningModelResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -44,7 +44,7 @@ Aws::String AcceptPortfolioShareRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AcceptPortfolioShareRequest::GetRequestSpecificHeaders() const

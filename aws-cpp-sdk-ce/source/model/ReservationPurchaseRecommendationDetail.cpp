@@ -50,7 +50,7 @@ ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail
 {
 }
 
-ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail(const JsonValue& jsonValue) : 
+ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail(JsonView jsonValue) : 
     m_instanceDetailsHasBeenSet(false),
     m_recommendedNumberOfInstancesToPurchaseHasBeenSet(false),
     m_recommendedNormalizedUnitsToPurchaseHasBeenSet(false),
@@ -73,7 +73,7 @@ ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail
   *this = jsonValue;
 }
 
-ReservationPurchaseRecommendationDetail& ReservationPurchaseRecommendationDetail::operator =(const JsonValue& jsonValue)
+ReservationPurchaseRecommendationDetail& ReservationPurchaseRecommendationDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceDetails"))
   {

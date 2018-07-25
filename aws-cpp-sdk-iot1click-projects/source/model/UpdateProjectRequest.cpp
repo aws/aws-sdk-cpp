@@ -45,7 +45,7 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

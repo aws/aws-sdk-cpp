@@ -52,7 +52,7 @@ InsertableImage::InsertableImage() :
 {
 }
 
-InsertableImage::InsertableImage(const JsonValue& jsonValue) : 
+InsertableImage::InsertableImage(JsonView jsonValue) : 
     m_duration(0),
     m_durationHasBeenSet(false),
     m_fadeIn(0),
@@ -77,7 +77,7 @@ InsertableImage::InsertableImage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InsertableImage& InsertableImage::operator =(const JsonValue& jsonValue)
+InsertableImage& InsertableImage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("duration"))
   {

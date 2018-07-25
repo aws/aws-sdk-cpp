@@ -35,7 +35,7 @@ KeySchemaElement::KeySchemaElement() :
 {
 }
 
-KeySchemaElement::KeySchemaElement(const JsonValue& jsonValue) : 
+KeySchemaElement::KeySchemaElement(JsonView jsonValue) : 
     m_attributeNameHasBeenSet(false),
     m_keyType(KeyType::NOT_SET),
     m_keyTypeHasBeenSet(false)
@@ -43,7 +43,7 @@ KeySchemaElement::KeySchemaElement(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-KeySchemaElement& KeySchemaElement::operator =(const JsonValue& jsonValue)
+KeySchemaElement& KeySchemaElement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeName"))
   {

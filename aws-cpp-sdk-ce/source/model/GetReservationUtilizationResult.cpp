@@ -37,10 +37,10 @@ GetReservationUtilizationResult::GetReservationUtilizationResult(const Aws::Amaz
 
 GetReservationUtilizationResult& GetReservationUtilizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UtilizationsByTime"))
   {
-    Array<JsonValue> utilizationsByTimeJsonList = jsonValue.GetArray("UtilizationsByTime");
+    Array<JsonView> utilizationsByTimeJsonList = jsonValue.GetArray("UtilizationsByTime");
     for(unsigned utilizationsByTimeIndex = 0; utilizationsByTimeIndex < utilizationsByTimeJsonList.GetLength(); ++utilizationsByTimeIndex)
     {
       m_utilizationsByTime.push_back(utilizationsByTimeJsonList[utilizationsByTimeIndex].AsObject());

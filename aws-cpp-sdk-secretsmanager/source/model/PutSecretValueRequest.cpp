@@ -71,7 +71,7 @@ Aws::String PutSecretValueRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutSecretValueRequest::GetRequestSpecificHeaders() const

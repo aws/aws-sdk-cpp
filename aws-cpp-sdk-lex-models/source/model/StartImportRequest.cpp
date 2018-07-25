@@ -51,7 +51,7 @@ Aws::String StartImportRequest::SerializePayload() const
    payload.WithString("mergeStrategy", MergeStrategyMapper::GetNameForMergeStrategy(m_mergeStrategy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

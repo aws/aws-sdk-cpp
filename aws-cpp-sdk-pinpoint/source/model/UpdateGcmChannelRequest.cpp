@@ -37,7 +37,7 @@ Aws::String UpdateGcmChannelRequest::SerializePayload() const
    payload = m_gCMChannelRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

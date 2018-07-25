@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AlexaForBusiness
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     Contact();
-    Contact(const Aws::Utils::Json::JsonValue& jsonValue);
-    Contact& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Contact(Aws::Utils::Json::JsonView jsonValue);
+    Contact& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ DescribeEndpointTypesResult::DescribeEndpointTypesResult(const Aws::AmazonWebSer
 
 DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("SupportedEndpointTypes"))
   {
-    Array<JsonValue> supportedEndpointTypesJsonList = jsonValue.GetArray("SupportedEndpointTypes");
+    Array<JsonView> supportedEndpointTypesJsonList = jsonValue.GetArray("SupportedEndpointTypes");
     for(unsigned supportedEndpointTypesIndex = 0; supportedEndpointTypesIndex < supportedEndpointTypesJsonList.GetLength(); ++supportedEndpointTypesIndex)
     {
       m_supportedEndpointTypes.push_back(supportedEndpointTypesJsonList[supportedEndpointTypesIndex].AsObject());

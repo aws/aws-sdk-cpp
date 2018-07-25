@@ -65,7 +65,7 @@ Aws::String UpdateVPCEConfigurationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateVPCEConfigurationRequest::GetRequestSpecificHeaders() const

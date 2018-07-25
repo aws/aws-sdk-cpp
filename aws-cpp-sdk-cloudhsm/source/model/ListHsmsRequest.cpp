@@ -37,7 +37,7 @@ Aws::String ListHsmsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListHsmsRequest::GetRequestSpecificHeaders() const

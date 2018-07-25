@@ -40,7 +40,7 @@ PullRequestEvent::PullRequestEvent() :
 {
 }
 
-PullRequestEvent::PullRequestEvent(const JsonValue& jsonValue) : 
+PullRequestEvent::PullRequestEvent(JsonView jsonValue) : 
     m_pullRequestIdHasBeenSet(false),
     m_eventDateHasBeenSet(false),
     m_pullRequestEventType(PullRequestEventType::NOT_SET),
@@ -53,7 +53,7 @@ PullRequestEvent::PullRequestEvent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PullRequestEvent& PullRequestEvent::operator =(const JsonValue& jsonValue)
+PullRequestEvent& PullRequestEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pullRequestId"))
   {

@@ -51,7 +51,7 @@ ScalingPolicy::ScalingPolicy() :
 {
 }
 
-ScalingPolicy::ScalingPolicy(const JsonValue& jsonValue) : 
+ScalingPolicy::ScalingPolicy(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(ScalingStatusType::NOT_SET),
@@ -75,7 +75,7 @@ ScalingPolicy::ScalingPolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalingPolicy& ScalingPolicy::operator =(const JsonValue& jsonValue)
+ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {

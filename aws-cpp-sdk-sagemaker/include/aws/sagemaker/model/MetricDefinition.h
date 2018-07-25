@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     MetricDefinition();
-    MetricDefinition(const Aws::Utils::Json::JsonValue& jsonValue);
-    MetricDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MetricDefinition(Aws::Utils::Json::JsonView jsonValue);
+    MetricDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

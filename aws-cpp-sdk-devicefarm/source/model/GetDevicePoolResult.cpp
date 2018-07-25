@@ -37,7 +37,7 @@ GetDevicePoolResult::GetDevicePoolResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetDevicePoolResult& GetDevicePoolResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("devicePool"))
   {
     m_devicePool = jsonValue.GetObject("devicePool");

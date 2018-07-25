@@ -35,7 +35,7 @@ RedshiftMetadata::RedshiftMetadata() :
 {
 }
 
-RedshiftMetadata::RedshiftMetadata(const JsonValue& jsonValue) : 
+RedshiftMetadata::RedshiftMetadata(JsonView jsonValue) : 
     m_redshiftDatabaseHasBeenSet(false),
     m_databaseUserNameHasBeenSet(false),
     m_selectSqlQueryHasBeenSet(false)
@@ -43,7 +43,7 @@ RedshiftMetadata::RedshiftMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RedshiftMetadata& RedshiftMetadata::operator =(const JsonValue& jsonValue)
+RedshiftMetadata& RedshiftMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RedshiftDatabase"))
   {

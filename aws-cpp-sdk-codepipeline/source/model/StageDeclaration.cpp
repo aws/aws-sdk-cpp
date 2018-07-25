@@ -35,7 +35,7 @@ StageDeclaration::StageDeclaration() :
 {
 }
 
-StageDeclaration::StageDeclaration(const JsonValue& jsonValue) : 
+StageDeclaration::StageDeclaration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_blockersHasBeenSet(false),
     m_actionsHasBeenSet(false)
@@ -43,7 +43,7 @@ StageDeclaration::StageDeclaration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StageDeclaration& StageDeclaration::operator =(const JsonValue& jsonValue)
+StageDeclaration& StageDeclaration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -54,7 +54,7 @@ StageDeclaration& StageDeclaration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("blockers"))
   {
-    Array<JsonValue> blockersJsonList = jsonValue.GetArray("blockers");
+    Array<JsonView> blockersJsonList = jsonValue.GetArray("blockers");
     for(unsigned blockersIndex = 0; blockersIndex < blockersJsonList.GetLength(); ++blockersIndex)
     {
       m_blockers.push_back(blockersJsonList[blockersIndex].AsObject());
@@ -64,7 +64,7 @@ StageDeclaration& StageDeclaration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonValue> actionsJsonList = jsonValue.GetArray("actions");
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());

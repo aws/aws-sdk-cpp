@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -55,8 +56,8 @@ namespace Model
   {
   public:
     RequestCancelActivityTaskDecisionAttributes();
-    RequestCancelActivityTaskDecisionAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    RequestCancelActivityTaskDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RequestCancelActivityTaskDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    RequestCancelActivityTaskDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -36,7 +36,7 @@ HistogramEntry::HistogramEntry() :
 {
 }
 
-HistogramEntry::HistogramEntry(const JsonValue& jsonValue) : 
+HistogramEntry::HistogramEntry(JsonView jsonValue) : 
     m_value(0.0),
     m_valueHasBeenSet(false),
     m_count(0),
@@ -45,7 +45,7 @@ HistogramEntry::HistogramEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HistogramEntry& HistogramEntry::operator =(const JsonValue& jsonValue)
+HistogramEntry& HistogramEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

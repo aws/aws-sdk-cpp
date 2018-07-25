@@ -37,7 +37,7 @@ GetUsagePlanResult::GetUsagePlanResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetUsagePlanResult& GetUsagePlanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -58,7 +58,7 @@ GetUsagePlanResult& GetUsagePlanResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("apiStages"))
   {
-    Array<JsonValue> apiStagesJsonList = jsonValue.GetArray("apiStages");
+    Array<JsonView> apiStagesJsonList = jsonValue.GetArray("apiStages");
     for(unsigned apiStagesIndex = 0; apiStagesIndex < apiStagesJsonList.GetLength(); ++apiStagesIndex)
     {
       m_apiStages.push_back(apiStagesJsonList[apiStagesIndex].AsObject());

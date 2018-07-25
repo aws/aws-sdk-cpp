@@ -37,10 +37,10 @@ DescribeLagsResult::DescribeLagsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DescribeLagsResult& DescribeLagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("lags"))
   {
-    Array<JsonValue> lagsJsonList = jsonValue.GetArray("lags");
+    Array<JsonView> lagsJsonList = jsonValue.GetArray("lags");
     for(unsigned lagsIndex = 0; lagsIndex < lagsJsonList.GetLength(); ++lagsIndex)
     {
       m_lags.push_back(lagsJsonList[lagsIndex].AsObject());

@@ -37,7 +37,7 @@ AnalyticsConfigurationType::AnalyticsConfigurationType() :
 {
 }
 
-AnalyticsConfigurationType::AnalyticsConfigurationType(const JsonValue& jsonValue) : 
+AnalyticsConfigurationType::AnalyticsConfigurationType(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
@@ -47,7 +47,7 @@ AnalyticsConfigurationType::AnalyticsConfigurationType(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-AnalyticsConfigurationType& AnalyticsConfigurationType::operator =(const JsonValue& jsonValue)
+AnalyticsConfigurationType& AnalyticsConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

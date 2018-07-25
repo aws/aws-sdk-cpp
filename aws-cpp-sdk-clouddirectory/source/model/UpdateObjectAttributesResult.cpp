@@ -37,7 +37,7 @@ UpdateObjectAttributesResult::UpdateObjectAttributesResult(const Aws::AmazonWebS
 
 UpdateObjectAttributesResult& UpdateObjectAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");

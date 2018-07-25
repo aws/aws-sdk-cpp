@@ -37,7 +37,7 @@ RetryStageExecutionResult::RetryStageExecutionResult(const Aws::AmazonWebService
 
 RetryStageExecutionResult& RetryStageExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");

@@ -37,10 +37,10 @@ DescribeSMBFileSharesResult::DescribeSMBFileSharesResult(const Aws::AmazonWebSer
 
 DescribeSMBFileSharesResult& DescribeSMBFileSharesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SMBFileShareInfoList"))
   {
-    Array<JsonValue> sMBFileShareInfoListJsonList = jsonValue.GetArray("SMBFileShareInfoList");
+    Array<JsonView> sMBFileShareInfoListJsonList = jsonValue.GetArray("SMBFileShareInfoList");
     for(unsigned sMBFileShareInfoListIndex = 0; sMBFileShareInfoListIndex < sMBFileShareInfoListJsonList.GetLength(); ++sMBFileShareInfoListIndex)
     {
       m_sMBFileShareInfoList.push_back(sMBFileShareInfoListJsonList[sMBFileShareInfoListIndex].AsObject());

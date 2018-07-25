@@ -44,7 +44,7 @@ Job::Job() :
 {
 }
 
-Job::Job(const JsonValue& jsonValue) : 
+Job::Job(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_pipelineIdHasBeenSet(false),
@@ -61,7 +61,7 @@ Job::Job(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Job& Job::operator =(const JsonValue& jsonValue)
+Job& Job::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -93,7 +93,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonValue> inputsJsonList = jsonValue.GetArray("Inputs");
+    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
@@ -110,7 +110,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Outputs"))
   {
-    Array<JsonValue> outputsJsonList = jsonValue.GetArray("Outputs");
+    Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
@@ -127,7 +127,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Playlists"))
   {
-    Array<JsonValue> playlistsJsonList = jsonValue.GetArray("Playlists");
+    Array<JsonView> playlistsJsonList = jsonValue.GetArray("Playlists");
     for(unsigned playlistsIndex = 0; playlistsIndex < playlistsJsonList.GetLength(); ++playlistsIndex)
     {
       m_playlists.push_back(playlistsJsonList[playlistsIndex].AsObject());
@@ -144,7 +144,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("UserMetadata"))
   {
-    Aws::Map<Aws::String, JsonValue> userMetadataJsonMap = jsonValue.GetObject("UserMetadata").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> userMetadataJsonMap = jsonValue.GetObject("UserMetadata").GetAllObjects();
     for(auto& userMetadataItem : userMetadataJsonMap)
     {
       m_userMetadata[userMetadataItem.first] = userMetadataItem.second.AsString();

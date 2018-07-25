@@ -44,7 +44,7 @@ Aws::String DeleteScalingPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteScalingPolicyRequest::GetRequestSpecificHeaders() const

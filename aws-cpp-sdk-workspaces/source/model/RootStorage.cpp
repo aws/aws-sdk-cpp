@@ -33,13 +33,13 @@ RootStorage::RootStorage() :
 {
 }
 
-RootStorage::RootStorage(const JsonValue& jsonValue) : 
+RootStorage::RootStorage(JsonView jsonValue) : 
     m_capacityHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RootStorage& RootStorage::operator =(const JsonValue& jsonValue)
+RootStorage& RootStorage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Capacity"))
   {

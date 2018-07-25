@@ -39,7 +39,7 @@ AcknowledgeJobResult::AcknowledgeJobResult(const Aws::AmazonWebServiceResult<Jso
 
 AcknowledgeJobResult& AcknowledgeJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));

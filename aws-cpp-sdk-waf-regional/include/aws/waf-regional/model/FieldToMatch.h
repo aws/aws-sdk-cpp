@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     FieldToMatch();
-    FieldToMatch(const Aws::Utils::Json::JsonValue& jsonValue);
-    FieldToMatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FieldToMatch(Aws::Utils::Json::JsonView jsonValue);
+    FieldToMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

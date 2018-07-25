@@ -45,7 +45,7 @@ Aws::String DescribePendingAggregationRequestsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribePendingAggregationRequestsRequest::GetRequestSpecificHeaders() const

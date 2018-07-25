@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Video();
-    Video(const Aws::Utils::Json::JsonValue& jsonValue);
-    Video& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Video(Aws::Utils::Json::JsonView jsonValue);
+    Video& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

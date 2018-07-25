@@ -37,7 +37,7 @@ DominantLanguageDetectionJobFilter::DominantLanguageDetectionJobFilter() :
 {
 }
 
-DominantLanguageDetectionJobFilter::DominantLanguageDetectionJobFilter(const JsonValue& jsonValue) : 
+DominantLanguageDetectionJobFilter::DominantLanguageDetectionJobFilter(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
@@ -47,7 +47,7 @@ DominantLanguageDetectionJobFilter::DominantLanguageDetectionJobFilter(const Jso
   *this = jsonValue;
 }
 
-DominantLanguageDetectionJobFilter& DominantLanguageDetectionJobFilter::operator =(const JsonValue& jsonValue)
+DominantLanguageDetectionJobFilter& DominantLanguageDetectionJobFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

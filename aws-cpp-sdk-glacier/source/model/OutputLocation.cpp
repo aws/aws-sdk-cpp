@@ -33,13 +33,13 @@ OutputLocation::OutputLocation() :
 {
 }
 
-OutputLocation::OutputLocation(const JsonValue& jsonValue) : 
+OutputLocation::OutputLocation(JsonView jsonValue) : 
     m_s3HasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputLocation& OutputLocation::operator =(const JsonValue& jsonValue)
+OutputLocation& OutputLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3"))
   {

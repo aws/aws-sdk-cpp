@@ -37,7 +37,7 @@ ModifyHapgResult::ModifyHapgResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 ModifyHapgResult& ModifyHapgResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HapgArn"))
   {
     m_hapgArn = jsonValue.GetString("HapgArn");

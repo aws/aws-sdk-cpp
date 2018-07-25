@@ -37,7 +37,7 @@ FunctionCode::FunctionCode() :
 {
 }
 
-FunctionCode::FunctionCode(const JsonValue& jsonValue) : 
+FunctionCode::FunctionCode(JsonView jsonValue) : 
     m_zipFileHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
     m_s3KeyHasBeenSet(false),
@@ -46,7 +46,7 @@ FunctionCode::FunctionCode(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FunctionCode& FunctionCode::operator =(const JsonValue& jsonValue)
+FunctionCode& FunctionCode::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ZipFile"))
   {

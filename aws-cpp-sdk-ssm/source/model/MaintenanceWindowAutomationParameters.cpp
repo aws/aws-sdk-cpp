@@ -34,14 +34,14 @@ MaintenanceWindowAutomationParameters::MaintenanceWindowAutomationParameters() :
 {
 }
 
-MaintenanceWindowAutomationParameters::MaintenanceWindowAutomationParameters(const JsonValue& jsonValue) : 
+MaintenanceWindowAutomationParameters::MaintenanceWindowAutomationParameters(JsonView jsonValue) : 
     m_documentVersionHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MaintenanceWindowAutomationParameters& MaintenanceWindowAutomationParameters::operator =(const JsonValue& jsonValue)
+MaintenanceWindowAutomationParameters& MaintenanceWindowAutomationParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DocumentVersion"))
   {
@@ -52,10 +52,10 @@ MaintenanceWindowAutomationParameters& MaintenanceWindowAutomationParameters::op
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonValue> automationParameterValueListJsonList = parametersItem.second.AsArray();
+      Array<JsonView> automationParameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)

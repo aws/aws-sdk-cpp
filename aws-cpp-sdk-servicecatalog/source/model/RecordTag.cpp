@@ -34,14 +34,14 @@ RecordTag::RecordTag() :
 {
 }
 
-RecordTag::RecordTag(const JsonValue& jsonValue) : 
+RecordTag::RecordTag(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RecordTag& RecordTag::operator =(const JsonValue& jsonValue)
+RecordTag& RecordTag::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

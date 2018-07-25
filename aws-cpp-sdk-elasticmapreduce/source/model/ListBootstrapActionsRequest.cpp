@@ -44,7 +44,7 @@ Aws::String ListBootstrapActionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListBootstrapActionsRequest::GetRequestSpecificHeaders() const

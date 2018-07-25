@@ -34,14 +34,14 @@ PasswordData::PasswordData() :
 {
 }
 
-PasswordData::PasswordData(const JsonValue& jsonValue) : 
+PasswordData::PasswordData(JsonView jsonValue) : 
     m_ciphertextHasBeenSet(false),
     m_keyPairNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PasswordData& PasswordData::operator =(const JsonValue& jsonValue)
+PasswordData& PasswordData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ciphertext"))
   {

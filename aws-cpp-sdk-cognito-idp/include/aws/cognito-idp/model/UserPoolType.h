@@ -42,6 +42,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -59,8 +60,8 @@ namespace Model
   {
   public:
     UserPoolType();
-    UserPoolType(const Aws::Utils::Json::JsonValue& jsonValue);
-    UserPoolType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UserPoolType(Aws::Utils::Json::JsonView jsonValue);
+    UserPoolType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

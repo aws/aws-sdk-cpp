@@ -44,7 +44,7 @@ Aws::String DeletePendingAggregationRequestRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeletePendingAggregationRequestRequest::GetRequestSpecificHeaders() const

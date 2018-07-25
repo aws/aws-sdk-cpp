@@ -37,7 +37,7 @@ GetUserDefinedFunctionResult::GetUserDefinedFunctionResult(const Aws::AmazonWebS
 
 GetUserDefinedFunctionResult& GetUserDefinedFunctionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserDefinedFunction"))
   {
     m_userDefinedFunction = jsonValue.GetObject("UserDefinedFunction");

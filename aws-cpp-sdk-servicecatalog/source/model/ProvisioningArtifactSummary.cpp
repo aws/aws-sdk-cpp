@@ -37,7 +37,7 @@ ProvisioningArtifactSummary::ProvisioningArtifactSummary() :
 {
 }
 
-ProvisioningArtifactSummary::ProvisioningArtifactSummary(const JsonValue& jsonValue) : 
+ProvisioningArtifactSummary::ProvisioningArtifactSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -47,7 +47,7 @@ ProvisioningArtifactSummary::ProvisioningArtifactSummary(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ProvisioningArtifactSummary& ProvisioningArtifactSummary::operator =(const JsonValue& jsonValue)
+ProvisioningArtifactSummary& ProvisioningArtifactSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -79,7 +79,7 @@ ProvisioningArtifactSummary& ProvisioningArtifactSummary::operator =(const JsonV
 
   if(jsonValue.ValueExists("ProvisioningArtifactMetadata"))
   {
-    Aws::Map<Aws::String, JsonValue> provisioningArtifactMetadataJsonMap = jsonValue.GetObject("ProvisioningArtifactMetadata").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> provisioningArtifactMetadataJsonMap = jsonValue.GetObject("ProvisioningArtifactMetadata").GetAllObjects();
     for(auto& provisioningArtifactMetadataItem : provisioningArtifactMetadataJsonMap)
     {
       m_provisioningArtifactMetadata[provisioningArtifactMetadataItem.first] = provisioningArtifactMetadataItem.second.AsString();

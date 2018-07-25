@@ -36,7 +36,7 @@ InstanceResizePolicy::InstanceResizePolicy() :
 {
 }
 
-InstanceResizePolicy::InstanceResizePolicy(const JsonValue& jsonValue) : 
+InstanceResizePolicy::InstanceResizePolicy(JsonView jsonValue) : 
     m_instancesToTerminateHasBeenSet(false),
     m_instancesToProtectHasBeenSet(false),
     m_instanceTerminationTimeout(0),
@@ -45,11 +45,11 @@ InstanceResizePolicy::InstanceResizePolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceResizePolicy& InstanceResizePolicy::operator =(const JsonValue& jsonValue)
+InstanceResizePolicy& InstanceResizePolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstancesToTerminate"))
   {
-    Array<JsonValue> instancesToTerminateJsonList = jsonValue.GetArray("InstancesToTerminate");
+    Array<JsonView> instancesToTerminateJsonList = jsonValue.GetArray("InstancesToTerminate");
     for(unsigned instancesToTerminateIndex = 0; instancesToTerminateIndex < instancesToTerminateJsonList.GetLength(); ++instancesToTerminateIndex)
     {
       m_instancesToTerminate.push_back(instancesToTerminateJsonList[instancesToTerminateIndex].AsString());
@@ -59,7 +59,7 @@ InstanceResizePolicy& InstanceResizePolicy::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("InstancesToProtect"))
   {
-    Array<JsonValue> instancesToProtectJsonList = jsonValue.GetArray("InstancesToProtect");
+    Array<JsonView> instancesToProtectJsonList = jsonValue.GetArray("InstancesToProtect");
     for(unsigned instancesToProtectIndex = 0; instancesToProtectIndex < instancesToProtectJsonList.GetLength(); ++instancesToProtectIndex)
     {
       m_instancesToProtect.push_back(instancesToProtectJsonList[instancesToProtectIndex].AsString());

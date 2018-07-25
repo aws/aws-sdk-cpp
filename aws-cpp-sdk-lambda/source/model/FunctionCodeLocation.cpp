@@ -34,14 +34,14 @@ FunctionCodeLocation::FunctionCodeLocation() :
 {
 }
 
-FunctionCodeLocation::FunctionCodeLocation(const JsonValue& jsonValue) : 
+FunctionCodeLocation::FunctionCodeLocation(JsonView jsonValue) : 
     m_repositoryTypeHasBeenSet(false),
     m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FunctionCodeLocation& FunctionCodeLocation::operator =(const JsonValue& jsonValue)
+FunctionCodeLocation& FunctionCodeLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RepositoryType"))
   {

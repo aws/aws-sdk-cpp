@@ -37,7 +37,7 @@ VolumeSpecification::VolumeSpecification() :
 {
 }
 
-VolumeSpecification::VolumeSpecification(const JsonValue& jsonValue) : 
+VolumeSpecification::VolumeSpecification(JsonView jsonValue) : 
     m_volumeTypeHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
@@ -47,7 +47,7 @@ VolumeSpecification::VolumeSpecification(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VolumeSpecification& VolumeSpecification::operator =(const JsonValue& jsonValue)
+VolumeSpecification& VolumeSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeType"))
   {

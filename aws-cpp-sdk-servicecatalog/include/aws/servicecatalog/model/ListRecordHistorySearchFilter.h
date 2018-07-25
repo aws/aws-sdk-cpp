@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ListRecordHistorySearchFilter();
-    ListRecordHistorySearchFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    ListRecordHistorySearchFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ListRecordHistorySearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    ListRecordHistorySearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

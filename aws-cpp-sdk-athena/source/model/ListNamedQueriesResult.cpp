@@ -37,10 +37,10 @@ ListNamedQueriesResult::ListNamedQueriesResult(const Aws::AmazonWebServiceResult
 
 ListNamedQueriesResult& ListNamedQueriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NamedQueryIds"))
   {
-    Array<JsonValue> namedQueryIdsJsonList = jsonValue.GetArray("NamedQueryIds");
+    Array<JsonView> namedQueryIdsJsonList = jsonValue.GetArray("NamedQueryIds");
     for(unsigned namedQueryIdsIndex = 0; namedQueryIdsIndex < namedQueryIdsJsonList.GetLength(); ++namedQueryIdsIndex)
     {
       m_namedQueryIds.push_back(namedQueryIdsJsonList[namedQueryIdsIndex].AsString());

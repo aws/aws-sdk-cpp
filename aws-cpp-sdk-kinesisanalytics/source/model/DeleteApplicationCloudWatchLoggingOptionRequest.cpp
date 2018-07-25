@@ -52,7 +52,7 @@ Aws::String DeleteApplicationCloudWatchLoggingOptionRequest::SerializePayload() 
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteApplicationCloudWatchLoggingOptionRequest::GetRequestSpecificHeaders() const

@@ -39,7 +39,7 @@ ListTranscriptionJobsResult::ListTranscriptionJobsResult(const Aws::AmazonWebSer
 
 ListTranscriptionJobsResult& ListTranscriptionJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TranscriptionJobStatusMapper::GetTranscriptionJobStatusForName(jsonValue.GetString("Status"));
@@ -54,7 +54,7 @@ ListTranscriptionJobsResult& ListTranscriptionJobsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("TranscriptionJobSummaries"))
   {
-    Array<JsonValue> transcriptionJobSummariesJsonList = jsonValue.GetArray("TranscriptionJobSummaries");
+    Array<JsonView> transcriptionJobSummariesJsonList = jsonValue.GetArray("TranscriptionJobSummaries");
     for(unsigned transcriptionJobSummariesIndex = 0; transcriptionJobSummariesIndex < transcriptionJobSummariesJsonList.GetLength(); ++transcriptionJobSummariesIndex)
     {
       m_transcriptionJobSummaries.push_back(transcriptionJobSummariesJsonList[transcriptionJobSummariesIndex].AsObject());

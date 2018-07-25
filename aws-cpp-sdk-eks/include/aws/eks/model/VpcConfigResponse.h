@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EKS
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     VpcConfigResponse();
-    VpcConfigResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    VpcConfigResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VpcConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    VpcConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

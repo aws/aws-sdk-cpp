@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudSearchDomain
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SuggestStatus();
-    SuggestStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    SuggestStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SuggestStatus(Aws::Utils::Json::JsonView jsonValue);
+    SuggestStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

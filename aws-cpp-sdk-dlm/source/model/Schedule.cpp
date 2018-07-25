@@ -36,7 +36,7 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(const JsonValue& jsonValue) : 
+Schedule::Schedule(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_tagsToAddHasBeenSet(false),
     m_createRuleHasBeenSet(false),
@@ -45,7 +45,7 @@ Schedule::Schedule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Schedule& Schedule::operator =(const JsonValue& jsonValue)
+Schedule& Schedule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -56,7 +56,7 @@ Schedule& Schedule::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("TagsToAdd"))
   {
-    Array<JsonValue> tagsToAddJsonList = jsonValue.GetArray("TagsToAdd");
+    Array<JsonView> tagsToAddJsonList = jsonValue.GetArray("TagsToAdd");
     for(unsigned tagsToAddIndex = 0; tagsToAddIndex < tagsToAddJsonList.GetLength(); ++tagsToAddIndex)
     {
       m_tagsToAdd.push_back(tagsToAddJsonList[tagsToAddIndex].AsObject());

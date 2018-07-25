@@ -37,10 +37,10 @@ GetBotAliasesResult::GetBotAliasesResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetBotAliasesResult& GetBotAliasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BotAliases"))
   {
-    Array<JsonValue> botAliasesJsonList = jsonValue.GetArray("BotAliases");
+    Array<JsonView> botAliasesJsonList = jsonValue.GetArray("BotAliases");
     for(unsigned botAliasesIndex = 0; botAliasesIndex < botAliasesJsonList.GetLength(); ++botAliasesIndex)
     {
       m_botAliases.push_back(botAliasesJsonList[botAliasesIndex].AsObject());

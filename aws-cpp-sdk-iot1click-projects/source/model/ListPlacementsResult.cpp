@@ -37,10 +37,10 @@ ListPlacementsResult::ListPlacementsResult(const Aws::AmazonWebServiceResult<Jso
 
 ListPlacementsResult& ListPlacementsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("placements"))
   {
-    Array<JsonValue> placementsJsonList = jsonValue.GetArray("placements");
+    Array<JsonView> placementsJsonList = jsonValue.GetArray("placements");
     for(unsigned placementsIndex = 0; placementsIndex < placementsJsonList.GetLength(); ++placementsIndex)
     {
       m_placements.push_back(placementsJsonList[placementsIndex].AsObject());

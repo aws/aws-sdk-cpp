@@ -33,17 +33,17 @@ PerformanceMetrics::PerformanceMetrics() :
 {
 }
 
-PerformanceMetrics::PerformanceMetrics(const JsonValue& jsonValue) : 
+PerformanceMetrics::PerformanceMetrics(JsonView jsonValue) : 
     m_propertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PerformanceMetrics& PerformanceMetrics::operator =(const JsonValue& jsonValue)
+PerformanceMetrics& PerformanceMetrics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Properties"))
   {
-    Aws::Map<Aws::String, JsonValue> propertiesJsonMap = jsonValue.GetObject("Properties").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("Properties").GetAllObjects();
     for(auto& propertiesItem : propertiesJsonMap)
     {
       m_properties[propertiesItem.first] = propertiesItem.second.AsString();

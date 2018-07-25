@@ -33,13 +33,13 @@ HlsConfiguration::HlsConfiguration() :
 {
 }
 
-HlsConfiguration::HlsConfiguration(const JsonValue& jsonValue) : 
+HlsConfiguration::HlsConfiguration(JsonView jsonValue) : 
     m_manifestEndpointPrefixHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HlsConfiguration& HlsConfiguration::operator =(const JsonValue& jsonValue)
+HlsConfiguration& HlsConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ManifestEndpointPrefix"))
   {

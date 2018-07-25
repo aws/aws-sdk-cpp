@@ -35,7 +35,7 @@ BatchPutMessageErrorEntry::BatchPutMessageErrorEntry() :
 {
 }
 
-BatchPutMessageErrorEntry::BatchPutMessageErrorEntry(const JsonValue& jsonValue) : 
+BatchPutMessageErrorEntry::BatchPutMessageErrorEntry(JsonView jsonValue) : 
     m_messageIdHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchPutMessageErrorEntry::BatchPutMessageErrorEntry(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-BatchPutMessageErrorEntry& BatchPutMessageErrorEntry::operator =(const JsonValue& jsonValue)
+BatchPutMessageErrorEntry& BatchPutMessageErrorEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("messageId"))
   {

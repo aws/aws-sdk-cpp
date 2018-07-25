@@ -37,7 +37,7 @@ PutAggregationAuthorizationResult::PutAggregationAuthorizationResult(const Aws::
 
 PutAggregationAuthorizationResult& PutAggregationAuthorizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregationAuthorization"))
   {
     m_aggregationAuthorization = jsonValue.GetObject("AggregationAuthorization");

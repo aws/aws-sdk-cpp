@@ -37,10 +37,10 @@ ListNamespacesResult::ListNamespacesResult(const Aws::AmazonWebServiceResult<Jso
 
 ListNamespacesResult& ListNamespacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Namespaces"))
   {
-    Array<JsonValue> namespacesJsonList = jsonValue.GetArray("Namespaces");
+    Array<JsonView> namespacesJsonList = jsonValue.GetArray("Namespaces");
     for(unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex)
     {
       m_namespaces.push_back(namespacesJsonList[namespacesIndex].AsObject());

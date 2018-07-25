@@ -36,7 +36,7 @@ Master::Master() :
 {
 }
 
-Master::Master(const JsonValue& jsonValue) : 
+Master::Master(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_invitationIdHasBeenSet(false),
     m_invitedAtHasBeenSet(false),
@@ -45,7 +45,7 @@ Master::Master(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Master& Master::operator =(const JsonValue& jsonValue)
+Master& Master::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {

@@ -37,7 +37,7 @@ Aws::String StopImageBuilderRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopImageBuilderRequest::GetRequestSpecificHeaders() const

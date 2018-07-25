@@ -34,14 +34,14 @@ ApplicationSource::ApplicationSource() :
 {
 }
 
-ApplicationSource::ApplicationSource(const JsonValue& jsonValue) : 
+ApplicationSource::ApplicationSource(JsonView jsonValue) : 
     m_cloudFormationStackARNHasBeenSet(false),
     m_tagFiltersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ApplicationSource& ApplicationSource::operator =(const JsonValue& jsonValue)
+ApplicationSource& ApplicationSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CloudFormationStackARN"))
   {
@@ -52,7 +52,7 @@ ApplicationSource& ApplicationSource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("TagFilters"))
   {
-    Array<JsonValue> tagFiltersJsonList = jsonValue.GetArray("TagFilters");
+    Array<JsonView> tagFiltersJsonList = jsonValue.GetArray("TagFilters");
     for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
     {
       m_tagFilters.push_back(tagFiltersJsonList[tagFiltersIndex].AsObject());

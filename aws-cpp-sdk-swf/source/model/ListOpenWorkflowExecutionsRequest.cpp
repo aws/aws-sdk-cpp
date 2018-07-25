@@ -88,7 +88,7 @@ Aws::String ListOpenWorkflowExecutionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListOpenWorkflowExecutionsRequest::GetRequestSpecificHeaders() const

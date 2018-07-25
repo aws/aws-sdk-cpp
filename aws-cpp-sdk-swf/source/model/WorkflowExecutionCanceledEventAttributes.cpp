@@ -35,7 +35,7 @@ WorkflowExecutionCanceledEventAttributes::WorkflowExecutionCanceledEventAttribut
 {
 }
 
-WorkflowExecutionCanceledEventAttributes::WorkflowExecutionCanceledEventAttributes(const JsonValue& jsonValue) : 
+WorkflowExecutionCanceledEventAttributes::WorkflowExecutionCanceledEventAttributes(JsonView jsonValue) : 
     m_detailsHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)
@@ -43,7 +43,7 @@ WorkflowExecutionCanceledEventAttributes::WorkflowExecutionCanceledEventAttribut
   *this = jsonValue;
 }
 
-WorkflowExecutionCanceledEventAttributes& WorkflowExecutionCanceledEventAttributes::operator =(const JsonValue& jsonValue)
+WorkflowExecutionCanceledEventAttributes& WorkflowExecutionCanceledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("details"))
   {

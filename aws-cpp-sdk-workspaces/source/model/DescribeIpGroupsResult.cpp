@@ -37,10 +37,10 @@ DescribeIpGroupsResult::DescribeIpGroupsResult(const Aws::AmazonWebServiceResult
 
 DescribeIpGroupsResult& DescribeIpGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Result"))
   {
-    Array<JsonValue> resultJsonList = jsonValue.GetArray("Result");
+    Array<JsonView> resultJsonList = jsonValue.GetArray("Result");
     for(unsigned resultIndex = 0; resultIndex < resultJsonList.GetLength(); ++resultIndex)
     {
       m_result.push_back(resultJsonList[resultIndex].AsObject());

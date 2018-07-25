@@ -45,7 +45,7 @@ Trust::Trust() :
 {
 }
 
-Trust::Trust(const JsonValue& jsonValue) : 
+Trust::Trust(JsonView jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_trustIdHasBeenSet(false),
     m_remoteDomainNameHasBeenSet(false),
@@ -63,7 +63,7 @@ Trust::Trust(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Trust& Trust::operator =(const JsonValue& jsonValue)
+Trust& Trust::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryId"))
   {

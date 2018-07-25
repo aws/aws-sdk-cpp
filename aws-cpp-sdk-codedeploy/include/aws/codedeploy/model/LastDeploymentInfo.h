@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     LastDeploymentInfo();
-    LastDeploymentInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    LastDeploymentInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LastDeploymentInfo(Aws::Utils::Json::JsonView jsonValue);
+    LastDeploymentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

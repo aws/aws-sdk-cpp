@@ -35,7 +35,7 @@ RollbackInfo::RollbackInfo() :
 {
 }
 
-RollbackInfo::RollbackInfo(const JsonValue& jsonValue) : 
+RollbackInfo::RollbackInfo(JsonView jsonValue) : 
     m_rollbackDeploymentIdHasBeenSet(false),
     m_rollbackTriggeringDeploymentIdHasBeenSet(false),
     m_rollbackMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ RollbackInfo::RollbackInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RollbackInfo& RollbackInfo::operator =(const JsonValue& jsonValue)
+RollbackInfo& RollbackInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("rollbackDeploymentId"))
   {

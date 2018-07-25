@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     AggregateEvaluationResult();
-    AggregateEvaluationResult(const Aws::Utils::Json::JsonValue& jsonValue);
-    AggregateEvaluationResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AggregateEvaluationResult(Aws::Utils::Json::JsonView jsonValue);
+    AggregateEvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

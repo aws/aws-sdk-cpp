@@ -37,7 +37,7 @@ CloneStackResult::CloneStackResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 CloneStackResult& CloneStackResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");

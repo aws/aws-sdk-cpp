@@ -37,10 +37,10 @@ DescribeLogStreamsResult::DescribeLogStreamsResult(const Aws::AmazonWebServiceRe
 
 DescribeLogStreamsResult& DescribeLogStreamsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("logStreams"))
   {
-    Array<JsonValue> logStreamsJsonList = jsonValue.GetArray("logStreams");
+    Array<JsonView> logStreamsJsonList = jsonValue.GetArray("logStreams");
     for(unsigned logStreamsIndex = 0; logStreamsIndex < logStreamsJsonList.GetLength(); ++logStreamsIndex)
     {
       m_logStreams.push_back(logStreamsJsonList[logStreamsIndex].AsObject());

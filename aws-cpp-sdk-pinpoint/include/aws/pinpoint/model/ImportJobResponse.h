@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ImportJobResponse();
-    ImportJobResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    ImportJobResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ImportJobResponse(Aws::Utils::Json::JsonView jsonValue);
+    ImportJobResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

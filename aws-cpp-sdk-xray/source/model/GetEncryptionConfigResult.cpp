@@ -37,7 +37,7 @@ GetEncryptionConfigResult::GetEncryptionConfigResult(const Aws::AmazonWebService
 
 GetEncryptionConfigResult& GetEncryptionConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EncryptionConfig"))
   {
     m_encryptionConfig = jsonValue.GetObject("EncryptionConfig");

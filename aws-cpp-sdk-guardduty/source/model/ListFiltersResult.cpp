@@ -37,10 +37,10 @@ ListFiltersResult::ListFiltersResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListFiltersResult& ListFiltersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("filterNames"))
   {
-    Array<JsonValue> filterNamesJsonList = jsonValue.GetArray("filterNames");
+    Array<JsonView> filterNamesJsonList = jsonValue.GetArray("filterNames");
     for(unsigned filterNamesIndex = 0; filterNamesIndex < filterNamesJsonList.GetLength(); ++filterNamesIndex)
     {
       m_filterNames.push_back(filterNamesJsonList[filterNamesIndex].AsString());

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AlexaForBusiness
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     RoomSkillParameter();
-    RoomSkillParameter(const Aws::Utils::Json::JsonValue& jsonValue);
-    RoomSkillParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RoomSkillParameter(Aws::Utils::Json::JsonView jsonValue);
+    RoomSkillParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

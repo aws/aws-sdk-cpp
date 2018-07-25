@@ -39,7 +39,7 @@ DirectMessageConfiguration::DirectMessageConfiguration() :
 {
 }
 
-DirectMessageConfiguration::DirectMessageConfiguration(const JsonValue& jsonValue) : 
+DirectMessageConfiguration::DirectMessageConfiguration(JsonView jsonValue) : 
     m_aDMMessageHasBeenSet(false),
     m_aPNSMessageHasBeenSet(false),
     m_baiduMessageHasBeenSet(false),
@@ -51,7 +51,7 @@ DirectMessageConfiguration::DirectMessageConfiguration(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-DirectMessageConfiguration& DirectMessageConfiguration::operator =(const JsonValue& jsonValue)
+DirectMessageConfiguration& DirectMessageConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ADMMessage"))
   {

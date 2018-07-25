@@ -44,7 +44,7 @@ Aws::String DeleteRuleGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteRuleGroupRequest::GetRequestSpecificHeaders() const

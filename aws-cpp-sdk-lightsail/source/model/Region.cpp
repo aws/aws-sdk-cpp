@@ -38,7 +38,7 @@ Region::Region() :
 {
 }
 
-Region::Region(const JsonValue& jsonValue) : 
+Region::Region(JsonView jsonValue) : 
     m_continentCodeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
@@ -49,7 +49,7 @@ Region::Region(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Region& Region::operator =(const JsonValue& jsonValue)
+Region& Region::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("continentCode"))
   {
@@ -81,7 +81,7 @@ Region& Region::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("availabilityZones"))
   {
-    Array<JsonValue> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsObject());

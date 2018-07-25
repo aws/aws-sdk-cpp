@@ -37,10 +37,10 @@ DescribeAggregateComplianceByConfigRulesResult::DescribeAggregateComplianceByCon
 
 DescribeAggregateComplianceByConfigRulesResult& DescribeAggregateComplianceByConfigRulesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregateComplianceByConfigRules"))
   {
-    Array<JsonValue> aggregateComplianceByConfigRulesJsonList = jsonValue.GetArray("AggregateComplianceByConfigRules");
+    Array<JsonView> aggregateComplianceByConfigRulesJsonList = jsonValue.GetArray("AggregateComplianceByConfigRules");
     for(unsigned aggregateComplianceByConfigRulesIndex = 0; aggregateComplianceByConfigRulesIndex < aggregateComplianceByConfigRulesJsonList.GetLength(); ++aggregateComplianceByConfigRulesIndex)
     {
       m_aggregateComplianceByConfigRules.push_back(aggregateComplianceByConfigRulesJsonList[aggregateComplianceByConfigRulesIndex].AsObject());

@@ -66,7 +66,7 @@ Aws::String CreateDataSourceFromRedshiftRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDataSourceFromRedshiftRequest::GetRequestSpecificHeaders() const

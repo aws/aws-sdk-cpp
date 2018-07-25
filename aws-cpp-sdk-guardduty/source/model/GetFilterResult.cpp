@@ -41,7 +41,7 @@ GetFilterResult::GetFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetFilterResult& GetFilterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("action"))
   {
     m_action = FilterActionMapper::GetFilterActionForName(jsonValue.GetString("action"));

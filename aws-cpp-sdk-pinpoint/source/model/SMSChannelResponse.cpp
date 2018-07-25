@@ -52,7 +52,7 @@ SMSChannelResponse::SMSChannelResponse() :
 {
 }
 
-SMSChannelResponse::SMSChannelResponse(const JsonValue& jsonValue) : 
+SMSChannelResponse::SMSChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_enabled(false),
@@ -77,7 +77,7 @@ SMSChannelResponse::SMSChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SMSChannelResponse& SMSChannelResponse::operator =(const JsonValue& jsonValue)
+SMSChannelResponse& SMSChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

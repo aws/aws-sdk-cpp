@@ -36,7 +36,7 @@ InventoryRetrievalJobInput::InventoryRetrievalJobInput() :
 {
 }
 
-InventoryRetrievalJobInput::InventoryRetrievalJobInput(const JsonValue& jsonValue) : 
+InventoryRetrievalJobInput::InventoryRetrievalJobInput(JsonView jsonValue) : 
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_limitHasBeenSet(false),
@@ -45,7 +45,7 @@ InventoryRetrievalJobInput::InventoryRetrievalJobInput(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-InventoryRetrievalJobInput& InventoryRetrievalJobInput::operator =(const JsonValue& jsonValue)
+InventoryRetrievalJobInput& InventoryRetrievalJobInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartDate"))
   {

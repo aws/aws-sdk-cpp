@@ -50,7 +50,7 @@ ImageBuilder::ImageBuilder() :
 {
 }
 
-ImageBuilder::ImageBuilder(const JsonValue& jsonValue) : 
+ImageBuilder::ImageBuilder(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_imageArnHasBeenSet(false),
@@ -73,7 +73,7 @@ ImageBuilder::ImageBuilder(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ImageBuilder& ImageBuilder::operator =(const JsonValue& jsonValue)
+ImageBuilder& ImageBuilder::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -168,7 +168,7 @@ ImageBuilder& ImageBuilder::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ImageBuilderErrors"))
   {
-    Array<JsonValue> imageBuilderErrorsJsonList = jsonValue.GetArray("ImageBuilderErrors");
+    Array<JsonView> imageBuilderErrorsJsonList = jsonValue.GetArray("ImageBuilderErrors");
     for(unsigned imageBuilderErrorsIndex = 0; imageBuilderErrorsIndex < imageBuilderErrorsJsonList.GetLength(); ++imageBuilderErrorsIndex)
     {
       m_imageBuilderErrors.push_back(imageBuilderErrorsJsonList[imageBuilderErrorsIndex].AsObject());

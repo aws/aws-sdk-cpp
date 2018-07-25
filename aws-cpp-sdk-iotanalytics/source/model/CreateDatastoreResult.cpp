@@ -37,7 +37,7 @@ CreateDatastoreResult::CreateDatastoreResult(const Aws::AmazonWebServiceResult<J
 
 CreateDatastoreResult& CreateDatastoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("datastoreName"))
   {
     m_datastoreName = jsonValue.GetString("datastoreName");

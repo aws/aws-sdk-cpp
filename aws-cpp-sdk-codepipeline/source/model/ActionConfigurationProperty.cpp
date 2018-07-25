@@ -44,7 +44,7 @@ ActionConfigurationProperty::ActionConfigurationProperty() :
 {
 }
 
-ActionConfigurationProperty::ActionConfigurationProperty(const JsonValue& jsonValue) : 
+ActionConfigurationProperty::ActionConfigurationProperty(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_required(false),
     m_requiredHasBeenSet(false),
@@ -61,7 +61,7 @@ ActionConfigurationProperty::ActionConfigurationProperty(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ActionConfigurationProperty& ActionConfigurationProperty::operator =(const JsonValue& jsonValue)
+ActionConfigurationProperty& ActionConfigurationProperty::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

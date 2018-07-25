@@ -178,7 +178,7 @@ Aws::String CreateUserPoolClientRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateUserPoolClientRequest::GetRequestSpecificHeaders() const

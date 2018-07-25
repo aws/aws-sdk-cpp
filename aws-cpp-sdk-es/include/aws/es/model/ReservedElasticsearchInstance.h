@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     ReservedElasticsearchInstance();
-    ReservedElasticsearchInstance(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReservedElasticsearchInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReservedElasticsearchInstance(Aws::Utils::Json::JsonView jsonValue);
+    ReservedElasticsearchInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

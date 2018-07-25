@@ -49,7 +49,7 @@ Aws::String RegisterThingRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

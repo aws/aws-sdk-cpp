@@ -38,7 +38,7 @@ MetricFilter::MetricFilter() :
 {
 }
 
-MetricFilter::MetricFilter(const JsonValue& jsonValue) : 
+MetricFilter::MetricFilter(JsonView jsonValue) : 
     m_filterNameHasBeenSet(false),
     m_filterPatternHasBeenSet(false),
     m_metricTransformationsHasBeenSet(false),
@@ -49,7 +49,7 @@ MetricFilter::MetricFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MetricFilter& MetricFilter::operator =(const JsonValue& jsonValue)
+MetricFilter& MetricFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("filterName"))
   {
@@ -67,7 +67,7 @@ MetricFilter& MetricFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("metricTransformations"))
   {
-    Array<JsonValue> metricTransformationsJsonList = jsonValue.GetArray("metricTransformations");
+    Array<JsonView> metricTransformationsJsonList = jsonValue.GetArray("metricTransformations");
     for(unsigned metricTransformationsIndex = 0; metricTransformationsIndex < metricTransformationsJsonList.GetLength(); ++metricTransformationsIndex)
     {
       m_metricTransformations.push_back(metricTransformationsJsonList[metricTransformationsIndex].AsObject());

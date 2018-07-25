@@ -33,17 +33,17 @@ ResultSetMetadata::ResultSetMetadata() :
 {
 }
 
-ResultSetMetadata::ResultSetMetadata(const JsonValue& jsonValue) : 
+ResultSetMetadata::ResultSetMetadata(JsonView jsonValue) : 
     m_columnInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResultSetMetadata& ResultSetMetadata::operator =(const JsonValue& jsonValue)
+ResultSetMetadata& ResultSetMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ColumnInfo"))
   {
-    Array<JsonValue> columnInfoJsonList = jsonValue.GetArray("ColumnInfo");
+    Array<JsonView> columnInfoJsonList = jsonValue.GetArray("ColumnInfo");
     for(unsigned columnInfoIndex = 0; columnInfoIndex < columnInfoJsonList.GetLength(); ++columnInfoIndex)
     {
       m_columnInfo.push_back(columnInfoJsonList[columnInfoIndex].AsObject());

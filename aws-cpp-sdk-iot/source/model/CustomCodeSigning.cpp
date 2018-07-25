@@ -36,7 +36,7 @@ CustomCodeSigning::CustomCodeSigning() :
 {
 }
 
-CustomCodeSigning::CustomCodeSigning(const JsonValue& jsonValue) : 
+CustomCodeSigning::CustomCodeSigning(JsonView jsonValue) : 
     m_signatureHasBeenSet(false),
     m_certificateChainHasBeenSet(false),
     m_hashAlgorithmHasBeenSet(false),
@@ -45,7 +45,7 @@ CustomCodeSigning::CustomCodeSigning(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CustomCodeSigning& CustomCodeSigning::operator =(const JsonValue& jsonValue)
+CustomCodeSigning& CustomCodeSigning::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("signature"))
   {

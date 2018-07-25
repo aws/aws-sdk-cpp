@@ -38,7 +38,7 @@ CorsRule::CorsRule() :
 {
 }
 
-CorsRule::CorsRule(const JsonValue& jsonValue) : 
+CorsRule::CorsRule(JsonView jsonValue) : 
     m_allowedOriginsHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_allowedHeadersHasBeenSet(false),
@@ -49,11 +49,11 @@ CorsRule::CorsRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CorsRule& CorsRule::operator =(const JsonValue& jsonValue)
+CorsRule& CorsRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AllowedOrigins"))
   {
-    Array<JsonValue> allowedOriginsJsonList = jsonValue.GetArray("AllowedOrigins");
+    Array<JsonView> allowedOriginsJsonList = jsonValue.GetArray("AllowedOrigins");
     for(unsigned allowedOriginsIndex = 0; allowedOriginsIndex < allowedOriginsJsonList.GetLength(); ++allowedOriginsIndex)
     {
       m_allowedOrigins.push_back(allowedOriginsJsonList[allowedOriginsIndex].AsString());
@@ -63,7 +63,7 @@ CorsRule& CorsRule::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AllowedMethods"))
   {
-    Array<JsonValue> allowedMethodsJsonList = jsonValue.GetArray("AllowedMethods");
+    Array<JsonView> allowedMethodsJsonList = jsonValue.GetArray("AllowedMethods");
     for(unsigned allowedMethodsIndex = 0; allowedMethodsIndex < allowedMethodsJsonList.GetLength(); ++allowedMethodsIndex)
     {
       m_allowedMethods.push_back(MethodNameMapper::GetMethodNameForName(allowedMethodsJsonList[allowedMethodsIndex].AsString()));
@@ -73,7 +73,7 @@ CorsRule& CorsRule::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AllowedHeaders"))
   {
-    Array<JsonValue> allowedHeadersJsonList = jsonValue.GetArray("AllowedHeaders");
+    Array<JsonView> allowedHeadersJsonList = jsonValue.GetArray("AllowedHeaders");
     for(unsigned allowedHeadersIndex = 0; allowedHeadersIndex < allowedHeadersJsonList.GetLength(); ++allowedHeadersIndex)
     {
       m_allowedHeaders.push_back(allowedHeadersJsonList[allowedHeadersIndex].AsString());
@@ -90,7 +90,7 @@ CorsRule& CorsRule::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ExposeHeaders"))
   {
-    Array<JsonValue> exposeHeadersJsonList = jsonValue.GetArray("ExposeHeaders");
+    Array<JsonView> exposeHeadersJsonList = jsonValue.GetArray("ExposeHeaders");
     for(unsigned exposeHeadersIndex = 0; exposeHeadersIndex < exposeHeadersJsonList.GetLength(); ++exposeHeadersIndex)
     {
       m_exposeHeaders.push_back(exposeHeadersJsonList[exposeHeadersIndex].AsString());

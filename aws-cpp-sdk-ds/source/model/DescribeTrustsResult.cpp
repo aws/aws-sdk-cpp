@@ -37,10 +37,10 @@ DescribeTrustsResult::DescribeTrustsResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeTrustsResult& DescribeTrustsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Trusts"))
   {
-    Array<JsonValue> trustsJsonList = jsonValue.GetArray("Trusts");
+    Array<JsonView> trustsJsonList = jsonValue.GetArray("Trusts");
     for(unsigned trustsIndex = 0; trustsIndex < trustsJsonList.GetLength(); ++trustsIndex)
     {
       m_trusts.push_back(trustsJsonList[trustsIndex].AsObject());

@@ -37,10 +37,10 @@ DescribeMatchmakingResult::DescribeMatchmakingResult(const Aws::AmazonWebService
 
 DescribeMatchmakingResult& DescribeMatchmakingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TicketList"))
   {
-    Array<JsonValue> ticketListJsonList = jsonValue.GetArray("TicketList");
+    Array<JsonView> ticketListJsonList = jsonValue.GetArray("TicketList");
     for(unsigned ticketListIndex = 0; ticketListIndex < ticketListJsonList.GetLength(); ++ticketListIndex)
     {
       m_ticketList.push_back(ticketListJsonList[ticketListIndex].AsObject());

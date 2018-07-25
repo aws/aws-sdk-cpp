@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     BatchListObjectParentPaths();
-    BatchListObjectParentPaths(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchListObjectParentPaths& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchListObjectParentPaths(Aws::Utils::Json::JsonView jsonValue);
+    BatchListObjectParentPaths& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

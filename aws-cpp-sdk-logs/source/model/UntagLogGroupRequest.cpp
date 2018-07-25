@@ -49,7 +49,7 @@ Aws::String UntagLogGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UntagLogGroupRequest::GetRequestSpecificHeaders() const

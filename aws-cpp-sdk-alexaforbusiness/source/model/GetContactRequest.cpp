@@ -37,7 +37,7 @@ Aws::String GetContactRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetContactRequest::GetRequestSpecificHeaders() const

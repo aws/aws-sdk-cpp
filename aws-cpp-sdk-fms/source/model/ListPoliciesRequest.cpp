@@ -45,7 +45,7 @@ Aws::String ListPoliciesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListPoliciesRequest::GetRequestSpecificHeaders() const

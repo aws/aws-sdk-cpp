@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     OperatingSystem();
-    OperatingSystem(const Aws::Utils::Json::JsonValue& jsonValue);
-    OperatingSystem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OperatingSystem(Aws::Utils::Json::JsonView jsonValue);
+    OperatingSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

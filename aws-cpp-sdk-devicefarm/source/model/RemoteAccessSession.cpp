@@ -60,7 +60,7 @@ RemoteAccessSession::RemoteAccessSession() :
 {
 }
 
-RemoteAccessSession::RemoteAccessSession(const JsonValue& jsonValue) : 
+RemoteAccessSession::RemoteAccessSession(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_createdHasBeenSet(false),
@@ -93,7 +93,7 @@ RemoteAccessSession::RemoteAccessSession(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RemoteAccessSession& RemoteAccessSession::operator =(const JsonValue& jsonValue)
+RemoteAccessSession& RemoteAccessSession::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

@@ -37,7 +37,7 @@ GetTagsResult::GetTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 GetTagsResult& GetTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
@@ -46,7 +46,7 @@ GetTagsResult& GetTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();

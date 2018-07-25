@@ -37,10 +37,10 @@ DescribeLoadBasedAutoScalingResult::DescribeLoadBasedAutoScalingResult(const Aws
 
 DescribeLoadBasedAutoScalingResult& DescribeLoadBasedAutoScalingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LoadBasedAutoScalingConfigurations"))
   {
-    Array<JsonValue> loadBasedAutoScalingConfigurationsJsonList = jsonValue.GetArray("LoadBasedAutoScalingConfigurations");
+    Array<JsonView> loadBasedAutoScalingConfigurationsJsonList = jsonValue.GetArray("LoadBasedAutoScalingConfigurations");
     for(unsigned loadBasedAutoScalingConfigurationsIndex = 0; loadBasedAutoScalingConfigurationsIndex < loadBasedAutoScalingConfigurationsJsonList.GetLength(); ++loadBasedAutoScalingConfigurationsIndex)
     {
       m_loadBasedAutoScalingConfigurations.push_back(loadBasedAutoScalingConfigurationsJsonList[loadBasedAutoScalingConfigurationsIndex].AsObject());

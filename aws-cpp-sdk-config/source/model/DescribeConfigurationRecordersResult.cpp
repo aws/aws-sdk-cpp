@@ -37,10 +37,10 @@ DescribeConfigurationRecordersResult::DescribeConfigurationRecordersResult(const
 
 DescribeConfigurationRecordersResult& DescribeConfigurationRecordersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigurationRecorders"))
   {
-    Array<JsonValue> configurationRecordersJsonList = jsonValue.GetArray("ConfigurationRecorders");
+    Array<JsonView> configurationRecordersJsonList = jsonValue.GetArray("ConfigurationRecorders");
     for(unsigned configurationRecordersIndex = 0; configurationRecordersIndex < configurationRecordersJsonList.GetLength(); ++configurationRecordersIndex)
     {
       m_configurationRecorders.push_back(configurationRecordersJsonList[configurationRecordersIndex].AsObject());

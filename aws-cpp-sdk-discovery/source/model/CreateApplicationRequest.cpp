@@ -44,7 +44,7 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateApplicationRequest::GetRequestSpecificHeaders() const

@@ -35,6 +35,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -51,8 +52,8 @@ namespace Model
   {
   public:
     MsSmoothGroupSettings();
-    MsSmoothGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    MsSmoothGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MsSmoothGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    MsSmoothGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

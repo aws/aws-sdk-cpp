@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     SoftwareTokenMfaConfigType();
-    SoftwareTokenMfaConfigType(const Aws::Utils::Json::JsonValue& jsonValue);
-    SoftwareTokenMfaConfigType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SoftwareTokenMfaConfigType(Aws::Utils::Json::JsonView jsonValue);
+    SoftwareTokenMfaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

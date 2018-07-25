@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkSpaces
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     WorkspacesIpGroup();
-    WorkspacesIpGroup(const Aws::Utils::Json::JsonValue& jsonValue);
-    WorkspacesIpGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WorkspacesIpGroup(Aws::Utils::Json::JsonView jsonValue);
+    WorkspacesIpGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

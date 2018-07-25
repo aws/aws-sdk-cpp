@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MTurk
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Locale();
-    Locale(const Aws::Utils::Json::JsonValue& jsonValue);
-    Locale& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Locale(Aws::Utils::Json::JsonView jsonValue);
+    Locale& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ OpenXJsonSerDe::OpenXJsonSerDe() :
 {
 }
 
-OpenXJsonSerDe::OpenXJsonSerDe(const JsonValue& jsonValue) : 
+OpenXJsonSerDe::OpenXJsonSerDe(JsonView jsonValue) : 
     m_convertDotsInJsonKeysToUnderscores(false),
     m_convertDotsInJsonKeysToUnderscoresHasBeenSet(false),
     m_caseInsensitive(false),
@@ -47,7 +47,7 @@ OpenXJsonSerDe::OpenXJsonSerDe(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OpenXJsonSerDe& OpenXJsonSerDe::operator =(const JsonValue& jsonValue)
+OpenXJsonSerDe& OpenXJsonSerDe::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConvertDotsInJsonKeysToUnderscores"))
   {
@@ -65,7 +65,7 @@ OpenXJsonSerDe& OpenXJsonSerDe::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ColumnToJsonKeyMappings"))
   {
-    Aws::Map<Aws::String, JsonValue> columnToJsonKeyMappingsJsonMap = jsonValue.GetObject("ColumnToJsonKeyMappings").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> columnToJsonKeyMappingsJsonMap = jsonValue.GetObject("ColumnToJsonKeyMappings").GetAllObjects();
     for(auto& columnToJsonKeyMappingsItem : columnToJsonKeyMappingsJsonMap)
     {
       m_columnToJsonKeyMappings[columnToJsonKeyMappingsItem.first] = columnToJsonKeyMappingsItem.second.AsString();

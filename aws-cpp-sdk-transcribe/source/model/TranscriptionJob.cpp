@@ -47,7 +47,7 @@ TranscriptionJob::TranscriptionJob() :
 {
 }
 
-TranscriptionJob::TranscriptionJob(const JsonValue& jsonValue) : 
+TranscriptionJob::TranscriptionJob(JsonView jsonValue) : 
     m_transcriptionJobNameHasBeenSet(false),
     m_transcriptionJobStatus(TranscriptionJobStatus::NOT_SET),
     m_transcriptionJobStatusHasBeenSet(false),
@@ -67,7 +67,7 @@ TranscriptionJob::TranscriptionJob(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TranscriptionJob& TranscriptionJob::operator =(const JsonValue& jsonValue)
+TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TranscriptionJobName"))
   {

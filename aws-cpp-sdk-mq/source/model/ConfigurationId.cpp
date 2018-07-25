@@ -35,7 +35,7 @@ ConfigurationId::ConfigurationId() :
 {
 }
 
-ConfigurationId::ConfigurationId(const JsonValue& jsonValue) : 
+ConfigurationId::ConfigurationId(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false)
@@ -43,7 +43,7 @@ ConfigurationId::ConfigurationId(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigurationId& ConfigurationId::operator =(const JsonValue& jsonValue)
+ConfigurationId& ConfigurationId::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

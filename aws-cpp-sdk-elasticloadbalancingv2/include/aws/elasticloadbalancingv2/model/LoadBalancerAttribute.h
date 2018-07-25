@@ -61,7 +61,7 @@ namespace Model
      * <code>false</code>.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> - The
      * name of the S3 bucket for the access logs. This attribute is required if access
      * logs are enabled. The bucket must exist in the same region as the load balancer
-     * and have a bucket policy that grants Elastic Load Balancing permission to write
+     * and have a bucket policy that grants Elastic Load Balancing permissions to write
      * to the bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The
      * prefix for the location in the S3 bucket for the access logs.</p> </li> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
@@ -88,7 +88,7 @@ namespace Model
      * <code>false</code>.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> - The
      * name of the S3 bucket for the access logs. This attribute is required if access
      * logs are enabled. The bucket must exist in the same region as the load balancer
-     * and have a bucket policy that grants Elastic Load Balancing permission to write
+     * and have a bucket policy that grants Elastic Load Balancing permissions to write
      * to the bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The
      * prefix for the location in the S3 bucket for the access logs.</p> </li> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
@@ -115,7 +115,7 @@ namespace Model
      * <code>false</code>.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> - The
      * name of the S3 bucket for the access logs. This attribute is required if access
      * logs are enabled. The bucket must exist in the same region as the load balancer
-     * and have a bucket policy that grants Elastic Load Balancing permission to write
+     * and have a bucket policy that grants Elastic Load Balancing permissions to write
      * to the bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The
      * prefix for the location in the S3 bucket for the access logs.</p> </li> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
@@ -142,7 +142,7 @@ namespace Model
      * <code>false</code>.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> - The
      * name of the S3 bucket for the access logs. This attribute is required if access
      * logs are enabled. The bucket must exist in the same region as the load balancer
-     * and have a bucket policy that grants Elastic Load Balancing permission to write
+     * and have a bucket policy that grants Elastic Load Balancing permissions to write
      * to the bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The
      * prefix for the location in the S3 bucket for the access logs.</p> </li> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
@@ -169,7 +169,7 @@ namespace Model
      * <code>false</code>.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> - The
      * name of the S3 bucket for the access logs. This attribute is required if access
      * logs are enabled. The bucket must exist in the same region as the load balancer
-     * and have a bucket policy that grants Elastic Load Balancing permission to write
+     * and have a bucket policy that grants Elastic Load Balancing permissions to write
      * to the bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The
      * prefix for the location in the S3 bucket for the access logs.</p> </li> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
@@ -196,7 +196,7 @@ namespace Model
      * <code>false</code>.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> - The
      * name of the S3 bucket for the access logs. This attribute is required if access
      * logs are enabled. The bucket must exist in the same region as the load balancer
-     * and have a bucket policy that grants Elastic Load Balancing permission to write
+     * and have a bucket policy that grants Elastic Load Balancing permissions to write
      * to the bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The
      * prefix for the location in the S3 bucket for the access logs.</p> </li> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
@@ -223,7 +223,7 @@ namespace Model
      * <code>false</code>.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> - The
      * name of the S3 bucket for the access logs. This attribute is required if access
      * logs are enabled. The bucket must exist in the same region as the load balancer
-     * and have a bucket policy that grants Elastic Load Balancing permission to write
+     * and have a bucket policy that grants Elastic Load Balancing permissions to write
      * to the bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The
      * prefix for the location in the S3 bucket for the access logs.</p> </li> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.

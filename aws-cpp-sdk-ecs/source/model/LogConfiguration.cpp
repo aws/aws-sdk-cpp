@@ -35,7 +35,7 @@ LogConfiguration::LogConfiguration() :
 {
 }
 
-LogConfiguration::LogConfiguration(const JsonValue& jsonValue) : 
+LogConfiguration::LogConfiguration(JsonView jsonValue) : 
     m_logDriver(LogDriver::NOT_SET),
     m_logDriverHasBeenSet(false),
     m_optionsHasBeenSet(false)
@@ -43,7 +43,7 @@ LogConfiguration::LogConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LogConfiguration& LogConfiguration::operator =(const JsonValue& jsonValue)
+LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("logDriver"))
   {
@@ -54,7 +54,7 @@ LogConfiguration& LogConfiguration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("options"))
   {
-    Aws::Map<Aws::String, JsonValue> optionsJsonMap = jsonValue.GetObject("options").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("options").GetAllObjects();
     for(auto& optionsItem : optionsJsonMap)
     {
       m_options[optionsItem.first] = optionsItem.second.AsString();

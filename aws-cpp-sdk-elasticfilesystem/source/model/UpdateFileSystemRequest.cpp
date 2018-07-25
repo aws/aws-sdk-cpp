@@ -46,7 +46,7 @@ Aws::String UpdateFileSystemRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

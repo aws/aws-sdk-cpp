@@ -37,7 +37,7 @@ CreateGraphqlApiResult::CreateGraphqlApiResult(const Aws::AmazonWebServiceResult
 
 CreateGraphqlApiResult& CreateGraphqlApiResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("graphqlApi"))
   {
     m_graphqlApi = jsonValue.GetObject("graphqlApi");

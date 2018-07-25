@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceDiscovery
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     NamespaceFilter();
-    NamespaceFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    NamespaceFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NamespaceFilter(Aws::Utils::Json::JsonView jsonValue);
+    NamespaceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

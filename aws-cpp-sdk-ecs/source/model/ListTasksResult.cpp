@@ -37,10 +37,10 @@ ListTasksResult::ListTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 ListTasksResult& ListTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskArns"))
   {
-    Array<JsonValue> taskArnsJsonList = jsonValue.GetArray("taskArns");
+    Array<JsonView> taskArnsJsonList = jsonValue.GetArray("taskArns");
     for(unsigned taskArnsIndex = 0; taskArnsIndex < taskArnsJsonList.GetLength(); ++taskArnsIndex)
     {
       m_taskArns.push_back(taskArnsJsonList[taskArnsIndex].AsString());

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     Queue();
-    Queue(const Aws::Utils::Json::JsonValue& jsonValue);
-    Queue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Queue(Aws::Utils::Json::JsonView jsonValue);
+    Queue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

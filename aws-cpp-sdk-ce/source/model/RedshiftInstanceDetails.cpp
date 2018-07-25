@@ -39,7 +39,7 @@ RedshiftInstanceDetails::RedshiftInstanceDetails() :
 {
 }
 
-RedshiftInstanceDetails::RedshiftInstanceDetails(const JsonValue& jsonValue) : 
+RedshiftInstanceDetails::RedshiftInstanceDetails(JsonView jsonValue) : 
     m_familyHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -51,7 +51,7 @@ RedshiftInstanceDetails::RedshiftInstanceDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RedshiftInstanceDetails& RedshiftInstanceDetails::operator =(const JsonValue& jsonValue)
+RedshiftInstanceDetails& RedshiftInstanceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Family"))
   {

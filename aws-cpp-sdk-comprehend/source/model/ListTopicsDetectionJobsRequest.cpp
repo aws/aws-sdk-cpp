@@ -52,7 +52,7 @@ Aws::String ListTopicsDetectionJobsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListTopicsDetectionJobsRequest::GetRequestSpecificHeaders() const

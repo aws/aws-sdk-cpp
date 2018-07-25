@@ -60,7 +60,7 @@ Service::Service() :
 {
 }
 
-Service::Service(const JsonValue& jsonValue) : 
+Service::Service(JsonView jsonValue) : 
     m_serviceArnHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
@@ -93,7 +93,7 @@ Service::Service(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Service& Service::operator =(const JsonValue& jsonValue)
+Service& Service::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("serviceArn"))
   {
@@ -118,7 +118,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("loadBalancers"))
   {
-    Array<JsonValue> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
+    Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
     for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
     {
       m_loadBalancers.push_back(loadBalancersJsonList[loadBalancersIndex].AsObject());
@@ -128,7 +128,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("serviceRegistries"))
   {
-    Array<JsonValue> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
+    Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
     for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
     {
       m_serviceRegistries.push_back(serviceRegistriesJsonList[serviceRegistriesIndex].AsObject());
@@ -194,7 +194,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("deployments"))
   {
-    Array<JsonValue> deploymentsJsonList = jsonValue.GetArray("deployments");
+    Array<JsonView> deploymentsJsonList = jsonValue.GetArray("deployments");
     for(unsigned deploymentsIndex = 0; deploymentsIndex < deploymentsJsonList.GetLength(); ++deploymentsIndex)
     {
       m_deployments.push_back(deploymentsJsonList[deploymentsIndex].AsObject());
@@ -211,7 +211,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonValue> eventsJsonList = jsonValue.GetArray("events");
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
@@ -228,7 +228,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("placementConstraints"))
   {
-    Array<JsonValue> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
+    Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
     for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
     {
       m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
@@ -238,7 +238,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("placementStrategy"))
   {
-    Array<JsonValue> placementStrategyJsonList = jsonValue.GetArray("placementStrategy");
+    Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("placementStrategy");
     for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
     {
       m_placementStrategy.push_back(placementStrategyJsonList[placementStrategyIndex].AsObject());

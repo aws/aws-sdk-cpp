@@ -45,7 +45,7 @@ ChannelResponse::ChannelResponse() :
 {
 }
 
-ChannelResponse::ChannelResponse(const JsonValue& jsonValue) : 
+ChannelResponse::ChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_enabled(false),
@@ -63,7 +63,7 @@ ChannelResponse::ChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ChannelResponse& ChannelResponse::operator =(const JsonValue& jsonValue)
+ChannelResponse& ChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

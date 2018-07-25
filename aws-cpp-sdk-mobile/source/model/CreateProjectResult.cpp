@@ -37,7 +37,7 @@ CreateProjectResult::CreateProjectResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateProjectResult& CreateProjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetObject("details");

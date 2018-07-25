@@ -45,7 +45,7 @@ DeleteLagResult::DeleteLagResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 DeleteLagResult& DeleteLagResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("connectionsBandwidth"))
   {
     m_connectionsBandwidth = jsonValue.GetString("connectionsBandwidth");
@@ -108,7 +108,7 @@ DeleteLagResult& DeleteLagResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("connections"))
   {
-    Array<JsonValue> connectionsJsonList = jsonValue.GetArray("connections");
+    Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
     for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
     {
       m_connections.push_back(connectionsJsonList[connectionsIndex].AsObject());

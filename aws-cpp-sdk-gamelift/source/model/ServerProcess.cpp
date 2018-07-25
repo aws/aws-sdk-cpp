@@ -36,7 +36,7 @@ ServerProcess::ServerProcess() :
 {
 }
 
-ServerProcess::ServerProcess(const JsonValue& jsonValue) : 
+ServerProcess::ServerProcess(JsonView jsonValue) : 
     m_launchPathHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_concurrentExecutions(0),
@@ -45,7 +45,7 @@ ServerProcess::ServerProcess(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServerProcess& ServerProcess::operator =(const JsonValue& jsonValue)
+ServerProcess& ServerProcess::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LaunchPath"))
   {

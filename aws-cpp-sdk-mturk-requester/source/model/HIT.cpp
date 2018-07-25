@@ -61,7 +61,7 @@ HIT::HIT() :
 {
 }
 
-HIT::HIT(const JsonValue& jsonValue) : 
+HIT::HIT(JsonView jsonValue) : 
     m_hITIdHasBeenSet(false),
     m_hITTypeIdHasBeenSet(false),
     m_hITGroupIdHasBeenSet(false),
@@ -95,7 +95,7 @@ HIT::HIT(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HIT& HIT::operator =(const JsonValue& jsonValue)
+HIT& HIT::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("HITId"))
   {
@@ -211,7 +211,7 @@ HIT& HIT::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("QualificationRequirements"))
   {
-    Array<JsonValue> qualificationRequirementsJsonList = jsonValue.GetArray("QualificationRequirements");
+    Array<JsonView> qualificationRequirementsJsonList = jsonValue.GetArray("QualificationRequirements");
     for(unsigned qualificationRequirementsIndex = 0; qualificationRequirementsIndex < qualificationRequirementsJsonList.GetLength(); ++qualificationRequirementsIndex)
     {
       m_qualificationRequirements.push_back(qualificationRequirementsJsonList[qualificationRequirementsIndex].AsObject());

@@ -44,7 +44,7 @@ Aws::String UpdateRepositoryNameRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateRepositoryNameRequest::GetRequestSpecificHeaders() const

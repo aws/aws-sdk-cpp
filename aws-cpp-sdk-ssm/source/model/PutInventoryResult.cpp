@@ -37,7 +37,7 @@ PutInventoryResult::PutInventoryResult(const Aws::AmazonWebServiceResult<JsonVal
 
 PutInventoryResult& PutInventoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");

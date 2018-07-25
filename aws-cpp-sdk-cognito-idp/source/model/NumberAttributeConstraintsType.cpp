@@ -34,14 +34,14 @@ NumberAttributeConstraintsType::NumberAttributeConstraintsType() :
 {
 }
 
-NumberAttributeConstraintsType::NumberAttributeConstraintsType(const JsonValue& jsonValue) : 
+NumberAttributeConstraintsType::NumberAttributeConstraintsType(JsonView jsonValue) : 
     m_minValueHasBeenSet(false),
     m_maxValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NumberAttributeConstraintsType& NumberAttributeConstraintsType::operator =(const JsonValue& jsonValue)
+NumberAttributeConstraintsType& NumberAttributeConstraintsType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MinValue"))
   {

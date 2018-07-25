@@ -37,7 +37,7 @@ DescribeUserProfileResult::DescribeUserProfileResult(const Aws::AmazonWebService
 
 DescribeUserProfileResult& DescribeUserProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("userArn"))
   {
     m_userArn = jsonValue.GetString("userArn");

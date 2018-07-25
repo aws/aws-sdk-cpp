@@ -37,7 +37,7 @@ Webhook::Webhook() :
 {
 }
 
-Webhook::Webhook(const JsonValue& jsonValue) : 
+Webhook::Webhook(JsonView jsonValue) : 
     m_urlHasBeenSet(false),
     m_payloadUrlHasBeenSet(false),
     m_secretHasBeenSet(false),
@@ -47,7 +47,7 @@ Webhook::Webhook(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Webhook& Webhook::operator =(const JsonValue& jsonValue)
+Webhook& Webhook::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("url"))
   {

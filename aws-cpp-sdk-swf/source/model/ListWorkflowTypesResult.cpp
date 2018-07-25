@@ -37,10 +37,10 @@ ListWorkflowTypesResult::ListWorkflowTypesResult(const Aws::AmazonWebServiceResu
 
 ListWorkflowTypesResult& ListWorkflowTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("typeInfos"))
   {
-    Array<JsonValue> typeInfosJsonList = jsonValue.GetArray("typeInfos");
+    Array<JsonView> typeInfosJsonList = jsonValue.GetArray("typeInfos");
     for(unsigned typeInfosIndex = 0; typeInfosIndex < typeInfosJsonList.GetLength(); ++typeInfosIndex)
     {
       m_typeInfos.push_back(typeInfosJsonList[typeInfosIndex].AsObject());

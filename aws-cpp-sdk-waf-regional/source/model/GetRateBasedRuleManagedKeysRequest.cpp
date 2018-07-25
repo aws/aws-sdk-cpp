@@ -44,7 +44,7 @@ Aws::String GetRateBasedRuleManagedKeysRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetRateBasedRuleManagedKeysRequest::GetRequestSpecificHeaders() const

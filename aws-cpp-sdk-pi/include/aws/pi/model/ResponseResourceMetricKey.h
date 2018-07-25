@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace PI
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ResponseResourceMetricKey();
-    ResponseResourceMetricKey(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResponseResourceMetricKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResponseResourceMetricKey(Aws::Utils::Json::JsonView jsonValue);
+    ResponseResourceMetricKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

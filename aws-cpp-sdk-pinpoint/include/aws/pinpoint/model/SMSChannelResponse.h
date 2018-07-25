@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     SMSChannelResponse();
-    SMSChannelResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    SMSChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SMSChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    SMSChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

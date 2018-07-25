@@ -40,7 +40,7 @@ InventoryDeletionStatusItem::InventoryDeletionStatusItem() :
 {
 }
 
-InventoryDeletionStatusItem::InventoryDeletionStatusItem(const JsonValue& jsonValue) : 
+InventoryDeletionStatusItem::InventoryDeletionStatusItem(JsonView jsonValue) : 
     m_deletionIdHasBeenSet(false),
     m_typeNameHasBeenSet(false),
     m_deletionStartTimeHasBeenSet(false),
@@ -53,7 +53,7 @@ InventoryDeletionStatusItem::InventoryDeletionStatusItem(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-InventoryDeletionStatusItem& InventoryDeletionStatusItem::operator =(const JsonValue& jsonValue)
+InventoryDeletionStatusItem& InventoryDeletionStatusItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeletionId"))
   {

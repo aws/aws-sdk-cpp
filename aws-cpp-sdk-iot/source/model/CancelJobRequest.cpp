@@ -43,7 +43,7 @@ Aws::String CancelJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void CancelJobRequest::AddQueryStringParameters(URI& uri) const

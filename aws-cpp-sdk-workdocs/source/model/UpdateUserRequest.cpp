@@ -82,7 +82,7 @@ Aws::String UpdateUserRequest::SerializePayload() const
    payload.WithString("GrantPoweruserPrivileges", BooleanEnumTypeMapper::GetNameForBooleanEnumType(m_grantPoweruserPrivileges));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateUserRequest::GetRequestSpecificHeaders() const

@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     UserDefinedFunction();
-    UserDefinedFunction(const Aws::Utils::Json::JsonValue& jsonValue);
-    UserDefinedFunction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UserDefinedFunction(Aws::Utils::Json::JsonView jsonValue);
+    UserDefinedFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

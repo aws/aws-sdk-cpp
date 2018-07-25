@@ -49,7 +49,7 @@ Aws::String DescribeContainerInstancesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeContainerInstancesRequest::GetRequestSpecificHeaders() const

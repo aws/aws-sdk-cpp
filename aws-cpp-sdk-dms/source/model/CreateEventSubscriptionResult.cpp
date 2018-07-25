@@ -37,7 +37,7 @@ CreateEventSubscriptionResult::CreateEventSubscriptionResult(const Aws::AmazonWe
 
 CreateEventSubscriptionResult& CreateEventSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventSubscription"))
   {
     m_eventSubscription = jsonValue.GetObject("EventSubscription");

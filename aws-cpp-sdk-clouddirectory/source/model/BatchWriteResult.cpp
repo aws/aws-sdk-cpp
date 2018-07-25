@@ -37,10 +37,10 @@ BatchWriteResult::BatchWriteResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 BatchWriteResult& BatchWriteResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Responses"))
   {
-    Array<JsonValue> responsesJsonList = jsonValue.GetArray("Responses");
+    Array<JsonView> responsesJsonList = jsonValue.GetArray("Responses");
     for(unsigned responsesIndex = 0; responsesIndex < responsesJsonList.GetLength(); ++responsesIndex)
     {
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());

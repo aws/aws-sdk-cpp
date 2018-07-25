@@ -34,6 +34,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     VideoDescription();
-    VideoDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    VideoDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VideoDescription(Aws::Utils::Json::JsonView jsonValue);
+    VideoDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

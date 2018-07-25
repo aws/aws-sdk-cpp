@@ -44,7 +44,7 @@ Aws::String AssociateHostedConnectionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateHostedConnectionRequest::GetRequestSpecificHeaders() const

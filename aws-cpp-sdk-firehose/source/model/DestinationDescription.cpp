@@ -38,7 +38,7 @@ DestinationDescription::DestinationDescription() :
 {
 }
 
-DestinationDescription::DestinationDescription(const JsonValue& jsonValue) : 
+DestinationDescription::DestinationDescription(JsonView jsonValue) : 
     m_destinationIdHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_extendedS3DestinationDescriptionHasBeenSet(false),
@@ -49,7 +49,7 @@ DestinationDescription::DestinationDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DestinationDescription& DestinationDescription::operator =(const JsonValue& jsonValue)
+DestinationDescription& DestinationDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DestinationId"))
   {

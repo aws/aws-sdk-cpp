@@ -38,7 +38,7 @@ ComparedFace::ComparedFace() :
 {
 }
 
-ComparedFace::ComparedFace(const JsonValue& jsonValue) : 
+ComparedFace::ComparedFace(JsonView jsonValue) : 
     m_boundingBoxHasBeenSet(false),
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
@@ -49,7 +49,7 @@ ComparedFace::ComparedFace(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComparedFace& ComparedFace::operator =(const JsonValue& jsonValue)
+ComparedFace& ComparedFace::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BoundingBox"))
   {
@@ -67,7 +67,7 @@ ComparedFace& ComparedFace::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Landmarks"))
   {
-    Array<JsonValue> landmarksJsonList = jsonValue.GetArray("Landmarks");
+    Array<JsonView> landmarksJsonList = jsonValue.GetArray("Landmarks");
     for(unsigned landmarksIndex = 0; landmarksIndex < landmarksJsonList.GetLength(); ++landmarksIndex)
     {
       m_landmarks.push_back(landmarksJsonList[landmarksIndex].AsObject());

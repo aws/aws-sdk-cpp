@@ -37,7 +37,7 @@ EmailChannelRequest::EmailChannelRequest() :
 {
 }
 
-EmailChannelRequest::EmailChannelRequest(const JsonValue& jsonValue) : 
+EmailChannelRequest::EmailChannelRequest(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
@@ -47,7 +47,7 @@ EmailChannelRequest::EmailChannelRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EmailChannelRequest& EmailChannelRequest::operator =(const JsonValue& jsonValue)
+EmailChannelRequest& EmailChannelRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

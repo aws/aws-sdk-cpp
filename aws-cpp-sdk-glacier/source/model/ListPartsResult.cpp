@@ -39,7 +39,7 @@ ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 ListPartsResult& ListPartsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MultipartUploadId"))
   {
     m_multipartUploadId = jsonValue.GetString("MultipartUploadId");
@@ -72,7 +72,7 @@ ListPartsResult& ListPartsResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("Parts"))
   {
-    Array<JsonValue> partsJsonList = jsonValue.GetArray("Parts");
+    Array<JsonView> partsJsonList = jsonValue.GetArray("Parts");
     for(unsigned partsIndex = 0; partsIndex < partsJsonList.GetLength(); ++partsIndex)
     {
       m_parts.push_back(partsJsonList[partsIndex].AsObject());

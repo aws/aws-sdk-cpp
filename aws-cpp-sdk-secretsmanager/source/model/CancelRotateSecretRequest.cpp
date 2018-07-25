@@ -37,7 +37,7 @@ Aws::String CancelRotateSecretRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CancelRotateSecretRequest::GetRequestSpecificHeaders() const

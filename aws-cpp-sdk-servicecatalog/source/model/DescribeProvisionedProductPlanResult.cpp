@@ -37,7 +37,7 @@ DescribeProvisionedProductPlanResult::DescribeProvisionedProductPlanResult(const
 
 DescribeProvisionedProductPlanResult& DescribeProvisionedProductPlanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisionedProductPlanDetails"))
   {
     m_provisionedProductPlanDetails = jsonValue.GetObject("ProvisionedProductPlanDetails");
@@ -46,7 +46,7 @@ DescribeProvisionedProductPlanResult& DescribeProvisionedProductPlanResult::oper
 
   if(jsonValue.ValueExists("ResourceChanges"))
   {
-    Array<JsonValue> resourceChangesJsonList = jsonValue.GetArray("ResourceChanges");
+    Array<JsonView> resourceChangesJsonList = jsonValue.GetArray("ResourceChanges");
     for(unsigned resourceChangesIndex = 0; resourceChangesIndex < resourceChangesJsonList.GetLength(); ++resourceChangesIndex)
     {
       m_resourceChanges.push_back(resourceChangesJsonList[resourceChangesIndex].AsObject());

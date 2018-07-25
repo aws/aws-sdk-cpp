@@ -44,7 +44,7 @@ Aws::String GetDeploymentInstanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDeploymentInstanceRequest::GetRequestSpecificHeaders() const

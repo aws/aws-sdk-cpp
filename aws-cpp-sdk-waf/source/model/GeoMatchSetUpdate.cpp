@@ -35,7 +35,7 @@ GeoMatchSetUpdate::GeoMatchSetUpdate() :
 {
 }
 
-GeoMatchSetUpdate::GeoMatchSetUpdate(const JsonValue& jsonValue) : 
+GeoMatchSetUpdate::GeoMatchSetUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_geoMatchConstraintHasBeenSet(false)
@@ -43,7 +43,7 @@ GeoMatchSetUpdate::GeoMatchSetUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GeoMatchSetUpdate& GeoMatchSetUpdate::operator =(const JsonValue& jsonValue)
+GeoMatchSetUpdate& GeoMatchSetUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

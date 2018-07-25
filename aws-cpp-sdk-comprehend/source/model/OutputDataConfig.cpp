@@ -33,13 +33,13 @@ OutputDataConfig::OutputDataConfig() :
 {
 }
 
-OutputDataConfig::OutputDataConfig(const JsonValue& jsonValue) : 
+OutputDataConfig::OutputDataConfig(JsonView jsonValue) : 
     m_s3UriHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputDataConfig& OutputDataConfig::operator =(const JsonValue& jsonValue)
+OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3Uri"))
   {

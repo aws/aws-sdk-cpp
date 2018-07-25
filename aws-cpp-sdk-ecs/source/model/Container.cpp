@@ -43,7 +43,7 @@ Container::Container() :
 {
 }
 
-Container::Container(const JsonValue& jsonValue) : 
+Container::Container(JsonView jsonValue) : 
     m_containerArnHasBeenSet(false),
     m_taskArnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -59,7 +59,7 @@ Container::Container(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Container& Container::operator =(const JsonValue& jsonValue)
+Container& Container::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerArn"))
   {
@@ -105,7 +105,7 @@ Container& Container::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("networkBindings"))
   {
-    Array<JsonValue> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
+    Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
     for(unsigned networkBindingsIndex = 0; networkBindingsIndex < networkBindingsJsonList.GetLength(); ++networkBindingsIndex)
     {
       m_networkBindings.push_back(networkBindingsJsonList[networkBindingsIndex].AsObject());
@@ -115,7 +115,7 @@ Container& Container::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonValue> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());

@@ -36,7 +36,7 @@ DirectoryConnectSettings::DirectoryConnectSettings() :
 {
 }
 
-DirectoryConnectSettings::DirectoryConnectSettings(const JsonValue& jsonValue) : 
+DirectoryConnectSettings::DirectoryConnectSettings(JsonView jsonValue) : 
     m_vpcIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_customerDnsIpsHasBeenSet(false),
@@ -45,7 +45,7 @@ DirectoryConnectSettings::DirectoryConnectSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DirectoryConnectSettings& DirectoryConnectSettings::operator =(const JsonValue& jsonValue)
+DirectoryConnectSettings& DirectoryConnectSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VpcId"))
   {
@@ -56,7 +56,7 @@ DirectoryConnectSettings& DirectoryConnectSettings::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -66,7 +66,7 @@ DirectoryConnectSettings& DirectoryConnectSettings::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("CustomerDnsIps"))
   {
-    Array<JsonValue> customerDnsIpsJsonList = jsonValue.GetArray("CustomerDnsIps");
+    Array<JsonView> customerDnsIpsJsonList = jsonValue.GetArray("CustomerDnsIps");
     for(unsigned customerDnsIpsIndex = 0; customerDnsIpsIndex < customerDnsIpsJsonList.GetLength(); ++customerDnsIpsIndex)
     {
       m_customerDnsIps.push_back(customerDnsIpsJsonList[customerDnsIpsIndex].AsString());

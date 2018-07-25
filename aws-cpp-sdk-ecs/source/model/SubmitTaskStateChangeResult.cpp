@@ -37,7 +37,7 @@ SubmitTaskStateChangeResult::SubmitTaskStateChangeResult(const Aws::AmazonWebSer
 
 SubmitTaskStateChangeResult& SubmitTaskStateChangeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("acknowledgment"))
   {
     m_acknowledgment = jsonValue.GetString("acknowledgment");

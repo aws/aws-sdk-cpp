@@ -35,7 +35,7 @@ DescribeActivationsFilter::DescribeActivationsFilter() :
 {
 }
 
-DescribeActivationsFilter::DescribeActivationsFilter(const JsonValue& jsonValue) : 
+DescribeActivationsFilter::DescribeActivationsFilter(JsonView jsonValue) : 
     m_filterKey(DescribeActivationsFilterKeys::NOT_SET),
     m_filterKeyHasBeenSet(false),
     m_filterValuesHasBeenSet(false)
@@ -43,7 +43,7 @@ DescribeActivationsFilter::DescribeActivationsFilter(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-DescribeActivationsFilter& DescribeActivationsFilter::operator =(const JsonValue& jsonValue)
+DescribeActivationsFilter& DescribeActivationsFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FilterKey"))
   {
@@ -54,7 +54,7 @@ DescribeActivationsFilter& DescribeActivationsFilter::operator =(const JsonValue
 
   if(jsonValue.ValueExists("FilterValues"))
   {
-    Array<JsonValue> filterValuesJsonList = jsonValue.GetArray("FilterValues");
+    Array<JsonView> filterValuesJsonList = jsonValue.GetArray("FilterValues");
     for(unsigned filterValuesIndex = 0; filterValuesIndex < filterValuesJsonList.GetLength(); ++filterValuesIndex)
     {
       m_filterValues.push_back(filterValuesJsonList[filterValuesIndex].AsString());

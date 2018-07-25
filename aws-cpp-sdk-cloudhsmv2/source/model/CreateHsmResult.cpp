@@ -37,7 +37,7 @@ CreateHsmResult::CreateHsmResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 CreateHsmResult& CreateHsmResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Hsm"))
   {
     m_hsm = jsonValue.GetObject("Hsm");

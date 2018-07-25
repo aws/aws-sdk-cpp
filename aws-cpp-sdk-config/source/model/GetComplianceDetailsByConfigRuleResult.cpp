@@ -37,10 +37,10 @@ GetComplianceDetailsByConfigRuleResult::GetComplianceDetailsByConfigRuleResult(c
 
 GetComplianceDetailsByConfigRuleResult& GetComplianceDetailsByConfigRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EvaluationResults"))
   {
-    Array<JsonValue> evaluationResultsJsonList = jsonValue.GetArray("EvaluationResults");
+    Array<JsonView> evaluationResultsJsonList = jsonValue.GetArray("EvaluationResults");
     for(unsigned evaluationResultsIndex = 0; evaluationResultsIndex < evaluationResultsJsonList.GetLength(); ++evaluationResultsIndex)
     {
       m_evaluationResults.push_back(evaluationResultsJsonList[evaluationResultsIndex].AsObject());

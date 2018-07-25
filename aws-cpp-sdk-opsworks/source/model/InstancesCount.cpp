@@ -72,7 +72,7 @@ InstancesCount::InstancesCount() :
 {
 }
 
-InstancesCount::InstancesCount(const JsonValue& jsonValue) : 
+InstancesCount::InstancesCount(JsonView jsonValue) : 
     m_assigning(0),
     m_assigningHasBeenSet(false),
     m_booting(0),
@@ -117,7 +117,7 @@ InstancesCount::InstancesCount(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstancesCount& InstancesCount::operator =(const JsonValue& jsonValue)
+InstancesCount& InstancesCount::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Assigning"))
   {

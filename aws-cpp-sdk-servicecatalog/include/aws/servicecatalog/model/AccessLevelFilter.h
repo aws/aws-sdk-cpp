@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AccessLevelFilter();
-    AccessLevelFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    AccessLevelFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AccessLevelFilter(Aws::Utils::Json::JsonView jsonValue);
+    AccessLevelFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

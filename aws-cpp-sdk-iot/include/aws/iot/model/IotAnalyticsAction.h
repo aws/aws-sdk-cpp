@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     IotAnalyticsAction();
-    IotAnalyticsAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    IotAnalyticsAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    IotAnalyticsAction(Aws::Utils::Json::JsonView jsonValue);
+    IotAnalyticsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

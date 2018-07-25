@@ -54,7 +54,7 @@ Aws::String ListFacetAttributesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListFacetAttributesRequest::GetRequestSpecificHeaders() const

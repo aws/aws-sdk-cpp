@@ -36,7 +36,7 @@ UserProfileSummary::UserProfileSummary() :
 {
 }
 
-UserProfileSummary::UserProfileSummary(const JsonValue& jsonValue) : 
+UserProfileSummary::UserProfileSummary(JsonView jsonValue) : 
     m_userArnHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
@@ -45,7 +45,7 @@ UserProfileSummary::UserProfileSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserProfileSummary& UserProfileSummary::operator =(const JsonValue& jsonValue)
+UserProfileSummary& UserProfileSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("userArn"))
   {

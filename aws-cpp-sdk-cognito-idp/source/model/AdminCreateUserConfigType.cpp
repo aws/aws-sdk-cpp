@@ -37,7 +37,7 @@ AdminCreateUserConfigType::AdminCreateUserConfigType() :
 {
 }
 
-AdminCreateUserConfigType::AdminCreateUserConfigType(const JsonValue& jsonValue) : 
+AdminCreateUserConfigType::AdminCreateUserConfigType(JsonView jsonValue) : 
     m_allowAdminCreateUserOnly(false),
     m_allowAdminCreateUserOnlyHasBeenSet(false),
     m_unusedAccountValidityDays(0),
@@ -47,7 +47,7 @@ AdminCreateUserConfigType::AdminCreateUserConfigType(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-AdminCreateUserConfigType& AdminCreateUserConfigType::operator =(const JsonValue& jsonValue)
+AdminCreateUserConfigType& AdminCreateUserConfigType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AllowAdminCreateUserOnly"))
   {

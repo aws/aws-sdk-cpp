@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RoleAliasDescription();
-    RoleAliasDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    RoleAliasDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RoleAliasDescription(Aws::Utils::Json::JsonView jsonValue);
+    RoleAliasDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

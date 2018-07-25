@@ -37,7 +37,7 @@ CreateProtectionResult::CreateProtectionResult(const Aws::AmazonWebServiceResult
 
 CreateProtectionResult& CreateProtectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProtectionId"))
   {
     m_protectionId = jsonValue.GetString("ProtectionId");

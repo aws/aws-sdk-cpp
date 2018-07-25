@@ -36,7 +36,7 @@ InstancePatchStateFilter::InstancePatchStateFilter() :
 {
 }
 
-InstancePatchStateFilter::InstancePatchStateFilter(const JsonValue& jsonValue) : 
+InstancePatchStateFilter::InstancePatchStateFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false),
     m_type(InstancePatchStateOperatorType::NOT_SET),
@@ -45,7 +45,7 @@ InstancePatchStateFilter::InstancePatchStateFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstancePatchStateFilter& InstancePatchStateFilter::operator =(const JsonValue& jsonValue)
+InstancePatchStateFilter& InstancePatchStateFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -56,7 +56,7 @@ InstancePatchStateFilter& InstancePatchStateFilter::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

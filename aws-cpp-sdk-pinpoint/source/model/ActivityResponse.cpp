@@ -49,7 +49,7 @@ ActivityResponse::ActivityResponse() :
 {
 }
 
-ActivityResponse::ActivityResponse(const JsonValue& jsonValue) : 
+ActivityResponse::ActivityResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_campaignIdHasBeenSet(false),
     m_endHasBeenSet(false),
@@ -71,7 +71,7 @@ ActivityResponse::ActivityResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActivityResponse& ActivityResponse::operator =(const JsonValue& jsonValue)
+ActivityResponse& ActivityResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

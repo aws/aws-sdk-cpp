@@ -37,10 +37,10 @@ ListTaskDefinitionFamiliesResult::ListTaskDefinitionFamiliesResult(const Aws::Am
 
 ListTaskDefinitionFamiliesResult& ListTaskDefinitionFamiliesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("families"))
   {
-    Array<JsonValue> familiesJsonList = jsonValue.GetArray("families");
+    Array<JsonView> familiesJsonList = jsonValue.GetArray("families");
     for(unsigned familiesIndex = 0; familiesIndex < familiesJsonList.GetLength(); ++familiesIndex)
     {
       m_families.push_back(familiesJsonList[familiesIndex].AsString());

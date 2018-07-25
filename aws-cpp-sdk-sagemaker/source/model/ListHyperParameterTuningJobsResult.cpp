@@ -37,10 +37,10 @@ ListHyperParameterTuningJobsResult::ListHyperParameterTuningJobsResult(const Aws
 
 ListHyperParameterTuningJobsResult& ListHyperParameterTuningJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HyperParameterTuningJobSummaries"))
   {
-    Array<JsonValue> hyperParameterTuningJobSummariesJsonList = jsonValue.GetArray("HyperParameterTuningJobSummaries");
+    Array<JsonView> hyperParameterTuningJobSummariesJsonList = jsonValue.GetArray("HyperParameterTuningJobSummaries");
     for(unsigned hyperParameterTuningJobSummariesIndex = 0; hyperParameterTuningJobSummariesIndex < hyperParameterTuningJobSummariesJsonList.GetLength(); ++hyperParameterTuningJobSummariesIndex)
     {
       m_hyperParameterTuningJobSummaries.push_back(hyperParameterTuningJobSummariesJsonList[hyperParameterTuningJobSummariesIndex].AsObject());

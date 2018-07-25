@@ -40,7 +40,7 @@ PolicySummary::PolicySummary() :
 {
 }
 
-PolicySummary::PolicySummary(const JsonValue& jsonValue) : 
+PolicySummary::PolicySummary(JsonView jsonValue) : 
     m_policyArnHasBeenSet(false),
     m_policyIdHasBeenSet(false),
     m_policyNameHasBeenSet(false),
@@ -53,7 +53,7 @@ PolicySummary::PolicySummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PolicySummary& PolicySummary::operator =(const JsonValue& jsonValue)
+PolicySummary& PolicySummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyArn"))
   {

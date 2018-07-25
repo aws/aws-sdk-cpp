@@ -37,7 +37,7 @@ FinalHyperParameterTuningJobObjectiveMetric::FinalHyperParameterTuningJobObjecti
 {
 }
 
-FinalHyperParameterTuningJobObjectiveMetric::FinalHyperParameterTuningJobObjectiveMetric(const JsonValue& jsonValue) : 
+FinalHyperParameterTuningJobObjectiveMetric::FinalHyperParameterTuningJobObjectiveMetric(JsonView jsonValue) : 
     m_type(HyperParameterTuningJobObjectiveType::NOT_SET),
     m_typeHasBeenSet(false),
     m_metricNameHasBeenSet(false),
@@ -47,7 +47,7 @@ FinalHyperParameterTuningJobObjectiveMetric::FinalHyperParameterTuningJobObjecti
   *this = jsonValue;
 }
 
-FinalHyperParameterTuningJobObjectiveMetric& FinalHyperParameterTuningJobObjectiveMetric::operator =(const JsonValue& jsonValue)
+FinalHyperParameterTuningJobObjectiveMetric& FinalHyperParameterTuningJobObjectiveMetric::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

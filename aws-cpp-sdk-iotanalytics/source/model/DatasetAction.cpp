@@ -34,14 +34,14 @@ DatasetAction::DatasetAction() :
 {
 }
 
-DatasetAction::DatasetAction(const JsonValue& jsonValue) : 
+DatasetAction::DatasetAction(JsonView jsonValue) : 
     m_actionNameHasBeenSet(false),
     m_queryActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DatasetAction& DatasetAction::operator =(const JsonValue& jsonValue)
+DatasetAction& DatasetAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actionName"))
   {

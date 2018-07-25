@@ -37,7 +37,7 @@ GetAggregateConfigRuleComplianceSummaryResult::GetAggregateConfigRuleComplianceS
 
 GetAggregateConfigRuleComplianceSummaryResult& GetAggregateConfigRuleComplianceSummaryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GroupByKey"))
   {
     m_groupByKey = jsonValue.GetString("GroupByKey");
@@ -46,7 +46,7 @@ GetAggregateConfigRuleComplianceSummaryResult& GetAggregateConfigRuleComplianceS
 
   if(jsonValue.ValueExists("AggregateComplianceCounts"))
   {
-    Array<JsonValue> aggregateComplianceCountsJsonList = jsonValue.GetArray("AggregateComplianceCounts");
+    Array<JsonView> aggregateComplianceCountsJsonList = jsonValue.GetArray("AggregateComplianceCounts");
     for(unsigned aggregateComplianceCountsIndex = 0; aggregateComplianceCountsIndex < aggregateComplianceCountsJsonList.GetLength(); ++aggregateComplianceCountsIndex)
     {
       m_aggregateComplianceCounts.push_back(aggregateComplianceCountsJsonList[aggregateComplianceCountsIndex].AsObject());

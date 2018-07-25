@@ -44,7 +44,7 @@ Aws::String UpdateBudgetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateBudgetRequest::GetRequestSpecificHeaders() const

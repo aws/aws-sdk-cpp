@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceDiscovery
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     NamespaceProperties();
-    NamespaceProperties(const Aws::Utils::Json::JsonValue& jsonValue);
-    NamespaceProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
+    NamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

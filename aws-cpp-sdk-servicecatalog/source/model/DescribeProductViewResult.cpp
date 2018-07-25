@@ -37,7 +37,7 @@ DescribeProductViewResult::DescribeProductViewResult(const Aws::AmazonWebService
 
 DescribeProductViewResult& DescribeProductViewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProductViewSummary"))
   {
     m_productViewSummary = jsonValue.GetObject("ProductViewSummary");
@@ -46,7 +46,7 @@ DescribeProductViewResult& DescribeProductViewResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ProvisioningArtifacts"))
   {
-    Array<JsonValue> provisioningArtifactsJsonList = jsonValue.GetArray("ProvisioningArtifacts");
+    Array<JsonView> provisioningArtifactsJsonList = jsonValue.GetArray("ProvisioningArtifacts");
     for(unsigned provisioningArtifactsIndex = 0; provisioningArtifactsIndex < provisioningArtifactsJsonList.GetLength(); ++provisioningArtifactsIndex)
     {
       m_provisioningArtifacts.push_back(provisioningArtifactsJsonList[provisioningArtifactsIndex].AsObject());

@@ -39,7 +39,7 @@ ImageDetail::ImageDetail() :
 {
 }
 
-ImageDetail::ImageDetail(const JsonValue& jsonValue) : 
+ImageDetail::ImageDetail(JsonView jsonValue) : 
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
@@ -51,7 +51,7 @@ ImageDetail::ImageDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ImageDetail& ImageDetail::operator =(const JsonValue& jsonValue)
+ImageDetail& ImageDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("registryId"))
   {
@@ -76,7 +76,7 @@ ImageDetail& ImageDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("imageTags"))
   {
-    Array<JsonValue> imageTagsJsonList = jsonValue.GetArray("imageTags");
+    Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
     for(unsigned imageTagsIndex = 0; imageTagsIndex < imageTagsJsonList.GetLength(); ++imageTagsIndex)
     {
       m_imageTags.push_back(imageTagsJsonList[imageTagsIndex].AsString());

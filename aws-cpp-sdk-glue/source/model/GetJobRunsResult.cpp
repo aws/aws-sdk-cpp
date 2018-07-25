@@ -37,10 +37,10 @@ GetJobRunsResult::GetJobRunsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetJobRunsResult& GetJobRunsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobRuns"))
   {
-    Array<JsonValue> jobRunsJsonList = jsonValue.GetArray("JobRuns");
+    Array<JsonView> jobRunsJsonList = jsonValue.GetArray("JobRuns");
     for(unsigned jobRunsIndex = 0; jobRunsIndex < jobRunsJsonList.GetLength(); ++jobRunsIndex)
     {
       m_jobRuns.push_back(jobRunsJsonList[jobRunsIndex].AsObject());

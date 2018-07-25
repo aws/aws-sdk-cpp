@@ -36,7 +36,7 @@ ReplicationInstanceTaskLog::ReplicationInstanceTaskLog() :
 {
 }
 
-ReplicationInstanceTaskLog::ReplicationInstanceTaskLog(const JsonValue& jsonValue) : 
+ReplicationInstanceTaskLog::ReplicationInstanceTaskLog(JsonView jsonValue) : 
     m_replicationTaskNameHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
     m_replicationInstanceTaskLogSize(0),
@@ -45,7 +45,7 @@ ReplicationInstanceTaskLog::ReplicationInstanceTaskLog(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ReplicationInstanceTaskLog& ReplicationInstanceTaskLog::operator =(const JsonValue& jsonValue)
+ReplicationInstanceTaskLog& ReplicationInstanceTaskLog::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReplicationTaskName"))
   {

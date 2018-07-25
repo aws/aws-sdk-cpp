@@ -37,7 +37,7 @@ CreateDatasetResult::CreateDatasetResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateDatasetResult& CreateDatasetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("datasetName"))
   {
     m_datasetName = jsonValue.GetString("datasetName");

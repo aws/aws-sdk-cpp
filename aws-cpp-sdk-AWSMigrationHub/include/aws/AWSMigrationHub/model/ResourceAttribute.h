@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MigrationHub
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     ResourceAttribute();
-    ResourceAttribute(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceAttribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceAttribute(Aws::Utils::Json::JsonView jsonValue);
+    ResourceAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

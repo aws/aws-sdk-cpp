@@ -37,7 +37,7 @@ DeleteRepositoryResult::DeleteRepositoryResult(const Aws::AmazonWebServiceResult
 
 DeleteRepositoryResult& DeleteRepositoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetObject("repository");

@@ -35,7 +35,7 @@ AssociationExecutionTargetsFilter::AssociationExecutionTargetsFilter() :
 {
 }
 
-AssociationExecutionTargetsFilter::AssociationExecutionTargetsFilter(const JsonValue& jsonValue) : 
+AssociationExecutionTargetsFilter::AssociationExecutionTargetsFilter(JsonView jsonValue) : 
     m_key(AssociationExecutionTargetsFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ AssociationExecutionTargetsFilter::AssociationExecutionTargetsFilter(const JsonV
   *this = jsonValue;
 }
 
-AssociationExecutionTargetsFilter& AssociationExecutionTargetsFilter::operator =(const JsonValue& jsonValue)
+AssociationExecutionTargetsFilter& AssociationExecutionTargetsFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

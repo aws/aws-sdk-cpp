@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ImageInserter();
-    ImageInserter(const Aws::Utils::Json::JsonValue& jsonValue);
-    ImageInserter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ImageInserter(Aws::Utils::Json::JsonView jsonValue);
+    ImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

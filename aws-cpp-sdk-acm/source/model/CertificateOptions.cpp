@@ -34,14 +34,14 @@ CertificateOptions::CertificateOptions() :
 {
 }
 
-CertificateOptions::CertificateOptions(const JsonValue& jsonValue) : 
+CertificateOptions::CertificateOptions(JsonView jsonValue) : 
     m_certificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference::NOT_SET),
     m_certificateTransparencyLoggingPreferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CertificateOptions& CertificateOptions::operator =(const JsonValue& jsonValue)
+CertificateOptions& CertificateOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CertificateTransparencyLoggingPreference"))
   {

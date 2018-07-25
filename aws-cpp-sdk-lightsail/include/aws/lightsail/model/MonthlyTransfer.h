@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     MonthlyTransfer();
-    MonthlyTransfer(const Aws::Utils::Json::JsonValue& jsonValue);
-    MonthlyTransfer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MonthlyTransfer(Aws::Utils::Json::JsonView jsonValue);
+    MonthlyTransfer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

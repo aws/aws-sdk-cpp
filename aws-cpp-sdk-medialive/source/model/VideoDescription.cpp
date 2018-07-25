@@ -44,7 +44,7 @@ VideoDescription::VideoDescription() :
 {
 }
 
-VideoDescription::VideoDescription(const JsonValue& jsonValue) : 
+VideoDescription::VideoDescription(JsonView jsonValue) : 
     m_codecSettingsHasBeenSet(false),
     m_height(0),
     m_heightHasBeenSet(false),
@@ -61,7 +61,7 @@ VideoDescription::VideoDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VideoDescription& VideoDescription::operator =(const JsonValue& jsonValue)
+VideoDescription& VideoDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("codecSettings"))
   {

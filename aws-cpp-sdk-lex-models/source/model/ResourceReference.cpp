@@ -34,14 +34,14 @@ ResourceReference::ResourceReference() :
 {
 }
 
-ResourceReference::ResourceReference(const JsonValue& jsonValue) : 
+ResourceReference::ResourceReference(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourceReference& ResourceReference::operator =(const JsonValue& jsonValue)
+ResourceReference& ResourceReference::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

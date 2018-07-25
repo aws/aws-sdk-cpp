@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentity
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RulesConfigurationType();
-    RulesConfigurationType(const Aws::Utils::Json::JsonValue& jsonValue);
-    RulesConfigurationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RulesConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    RulesConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ CreateRoleAliasResult::CreateRoleAliasResult(const Aws::AmazonWebServiceResult<J
 
 CreateRoleAliasResult& CreateRoleAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("roleAlias"))
   {
     m_roleAlias = jsonValue.GetString("roleAlias");

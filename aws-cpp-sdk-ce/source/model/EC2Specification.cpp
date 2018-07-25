@@ -34,14 +34,14 @@ EC2Specification::EC2Specification() :
 {
 }
 
-EC2Specification::EC2Specification(const JsonValue& jsonValue) : 
+EC2Specification::EC2Specification(JsonView jsonValue) : 
     m_offeringClass(OfferingClass::NOT_SET),
     m_offeringClassHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EC2Specification& EC2Specification::operator =(const JsonValue& jsonValue)
+EC2Specification& EC2Specification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OfferingClass"))
   {

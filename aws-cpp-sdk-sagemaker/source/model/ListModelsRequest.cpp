@@ -78,7 +78,7 @@ Aws::String ListModelsRequest::SerializePayload() const
    payload.WithDouble("CreationTimeAfter", m_creationTimeAfter.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListModelsRequest::GetRequestSpecificHeaders() const

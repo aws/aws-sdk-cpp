@@ -34,14 +34,14 @@ EncryptionAtRestOptionsStatus::EncryptionAtRestOptionsStatus() :
 {
 }
 
-EncryptionAtRestOptionsStatus::EncryptionAtRestOptionsStatus(const JsonValue& jsonValue) : 
+EncryptionAtRestOptionsStatus::EncryptionAtRestOptionsStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EncryptionAtRestOptionsStatus& EncryptionAtRestOptionsStatus::operator =(const JsonValue& jsonValue)
+EncryptionAtRestOptionsStatus& EncryptionAtRestOptionsStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {

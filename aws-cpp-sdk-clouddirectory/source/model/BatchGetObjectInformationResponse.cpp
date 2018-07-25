@@ -34,18 +34,18 @@ BatchGetObjectInformationResponse::BatchGetObjectInformationResponse() :
 {
 }
 
-BatchGetObjectInformationResponse::BatchGetObjectInformationResponse(const JsonValue& jsonValue) : 
+BatchGetObjectInformationResponse::BatchGetObjectInformationResponse(JsonView jsonValue) : 
     m_schemaFacetsHasBeenSet(false),
     m_objectIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchGetObjectInformationResponse& BatchGetObjectInformationResponse::operator =(const JsonValue& jsonValue)
+BatchGetObjectInformationResponse& BatchGetObjectInformationResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaFacets"))
   {
-    Array<JsonValue> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
+    Array<JsonView> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
     for(unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex)
     {
       m_schemaFacets.push_back(schemaFacetsJsonList[schemaFacetsIndex].AsObject());

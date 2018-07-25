@@ -37,10 +37,10 @@ ListPublicKeysResult::ListPublicKeysResult(const Aws::AmazonWebServiceResult<Jso
 
 ListPublicKeysResult& ListPublicKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PublicKeyList"))
   {
-    Array<JsonValue> publicKeyListJsonList = jsonValue.GetArray("PublicKeyList");
+    Array<JsonView> publicKeyListJsonList = jsonValue.GetArray("PublicKeyList");
     for(unsigned publicKeyListIndex = 0; publicKeyListIndex < publicKeyListJsonList.GetLength(); ++publicKeyListIndex)
     {
       m_publicKeyList.push_back(publicKeyListJsonList[publicKeyListIndex].AsObject());

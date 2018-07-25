@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     StreamFile();
-    StreamFile(const Aws::Utils::Json::JsonValue& jsonValue);
-    StreamFile& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StreamFile(Aws::Utils::Json::JsonView jsonValue);
+    StreamFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -35,7 +35,7 @@ AwsCredentials::AwsCredentials() :
 {
 }
 
-AwsCredentials::AwsCredentials(const JsonValue& jsonValue) : 
+AwsCredentials::AwsCredentials(JsonView jsonValue) : 
     m_accessKeyIdHasBeenSet(false),
     m_secretAccessKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false)
@@ -43,7 +43,7 @@ AwsCredentials::AwsCredentials(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AwsCredentials& AwsCredentials::operator =(const JsonValue& jsonValue)
+AwsCredentials& AwsCredentials::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccessKeyId"))
   {

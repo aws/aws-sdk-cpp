@@ -41,7 +41,7 @@ Session::Session() :
 {
 }
 
-Session::Session(const JsonValue& jsonValue) : 
+Session::Session(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_stackNameHasBeenSet(false),
@@ -55,7 +55,7 @@ Session::Session(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Session& Session::operator =(const JsonValue& jsonValue)
+Session& Session::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

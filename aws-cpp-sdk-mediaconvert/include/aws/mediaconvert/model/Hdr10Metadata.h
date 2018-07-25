@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     Hdr10Metadata();
-    Hdr10Metadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    Hdr10Metadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Hdr10Metadata(Aws::Utils::Json::JsonView jsonValue);
+    Hdr10Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

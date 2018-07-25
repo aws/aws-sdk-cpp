@@ -49,7 +49,7 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(const JsonValue& jsonValue) : 
+Volume::Volume(JsonView jsonValue) : 
     m_volumeIdHasBeenSet(false),
     m_ec2VolumeIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -71,7 +71,7 @@ Volume::Volume(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Volume& Volume::operator =(const JsonValue& jsonValue)
+Volume& Volume::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeId"))
   {

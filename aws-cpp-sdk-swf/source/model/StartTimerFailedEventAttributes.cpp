@@ -37,7 +37,7 @@ StartTimerFailedEventAttributes::StartTimerFailedEventAttributes() :
 {
 }
 
-StartTimerFailedEventAttributes::StartTimerFailedEventAttributes(const JsonValue& jsonValue) : 
+StartTimerFailedEventAttributes::StartTimerFailedEventAttributes(JsonView jsonValue) : 
     m_timerIdHasBeenSet(false),
     m_cause(StartTimerFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
@@ -47,7 +47,7 @@ StartTimerFailedEventAttributes::StartTimerFailedEventAttributes(const JsonValue
   *this = jsonValue;
 }
 
-StartTimerFailedEventAttributes& StartTimerFailedEventAttributes::operator =(const JsonValue& jsonValue)
+StartTimerFailedEventAttributes& StartTimerFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timerId"))
   {

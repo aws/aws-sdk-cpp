@@ -37,7 +37,7 @@ RequestUploadCredentialsResult::RequestUploadCredentialsResult(const Aws::Amazon
 
 RequestUploadCredentialsResult& RequestUploadCredentialsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UploadCredentials"))
   {
     m_uploadCredentials = jsonValue.GetObject("UploadCredentials");

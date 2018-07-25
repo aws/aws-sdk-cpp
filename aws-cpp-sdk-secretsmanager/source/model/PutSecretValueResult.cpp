@@ -37,7 +37,7 @@ PutSecretValueResult::PutSecretValueResult(const Aws::AmazonWebServiceResult<Jso
 
 PutSecretValueResult& PutSecretValueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
@@ -58,7 +58,7 @@ PutSecretValueResult& PutSecretValueResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("VersionStages"))
   {
-    Array<JsonValue> versionStagesJsonList = jsonValue.GetArray("VersionStages");
+    Array<JsonView> versionStagesJsonList = jsonValue.GetArray("VersionStages");
     for(unsigned versionStagesIndex = 0; versionStagesIndex < versionStagesJsonList.GetLength(); ++versionStagesIndex)
     {
       m_versionStages.push_back(versionStagesJsonList[versionStagesIndex].AsString());

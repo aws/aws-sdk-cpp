@@ -34,14 +34,14 @@ FacetAttributeReference::FacetAttributeReference() :
 {
 }
 
-FacetAttributeReference::FacetAttributeReference(const JsonValue& jsonValue) : 
+FacetAttributeReference::FacetAttributeReference(JsonView jsonValue) : 
     m_targetFacetNameHasBeenSet(false),
     m_targetAttributeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FacetAttributeReference& FacetAttributeReference::operator =(const JsonValue& jsonValue)
+FacetAttributeReference& FacetAttributeReference::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetFacetName"))
   {

@@ -39,7 +39,7 @@ MessageResult::MessageResult() :
 {
 }
 
-MessageResult::MessageResult(const JsonValue& jsonValue) : 
+MessageResult::MessageResult(JsonView jsonValue) : 
     m_deliveryStatus(DeliveryStatus::NOT_SET),
     m_deliveryStatusHasBeenSet(false),
     m_messageIdHasBeenSet(false),
@@ -51,7 +51,7 @@ MessageResult::MessageResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MessageResult& MessageResult::operator =(const JsonValue& jsonValue)
+MessageResult& MessageResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeliveryStatus"))
   {

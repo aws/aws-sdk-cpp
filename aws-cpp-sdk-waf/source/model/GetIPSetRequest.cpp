@@ -37,7 +37,7 @@ Aws::String GetIPSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetIPSetRequest::GetRequestSpecificHeaders() const

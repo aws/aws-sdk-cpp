@@ -36,7 +36,7 @@ InspectorServiceAttributes::InspectorServiceAttributes() :
 {
 }
 
-InspectorServiceAttributes::InspectorServiceAttributes(const JsonValue& jsonValue) : 
+InspectorServiceAttributes::InspectorServiceAttributes(JsonView jsonValue) : 
     m_schemaVersion(0),
     m_schemaVersionHasBeenSet(false),
     m_assessmentRunArnHasBeenSet(false),
@@ -45,7 +45,7 @@ InspectorServiceAttributes::InspectorServiceAttributes(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-InspectorServiceAttributes& InspectorServiceAttributes::operator =(const JsonValue& jsonValue)
+InspectorServiceAttributes& InspectorServiceAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("schemaVersion"))
   {

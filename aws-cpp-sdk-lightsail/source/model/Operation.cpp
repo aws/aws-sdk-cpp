@@ -48,7 +48,7 @@ Operation::Operation() :
 {
 }
 
-Operation::Operation(const JsonValue& jsonValue) : 
+Operation::Operation(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
@@ -69,7 +69,7 @@ Operation::Operation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Operation& Operation::operator =(const JsonValue& jsonValue)
+Operation& Operation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

@@ -37,7 +37,7 @@ CreateGrantResult::CreateGrantResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateGrantResult& CreateGrantResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GrantToken"))
   {
     m_grantToken = jsonValue.GetString("GrantToken");

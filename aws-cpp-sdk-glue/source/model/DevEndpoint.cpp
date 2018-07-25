@@ -53,7 +53,7 @@ DevEndpoint::DevEndpoint() :
 {
 }
 
-DevEndpoint::DevEndpoint(const JsonValue& jsonValue) : 
+DevEndpoint::DevEndpoint(JsonView jsonValue) : 
     m_endpointNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -79,7 +79,7 @@ DevEndpoint::DevEndpoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DevEndpoint& DevEndpoint::operator =(const JsonValue& jsonValue)
+DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EndpointName"))
   {
@@ -97,7 +97,7 @@ DevEndpoint& DevEndpoint::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());

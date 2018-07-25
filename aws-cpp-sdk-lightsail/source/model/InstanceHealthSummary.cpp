@@ -37,7 +37,7 @@ InstanceHealthSummary::InstanceHealthSummary() :
 {
 }
 
-InstanceHealthSummary::InstanceHealthSummary(const JsonValue& jsonValue) : 
+InstanceHealthSummary::InstanceHealthSummary(JsonView jsonValue) : 
     m_instanceNameHasBeenSet(false),
     m_instanceHealth(InstanceHealthState::NOT_SET),
     m_instanceHealthHasBeenSet(false),
@@ -47,7 +47,7 @@ InstanceHealthSummary::InstanceHealthSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceHealthSummary& InstanceHealthSummary::operator =(const JsonValue& jsonValue)
+InstanceHealthSummary& InstanceHealthSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("instanceName"))
   {

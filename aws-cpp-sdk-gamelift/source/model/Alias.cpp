@@ -39,7 +39,7 @@ Alias::Alias() :
 {
 }
 
-Alias::Alias(const JsonValue& jsonValue) : 
+Alias::Alias(JsonView jsonValue) : 
     m_aliasIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_aliasArnHasBeenSet(false),
@@ -51,7 +51,7 @@ Alias::Alias(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Alias& Alias::operator =(const JsonValue& jsonValue)
+Alias& Alias::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AliasId"))
   {

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -63,8 +64,8 @@ namespace Model
   {
   public:
     ContinueAsNewWorkflowExecutionDecisionAttributes();
-    ContinueAsNewWorkflowExecutionDecisionAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContinueAsNewWorkflowExecutionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContinueAsNewWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    ContinueAsNewWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ GetTranscriptionJobResult::GetTranscriptionJobResult(const Aws::AmazonWebService
 
 GetTranscriptionJobResult& GetTranscriptionJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TranscriptionJob"))
   {
     m_transcriptionJob = jsonValue.GetObject("TranscriptionJob");

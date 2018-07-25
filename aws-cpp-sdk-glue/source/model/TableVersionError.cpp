@@ -35,7 +35,7 @@ TableVersionError::TableVersionError() :
 {
 }
 
-TableVersionError::TableVersionError(const JsonValue& jsonValue) : 
+TableVersionError::TableVersionError(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_errorDetailHasBeenSet(false)
@@ -43,7 +43,7 @@ TableVersionError::TableVersionError(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TableVersionError& TableVersionError::operator =(const JsonValue& jsonValue)
+TableVersionError& TableVersionError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TableName"))
   {

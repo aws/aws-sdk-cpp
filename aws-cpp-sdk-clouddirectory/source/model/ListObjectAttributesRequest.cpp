@@ -63,7 +63,7 @@ Aws::String ListObjectAttributesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListObjectAttributesRequest::GetRequestSpecificHeaders() const

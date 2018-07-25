@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     TimeBasedCanary();
-    TimeBasedCanary(const Aws::Utils::Json::JsonValue& jsonValue);
-    TimeBasedCanary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TimeBasedCanary(Aws::Utils::Json::JsonView jsonValue);
+    TimeBasedCanary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

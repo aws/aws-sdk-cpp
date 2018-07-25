@@ -33,17 +33,17 @@ EndpointConfiguration::EndpointConfiguration() :
 {
 }
 
-EndpointConfiguration::EndpointConfiguration(const JsonValue& jsonValue) : 
+EndpointConfiguration::EndpointConfiguration(JsonView jsonValue) : 
     m_typesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EndpointConfiguration& EndpointConfiguration::operator =(const JsonValue& jsonValue)
+EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("types"))
   {
-    Array<JsonValue> typesJsonList = jsonValue.GetArray("types");
+    Array<JsonView> typesJsonList = jsonValue.GetArray("types");
     for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
     {
       m_types.push_back(EndpointTypeMapper::GetEndpointTypeForName(typesJsonList[typesIndex].AsString()));

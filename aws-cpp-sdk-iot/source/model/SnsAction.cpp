@@ -36,7 +36,7 @@ SnsAction::SnsAction() :
 {
 }
 
-SnsAction::SnsAction(const JsonValue& jsonValue) : 
+SnsAction::SnsAction(JsonView jsonValue) : 
     m_targetArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_messageFormat(MessageFormat::NOT_SET),
@@ -45,7 +45,7 @@ SnsAction::SnsAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SnsAction& SnsAction::operator =(const JsonValue& jsonValue)
+SnsAction& SnsAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("targetArn"))
   {

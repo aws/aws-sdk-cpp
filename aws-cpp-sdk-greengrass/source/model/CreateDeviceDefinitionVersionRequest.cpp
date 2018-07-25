@@ -45,7 +45,7 @@ Aws::String CreateDeviceDefinitionVersionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDeviceDefinitionVersionRequest::GetRequestSpecificHeaders() const

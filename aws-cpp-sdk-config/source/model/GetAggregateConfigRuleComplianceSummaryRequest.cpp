@@ -66,7 +66,7 @@ Aws::String GetAggregateConfigRuleComplianceSummaryRequest::SerializePayload() c
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetAggregateConfigRuleComplianceSummaryRequest::GetRequestSpecificHeaders() const

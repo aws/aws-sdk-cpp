@@ -41,7 +41,7 @@ BuildPhase::BuildPhase() :
 {
 }
 
-BuildPhase::BuildPhase(const JsonValue& jsonValue) : 
+BuildPhase::BuildPhase(JsonView jsonValue) : 
     m_phaseType(BuildPhaseType::NOT_SET),
     m_phaseTypeHasBeenSet(false),
     m_phaseStatus(StatusType::NOT_SET),
@@ -55,7 +55,7 @@ BuildPhase::BuildPhase(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BuildPhase& BuildPhase::operator =(const JsonValue& jsonValue)
+BuildPhase& BuildPhase::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("phaseType"))
   {
@@ -94,7 +94,7 @@ BuildPhase& BuildPhase::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("contexts"))
   {
-    Array<JsonValue> contextsJsonList = jsonValue.GetArray("contexts");
+    Array<JsonView> contextsJsonList = jsonValue.GetArray("contexts");
     for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
     {
       m_contexts.push_back(contextsJsonList[contextsIndex].AsObject());

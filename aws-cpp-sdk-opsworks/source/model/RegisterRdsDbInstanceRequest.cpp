@@ -58,7 +58,7 @@ Aws::String RegisterRdsDbInstanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RegisterRdsDbInstanceRequest::GetRequestSpecificHeaders() const

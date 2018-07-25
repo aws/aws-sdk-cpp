@@ -37,7 +37,7 @@ Recipes::Recipes() :
 {
 }
 
-Recipes::Recipes(const JsonValue& jsonValue) : 
+Recipes::Recipes(JsonView jsonValue) : 
     m_setupHasBeenSet(false),
     m_configureHasBeenSet(false),
     m_deployHasBeenSet(false),
@@ -47,11 +47,11 @@ Recipes::Recipes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Recipes& Recipes::operator =(const JsonValue& jsonValue)
+Recipes& Recipes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Setup"))
   {
-    Array<JsonValue> setupJsonList = jsonValue.GetArray("Setup");
+    Array<JsonView> setupJsonList = jsonValue.GetArray("Setup");
     for(unsigned setupIndex = 0; setupIndex < setupJsonList.GetLength(); ++setupIndex)
     {
       m_setup.push_back(setupJsonList[setupIndex].AsString());
@@ -61,7 +61,7 @@ Recipes& Recipes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Configure"))
   {
-    Array<JsonValue> configureJsonList = jsonValue.GetArray("Configure");
+    Array<JsonView> configureJsonList = jsonValue.GetArray("Configure");
     for(unsigned configureIndex = 0; configureIndex < configureJsonList.GetLength(); ++configureIndex)
     {
       m_configure.push_back(configureJsonList[configureIndex].AsString());
@@ -71,7 +71,7 @@ Recipes& Recipes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Deploy"))
   {
-    Array<JsonValue> deployJsonList = jsonValue.GetArray("Deploy");
+    Array<JsonView> deployJsonList = jsonValue.GetArray("Deploy");
     for(unsigned deployIndex = 0; deployIndex < deployJsonList.GetLength(); ++deployIndex)
     {
       m_deploy.push_back(deployJsonList[deployIndex].AsString());
@@ -81,7 +81,7 @@ Recipes& Recipes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Undeploy"))
   {
-    Array<JsonValue> undeployJsonList = jsonValue.GetArray("Undeploy");
+    Array<JsonView> undeployJsonList = jsonValue.GetArray("Undeploy");
     for(unsigned undeployIndex = 0; undeployIndex < undeployJsonList.GetLength(); ++undeployIndex)
     {
       m_undeploy.push_back(undeployJsonList[undeployIndex].AsString());
@@ -91,7 +91,7 @@ Recipes& Recipes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Shutdown"))
   {
-    Array<JsonValue> shutdownJsonList = jsonValue.GetArray("Shutdown");
+    Array<JsonView> shutdownJsonList = jsonValue.GetArray("Shutdown");
     for(unsigned shutdownIndex = 0; shutdownIndex < shutdownJsonList.GetLength(); ++shutdownIndex)
     {
       m_shutdown.push_back(shutdownJsonList[shutdownIndex].AsString());

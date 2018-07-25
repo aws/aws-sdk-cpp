@@ -57,7 +57,7 @@ Aws::String DescribeTapeArchivesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTapeArchivesRequest::GetRequestSpecificHeaders() const

@@ -57,7 +57,7 @@ Aws::String DescribeEndpointTypesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeEndpointTypesRequest::GetRequestSpecificHeaders() const

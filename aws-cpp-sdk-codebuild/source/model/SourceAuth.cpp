@@ -35,7 +35,7 @@ SourceAuth::SourceAuth() :
 {
 }
 
-SourceAuth::SourceAuth(const JsonValue& jsonValue) : 
+SourceAuth::SourceAuth(JsonView jsonValue) : 
     m_type(SourceAuthType::NOT_SET),
     m_typeHasBeenSet(false),
     m_resourceHasBeenSet(false)
@@ -43,7 +43,7 @@ SourceAuth::SourceAuth(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SourceAuth& SourceAuth::operator =(const JsonValue& jsonValue)
+SourceAuth& SourceAuth::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

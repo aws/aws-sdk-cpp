@@ -33,13 +33,13 @@ GameSessionQueueDestination::GameSessionQueueDestination() :
 {
 }
 
-GameSessionQueueDestination::GameSessionQueueDestination(const JsonValue& jsonValue) : 
+GameSessionQueueDestination::GameSessionQueueDestination(JsonView jsonValue) : 
     m_destinationArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GameSessionQueueDestination& GameSessionQueueDestination::operator =(const JsonValue& jsonValue)
+GameSessionQueueDestination& GameSessionQueueDestination::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DestinationArn"))
   {

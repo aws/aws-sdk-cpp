@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     MergeMetadata();
-    MergeMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    MergeMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MergeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    MergeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

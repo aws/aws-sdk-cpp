@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     TelemetryMetadata();
-    TelemetryMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    TelemetryMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TelemetryMetadata(Aws::Utils::Json::JsonView jsonValue);
+    TelemetryMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

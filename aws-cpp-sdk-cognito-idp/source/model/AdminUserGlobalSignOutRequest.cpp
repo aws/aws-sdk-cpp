@@ -44,7 +44,7 @@ Aws::String AdminUserGlobalSignOutRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminUserGlobalSignOutRequest::GetRequestSpecificHeaders() const

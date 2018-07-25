@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     JobCommand();
-    JobCommand(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobCommand& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobCommand(Aws::Utils::Json::JsonView jsonValue);
+    JobCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

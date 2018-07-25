@@ -37,10 +37,10 @@ GetInventorySchemaResult::GetInventorySchemaResult(const Aws::AmazonWebServiceRe
 
 GetInventorySchemaResult& GetInventorySchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Schemas"))
   {
-    Array<JsonValue> schemasJsonList = jsonValue.GetArray("Schemas");
+    Array<JsonView> schemasJsonList = jsonValue.GetArray("Schemas");
     for(unsigned schemasIndex = 0; schemasIndex < schemasJsonList.GetLength(); ++schemasIndex)
     {
       m_schemas.push_back(schemasJsonList[schemasIndex].AsObject());

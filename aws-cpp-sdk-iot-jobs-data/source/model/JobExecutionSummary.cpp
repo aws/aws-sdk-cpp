@@ -43,7 +43,7 @@ JobExecutionSummary::JobExecutionSummary() :
 {
 }
 
-JobExecutionSummary::JobExecutionSummary(const JsonValue& jsonValue) : 
+JobExecutionSummary::JobExecutionSummary(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_queuedAt(0),
     m_queuedAtHasBeenSet(false),
@@ -59,7 +59,7 @@ JobExecutionSummary::JobExecutionSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobExecutionSummary& JobExecutionSummary::operator =(const JsonValue& jsonValue)
+JobExecutionSummary& JobExecutionSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobId"))
   {

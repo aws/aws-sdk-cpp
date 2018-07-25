@@ -52,7 +52,7 @@ Aws::String UpgradeAppliedSchemaRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

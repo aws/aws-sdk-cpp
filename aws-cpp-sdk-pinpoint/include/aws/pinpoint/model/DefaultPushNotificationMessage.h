@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     DefaultPushNotificationMessage();
-    DefaultPushNotificationMessage(const Aws::Utils::Json::JsonValue& jsonValue);
-    DefaultPushNotificationMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DefaultPushNotificationMessage(Aws::Utils::Json::JsonView jsonValue);
+    DefaultPushNotificationMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

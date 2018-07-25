@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     RtmpCaptionInfoDestinationSettings();
-    RtmpCaptionInfoDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    RtmpCaptionInfoDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RtmpCaptionInfoDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    RtmpCaptionInfoDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
   };

@@ -35,7 +35,7 @@ ThirdPartyJobDetails::ThirdPartyJobDetails() :
 {
 }
 
-ThirdPartyJobDetails::ThirdPartyJobDetails(const JsonValue& jsonValue) : 
+ThirdPartyJobDetails::ThirdPartyJobDetails(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_nonceHasBeenSet(false)
@@ -43,7 +43,7 @@ ThirdPartyJobDetails::ThirdPartyJobDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ThirdPartyJobDetails& ThirdPartyJobDetails::operator =(const JsonValue& jsonValue)
+ThirdPartyJobDetails& ThirdPartyJobDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

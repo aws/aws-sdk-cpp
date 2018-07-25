@@ -36,7 +36,7 @@ Application::Application() :
 {
 }
 
-Application::Application(const JsonValue& jsonValue) : 
+Application::Application(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_argsHasBeenSet(false),
@@ -45,7 +45,7 @@ Application::Application(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Application& Application::operator =(const JsonValue& jsonValue)
+Application& Application::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -63,7 +63,7 @@ Application& Application::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Args"))
   {
-    Array<JsonValue> argsJsonList = jsonValue.GetArray("Args");
+    Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
     for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
     {
       m_args.push_back(argsJsonList[argsIndex].AsString());
@@ -73,7 +73,7 @@ Application& Application::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AdditionalInfo"))
   {
-    Aws::Map<Aws::String, JsonValue> additionalInfoJsonMap = jsonValue.GetObject("AdditionalInfo").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> additionalInfoJsonMap = jsonValue.GetObject("AdditionalInfo").GetAllObjects();
     for(auto& additionalInfoItem : additionalInfoJsonMap)
     {
       m_additionalInfo[additionalInfoItem.first] = additionalInfoItem.second.AsString();

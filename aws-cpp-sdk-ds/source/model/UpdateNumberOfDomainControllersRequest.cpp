@@ -45,7 +45,7 @@ Aws::String UpdateNumberOfDomainControllersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateNumberOfDomainControllersRequest::GetRequestSpecificHeaders() const

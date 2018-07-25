@@ -37,10 +37,10 @@ GetRateBasedRuleManagedKeysResult::GetRateBasedRuleManagedKeysResult(const Aws::
 
 GetRateBasedRuleManagedKeysResult& GetRateBasedRuleManagedKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ManagedKeys"))
   {
-    Array<JsonValue> managedKeysJsonList = jsonValue.GetArray("ManagedKeys");
+    Array<JsonView> managedKeysJsonList = jsonValue.GetArray("ManagedKeys");
     for(unsigned managedKeysIndex = 0; managedKeysIndex < managedKeysJsonList.GetLength(); ++managedKeysIndex)
     {
       m_managedKeys.push_back(managedKeysJsonList[managedKeysIndex].AsString());

@@ -37,7 +37,7 @@ GetDeploymentInstanceResult::GetDeploymentInstanceResult(const Aws::AmazonWebSer
 
 GetDeploymentInstanceResult& GetDeploymentInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceSummary"))
   {
     m_instanceSummary = jsonValue.GetObject("instanceSummary");

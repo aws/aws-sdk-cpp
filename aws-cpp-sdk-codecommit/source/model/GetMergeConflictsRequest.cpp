@@ -58,7 +58,7 @@ Aws::String GetMergeConflictsRequest::SerializePayload() const
    payload.WithString("mergeOption", MergeOptionTypeEnumMapper::GetNameForMergeOptionTypeEnum(m_mergeOption));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetMergeConflictsRequest::GetRequestSpecificHeaders() const

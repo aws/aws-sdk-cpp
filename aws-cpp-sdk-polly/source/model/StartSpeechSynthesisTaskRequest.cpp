@@ -110,7 +110,7 @@ Aws::String StartSpeechSynthesisTaskRequest::SerializePayload() const
    payload.WithString("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

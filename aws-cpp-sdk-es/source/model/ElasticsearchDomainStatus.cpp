@@ -53,7 +53,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
 {
 }
 
-ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue) : 
+ElasticsearchDomainStatus::ElasticsearchDomainStatus(JsonView jsonValue) : 
     m_domainIdHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_aRNHasBeenSet(false),
@@ -79,7 +79,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue& jsonValue)
+ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DomainId"))
   {
@@ -125,7 +125,7 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Endpoints"))
   {
-    Aws::Map<Aws::String, JsonValue> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
     for(auto& endpointsItem : endpointsJsonMap)
     {
       m_endpoints[endpointsItem.first] = endpointsItem.second.AsString();
@@ -198,7 +198,7 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
 
   if(jsonValue.ValueExists("AdvancedOptions"))
   {
-    Aws::Map<Aws::String, JsonValue> advancedOptionsJsonMap = jsonValue.GetObject("AdvancedOptions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> advancedOptionsJsonMap = jsonValue.GetObject("AdvancedOptions").GetAllObjects();
     for(auto& advancedOptionsItem : advancedOptionsJsonMap)
     {
       m_advancedOptions[advancedOptionsItem.first] = advancedOptionsItem.second.AsString();
@@ -208,7 +208,7 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
 
   if(jsonValue.ValueExists("LogPublishingOptions"))
   {
-    Aws::Map<Aws::String, JsonValue> logPublishingOptionsJsonMap = jsonValue.GetObject("LogPublishingOptions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> logPublishingOptionsJsonMap = jsonValue.GetObject("LogPublishingOptions").GetAllObjects();
     for(auto& logPublishingOptionsItem : logPublishingOptionsJsonMap)
     {
       m_logPublishingOptions[LogTypeMapper::GetLogTypeForName(logPublishingOptionsItem.first)] = logPublishingOptionsItem.second.AsObject();

@@ -35,7 +35,7 @@ RetentionConfiguration::RetentionConfiguration() :
 {
 }
 
-RetentionConfiguration::RetentionConfiguration(const JsonValue& jsonValue) : 
+RetentionConfiguration::RetentionConfiguration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_retentionPeriodInDays(0),
     m_retentionPeriodInDaysHasBeenSet(false)
@@ -43,7 +43,7 @@ RetentionConfiguration::RetentionConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RetentionConfiguration& RetentionConfiguration::operator =(const JsonValue& jsonValue)
+RetentionConfiguration& RetentionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

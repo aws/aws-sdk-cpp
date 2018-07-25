@@ -35,7 +35,7 @@ SizeConstraintSet::SizeConstraintSet() :
 {
 }
 
-SizeConstraintSet::SizeConstraintSet(const JsonValue& jsonValue) : 
+SizeConstraintSet::SizeConstraintSet(JsonView jsonValue) : 
     m_sizeConstraintSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sizeConstraintsHasBeenSet(false)
@@ -43,7 +43,7 @@ SizeConstraintSet::SizeConstraintSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SizeConstraintSet& SizeConstraintSet::operator =(const JsonValue& jsonValue)
+SizeConstraintSet& SizeConstraintSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SizeConstraintSetId"))
   {
@@ -61,7 +61,7 @@ SizeConstraintSet& SizeConstraintSet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SizeConstraints"))
   {
-    Array<JsonValue> sizeConstraintsJsonList = jsonValue.GetArray("SizeConstraints");
+    Array<JsonView> sizeConstraintsJsonList = jsonValue.GetArray("SizeConstraints");
     for(unsigned sizeConstraintsIndex = 0; sizeConstraintsIndex < sizeConstraintsJsonList.GetLength(); ++sizeConstraintsIndex)
     {
       m_sizeConstraints.push_back(sizeConstraintsJsonList[sizeConstraintsIndex].AsObject());

@@ -72,7 +72,7 @@ Aws::String PutSlotTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

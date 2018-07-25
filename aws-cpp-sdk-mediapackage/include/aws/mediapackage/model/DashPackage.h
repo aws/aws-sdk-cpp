@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaPackage
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     DashPackage();
-    DashPackage(const Aws::Utils::Json::JsonValue& jsonValue);
-    DashPackage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DashPackage(Aws::Utils::Json::JsonView jsonValue);
+    DashPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

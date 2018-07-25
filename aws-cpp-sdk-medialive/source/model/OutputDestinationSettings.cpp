@@ -36,7 +36,7 @@ OutputDestinationSettings::OutputDestinationSettings() :
 {
 }
 
-OutputDestinationSettings::OutputDestinationSettings(const JsonValue& jsonValue) : 
+OutputDestinationSettings::OutputDestinationSettings(JsonView jsonValue) : 
     m_passwordParamHasBeenSet(false),
     m_streamNameHasBeenSet(false),
     m_urlHasBeenSet(false),
@@ -45,7 +45,7 @@ OutputDestinationSettings::OutputDestinationSettings(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-OutputDestinationSettings& OutputDestinationSettings::operator =(const JsonValue& jsonValue)
+OutputDestinationSettings& OutputDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("passwordParam"))
   {

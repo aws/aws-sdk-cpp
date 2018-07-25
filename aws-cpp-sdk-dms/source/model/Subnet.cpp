@@ -35,7 +35,7 @@ Subnet::Subnet() :
 {
 }
 
-Subnet::Subnet(const JsonValue& jsonValue) : 
+Subnet::Subnet(JsonView jsonValue) : 
     m_subnetIdentifierHasBeenSet(false),
     m_subnetAvailabilityZoneHasBeenSet(false),
     m_subnetStatusHasBeenSet(false)
@@ -43,7 +43,7 @@ Subnet::Subnet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Subnet& Subnet::operator =(const JsonValue& jsonValue)
+Subnet& Subnet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SubnetIdentifier"))
   {

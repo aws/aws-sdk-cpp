@@ -32,12 +32,12 @@ Attributes::Attributes()
 {
 }
 
-Attributes::Attributes(const JsonValue& jsonValue)
+Attributes::Attributes(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-Attributes& Attributes::operator =(const JsonValue& jsonValue)
+Attributes& Attributes::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

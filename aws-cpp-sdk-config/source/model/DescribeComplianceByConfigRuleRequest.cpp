@@ -61,7 +61,7 @@ Aws::String DescribeComplianceByConfigRuleRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeComplianceByConfigRuleRequest::GetRequestSpecificHeaders() const

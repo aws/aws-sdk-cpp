@@ -37,7 +37,7 @@ Aws::String ResetJobBookmarkRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ResetJobBookmarkRequest::GetRequestSpecificHeaders() const

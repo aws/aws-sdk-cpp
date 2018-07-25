@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Support
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     TrustedAdvisorResourceDetail();
-    TrustedAdvisorResourceDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    TrustedAdvisorResourceDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TrustedAdvisorResourceDetail(Aws::Utils::Json::JsonView jsonValue);
+    TrustedAdvisorResourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

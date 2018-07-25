@@ -37,7 +37,7 @@ DescribeStackSummaryResult::DescribeStackSummaryResult(const Aws::AmazonWebServi
 
 DescribeStackSummaryResult& DescribeStackSummaryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StackSummary"))
   {
     m_stackSummary = jsonValue.GetObject("StackSummary");

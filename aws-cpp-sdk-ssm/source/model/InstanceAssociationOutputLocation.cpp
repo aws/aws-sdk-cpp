@@ -33,13 +33,13 @@ InstanceAssociationOutputLocation::InstanceAssociationOutputLocation() :
 {
 }
 
-InstanceAssociationOutputLocation::InstanceAssociationOutputLocation(const JsonValue& jsonValue) : 
+InstanceAssociationOutputLocation::InstanceAssociationOutputLocation(JsonView jsonValue) : 
     m_s3LocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceAssociationOutputLocation& InstanceAssociationOutputLocation::operator =(const JsonValue& jsonValue)
+InstanceAssociationOutputLocation& InstanceAssociationOutputLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3Location"))
   {

@@ -38,7 +38,7 @@ StepAdjustment::StepAdjustment() :
 {
 }
 
-StepAdjustment::StepAdjustment(const JsonValue& jsonValue) : 
+StepAdjustment::StepAdjustment(JsonView jsonValue) : 
     m_metricIntervalLowerBound(0.0),
     m_metricIntervalLowerBoundHasBeenSet(false),
     m_metricIntervalUpperBound(0.0),
@@ -49,7 +49,7 @@ StepAdjustment::StepAdjustment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StepAdjustment& StepAdjustment::operator =(const JsonValue& jsonValue)
+StepAdjustment& StepAdjustment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MetricIntervalLowerBound"))
   {

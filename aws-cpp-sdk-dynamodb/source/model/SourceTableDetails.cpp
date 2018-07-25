@@ -42,7 +42,7 @@ SourceTableDetails::SourceTableDetails() :
 {
 }
 
-SourceTableDetails::SourceTableDetails(const JsonValue& jsonValue) : 
+SourceTableDetails::SourceTableDetails(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_tableIdHasBeenSet(false),
     m_tableArnHasBeenSet(false),
@@ -57,7 +57,7 @@ SourceTableDetails::SourceTableDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SourceTableDetails& SourceTableDetails::operator =(const JsonValue& jsonValue)
+SourceTableDetails& SourceTableDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TableName"))
   {
@@ -89,7 +89,7 @@ SourceTableDetails& SourceTableDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());

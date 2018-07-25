@@ -33,13 +33,13 @@ CreateApplicationRequest::CreateApplicationRequest() :
 {
 }
 
-CreateApplicationRequest::CreateApplicationRequest(const JsonValue& jsonValue) : 
+CreateApplicationRequest::CreateApplicationRequest(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CreateApplicationRequest& CreateApplicationRequest::operator =(const JsonValue& jsonValue)
+CreateApplicationRequest& CreateApplicationRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

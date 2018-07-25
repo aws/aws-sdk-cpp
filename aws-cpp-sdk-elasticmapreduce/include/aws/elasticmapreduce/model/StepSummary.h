@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     StepSummary();
-    StepSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    StepSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StepSummary(Aws::Utils::Json::JsonView jsonValue);
+    StepSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

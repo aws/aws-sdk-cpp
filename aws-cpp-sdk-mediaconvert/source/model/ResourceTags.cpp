@@ -34,14 +34,14 @@ ResourceTags::ResourceTags() :
 {
 }
 
-ResourceTags::ResourceTags(const JsonValue& jsonValue) : 
+ResourceTags::ResourceTags(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourceTags& ResourceTags::operator =(const JsonValue& jsonValue)
+ResourceTags& ResourceTags::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -52,7 +52,7 @@ ResourceTags& ResourceTags::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();

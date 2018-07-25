@@ -66,7 +66,7 @@ Aws::String AllocateHostedConnectionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AllocateHostedConnectionRequest::GetRequestSpecificHeaders() const

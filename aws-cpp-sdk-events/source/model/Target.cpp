@@ -43,7 +43,7 @@ Target::Target() :
 {
 }
 
-Target::Target(const JsonValue& jsonValue) : 
+Target::Target(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -59,7 +59,7 @@ Target::Target(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Target& Target::operator =(const JsonValue& jsonValue)
+Target& Target::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

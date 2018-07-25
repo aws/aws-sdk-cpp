@@ -39,7 +39,7 @@ PutParameterResult::PutParameterResult(const Aws::AmazonWebServiceResult<JsonVal
 
 PutParameterResult& PutParameterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");

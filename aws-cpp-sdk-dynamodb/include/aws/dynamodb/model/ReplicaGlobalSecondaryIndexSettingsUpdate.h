@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ReplicaGlobalSecondaryIndexSettingsUpdate();
-    ReplicaGlobalSecondaryIndexSettingsUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReplicaGlobalSecondaryIndexSettingsUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReplicaGlobalSecondaryIndexSettingsUpdate(Aws::Utils::Json::JsonView jsonValue);
+    ReplicaGlobalSecondaryIndexSettingsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

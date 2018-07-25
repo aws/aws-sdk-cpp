@@ -51,7 +51,7 @@ Aws::String PutLifecyclePolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutLifecyclePolicyRequest::GetRequestSpecificHeaders() const

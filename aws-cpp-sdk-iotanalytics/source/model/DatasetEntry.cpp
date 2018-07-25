@@ -34,14 +34,14 @@ DatasetEntry::DatasetEntry() :
 {
 }
 
-DatasetEntry::DatasetEntry(const JsonValue& jsonValue) : 
+DatasetEntry::DatasetEntry(JsonView jsonValue) : 
     m_entryNameHasBeenSet(false),
     m_dataURIHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DatasetEntry& DatasetEntry::operator =(const JsonValue& jsonValue)
+DatasetEntry& DatasetEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("entryName"))
   {

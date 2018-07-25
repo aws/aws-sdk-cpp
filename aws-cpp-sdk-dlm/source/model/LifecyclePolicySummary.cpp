@@ -36,7 +36,7 @@ LifecyclePolicySummary::LifecyclePolicySummary() :
 {
 }
 
-LifecyclePolicySummary::LifecyclePolicySummary(const JsonValue& jsonValue) : 
+LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue) : 
     m_policyIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_state(GettablePolicyStateValues::NOT_SET),
@@ -45,7 +45,7 @@ LifecyclePolicySummary::LifecyclePolicySummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LifecyclePolicySummary& LifecyclePolicySummary::operator =(const JsonValue& jsonValue)
+LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyId"))
   {

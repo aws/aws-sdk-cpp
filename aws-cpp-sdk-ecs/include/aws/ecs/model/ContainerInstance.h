@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -49,14 +50,14 @@ namespace Model
   {
   public:
     ContainerInstance();
-    ContainerInstance(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContainerInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContainerInstance(Aws::Utils::Json::JsonView jsonValue);
+    ContainerInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -67,7 +68,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -78,7 +79,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -89,7 +90,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -100,7 +101,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -111,7 +112,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -122,7 +123,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -484,7 +485,7 @@ namespace Model
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
      * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Instances without a connected agent can't accept placement
+     * <code>false</code>. Only instances connected to an agent can accept placement
      * requests.</p>
      */
     inline bool GetAgentConnected() const{ return m_agentConnected; }
@@ -492,7 +493,7 @@ namespace Model
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
      * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Instances without a connected agent can't accept placement
+     * <code>false</code>. Only instances connected to an agent can accept placement
      * requests.</p>
      */
     inline void SetAgentConnected(bool value) { m_agentConnectedHasBeenSet = true; m_agentConnected = value; }
@@ -500,7 +501,7 @@ namespace Model
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
      * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Instances without a connected agent can't accept placement
+     * <code>false</code>. Only instances connected to an agent can accept placement
      * requests.</p>
      */
     inline ContainerInstance& WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
@@ -652,37 +653,37 @@ namespace Model
 
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 

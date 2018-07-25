@@ -37,10 +37,10 @@ DescribeElasticsearchDomainsResult::DescribeElasticsearchDomainsResult(const Aws
 
 DescribeElasticsearchDomainsResult& DescribeElasticsearchDomainsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DomainStatusList"))
   {
-    Array<JsonValue> domainStatusListJsonList = jsonValue.GetArray("DomainStatusList");
+    Array<JsonView> domainStatusListJsonList = jsonValue.GetArray("DomainStatusList");
     for(unsigned domainStatusListIndex = 0; domainStatusListIndex < domainStatusListJsonList.GetLength(); ++domainStatusListIndex)
     {
       m_domainStatusList.push_back(domainStatusListJsonList[domainStatusListIndex].AsObject());

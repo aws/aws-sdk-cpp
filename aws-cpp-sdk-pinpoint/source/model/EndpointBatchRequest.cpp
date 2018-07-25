@@ -33,17 +33,17 @@ EndpointBatchRequest::EndpointBatchRequest() :
 {
 }
 
-EndpointBatchRequest::EndpointBatchRequest(const JsonValue& jsonValue) : 
+EndpointBatchRequest::EndpointBatchRequest(JsonView jsonValue) : 
     m_itemHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EndpointBatchRequest& EndpointBatchRequest::operator =(const JsonValue& jsonValue)
+EndpointBatchRequest& EndpointBatchRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Item"))
   {
-    Array<JsonValue> itemJsonList = jsonValue.GetArray("Item");
+    Array<JsonView> itemJsonList = jsonValue.GetArray("Item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_item.push_back(itemJsonList[itemIndex].AsObject());

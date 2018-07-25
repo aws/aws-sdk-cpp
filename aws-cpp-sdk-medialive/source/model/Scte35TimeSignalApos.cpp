@@ -38,7 +38,7 @@ Scte35TimeSignalApos::Scte35TimeSignalApos() :
 {
 }
 
-Scte35TimeSignalApos::Scte35TimeSignalApos(const JsonValue& jsonValue) : 
+Scte35TimeSignalApos::Scte35TimeSignalApos(JsonView jsonValue) : 
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_noRegionalBlackoutFlag(Scte35AposNoRegionalBlackoutBehavior::NOT_SET),
@@ -49,7 +49,7 @@ Scte35TimeSignalApos::Scte35TimeSignalApos(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Scte35TimeSignalApos& Scte35TimeSignalApos::operator =(const JsonValue& jsonValue)
+Scte35TimeSignalApos& Scte35TimeSignalApos::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adAvailOffset"))
   {

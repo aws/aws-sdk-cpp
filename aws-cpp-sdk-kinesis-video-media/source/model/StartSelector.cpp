@@ -37,7 +37,7 @@ StartSelector::StartSelector() :
 {
 }
 
-StartSelector::StartSelector(const JsonValue& jsonValue) : 
+StartSelector::StartSelector(JsonView jsonValue) : 
     m_startSelectorType(StartSelectorType::NOT_SET),
     m_startSelectorTypeHasBeenSet(false),
     m_afterFragmentNumberHasBeenSet(false),
@@ -47,7 +47,7 @@ StartSelector::StartSelector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StartSelector& StartSelector::operator =(const JsonValue& jsonValue)
+StartSelector& StartSelector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartSelectorType"))
   {

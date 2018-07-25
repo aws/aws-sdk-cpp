@@ -39,7 +39,7 @@ FilteredLogEvent::FilteredLogEvent() :
 {
 }
 
-FilteredLogEvent::FilteredLogEvent(const JsonValue& jsonValue) : 
+FilteredLogEvent::FilteredLogEvent(JsonView jsonValue) : 
     m_logStreamNameHasBeenSet(false),
     m_timestamp(0),
     m_timestampHasBeenSet(false),
@@ -51,7 +51,7 @@ FilteredLogEvent::FilteredLogEvent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FilteredLogEvent& FilteredLogEvent::operator =(const JsonValue& jsonValue)
+FilteredLogEvent& FilteredLogEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("logStreamName"))
   {

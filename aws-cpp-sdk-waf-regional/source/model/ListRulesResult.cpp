@@ -37,7 +37,7 @@ ListRulesResult::ListRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 ListRulesResult& ListRulesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListRulesResult& ListRulesResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonValue> rulesJsonList = jsonValue.GetArray("Rules");
+    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

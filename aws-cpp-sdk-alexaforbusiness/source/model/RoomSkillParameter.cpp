@@ -34,14 +34,14 @@ RoomSkillParameter::RoomSkillParameter() :
 {
 }
 
-RoomSkillParameter::RoomSkillParameter(const JsonValue& jsonValue) : 
+RoomSkillParameter::RoomSkillParameter(JsonView jsonValue) : 
     m_parameterKeyHasBeenSet(false),
     m_parameterValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RoomSkillParameter& RoomSkillParameter::operator =(const JsonValue& jsonValue)
+RoomSkillParameter& RoomSkillParameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterKey"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     TapeInfo();
-    TapeInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    TapeInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TapeInfo(Aws::Utils::Json::JsonView jsonValue);
+    TapeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

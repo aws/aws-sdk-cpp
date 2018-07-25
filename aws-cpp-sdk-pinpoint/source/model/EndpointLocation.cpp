@@ -40,7 +40,7 @@ EndpointLocation::EndpointLocation() :
 {
 }
 
-EndpointLocation::EndpointLocation(const JsonValue& jsonValue) : 
+EndpointLocation::EndpointLocation(JsonView jsonValue) : 
     m_cityHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_latitude(0.0),
@@ -53,7 +53,7 @@ EndpointLocation::EndpointLocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EndpointLocation& EndpointLocation::operator =(const JsonValue& jsonValue)
+EndpointLocation& EndpointLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("City"))
   {

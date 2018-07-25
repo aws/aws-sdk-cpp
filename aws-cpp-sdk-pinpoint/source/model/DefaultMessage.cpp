@@ -34,14 +34,14 @@ DefaultMessage::DefaultMessage() :
 {
 }
 
-DefaultMessage::DefaultMessage(const JsonValue& jsonValue) : 
+DefaultMessage::DefaultMessage(JsonView jsonValue) : 
     m_bodyHasBeenSet(false),
     m_substitutionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DefaultMessage& DefaultMessage::operator =(const JsonValue& jsonValue)
+DefaultMessage& DefaultMessage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Body"))
   {
@@ -52,10 +52,10 @@ DefaultMessage& DefaultMessage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Substitutions"))
   {
-    Aws::Map<Aws::String, JsonValue> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
     for(auto& substitutionsItem : substitutionsJsonMap)
     {
-      Array<JsonValue> listOf__stringJsonList = substitutionsItem.second.AsArray();
+      Array<JsonView> listOf__stringJsonList = substitutionsItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)

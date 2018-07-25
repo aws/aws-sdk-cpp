@@ -49,7 +49,7 @@ TraceSummary::TraceSummary() :
 {
 }
 
-TraceSummary::TraceSummary(const JsonValue& jsonValue) : 
+TraceSummary::TraceSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_duration(0.0),
     m_durationHasBeenSet(false),
@@ -71,7 +71,7 @@ TraceSummary::TraceSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TraceSummary& TraceSummary::operator =(const JsonValue& jsonValue)
+TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -131,10 +131,10 @@ TraceSummary& TraceSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Annotations"))
   {
-    Aws::Map<Aws::String, JsonValue> annotationsJsonMap = jsonValue.GetObject("Annotations").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> annotationsJsonMap = jsonValue.GetObject("Annotations").GetAllObjects();
     for(auto& annotationsItem : annotationsJsonMap)
     {
-      Array<JsonValue> valuesWithServiceIdsJsonList = annotationsItem.second.AsArray();
+      Array<JsonView> valuesWithServiceIdsJsonList = annotationsItem.second.AsArray();
       Aws::Vector<ValueWithServiceIds> valuesWithServiceIdsList;
       valuesWithServiceIdsList.reserve((size_t)valuesWithServiceIdsJsonList.GetLength());
       for(unsigned valuesWithServiceIdsIndex = 0; valuesWithServiceIdsIndex < valuesWithServiceIdsJsonList.GetLength(); ++valuesWithServiceIdsIndex)
@@ -148,7 +148,7 @@ TraceSummary& TraceSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Users"))
   {
-    Array<JsonValue> usersJsonList = jsonValue.GetArray("Users");
+    Array<JsonView> usersJsonList = jsonValue.GetArray("Users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());
@@ -158,7 +158,7 @@ TraceSummary& TraceSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ServiceIds"))
   {
-    Array<JsonValue> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
+    Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
     for(unsigned serviceIdsIndex = 0; serviceIdsIndex < serviceIdsJsonList.GetLength(); ++serviceIdsIndex)
     {
       m_serviceIds.push_back(serviceIdsJsonList[serviceIdsIndex].AsObject());

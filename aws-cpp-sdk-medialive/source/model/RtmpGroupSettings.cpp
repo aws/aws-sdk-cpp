@@ -42,7 +42,7 @@ RtmpGroupSettings::RtmpGroupSettings() :
 {
 }
 
-RtmpGroupSettings::RtmpGroupSettings(const JsonValue& jsonValue) : 
+RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue) : 
     m_authenticationScheme(AuthenticationScheme::NOT_SET),
     m_authenticationSchemeHasBeenSet(false),
     m_cacheFullBehavior(RtmpCacheFullBehavior::NOT_SET),
@@ -57,7 +57,7 @@ RtmpGroupSettings::RtmpGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RtmpGroupSettings& RtmpGroupSettings::operator =(const JsonValue& jsonValue)
+RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("authenticationScheme"))
   {

@@ -34,14 +34,14 @@ DeviceStatusDetail::DeviceStatusDetail() :
 {
 }
 
-DeviceStatusDetail::DeviceStatusDetail(const JsonValue& jsonValue) : 
+DeviceStatusDetail::DeviceStatusDetail(JsonView jsonValue) : 
     m_code(DeviceStatusDetailCode::NOT_SET),
     m_codeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeviceStatusDetail& DeviceStatusDetail::operator =(const JsonValue& jsonValue)
+DeviceStatusDetail& DeviceStatusDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

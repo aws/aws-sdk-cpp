@@ -34,14 +34,14 @@ InputLambdaProcessor::InputLambdaProcessor() :
 {
 }
 
-InputLambdaProcessor::InputLambdaProcessor(const JsonValue& jsonValue) : 
+InputLambdaProcessor::InputLambdaProcessor(JsonView jsonValue) : 
     m_resourceARNHasBeenSet(false),
     m_roleARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputLambdaProcessor& InputLambdaProcessor::operator =(const JsonValue& jsonValue)
+InputLambdaProcessor& InputLambdaProcessor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceARN"))
   {

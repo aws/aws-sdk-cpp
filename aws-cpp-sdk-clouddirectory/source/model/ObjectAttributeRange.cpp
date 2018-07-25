@@ -34,14 +34,14 @@ ObjectAttributeRange::ObjectAttributeRange() :
 {
 }
 
-ObjectAttributeRange::ObjectAttributeRange(const JsonValue& jsonValue) : 
+ObjectAttributeRange::ObjectAttributeRange(JsonView jsonValue) : 
     m_attributeKeyHasBeenSet(false),
     m_rangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ObjectAttributeRange& ObjectAttributeRange::operator =(const JsonValue& jsonValue)
+ObjectAttributeRange& ObjectAttributeRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeKey"))
   {

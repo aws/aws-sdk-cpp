@@ -38,7 +38,7 @@ OfferingStatus::OfferingStatus() :
 {
 }
 
-OfferingStatus::OfferingStatus(const JsonValue& jsonValue) : 
+OfferingStatus::OfferingStatus(JsonView jsonValue) : 
     m_type(OfferingTransactionType::NOT_SET),
     m_typeHasBeenSet(false),
     m_offeringHasBeenSet(false),
@@ -49,7 +49,7 @@ OfferingStatus::OfferingStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OfferingStatus& OfferingStatus::operator =(const JsonValue& jsonValue)
+OfferingStatus& OfferingStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

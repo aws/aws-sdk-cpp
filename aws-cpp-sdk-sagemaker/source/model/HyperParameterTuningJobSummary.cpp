@@ -44,7 +44,7 @@ HyperParameterTuningJobSummary::HyperParameterTuningJobSummary() :
 {
 }
 
-HyperParameterTuningJobSummary::HyperParameterTuningJobSummary(const JsonValue& jsonValue) : 
+HyperParameterTuningJobSummary::HyperParameterTuningJobSummary(JsonView jsonValue) : 
     m_hyperParameterTuningJobNameHasBeenSet(false),
     m_hyperParameterTuningJobArnHasBeenSet(false),
     m_hyperParameterTuningJobStatus(HyperParameterTuningJobStatus::NOT_SET),
@@ -61,7 +61,7 @@ HyperParameterTuningJobSummary::HyperParameterTuningJobSummary(const JsonValue& 
   *this = jsonValue;
 }
 
-HyperParameterTuningJobSummary& HyperParameterTuningJobSummary::operator =(const JsonValue& jsonValue)
+HyperParameterTuningJobSummary& HyperParameterTuningJobSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("HyperParameterTuningJobName"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Health
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     DateTimeRange();
-    DateTimeRange(const Aws::Utils::Json::JsonValue& jsonValue);
-    DateTimeRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DateTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    DateTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

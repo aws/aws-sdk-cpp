@@ -33,13 +33,13 @@ Coverage::Coverage() :
 {
 }
 
-Coverage::Coverage(const JsonValue& jsonValue) : 
+Coverage::Coverage(JsonView jsonValue) : 
     m_coverageHoursHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Coverage& Coverage::operator =(const JsonValue& jsonValue)
+Coverage& Coverage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CoverageHours"))
   {

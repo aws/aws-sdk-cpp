@@ -44,7 +44,7 @@ Aws::String GetPatchBaselineForPatchGroupRequest::SerializePayload() const
    payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetPatchBaselineForPatchGroupRequest::GetRequestSpecificHeaders() const

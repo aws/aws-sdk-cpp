@@ -45,7 +45,7 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
 {
 }
 
-DashIsoGroupSettings::DashIsoGroupSettings(const JsonValue& jsonValue) : 
+DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) : 
     m_baseUrlHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -63,7 +63,7 @@ DashIsoGroupSettings::DashIsoGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DashIsoGroupSettings& DashIsoGroupSettings::operator =(const JsonValue& jsonValue)
+DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("baseUrl"))
   {

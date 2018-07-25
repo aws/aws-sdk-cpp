@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ThingTypeProperties();
-    ThingTypeProperties(const Aws::Utils::Json::JsonValue& jsonValue);
-    ThingTypeProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ThingTypeProperties(Aws::Utils::Json::JsonView jsonValue);
+    ThingTypeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

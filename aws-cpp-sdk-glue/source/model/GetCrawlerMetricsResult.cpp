@@ -37,10 +37,10 @@ GetCrawlerMetricsResult::GetCrawlerMetricsResult(const Aws::AmazonWebServiceResu
 
 GetCrawlerMetricsResult& GetCrawlerMetricsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CrawlerMetricsList"))
   {
-    Array<JsonValue> crawlerMetricsListJsonList = jsonValue.GetArray("CrawlerMetricsList");
+    Array<JsonView> crawlerMetricsListJsonList = jsonValue.GetArray("CrawlerMetricsList");
     for(unsigned crawlerMetricsListIndex = 0; crawlerMetricsListIndex < crawlerMetricsListJsonList.GetLength(); ++crawlerMetricsListIndex)
     {
       m_crawlerMetricsList.push_back(crawlerMetricsListJsonList[crawlerMetricsListIndex].AsObject());

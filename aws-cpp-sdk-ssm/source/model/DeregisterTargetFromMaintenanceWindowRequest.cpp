@@ -52,7 +52,7 @@ Aws::String DeregisterTargetFromMaintenanceWindowRequest::SerializePayload() con
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeregisterTargetFromMaintenanceWindowRequest::GetRequestSpecificHeaders() const

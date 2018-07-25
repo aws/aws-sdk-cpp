@@ -37,7 +37,7 @@ Aws::String StopDominantLanguageDetectionJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopDominantLanguageDetectionJobRequest::GetRequestSpecificHeaders() const

@@ -46,7 +46,7 @@ ApplicationDetail::ApplicationDetail() :
 {
 }
 
-ApplicationDetail::ApplicationDetail(const JsonValue& jsonValue) : 
+ApplicationDetail::ApplicationDetail(JsonView jsonValue) : 
     m_applicationNameHasBeenSet(false),
     m_applicationDescriptionHasBeenSet(false),
     m_applicationARNHasBeenSet(false),
@@ -65,7 +65,7 @@ ApplicationDetail::ApplicationDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApplicationDetail& ApplicationDetail::operator =(const JsonValue& jsonValue)
+ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationName"))
   {
@@ -111,7 +111,7 @@ ApplicationDetail& ApplicationDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("InputDescriptions"))
   {
-    Array<JsonValue> inputDescriptionsJsonList = jsonValue.GetArray("InputDescriptions");
+    Array<JsonView> inputDescriptionsJsonList = jsonValue.GetArray("InputDescriptions");
     for(unsigned inputDescriptionsIndex = 0; inputDescriptionsIndex < inputDescriptionsJsonList.GetLength(); ++inputDescriptionsIndex)
     {
       m_inputDescriptions.push_back(inputDescriptionsJsonList[inputDescriptionsIndex].AsObject());
@@ -121,7 +121,7 @@ ApplicationDetail& ApplicationDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("OutputDescriptions"))
   {
-    Array<JsonValue> outputDescriptionsJsonList = jsonValue.GetArray("OutputDescriptions");
+    Array<JsonView> outputDescriptionsJsonList = jsonValue.GetArray("OutputDescriptions");
     for(unsigned outputDescriptionsIndex = 0; outputDescriptionsIndex < outputDescriptionsJsonList.GetLength(); ++outputDescriptionsIndex)
     {
       m_outputDescriptions.push_back(outputDescriptionsJsonList[outputDescriptionsIndex].AsObject());
@@ -131,7 +131,7 @@ ApplicationDetail& ApplicationDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ReferenceDataSourceDescriptions"))
   {
-    Array<JsonValue> referenceDataSourceDescriptionsJsonList = jsonValue.GetArray("ReferenceDataSourceDescriptions");
+    Array<JsonView> referenceDataSourceDescriptionsJsonList = jsonValue.GetArray("ReferenceDataSourceDescriptions");
     for(unsigned referenceDataSourceDescriptionsIndex = 0; referenceDataSourceDescriptionsIndex < referenceDataSourceDescriptionsJsonList.GetLength(); ++referenceDataSourceDescriptionsIndex)
     {
       m_referenceDataSourceDescriptions.push_back(referenceDataSourceDescriptionsJsonList[referenceDataSourceDescriptionsIndex].AsObject());
@@ -141,7 +141,7 @@ ApplicationDetail& ApplicationDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CloudWatchLoggingOptionDescriptions"))
   {
-    Array<JsonValue> cloudWatchLoggingOptionDescriptionsJsonList = jsonValue.GetArray("CloudWatchLoggingOptionDescriptions");
+    Array<JsonView> cloudWatchLoggingOptionDescriptionsJsonList = jsonValue.GetArray("CloudWatchLoggingOptionDescriptions");
     for(unsigned cloudWatchLoggingOptionDescriptionsIndex = 0; cloudWatchLoggingOptionDescriptionsIndex < cloudWatchLoggingOptionDescriptionsJsonList.GetLength(); ++cloudWatchLoggingOptionDescriptionsIndex)
     {
       m_cloudWatchLoggingOptionDescriptions.push_back(cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject());

@@ -38,7 +38,7 @@ Hits::Hits() :
 {
 }
 
-Hits::Hits(const JsonValue& jsonValue) : 
+Hits::Hits(JsonView jsonValue) : 
     m_found(0),
     m_foundHasBeenSet(false),
     m_start(0),
@@ -49,7 +49,7 @@ Hits::Hits(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Hits& Hits::operator =(const JsonValue& jsonValue)
+Hits& Hits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("found"))
   {
@@ -74,7 +74,7 @@ Hits& Hits::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("hit"))
   {
-    Array<JsonValue> hitJsonList = jsonValue.GetArray("hit");
+    Array<JsonView> hitJsonList = jsonValue.GetArray("hit");
     for(unsigned hitIndex = 0; hitIndex < hitJsonList.GetLength(); ++hitIndex)
     {
       m_hit.push_back(hitJsonList[hitIndex].AsObject());

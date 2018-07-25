@@ -37,7 +37,7 @@ GrantAccessResult::GrantAccessResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GrantAccessResult& GrantAccessResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TemporaryCredential"))
   {
     m_temporaryCredential = jsonValue.GetObject("TemporaryCredential");

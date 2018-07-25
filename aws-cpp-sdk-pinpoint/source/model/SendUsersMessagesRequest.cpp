@@ -37,7 +37,7 @@ Aws::String SendUsersMessagesRequest::SerializePayload() const
    payload = m_sendUsersMessageRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

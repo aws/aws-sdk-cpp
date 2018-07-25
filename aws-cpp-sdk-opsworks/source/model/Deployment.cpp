@@ -45,7 +45,7 @@ Deployment::Deployment() :
 {
 }
 
-Deployment::Deployment(const JsonValue& jsonValue) : 
+Deployment::Deployment(JsonView jsonValue) : 
     m_deploymentIdHasBeenSet(false),
     m_stackIdHasBeenSet(false),
     m_appIdHasBeenSet(false),
@@ -63,7 +63,7 @@ Deployment::Deployment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Deployment& Deployment::operator =(const JsonValue& jsonValue)
+Deployment& Deployment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeploymentId"))
   {
@@ -144,7 +144,7 @@ Deployment& Deployment::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("InstanceIds"))
   {
-    Array<JsonValue> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
+    Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
     for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
     {
       m_instanceIds.push_back(instanceIdsJsonList[instanceIdsIndex].AsString());

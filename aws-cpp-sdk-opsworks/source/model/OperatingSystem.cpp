@@ -40,7 +40,7 @@ OperatingSystem::OperatingSystem() :
 {
 }
 
-OperatingSystem::OperatingSystem(const JsonValue& jsonValue) : 
+OperatingSystem::OperatingSystem(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
@@ -53,7 +53,7 @@ OperatingSystem::OperatingSystem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OperatingSystem& OperatingSystem::operator =(const JsonValue& jsonValue)
+OperatingSystem& OperatingSystem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -78,7 +78,7 @@ OperatingSystem& OperatingSystem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ConfigurationManagers"))
   {
-    Array<JsonValue> configurationManagersJsonList = jsonValue.GetArray("ConfigurationManagers");
+    Array<JsonView> configurationManagersJsonList = jsonValue.GetArray("ConfigurationManagers");
     for(unsigned configurationManagersIndex = 0; configurationManagersIndex < configurationManagersJsonList.GetLength(); ++configurationManagersIndex)
     {
       m_configurationManagers.push_back(configurationManagersJsonList[configurationManagersIndex].AsObject());

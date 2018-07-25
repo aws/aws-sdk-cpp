@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     FileSourceSettings();
-    FileSourceSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    FileSourceSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FileSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    FileSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

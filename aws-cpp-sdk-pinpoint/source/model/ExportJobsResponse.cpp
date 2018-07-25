@@ -34,18 +34,18 @@ ExportJobsResponse::ExportJobsResponse() :
 {
 }
 
-ExportJobsResponse::ExportJobsResponse(const JsonValue& jsonValue) : 
+ExportJobsResponse::ExportJobsResponse(JsonView jsonValue) : 
     m_itemHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ExportJobsResponse& ExportJobsResponse::operator =(const JsonValue& jsonValue)
+ExportJobsResponse& ExportJobsResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Item"))
   {
-    Array<JsonValue> itemJsonList = jsonValue.GetArray("Item");
+    Array<JsonView> itemJsonList = jsonValue.GetArray("Item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_item.push_back(itemJsonList[itemIndex].AsObject());

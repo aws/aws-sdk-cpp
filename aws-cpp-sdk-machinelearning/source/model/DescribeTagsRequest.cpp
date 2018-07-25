@@ -44,7 +44,7 @@ Aws::String DescribeTagsRequest::SerializePayload() const
    payload.WithString("ResourceType", TaggableResourceTypeMapper::GetNameForTaggableResourceType(m_resourceType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTagsRequest::GetRequestSpecificHeaders() const

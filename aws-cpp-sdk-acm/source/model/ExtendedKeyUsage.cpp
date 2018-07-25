@@ -35,7 +35,7 @@ ExtendedKeyUsage::ExtendedKeyUsage() :
 {
 }
 
-ExtendedKeyUsage::ExtendedKeyUsage(const JsonValue& jsonValue) : 
+ExtendedKeyUsage::ExtendedKeyUsage(JsonView jsonValue) : 
     m_name(ExtendedKeyUsageName::NOT_SET),
     m_nameHasBeenSet(false),
     m_oIDHasBeenSet(false)
@@ -43,7 +43,7 @@ ExtendedKeyUsage::ExtendedKeyUsage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExtendedKeyUsage& ExtendedKeyUsage::operator =(const JsonValue& jsonValue)
+ExtendedKeyUsage& ExtendedKeyUsage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

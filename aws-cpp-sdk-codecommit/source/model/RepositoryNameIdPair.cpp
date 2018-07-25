@@ -34,14 +34,14 @@ RepositoryNameIdPair::RepositoryNameIdPair() :
 {
 }
 
-RepositoryNameIdPair::RepositoryNameIdPair(const JsonValue& jsonValue) : 
+RepositoryNameIdPair::RepositoryNameIdPair(JsonView jsonValue) : 
     m_repositoryNameHasBeenSet(false),
     m_repositoryIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RepositoryNameIdPair& RepositoryNameIdPair::operator =(const JsonValue& jsonValue)
+RepositoryNameIdPair& RepositoryNameIdPair::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositoryName"))
   {

@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ObjectiveStatusCounters();
-    ObjectiveStatusCounters(const Aws::Utils::Json::JsonValue& jsonValue);
-    ObjectiveStatusCounters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ObjectiveStatusCounters(Aws::Utils::Json::JsonView jsonValue);
+    ObjectiveStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

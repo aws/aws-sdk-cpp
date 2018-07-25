@@ -37,10 +37,10 @@ ListRootsResult::ListRootsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 ListRootsResult& ListRootsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Roots"))
   {
-    Array<JsonValue> rootsJsonList = jsonValue.GetArray("Roots");
+    Array<JsonView> rootsJsonList = jsonValue.GetArray("Roots");
     for(unsigned rootsIndex = 0; rootsIndex < rootsJsonList.GetLength(); ++rootsIndex)
     {
       m_roots.push_back(rootsJsonList[rootsIndex].AsObject());

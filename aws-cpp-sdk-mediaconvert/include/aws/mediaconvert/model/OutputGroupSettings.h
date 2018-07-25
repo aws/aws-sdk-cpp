@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     OutputGroupSettings();
-    OutputGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    OutputGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

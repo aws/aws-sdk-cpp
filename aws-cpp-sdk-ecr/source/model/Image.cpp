@@ -36,7 +36,7 @@ Image::Image() :
 {
 }
 
-Image::Image(const JsonValue& jsonValue) : 
+Image::Image(JsonView jsonValue) : 
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_imageIdHasBeenSet(false),
@@ -45,7 +45,7 @@ Image::Image(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Image& Image::operator =(const JsonValue& jsonValue)
+Image& Image::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("registryId"))
   {

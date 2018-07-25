@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MTurk
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     NotifyWorkersFailureStatus();
-    NotifyWorkersFailureStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    NotifyWorkersFailureStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NotifyWorkersFailureStatus(Aws::Utils::Json::JsonView jsonValue);
+    NotifyWorkersFailureStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -45,7 +45,7 @@ Aws::String ListProgressUpdateStreamsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListProgressUpdateStreamsRequest::GetRequestSpecificHeaders() const

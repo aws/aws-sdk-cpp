@@ -37,10 +37,10 @@ DescribeInventoryDeletionsResult::DescribeInventoryDeletionsResult(const Aws::Am
 
 DescribeInventoryDeletionsResult& DescribeInventoryDeletionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InventoryDeletions"))
   {
-    Array<JsonValue> inventoryDeletionsJsonList = jsonValue.GetArray("InventoryDeletions");
+    Array<JsonView> inventoryDeletionsJsonList = jsonValue.GetArray("InventoryDeletions");
     for(unsigned inventoryDeletionsIndex = 0; inventoryDeletionsIndex < inventoryDeletionsJsonList.GetLength(); ++inventoryDeletionsIndex)
     {
       m_inventoryDeletions.push_back(inventoryDeletionsJsonList[inventoryDeletionsIndex].AsObject());

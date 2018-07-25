@@ -36,7 +36,7 @@ NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary()
 {
 }
 
-NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary(const JsonValue& jsonValue) : 
+NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary(JsonView jsonValue) : 
     m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
     m_notebookInstanceLifecycleConfigArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -45,7 +45,7 @@ NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary(c
   *this = jsonValue;
 }
 
-NotebookInstanceLifecycleConfigSummary& NotebookInstanceLifecycleConfigSummary::operator =(const JsonValue& jsonValue)
+NotebookInstanceLifecycleConfigSummary& NotebookInstanceLifecycleConfigSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigName"))
   {

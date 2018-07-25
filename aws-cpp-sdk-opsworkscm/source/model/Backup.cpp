@@ -56,7 +56,7 @@ Backup::Backup() :
 {
 }
 
-Backup::Backup(const JsonValue& jsonValue) : 
+Backup::Backup(JsonView jsonValue) : 
     m_backupArnHasBeenSet(false),
     m_backupIdHasBeenSet(false),
     m_backupType(BackupType::NOT_SET),
@@ -85,7 +85,7 @@ Backup::Backup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Backup& Backup::operator =(const JsonValue& jsonValue)
+Backup& Backup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BackupArn"))
   {
@@ -187,7 +187,7 @@ Backup& Backup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -225,7 +225,7 @@ Backup& Backup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());

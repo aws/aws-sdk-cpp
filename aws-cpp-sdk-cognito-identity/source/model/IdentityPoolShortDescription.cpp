@@ -34,14 +34,14 @@ IdentityPoolShortDescription::IdentityPoolShortDescription() :
 {
 }
 
-IdentityPoolShortDescription::IdentityPoolShortDescription(const JsonValue& jsonValue) : 
+IdentityPoolShortDescription::IdentityPoolShortDescription(JsonView jsonValue) : 
     m_identityPoolIdHasBeenSet(false),
     m_identityPoolNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-IdentityPoolShortDescription& IdentityPoolShortDescription::operator =(const JsonValue& jsonValue)
+IdentityPoolShortDescription& IdentityPoolShortDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IdentityPoolId"))
   {

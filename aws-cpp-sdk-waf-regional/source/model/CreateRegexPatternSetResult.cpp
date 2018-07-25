@@ -37,7 +37,7 @@ CreateRegexPatternSetResult::CreateRegexPatternSetResult(const Aws::AmazonWebSer
 
 CreateRegexPatternSetResult& CreateRegexPatternSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RegexPatternSet"))
   {
     m_regexPatternSet = jsonValue.GetObject("RegexPatternSet");

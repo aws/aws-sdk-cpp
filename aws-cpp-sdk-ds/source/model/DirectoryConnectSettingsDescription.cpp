@@ -38,7 +38,7 @@ DirectoryConnectSettingsDescription::DirectoryConnectSettingsDescription() :
 {
 }
 
-DirectoryConnectSettingsDescription::DirectoryConnectSettingsDescription(const JsonValue& jsonValue) : 
+DirectoryConnectSettingsDescription::DirectoryConnectSettingsDescription(JsonView jsonValue) : 
     m_vpcIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_customerUserNameHasBeenSet(false),
@@ -49,7 +49,7 @@ DirectoryConnectSettingsDescription::DirectoryConnectSettingsDescription(const J
   *this = jsonValue;
 }
 
-DirectoryConnectSettingsDescription& DirectoryConnectSettingsDescription::operator =(const JsonValue& jsonValue)
+DirectoryConnectSettingsDescription& DirectoryConnectSettingsDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VpcId"))
   {
@@ -60,7 +60,7 @@ DirectoryConnectSettingsDescription& DirectoryConnectSettingsDescription::operat
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -84,7 +84,7 @@ DirectoryConnectSettingsDescription& DirectoryConnectSettingsDescription::operat
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonValue> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
@@ -94,7 +94,7 @@ DirectoryConnectSettingsDescription& DirectoryConnectSettingsDescription::operat
 
   if(jsonValue.ValueExists("ConnectIps"))
   {
-    Array<JsonValue> connectIpsJsonList = jsonValue.GetArray("ConnectIps");
+    Array<JsonView> connectIpsJsonList = jsonValue.GetArray("ConnectIps");
     for(unsigned connectIpsIndex = 0; connectIpsIndex < connectIpsJsonList.GetLength(); ++connectIpsIndex)
     {
       m_connectIps.push_back(connectIpsJsonList[connectIpsIndex].AsString());

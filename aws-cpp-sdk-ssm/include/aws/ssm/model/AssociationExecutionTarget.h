@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     AssociationExecutionTarget();
-    AssociationExecutionTarget(const Aws::Utils::Json::JsonValue& jsonValue);
-    AssociationExecutionTarget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AssociationExecutionTarget(Aws::Utils::Json::JsonView jsonValue);
+    AssociationExecutionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

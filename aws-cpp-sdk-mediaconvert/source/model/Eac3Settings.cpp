@@ -74,7 +74,7 @@ Eac3Settings::Eac3Settings() :
 {
 }
 
-Eac3Settings::Eac3Settings(const JsonValue& jsonValue) : 
+Eac3Settings::Eac3Settings(JsonView jsonValue) : 
     m_attenuationControl(Eac3AttenuationControl::NOT_SET),
     m_attenuationControlHasBeenSet(false),
     m_bitrate(0),
@@ -121,7 +121,7 @@ Eac3Settings::Eac3Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Eac3Settings& Eac3Settings::operator =(const JsonValue& jsonValue)
+Eac3Settings& Eac3Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attenuationControl"))
   {

@@ -42,7 +42,7 @@ TranscriptionJobSummary::TranscriptionJobSummary() :
 {
 }
 
-TranscriptionJobSummary::TranscriptionJobSummary(const JsonValue& jsonValue) : 
+TranscriptionJobSummary::TranscriptionJobSummary(JsonView jsonValue) : 
     m_transcriptionJobNameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_completionTimeHasBeenSet(false),
@@ -57,7 +57,7 @@ TranscriptionJobSummary::TranscriptionJobSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TranscriptionJobSummary& TranscriptionJobSummary::operator =(const JsonValue& jsonValue)
+TranscriptionJobSummary& TranscriptionJobSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TranscriptionJobName"))
   {

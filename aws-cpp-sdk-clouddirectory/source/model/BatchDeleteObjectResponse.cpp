@@ -32,12 +32,12 @@ BatchDeleteObjectResponse::BatchDeleteObjectResponse()
 {
 }
 
-BatchDeleteObjectResponse::BatchDeleteObjectResponse(const JsonValue& jsonValue)
+BatchDeleteObjectResponse::BatchDeleteObjectResponse(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-BatchDeleteObjectResponse& BatchDeleteObjectResponse::operator =(const JsonValue& jsonValue)
+BatchDeleteObjectResponse& BatchDeleteObjectResponse::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

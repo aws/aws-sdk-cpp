@@ -40,7 +40,7 @@ Member::Member() :
 {
 }
 
-Member::Member(const JsonValue& jsonValue) : 
+Member::Member(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(MemberType::NOT_SET),
@@ -53,7 +53,7 @@ Member::Member(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Member& Member::operator =(const JsonValue& jsonValue)
+Member& Member::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

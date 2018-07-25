@@ -32,12 +32,12 @@ WebvttDestinationSettings::WebvttDestinationSettings()
 {
 }
 
-WebvttDestinationSettings::WebvttDestinationSettings(const JsonValue& jsonValue)
+WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-WebvttDestinationSettings& WebvttDestinationSettings::operator =(const JsonValue& jsonValue)
+WebvttDestinationSettings& WebvttDestinationSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

@@ -39,7 +39,7 @@ Record::Record() :
 {
 }
 
-Record::Record(const JsonValue& jsonValue) : 
+Record::Record(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_syncCount(0),
@@ -51,7 +51,7 @@ Record::Record(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Record& Record::operator =(const JsonValue& jsonValue)
+Record& Record::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

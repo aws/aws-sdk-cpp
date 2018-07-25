@@ -52,7 +52,7 @@ BatchPrediction::BatchPrediction() :
 {
 }
 
-BatchPrediction::BatchPrediction(const JsonValue& jsonValue) : 
+BatchPrediction::BatchPrediction(JsonView jsonValue) : 
     m_batchPredictionIdHasBeenSet(false),
     m_mLModelIdHasBeenSet(false),
     m_batchPredictionDataSourceIdHasBeenSet(false),
@@ -77,7 +77,7 @@ BatchPrediction::BatchPrediction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchPrediction& BatchPrediction::operator =(const JsonValue& jsonValue)
+BatchPrediction& BatchPrediction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BatchPredictionId"))
   {

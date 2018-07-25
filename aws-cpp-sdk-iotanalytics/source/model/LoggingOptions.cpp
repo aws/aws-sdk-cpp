@@ -37,7 +37,7 @@ LoggingOptions::LoggingOptions() :
 {
 }
 
-LoggingOptions::LoggingOptions(const JsonValue& jsonValue) : 
+LoggingOptions::LoggingOptions(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_level(LoggingLevel::NOT_SET),
     m_levelHasBeenSet(false),
@@ -47,7 +47,7 @@ LoggingOptions::LoggingOptions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LoggingOptions& LoggingOptions::operator =(const JsonValue& jsonValue)
+LoggingOptions& LoggingOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

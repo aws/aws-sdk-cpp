@@ -37,7 +37,7 @@ PublicKey::PublicKey() :
 {
 }
 
-PublicKey::PublicKey(const JsonValue& jsonValue) : 
+PublicKey::PublicKey(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
     m_validityStartTimeHasBeenSet(false),
     m_validityEndTimeHasBeenSet(false),
@@ -46,7 +46,7 @@ PublicKey::PublicKey(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PublicKey& PublicKey::operator =(const JsonValue& jsonValue)
+PublicKey& PublicKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

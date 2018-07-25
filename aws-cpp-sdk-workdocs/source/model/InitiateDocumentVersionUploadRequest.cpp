@@ -80,7 +80,7 @@ Aws::String InitiateDocumentVersionUploadRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection InitiateDocumentVersionUploadRequest::GetRequestSpecificHeaders() const

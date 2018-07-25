@@ -44,7 +44,7 @@ Aws::String DeleteAggregationAuthorizationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteAggregationAuthorizationRequest::GetRequestSpecificHeaders() const

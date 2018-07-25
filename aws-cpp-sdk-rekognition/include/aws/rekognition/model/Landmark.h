@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Landmark();
-    Landmark(const Aws::Utils::Json::JsonValue& jsonValue);
-    Landmark& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Landmark(Aws::Utils::Json::JsonView jsonValue);
+    Landmark& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -66,7 +66,7 @@ Aws::String MeterUsageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection MeterUsageRequest::GetRequestSpecificHeaders() const

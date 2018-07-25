@@ -41,7 +41,7 @@ CompareFacesResult::CompareFacesResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SourceImageFace"))
   {
     m_sourceImageFace = jsonValue.GetObject("SourceImageFace");
@@ -50,7 +50,7 @@ CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("FaceMatches"))
   {
-    Array<JsonValue> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
+    Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
     for(unsigned faceMatchesIndex = 0; faceMatchesIndex < faceMatchesJsonList.GetLength(); ++faceMatchesIndex)
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());
@@ -59,7 +59,7 @@ CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("UnmatchedFaces"))
   {
-    Array<JsonValue> unmatchedFacesJsonList = jsonValue.GetArray("UnmatchedFaces");
+    Array<JsonView> unmatchedFacesJsonList = jsonValue.GetArray("UnmatchedFaces");
     for(unsigned unmatchedFacesIndex = 0; unmatchedFacesIndex < unmatchedFacesJsonList.GetLength(); ++unmatchedFacesIndex)
     {
       m_unmatchedFaces.push_back(unmatchedFacesJsonList[unmatchedFacesIndex].AsObject());

@@ -35,7 +35,7 @@ ComparedSourceImageFace::ComparedSourceImageFace() :
 {
 }
 
-ComparedSourceImageFace::ComparedSourceImageFace(const JsonValue& jsonValue) : 
+ComparedSourceImageFace::ComparedSourceImageFace(JsonView jsonValue) : 
     m_boundingBoxHasBeenSet(false),
     m_confidence(0.0),
     m_confidenceHasBeenSet(false)
@@ -43,7 +43,7 @@ ComparedSourceImageFace::ComparedSourceImageFace(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComparedSourceImageFace& ComparedSourceImageFace::operator =(const JsonValue& jsonValue)
+ComparedSourceImageFace& ComparedSourceImageFace::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BoundingBox"))
   {

@@ -38,7 +38,7 @@ GetBlobResult::GetBlobResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 GetBlobResult& GetBlobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("content"))
   {
     m_content = HashingUtils::Base64Decode(jsonValue.GetString("content"));

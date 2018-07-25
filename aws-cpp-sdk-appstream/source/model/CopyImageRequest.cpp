@@ -58,7 +58,7 @@ Aws::String CopyImageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CopyImageRequest::GetRequestSpecificHeaders() const

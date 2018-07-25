@@ -37,7 +37,7 @@ GetSizeConstraintSetResult::GetSizeConstraintSetResult(const Aws::AmazonWebServi
 
 GetSizeConstraintSetResult& GetSizeConstraintSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SizeConstraintSet"))
   {
     m_sizeConstraintSet = jsonValue.GetObject("SizeConstraintSet");

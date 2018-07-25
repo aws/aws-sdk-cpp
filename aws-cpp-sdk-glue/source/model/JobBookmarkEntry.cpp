@@ -40,7 +40,7 @@ JobBookmarkEntry::JobBookmarkEntry() :
 {
 }
 
-JobBookmarkEntry::JobBookmarkEntry(const JsonValue& jsonValue) : 
+JobBookmarkEntry::JobBookmarkEntry(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
@@ -53,7 +53,7 @@ JobBookmarkEntry::JobBookmarkEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobBookmarkEntry& JobBookmarkEntry::operator =(const JsonValue& jsonValue)
+JobBookmarkEntry& JobBookmarkEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

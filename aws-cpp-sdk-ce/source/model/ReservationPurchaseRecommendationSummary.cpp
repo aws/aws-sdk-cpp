@@ -35,7 +35,7 @@ ReservationPurchaseRecommendationSummary::ReservationPurchaseRecommendationSumma
 {
 }
 
-ReservationPurchaseRecommendationSummary::ReservationPurchaseRecommendationSummary(const JsonValue& jsonValue) : 
+ReservationPurchaseRecommendationSummary::ReservationPurchaseRecommendationSummary(JsonView jsonValue) : 
     m_totalEstimatedMonthlySavingsAmountHasBeenSet(false),
     m_totalEstimatedMonthlySavingsPercentageHasBeenSet(false),
     m_currencyCodeHasBeenSet(false)
@@ -43,7 +43,7 @@ ReservationPurchaseRecommendationSummary::ReservationPurchaseRecommendationSumma
   *this = jsonValue;
 }
 
-ReservationPurchaseRecommendationSummary& ReservationPurchaseRecommendationSummary::operator =(const JsonValue& jsonValue)
+ReservationPurchaseRecommendationSummary& ReservationPurchaseRecommendationSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TotalEstimatedMonthlySavingsAmount"))
   {

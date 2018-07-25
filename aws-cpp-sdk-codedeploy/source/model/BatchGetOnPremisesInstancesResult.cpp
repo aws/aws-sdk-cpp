@@ -37,10 +37,10 @@ BatchGetOnPremisesInstancesResult::BatchGetOnPremisesInstancesResult(const Aws::
 
 BatchGetOnPremisesInstancesResult& BatchGetOnPremisesInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceInfos"))
   {
-    Array<JsonValue> instanceInfosJsonList = jsonValue.GetArray("instanceInfos");
+    Array<JsonView> instanceInfosJsonList = jsonValue.GetArray("instanceInfos");
     for(unsigned instanceInfosIndex = 0; instanceInfosIndex < instanceInfosJsonList.GetLength(); ++instanceInfosIndex)
     {
       m_instanceInfos.push_back(instanceInfosJsonList[instanceInfosIndex].AsObject());

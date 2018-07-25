@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     ServerProcess();
-    ServerProcess(const Aws::Utils::Json::JsonValue& jsonValue);
-    ServerProcess& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ServerProcess(Aws::Utils::Json::JsonView jsonValue);
+    ServerProcess& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

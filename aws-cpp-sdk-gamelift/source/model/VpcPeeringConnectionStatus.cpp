@@ -34,14 +34,14 @@ VpcPeeringConnectionStatus::VpcPeeringConnectionStatus() :
 {
 }
 
-VpcPeeringConnectionStatus::VpcPeeringConnectionStatus(const JsonValue& jsonValue) : 
+VpcPeeringConnectionStatus::VpcPeeringConnectionStatus(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VpcPeeringConnectionStatus& VpcPeeringConnectionStatus::operator =(const JsonValue& jsonValue)
+VpcPeeringConnectionStatus& VpcPeeringConnectionStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

@@ -37,7 +37,7 @@ Aws::String DeleteConfigurationRecorderRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteConfigurationRecorderRequest::GetRequestSpecificHeaders() const

@@ -39,7 +39,7 @@ ListConfigurationRevisionsResult::ListConfigurationRevisionsResult(const Aws::Am
 
 ListConfigurationRevisionsResult& ListConfigurationRevisionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurationId"))
   {
     m_configurationId = jsonValue.GetString("configurationId");
@@ -60,7 +60,7 @@ ListConfigurationRevisionsResult& ListConfigurationRevisionsResult::operator =(c
 
   if(jsonValue.ValueExists("revisions"))
   {
-    Array<JsonValue> revisionsJsonList = jsonValue.GetArray("revisions");
+    Array<JsonView> revisionsJsonList = jsonValue.GetArray("revisions");
     for(unsigned revisionsIndex = 0; revisionsIndex < revisionsJsonList.GetLength(); ++revisionsIndex)
     {
       m_revisions.push_back(revisionsJsonList[revisionsIndex].AsObject());

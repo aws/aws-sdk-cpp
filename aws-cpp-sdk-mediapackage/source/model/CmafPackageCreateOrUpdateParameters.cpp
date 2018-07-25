@@ -38,7 +38,7 @@ CmafPackageCreateOrUpdateParameters::CmafPackageCreateOrUpdateParameters() :
 {
 }
 
-CmafPackageCreateOrUpdateParameters::CmafPackageCreateOrUpdateParameters(const JsonValue& jsonValue) : 
+CmafPackageCreateOrUpdateParameters::CmafPackageCreateOrUpdateParameters(JsonView jsonValue) : 
     m_encryptionHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
     m_segmentDurationSeconds(0),
@@ -49,7 +49,7 @@ CmafPackageCreateOrUpdateParameters::CmafPackageCreateOrUpdateParameters(const J
   *this = jsonValue;
 }
 
-CmafPackageCreateOrUpdateParameters& CmafPackageCreateOrUpdateParameters::operator =(const JsonValue& jsonValue)
+CmafPackageCreateOrUpdateParameters& CmafPackageCreateOrUpdateParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("encryption"))
   {
@@ -60,7 +60,7 @@ CmafPackageCreateOrUpdateParameters& CmafPackageCreateOrUpdateParameters::operat
 
   if(jsonValue.ValueExists("hlsManifests"))
   {
-    Array<JsonValue> hlsManifestsJsonList = jsonValue.GetArray("hlsManifests");
+    Array<JsonView> hlsManifestsJsonList = jsonValue.GetArray("hlsManifests");
     for(unsigned hlsManifestsIndex = 0; hlsManifestsIndex < hlsManifestsJsonList.GetLength(); ++hlsManifestsIndex)
     {
       m_hlsManifests.push_back(hlsManifestsJsonList[hlsManifestsIndex].AsObject());

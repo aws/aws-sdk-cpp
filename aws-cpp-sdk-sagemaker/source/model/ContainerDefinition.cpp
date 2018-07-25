@@ -36,7 +36,7 @@ ContainerDefinition::ContainerDefinition() :
 {
 }
 
-ContainerDefinition::ContainerDefinition(const JsonValue& jsonValue) : 
+ContainerDefinition::ContainerDefinition(JsonView jsonValue) : 
     m_containerHostnameHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
@@ -45,7 +45,7 @@ ContainerDefinition::ContainerDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerDefinition& ContainerDefinition::operator =(const JsonValue& jsonValue)
+ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ContainerHostname"))
   {
@@ -70,7 +70,7 @@ ContainerDefinition& ContainerDefinition::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Environment"))
   {
-    Aws::Map<Aws::String, JsonValue> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
     for(auto& environmentItem : environmentJsonMap)
     {
       m_environment[environmentItem.first] = environmentItem.second.AsString();

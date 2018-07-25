@@ -59,7 +59,7 @@ Aws::String ListAssessmentRunAgentsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListAssessmentRunAgentsRequest::GetRequestSpecificHeaders() const

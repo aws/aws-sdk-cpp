@@ -37,7 +37,7 @@ CreateCertificateAuthorityAuditReportResult::CreateCertificateAuthorityAuditRepo
 
 CreateCertificateAuthorityAuditReportResult& CreateCertificateAuthorityAuditReportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AuditReportId"))
   {
     m_auditReportId = jsonValue.GetString("AuditReportId");

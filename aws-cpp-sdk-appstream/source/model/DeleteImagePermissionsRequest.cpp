@@ -44,7 +44,7 @@ Aws::String DeleteImagePermissionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteImagePermissionsRequest::GetRequestSpecificHeaders() const

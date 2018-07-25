@@ -37,7 +37,7 @@ CreatePresetResult::CreatePresetResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CreatePresetResult& CreatePresetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Preset"))
   {
     m_preset = jsonValue.GetObject("Preset");

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkMail
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     Member();
-    Member(const Aws::Utils::Json::JsonValue& jsonValue);
-    Member& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Member(Aws::Utils::Json::JsonView jsonValue);
+    Member& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

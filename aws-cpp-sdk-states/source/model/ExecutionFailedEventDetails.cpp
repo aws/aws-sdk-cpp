@@ -34,14 +34,14 @@ ExecutionFailedEventDetails::ExecutionFailedEventDetails() :
 {
 }
 
-ExecutionFailedEventDetails::ExecutionFailedEventDetails(const JsonValue& jsonValue) : 
+ExecutionFailedEventDetails::ExecutionFailedEventDetails(JsonView jsonValue) : 
     m_errorHasBeenSet(false),
     m_causeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ExecutionFailedEventDetails& ExecutionFailedEventDetails::operator =(const JsonValue& jsonValue)
+ExecutionFailedEventDetails& ExecutionFailedEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("error"))
   {

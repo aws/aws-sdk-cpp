@@ -35,7 +35,7 @@ Alias::Alias() :
 {
 }
 
-Alias::Alias(const JsonValue& jsonValue) : 
+Alias::Alias(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_namesHasBeenSet(false),
     m_typeHasBeenSet(false)
@@ -43,7 +43,7 @@ Alias::Alias(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Alias& Alias::operator =(const JsonValue& jsonValue)
+Alias& Alias::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -54,7 +54,7 @@ Alias& Alias::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Names"))
   {
-    Array<JsonValue> namesJsonList = jsonValue.GetArray("Names");
+    Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
     for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
     {
       m_names.push_back(namesJsonList[namesIndex].AsString());

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ResourceError();
-    ResourceError(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceError(Aws::Utils::Json::JsonView jsonValue);
+    ResourceError& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

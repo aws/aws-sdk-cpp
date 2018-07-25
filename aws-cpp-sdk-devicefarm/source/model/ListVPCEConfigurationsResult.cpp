@@ -37,10 +37,10 @@ ListVPCEConfigurationsResult::ListVPCEConfigurationsResult(const Aws::AmazonWebS
 
 ListVPCEConfigurationsResult& ListVPCEConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("vpceConfigurations"))
   {
-    Array<JsonValue> vpceConfigurationsJsonList = jsonValue.GetArray("vpceConfigurations");
+    Array<JsonView> vpceConfigurationsJsonList = jsonValue.GetArray("vpceConfigurations");
     for(unsigned vpceConfigurationsIndex = 0; vpceConfigurationsIndex < vpceConfigurationsJsonList.GetLength(); ++vpceConfigurationsIndex)
     {
       m_vpceConfigurations.push_back(vpceConfigurationsJsonList[vpceConfigurationsIndex].AsObject());

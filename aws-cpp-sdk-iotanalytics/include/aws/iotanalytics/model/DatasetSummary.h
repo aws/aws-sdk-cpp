@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoTAnalytics
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     DatasetSummary();
-    DatasetSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    DatasetSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DatasetSummary(Aws::Utils::Json::JsonView jsonValue);
+    DatasetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

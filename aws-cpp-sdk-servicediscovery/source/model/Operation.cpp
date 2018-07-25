@@ -42,7 +42,7 @@ Operation::Operation() :
 {
 }
 
-Operation::Operation(const JsonValue& jsonValue) : 
+Operation::Operation(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_type(OperationType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -57,7 +57,7 @@ Operation::Operation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Operation& Operation::operator =(const JsonValue& jsonValue)
+Operation& Operation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -110,7 +110,7 @@ Operation& Operation::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Aws::Map<Aws::String, JsonValue> targetsJsonMap = jsonValue.GetObject("Targets").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> targetsJsonMap = jsonValue.GetObject("Targets").GetAllObjects();
     for(auto& targetsItem : targetsJsonMap)
     {
       m_targets[OperationTargetTypeMapper::GetOperationTargetTypeForName(targetsItem.first)] = targetsItem.second.AsString();

@@ -36,7 +36,7 @@ PlacementSummary::PlacementSummary() :
 {
 }
 
-PlacementSummary::PlacementSummary(const JsonValue& jsonValue) : 
+PlacementSummary::PlacementSummary(JsonView jsonValue) : 
     m_projectNameHasBeenSet(false),
     m_placementNameHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -45,7 +45,7 @@ PlacementSummary::PlacementSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlacementSummary& PlacementSummary::operator =(const JsonValue& jsonValue)
+PlacementSummary& PlacementSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("projectName"))
   {

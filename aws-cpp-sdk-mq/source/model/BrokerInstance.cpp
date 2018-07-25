@@ -34,14 +34,14 @@ BrokerInstance::BrokerInstance() :
 {
 }
 
-BrokerInstance::BrokerInstance(const JsonValue& jsonValue) : 
+BrokerInstance::BrokerInstance(JsonView jsonValue) : 
     m_consoleURLHasBeenSet(false),
     m_endpointsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BrokerInstance& BrokerInstance::operator =(const JsonValue& jsonValue)
+BrokerInstance& BrokerInstance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("consoleURL"))
   {
@@ -52,7 +52,7 @@ BrokerInstance& BrokerInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("endpoints"))
   {
-    Array<JsonValue> endpointsJsonList = jsonValue.GetArray("endpoints");
+    Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
     for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsString());

@@ -49,7 +49,7 @@ Aws::String AuthorizeIpRulesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AuthorizeIpRulesRequest::GetRequestSpecificHeaders() const

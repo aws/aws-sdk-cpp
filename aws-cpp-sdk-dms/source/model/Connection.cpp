@@ -38,7 +38,7 @@ Connection::Connection() :
 {
 }
 
-Connection::Connection(const JsonValue& jsonValue) : 
+Connection::Connection(JsonView jsonValue) : 
     m_replicationInstanceArnHasBeenSet(false),
     m_endpointArnHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -49,7 +49,7 @@ Connection::Connection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Connection& Connection::operator =(const JsonValue& jsonValue)
+Connection& Connection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReplicationInstanceArn"))
   {

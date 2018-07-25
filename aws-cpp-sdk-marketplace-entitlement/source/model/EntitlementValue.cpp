@@ -39,7 +39,7 @@ EntitlementValue::EntitlementValue() :
 {
 }
 
-EntitlementValue::EntitlementValue(const JsonValue& jsonValue) : 
+EntitlementValue::EntitlementValue(JsonView jsonValue) : 
     m_integerValue(0),
     m_integerValueHasBeenSet(false),
     m_doubleValue(0.0),
@@ -51,7 +51,7 @@ EntitlementValue::EntitlementValue(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EntitlementValue& EntitlementValue::operator =(const JsonValue& jsonValue)
+EntitlementValue& EntitlementValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IntegerValue"))
   {

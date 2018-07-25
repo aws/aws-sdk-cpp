@@ -57,7 +57,7 @@ M3u8Settings::M3u8Settings() :
 {
 }
 
-M3u8Settings::M3u8Settings(const JsonValue& jsonValue) : 
+M3u8Settings::M3u8Settings(JsonView jsonValue) : 
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -87,7 +87,7 @@ M3u8Settings::M3u8Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-M3u8Settings& M3u8Settings::operator =(const JsonValue& jsonValue)
+M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioFramesPerPes"))
   {

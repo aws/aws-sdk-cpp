@@ -35,7 +35,7 @@ ContinuousBackupsDescription::ContinuousBackupsDescription() :
 {
 }
 
-ContinuousBackupsDescription::ContinuousBackupsDescription(const JsonValue& jsonValue) : 
+ContinuousBackupsDescription::ContinuousBackupsDescription(JsonView jsonValue) : 
     m_continuousBackupsStatus(ContinuousBackupsStatus::NOT_SET),
     m_continuousBackupsStatusHasBeenSet(false),
     m_pointInTimeRecoveryDescriptionHasBeenSet(false)
@@ -43,7 +43,7 @@ ContinuousBackupsDescription::ContinuousBackupsDescription(const JsonValue& json
   *this = jsonValue;
 }
 
-ContinuousBackupsDescription& ContinuousBackupsDescription::operator =(const JsonValue& jsonValue)
+ContinuousBackupsDescription& ContinuousBackupsDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ContinuousBackupsStatus"))
   {

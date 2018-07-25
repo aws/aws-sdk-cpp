@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     WebACLSummary();
-    WebACLSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    WebACLSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WebACLSummary(Aws::Utils::Json::JsonView jsonValue);
+    WebACLSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

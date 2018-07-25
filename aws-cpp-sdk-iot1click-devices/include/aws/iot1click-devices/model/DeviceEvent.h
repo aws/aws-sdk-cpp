@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT1ClickDevicesService
@@ -37,8 +38,8 @@ namespace Model
   {
   public:
     DeviceEvent();
-    DeviceEvent(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeviceEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeviceEvent(Aws::Utils::Json::JsonView jsonValue);
+    DeviceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

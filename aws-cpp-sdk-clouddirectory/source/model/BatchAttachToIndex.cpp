@@ -34,14 +34,14 @@ BatchAttachToIndex::BatchAttachToIndex() :
 {
 }
 
-BatchAttachToIndex::BatchAttachToIndex(const JsonValue& jsonValue) : 
+BatchAttachToIndex::BatchAttachToIndex(JsonView jsonValue) : 
     m_indexReferenceHasBeenSet(false),
     m_targetReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchAttachToIndex& BatchAttachToIndex::operator =(const JsonValue& jsonValue)
+BatchAttachToIndex& BatchAttachToIndex::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexReference"))
   {

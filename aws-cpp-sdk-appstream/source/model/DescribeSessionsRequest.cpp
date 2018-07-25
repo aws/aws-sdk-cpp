@@ -73,7 +73,7 @@ Aws::String DescribeSessionsRequest::SerializePayload() const
    payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeSessionsRequest::GetRequestSpecificHeaders() const

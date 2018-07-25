@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PullRequestTarget();
-    PullRequestTarget(const Aws::Utils::Json::JsonValue& jsonValue);
-    PullRequestTarget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PullRequestTarget(Aws::Utils::Json::JsonView jsonValue);
+    PullRequestTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

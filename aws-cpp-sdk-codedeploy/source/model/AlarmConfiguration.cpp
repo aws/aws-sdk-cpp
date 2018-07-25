@@ -37,7 +37,7 @@ AlarmConfiguration::AlarmConfiguration() :
 {
 }
 
-AlarmConfiguration::AlarmConfiguration(const JsonValue& jsonValue) : 
+AlarmConfiguration::AlarmConfiguration(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_ignorePollAlarmFailure(false),
@@ -47,7 +47,7 @@ AlarmConfiguration::AlarmConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AlarmConfiguration& AlarmConfiguration::operator =(const JsonValue& jsonValue)
+AlarmConfiguration& AlarmConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("enabled"))
   {
@@ -65,7 +65,7 @@ AlarmConfiguration& AlarmConfiguration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("alarms"))
   {
-    Array<JsonValue> alarmsJsonList = jsonValue.GetArray("alarms");
+    Array<JsonView> alarmsJsonList = jsonValue.GetArray("alarms");
     for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
     {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());

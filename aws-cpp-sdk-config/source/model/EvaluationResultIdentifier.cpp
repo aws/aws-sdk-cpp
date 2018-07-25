@@ -34,14 +34,14 @@ EvaluationResultIdentifier::EvaluationResultIdentifier() :
 {
 }
 
-EvaluationResultIdentifier::EvaluationResultIdentifier(const JsonValue& jsonValue) : 
+EvaluationResultIdentifier::EvaluationResultIdentifier(JsonView jsonValue) : 
     m_evaluationResultQualifierHasBeenSet(false),
     m_orderingTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EvaluationResultIdentifier& EvaluationResultIdentifier::operator =(const JsonValue& jsonValue)
+EvaluationResultIdentifier& EvaluationResultIdentifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EvaluationResultQualifier"))
   {

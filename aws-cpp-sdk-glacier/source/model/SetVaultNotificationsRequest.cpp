@@ -38,7 +38,7 @@ Aws::String SetVaultNotificationsRequest::SerializePayload() const
    payload = m_vaultNotificationConfig.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

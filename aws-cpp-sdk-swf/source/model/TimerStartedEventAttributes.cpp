@@ -37,7 +37,7 @@ TimerStartedEventAttributes::TimerStartedEventAttributes() :
 {
 }
 
-TimerStartedEventAttributes::TimerStartedEventAttributes(const JsonValue& jsonValue) : 
+TimerStartedEventAttributes::TimerStartedEventAttributes(JsonView jsonValue) : 
     m_timerIdHasBeenSet(false),
     m_controlHasBeenSet(false),
     m_startToFireTimeoutHasBeenSet(false),
@@ -47,7 +47,7 @@ TimerStartedEventAttributes::TimerStartedEventAttributes(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-TimerStartedEventAttributes& TimerStartedEventAttributes::operator =(const JsonValue& jsonValue)
+TimerStartedEventAttributes& TimerStartedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timerId"))
   {

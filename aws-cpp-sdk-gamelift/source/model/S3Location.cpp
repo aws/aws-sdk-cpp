@@ -35,7 +35,7 @@ S3Location::S3Location() :
 {
 }
 
-S3Location::S3Location(const JsonValue& jsonValue) : 
+S3Location::S3Location(JsonView jsonValue) : 
     m_bucketHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_roleArnHasBeenSet(false)
@@ -43,7 +43,7 @@ S3Location::S3Location(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3Location& S3Location::operator =(const JsonValue& jsonValue)
+S3Location& S3Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Bucket"))
   {

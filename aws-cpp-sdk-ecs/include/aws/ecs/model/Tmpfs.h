@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -43,43 +44,43 @@ namespace Model
   {
   public:
     Tmpfs();
-    Tmpfs(const Aws::Utils::Json::JsonValue& jsonValue);
-    Tmpfs& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Tmpfs(Aws::Utils::Json::JsonView jsonValue);
+    Tmpfs& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The absolute file path where the tmpfs volume will be mounted.</p>
+     * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
      */
     inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
 
     /**
-     * <p>The absolute file path where the tmpfs volume will be mounted.</p>
+     * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
      */
     inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
 
     /**
-     * <p>The absolute file path where the tmpfs volume will be mounted.</p>
+     * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
      */
     inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
 
     /**
-     * <p>The absolute file path where the tmpfs volume will be mounted.</p>
+     * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
      */
     inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
 
     /**
-     * <p>The absolute file path where the tmpfs volume will be mounted.</p>
+     * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
      */
     inline Tmpfs& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
 
     /**
-     * <p>The absolute file path where the tmpfs volume will be mounted.</p>
+     * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
      */
     inline Tmpfs& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
 
     /**
-     * <p>The absolute file path where the tmpfs volume will be mounted.</p>
+     * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
      */
     inline Tmpfs& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
 

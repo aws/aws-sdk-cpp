@@ -36,7 +36,7 @@ CreateGlobalSecondaryIndexAction::CreateGlobalSecondaryIndexAction() :
 {
 }
 
-CreateGlobalSecondaryIndexAction::CreateGlobalSecondaryIndexAction(const JsonValue& jsonValue) : 
+CreateGlobalSecondaryIndexAction::CreateGlobalSecondaryIndexAction(JsonView jsonValue) : 
     m_indexNameHasBeenSet(false),
     m_keySchemaHasBeenSet(false),
     m_projectionHasBeenSet(false),
@@ -45,7 +45,7 @@ CreateGlobalSecondaryIndexAction::CreateGlobalSecondaryIndexAction(const JsonVal
   *this = jsonValue;
 }
 
-CreateGlobalSecondaryIndexAction& CreateGlobalSecondaryIndexAction::operator =(const JsonValue& jsonValue)
+CreateGlobalSecondaryIndexAction& CreateGlobalSecondaryIndexAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexName"))
   {
@@ -56,7 +56,7 @@ CreateGlobalSecondaryIndexAction& CreateGlobalSecondaryIndexAction::operator =(c
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());

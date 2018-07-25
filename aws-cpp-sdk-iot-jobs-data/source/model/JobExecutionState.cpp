@@ -37,7 +37,7 @@ JobExecutionState::JobExecutionState() :
 {
 }
 
-JobExecutionState::JobExecutionState(const JsonValue& jsonValue) : 
+JobExecutionState::JobExecutionState(JsonView jsonValue) : 
     m_status(JobExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusDetailsHasBeenSet(false),
@@ -47,7 +47,7 @@ JobExecutionState::JobExecutionState(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobExecutionState& JobExecutionState::operator =(const JsonValue& jsonValue)
+JobExecutionState& JobExecutionState::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("status"))
   {
@@ -58,7 +58,7 @@ JobExecutionState& JobExecutionState::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("statusDetails"))
   {
-    Aws::Map<Aws::String, JsonValue> statusDetailsJsonMap = jsonValue.GetObject("statusDetails").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> statusDetailsJsonMap = jsonValue.GetObject("statusDetails").GetAllObjects();
     for(auto& statusDetailsItem : statusDetailsJsonMap)
     {
       m_statusDetails[statusDetailsItem.first] = statusDetailsItem.second.AsString();

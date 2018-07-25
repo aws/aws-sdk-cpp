@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     KerberosAttributes();
-    KerberosAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    KerberosAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KerberosAttributes(Aws::Utils::Json::JsonView jsonValue);
+    KerberosAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

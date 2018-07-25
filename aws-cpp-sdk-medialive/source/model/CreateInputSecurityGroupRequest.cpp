@@ -42,7 +42,7 @@ Aws::String CreateInputSecurityGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

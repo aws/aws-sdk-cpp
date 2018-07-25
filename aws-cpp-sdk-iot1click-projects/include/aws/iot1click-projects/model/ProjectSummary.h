@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT1ClickProjects
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ProjectSummary();
-    ProjectSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProjectSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
+    ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

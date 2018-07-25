@@ -44,7 +44,7 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus() :
 {
 }
 
-ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(const JsonValue& jsonValue) : 
+ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(JsonView jsonValue) : 
     m_configRuleNameHasBeenSet(false),
     m_configRuleArnHasBeenSet(false),
     m_configRuleIdHasBeenSet(false),
@@ -61,7 +61,7 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ConfigRuleEvaluationStatus& ConfigRuleEvaluationStatus::operator =(const JsonValue& jsonValue)
+ConfigRuleEvaluationStatus& ConfigRuleEvaluationStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConfigRuleName"))
   {

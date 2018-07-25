@@ -65,7 +65,7 @@ Aws::String ListShardsRequest::SerializePayload() const
    payload.WithDouble("StreamCreationTimestamp", m_streamCreationTimestamp.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListShardsRequest::GetRequestSpecificHeaders() const

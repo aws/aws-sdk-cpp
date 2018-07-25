@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Denied();
-    Denied(const Aws::Utils::Json::JsonValue& jsonValue);
-    Denied& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Denied(Aws::Utils::Json::JsonView jsonValue);
+    Denied& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

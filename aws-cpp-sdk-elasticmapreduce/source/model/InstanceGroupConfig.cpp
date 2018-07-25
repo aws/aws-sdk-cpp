@@ -44,7 +44,7 @@ InstanceGroupConfig::InstanceGroupConfig() :
 {
 }
 
-InstanceGroupConfig::InstanceGroupConfig(const JsonValue& jsonValue) : 
+InstanceGroupConfig::InstanceGroupConfig(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
@@ -61,7 +61,7 @@ InstanceGroupConfig::InstanceGroupConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceGroupConfig& InstanceGroupConfig::operator =(const JsonValue& jsonValue)
+InstanceGroupConfig& InstanceGroupConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -107,7 +107,7 @@ InstanceGroupConfig& InstanceGroupConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());

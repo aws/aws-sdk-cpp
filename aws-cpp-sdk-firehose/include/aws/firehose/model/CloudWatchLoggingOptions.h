@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     CloudWatchLoggingOptions();
-    CloudWatchLoggingOptions(const Aws::Utils::Json::JsonValue& jsonValue);
-    CloudWatchLoggingOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CloudWatchLoggingOptions(Aws::Utils::Json::JsonView jsonValue);
+    CloudWatchLoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

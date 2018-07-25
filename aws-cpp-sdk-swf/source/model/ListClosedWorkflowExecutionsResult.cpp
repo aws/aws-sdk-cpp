@@ -37,10 +37,10 @@ ListClosedWorkflowExecutionsResult::ListClosedWorkflowExecutionsResult(const Aws
 
 ListClosedWorkflowExecutionsResult& ListClosedWorkflowExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("executionInfos"))
   {
-    Array<JsonValue> executionInfosJsonList = jsonValue.GetArray("executionInfos");
+    Array<JsonView> executionInfosJsonList = jsonValue.GetArray("executionInfos");
     for(unsigned executionInfosIndex = 0; executionInfosIndex < executionInfosJsonList.GetLength(); ++executionInfosIndex)
     {
       m_executionInfos.push_back(executionInfosJsonList[executionInfosIndex].AsObject());

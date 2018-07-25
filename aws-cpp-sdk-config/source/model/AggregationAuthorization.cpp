@@ -36,7 +36,7 @@ AggregationAuthorization::AggregationAuthorization() :
 {
 }
 
-AggregationAuthorization::AggregationAuthorization(const JsonValue& jsonValue) : 
+AggregationAuthorization::AggregationAuthorization(JsonView jsonValue) : 
     m_aggregationAuthorizationArnHasBeenSet(false),
     m_authorizedAccountIdHasBeenSet(false),
     m_authorizedAwsRegionHasBeenSet(false),
@@ -45,7 +45,7 @@ AggregationAuthorization::AggregationAuthorization(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AggregationAuthorization& AggregationAuthorization::operator =(const JsonValue& jsonValue)
+AggregationAuthorization& AggregationAuthorization::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AggregationAuthorizationArn"))
   {

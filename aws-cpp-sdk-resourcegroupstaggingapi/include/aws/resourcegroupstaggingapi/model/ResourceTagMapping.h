@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ResourceGroupsTaggingAPI
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ResourceTagMapping();
-    ResourceTagMapping(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceTagMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceTagMapping(Aws::Utils::Json::JsonView jsonValue);
+    ResourceTagMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

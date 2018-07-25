@@ -44,7 +44,7 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
 {
 }
 
-CaptionDestinationSettings::CaptionDestinationSettings(const JsonValue& jsonValue) : 
+CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) : 
     m_aribDestinationSettingsHasBeenSet(false),
     m_burnInDestinationSettingsHasBeenSet(false),
     m_dvbSubDestinationSettingsHasBeenSet(false),
@@ -61,7 +61,7 @@ CaptionDestinationSettings::CaptionDestinationSettings(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-CaptionDestinationSettings& CaptionDestinationSettings::operator =(const JsonValue& jsonValue)
+CaptionDestinationSettings& CaptionDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("aribDestinationSettings"))
   {

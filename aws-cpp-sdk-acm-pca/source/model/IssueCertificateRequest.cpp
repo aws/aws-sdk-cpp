@@ -65,7 +65,7 @@ Aws::String IssueCertificateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection IssueCertificateRequest::GetRequestSpecificHeaders() const

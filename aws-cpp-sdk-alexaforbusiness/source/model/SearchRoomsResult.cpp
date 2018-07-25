@@ -39,10 +39,10 @@ SearchRoomsResult::SearchRoomsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 SearchRoomsResult& SearchRoomsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Rooms"))
   {
-    Array<JsonValue> roomsJsonList = jsonValue.GetArray("Rooms");
+    Array<JsonView> roomsJsonList = jsonValue.GetArray("Rooms");
     for(unsigned roomsIndex = 0; roomsIndex < roomsJsonList.GetLength(); ++roomsIndex)
     {
       m_rooms.push_back(roomsJsonList[roomsIndex].AsObject());

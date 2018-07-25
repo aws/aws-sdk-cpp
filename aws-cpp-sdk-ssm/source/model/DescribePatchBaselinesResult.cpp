@@ -37,10 +37,10 @@ DescribePatchBaselinesResult::DescribePatchBaselinesResult(const Aws::AmazonWebS
 
 DescribePatchBaselinesResult& DescribePatchBaselinesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BaselineIdentities"))
   {
-    Array<JsonValue> baselineIdentitiesJsonList = jsonValue.GetArray("BaselineIdentities");
+    Array<JsonView> baselineIdentitiesJsonList = jsonValue.GetArray("BaselineIdentities");
     for(unsigned baselineIdentitiesIndex = 0; baselineIdentitiesIndex < baselineIdentitiesJsonList.GetLength(); ++baselineIdentitiesIndex)
     {
       m_baselineIdentities.push_back(baselineIdentitiesJsonList[baselineIdentitiesIndex].AsObject());

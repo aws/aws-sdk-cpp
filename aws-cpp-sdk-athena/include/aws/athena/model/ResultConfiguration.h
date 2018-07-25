@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Athena
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ResultConfiguration();
-    ResultConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResultConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResultConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    ResultConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

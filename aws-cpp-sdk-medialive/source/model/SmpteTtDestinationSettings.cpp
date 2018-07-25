@@ -32,12 +32,12 @@ SmpteTtDestinationSettings::SmpteTtDestinationSettings()
 {
 }
 
-SmpteTtDestinationSettings::SmpteTtDestinationSettings(const JsonValue& jsonValue)
+SmpteTtDestinationSettings::SmpteTtDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-SmpteTtDestinationSettings& SmpteTtDestinationSettings::operator =(const JsonValue& jsonValue)
+SmpteTtDestinationSettings& SmpteTtDestinationSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

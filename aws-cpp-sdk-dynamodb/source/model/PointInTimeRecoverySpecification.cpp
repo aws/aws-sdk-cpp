@@ -34,14 +34,14 @@ PointInTimeRecoverySpecification::PointInTimeRecoverySpecification() :
 {
 }
 
-PointInTimeRecoverySpecification::PointInTimeRecoverySpecification(const JsonValue& jsonValue) : 
+PointInTimeRecoverySpecification::PointInTimeRecoverySpecification(JsonView jsonValue) : 
     m_pointInTimeRecoveryEnabled(false),
     m_pointInTimeRecoveryEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PointInTimeRecoverySpecification& PointInTimeRecoverySpecification::operator =(const JsonValue& jsonValue)
+PointInTimeRecoverySpecification& PointInTimeRecoverySpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PointInTimeRecoveryEnabled"))
   {

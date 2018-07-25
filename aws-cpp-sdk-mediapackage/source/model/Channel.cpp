@@ -36,7 +36,7 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(const JsonValue& jsonValue) : 
+Channel::Channel(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsIngestHasBeenSet(false),
@@ -45,7 +45,7 @@ Channel::Channel(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Channel& Channel::operator =(const JsonValue& jsonValue)
+Channel& Channel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

@@ -61,7 +61,7 @@ Aws::String SendAutomationSignalRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SendAutomationSignalRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ Aws::String CreateContainerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateContainerRequest::GetRequestSpecificHeaders() const

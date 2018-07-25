@@ -42,7 +42,7 @@ PasswordPolicyType::PasswordPolicyType() :
 {
 }
 
-PasswordPolicyType::PasswordPolicyType(const JsonValue& jsonValue) : 
+PasswordPolicyType::PasswordPolicyType(JsonView jsonValue) : 
     m_minimumLength(0),
     m_minimumLengthHasBeenSet(false),
     m_requireUppercase(false),
@@ -57,7 +57,7 @@ PasswordPolicyType::PasswordPolicyType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PasswordPolicyType& PasswordPolicyType::operator =(const JsonValue& jsonValue)
+PasswordPolicyType& PasswordPolicyType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MinimumLength"))
   {

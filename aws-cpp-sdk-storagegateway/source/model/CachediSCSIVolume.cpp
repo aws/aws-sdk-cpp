@@ -46,7 +46,7 @@ CachediSCSIVolume::CachediSCSIVolume() :
 {
 }
 
-CachediSCSIVolume::CachediSCSIVolume(const JsonValue& jsonValue) : 
+CachediSCSIVolume::CachediSCSIVolume(JsonView jsonValue) : 
     m_volumeARNHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
@@ -65,7 +65,7 @@ CachediSCSIVolume::CachediSCSIVolume(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CachediSCSIVolume& CachediSCSIVolume::operator =(const JsonValue& jsonValue)
+CachediSCSIVolume& CachediSCSIVolume::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeARN"))
   {

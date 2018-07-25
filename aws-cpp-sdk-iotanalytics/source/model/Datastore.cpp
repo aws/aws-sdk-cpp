@@ -39,7 +39,7 @@ Datastore::Datastore() :
 {
 }
 
-Datastore::Datastore(const JsonValue& jsonValue) : 
+Datastore::Datastore(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_status(DatastoreStatus::NOT_SET),
@@ -51,7 +51,7 @@ Datastore::Datastore(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Datastore& Datastore::operator =(const JsonValue& jsonValue)
+Datastore& Datastore::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

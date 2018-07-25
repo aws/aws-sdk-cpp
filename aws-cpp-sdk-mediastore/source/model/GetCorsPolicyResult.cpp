@@ -37,10 +37,10 @@ GetCorsPolicyResult::GetCorsPolicyResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetCorsPolicyResult& GetCorsPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CorsPolicy"))
   {
-    Array<JsonValue> corsPolicyJsonList = jsonValue.GetArray("CorsPolicy");
+    Array<JsonView> corsPolicyJsonList = jsonValue.GetArray("CorsPolicy");
     for(unsigned corsPolicyIndex = 0; corsPolicyIndex < corsPolicyJsonList.GetLength(); ++corsPolicyIndex)
     {
       m_corsPolicy.push_back(corsPolicyJsonList[corsPolicyIndex].AsObject());

@@ -37,7 +37,7 @@ ResolveRoomResult::ResolveRoomResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ResolveRoomResult& ResolveRoomResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RoomArn"))
   {
     m_roomArn = jsonValue.GetString("RoomArn");
@@ -52,7 +52,7 @@ ResolveRoomResult& ResolveRoomResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("RoomSkillParameters"))
   {
-    Array<JsonValue> roomSkillParametersJsonList = jsonValue.GetArray("RoomSkillParameters");
+    Array<JsonView> roomSkillParametersJsonList = jsonValue.GetArray("RoomSkillParameters");
     for(unsigned roomSkillParametersIndex = 0; roomSkillParametersIndex < roomSkillParametersJsonList.GetLength(); ++roomSkillParametersIndex)
     {
       m_roomSkillParameters.push_back(roomSkillParametersJsonList[roomSkillParametersIndex].AsObject());

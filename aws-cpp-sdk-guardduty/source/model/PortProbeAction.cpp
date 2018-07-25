@@ -35,7 +35,7 @@ PortProbeAction::PortProbeAction() :
 {
 }
 
-PortProbeAction::PortProbeAction(const JsonValue& jsonValue) : 
+PortProbeAction::PortProbeAction(JsonView jsonValue) : 
     m_blocked(false),
     m_blockedHasBeenSet(false),
     m_portProbeDetailsHasBeenSet(false)
@@ -43,7 +43,7 @@ PortProbeAction::PortProbeAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PortProbeAction& PortProbeAction::operator =(const JsonValue& jsonValue)
+PortProbeAction& PortProbeAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("blocked"))
   {
@@ -54,7 +54,7 @@ PortProbeAction& PortProbeAction::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("portProbeDetails"))
   {
-    Array<JsonValue> portProbeDetailsJsonList = jsonValue.GetArray("portProbeDetails");
+    Array<JsonView> portProbeDetailsJsonList = jsonValue.GetArray("portProbeDetails");
     for(unsigned portProbeDetailsIndex = 0; portProbeDetailsIndex < portProbeDetailsJsonList.GetLength(); ++portProbeDetailsIndex)
     {
       m_portProbeDetails.push_back(portProbeDetailsJsonList[portProbeDetailsIndex].AsObject());

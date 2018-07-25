@@ -36,7 +36,7 @@ TransformResources::TransformResources() :
 {
 }
 
-TransformResources::TransformResources(const JsonValue& jsonValue) : 
+TransformResources::TransformResources(JsonView jsonValue) : 
     m_instanceType(TransformInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
@@ -45,7 +45,7 @@ TransformResources::TransformResources(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TransformResources& TransformResources::operator =(const JsonValue& jsonValue)
+TransformResources& TransformResources::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceType"))
   {

@@ -37,10 +37,10 @@ ListDeviceInstancesResult::ListDeviceInstancesResult(const Aws::AmazonWebService
 
 ListDeviceInstancesResult& ListDeviceInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deviceInstances"))
   {
-    Array<JsonValue> deviceInstancesJsonList = jsonValue.GetArray("deviceInstances");
+    Array<JsonView> deviceInstancesJsonList = jsonValue.GetArray("deviceInstances");
     for(unsigned deviceInstancesIndex = 0; deviceInstancesIndex < deviceInstancesJsonList.GetLength(); ++deviceInstancesIndex)
     {
       m_deviceInstances.push_back(deviceInstancesJsonList[deviceInstancesIndex].AsObject());

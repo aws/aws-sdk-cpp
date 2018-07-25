@@ -56,7 +56,7 @@ Aws::String StartDeviceSyncRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartDeviceSyncRequest::GetRequestSpecificHeaders() const

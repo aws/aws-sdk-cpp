@@ -39,7 +39,7 @@ GetInvitationsCountResult::GetInvitationsCountResult(const Aws::AmazonWebService
 
 GetInvitationsCountResult& GetInvitationsCountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("invitationsCount"))
   {
     m_invitationsCount = jsonValue.GetInteger("invitationsCount");

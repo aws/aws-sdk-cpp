@@ -37,7 +37,7 @@ CreateNFSFileShareResult::CreateNFSFileShareResult(const Aws::AmazonWebServiceRe
 
 CreateNFSFileShareResult& CreateNFSFileShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FileShareARN"))
   {
     m_fileShareARN = jsonValue.GetString("FileShareARN");

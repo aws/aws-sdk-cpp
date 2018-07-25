@@ -34,14 +34,14 @@ MetricDefinition::MetricDefinition() :
 {
 }
 
-MetricDefinition::MetricDefinition(const JsonValue& jsonValue) : 
+MetricDefinition::MetricDefinition(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_regexHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MetricDefinition& MetricDefinition::operator =(const JsonValue& jsonValue)
+MetricDefinition& MetricDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

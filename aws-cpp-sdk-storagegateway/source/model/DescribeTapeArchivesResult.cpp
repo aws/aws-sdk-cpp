@@ -37,10 +37,10 @@ DescribeTapeArchivesResult::DescribeTapeArchivesResult(const Aws::AmazonWebServi
 
 DescribeTapeArchivesResult& DescribeTapeArchivesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TapeArchives"))
   {
-    Array<JsonValue> tapeArchivesJsonList = jsonValue.GetArray("TapeArchives");
+    Array<JsonView> tapeArchivesJsonList = jsonValue.GetArray("TapeArchives");
     for(unsigned tapeArchivesIndex = 0; tapeArchivesIndex < tapeArchivesJsonList.GetLength(); ++tapeArchivesIndex)
     {
       m_tapeArchives.push_back(tapeArchivesJsonList[tapeArchivesIndex].AsObject());

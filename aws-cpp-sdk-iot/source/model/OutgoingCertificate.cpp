@@ -38,7 +38,7 @@ OutgoingCertificate::OutgoingCertificate() :
 {
 }
 
-OutgoingCertificate::OutgoingCertificate(const JsonValue& jsonValue) : 
+OutgoingCertificate::OutgoingCertificate(JsonView jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
     m_transferredToHasBeenSet(false),
@@ -49,7 +49,7 @@ OutgoingCertificate::OutgoingCertificate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutgoingCertificate& OutgoingCertificate::operator =(const JsonValue& jsonValue)
+OutgoingCertificate& OutgoingCertificate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("certificateArn"))
   {

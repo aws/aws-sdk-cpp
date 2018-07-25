@@ -54,7 +54,7 @@ SMBFileShareInfo::SMBFileShareInfo() :
 {
 }
 
-SMBFileShareInfo::SMBFileShareInfo(const JsonValue& jsonValue) : 
+SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue) : 
     m_fileShareARNHasBeenSet(false),
     m_fileShareIdHasBeenSet(false),
     m_fileShareStatusHasBeenSet(false),
@@ -81,7 +81,7 @@ SMBFileShareInfo::SMBFileShareInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SMBFileShareInfo& SMBFileShareInfo::operator =(const JsonValue& jsonValue)
+SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FileShareARN"))
   {
@@ -183,7 +183,7 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ValidUserList"))
   {
-    Array<JsonValue> validUserListJsonList = jsonValue.GetArray("ValidUserList");
+    Array<JsonView> validUserListJsonList = jsonValue.GetArray("ValidUserList");
     for(unsigned validUserListIndex = 0; validUserListIndex < validUserListJsonList.GetLength(); ++validUserListIndex)
     {
       m_validUserList.push_back(validUserListJsonList[validUserListIndex].AsString());
@@ -193,7 +193,7 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("InvalidUserList"))
   {
-    Array<JsonValue> invalidUserListJsonList = jsonValue.GetArray("InvalidUserList");
+    Array<JsonView> invalidUserListJsonList = jsonValue.GetArray("InvalidUserList");
     for(unsigned invalidUserListIndex = 0; invalidUserListIndex < invalidUserListJsonList.GetLength(); ++invalidUserListIndex)
     {
       m_invalidUserList.push_back(invalidUserListJsonList[invalidUserListIndex].AsString());

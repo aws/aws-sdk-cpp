@@ -37,7 +37,7 @@ DataFormatConversionConfiguration::DataFormatConversionConfiguration() :
 {
 }
 
-DataFormatConversionConfiguration::DataFormatConversionConfiguration(const JsonValue& jsonValue) : 
+DataFormatConversionConfiguration::DataFormatConversionConfiguration(JsonView jsonValue) : 
     m_schemaConfigurationHasBeenSet(false),
     m_inputFormatConfigurationHasBeenSet(false),
     m_outputFormatConfigurationHasBeenSet(false),
@@ -47,7 +47,7 @@ DataFormatConversionConfiguration::DataFormatConversionConfiguration(const JsonV
   *this = jsonValue;
 }
 
-DataFormatConversionConfiguration& DataFormatConversionConfiguration::operator =(const JsonValue& jsonValue)
+DataFormatConversionConfiguration& DataFormatConversionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaConfiguration"))
   {

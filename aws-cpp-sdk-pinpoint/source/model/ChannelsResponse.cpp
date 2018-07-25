@@ -33,17 +33,17 @@ ChannelsResponse::ChannelsResponse() :
 {
 }
 
-ChannelsResponse::ChannelsResponse(const JsonValue& jsonValue) : 
+ChannelsResponse::ChannelsResponse(JsonView jsonValue) : 
     m_channelsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ChannelsResponse& ChannelsResponse::operator =(const JsonValue& jsonValue)
+ChannelsResponse& ChannelsResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Channels"))
   {
-    Aws::Map<Aws::String, JsonValue> channelsJsonMap = jsonValue.GetObject("Channels").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> channelsJsonMap = jsonValue.GetObject("Channels").GetAllObjects();
     for(auto& channelsItem : channelsJsonMap)
     {
       m_channels[channelsItem.first] = channelsItem.second.AsObject();

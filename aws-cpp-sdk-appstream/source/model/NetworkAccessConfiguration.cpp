@@ -34,14 +34,14 @@ NetworkAccessConfiguration::NetworkAccessConfiguration() :
 {
 }
 
-NetworkAccessConfiguration::NetworkAccessConfiguration(const JsonValue& jsonValue) : 
+NetworkAccessConfiguration::NetworkAccessConfiguration(JsonView jsonValue) : 
     m_eniPrivateIpAddressHasBeenSet(false),
     m_eniIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NetworkAccessConfiguration& NetworkAccessConfiguration::operator =(const JsonValue& jsonValue)
+NetworkAccessConfiguration& NetworkAccessConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EniPrivateIpAddress"))
   {

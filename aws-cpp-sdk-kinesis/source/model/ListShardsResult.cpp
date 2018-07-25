@@ -37,10 +37,10 @@ ListShardsResult::ListShardsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 ListShardsResult& ListShardsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonValue> shardsJsonList = jsonValue.GetArray("Shards");
+    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());

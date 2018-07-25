@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     SMBFileShareInfo();
-    SMBFileShareInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    SMBFileShareInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SMBFileShareInfo(Aws::Utils::Json::JsonView jsonValue);
+    SMBFileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

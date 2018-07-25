@@ -37,7 +37,7 @@ Aws::String DescribeGlobalTableSettingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeGlobalTableSettingsRequest::GetRequestSpecificHeaders() const

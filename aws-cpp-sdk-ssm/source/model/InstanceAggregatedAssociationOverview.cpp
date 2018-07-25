@@ -34,14 +34,14 @@ InstanceAggregatedAssociationOverview::InstanceAggregatedAssociationOverview() :
 {
 }
 
-InstanceAggregatedAssociationOverview::InstanceAggregatedAssociationOverview(const JsonValue& jsonValue) : 
+InstanceAggregatedAssociationOverview::InstanceAggregatedAssociationOverview(JsonView jsonValue) : 
     m_detailedStatusHasBeenSet(false),
     m_instanceAssociationStatusAggregatedCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceAggregatedAssociationOverview& InstanceAggregatedAssociationOverview::operator =(const JsonValue& jsonValue)
+InstanceAggregatedAssociationOverview& InstanceAggregatedAssociationOverview::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DetailedStatus"))
   {
@@ -52,7 +52,7 @@ InstanceAggregatedAssociationOverview& InstanceAggregatedAssociationOverview::op
 
   if(jsonValue.ValueExists("InstanceAssociationStatusAggregatedCount"))
   {
-    Aws::Map<Aws::String, JsonValue> instanceAssociationStatusAggregatedCountJsonMap = jsonValue.GetObject("InstanceAssociationStatusAggregatedCount").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> instanceAssociationStatusAggregatedCountJsonMap = jsonValue.GetObject("InstanceAssociationStatusAggregatedCount").GetAllObjects();
     for(auto& instanceAssociationStatusAggregatedCountItem : instanceAssociationStatusAggregatedCountJsonMap)
     {
       m_instanceAssociationStatusAggregatedCount[instanceAssociationStatusAggregatedCountItem.first] = instanceAssociationStatusAggregatedCountItem.second.AsInteger();

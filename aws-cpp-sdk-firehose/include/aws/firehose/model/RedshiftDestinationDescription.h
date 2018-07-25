@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     RedshiftDestinationDescription();
-    RedshiftDestinationDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    RedshiftDestinationDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RedshiftDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
+    RedshiftDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

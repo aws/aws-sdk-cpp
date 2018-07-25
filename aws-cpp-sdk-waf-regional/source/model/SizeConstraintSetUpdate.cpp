@@ -35,7 +35,7 @@ SizeConstraintSetUpdate::SizeConstraintSetUpdate() :
 {
 }
 
-SizeConstraintSetUpdate::SizeConstraintSetUpdate(const JsonValue& jsonValue) : 
+SizeConstraintSetUpdate::SizeConstraintSetUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_sizeConstraintHasBeenSet(false)
@@ -43,7 +43,7 @@ SizeConstraintSetUpdate::SizeConstraintSetUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SizeConstraintSetUpdate& SizeConstraintSetUpdate::operator =(const JsonValue& jsonValue)
+SizeConstraintSetUpdate& SizeConstraintSetUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

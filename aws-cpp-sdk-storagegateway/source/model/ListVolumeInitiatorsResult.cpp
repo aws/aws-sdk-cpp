@@ -37,10 +37,10 @@ ListVolumeInitiatorsResult::ListVolumeInitiatorsResult(const Aws::AmazonWebServi
 
 ListVolumeInitiatorsResult& ListVolumeInitiatorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Initiators"))
   {
-    Array<JsonValue> initiatorsJsonList = jsonValue.GetArray("Initiators");
+    Array<JsonView> initiatorsJsonList = jsonValue.GetArray("Initiators");
     for(unsigned initiatorsIndex = 0; initiatorsIndex < initiatorsJsonList.GetLength(); ++initiatorsIndex)
     {
       m_initiators.push_back(initiatorsJsonList[initiatorsIndex].AsString());

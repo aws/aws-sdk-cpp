@@ -49,7 +49,7 @@ Aws::String DescribeRulesPackagesRequest::SerializePayload() const
    payload.WithString("locale", LocaleMapper::GetNameForLocale(m_locale));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeRulesPackagesRequest::GetRequestSpecificHeaders() const

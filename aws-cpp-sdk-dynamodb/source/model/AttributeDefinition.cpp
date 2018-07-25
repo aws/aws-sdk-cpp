@@ -35,7 +35,7 @@ AttributeDefinition::AttributeDefinition() :
 {
 }
 
-AttributeDefinition::AttributeDefinition(const JsonValue& jsonValue) : 
+AttributeDefinition::AttributeDefinition(JsonView jsonValue) : 
     m_attributeNameHasBeenSet(false),
     m_attributeType(ScalarAttributeType::NOT_SET),
     m_attributeTypeHasBeenSet(false)
@@ -43,7 +43,7 @@ AttributeDefinition::AttributeDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttributeDefinition& AttributeDefinition::operator =(const JsonValue& jsonValue)
+AttributeDefinition& AttributeDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeName"))
   {

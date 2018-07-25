@@ -38,7 +38,7 @@ KeysAndAttributes::KeysAndAttributes() :
 {
 }
 
-KeysAndAttributes::KeysAndAttributes(const JsonValue& jsonValue) : 
+KeysAndAttributes::KeysAndAttributes(JsonView jsonValue) : 
     m_keysHasBeenSet(false),
     m_attributesToGetHasBeenSet(false),
     m_consistentRead(false),
@@ -49,14 +49,14 @@ KeysAndAttributes::KeysAndAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-KeysAndAttributes& KeysAndAttributes::operator =(const JsonValue& jsonValue)
+KeysAndAttributes& KeysAndAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonValue> keysJsonList = jsonValue.GetArray("Keys");
+    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
-      Aws::Map<Aws::String, JsonValue> keyJsonMap = keysJsonList[keysIndex].GetAllObjects();
+      Aws::Map<Aws::String, JsonView> keyJsonMap = keysJsonList[keysIndex].GetAllObjects();
       Aws::Map<Aws::String, AttributeValue> keyMap;
       for(auto& keyItem : keyJsonMap)
       {
@@ -69,7 +69,7 @@ KeysAndAttributes& KeysAndAttributes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AttributesToGet"))
   {
-    Array<JsonValue> attributesToGetJsonList = jsonValue.GetArray("AttributesToGet");
+    Array<JsonView> attributesToGetJsonList = jsonValue.GetArray("AttributesToGet");
     for(unsigned attributesToGetIndex = 0; attributesToGetIndex < attributesToGetJsonList.GetLength(); ++attributesToGetIndex)
     {
       m_attributesToGet.push_back(attributesToGetJsonList[attributesToGetIndex].AsString());
@@ -93,7 +93,7 @@ KeysAndAttributes& KeysAndAttributes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ExpressionAttributeNames"))
   {
-    Aws::Map<Aws::String, JsonValue> expressionAttributeNamesJsonMap = jsonValue.GetObject("ExpressionAttributeNames").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> expressionAttributeNamesJsonMap = jsonValue.GetObject("ExpressionAttributeNames").GetAllObjects();
     for(auto& expressionAttributeNamesItem : expressionAttributeNamesJsonMap)
     {
       m_expressionAttributeNames[expressionAttributeNamesItem.first] = expressionAttributeNamesItem.second.AsString();

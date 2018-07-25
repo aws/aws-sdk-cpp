@@ -85,7 +85,7 @@ Aws::String ModifyReplicationTaskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ModifyReplicationTaskRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ StartTimerDecisionAttributes::StartTimerDecisionAttributes() :
 {
 }
 
-StartTimerDecisionAttributes::StartTimerDecisionAttributes(const JsonValue& jsonValue) : 
+StartTimerDecisionAttributes::StartTimerDecisionAttributes(JsonView jsonValue) : 
     m_timerIdHasBeenSet(false),
     m_controlHasBeenSet(false),
     m_startToFireTimeoutHasBeenSet(false)
@@ -43,7 +43,7 @@ StartTimerDecisionAttributes::StartTimerDecisionAttributes(const JsonValue& json
   *this = jsonValue;
 }
 
-StartTimerDecisionAttributes& StartTimerDecisionAttributes::operator =(const JsonValue& jsonValue)
+StartTimerDecisionAttributes& StartTimerDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timerId"))
   {

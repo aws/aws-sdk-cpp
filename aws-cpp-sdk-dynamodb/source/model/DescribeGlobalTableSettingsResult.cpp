@@ -37,7 +37,7 @@ DescribeGlobalTableSettingsResult::DescribeGlobalTableSettingsResult(const Aws::
 
 DescribeGlobalTableSettingsResult& DescribeGlobalTableSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GlobalTableName"))
   {
     m_globalTableName = jsonValue.GetString("GlobalTableName");
@@ -46,7 +46,7 @@ DescribeGlobalTableSettingsResult& DescribeGlobalTableSettingsResult::operator =
 
   if(jsonValue.ValueExists("ReplicaSettings"))
   {
-    Array<JsonValue> replicaSettingsJsonList = jsonValue.GetArray("ReplicaSettings");
+    Array<JsonView> replicaSettingsJsonList = jsonValue.GetArray("ReplicaSettings");
     for(unsigned replicaSettingsIndex = 0; replicaSettingsIndex < replicaSettingsJsonList.GetLength(); ++replicaSettingsIndex)
     {
       m_replicaSettings.push_back(replicaSettingsJsonList[replicaSettingsIndex].AsObject());

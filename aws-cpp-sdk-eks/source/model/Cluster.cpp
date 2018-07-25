@@ -43,7 +43,7 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(const JsonValue& jsonValue) : 
+Cluster::Cluster(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -59,7 +59,7 @@ Cluster::Cluster(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Cluster& Cluster::operator =(const JsonValue& jsonValue)
+Cluster& Cluster::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

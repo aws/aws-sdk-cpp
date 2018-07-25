@@ -52,7 +52,7 @@ Aws::String DescribeInventoryDeletionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeInventoryDeletionsRequest::GetRequestSpecificHeaders() const

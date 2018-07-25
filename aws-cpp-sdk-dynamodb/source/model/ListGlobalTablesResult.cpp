@@ -37,10 +37,10 @@ ListGlobalTablesResult::ListGlobalTablesResult(const Aws::AmazonWebServiceResult
 
 ListGlobalTablesResult& ListGlobalTablesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GlobalTables"))
   {
-    Array<JsonValue> globalTablesJsonList = jsonValue.GetArray("GlobalTables");
+    Array<JsonView> globalTablesJsonList = jsonValue.GetArray("GlobalTables");
     for(unsigned globalTablesIndex = 0; globalTablesIndex < globalTablesJsonList.GetLength(); ++globalTablesIndex)
     {
       m_globalTables.push_back(globalTablesJsonList[globalTablesIndex].AsObject());

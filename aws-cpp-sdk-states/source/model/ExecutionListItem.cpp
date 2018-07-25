@@ -39,7 +39,7 @@ ExecutionListItem::ExecutionListItem() :
 {
 }
 
-ExecutionListItem::ExecutionListItem(const JsonValue& jsonValue) : 
+ExecutionListItem::ExecutionListItem(JsonView jsonValue) : 
     m_executionArnHasBeenSet(false),
     m_stateMachineArnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -51,7 +51,7 @@ ExecutionListItem::ExecutionListItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExecutionListItem& ExecutionListItem::operator =(const JsonValue& jsonValue)
+ExecutionListItem& ExecutionListItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("executionArn"))
   {

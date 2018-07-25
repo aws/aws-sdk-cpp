@@ -34,14 +34,14 @@ OutputDestination::OutputDestination() :
 {
 }
 
-OutputDestination::OutputDestination(const JsonValue& jsonValue) : 
+OutputDestination::OutputDestination(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_settingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputDestination& OutputDestination::operator =(const JsonValue& jsonValue)
+OutputDestination& OutputDestination::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -52,7 +52,7 @@ OutputDestination& OutputDestination::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("settings"))
   {
-    Array<JsonValue> settingsJsonList = jsonValue.GetArray("settings");
+    Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
     for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
     {
       m_settings.push_back(settingsJsonList[settingsIndex].AsObject());

@@ -37,7 +37,7 @@ GetRoomResult::GetRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 GetRoomResult& GetRoomResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Room"))
   {
     m_room = jsonValue.GetObject("Room");

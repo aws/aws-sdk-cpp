@@ -37,7 +37,7 @@ UpdateInputResult::UpdateInputResult(const Aws::AmazonWebServiceResult<JsonValue
 
 UpdateInputResult& UpdateInputResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetObject("input");

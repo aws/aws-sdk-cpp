@@ -33,17 +33,17 @@ ConnectionsList::ConnectionsList() :
 {
 }
 
-ConnectionsList::ConnectionsList(const JsonValue& jsonValue) : 
+ConnectionsList::ConnectionsList(JsonView jsonValue) : 
     m_connectionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ConnectionsList& ConnectionsList::operator =(const JsonValue& jsonValue)
+ConnectionsList& ConnectionsList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Connections"))
   {
-    Array<JsonValue> connectionsJsonList = jsonValue.GetArray("Connections");
+    Array<JsonView> connectionsJsonList = jsonValue.GetArray("Connections");
     for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
     {
       m_connections.push_back(connectionsJsonList[connectionsIndex].AsString());

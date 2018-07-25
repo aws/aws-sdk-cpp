@@ -47,7 +47,7 @@ GetMLModelResult::GetMLModelResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetMLModelResult& GetMLModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MLModelId"))
   {
     m_mLModelId = jsonValue.GetString("MLModelId");
@@ -104,7 +104,7 @@ GetMLModelResult& GetMLModelResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("TrainingParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> trainingParametersJsonMap = jsonValue.GetObject("TrainingParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> trainingParametersJsonMap = jsonValue.GetObject("TrainingParameters").GetAllObjects();
     for(auto& trainingParametersItem : trainingParametersJsonMap)
     {
       m_trainingParameters[trainingParametersItem.first] = trainingParametersItem.second.AsString();

@@ -37,10 +37,10 @@ ListDevicePoolsResult::ListDevicePoolsResult(const Aws::AmazonWebServiceResult<J
 
 ListDevicePoolsResult& ListDevicePoolsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("devicePools"))
   {
-    Array<JsonValue> devicePoolsJsonList = jsonValue.GetArray("devicePools");
+    Array<JsonView> devicePoolsJsonList = jsonValue.GetArray("devicePools");
     for(unsigned devicePoolsIndex = 0; devicePoolsIndex < devicePoolsJsonList.GetLength(); ++devicePoolsIndex)
     {
       m_devicePools.push_back(devicePoolsJsonList[devicePoolsIndex].AsObject());

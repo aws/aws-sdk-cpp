@@ -37,7 +37,7 @@ CreateSkillGroupResult::CreateSkillGroupResult(const Aws::AmazonWebServiceResult
 
 CreateSkillGroupResult& CreateSkillGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SkillGroupArn"))
   {
     m_skillGroupArn = jsonValue.GetString("SkillGroupArn");

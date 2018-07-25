@@ -58,7 +58,7 @@ Aws::String DisableStageTransitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisableStageTransitionRequest::GetRequestSpecificHeaders() const

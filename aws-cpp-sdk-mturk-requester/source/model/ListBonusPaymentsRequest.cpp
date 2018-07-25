@@ -59,7 +59,7 @@ Aws::String ListBonusPaymentsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListBonusPaymentsRequest::GetRequestSpecificHeaders() const

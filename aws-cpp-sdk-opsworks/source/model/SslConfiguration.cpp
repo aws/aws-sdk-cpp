@@ -35,7 +35,7 @@ SslConfiguration::SslConfiguration() :
 {
 }
 
-SslConfiguration::SslConfiguration(const JsonValue& jsonValue) : 
+SslConfiguration::SslConfiguration(JsonView jsonValue) : 
     m_certificateHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
     m_chainHasBeenSet(false)
@@ -43,7 +43,7 @@ SslConfiguration::SslConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SslConfiguration& SslConfiguration::operator =(const JsonValue& jsonValue)
+SslConfiguration& SslConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Certificate"))
   {

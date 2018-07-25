@@ -37,7 +37,7 @@ DescribeAttachmentResult::DescribeAttachmentResult(const Aws::AmazonWebServiceRe
 
 DescribeAttachmentResult& DescribeAttachmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("attachment"))
   {
     m_attachment = jsonValue.GetObject("attachment");

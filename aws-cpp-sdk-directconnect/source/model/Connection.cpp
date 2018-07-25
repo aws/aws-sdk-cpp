@@ -46,7 +46,7 @@ Connection::Connection() :
 {
 }
 
-Connection::Connection(const JsonValue& jsonValue) : 
+Connection::Connection(JsonView jsonValue) : 
     m_ownerAccountHasBeenSet(false),
     m_connectionIdHasBeenSet(false),
     m_connectionNameHasBeenSet(false),
@@ -65,7 +65,7 @@ Connection::Connection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Connection& Connection::operator =(const JsonValue& jsonValue)
+Connection& Connection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ownerAccount"))
   {

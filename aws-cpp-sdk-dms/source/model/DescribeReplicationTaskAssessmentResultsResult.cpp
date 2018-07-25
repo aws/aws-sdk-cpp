@@ -37,7 +37,7 @@ DescribeReplicationTaskAssessmentResultsResult::DescribeReplicationTaskAssessmen
 
 DescribeReplicationTaskAssessmentResultsResult& DescribeReplicationTaskAssessmentResultsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -52,7 +52,7 @@ DescribeReplicationTaskAssessmentResultsResult& DescribeReplicationTaskAssessmen
 
   if(jsonValue.ValueExists("ReplicationTaskAssessmentResults"))
   {
-    Array<JsonValue> replicationTaskAssessmentResultsJsonList = jsonValue.GetArray("ReplicationTaskAssessmentResults");
+    Array<JsonView> replicationTaskAssessmentResultsJsonList = jsonValue.GetArray("ReplicationTaskAssessmentResults");
     for(unsigned replicationTaskAssessmentResultsIndex = 0; replicationTaskAssessmentResultsIndex < replicationTaskAssessmentResultsJsonList.GetLength(); ++replicationTaskAssessmentResultsIndex)
     {
       m_replicationTaskAssessmentResults.push_back(replicationTaskAssessmentResultsJsonList[replicationTaskAssessmentResultsIndex].AsObject());

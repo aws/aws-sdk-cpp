@@ -36,7 +36,7 @@ ResponseCard::ResponseCard() :
 {
 }
 
-ResponseCard::ResponseCard(const JsonValue& jsonValue) : 
+ResponseCard::ResponseCard(JsonView jsonValue) : 
     m_versionHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
     m_contentTypeHasBeenSet(false),
@@ -45,7 +45,7 @@ ResponseCard::ResponseCard(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResponseCard& ResponseCard::operator =(const JsonValue& jsonValue)
+ResponseCard& ResponseCard::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("version"))
   {
@@ -63,7 +63,7 @@ ResponseCard& ResponseCard::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("genericAttachments"))
   {
-    Array<JsonValue> genericAttachmentsJsonList = jsonValue.GetArray("genericAttachments");
+    Array<JsonView> genericAttachmentsJsonList = jsonValue.GetArray("genericAttachments");
     for(unsigned genericAttachmentsIndex = 0; genericAttachmentsIndex < genericAttachmentsJsonList.GetLength(); ++genericAttachmentsIndex)
     {
       m_genericAttachments.push_back(genericAttachmentsJsonList[genericAttachmentsIndex].AsObject());

@@ -34,18 +34,18 @@ Group::Group() :
 {
 }
 
-Group::Group(const JsonValue& jsonValue) : 
+Group::Group(JsonView jsonValue) : 
     m_keysHasBeenSet(false),
     m_metricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Group& Group::operator =(const JsonValue& jsonValue)
+Group& Group::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonValue> keysJsonList = jsonValue.GetArray("Keys");
+    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
       m_keys.push_back(keysJsonList[keysIndex].AsString());
@@ -55,7 +55,7 @@ Group& Group::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Metrics"))
   {
-    Aws::Map<Aws::String, JsonValue> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
     for(auto& metricsItem : metricsJsonMap)
     {
       m_metrics[metricsItem.first] = metricsItem.second.AsObject();

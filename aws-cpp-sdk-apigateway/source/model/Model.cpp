@@ -37,7 +37,7 @@ Model::Model() :
 {
 }
 
-Model::Model(const JsonValue& jsonValue) : 
+Model::Model(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -47,7 +47,7 @@ Model::Model(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Model& Model::operator =(const JsonValue& jsonValue)
+Model& Model::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PortProbeAction();
-    PortProbeAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    PortProbeAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PortProbeAction(Aws::Utils::Json::JsonView jsonValue);
+    PortProbeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

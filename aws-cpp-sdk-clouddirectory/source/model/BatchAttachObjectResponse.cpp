@@ -33,13 +33,13 @@ BatchAttachObjectResponse::BatchAttachObjectResponse() :
 {
 }
 
-BatchAttachObjectResponse::BatchAttachObjectResponse(const JsonValue& jsonValue) : 
+BatchAttachObjectResponse::BatchAttachObjectResponse(JsonView jsonValue) : 
     m_attachedObjectIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchAttachObjectResponse& BatchAttachObjectResponse::operator =(const JsonValue& jsonValue)
+BatchAttachObjectResponse& BatchAttachObjectResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attachedObjectIdentifier"))
   {

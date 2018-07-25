@@ -44,7 +44,7 @@ Aws::String GetGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetGroupRequest::GetRequestSpecificHeaders() const

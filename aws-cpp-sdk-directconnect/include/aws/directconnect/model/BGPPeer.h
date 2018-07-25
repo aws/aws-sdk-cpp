@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectConnect
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     BGPPeer();
-    BGPPeer(const Aws::Utils::Json::JsonValue& jsonValue);
-    BGPPeer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BGPPeer(Aws::Utils::Json::JsonView jsonValue);
+    BGPPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -36,7 +36,7 @@ SecretVersionsListEntry::SecretVersionsListEntry() :
 {
 }
 
-SecretVersionsListEntry::SecretVersionsListEntry(const JsonValue& jsonValue) : 
+SecretVersionsListEntry::SecretVersionsListEntry(JsonView jsonValue) : 
     m_versionIdHasBeenSet(false),
     m_versionStagesHasBeenSet(false),
     m_lastAccessedDateHasBeenSet(false),
@@ -45,7 +45,7 @@ SecretVersionsListEntry::SecretVersionsListEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SecretVersionsListEntry& SecretVersionsListEntry::operator =(const JsonValue& jsonValue)
+SecretVersionsListEntry& SecretVersionsListEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VersionId"))
   {
@@ -56,7 +56,7 @@ SecretVersionsListEntry& SecretVersionsListEntry::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("VersionStages"))
   {
-    Array<JsonValue> versionStagesJsonList = jsonValue.GetArray("VersionStages");
+    Array<JsonView> versionStagesJsonList = jsonValue.GetArray("VersionStages");
     for(unsigned versionStagesIndex = 0; versionStagesIndex < versionStagesJsonList.GetLength(); ++versionStagesIndex)
     {
       m_versionStages.push_back(versionStagesJsonList[versionStagesIndex].AsString());

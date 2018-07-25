@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     AttributeKey();
-    AttributeKey(const Aws::Utils::Json::JsonValue& jsonValue);
-    AttributeKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AttributeKey(Aws::Utils::Json::JsonView jsonValue);
+    AttributeKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

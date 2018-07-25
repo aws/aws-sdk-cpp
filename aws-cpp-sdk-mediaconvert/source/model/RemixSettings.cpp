@@ -37,7 +37,7 @@ RemixSettings::RemixSettings() :
 {
 }
 
-RemixSettings::RemixSettings(const JsonValue& jsonValue) : 
+RemixSettings::RemixSettings(JsonView jsonValue) : 
     m_channelMappingHasBeenSet(false),
     m_channelsIn(0),
     m_channelsInHasBeenSet(false),
@@ -47,7 +47,7 @@ RemixSettings::RemixSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RemixSettings& RemixSettings::operator =(const JsonValue& jsonValue)
+RemixSettings& RemixSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("channelMapping"))
   {

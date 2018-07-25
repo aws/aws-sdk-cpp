@@ -56,7 +56,7 @@ Aws::String AcceptMatchRequest::SerializePayload() const
    payload.WithString("AcceptanceType", AcceptanceTypeMapper::GetNameForAcceptanceType(m_acceptanceType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AcceptMatchRequest::GetRequestSpecificHeaders() const

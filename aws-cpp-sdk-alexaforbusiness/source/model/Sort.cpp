@@ -35,7 +35,7 @@ Sort::Sort() :
 {
 }
 
-Sort::Sort(const JsonValue& jsonValue) : 
+Sort::Sort(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_value(SortValue::NOT_SET),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ Sort::Sort(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Sort& Sort::operator =(const JsonValue& jsonValue)
+Sort& Sort::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

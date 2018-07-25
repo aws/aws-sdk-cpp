@@ -33,6 +33,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     Task();
-    Task(const Aws::Utils::Json::JsonValue& jsonValue);
-    Task& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Task(Aws::Utils::Json::JsonView jsonValue);
+    Task& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -299,21 +300,21 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but is
-     * converted to an integer indicating the CPU units when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.
-     * Supported values are between <code>128</code> CPU units (<code>0.125</code>
-     * vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of supported values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
-     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
-     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
-     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
+     * definition is registered.</p> <p>If using the EC2 launch type, this field is
+     * optional. Supported values are between <code>128</code> CPU units
+     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
+     * must use one of the following values, which determines your range of supported
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
@@ -322,21 +323,21 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but is
-     * converted to an integer indicating the CPU units when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.
-     * Supported values are between <code>128</code> CPU units (<code>0.125</code>
-     * vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of supported values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
-     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
-     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
-     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
+     * definition is registered.</p> <p>If using the EC2 launch type, this field is
+     * optional. Supported values are between <code>128</code> CPU units
+     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
+     * must use one of the following values, which determines your range of supported
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
@@ -345,21 +346,21 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but is
-     * converted to an integer indicating the CPU units when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.
-     * Supported values are between <code>128</code> CPU units (<code>0.125</code>
-     * vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of supported values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
-     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
-     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
-     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
+     * definition is registered.</p> <p>If using the EC2 launch type, this field is
+     * optional. Supported values are between <code>128</code> CPU units
+     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
+     * must use one of the following values, which determines your range of supported
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
@@ -368,21 +369,21 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but is
-     * converted to an integer indicating the CPU units when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.
-     * Supported values are between <code>128</code> CPU units (<code>0.125</code>
-     * vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of supported values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
-     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
-     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
-     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
+     * definition is registered.</p> <p>If using the EC2 launch type, this field is
+     * optional. Supported values are between <code>128</code> CPU units
+     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
+     * must use one of the following values, which determines your range of supported
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
@@ -391,21 +392,21 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but is
-     * converted to an integer indicating the CPU units when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.
-     * Supported values are between <code>128</code> CPU units (<code>0.125</code>
-     * vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of supported values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
-     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
-     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
-     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
+     * definition is registered.</p> <p>If using the EC2 launch type, this field is
+     * optional. Supported values are between <code>128</code> CPU units
+     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
+     * must use one of the following values, which determines your range of supported
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
@@ -414,21 +415,21 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but is
-     * converted to an integer indicating the CPU units when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.
-     * Supported values are between <code>128</code> CPU units (<code>0.125</code>
-     * vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of supported values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
-     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
-     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
-     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
+     * definition is registered.</p> <p>If using the EC2 launch type, this field is
+     * optional. Supported values are between <code>128</code> CPU units
+     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
+     * must use one of the following values, which determines your range of supported
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
@@ -437,21 +438,21 @@ namespace Model
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but is
-     * converted to an integer indicating the CPU units when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.
-     * Supported values are between <code>128</code> CPU units (<code>0.125</code>
-     * vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If using
-     * the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of supported values for the
-     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
-     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
-     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
-     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
+     * values are converted to an integer indicating the CPU units when the task
+     * definition is registered.</p> <p>If using the EC2 launch type, this field is
+     * optional. Supported values are between <code>128</code> CPU units
+     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
+     * must use one of the following values, which determines your range of supported
+     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
@@ -461,9 +462,9 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but is
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -481,9 +482,9 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but is
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -501,9 +502,9 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but is
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -521,9 +522,9 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but is
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -541,9 +542,9 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but is
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -561,9 +562,9 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but is
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -581,9 +582,9 @@ namespace Model
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition but is
-     * converted to an integer indicating the MiB when the task definition is
-     * registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
+     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * values are converted to an integer indicating the MiB when the task definition
+     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
      * <p>If using the Fargate launch type, this field is required and you must use one
      * of the following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
@@ -950,31 +951,31 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp for when the task will stop (transitions from the
+     * <p>The Unix time stamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetStoppingAt() const{ return m_stoppingAt; }
 
     /**
-     * <p>The Unix time stamp for when the task will stop (transitions from the
+     * <p>The Unix time stamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline void SetStoppingAt(const Aws::Utils::DateTime& value) { m_stoppingAtHasBeenSet = true; m_stoppingAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the task will stop (transitions from the
+     * <p>The Unix time stamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline void SetStoppingAt(Aws::Utils::DateTime&& value) { m_stoppingAtHasBeenSet = true; m_stoppingAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the task will stop (transitions from the
+     * <p>The Unix time stamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline Task& WithStoppingAt(const Aws::Utils::DateTime& value) { SetStoppingAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the task will stop (transitions from the
+     * <p>The Unix time stamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline Task& WithStoppingAt(Aws::Utils::DateTime&& value) { SetStoppingAt(std::move(value)); return *this;}
@@ -1138,43 +1139,43 @@ namespace Model
 
 
     /**
-     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <p>The elastic network adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
 
     /**
-     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <p>The elastic network adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
-     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <p>The elastic network adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
-     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <p>The elastic network adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline Task& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
 
     /**
-     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <p>The elastic network adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline Task& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
-     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <p>The elastic network adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline Task& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
 
     /**
-     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <p>The elastic network adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline Task& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }

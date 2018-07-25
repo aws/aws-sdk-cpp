@@ -51,7 +51,7 @@ EmailChannelResponse::EmailChannelResponse() :
 {
 }
 
-EmailChannelResponse::EmailChannelResponse(const JsonValue& jsonValue) : 
+EmailChannelResponse::EmailChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_enabled(false),
@@ -75,7 +75,7 @@ EmailChannelResponse::EmailChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EmailChannelResponse& EmailChannelResponse::operator =(const JsonValue& jsonValue)
+EmailChannelResponse& EmailChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

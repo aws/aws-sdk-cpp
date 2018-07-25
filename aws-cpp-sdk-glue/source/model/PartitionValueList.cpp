@@ -33,17 +33,17 @@ PartitionValueList::PartitionValueList() :
 {
 }
 
-PartitionValueList::PartitionValueList(const JsonValue& jsonValue) : 
+PartitionValueList::PartitionValueList(JsonView jsonValue) : 
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PartitionValueList& PartitionValueList::operator =(const JsonValue& jsonValue)
+PartitionValueList& PartitionValueList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

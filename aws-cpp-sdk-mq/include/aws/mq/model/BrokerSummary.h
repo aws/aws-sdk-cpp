@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MQ
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     BrokerSummary();
-    BrokerSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    BrokerSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BrokerSummary(Aws::Utils::Json::JsonView jsonValue);
+    BrokerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

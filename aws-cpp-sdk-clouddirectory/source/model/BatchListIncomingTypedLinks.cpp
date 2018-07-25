@@ -38,7 +38,7 @@ BatchListIncomingTypedLinks::BatchListIncomingTypedLinks() :
 {
 }
 
-BatchListIncomingTypedLinks::BatchListIncomingTypedLinks(const JsonValue& jsonValue) : 
+BatchListIncomingTypedLinks::BatchListIncomingTypedLinks(JsonView jsonValue) : 
     m_objectReferenceHasBeenSet(false),
     m_filterAttributeRangesHasBeenSet(false),
     m_filterTypedLinkHasBeenSet(false),
@@ -49,7 +49,7 @@ BatchListIncomingTypedLinks::BatchListIncomingTypedLinks(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-BatchListIncomingTypedLinks& BatchListIncomingTypedLinks::operator =(const JsonValue& jsonValue)
+BatchListIncomingTypedLinks& BatchListIncomingTypedLinks::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectReference"))
   {
@@ -60,7 +60,7 @@ BatchListIncomingTypedLinks& BatchListIncomingTypedLinks::operator =(const JsonV
 
   if(jsonValue.ValueExists("FilterAttributeRanges"))
   {
-    Array<JsonValue> filterAttributeRangesJsonList = jsonValue.GetArray("FilterAttributeRanges");
+    Array<JsonView> filterAttributeRangesJsonList = jsonValue.GetArray("FilterAttributeRanges");
     for(unsigned filterAttributeRangesIndex = 0; filterAttributeRangesIndex < filterAttributeRangesJsonList.GetLength(); ++filterAttributeRangesIndex)
     {
       m_filterAttributeRanges.push_back(filterAttributeRangesJsonList[filterAttributeRangesIndex].AsObject());

@@ -39,7 +39,7 @@ RemoveTargetsResult::RemoveTargetsResult(const Aws::AmazonWebServiceResult<JsonV
 
 RemoveTargetsResult& RemoveTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedEntryCount"))
   {
     m_failedEntryCount = jsonValue.GetInteger("FailedEntryCount");
@@ -48,7 +48,7 @@ RemoveTargetsResult& RemoveTargetsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("FailedEntries"))
   {
-    Array<JsonValue> failedEntriesJsonList = jsonValue.GetArray("FailedEntries");
+    Array<JsonView> failedEntriesJsonList = jsonValue.GetArray("FailedEntries");
     for(unsigned failedEntriesIndex = 0; failedEntriesIndex < failedEntriesJsonList.GetLength(); ++failedEntriesIndex)
     {
       m_failedEntries.push_back(failedEntriesJsonList[failedEntriesIndex].AsObject());

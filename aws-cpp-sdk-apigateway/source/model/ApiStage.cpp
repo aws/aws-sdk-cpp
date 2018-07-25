@@ -35,7 +35,7 @@ ApiStage::ApiStage() :
 {
 }
 
-ApiStage::ApiStage(const JsonValue& jsonValue) : 
+ApiStage::ApiStage(JsonView jsonValue) : 
     m_apiIdHasBeenSet(false),
     m_stageHasBeenSet(false),
     m_throttleHasBeenSet(false)
@@ -43,7 +43,7 @@ ApiStage::ApiStage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApiStage& ApiStage::operator =(const JsonValue& jsonValue)
+ApiStage& ApiStage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("apiId"))
   {
@@ -61,7 +61,7 @@ ApiStage& ApiStage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("throttle"))
   {
-    Aws::Map<Aws::String, JsonValue> throttleJsonMap = jsonValue.GetObject("throttle").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> throttleJsonMap = jsonValue.GetObject("throttle").GetAllObjects();
     for(auto& throttleItem : throttleJsonMap)
     {
       m_throttle[throttleItem.first] = throttleItem.second.AsObject();

@@ -38,7 +38,7 @@ ActivityTaskFailedEventAttributes::ActivityTaskFailedEventAttributes() :
 {
 }
 
-ActivityTaskFailedEventAttributes::ActivityTaskFailedEventAttributes(const JsonValue& jsonValue) : 
+ActivityTaskFailedEventAttributes::ActivityTaskFailedEventAttributes(JsonView jsonValue) : 
     m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_scheduledEventId(0),
@@ -49,7 +49,7 @@ ActivityTaskFailedEventAttributes::ActivityTaskFailedEventAttributes(const JsonV
   *this = jsonValue;
 }
 
-ActivityTaskFailedEventAttributes& ActivityTaskFailedEventAttributes::operator =(const JsonValue& jsonValue)
+ActivityTaskFailedEventAttributes& ActivityTaskFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("reason"))
   {

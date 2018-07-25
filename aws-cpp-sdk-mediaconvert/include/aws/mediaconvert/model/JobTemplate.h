@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     JobTemplate();
-    JobTemplate(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobTemplate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobTemplate(Aws::Utils::Json::JsonView jsonValue);
+    JobTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

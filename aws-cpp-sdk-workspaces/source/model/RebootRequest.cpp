@@ -33,13 +33,13 @@ RebootRequest::RebootRequest() :
 {
 }
 
-RebootRequest::RebootRequest(const JsonValue& jsonValue) : 
+RebootRequest::RebootRequest(JsonView jsonValue) : 
     m_workspaceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RebootRequest& RebootRequest::operator =(const JsonValue& jsonValue)
+RebootRequest& RebootRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkspaceId"))
   {

@@ -41,7 +41,7 @@ DescribeHsmResult::DescribeHsmResult(const Aws::AmazonWebServiceResult<JsonValue
 
 DescribeHsmResult& DescribeHsmResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HsmArn"))
   {
     m_hsmArn = jsonValue.GetString("HsmArn");
@@ -164,7 +164,7 @@ DescribeHsmResult& DescribeHsmResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("Partitions"))
   {
-    Array<JsonValue> partitionsJsonList = jsonValue.GetArray("Partitions");
+    Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
     for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
     {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsString());

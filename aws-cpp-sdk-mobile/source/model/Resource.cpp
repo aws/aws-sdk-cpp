@@ -37,7 +37,7 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(const JsonValue& jsonValue) : 
+Resource::Resource(JsonView jsonValue) : 
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
@@ -47,7 +47,7 @@ Resource::Resource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Resource& Resource::operator =(const JsonValue& jsonValue)
+Resource& Resource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {
@@ -79,7 +79,7 @@ Resource& Resource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     EndpointBatchItem();
-    EndpointBatchItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    EndpointBatchItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EndpointBatchItem(Aws::Utils::Json::JsonView jsonValue);
+    EndpointBatchItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

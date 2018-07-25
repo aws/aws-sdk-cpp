@@ -106,7 +106,7 @@ H265Settings::H265Settings() :
 {
 }
 
-H265Settings::H265Settings(const JsonValue& jsonValue) : 
+H265Settings::H265Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(H265AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
     m_alternateTransferFunctionSei(H265AlternateTransferFunctionSei::NOT_SET),
@@ -185,7 +185,7 @@ H265Settings::H265Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-H265Settings& H265Settings::operator =(const JsonValue& jsonValue)
+H265Settings& H265Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adaptiveQuantization"))
   {

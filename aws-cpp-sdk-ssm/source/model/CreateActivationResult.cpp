@@ -37,7 +37,7 @@ CreateActivationResult::CreateActivationResult(const Aws::AmazonWebServiceResult
 
 CreateActivationResult& CreateActivationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ActivationId"))
   {
     m_activationId = jsonValue.GetString("ActivationId");

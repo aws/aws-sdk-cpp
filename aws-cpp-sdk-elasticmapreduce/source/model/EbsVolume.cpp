@@ -34,14 +34,14 @@ EbsVolume::EbsVolume() :
 {
 }
 
-EbsVolume::EbsVolume(const JsonValue& jsonValue) : 
+EbsVolume::EbsVolume(JsonView jsonValue) : 
     m_deviceHasBeenSet(false),
     m_volumeIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EbsVolume& EbsVolume::operator =(const JsonValue& jsonValue)
+EbsVolume& EbsVolume::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Device"))
   {

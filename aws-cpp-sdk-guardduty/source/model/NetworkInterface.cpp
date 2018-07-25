@@ -42,7 +42,7 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(const JsonValue& jsonValue) : 
+NetworkInterface::NetworkInterface(JsonView jsonValue) : 
     m_ipv6AddressesHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
@@ -57,11 +57,11 @@ NetworkInterface::NetworkInterface(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NetworkInterface& NetworkInterface::operator =(const JsonValue& jsonValue)
+NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ipv6Addresses"))
   {
-    Array<JsonValue> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
+    Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
     for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
     {
       m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
@@ -92,7 +92,7 @@ NetworkInterface& NetworkInterface::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("privateIpAddresses"))
   {
-    Array<JsonValue> privateIpAddressesJsonList = jsonValue.GetArray("privateIpAddresses");
+    Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("privateIpAddresses");
     for(unsigned privateIpAddressesIndex = 0; privateIpAddressesIndex < privateIpAddressesJsonList.GetLength(); ++privateIpAddressesIndex)
     {
       m_privateIpAddresses.push_back(privateIpAddressesJsonList[privateIpAddressesIndex].AsObject());
@@ -116,7 +116,7 @@ NetworkInterface& NetworkInterface::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonValue> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsObject());

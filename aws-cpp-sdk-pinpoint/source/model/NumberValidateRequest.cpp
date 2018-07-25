@@ -34,14 +34,14 @@ NumberValidateRequest::NumberValidateRequest() :
 {
 }
 
-NumberValidateRequest::NumberValidateRequest(const JsonValue& jsonValue) : 
+NumberValidateRequest::NumberValidateRequest(JsonView jsonValue) : 
     m_isoCountryCodeHasBeenSet(false),
     m_phoneNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NumberValidateRequest& NumberValidateRequest::operator =(const JsonValue& jsonValue)
+NumberValidateRequest& NumberValidateRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IsoCountryCode"))
   {

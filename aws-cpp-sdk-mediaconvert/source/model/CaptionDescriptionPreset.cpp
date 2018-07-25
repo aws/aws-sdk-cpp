@@ -37,7 +37,7 @@ CaptionDescriptionPreset::CaptionDescriptionPreset() :
 {
 }
 
-CaptionDescriptionPreset::CaptionDescriptionPreset(const JsonValue& jsonValue) : 
+CaptionDescriptionPreset::CaptionDescriptionPreset(JsonView jsonValue) : 
     m_customLanguageCodeHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
@@ -47,7 +47,7 @@ CaptionDescriptionPreset::CaptionDescriptionPreset(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionDescriptionPreset& CaptionDescriptionPreset::operator =(const JsonValue& jsonValue)
+CaptionDescriptionPreset& CaptionDescriptionPreset::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("customLanguageCode"))
   {

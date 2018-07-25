@@ -37,7 +37,7 @@ StopRunResult::StopRunResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 StopRunResult& StopRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("run"))
   {
     m_run = jsonValue.GetObject("run");

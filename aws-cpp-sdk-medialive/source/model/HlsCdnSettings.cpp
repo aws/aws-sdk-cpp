@@ -36,7 +36,7 @@ HlsCdnSettings::HlsCdnSettings() :
 {
 }
 
-HlsCdnSettings::HlsCdnSettings(const JsonValue& jsonValue) : 
+HlsCdnSettings::HlsCdnSettings(JsonView jsonValue) : 
     m_hlsAkamaiSettingsHasBeenSet(false),
     m_hlsBasicPutSettingsHasBeenSet(false),
     m_hlsMediaStoreSettingsHasBeenSet(false),
@@ -45,7 +45,7 @@ HlsCdnSettings::HlsCdnSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsCdnSettings& HlsCdnSettings::operator =(const JsonValue& jsonValue)
+HlsCdnSettings& HlsCdnSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("hlsAkamaiSettings"))
   {

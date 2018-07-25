@@ -34,14 +34,14 @@ EngineAttribute::EngineAttribute() :
 {
 }
 
-EngineAttribute::EngineAttribute(const JsonValue& jsonValue) : 
+EngineAttribute::EngineAttribute(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EngineAttribute& EngineAttribute::operator =(const JsonValue& jsonValue)
+EngineAttribute& EngineAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

@@ -50,7 +50,7 @@ Aws::String RunPipelineActivityRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

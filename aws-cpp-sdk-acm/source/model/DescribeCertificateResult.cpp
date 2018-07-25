@@ -37,7 +37,7 @@ DescribeCertificateResult::DescribeCertificateResult(const Aws::AmazonWebService
 
 DescribeCertificateResult& DescribeCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Certificate"))
   {
     m_certificate = jsonValue.GetObject("Certificate");

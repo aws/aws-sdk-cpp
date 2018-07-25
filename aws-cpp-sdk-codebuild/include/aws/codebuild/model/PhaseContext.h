@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PhaseContext();
-    PhaseContext(const Aws::Utils::Json::JsonValue& jsonValue);
-    PhaseContext& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PhaseContext(Aws::Utils::Json::JsonView jsonValue);
+    PhaseContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

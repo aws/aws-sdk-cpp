@@ -37,7 +37,7 @@ GetFolderResult::GetFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetFolderResult& GetFolderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetObject("Metadata");
@@ -46,7 +46,7 @@ GetFolderResult& GetFolderResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("CustomMetadata"))
   {
-    Aws::Map<Aws::String, JsonValue> customMetadataJsonMap = jsonValue.GetObject("CustomMetadata").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> customMetadataJsonMap = jsonValue.GetObject("CustomMetadata").GetAllObjects();
     for(auto& customMetadataItem : customMetadataJsonMap)
     {
       m_customMetadata[customMetadataItem.first] = customMetadataItem.second.AsString();

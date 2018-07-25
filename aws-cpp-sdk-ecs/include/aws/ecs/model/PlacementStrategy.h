@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     PlacementStrategy();
-    PlacementStrategy(const Aws::Utils::Json::JsonValue& jsonValue);
-    PlacementStrategy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
+    PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

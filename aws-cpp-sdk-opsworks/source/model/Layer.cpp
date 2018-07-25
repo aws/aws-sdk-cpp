@@ -61,7 +61,7 @@ Layer::Layer() :
 {
 }
 
-Layer::Layer(const JsonValue& jsonValue) : 
+Layer::Layer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_stackIdHasBeenSet(false),
     m_layerIdHasBeenSet(false),
@@ -95,7 +95,7 @@ Layer::Layer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Layer& Layer::operator =(const JsonValue& jsonValue)
+Layer& Layer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {
@@ -141,7 +141,7 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[LayerAttributesKeysMapper::GetLayerAttributesKeysForName(attributesItem.first)] = attributesItem.second.AsString();
@@ -172,7 +172,7 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CustomSecurityGroupIds"))
   {
-    Array<JsonValue> customSecurityGroupIdsJsonList = jsonValue.GetArray("CustomSecurityGroupIds");
+    Array<JsonView> customSecurityGroupIdsJsonList = jsonValue.GetArray("CustomSecurityGroupIds");
     for(unsigned customSecurityGroupIdsIndex = 0; customSecurityGroupIdsIndex < customSecurityGroupIdsJsonList.GetLength(); ++customSecurityGroupIdsIndex)
     {
       m_customSecurityGroupIds.push_back(customSecurityGroupIdsJsonList[customSecurityGroupIdsIndex].AsString());
@@ -182,7 +182,7 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DefaultSecurityGroupNames"))
   {
-    Array<JsonValue> defaultSecurityGroupNamesJsonList = jsonValue.GetArray("DefaultSecurityGroupNames");
+    Array<JsonView> defaultSecurityGroupNamesJsonList = jsonValue.GetArray("DefaultSecurityGroupNames");
     for(unsigned defaultSecurityGroupNamesIndex = 0; defaultSecurityGroupNamesIndex < defaultSecurityGroupNamesJsonList.GetLength(); ++defaultSecurityGroupNamesIndex)
     {
       m_defaultSecurityGroupNames.push_back(defaultSecurityGroupNamesJsonList[defaultSecurityGroupNamesIndex].AsString());
@@ -192,7 +192,7 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Packages"))
   {
-    Array<JsonValue> packagesJsonList = jsonValue.GetArray("Packages");
+    Array<JsonView> packagesJsonList = jsonValue.GetArray("Packages");
     for(unsigned packagesIndex = 0; packagesIndex < packagesJsonList.GetLength(); ++packagesIndex)
     {
       m_packages.push_back(packagesJsonList[packagesIndex].AsString());
@@ -202,7 +202,7 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("VolumeConfigurations"))
   {
-    Array<JsonValue> volumeConfigurationsJsonList = jsonValue.GetArray("VolumeConfigurations");
+    Array<JsonView> volumeConfigurationsJsonList = jsonValue.GetArray("VolumeConfigurations");
     for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
     {
       m_volumeConfigurations.push_back(volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject());

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Batch
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Volume();
-    Volume(const Aws::Utils::Json::JsonValue& jsonValue);
-    Volume& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Volume(Aws::Utils::Json::JsonView jsonValue);
+    Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

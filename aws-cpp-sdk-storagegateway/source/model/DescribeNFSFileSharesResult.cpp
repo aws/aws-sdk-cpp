@@ -37,10 +37,10 @@ DescribeNFSFileSharesResult::DescribeNFSFileSharesResult(const Aws::AmazonWebSer
 
 DescribeNFSFileSharesResult& DescribeNFSFileSharesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NFSFileShareInfoList"))
   {
-    Array<JsonValue> nFSFileShareInfoListJsonList = jsonValue.GetArray("NFSFileShareInfoList");
+    Array<JsonView> nFSFileShareInfoListJsonList = jsonValue.GetArray("NFSFileShareInfoList");
     for(unsigned nFSFileShareInfoListIndex = 0; nFSFileShareInfoListIndex < nFSFileShareInfoListJsonList.GetLength(); ++nFSFileShareInfoListIndex)
     {
       m_nFSFileShareInfoList.push_back(nFSFileShareInfoListJsonList[nFSFileShareInfoListIndex].AsObject());

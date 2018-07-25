@@ -37,7 +37,7 @@ CreateSecretResult::CreateSecretResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CreateSecretResult& CreateSecretResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");

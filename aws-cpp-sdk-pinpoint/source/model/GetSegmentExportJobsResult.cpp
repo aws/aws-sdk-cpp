@@ -37,7 +37,7 @@ GetSegmentExportJobsResult::GetSegmentExportJobsResult(const Aws::AmazonWebServi
 
 GetSegmentExportJobsResult& GetSegmentExportJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_exportJobsResponse = jsonValue;
 
 

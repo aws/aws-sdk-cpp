@@ -37,7 +37,7 @@ Aws::String GetUserRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetUserRequest::GetRequestSpecificHeaders() const

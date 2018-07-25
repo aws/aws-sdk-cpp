@@ -37,7 +37,7 @@ DescribeSentimentDetectionJobResult::DescribeSentimentDetectionJobResult(const A
 
 DescribeSentimentDetectionJobResult& DescribeSentimentDetectionJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SentimentDetectionJobProperties"))
   {
     m_sentimentDetectionJobProperties = jsonValue.GetObject("SentimentDetectionJobProperties");

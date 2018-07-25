@@ -34,14 +34,14 @@ Location::Location() :
 {
 }
 
-Location::Location(const JsonValue& jsonValue) : 
+Location::Location(JsonView jsonValue) : 
     m_locationCodeHasBeenSet(false),
     m_locationNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Location& Location::operator =(const JsonValue& jsonValue)
+Location& Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("locationCode"))
   {

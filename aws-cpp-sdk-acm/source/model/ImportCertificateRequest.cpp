@@ -56,7 +56,7 @@ Aws::String ImportCertificateRequest::SerializePayload() const
    payload.WithString("CertificateChain", HashingUtils::Base64Encode(m_certificateChain));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ImportCertificateRequest::GetRequestSpecificHeaders() const

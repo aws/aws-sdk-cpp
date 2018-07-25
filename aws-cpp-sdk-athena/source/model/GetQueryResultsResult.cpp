@@ -37,7 +37,7 @@ GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<J
 
 GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResultSet"))
   {
     m_resultSet = jsonValue.GetObject("ResultSet");

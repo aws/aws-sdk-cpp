@@ -39,7 +39,7 @@ GetLoggingOptionsResult::GetLoggingOptionsResult(const Aws::AmazonWebServiceResu
 
 GetLoggingOptionsResult& GetLoggingOptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");

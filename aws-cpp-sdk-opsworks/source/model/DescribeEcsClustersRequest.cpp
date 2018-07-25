@@ -64,7 +64,7 @@ Aws::String DescribeEcsClustersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeEcsClustersRequest::GetRequestSpecificHeaders() const

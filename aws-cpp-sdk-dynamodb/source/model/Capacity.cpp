@@ -34,14 +34,14 @@ Capacity::Capacity() :
 {
 }
 
-Capacity::Capacity(const JsonValue& jsonValue) : 
+Capacity::Capacity(JsonView jsonValue) : 
     m_capacityUnits(0.0),
     m_capacityUnitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Capacity& Capacity::operator =(const JsonValue& jsonValue)
+Capacity& Capacity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CapacityUnits"))
   {

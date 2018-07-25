@@ -40,7 +40,7 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(const JsonValue& jsonValue) : 
+Configuration::Configuration(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
@@ -53,7 +53,7 @@ Configuration::Configuration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Configuration& Configuration::operator =(const JsonValue& jsonValue)
+Configuration& Configuration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

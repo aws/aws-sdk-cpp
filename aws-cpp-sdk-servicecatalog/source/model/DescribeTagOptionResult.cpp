@@ -37,7 +37,7 @@ DescribeTagOptionResult::DescribeTagOptionResult(const Aws::AmazonWebServiceResu
 
 DescribeTagOptionResult& DescribeTagOptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TagOptionDetail"))
   {
     m_tagOptionDetail = jsonValue.GetObject("TagOptionDetail");

@@ -37,7 +37,7 @@ InitiateDeviceClaimResult::InitiateDeviceClaimResult(const Aws::AmazonWebService
 
 InitiateDeviceClaimResult& InitiateDeviceClaimResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");

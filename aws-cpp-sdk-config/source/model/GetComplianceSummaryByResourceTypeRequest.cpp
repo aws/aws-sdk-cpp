@@ -42,7 +42,7 @@ Aws::String GetComplianceSummaryByResourceTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetComplianceSummaryByResourceTypeRequest::GetRequestSpecificHeaders() const

@@ -44,7 +44,7 @@ Aws::String InviteAccountToOrganizationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection InviteAccountToOrganizationRequest::GetRequestSpecificHeaders() const

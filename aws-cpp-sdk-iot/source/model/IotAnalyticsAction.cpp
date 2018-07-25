@@ -35,7 +35,7 @@ IotAnalyticsAction::IotAnalyticsAction() :
 {
 }
 
-IotAnalyticsAction::IotAnalyticsAction(const JsonValue& jsonValue) : 
+IotAnalyticsAction::IotAnalyticsAction(JsonView jsonValue) : 
     m_channelArnHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_roleArnHasBeenSet(false)
@@ -43,7 +43,7 @@ IotAnalyticsAction::IotAnalyticsAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IotAnalyticsAction& IotAnalyticsAction::operator =(const JsonValue& jsonValue)
+IotAnalyticsAction& IotAnalyticsAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("channelArn"))
   {

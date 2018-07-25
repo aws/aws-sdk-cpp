@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glacier
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     SelectParameters();
-    SelectParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    SelectParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SelectParameters(Aws::Utils::Json::JsonView jsonValue);
+    SelectParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

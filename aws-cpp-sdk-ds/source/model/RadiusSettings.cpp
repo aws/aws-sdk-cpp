@@ -45,7 +45,7 @@ RadiusSettings::RadiusSettings() :
 {
 }
 
-RadiusSettings::RadiusSettings(const JsonValue& jsonValue) : 
+RadiusSettings::RadiusSettings(JsonView jsonValue) : 
     m_radiusServersHasBeenSet(false),
     m_radiusPort(0),
     m_radiusPortHasBeenSet(false),
@@ -63,11 +63,11 @@ RadiusSettings::RadiusSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RadiusSettings& RadiusSettings::operator =(const JsonValue& jsonValue)
+RadiusSettings& RadiusSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RadiusServers"))
   {
-    Array<JsonValue> radiusServersJsonList = jsonValue.GetArray("RadiusServers");
+    Array<JsonView> radiusServersJsonList = jsonValue.GetArray("RadiusServers");
     for(unsigned radiusServersIndex = 0; radiusServersIndex < radiusServersJsonList.GetLength(); ++radiusServersIndex)
     {
       m_radiusServers.push_back(radiusServersJsonList[radiusServersIndex].AsString());

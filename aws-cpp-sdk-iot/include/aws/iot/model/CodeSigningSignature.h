@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     CodeSigningSignature();
-    CodeSigningSignature(const Aws::Utils::Json::JsonValue& jsonValue);
-    CodeSigningSignature& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CodeSigningSignature(Aws::Utils::Json::JsonView jsonValue);
+    CodeSigningSignature& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

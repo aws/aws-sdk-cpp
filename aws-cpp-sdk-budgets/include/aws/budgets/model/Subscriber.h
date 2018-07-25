@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Budgets
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Subscriber();
-    Subscriber(const Aws::Utils::Json::JsonValue& jsonValue);
-    Subscriber& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Subscriber(Aws::Utils::Json::JsonView jsonValue);
+    Subscriber& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

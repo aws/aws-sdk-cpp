@@ -39,7 +39,7 @@ ConfirmDeviceResult::ConfirmDeviceResult(const Aws::AmazonWebServiceResult<JsonV
 
 ConfirmDeviceResult& ConfirmDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserConfirmationNecessary"))
   {
     m_userConfirmationNecessary = jsonValue.GetBool("UserConfirmationNecessary");

@@ -37,7 +37,7 @@ PlacementDescription::PlacementDescription() :
 {
 }
 
-PlacementDescription::PlacementDescription(const JsonValue& jsonValue) : 
+PlacementDescription::PlacementDescription(JsonView jsonValue) : 
     m_projectNameHasBeenSet(false),
     m_placementNameHasBeenSet(false),
     m_attributesHasBeenSet(false),
@@ -47,7 +47,7 @@ PlacementDescription::PlacementDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlacementDescription& PlacementDescription::operator =(const JsonValue& jsonValue)
+PlacementDescription& PlacementDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("projectName"))
   {
@@ -65,7 +65,7 @@ PlacementDescription& PlacementDescription::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

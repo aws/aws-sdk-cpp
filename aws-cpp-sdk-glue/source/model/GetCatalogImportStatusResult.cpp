@@ -37,7 +37,7 @@ GetCatalogImportStatusResult::GetCatalogImportStatusResult(const Aws::AmazonWebS
 
 GetCatalogImportStatusResult& GetCatalogImportStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ImportStatus"))
   {
     m_importStatus = jsonValue.GetObject("ImportStatus");

@@ -36,7 +36,7 @@ BlockDeviceMapping::BlockDeviceMapping() :
 {
 }
 
-BlockDeviceMapping::BlockDeviceMapping(const JsonValue& jsonValue) : 
+BlockDeviceMapping::BlockDeviceMapping(JsonView jsonValue) : 
     m_deviceNameHasBeenSet(false),
     m_noDeviceHasBeenSet(false),
     m_virtualNameHasBeenSet(false),
@@ -45,7 +45,7 @@ BlockDeviceMapping::BlockDeviceMapping(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BlockDeviceMapping& BlockDeviceMapping::operator =(const JsonValue& jsonValue)
+BlockDeviceMapping& BlockDeviceMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeviceName"))
   {

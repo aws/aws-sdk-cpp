@@ -37,10 +37,10 @@ DescribeTrustedAdvisorCheckSummariesResult::DescribeTrustedAdvisorCheckSummaries
 
 DescribeTrustedAdvisorCheckSummariesResult& DescribeTrustedAdvisorCheckSummariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("summaries"))
   {
-    Array<JsonValue> summariesJsonList = jsonValue.GetArray("summaries");
+    Array<JsonView> summariesJsonList = jsonValue.GetArray("summaries");
     for(unsigned summariesIndex = 0; summariesIndex < summariesJsonList.GetLength(); ++summariesIndex)
     {
       m_summaries.push_back(summariesJsonList[summariesIndex].AsObject());

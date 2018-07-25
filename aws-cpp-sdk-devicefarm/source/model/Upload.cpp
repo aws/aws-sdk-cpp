@@ -43,7 +43,7 @@ Upload::Upload() :
 {
 }
 
-Upload::Upload(const JsonValue& jsonValue) : 
+Upload::Upload(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_createdHasBeenSet(false),
@@ -59,7 +59,7 @@ Upload::Upload(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Upload& Upload::operator =(const JsonValue& jsonValue)
+Upload& Upload::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

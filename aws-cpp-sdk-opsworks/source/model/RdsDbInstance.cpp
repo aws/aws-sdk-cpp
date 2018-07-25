@@ -42,7 +42,7 @@ RdsDbInstance::RdsDbInstance() :
 {
 }
 
-RdsDbInstance::RdsDbInstance(const JsonValue& jsonValue) : 
+RdsDbInstance::RdsDbInstance(JsonView jsonValue) : 
     m_rdsDbInstanceArnHasBeenSet(false),
     m_dbInstanceIdentifierHasBeenSet(false),
     m_dbUserHasBeenSet(false),
@@ -57,7 +57,7 @@ RdsDbInstance::RdsDbInstance(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RdsDbInstance& RdsDbInstance::operator =(const JsonValue& jsonValue)
+RdsDbInstance& RdsDbInstance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RdsDbInstanceArn"))
   {

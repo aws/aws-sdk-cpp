@@ -37,10 +37,10 @@ ListCollectionsResult::ListCollectionsResult(const Aws::AmazonWebServiceResult<J
 
 ListCollectionsResult& ListCollectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CollectionIds"))
   {
-    Array<JsonValue> collectionIdsJsonList = jsonValue.GetArray("CollectionIds");
+    Array<JsonView> collectionIdsJsonList = jsonValue.GetArray("CollectionIds");
     for(unsigned collectionIdsIndex = 0; collectionIdsIndex < collectionIdsJsonList.GetLength(); ++collectionIdsIndex)
     {
       m_collectionIds.push_back(collectionIdsJsonList[collectionIdsIndex].AsString());
@@ -55,7 +55,7 @@ ListCollectionsResult& ListCollectionsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("FaceModelVersions"))
   {
-    Array<JsonValue> faceModelVersionsJsonList = jsonValue.GetArray("FaceModelVersions");
+    Array<JsonView> faceModelVersionsJsonList = jsonValue.GetArray("FaceModelVersions");
     for(unsigned faceModelVersionsIndex = 0; faceModelVersionsIndex < faceModelVersionsJsonList.GetLength(); ++faceModelVersionsIndex)
     {
       m_faceModelVersions.push_back(faceModelVersionsJsonList[faceModelVersionsIndex].AsString());

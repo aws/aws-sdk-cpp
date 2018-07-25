@@ -37,7 +37,7 @@ CopyImageResult::CopyImageResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 CopyImageResult& CopyImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DestinationImageName"))
   {
     m_destinationImageName = jsonValue.GetString("DestinationImageName");

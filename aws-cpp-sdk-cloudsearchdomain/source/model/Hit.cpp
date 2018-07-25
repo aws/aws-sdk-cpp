@@ -36,7 +36,7 @@ Hit::Hit() :
 {
 }
 
-Hit::Hit(const JsonValue& jsonValue) : 
+Hit::Hit(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_fieldsHasBeenSet(false),
     m_exprsHasBeenSet(false),
@@ -45,7 +45,7 @@ Hit::Hit(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Hit& Hit::operator =(const JsonValue& jsonValue)
+Hit& Hit::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -56,10 +56,10 @@ Hit& Hit::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("fields"))
   {
-    Aws::Map<Aws::String, JsonValue> fieldsJsonMap = jsonValue.GetObject("fields").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("fields").GetAllObjects();
     for(auto& fieldsItem : fieldsJsonMap)
     {
-      Array<JsonValue> fieldValueJsonList = fieldsItem.second.AsArray();
+      Array<JsonView> fieldValueJsonList = fieldsItem.second.AsArray();
       Aws::Vector<Aws::String> fieldValueList;
       fieldValueList.reserve((size_t)fieldValueJsonList.GetLength());
       for(unsigned fieldValueIndex = 0; fieldValueIndex < fieldValueJsonList.GetLength(); ++fieldValueIndex)
@@ -73,7 +73,7 @@ Hit& Hit::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("exprs"))
   {
-    Aws::Map<Aws::String, JsonValue> exprsJsonMap = jsonValue.GetObject("exprs").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> exprsJsonMap = jsonValue.GetObject("exprs").GetAllObjects();
     for(auto& exprsItem : exprsJsonMap)
     {
       m_exprs[exprsItem.first] = exprsItem.second.AsString();
@@ -83,7 +83,7 @@ Hit& Hit::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("highlights"))
   {
-    Aws::Map<Aws::String, JsonValue> highlightsJsonMap = jsonValue.GetObject("highlights").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> highlightsJsonMap = jsonValue.GetObject("highlights").GetAllObjects();
     for(auto& highlightsItem : highlightsJsonMap)
     {
       m_highlights[highlightsItem.first] = highlightsItem.second.AsString();

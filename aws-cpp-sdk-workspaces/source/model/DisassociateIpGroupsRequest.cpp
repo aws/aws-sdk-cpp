@@ -49,7 +49,7 @@ Aws::String DisassociateIpGroupsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisassociateIpGroupsRequest::GetRequestSpecificHeaders() const

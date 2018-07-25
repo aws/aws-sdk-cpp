@@ -61,7 +61,7 @@ Aws::String UpdateFleetPortSettingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateFleetPortSettingsRequest::GetRequestSpecificHeaders() const

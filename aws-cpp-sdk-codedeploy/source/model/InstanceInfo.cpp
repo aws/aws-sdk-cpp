@@ -39,7 +39,7 @@ InstanceInfo::InstanceInfo() :
 {
 }
 
-InstanceInfo::InstanceInfo(const JsonValue& jsonValue) : 
+InstanceInfo::InstanceInfo(JsonView jsonValue) : 
     m_instanceNameHasBeenSet(false),
     m_iamSessionArnHasBeenSet(false),
     m_iamUserArnHasBeenSet(false),
@@ -51,7 +51,7 @@ InstanceInfo::InstanceInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceInfo& InstanceInfo::operator =(const JsonValue& jsonValue)
+InstanceInfo& InstanceInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("instanceName"))
   {
@@ -97,7 +97,7 @@ InstanceInfo& InstanceInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

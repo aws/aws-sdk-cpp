@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectConnect
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     NewPrivateVirtualInterfaceAllocation();
-    NewPrivateVirtualInterfaceAllocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    NewPrivateVirtualInterfaceAllocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NewPrivateVirtualInterfaceAllocation(Aws::Utils::Json::JsonView jsonValue);
+    NewPrivateVirtualInterfaceAllocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

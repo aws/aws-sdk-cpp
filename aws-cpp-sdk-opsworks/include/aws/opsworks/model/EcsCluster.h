@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     EcsCluster();
-    EcsCluster(const Aws::Utils::Json::JsonValue& jsonValue);
-    EcsCluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EcsCluster(Aws::Utils::Json::JsonView jsonValue);
+    EcsCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

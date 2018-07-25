@@ -41,7 +41,7 @@ RequestCancelExternalWorkflowExecutionFailedEventAttributes::RequestCancelExtern
 {
 }
 
-RequestCancelExternalWorkflowExecutionFailedEventAttributes::RequestCancelExternalWorkflowExecutionFailedEventAttributes(const JsonValue& jsonValue) : 
+RequestCancelExternalWorkflowExecutionFailedEventAttributes::RequestCancelExternalWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
     m_workflowIdHasBeenSet(false),
     m_runIdHasBeenSet(false),
     m_cause(RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET),
@@ -55,7 +55,7 @@ RequestCancelExternalWorkflowExecutionFailedEventAttributes::RequestCancelExtern
   *this = jsonValue;
 }
 
-RequestCancelExternalWorkflowExecutionFailedEventAttributes& RequestCancelExternalWorkflowExecutionFailedEventAttributes::operator =(const JsonValue& jsonValue)
+RequestCancelExternalWorkflowExecutionFailedEventAttributes& RequestCancelExternalWorkflowExecutionFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowId"))
   {

@@ -39,7 +39,7 @@ XMLClassifier::XMLClassifier() :
 {
 }
 
-XMLClassifier::XMLClassifier(const JsonValue& jsonValue) : 
+XMLClassifier::XMLClassifier(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_classificationHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -51,7 +51,7 @@ XMLClassifier::XMLClassifier(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-XMLClassifier& XMLClassifier::operator =(const JsonValue& jsonValue)
+XMLClassifier& XMLClassifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

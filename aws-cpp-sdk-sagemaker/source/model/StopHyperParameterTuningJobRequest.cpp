@@ -37,7 +37,7 @@ Aws::String StopHyperParameterTuningJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopHyperParameterTuningJobRequest::GetRequestSpecificHeaders() const

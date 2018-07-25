@@ -37,7 +37,7 @@ ListDiscoveredResourcesResult::ListDiscoveredResourcesResult(const Aws::AmazonWe
 
 ListDiscoveredResourcesResult& ListDiscoveredResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ ListDiscoveredResourcesResult& ListDiscoveredResourcesResult::operator =(const A
 
   if(jsonValue.ValueExists("DiscoveredResourceList"))
   {
-    Array<JsonValue> discoveredResourceListJsonList = jsonValue.GetArray("DiscoveredResourceList");
+    Array<JsonView> discoveredResourceListJsonList = jsonValue.GetArray("DiscoveredResourceList");
     for(unsigned discoveredResourceListIndex = 0; discoveredResourceListIndex < discoveredResourceListJsonList.GetLength(); ++discoveredResourceListIndex)
     {
       m_discoveredResourceList.push_back(discoveredResourceListJsonList[discoveredResourceListIndex].AsObject());

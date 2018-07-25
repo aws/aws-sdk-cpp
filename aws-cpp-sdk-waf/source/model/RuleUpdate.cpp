@@ -35,7 +35,7 @@ RuleUpdate::RuleUpdate() :
 {
 }
 
-RuleUpdate::RuleUpdate(const JsonValue& jsonValue) : 
+RuleUpdate::RuleUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_predicateHasBeenSet(false)
@@ -43,7 +43,7 @@ RuleUpdate::RuleUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RuleUpdate& RuleUpdate::operator =(const JsonValue& jsonValue)
+RuleUpdate& RuleUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

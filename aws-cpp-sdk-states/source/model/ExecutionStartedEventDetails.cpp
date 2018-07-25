@@ -34,14 +34,14 @@ ExecutionStartedEventDetails::ExecutionStartedEventDetails() :
 {
 }
 
-ExecutionStartedEventDetails::ExecutionStartedEventDetails(const JsonValue& jsonValue) : 
+ExecutionStartedEventDetails::ExecutionStartedEventDetails(JsonView jsonValue) : 
     m_inputHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ExecutionStartedEventDetails& ExecutionStartedEventDetails::operator =(const JsonValue& jsonValue)
+ExecutionStartedEventDetails& ExecutionStartedEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("input"))
   {

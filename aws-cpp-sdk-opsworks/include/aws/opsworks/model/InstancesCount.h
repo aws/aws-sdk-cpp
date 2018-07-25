@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     InstancesCount();
-    InstancesCount(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstancesCount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstancesCount(Aws::Utils::Json::JsonView jsonValue);
+    InstancesCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

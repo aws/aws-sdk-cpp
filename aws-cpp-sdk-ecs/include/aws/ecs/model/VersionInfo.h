@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     VersionInfo();
-    VersionInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    VersionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VersionInfo(Aws::Utils::Json::JsonView jsonValue);
+    VersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

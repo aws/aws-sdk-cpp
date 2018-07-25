@@ -35,7 +35,7 @@ RegexPatternSet::RegexPatternSet() :
 {
 }
 
-RegexPatternSet::RegexPatternSet(const JsonValue& jsonValue) : 
+RegexPatternSet::RegexPatternSet(JsonView jsonValue) : 
     m_regexPatternSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_regexPatternStringsHasBeenSet(false)
@@ -43,7 +43,7 @@ RegexPatternSet::RegexPatternSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RegexPatternSet& RegexPatternSet::operator =(const JsonValue& jsonValue)
+RegexPatternSet& RegexPatternSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RegexPatternSetId"))
   {
@@ -61,7 +61,7 @@ RegexPatternSet& RegexPatternSet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("RegexPatternStrings"))
   {
-    Array<JsonValue> regexPatternStringsJsonList = jsonValue.GetArray("RegexPatternStrings");
+    Array<JsonView> regexPatternStringsJsonList = jsonValue.GetArray("RegexPatternStrings");
     for(unsigned regexPatternStringsIndex = 0; regexPatternStringsIndex < regexPatternStringsJsonList.GetLength(); ++regexPatternStringsIndex)
     {
       m_regexPatternStrings.push_back(regexPatternStringsJsonList[regexPatternStringsIndex].AsString());

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ParameterHistory();
-    ParameterHistory(const Aws::Utils::Json::JsonValue& jsonValue);
-    ParameterHistory& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ParameterHistory(Aws::Utils::Json::JsonView jsonValue);
+    ParameterHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

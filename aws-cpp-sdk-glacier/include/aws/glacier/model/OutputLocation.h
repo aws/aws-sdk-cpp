@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glacier
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     OutputLocation();
-    OutputLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputLocation(Aws::Utils::Json::JsonView jsonValue);
+    OutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

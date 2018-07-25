@@ -37,7 +37,7 @@ GetAutomationExecutionResult::GetAutomationExecutionResult(const Aws::AmazonWebS
 
 GetAutomationExecutionResult& GetAutomationExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AutomationExecution"))
   {
     m_automationExecution = jsonValue.GetObject("AutomationExecution");

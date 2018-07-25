@@ -53,7 +53,7 @@ Aws::String RenewDomainRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RenewDomainRequest::GetRequestSpecificHeaders() const

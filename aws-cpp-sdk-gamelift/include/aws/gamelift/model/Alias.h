@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Alias();
-    Alias(const Aws::Utils::Json::JsonValue& jsonValue);
-    Alias& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Alias(Aws::Utils::Json::JsonView jsonValue);
+    Alias& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

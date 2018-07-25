@@ -37,7 +37,7 @@ StepStatus::StepStatus() :
 {
 }
 
-StepStatus::StepStatus(const JsonValue& jsonValue) : 
+StepStatus::StepStatus(JsonView jsonValue) : 
     m_state(StepState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
@@ -47,7 +47,7 @@ StepStatus::StepStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StepStatus& StepStatus::operator =(const JsonValue& jsonValue)
+StepStatus& StepStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("State"))
   {

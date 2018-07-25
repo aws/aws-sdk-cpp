@@ -74,11 +74,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -1321,7 +1316,7 @@ namespace Model
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
          * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
-         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -1351,7 +1346,7 @@ namespace Model
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
          * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
-         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -1383,7 +1378,7 @@ namespace Model
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
          * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
-         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -1415,7 +1410,7 @@ namespace Model
          * DescribeTasks command using an exponential backoff algorithm to ensure that you
          * allow enough time for the previous command to propagate through the system. To
          * do this, run the DescribeTasks command repeatedly, starting with a couple of
-         * seconds of wait time, and increasing gradually up to five minutes of wait
+         * seconds of wait time and increasing gradually up to five minutes of wait
          * time.</p> </li> <li> <p>Add wait time between subsequent commands, even if the
          * DescribeTasks command returns an accurate response. Apply an exponential backoff
          * algorithm starting with a couple of seconds of wait time, and increase gradually
@@ -1444,7 +1439,7 @@ namespace Model
          * DescribeTasks command using an exponential backoff algorithm to ensure that you
          * allow enough time for the previous command to propagate through the system. To
          * do this, run the DescribeTasks command repeatedly, starting with a couple of
-         * seconds of wait time, and increasing gradually up to five minutes of wait
+         * seconds of wait time and increasing gradually up to five minutes of wait
          * time.</p> </li> <li> <p>Add wait time between subsequent commands, even if the
          * DescribeTasks command returns an accurate response. Apply an exponential backoff
          * algorithm starting with a couple of seconds of wait time, and increase gradually
@@ -1475,7 +1470,7 @@ namespace Model
          * DescribeTasks command using an exponential backoff algorithm to ensure that you
          * allow enough time for the previous command to propagate through the system. To
          * do this, run the DescribeTasks command repeatedly, starting with a couple of
-         * seconds of wait time, and increasing gradually up to five minutes of wait
+         * seconds of wait time and increasing gradually up to five minutes of wait
          * time.</p> </li> <li> <p>Add wait time between subsequent commands, even if the
          * DescribeTasks command returns an accurate response. Apply an exponential backoff
          * algorithm starting with a couple of seconds of wait time, and increase gradually

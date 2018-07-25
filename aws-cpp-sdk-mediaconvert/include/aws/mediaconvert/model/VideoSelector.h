@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     VideoSelector();
-    VideoSelector(const Aws::Utils::Json::JsonValue& jsonValue);
-    VideoSelector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VideoSelector(Aws::Utils::Json::JsonView jsonValue);
+    VideoSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -34,14 +34,14 @@ ResourceTag::ResourceTag() :
 {
 }
 
-ResourceTag::ResourceTag(const JsonValue& jsonValue) : 
+ResourceTag::ResourceTag(JsonView jsonValue) : 
     m_resourceArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourceTag& ResourceTag::operator =(const JsonValue& jsonValue)
+ResourceTag& ResourceTag::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resourceArn"))
   {
@@ -52,7 +52,7 @@ ResourceTag& ResourceTag::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

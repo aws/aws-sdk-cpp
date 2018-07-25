@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     VpcSecurityGroupMembership();
-    VpcSecurityGroupMembership(const Aws::Utils::Json::JsonValue& jsonValue);
-    VpcSecurityGroupMembership& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VpcSecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
+    VpcSecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

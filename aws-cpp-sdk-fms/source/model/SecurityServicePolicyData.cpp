@@ -35,7 +35,7 @@ SecurityServicePolicyData::SecurityServicePolicyData() :
 {
 }
 
-SecurityServicePolicyData::SecurityServicePolicyData(const JsonValue& jsonValue) : 
+SecurityServicePolicyData::SecurityServicePolicyData(JsonView jsonValue) : 
     m_type(SecurityServiceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_managedServiceDataHasBeenSet(false)
@@ -43,7 +43,7 @@ SecurityServicePolicyData::SecurityServicePolicyData(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-SecurityServicePolicyData& SecurityServicePolicyData::operator =(const JsonValue& jsonValue)
+SecurityServicePolicyData& SecurityServicePolicyData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

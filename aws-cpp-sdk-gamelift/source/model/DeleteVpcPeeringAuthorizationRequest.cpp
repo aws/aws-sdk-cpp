@@ -44,7 +44,7 @@ Aws::String DeleteVpcPeeringAuthorizationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteVpcPeeringAuthorizationRequest::GetRequestSpecificHeaders() const

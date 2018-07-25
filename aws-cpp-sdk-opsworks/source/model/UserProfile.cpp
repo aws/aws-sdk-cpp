@@ -38,7 +38,7 @@ UserProfile::UserProfile() :
 {
 }
 
-UserProfile::UserProfile(const JsonValue& jsonValue) : 
+UserProfile::UserProfile(JsonView jsonValue) : 
     m_iamUserArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sshUsernameHasBeenSet(false),
@@ -49,7 +49,7 @@ UserProfile::UserProfile(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserProfile& UserProfile::operator =(const JsonValue& jsonValue)
+UserProfile& UserProfile::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IamUserArn"))
   {

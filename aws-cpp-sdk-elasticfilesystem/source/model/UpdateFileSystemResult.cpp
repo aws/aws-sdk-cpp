@@ -49,7 +49,7 @@ UpdateFileSystemResult::UpdateFileSystemResult(const Aws::AmazonWebServiceResult
 
 UpdateFileSystemResult& UpdateFileSystemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");

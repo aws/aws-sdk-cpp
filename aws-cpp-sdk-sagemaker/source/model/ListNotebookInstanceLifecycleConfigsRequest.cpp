@@ -90,7 +90,7 @@ Aws::String ListNotebookInstanceLifecycleConfigsRequest::SerializePayload() cons
    payload.WithDouble("LastModifiedTimeAfter", m_lastModifiedTimeAfter.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListNotebookInstanceLifecycleConfigsRequest::GetRequestSpecificHeaders() const

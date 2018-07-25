@@ -42,7 +42,7 @@ Aws::String DescribeUserProfilesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeUserProfilesRequest::GetRequestSpecificHeaders() const

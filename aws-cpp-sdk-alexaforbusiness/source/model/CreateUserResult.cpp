@@ -37,7 +37,7 @@ CreateUserResult::CreateUserResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 CreateUserResult& CreateUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserArn"))
   {
     m_userArn = jsonValue.GetString("UserArn");

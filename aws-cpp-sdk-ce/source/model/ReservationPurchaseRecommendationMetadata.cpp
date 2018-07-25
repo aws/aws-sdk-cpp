@@ -34,14 +34,14 @@ ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMeta
 {
 }
 
-ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata(const JsonValue& jsonValue) : 
+ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata(JsonView jsonValue) : 
     m_recommendationIdHasBeenSet(false),
     m_generationTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ReservationPurchaseRecommendationMetadata& ReservationPurchaseRecommendationMetadata::operator =(const JsonValue& jsonValue)
+ReservationPurchaseRecommendationMetadata& ReservationPurchaseRecommendationMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RecommendationId"))
   {

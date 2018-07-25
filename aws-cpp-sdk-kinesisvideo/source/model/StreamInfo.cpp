@@ -43,7 +43,7 @@ StreamInfo::StreamInfo() :
 {
 }
 
-StreamInfo::StreamInfo(const JsonValue& jsonValue) : 
+StreamInfo::StreamInfo(JsonView jsonValue) : 
     m_deviceNameHasBeenSet(false),
     m_streamNameHasBeenSet(false),
     m_streamARNHasBeenSet(false),
@@ -59,7 +59,7 @@ StreamInfo::StreamInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamInfo& StreamInfo::operator =(const JsonValue& jsonValue)
+StreamInfo& StreamInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeviceName"))
   {

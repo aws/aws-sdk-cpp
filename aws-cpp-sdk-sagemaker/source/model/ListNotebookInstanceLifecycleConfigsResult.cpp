@@ -37,7 +37,7 @@ ListNotebookInstanceLifecycleConfigsResult::ListNotebookInstanceLifecycleConfigs
 
 ListNotebookInstanceLifecycleConfigsResult& ListNotebookInstanceLifecycleConfigsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ ListNotebookInstanceLifecycleConfigsResult& ListNotebookInstanceLifecycleConfigs
 
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigs"))
   {
-    Array<JsonValue> notebookInstanceLifecycleConfigsJsonList = jsonValue.GetArray("NotebookInstanceLifecycleConfigs");
+    Array<JsonView> notebookInstanceLifecycleConfigsJsonList = jsonValue.GetArray("NotebookInstanceLifecycleConfigs");
     for(unsigned notebookInstanceLifecycleConfigsIndex = 0; notebookInstanceLifecycleConfigsIndex < notebookInstanceLifecycleConfigsJsonList.GetLength(); ++notebookInstanceLifecycleConfigsIndex)
     {
       m_notebookInstanceLifecycleConfigs.push_back(notebookInstanceLifecycleConfigsJsonList[notebookInstanceLifecycleConfigsIndex].AsObject());

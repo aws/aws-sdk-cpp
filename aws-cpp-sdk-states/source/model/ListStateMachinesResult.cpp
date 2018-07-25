@@ -37,10 +37,10 @@ ListStateMachinesResult::ListStateMachinesResult(const Aws::AmazonWebServiceResu
 
 ListStateMachinesResult& ListStateMachinesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("stateMachines"))
   {
-    Array<JsonValue> stateMachinesJsonList = jsonValue.GetArray("stateMachines");
+    Array<JsonView> stateMachinesJsonList = jsonValue.GetArray("stateMachines");
     for(unsigned stateMachinesIndex = 0; stateMachinesIndex < stateMachinesJsonList.GetLength(); ++stateMachinesIndex)
     {
       m_stateMachines.push_back(stateMachinesJsonList[stateMachinesIndex].AsObject());

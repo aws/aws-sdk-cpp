@@ -35,7 +35,7 @@ EncryptionAtRestOptions::EncryptionAtRestOptions() :
 {
 }
 
-EncryptionAtRestOptions::EncryptionAtRestOptions(const JsonValue& jsonValue) : 
+EncryptionAtRestOptions::EncryptionAtRestOptions(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false)
@@ -43,7 +43,7 @@ EncryptionAtRestOptions::EncryptionAtRestOptions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EncryptionAtRestOptions& EncryptionAtRestOptions::operator =(const JsonValue& jsonValue)
+EncryptionAtRestOptions& EncryptionAtRestOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

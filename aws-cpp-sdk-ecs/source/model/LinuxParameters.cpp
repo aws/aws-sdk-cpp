@@ -39,7 +39,7 @@ LinuxParameters::LinuxParameters() :
 {
 }
 
-LinuxParameters::LinuxParameters(const JsonValue& jsonValue) : 
+LinuxParameters::LinuxParameters(JsonView jsonValue) : 
     m_capabilitiesHasBeenSet(false),
     m_devicesHasBeenSet(false),
     m_initProcessEnabled(false),
@@ -51,7 +51,7 @@ LinuxParameters::LinuxParameters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LinuxParameters& LinuxParameters::operator =(const JsonValue& jsonValue)
+LinuxParameters& LinuxParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("capabilities"))
   {
@@ -62,7 +62,7 @@ LinuxParameters& LinuxParameters::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("devices"))
   {
-    Array<JsonValue> devicesJsonList = jsonValue.GetArray("devices");
+    Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());
@@ -86,7 +86,7 @@ LinuxParameters& LinuxParameters::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tmpfs"))
   {
-    Array<JsonValue> tmpfsJsonList = jsonValue.GetArray("tmpfs");
+    Array<JsonView> tmpfsJsonList = jsonValue.GetArray("tmpfs");
     for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
     {
       m_tmpfs.push_back(tmpfsJsonList[tmpfsIndex].AsObject());

@@ -49,7 +49,7 @@ APNSSandboxChannelResponse::APNSSandboxChannelResponse() :
 {
 }
 
-APNSSandboxChannelResponse::APNSSandboxChannelResponse(const JsonValue& jsonValue) : 
+APNSSandboxChannelResponse::APNSSandboxChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_defaultAuthenticationMethodHasBeenSet(false),
@@ -71,7 +71,7 @@ APNSSandboxChannelResponse::APNSSandboxChannelResponse(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-APNSSandboxChannelResponse& APNSSandboxChannelResponse::operator =(const JsonValue& jsonValue)
+APNSSandboxChannelResponse& APNSSandboxChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

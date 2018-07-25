@@ -41,7 +41,7 @@ Aws::String UpdateDocumentVersionRequest::SerializePayload() const
    payload.WithString("VersionStatus", DocumentVersionStatusMapper::GetNameForDocumentVersionStatus(m_versionStatus));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateDocumentVersionRequest::GetRequestSpecificHeaders() const

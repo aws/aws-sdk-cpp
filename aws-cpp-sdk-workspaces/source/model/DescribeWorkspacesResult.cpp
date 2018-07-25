@@ -37,10 +37,10 @@ DescribeWorkspacesResult::DescribeWorkspacesResult(const Aws::AmazonWebServiceRe
 
 DescribeWorkspacesResult& DescribeWorkspacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Workspaces"))
   {
-    Array<JsonValue> workspacesJsonList = jsonValue.GetArray("Workspaces");
+    Array<JsonView> workspacesJsonList = jsonValue.GetArray("Workspaces");
     for(unsigned workspacesIndex = 0; workspacesIndex < workspacesJsonList.GetLength(); ++workspacesIndex)
     {
       m_workspaces.push_back(workspacesJsonList[workspacesIndex].AsObject());

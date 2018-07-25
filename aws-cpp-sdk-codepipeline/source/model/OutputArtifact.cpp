@@ -33,13 +33,13 @@ OutputArtifact::OutputArtifact() :
 {
 }
 
-OutputArtifact::OutputArtifact(const JsonValue& jsonValue) : 
+OutputArtifact::OutputArtifact(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputArtifact& OutputArtifact::operator =(const JsonValue& jsonValue)
+OutputArtifact& OutputArtifact::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

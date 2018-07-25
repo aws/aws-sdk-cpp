@@ -39,10 +39,10 @@ GetSampledRequestsResult::GetSampledRequestsResult(const Aws::AmazonWebServiceRe
 
 GetSampledRequestsResult& GetSampledRequestsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SampledRequests"))
   {
-    Array<JsonValue> sampledRequestsJsonList = jsonValue.GetArray("SampledRequests");
+    Array<JsonView> sampledRequestsJsonList = jsonValue.GetArray("SampledRequests");
     for(unsigned sampledRequestsIndex = 0; sampledRequestsIndex < sampledRequestsJsonList.GetLength(); ++sampledRequestsIndex)
     {
       m_sampledRequests.push_back(sampledRequestsJsonList[sampledRequestsIndex].AsObject());

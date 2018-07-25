@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     SplunkDestinationUpdate();
-    SplunkDestinationUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    SplunkDestinationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SplunkDestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    SplunkDestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

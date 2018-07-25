@@ -37,7 +37,7 @@ GetJobDetailsResult::GetJobDetailsResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetJobDetailsResult& GetJobDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobDetails"))
   {
     m_jobDetails = jsonValue.GetObject("jobDetails");

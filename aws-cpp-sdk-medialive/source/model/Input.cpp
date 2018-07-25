@@ -43,7 +43,7 @@ Input::Input() :
 {
 }
 
-Input::Input(const JsonValue& jsonValue) : 
+Input::Input(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_attachedChannelsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
@@ -59,7 +59,7 @@ Input::Input(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Input& Input::operator =(const JsonValue& jsonValue)
+Input& Input::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -70,7 +70,7 @@ Input& Input::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attachedChannels"))
   {
-    Array<JsonValue> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
+    Array<JsonView> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
     for(unsigned attachedChannelsIndex = 0; attachedChannelsIndex < attachedChannelsJsonList.GetLength(); ++attachedChannelsIndex)
     {
       m_attachedChannels.push_back(attachedChannelsJsonList[attachedChannelsIndex].AsString());
@@ -80,7 +80,7 @@ Input& Input::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonValue> destinationsJsonList = jsonValue.GetArray("destinations");
+    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -104,7 +104,7 @@ Input& Input::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonValue> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -114,7 +114,7 @@ Input& Input::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("sources"))
   {
-    Array<JsonValue> sourcesJsonList = jsonValue.GetArray("sources");
+    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());

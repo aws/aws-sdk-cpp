@@ -42,7 +42,7 @@ PipelineActivity::PipelineActivity() :
 {
 }
 
-PipelineActivity::PipelineActivity(const JsonValue& jsonValue) : 
+PipelineActivity::PipelineActivity(JsonView jsonValue) : 
     m_channelHasBeenSet(false),
     m_lambdaHasBeenSet(false),
     m_datastoreHasBeenSet(false),
@@ -57,7 +57,7 @@ PipelineActivity::PipelineActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineActivity& PipelineActivity::operator =(const JsonValue& jsonValue)
+PipelineActivity& PipelineActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("channel"))
   {

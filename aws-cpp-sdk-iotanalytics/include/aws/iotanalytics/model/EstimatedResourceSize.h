@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoTAnalytics
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     EstimatedResourceSize();
-    EstimatedResourceSize(const Aws::Utils::Json::JsonValue& jsonValue);
-    EstimatedResourceSize& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EstimatedResourceSize(Aws::Utils::Json::JsonView jsonValue);
+    EstimatedResourceSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

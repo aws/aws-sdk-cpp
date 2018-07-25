@@ -35,7 +35,7 @@ ContainerSummary::ContainerSummary() :
 {
 }
 
-ContainerSummary::ContainerSummary(const JsonValue& jsonValue) : 
+ContainerSummary::ContainerSummary(JsonView jsonValue) : 
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false)
@@ -43,7 +43,7 @@ ContainerSummary::ContainerSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerSummary& ContainerSummary::operator =(const JsonValue& jsonValue)
+ContainerSummary& ContainerSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("exitCode"))
   {

@@ -37,10 +37,10 @@ ListUserPoolClientsResult::ListUserPoolClientsResult(const Aws::AmazonWebService
 
 ListUserPoolClientsResult& ListUserPoolClientsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserPoolClients"))
   {
-    Array<JsonValue> userPoolClientsJsonList = jsonValue.GetArray("UserPoolClients");
+    Array<JsonView> userPoolClientsJsonList = jsonValue.GetArray("UserPoolClients");
     for(unsigned userPoolClientsIndex = 0; userPoolClientsIndex < userPoolClientsJsonList.GetLength(); ++userPoolClientsIndex)
     {
       m_userPoolClients.push_back(userPoolClientsJsonList[userPoolClientsIndex].AsObject());

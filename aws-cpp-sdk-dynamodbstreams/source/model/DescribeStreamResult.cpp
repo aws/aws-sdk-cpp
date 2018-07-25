@@ -37,7 +37,7 @@ DescribeStreamResult::DescribeStreamResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeStreamResult& DescribeStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StreamDescription"))
   {
     m_streamDescription = jsonValue.GetObject("StreamDescription");

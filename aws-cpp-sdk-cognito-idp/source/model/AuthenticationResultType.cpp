@@ -39,7 +39,7 @@ AuthenticationResultType::AuthenticationResultType() :
 {
 }
 
-AuthenticationResultType::AuthenticationResultType(const JsonValue& jsonValue) : 
+AuthenticationResultType::AuthenticationResultType(JsonView jsonValue) : 
     m_accessTokenHasBeenSet(false),
     m_expiresIn(0),
     m_expiresInHasBeenSet(false),
@@ -51,7 +51,7 @@ AuthenticationResultType::AuthenticationResultType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AuthenticationResultType& AuthenticationResultType::operator =(const JsonValue& jsonValue)
+AuthenticationResultType& AuthenticationResultType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccessToken"))
   {

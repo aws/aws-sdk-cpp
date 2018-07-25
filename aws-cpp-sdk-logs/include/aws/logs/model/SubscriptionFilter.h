@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchLogs
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SubscriptionFilter();
-    SubscriptionFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    SubscriptionFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SubscriptionFilter(Aws::Utils::Json::JsonView jsonValue);
+    SubscriptionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

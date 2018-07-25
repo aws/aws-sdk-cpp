@@ -34,14 +34,14 @@ BatchUpdateObjectAttributes::BatchUpdateObjectAttributes() :
 {
 }
 
-BatchUpdateObjectAttributes::BatchUpdateObjectAttributes(const JsonValue& jsonValue) : 
+BatchUpdateObjectAttributes::BatchUpdateObjectAttributes(JsonView jsonValue) : 
     m_objectReferenceHasBeenSet(false),
     m_attributeUpdatesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchUpdateObjectAttributes& BatchUpdateObjectAttributes::operator =(const JsonValue& jsonValue)
+BatchUpdateObjectAttributes& BatchUpdateObjectAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectReference"))
   {
@@ -52,7 +52,7 @@ BatchUpdateObjectAttributes& BatchUpdateObjectAttributes::operator =(const JsonV
 
   if(jsonValue.ValueExists("AttributeUpdates"))
   {
-    Array<JsonValue> attributeUpdatesJsonList = jsonValue.GetArray("AttributeUpdates");
+    Array<JsonView> attributeUpdatesJsonList = jsonValue.GetArray("AttributeUpdates");
     for(unsigned attributeUpdatesIndex = 0; attributeUpdatesIndex < attributeUpdatesJsonList.GetLength(); ++attributeUpdatesIndex)
     {
       m_attributeUpdates.push_back(attributeUpdatesJsonList[attributeUpdatesIndex].AsObject());

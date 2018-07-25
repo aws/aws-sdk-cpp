@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CostExplorer
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     InstanceDetails();
-    InstanceDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

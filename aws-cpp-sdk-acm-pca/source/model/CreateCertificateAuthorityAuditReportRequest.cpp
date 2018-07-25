@@ -51,7 +51,7 @@ Aws::String CreateCertificateAuthorityAuditReportRequest::SerializePayload() con
    payload.WithString("AuditReportResponseFormat", AuditReportResponseFormatMapper::GetNameForAuditReportResponseFormat(m_auditReportResponseFormat));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateCertificateAuthorityAuditReportRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ MessageTemplateType::MessageTemplateType() :
 {
 }
 
-MessageTemplateType::MessageTemplateType(const JsonValue& jsonValue) : 
+MessageTemplateType::MessageTemplateType(JsonView jsonValue) : 
     m_sMSMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_emailSubjectHasBeenSet(false)
@@ -43,7 +43,7 @@ MessageTemplateType::MessageTemplateType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MessageTemplateType& MessageTemplateType::operator =(const JsonValue& jsonValue)
+MessageTemplateType& MessageTemplateType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SMSMessage"))
   {

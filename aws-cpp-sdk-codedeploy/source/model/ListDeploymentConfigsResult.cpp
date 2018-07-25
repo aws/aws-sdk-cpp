@@ -37,10 +37,10 @@ ListDeploymentConfigsResult::ListDeploymentConfigsResult(const Aws::AmazonWebSer
 
 ListDeploymentConfigsResult& ListDeploymentConfigsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentConfigsList"))
   {
-    Array<JsonValue> deploymentConfigsListJsonList = jsonValue.GetArray("deploymentConfigsList");
+    Array<JsonView> deploymentConfigsListJsonList = jsonValue.GetArray("deploymentConfigsList");
     for(unsigned deploymentConfigsListIndex = 0; deploymentConfigsListIndex < deploymentConfigsListJsonList.GetLength(); ++deploymentConfigsListIndex)
     {
       m_deploymentConfigsList.push_back(deploymentConfigsListJsonList[deploymentConfigsListIndex].AsString());

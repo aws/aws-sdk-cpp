@@ -42,7 +42,7 @@ MovSettings::MovSettings() :
 {
 }
 
-MovSettings::MovSettings(const JsonValue& jsonValue) : 
+MovSettings::MovSettings(JsonView jsonValue) : 
     m_clapAtom(MovClapAtom::NOT_SET),
     m_clapAtomHasBeenSet(false),
     m_cslgAtom(MovCslgAtom::NOT_SET),
@@ -57,7 +57,7 @@ MovSettings::MovSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MovSettings& MovSettings::operator =(const JsonValue& jsonValue)
+MovSettings& MovSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("clapAtom"))
   {

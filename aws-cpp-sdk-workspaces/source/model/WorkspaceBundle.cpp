@@ -39,7 +39,7 @@ WorkspaceBundle::WorkspaceBundle() :
 {
 }
 
-WorkspaceBundle::WorkspaceBundle(const JsonValue& jsonValue) : 
+WorkspaceBundle::WorkspaceBundle(JsonView jsonValue) : 
     m_bundleIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
@@ -51,7 +51,7 @@ WorkspaceBundle::WorkspaceBundle(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WorkspaceBundle& WorkspaceBundle::operator =(const JsonValue& jsonValue)
+WorkspaceBundle& WorkspaceBundle::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BundleId"))
   {

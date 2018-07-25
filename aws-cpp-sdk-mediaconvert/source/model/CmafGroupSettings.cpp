@@ -57,7 +57,7 @@ CmafGroupSettings::CmafGroupSettings() :
 {
 }
 
-CmafGroupSettings::CmafGroupSettings(const JsonValue& jsonValue) : 
+CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) : 
     m_baseUrlHasBeenSet(false),
     m_clientCache(CmafClientCache::NOT_SET),
     m_clientCacheHasBeenSet(false),
@@ -87,7 +87,7 @@ CmafGroupSettings::CmafGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CmafGroupSettings& CmafGroupSettings::operator =(const JsonValue& jsonValue)
+CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("baseUrl"))
   {

@@ -40,7 +40,7 @@ SchemaExtensionInfo::SchemaExtensionInfo() :
 {
 }
 
-SchemaExtensionInfo::SchemaExtensionInfo(const JsonValue& jsonValue) : 
+SchemaExtensionInfo::SchemaExtensionInfo(JsonView jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_schemaExtensionIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -53,7 +53,7 @@ SchemaExtensionInfo::SchemaExtensionInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SchemaExtensionInfo& SchemaExtensionInfo::operator =(const JsonValue& jsonValue)
+SchemaExtensionInfo& SchemaExtensionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryId"))
   {

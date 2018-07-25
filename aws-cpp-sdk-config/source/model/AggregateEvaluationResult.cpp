@@ -40,7 +40,7 @@ AggregateEvaluationResult::AggregateEvaluationResult() :
 {
 }
 
-AggregateEvaluationResult::AggregateEvaluationResult(const JsonValue& jsonValue) : 
+AggregateEvaluationResult::AggregateEvaluationResult(JsonView jsonValue) : 
     m_evaluationResultIdentifierHasBeenSet(false),
     m_complianceType(ComplianceType::NOT_SET),
     m_complianceTypeHasBeenSet(false),
@@ -53,7 +53,7 @@ AggregateEvaluationResult::AggregateEvaluationResult(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-AggregateEvaluationResult& AggregateEvaluationResult::operator =(const JsonValue& jsonValue)
+AggregateEvaluationResult& AggregateEvaluationResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EvaluationResultIdentifier"))
   {

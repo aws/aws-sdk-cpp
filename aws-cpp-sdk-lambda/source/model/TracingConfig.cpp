@@ -34,14 +34,14 @@ TracingConfig::TracingConfig() :
 {
 }
 
-TracingConfig::TracingConfig(const JsonValue& jsonValue) : 
+TracingConfig::TracingConfig(JsonView jsonValue) : 
     m_mode(TracingMode::NOT_SET),
     m_modeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TracingConfig& TracingConfig::operator =(const JsonValue& jsonValue)
+TracingConfig& TracingConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Mode"))
   {

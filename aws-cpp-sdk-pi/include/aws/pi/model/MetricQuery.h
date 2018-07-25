@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace PI
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     MetricQuery();
-    MetricQuery(const Aws::Utils::Json::JsonValue& jsonValue);
-    MetricQuery& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MetricQuery(Aws::Utils::Json::JsonView jsonValue);
+    MetricQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -34,14 +34,14 @@ StateEnteredEventDetails::StateEnteredEventDetails() :
 {
 }
 
-StateEnteredEventDetails::StateEnteredEventDetails(const JsonValue& jsonValue) : 
+StateEnteredEventDetails::StateEnteredEventDetails(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_inputHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StateEnteredEventDetails& StateEnteredEventDetails::operator =(const JsonValue& jsonValue)
+StateEnteredEventDetails& StateEnteredEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

@@ -35,7 +35,7 @@ ContinuousParameterRange::ContinuousParameterRange() :
 {
 }
 
-ContinuousParameterRange::ContinuousParameterRange(const JsonValue& jsonValue) : 
+ContinuousParameterRange::ContinuousParameterRange(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_minValueHasBeenSet(false),
     m_maxValueHasBeenSet(false)
@@ -43,7 +43,7 @@ ContinuousParameterRange::ContinuousParameterRange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContinuousParameterRange& ContinuousParameterRange::operator =(const JsonValue& jsonValue)
+ContinuousParameterRange& ContinuousParameterRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

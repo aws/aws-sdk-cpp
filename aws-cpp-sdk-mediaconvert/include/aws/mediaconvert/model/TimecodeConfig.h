@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     TimecodeConfig();
-    TimecodeConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    TimecodeConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TimecodeConfig(Aws::Utils::Json::JsonView jsonValue);
+    TimecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

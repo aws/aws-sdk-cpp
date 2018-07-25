@@ -44,7 +44,7 @@ Aws::String GetDeployablePatchSnapshotForInstanceRequest::SerializePayload() con
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDeployablePatchSnapshotForInstanceRequest::GetRequestSpecificHeaders() const

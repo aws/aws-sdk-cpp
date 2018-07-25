@@ -37,7 +37,7 @@ CreateNotebookInstanceLifecycleConfigResult::CreateNotebookInstanceLifecycleConf
 
 CreateNotebookInstanceLifecycleConfigResult& CreateNotebookInstanceLifecycleConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigArn"))
   {
     m_notebookInstanceLifecycleConfigArn = jsonValue.GetString("NotebookInstanceLifecycleConfigArn");

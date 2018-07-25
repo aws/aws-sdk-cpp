@@ -37,7 +37,7 @@ NamedQuery::NamedQuery() :
 {
 }
 
-NamedQuery::NamedQuery(const JsonValue& jsonValue) : 
+NamedQuery::NamedQuery(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_databaseHasBeenSet(false),
@@ -47,7 +47,7 @@ NamedQuery::NamedQuery(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NamedQuery& NamedQuery::operator =(const JsonValue& jsonValue)
+NamedQuery& NamedQuery::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

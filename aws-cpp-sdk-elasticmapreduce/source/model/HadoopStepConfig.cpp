@@ -36,7 +36,7 @@ HadoopStepConfig::HadoopStepConfig() :
 {
 }
 
-HadoopStepConfig::HadoopStepConfig(const JsonValue& jsonValue) : 
+HadoopStepConfig::HadoopStepConfig(JsonView jsonValue) : 
     m_jarHasBeenSet(false),
     m_propertiesHasBeenSet(false),
     m_mainClassHasBeenSet(false),
@@ -45,7 +45,7 @@ HadoopStepConfig::HadoopStepConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HadoopStepConfig& HadoopStepConfig::operator =(const JsonValue& jsonValue)
+HadoopStepConfig& HadoopStepConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Jar"))
   {
@@ -56,7 +56,7 @@ HadoopStepConfig& HadoopStepConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Properties"))
   {
-    Aws::Map<Aws::String, JsonValue> propertiesJsonMap = jsonValue.GetObject("Properties").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("Properties").GetAllObjects();
     for(auto& propertiesItem : propertiesJsonMap)
     {
       m_properties[propertiesItem.first] = propertiesItem.second.AsString();
@@ -73,7 +73,7 @@ HadoopStepConfig& HadoopStepConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Args"))
   {
-    Array<JsonValue> argsJsonList = jsonValue.GetArray("Args");
+    Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
     for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
     {
       m_args.push_back(argsJsonList[argsIndex].AsString());

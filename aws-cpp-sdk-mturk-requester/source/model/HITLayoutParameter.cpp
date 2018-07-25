@@ -34,14 +34,14 @@ HITLayoutParameter::HITLayoutParameter() :
 {
 }
 
-HITLayoutParameter::HITLayoutParameter(const JsonValue& jsonValue) : 
+HITLayoutParameter::HITLayoutParameter(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HITLayoutParameter& HITLayoutParameter::operator =(const JsonValue& jsonValue)
+HITLayoutParameter& HITLayoutParameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

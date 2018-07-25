@@ -36,7 +36,7 @@ InventoryItemSchema::InventoryItemSchema() :
 {
 }
 
-InventoryItemSchema::InventoryItemSchema(const JsonValue& jsonValue) : 
+InventoryItemSchema::InventoryItemSchema(JsonView jsonValue) : 
     m_typeNameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_attributesHasBeenSet(false),
@@ -45,7 +45,7 @@ InventoryItemSchema::InventoryItemSchema(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InventoryItemSchema& InventoryItemSchema::operator =(const JsonValue& jsonValue)
+InventoryItemSchema& InventoryItemSchema::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TypeName"))
   {
@@ -63,7 +63,7 @@ InventoryItemSchema& InventoryItemSchema::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("Attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());

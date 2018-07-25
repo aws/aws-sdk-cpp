@@ -37,7 +37,7 @@ CreateParameterGroupResult::CreateParameterGroupResult(const Aws::AmazonWebServi
 
 CreateParameterGroupResult& CreateParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ParameterGroup"))
   {
     m_parameterGroup = jsonValue.GetObject("ParameterGroup");

@@ -37,10 +37,10 @@ DescribeEvaluationsResult::DescribeEvaluationsResult(const Aws::AmazonWebService
 
 DescribeEvaluationsResult& DescribeEvaluationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Results"))
   {
-    Array<JsonValue> resultsJsonList = jsonValue.GetArray("Results");
+    Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
     for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());

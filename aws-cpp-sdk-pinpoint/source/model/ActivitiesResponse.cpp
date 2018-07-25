@@ -33,17 +33,17 @@ ActivitiesResponse::ActivitiesResponse() :
 {
 }
 
-ActivitiesResponse::ActivitiesResponse(const JsonValue& jsonValue) : 
+ActivitiesResponse::ActivitiesResponse(JsonView jsonValue) : 
     m_itemHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActivitiesResponse& ActivitiesResponse::operator =(const JsonValue& jsonValue)
+ActivitiesResponse& ActivitiesResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Item"))
   {
-    Array<JsonValue> itemJsonList = jsonValue.GetArray("Item");
+    Array<JsonView> itemJsonList = jsonValue.GetArray("Item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_item.push_back(itemJsonList[itemIndex].AsObject());

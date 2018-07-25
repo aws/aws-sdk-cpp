@@ -36,7 +36,7 @@ CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEvent
 {
 }
 
-CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEventAttributes(const JsonValue& jsonValue) : 
+CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
     m_cause(CancelWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
@@ -45,7 +45,7 @@ CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEvent
   *this = jsonValue;
 }
 
-CancelWorkflowExecutionFailedEventAttributes& CancelWorkflowExecutionFailedEventAttributes::operator =(const JsonValue& jsonValue)
+CancelWorkflowExecutionFailedEventAttributes& CancelWorkflowExecutionFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cause"))
   {

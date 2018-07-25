@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Cloud9
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Environment();
-    Environment(const Aws::Utils::Json::JsonValue& jsonValue);
-    Environment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Environment(Aws::Utils::Json::JsonView jsonValue);
+    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -69,7 +69,7 @@ Aws::String ListDocumentsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListDocumentsRequest::GetRequestSpecificHeaders() const

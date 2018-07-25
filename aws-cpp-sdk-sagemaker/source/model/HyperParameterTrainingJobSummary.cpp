@@ -44,7 +44,7 @@ HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary() :
 {
 }
 
-HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary(const JsonValue& jsonValue) : 
+HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary(JsonView jsonValue) : 
     m_trainingJobNameHasBeenSet(false),
     m_trainingJobArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -61,7 +61,7 @@ HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary(const JsonVal
   *this = jsonValue;
 }
 
-HyperParameterTrainingJobSummary& HyperParameterTrainingJobSummary::operator =(const JsonValue& jsonValue)
+HyperParameterTrainingJobSummary& HyperParameterTrainingJobSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TrainingJobName"))
   {
@@ -107,7 +107,7 @@ HyperParameterTrainingJobSummary& HyperParameterTrainingJobSummary::operator =(c
 
   if(jsonValue.ValueExists("TunedHyperParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> tunedHyperParametersJsonMap = jsonValue.GetObject("TunedHyperParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tunedHyperParametersJsonMap = jsonValue.GetObject("TunedHyperParameters").GetAllObjects();
     for(auto& tunedHyperParametersItem : tunedHyperParametersJsonMap)
     {
       m_tunedHyperParameters[tunedHyperParametersItem.first] = tunedHyperParametersItem.second.AsString();

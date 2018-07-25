@@ -39,7 +39,7 @@ Offering::Offering() :
 {
 }
 
-Offering::Offering(const JsonValue& jsonValue) : 
+Offering::Offering(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_type(OfferingType::NOT_SET),
@@ -51,7 +51,7 @@ Offering::Offering(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Offering& Offering::operator =(const JsonValue& jsonValue)
+Offering& Offering::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -83,7 +83,7 @@ Offering& Offering::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("recurringCharges"))
   {
-    Array<JsonValue> recurringChargesJsonList = jsonValue.GetArray("recurringCharges");
+    Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("recurringCharges");
     for(unsigned recurringChargesIndex = 0; recurringChargesIndex < recurringChargesJsonList.GetLength(); ++recurringChargesIndex)
     {
       m_recurringCharges.push_back(recurringChargesJsonList[recurringChargesIndex].AsObject());

@@ -40,7 +40,7 @@ Voice::Voice() :
 {
 }
 
-Voice::Voice(const JsonValue& jsonValue) : 
+Voice::Voice(JsonView jsonValue) : 
     m_gender(Gender::NOT_SET),
     m_genderHasBeenSet(false),
     m_id(VoiceId::NOT_SET),
@@ -53,7 +53,7 @@ Voice::Voice(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Voice& Voice::operator =(const JsonValue& jsonValue)
+Voice& Voice::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Gender"))
   {

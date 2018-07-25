@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationDiscoveryService
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     CustomerConnectorInfo();
-    CustomerConnectorInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    CustomerConnectorInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CustomerConnectorInfo(Aws::Utils::Json::JsonView jsonValue);
+    CustomerConnectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

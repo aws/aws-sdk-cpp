@@ -49,7 +49,7 @@ Aws::String ListTagsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListTagsRequest::GetRequestSpecificHeaders() const

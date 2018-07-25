@@ -49,7 +49,7 @@ Aws::String CancelStepsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CancelStepsRequest::GetRequestSpecificHeaders() const

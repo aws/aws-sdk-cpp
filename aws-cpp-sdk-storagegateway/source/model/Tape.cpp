@@ -44,7 +44,7 @@ Tape::Tape() :
 {
 }
 
-Tape::Tape(const JsonValue& jsonValue) : 
+Tape::Tape(JsonView jsonValue) : 
     m_tapeARNHasBeenSet(false),
     m_tapeBarcodeHasBeenSet(false),
     m_tapeCreatedDateHasBeenSet(false),
@@ -61,7 +61,7 @@ Tape::Tape(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Tape& Tape::operator =(const JsonValue& jsonValue)
+Tape& Tape::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TapeARN"))
   {

@@ -37,10 +37,10 @@ ListExclusionsResult::ListExclusionsResult(const Aws::AmazonWebServiceResult<Jso
 
 ListExclusionsResult& ListExclusionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("exclusionArns"))
   {
-    Array<JsonValue> exclusionArnsJsonList = jsonValue.GetArray("exclusionArns");
+    Array<JsonView> exclusionArnsJsonList = jsonValue.GetArray("exclusionArns");
     for(unsigned exclusionArnsIndex = 0; exclusionArnsIndex < exclusionArnsJsonList.GetLength(); ++exclusionArnsIndex)
     {
       m_exclusionArns.push_back(exclusionArnsJsonList[exclusionArnsIndex].AsString());

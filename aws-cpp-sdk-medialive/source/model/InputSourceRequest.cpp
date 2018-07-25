@@ -35,7 +35,7 @@ InputSourceRequest::InputSourceRequest() :
 {
 }
 
-InputSourceRequest::InputSourceRequest(const JsonValue& jsonValue) : 
+InputSourceRequest::InputSourceRequest(JsonView jsonValue) : 
     m_passwordParamHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_usernameHasBeenSet(false)
@@ -43,7 +43,7 @@ InputSourceRequest::InputSourceRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputSourceRequest& InputSourceRequest::operator =(const JsonValue& jsonValue)
+InputSourceRequest& InputSourceRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("passwordParam"))
   {

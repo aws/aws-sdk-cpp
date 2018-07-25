@@ -38,7 +38,7 @@ SchemaConfiguration::SchemaConfiguration() :
 {
 }
 
-SchemaConfiguration::SchemaConfiguration(const JsonValue& jsonValue) : 
+SchemaConfiguration::SchemaConfiguration(JsonView jsonValue) : 
     m_roleARNHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
@@ -49,7 +49,7 @@ SchemaConfiguration::SchemaConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SchemaConfiguration& SchemaConfiguration::operator =(const JsonValue& jsonValue)
+SchemaConfiguration& SchemaConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RoleARN"))
   {

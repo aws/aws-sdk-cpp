@@ -37,7 +37,7 @@ RestoreSummary::RestoreSummary() :
 {
 }
 
-RestoreSummary::RestoreSummary(const JsonValue& jsonValue) : 
+RestoreSummary::RestoreSummary(JsonView jsonValue) : 
     m_sourceBackupArnHasBeenSet(false),
     m_sourceTableArnHasBeenSet(false),
     m_restoreDateTimeHasBeenSet(false),
@@ -47,7 +47,7 @@ RestoreSummary::RestoreSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RestoreSummary& RestoreSummary::operator =(const JsonValue& jsonValue)
+RestoreSummary& RestoreSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SourceBackupArn"))
   {

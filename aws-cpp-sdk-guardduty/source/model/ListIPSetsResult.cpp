@@ -37,10 +37,10 @@ ListIPSetsResult::ListIPSetsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 ListIPSetsResult& ListIPSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ipSetIds"))
   {
-    Array<JsonValue> ipSetIdsJsonList = jsonValue.GetArray("ipSetIds");
+    Array<JsonView> ipSetIdsJsonList = jsonValue.GetArray("ipSetIds");
     for(unsigned ipSetIdsIndex = 0; ipSetIdsIndex < ipSetIdsJsonList.GetLength(); ++ipSetIdsIndex)
     {
       m_ipSetIds.push_back(ipSetIdsJsonList[ipSetIdsIndex].AsString());

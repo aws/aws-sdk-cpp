@@ -33,13 +33,13 @@ OutputFormatConfiguration::OutputFormatConfiguration() :
 {
 }
 
-OutputFormatConfiguration::OutputFormatConfiguration(const JsonValue& jsonValue) : 
+OutputFormatConfiguration::OutputFormatConfiguration(JsonView jsonValue) : 
     m_serializerHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputFormatConfiguration& OutputFormatConfiguration::operator =(const JsonValue& jsonValue)
+OutputFormatConfiguration& OutputFormatConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Serializer"))
   {

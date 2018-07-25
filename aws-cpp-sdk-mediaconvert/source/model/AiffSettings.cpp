@@ -38,7 +38,7 @@ AiffSettings::AiffSettings() :
 {
 }
 
-AiffSettings::AiffSettings(const JsonValue& jsonValue) : 
+AiffSettings::AiffSettings(JsonView jsonValue) : 
     m_bitDepth(0),
     m_bitDepthHasBeenSet(false),
     m_channels(0),
@@ -49,7 +49,7 @@ AiffSettings::AiffSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AiffSettings& AiffSettings::operator =(const JsonValue& jsonValue)
+AiffSettings& AiffSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bitDepth"))
   {

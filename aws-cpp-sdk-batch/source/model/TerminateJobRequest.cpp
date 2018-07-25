@@ -44,7 +44,7 @@ Aws::String TerminateJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

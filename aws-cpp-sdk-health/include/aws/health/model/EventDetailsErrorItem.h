@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Health
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     EventDetailsErrorItem();
-    EventDetailsErrorItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    EventDetailsErrorItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EventDetailsErrorItem(Aws::Utils::Json::JsonView jsonValue);
+    EventDetailsErrorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

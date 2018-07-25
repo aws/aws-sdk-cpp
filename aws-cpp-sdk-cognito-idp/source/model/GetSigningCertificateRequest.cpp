@@ -37,7 +37,7 @@ Aws::String GetSigningCertificateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetSigningCertificateRequest::GetRequestSpecificHeaders() const

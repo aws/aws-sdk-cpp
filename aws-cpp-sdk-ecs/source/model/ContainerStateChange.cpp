@@ -38,7 +38,7 @@ ContainerStateChange::ContainerStateChange() :
 {
 }
 
-ContainerStateChange::ContainerStateChange(const JsonValue& jsonValue) : 
+ContainerStateChange::ContainerStateChange(JsonView jsonValue) : 
     m_containerNameHasBeenSet(false),
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
@@ -49,7 +49,7 @@ ContainerStateChange::ContainerStateChange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerStateChange& ContainerStateChange::operator =(const JsonValue& jsonValue)
+ContainerStateChange& ContainerStateChange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerName"))
   {
@@ -67,7 +67,7 @@ ContainerStateChange& ContainerStateChange::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("networkBindings"))
   {
-    Array<JsonValue> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
+    Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
     for(unsigned networkBindingsIndex = 0; networkBindingsIndex < networkBindingsJsonList.GetLength(); ++networkBindingsIndex)
     {
       m_networkBindings.push_back(networkBindingsJsonList[networkBindingsIndex].AsObject());

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ResourceDataSyncS3Destination();
-    ResourceDataSyncS3Destination(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceDataSyncS3Destination& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceDataSyncS3Destination(Aws::Utils::Json::JsonView jsonValue);
+    ResourceDataSyncS3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

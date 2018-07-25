@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     DatabaseInput();
-    DatabaseInput(const Aws::Utils::Json::JsonValue& jsonValue);
-    DatabaseInput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DatabaseInput(Aws::Utils::Json::JsonView jsonValue);
+    DatabaseInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

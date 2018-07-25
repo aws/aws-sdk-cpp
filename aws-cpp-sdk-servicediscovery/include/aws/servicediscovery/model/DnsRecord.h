@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceDiscovery
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DnsRecord();
-    DnsRecord(const Aws::Utils::Json::JsonValue& jsonValue);
-    DnsRecord& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DnsRecord(Aws::Utils::Json::JsonView jsonValue);
+    DnsRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

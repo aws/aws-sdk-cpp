@@ -33,13 +33,13 @@ RequestCancelActivityTaskDecisionAttributes::RequestCancelActivityTaskDecisionAt
 {
 }
 
-RequestCancelActivityTaskDecisionAttributes::RequestCancelActivityTaskDecisionAttributes(const JsonValue& jsonValue) : 
+RequestCancelActivityTaskDecisionAttributes::RequestCancelActivityTaskDecisionAttributes(JsonView jsonValue) : 
     m_activityIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RequestCancelActivityTaskDecisionAttributes& RequestCancelActivityTaskDecisionAttributes::operator =(const JsonValue& jsonValue)
+RequestCancelActivityTaskDecisionAttributes& RequestCancelActivityTaskDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activityId"))
   {

@@ -37,7 +37,7 @@ ActionState::ActionState() :
 {
 }
 
-ActionState::ActionState(const JsonValue& jsonValue) : 
+ActionState::ActionState(JsonView jsonValue) : 
     m_actionNameHasBeenSet(false),
     m_currentRevisionHasBeenSet(false),
     m_latestExecutionHasBeenSet(false),
@@ -47,7 +47,7 @@ ActionState::ActionState(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActionState& ActionState::operator =(const JsonValue& jsonValue)
+ActionState& ActionState::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actionName"))
   {

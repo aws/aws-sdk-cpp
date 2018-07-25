@@ -37,10 +37,10 @@ ListSecurityConfigurationsResult::ListSecurityConfigurationsResult(const Aws::Am
 
 ListSecurityConfigurationsResult& ListSecurityConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SecurityConfigurations"))
   {
-    Array<JsonValue> securityConfigurationsJsonList = jsonValue.GetArray("SecurityConfigurations");
+    Array<JsonView> securityConfigurationsJsonList = jsonValue.GetArray("SecurityConfigurations");
     for(unsigned securityConfigurationsIndex = 0; securityConfigurationsIndex < securityConfigurationsJsonList.GetLength(); ++securityConfigurationsIndex)
     {
       m_securityConfigurations.push_back(securityConfigurationsJsonList[securityConfigurationsIndex].AsObject());

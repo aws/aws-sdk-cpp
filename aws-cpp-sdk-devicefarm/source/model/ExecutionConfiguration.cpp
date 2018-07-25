@@ -40,7 +40,7 @@ ExecutionConfiguration::ExecutionConfiguration() :
 {
 }
 
-ExecutionConfiguration::ExecutionConfiguration(const JsonValue& jsonValue) : 
+ExecutionConfiguration::ExecutionConfiguration(JsonView jsonValue) : 
     m_jobTimeoutMinutes(0),
     m_jobTimeoutMinutesHasBeenSet(false),
     m_accountsCleanup(false),
@@ -53,7 +53,7 @@ ExecutionConfiguration::ExecutionConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExecutionConfiguration& ExecutionConfiguration::operator =(const JsonValue& jsonValue)
+ExecutionConfiguration& ExecutionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobTimeoutMinutes"))
   {

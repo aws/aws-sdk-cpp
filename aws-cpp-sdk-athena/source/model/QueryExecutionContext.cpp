@@ -33,13 +33,13 @@ QueryExecutionContext::QueryExecutionContext() :
 {
 }
 
-QueryExecutionContext::QueryExecutionContext(const JsonValue& jsonValue) : 
+QueryExecutionContext::QueryExecutionContext(JsonView jsonValue) : 
     m_databaseHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-QueryExecutionContext& QueryExecutionContext::operator =(const JsonValue& jsonValue)
+QueryExecutionContext& QueryExecutionContext::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Database"))
   {

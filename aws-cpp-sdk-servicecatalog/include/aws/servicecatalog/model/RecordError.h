@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RecordError();
-    RecordError(const Aws::Utils::Json::JsonValue& jsonValue);
-    RecordError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RecordError(Aws::Utils::Json::JsonView jsonValue);
+    RecordError& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

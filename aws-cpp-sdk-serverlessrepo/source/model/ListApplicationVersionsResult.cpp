@@ -37,7 +37,7 @@ ListApplicationVersionsResult::ListApplicationVersionsResult(const Aws::AmazonWe
 
 ListApplicationVersionsResult& ListApplicationVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
@@ -46,7 +46,7 @@ ListApplicationVersionsResult& ListApplicationVersionsResult::operator =(const A
 
   if(jsonValue.ValueExists("versions"))
   {
-    Array<JsonValue> versionsJsonList = jsonValue.GetArray("versions");
+    Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");
     for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsObject());

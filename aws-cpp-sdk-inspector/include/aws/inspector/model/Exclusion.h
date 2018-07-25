@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     Exclusion();
-    Exclusion(const Aws::Utils::Json::JsonValue& jsonValue);
-    Exclusion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Exclusion(Aws::Utils::Json::JsonView jsonValue);
+    Exclusion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

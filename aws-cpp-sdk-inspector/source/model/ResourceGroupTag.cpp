@@ -34,14 +34,14 @@ ResourceGroupTag::ResourceGroupTag() :
 {
 }
 
-ResourceGroupTag::ResourceGroupTag(const JsonValue& jsonValue) : 
+ResourceGroupTag::ResourceGroupTag(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourceGroupTag& ResourceGroupTag::operator =(const JsonValue& jsonValue)
+ResourceGroupTag& ResourceGroupTag::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("key"))
   {

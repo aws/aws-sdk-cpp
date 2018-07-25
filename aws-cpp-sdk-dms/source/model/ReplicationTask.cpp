@@ -50,7 +50,7 @@ ReplicationTask::ReplicationTask() :
 {
 }
 
-ReplicationTask::ReplicationTask(const JsonValue& jsonValue) : 
+ReplicationTask::ReplicationTask(JsonView jsonValue) : 
     m_replicationTaskIdentifierHasBeenSet(false),
     m_sourceEndpointArnHasBeenSet(false),
     m_targetEndpointArnHasBeenSet(false),
@@ -73,7 +73,7 @@ ReplicationTask::ReplicationTask(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReplicationTask& ReplicationTask::operator =(const JsonValue& jsonValue)
+ReplicationTask& ReplicationTask::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReplicationTaskIdentifier"))
   {

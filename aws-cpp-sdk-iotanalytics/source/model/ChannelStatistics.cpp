@@ -33,13 +33,13 @@ ChannelStatistics::ChannelStatistics() :
 {
 }
 
-ChannelStatistics::ChannelStatistics(const JsonValue& jsonValue) : 
+ChannelStatistics::ChannelStatistics(JsonView jsonValue) : 
     m_sizeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ChannelStatistics& ChannelStatistics::operator =(const JsonValue& jsonValue)
+ChannelStatistics& ChannelStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("size"))
   {

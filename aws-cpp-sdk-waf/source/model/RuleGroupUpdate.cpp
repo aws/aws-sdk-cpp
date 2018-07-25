@@ -35,7 +35,7 @@ RuleGroupUpdate::RuleGroupUpdate() :
 {
 }
 
-RuleGroupUpdate::RuleGroupUpdate(const JsonValue& jsonValue) : 
+RuleGroupUpdate::RuleGroupUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_activatedRuleHasBeenSet(false)
@@ -43,7 +43,7 @@ RuleGroupUpdate::RuleGroupUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RuleGroupUpdate& RuleGroupUpdate::operator =(const JsonValue& jsonValue)
+RuleGroupUpdate& RuleGroupUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

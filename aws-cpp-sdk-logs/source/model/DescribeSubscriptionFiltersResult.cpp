@@ -37,10 +37,10 @@ DescribeSubscriptionFiltersResult::DescribeSubscriptionFiltersResult(const Aws::
 
 DescribeSubscriptionFiltersResult& DescribeSubscriptionFiltersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("subscriptionFilters"))
   {
-    Array<JsonValue> subscriptionFiltersJsonList = jsonValue.GetArray("subscriptionFilters");
+    Array<JsonView> subscriptionFiltersJsonList = jsonValue.GetArray("subscriptionFilters");
     for(unsigned subscriptionFiltersIndex = 0; subscriptionFiltersIndex < subscriptionFiltersJsonList.GetLength(); ++subscriptionFiltersIndex)
     {
       m_subscriptionFilters.push_back(subscriptionFiltersJsonList[subscriptionFiltersIndex].AsObject());

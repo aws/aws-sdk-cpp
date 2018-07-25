@@ -37,7 +37,7 @@ GetPipelineExecutionResult::GetPipelineExecutionResult(const Aws::AmazonWebServi
 
 GetPipelineExecutionResult& GetPipelineExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pipelineExecution"))
   {
     m_pipelineExecution = jsonValue.GetObject("pipelineExecution");

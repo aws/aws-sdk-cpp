@@ -107,7 +107,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
@@ -115,7 +115,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
@@ -123,7 +123,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
@@ -131,7 +131,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
@@ -139,7 +139,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
@@ -147,7 +147,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
@@ -155,7 +155,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -394,8 +394,8 @@ namespace Model
 
 
     /**
-     * <p>The details of the service discovery registries you want to assign to this
-     * service. For more information, see <a
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * using platform version v1.1.0 or later. For more information, see <a
@@ -405,8 +405,8 @@ namespace Model
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
     /**
-     * <p>The details of the service discovery registries you want to assign to this
-     * service. For more information, see <a
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * using platform version v1.1.0 or later. For more information, see <a
@@ -416,8 +416,8 @@ namespace Model
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
     /**
-     * <p>The details of the service discovery registries you want to assign to this
-     * service. For more information, see <a
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * using platform version v1.1.0 or later. For more information, see <a
@@ -427,8 +427,8 @@ namespace Model
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
     /**
-     * <p>The details of the service discovery registries you want to assign to this
-     * service. For more information, see <a
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * using platform version v1.1.0 or later. For more information, see <a
@@ -438,8 +438,8 @@ namespace Model
     inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
     /**
-     * <p>The details of the service discovery registries you want to assign to this
-     * service. For more information, see <a
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * using platform version v1.1.0 or later. For more information, see <a
@@ -449,8 +449,8 @@ namespace Model
     inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the service discovery registries you want to assign to this
-     * service. For more information, see <a
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * using platform version v1.1.0 or later. For more information, see <a
@@ -460,8 +460,8 @@ namespace Model
     inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
     /**
-     * <p>The details of the service discovery registries you want to assign to this
-     * service. For more information, see <a
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * using platform version v1.1.0 or later. For more information, see <a
@@ -957,7 +957,7 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds during which the ECS service scheduler ignores health check
+     * to 7,200 seconds during which the ECS service scheduler ignores health check
      * status. This grace period can prevent the ECS service scheduler from marking
      * tasks as unhealthy and stopping them before they have time to come up.</p>
      */
@@ -969,7 +969,7 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds during which the ECS service scheduler ignores health check
+     * to 7,200 seconds during which the ECS service scheduler ignores health check
      * status. This grace period can prevent the ECS service scheduler from marking
      * tasks as unhealthy and stopping them before they have time to come up.</p>
      */
@@ -981,7 +981,7 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds during which the ECS service scheduler ignores health check
+     * to 7,200 seconds during which the ECS service scheduler ignores health check
      * status. This grace period can prevent the ECS service scheduler from marking
      * tasks as unhealthy and stopping them before they have time to come up.</p>
      */

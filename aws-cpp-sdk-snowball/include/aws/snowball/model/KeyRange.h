@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Snowball
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     KeyRange();
-    KeyRange(const Aws::Utils::Json::JsonValue& jsonValue);
-    KeyRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KeyRange(Aws::Utils::Json::JsonView jsonValue);
+    KeyRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

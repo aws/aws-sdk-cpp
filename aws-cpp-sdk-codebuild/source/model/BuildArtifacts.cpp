@@ -35,7 +35,7 @@ BuildArtifacts::BuildArtifacts() :
 {
 }
 
-BuildArtifacts::BuildArtifacts(const JsonValue& jsonValue) : 
+BuildArtifacts::BuildArtifacts(JsonView jsonValue) : 
     m_locationHasBeenSet(false),
     m_sha256sumHasBeenSet(false),
     m_md5sumHasBeenSet(false)
@@ -43,7 +43,7 @@ BuildArtifacts::BuildArtifacts(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BuildArtifacts& BuildArtifacts::operator =(const JsonValue& jsonValue)
+BuildArtifacts& BuildArtifacts::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("location"))
   {

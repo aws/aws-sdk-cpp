@@ -34,14 +34,14 @@ SequenceNumberRange::SequenceNumberRange() :
 {
 }
 
-SequenceNumberRange::SequenceNumberRange(const JsonValue& jsonValue) : 
+SequenceNumberRange::SequenceNumberRange(JsonView jsonValue) : 
     m_startingSequenceNumberHasBeenSet(false),
     m_endingSequenceNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SequenceNumberRange& SequenceNumberRange::operator =(const JsonValue& jsonValue)
+SequenceNumberRange& SequenceNumberRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartingSequenceNumber"))
   {

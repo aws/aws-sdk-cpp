@@ -34,18 +34,18 @@ BatchListObjectParentPathsResponse::BatchListObjectParentPathsResponse() :
 {
 }
 
-BatchListObjectParentPathsResponse::BatchListObjectParentPathsResponse(const JsonValue& jsonValue) : 
+BatchListObjectParentPathsResponse::BatchListObjectParentPathsResponse(JsonView jsonValue) : 
     m_pathToObjectIdentifiersListHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchListObjectParentPathsResponse& BatchListObjectParentPathsResponse::operator =(const JsonValue& jsonValue)
+BatchListObjectParentPathsResponse& BatchListObjectParentPathsResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PathToObjectIdentifiersList"))
   {
-    Array<JsonValue> pathToObjectIdentifiersListJsonList = jsonValue.GetArray("PathToObjectIdentifiersList");
+    Array<JsonView> pathToObjectIdentifiersListJsonList = jsonValue.GetArray("PathToObjectIdentifiersList");
     for(unsigned pathToObjectIdentifiersListIndex = 0; pathToObjectIdentifiersListIndex < pathToObjectIdentifiersListJsonList.GetLength(); ++pathToObjectIdentifiersListIndex)
     {
       m_pathToObjectIdentifiersList.push_back(pathToObjectIdentifiersListJsonList[pathToObjectIdentifiersListIndex].AsObject());

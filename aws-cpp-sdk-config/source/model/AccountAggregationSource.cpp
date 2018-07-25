@@ -36,7 +36,7 @@ AccountAggregationSource::AccountAggregationSource() :
 {
 }
 
-AccountAggregationSource::AccountAggregationSource(const JsonValue& jsonValue) : 
+AccountAggregationSource::AccountAggregationSource(JsonView jsonValue) : 
     m_accountIdsHasBeenSet(false),
     m_allAwsRegions(false),
     m_allAwsRegionsHasBeenSet(false),
@@ -45,11 +45,11 @@ AccountAggregationSource::AccountAggregationSource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AccountAggregationSource& AccountAggregationSource::operator =(const JsonValue& jsonValue)
+AccountAggregationSource& AccountAggregationSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccountIds"))
   {
-    Array<JsonValue> accountIdsJsonList = jsonValue.GetArray("AccountIds");
+    Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
     for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
@@ -66,7 +66,7 @@ AccountAggregationSource& AccountAggregationSource::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("AwsRegions"))
   {
-    Array<JsonValue> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
+    Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
     for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
     {
       m_awsRegions.push_back(awsRegionsJsonList[awsRegionsIndex].AsString());

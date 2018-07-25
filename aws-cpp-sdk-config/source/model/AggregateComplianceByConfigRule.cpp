@@ -36,7 +36,7 @@ AggregateComplianceByConfigRule::AggregateComplianceByConfigRule() :
 {
 }
 
-AggregateComplianceByConfigRule::AggregateComplianceByConfigRule(const JsonValue& jsonValue) : 
+AggregateComplianceByConfigRule::AggregateComplianceByConfigRule(JsonView jsonValue) : 
     m_configRuleNameHasBeenSet(false),
     m_complianceHasBeenSet(false),
     m_accountIdHasBeenSet(false),
@@ -45,7 +45,7 @@ AggregateComplianceByConfigRule::AggregateComplianceByConfigRule(const JsonValue
   *this = jsonValue;
 }
 
-AggregateComplianceByConfigRule& AggregateComplianceByConfigRule::operator =(const JsonValue& jsonValue)
+AggregateComplianceByConfigRule& AggregateComplianceByConfigRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConfigRuleName"))
   {

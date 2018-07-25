@@ -44,7 +44,7 @@ InstanceDetails::InstanceDetails() :
 {
 }
 
-InstanceDetails::InstanceDetails(const JsonValue& jsonValue) : 
+InstanceDetails::InstanceDetails(JsonView jsonValue) : 
     m_availabilityZoneHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_imageDescriptionHasBeenSet(false),
@@ -61,7 +61,7 @@ InstanceDetails::InstanceDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceDetails& InstanceDetails::operator =(const JsonValue& jsonValue)
+InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("availabilityZone"))
   {
@@ -121,7 +121,7 @@ InstanceDetails& InstanceDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonValue> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
@@ -138,7 +138,7 @@ InstanceDetails& InstanceDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("productCodes"))
   {
-    Array<JsonValue> productCodesJsonList = jsonValue.GetArray("productCodes");
+    Array<JsonView> productCodesJsonList = jsonValue.GetArray("productCodes");
     for(unsigned productCodesIndex = 0; productCodesIndex < productCodesJsonList.GetLength(); ++productCodesIndex)
     {
       m_productCodes.push_back(productCodesJsonList[productCodesIndex].AsObject());
@@ -148,7 +148,7 @@ InstanceDetails& InstanceDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

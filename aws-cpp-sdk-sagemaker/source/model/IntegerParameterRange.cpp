@@ -35,7 +35,7 @@ IntegerParameterRange::IntegerParameterRange() :
 {
 }
 
-IntegerParameterRange::IntegerParameterRange(const JsonValue& jsonValue) : 
+IntegerParameterRange::IntegerParameterRange(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_minValueHasBeenSet(false),
     m_maxValueHasBeenSet(false)
@@ -43,7 +43,7 @@ IntegerParameterRange::IntegerParameterRange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IntegerParameterRange& IntegerParameterRange::operator =(const JsonValue& jsonValue)
+IntegerParameterRange& IntegerParameterRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

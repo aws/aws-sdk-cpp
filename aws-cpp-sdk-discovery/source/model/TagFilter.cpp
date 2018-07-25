@@ -34,14 +34,14 @@ TagFilter::TagFilter() :
 {
 }
 
-TagFilter::TagFilter(const JsonValue& jsonValue) : 
+TagFilter::TagFilter(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TagFilter& TagFilter::operator =(const JsonValue& jsonValue)
+TagFilter& TagFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -52,7 +52,7 @@ TagFilter& TagFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

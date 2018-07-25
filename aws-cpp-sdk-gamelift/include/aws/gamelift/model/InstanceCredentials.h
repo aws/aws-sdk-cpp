@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     InstanceCredentials();
-    InstanceCredentials(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceCredentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceCredentials(Aws::Utils::Json::JsonView jsonValue);
+    InstanceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

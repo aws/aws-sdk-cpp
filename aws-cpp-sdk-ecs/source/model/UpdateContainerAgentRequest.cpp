@@ -44,7 +44,7 @@ Aws::String UpdateContainerAgentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateContainerAgentRequest::GetRequestSpecificHeaders() const

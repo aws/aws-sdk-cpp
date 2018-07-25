@@ -35,7 +35,7 @@ EventDetailsErrorItem::EventDetailsErrorItem() :
 {
 }
 
-EventDetailsErrorItem::EventDetailsErrorItem(const JsonValue& jsonValue) : 
+EventDetailsErrorItem::EventDetailsErrorItem(JsonView jsonValue) : 
     m_eventArnHasBeenSet(false),
     m_errorNameHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ EventDetailsErrorItem::EventDetailsErrorItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventDetailsErrorItem& EventDetailsErrorItem::operator =(const JsonValue& jsonValue)
+EventDetailsErrorItem& EventDetailsErrorItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventArn"))
   {

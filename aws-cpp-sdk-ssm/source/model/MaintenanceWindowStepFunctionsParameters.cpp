@@ -34,14 +34,14 @@ MaintenanceWindowStepFunctionsParameters::MaintenanceWindowStepFunctionsParamete
 {
 }
 
-MaintenanceWindowStepFunctionsParameters::MaintenanceWindowStepFunctionsParameters(const JsonValue& jsonValue) : 
+MaintenanceWindowStepFunctionsParameters::MaintenanceWindowStepFunctionsParameters(JsonView jsonValue) : 
     m_inputHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MaintenanceWindowStepFunctionsParameters& MaintenanceWindowStepFunctionsParameters::operator =(const JsonValue& jsonValue)
+MaintenanceWindowStepFunctionsParameters& MaintenanceWindowStepFunctionsParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Input"))
   {

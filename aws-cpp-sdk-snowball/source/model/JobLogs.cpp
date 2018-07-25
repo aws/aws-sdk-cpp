@@ -35,7 +35,7 @@ JobLogs::JobLogs() :
 {
 }
 
-JobLogs::JobLogs(const JsonValue& jsonValue) : 
+JobLogs::JobLogs(JsonView jsonValue) : 
     m_jobCompletionReportURIHasBeenSet(false),
     m_jobSuccessLogURIHasBeenSet(false),
     m_jobFailureLogURIHasBeenSet(false)
@@ -43,7 +43,7 @@ JobLogs::JobLogs(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobLogs& JobLogs::operator =(const JsonValue& jsonValue)
+JobLogs& JobLogs::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobCompletionReportURI"))
   {

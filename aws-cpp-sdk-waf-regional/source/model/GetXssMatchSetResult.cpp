@@ -37,7 +37,7 @@ GetXssMatchSetResult::GetXssMatchSetResult(const Aws::AmazonWebServiceResult<Jso
 
 GetXssMatchSetResult& GetXssMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("XssMatchSet"))
   {
     m_xssMatchSet = jsonValue.GetObject("XssMatchSet");

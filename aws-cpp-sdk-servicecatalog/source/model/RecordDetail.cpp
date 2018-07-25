@@ -46,7 +46,7 @@ RecordDetail::RecordDetail() :
 {
 }
 
-RecordDetail::RecordDetail(const JsonValue& jsonValue) : 
+RecordDetail::RecordDetail(JsonView jsonValue) : 
     m_recordIdHasBeenSet(false),
     m_provisionedProductNameHasBeenSet(false),
     m_status(RecordStatus::NOT_SET),
@@ -65,7 +65,7 @@ RecordDetail::RecordDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RecordDetail& RecordDetail::operator =(const JsonValue& jsonValue)
+RecordDetail& RecordDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RecordId"))
   {
@@ -146,7 +146,7 @@ RecordDetail& RecordDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("RecordErrors"))
   {
-    Array<JsonValue> recordErrorsJsonList = jsonValue.GetArray("RecordErrors");
+    Array<JsonView> recordErrorsJsonList = jsonValue.GetArray("RecordErrors");
     for(unsigned recordErrorsIndex = 0; recordErrorsIndex < recordErrorsJsonList.GetLength(); ++recordErrorsIndex)
     {
       m_recordErrors.push_back(recordErrorsJsonList[recordErrorsIndex].AsObject());
@@ -156,7 +156,7 @@ RecordDetail& RecordDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("RecordTags"))
   {
-    Array<JsonValue> recordTagsJsonList = jsonValue.GetArray("RecordTags");
+    Array<JsonView> recordTagsJsonList = jsonValue.GetArray("RecordTags");
     for(unsigned recordTagsIndex = 0; recordTagsIndex < recordTagsJsonList.GetLength(); ++recordTagsIndex)
     {
       m_recordTags.push_back(recordTagsJsonList[recordTagsIndex].AsObject());

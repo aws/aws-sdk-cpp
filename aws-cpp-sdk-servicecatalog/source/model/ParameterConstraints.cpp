@@ -33,17 +33,17 @@ ParameterConstraints::ParameterConstraints() :
 {
 }
 
-ParameterConstraints::ParameterConstraints(const JsonValue& jsonValue) : 
+ParameterConstraints::ParameterConstraints(JsonView jsonValue) : 
     m_allowedValuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ParameterConstraints& ParameterConstraints::operator =(const JsonValue& jsonValue)
+ParameterConstraints& ParameterConstraints::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AllowedValues"))
   {
-    Array<JsonValue> allowedValuesJsonList = jsonValue.GetArray("AllowedValues");
+    Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("AllowedValues");
     for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
     {
       m_allowedValues.push_back(allowedValuesJsonList[allowedValuesIndex].AsString());

@@ -44,7 +44,7 @@ Certificate::Certificate() :
 {
 }
 
-Certificate::Certificate(const JsonValue& jsonValue) : 
+Certificate::Certificate(JsonView jsonValue) : 
     m_certificateIdentifierHasBeenSet(false),
     m_certificateCreationDateHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
@@ -60,7 +60,7 @@ Certificate::Certificate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Certificate& Certificate::operator =(const JsonValue& jsonValue)
+Certificate& Certificate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CertificateIdentifier"))
   {

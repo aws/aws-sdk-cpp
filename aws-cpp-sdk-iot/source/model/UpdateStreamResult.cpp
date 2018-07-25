@@ -39,7 +39,7 @@ UpdateStreamResult::UpdateStreamResult(const Aws::AmazonWebServiceResult<JsonVal
 
 UpdateStreamResult& UpdateStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");

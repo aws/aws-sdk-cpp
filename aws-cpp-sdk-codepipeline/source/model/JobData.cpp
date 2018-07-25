@@ -40,7 +40,7 @@ JobData::JobData() :
 {
 }
 
-JobData::JobData(const JsonValue& jsonValue) : 
+JobData::JobData(JsonView jsonValue) : 
     m_actionTypeIdHasBeenSet(false),
     m_actionConfigurationHasBeenSet(false),
     m_pipelineContextHasBeenSet(false),
@@ -53,7 +53,7 @@ JobData::JobData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobData& JobData::operator =(const JsonValue& jsonValue)
+JobData& JobData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actionTypeId"))
   {
@@ -78,7 +78,7 @@ JobData& JobData::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("inputArtifacts"))
   {
-    Array<JsonValue> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
+    Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
     for(unsigned inputArtifactsIndex = 0; inputArtifactsIndex < inputArtifactsJsonList.GetLength(); ++inputArtifactsIndex)
     {
       m_inputArtifacts.push_back(inputArtifactsJsonList[inputArtifactsIndex].AsObject());
@@ -88,7 +88,7 @@ JobData& JobData::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("outputArtifacts"))
   {
-    Array<JsonValue> outputArtifactsJsonList = jsonValue.GetArray("outputArtifacts");
+    Array<JsonView> outputArtifactsJsonList = jsonValue.GetArray("outputArtifacts");
     for(unsigned outputArtifactsIndex = 0; outputArtifactsIndex < outputArtifactsJsonList.GetLength(); ++outputArtifactsIndex)
     {
       m_outputArtifacts.push_back(outputArtifactsJsonList[outputArtifactsIndex].AsObject());

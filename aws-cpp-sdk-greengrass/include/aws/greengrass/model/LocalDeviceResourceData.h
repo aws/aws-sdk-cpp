@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     LocalDeviceResourceData();
-    LocalDeviceResourceData(const Aws::Utils::Json::JsonValue& jsonValue);
-    LocalDeviceResourceData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LocalDeviceResourceData(Aws::Utils::Json::JsonView jsonValue);
+    LocalDeviceResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

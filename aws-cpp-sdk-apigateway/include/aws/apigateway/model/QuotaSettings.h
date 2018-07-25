@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     QuotaSettings();
-    QuotaSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    QuotaSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    QuotaSettings(Aws::Utils::Json::JsonView jsonValue);
+    QuotaSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

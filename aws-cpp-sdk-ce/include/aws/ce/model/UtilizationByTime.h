@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CostExplorer
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     UtilizationByTime();
-    UtilizationByTime(const Aws::Utils::Json::JsonValue& jsonValue);
-    UtilizationByTime& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UtilizationByTime(Aws::Utils::Json::JsonView jsonValue);
+    UtilizationByTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

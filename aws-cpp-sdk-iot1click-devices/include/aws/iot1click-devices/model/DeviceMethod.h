@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT1ClickDevicesService
@@ -36,8 +37,8 @@ namespace Model
   {
   public:
     DeviceMethod();
-    DeviceMethod(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeviceMethod& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeviceMethod(Aws::Utils::Json::JsonView jsonValue);
+    DeviceMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

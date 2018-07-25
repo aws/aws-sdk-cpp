@@ -39,7 +39,7 @@ AssetAttributes::AssetAttributes() :
 {
 }
 
-AssetAttributes::AssetAttributes(const JsonValue& jsonValue) : 
+AssetAttributes::AssetAttributes(JsonView jsonValue) : 
     m_schemaVersion(0),
     m_schemaVersionHasBeenSet(false),
     m_agentIdHasBeenSet(false),
@@ -51,7 +51,7 @@ AssetAttributes::AssetAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssetAttributes& AssetAttributes::operator =(const JsonValue& jsonValue)
+AssetAttributes& AssetAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("schemaVersion"))
   {
@@ -90,7 +90,7 @@ AssetAttributes& AssetAttributes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ipv4Addresses"))
   {
-    Array<JsonValue> ipv4AddressesJsonList = jsonValue.GetArray("ipv4Addresses");
+    Array<JsonView> ipv4AddressesJsonList = jsonValue.GetArray("ipv4Addresses");
     for(unsigned ipv4AddressesIndex = 0; ipv4AddressesIndex < ipv4AddressesJsonList.GetLength(); ++ipv4AddressesIndex)
     {
       m_ipv4Addresses.push_back(ipv4AddressesJsonList[ipv4AddressesIndex].AsString());

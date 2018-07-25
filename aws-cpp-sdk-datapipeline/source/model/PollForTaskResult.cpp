@@ -37,7 +37,7 @@ PollForTaskResult::PollForTaskResult(const Aws::AmazonWebServiceResult<JsonValue
 
 PollForTaskResult& PollForTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskObject"))
   {
     m_taskObject = jsonValue.GetObject("taskObject");

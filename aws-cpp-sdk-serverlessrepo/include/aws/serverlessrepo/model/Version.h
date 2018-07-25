@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServerlessApplicationRepository
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Version();
-    Version(const Aws::Utils::Json::JsonValue& jsonValue);
-    Version& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Version(Aws::Utils::Json::JsonView jsonValue);
+    Version& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

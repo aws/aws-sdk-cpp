@@ -35,7 +35,7 @@ JobWatermark::JobWatermark() :
 {
 }
 
-JobWatermark::JobWatermark(const JsonValue& jsonValue) : 
+JobWatermark::JobWatermark(JsonView jsonValue) : 
     m_presetWatermarkIdHasBeenSet(false),
     m_inputKeyHasBeenSet(false),
     m_encryptionHasBeenSet(false)
@@ -43,7 +43,7 @@ JobWatermark::JobWatermark(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobWatermark& JobWatermark::operator =(const JsonValue& jsonValue)
+JobWatermark& JobWatermark::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PresetWatermarkId"))
   {

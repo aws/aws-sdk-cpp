@@ -37,7 +37,7 @@ Aws::String GetPermissionPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetPermissionPolicyRequest::GetRequestSpecificHeaders() const

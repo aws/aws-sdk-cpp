@@ -45,7 +45,7 @@ Aws::String RebootReplicationInstanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RebootReplicationInstanceRequest::GetRequestSpecificHeaders() const

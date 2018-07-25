@@ -54,7 +54,7 @@ Aws::String UntagResourcesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UntagResourcesRequest::GetRequestSpecificHeaders() const

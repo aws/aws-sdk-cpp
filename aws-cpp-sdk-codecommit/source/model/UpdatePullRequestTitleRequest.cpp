@@ -44,7 +44,7 @@ Aws::String UpdatePullRequestTitleRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdatePullRequestTitleRequest::GetRequestSpecificHeaders() const

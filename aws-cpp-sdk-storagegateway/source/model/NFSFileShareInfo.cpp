@@ -54,7 +54,7 @@ NFSFileShareInfo::NFSFileShareInfo() :
 {
 }
 
-NFSFileShareInfo::NFSFileShareInfo(const JsonValue& jsonValue) : 
+NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue) : 
     m_nFSFileShareDefaultsHasBeenSet(false),
     m_fileShareARNHasBeenSet(false),
     m_fileShareIdHasBeenSet(false),
@@ -81,7 +81,7 @@ NFSFileShareInfo::NFSFileShareInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NFSFileShareInfo& NFSFileShareInfo::operator =(const JsonValue& jsonValue)
+NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NFSFileShareDefaults"))
   {
@@ -169,7 +169,7 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ClientList"))
   {
-    Array<JsonValue> clientListJsonList = jsonValue.GetArray("ClientList");
+    Array<JsonView> clientListJsonList = jsonValue.GetArray("ClientList");
     for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
     {
       m_clientList.push_back(clientListJsonList[clientListIndex].AsString());

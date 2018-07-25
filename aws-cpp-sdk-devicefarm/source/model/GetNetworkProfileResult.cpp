@@ -37,7 +37,7 @@ GetNetworkProfileResult::GetNetworkProfileResult(const Aws::AmazonWebServiceResu
 
 GetNetworkProfileResult& GetNetworkProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("networkProfile"))
   {
     m_networkProfile = jsonValue.GetObject("networkProfile");

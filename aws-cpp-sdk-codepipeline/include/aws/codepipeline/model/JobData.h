@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodePipeline
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     JobData();
-    JobData(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobData(Aws::Utils::Json::JsonView jsonValue);
+    JobData& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

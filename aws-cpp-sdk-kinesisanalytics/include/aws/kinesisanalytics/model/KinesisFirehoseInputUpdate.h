@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisAnalytics
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     KinesisFirehoseInputUpdate();
-    KinesisFirehoseInputUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    KinesisFirehoseInputUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KinesisFirehoseInputUpdate(Aws::Utils::Json::JsonView jsonValue);
+    KinesisFirehoseInputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

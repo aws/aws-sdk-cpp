@@ -38,7 +38,7 @@ DecisionTaskTimedOutEventAttributes::DecisionTaskTimedOutEventAttributes() :
 {
 }
 
-DecisionTaskTimedOutEventAttributes::DecisionTaskTimedOutEventAttributes(const JsonValue& jsonValue) : 
+DecisionTaskTimedOutEventAttributes::DecisionTaskTimedOutEventAttributes(JsonView jsonValue) : 
     m_timeoutType(DecisionTaskTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false),
     m_scheduledEventId(0),
@@ -49,7 +49,7 @@ DecisionTaskTimedOutEventAttributes::DecisionTaskTimedOutEventAttributes(const J
   *this = jsonValue;
 }
 
-DecisionTaskTimedOutEventAttributes& DecisionTaskTimedOutEventAttributes::operator =(const JsonValue& jsonValue)
+DecisionTaskTimedOutEventAttributes& DecisionTaskTimedOutEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timeoutType"))
   {

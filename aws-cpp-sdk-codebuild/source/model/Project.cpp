@@ -49,7 +49,7 @@ Project::Project() :
 {
 }
 
-Project::Project(const JsonValue& jsonValue) : 
+Project::Project(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -71,7 +71,7 @@ Project::Project(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Project& Project::operator =(const JsonValue& jsonValue)
+Project& Project::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -145,7 +145,7 @@ Project& Project::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

@@ -41,7 +41,7 @@ GetCommandInvocationResult::GetCommandInvocationResult(const Aws::AmazonWebServi
 
 GetCommandInvocationResult& GetCommandInvocationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CommandId"))
   {
     m_commandId = jsonValue.GetString("CommandId");

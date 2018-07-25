@@ -49,7 +49,7 @@ Aws::String ModifyInstanceGroupsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ModifyInstanceGroupsRequest::GetRequestSpecificHeaders() const

@@ -34,18 +34,18 @@ GrantConstraints::GrantConstraints() :
 {
 }
 
-GrantConstraints::GrantConstraints(const JsonValue& jsonValue) : 
+GrantConstraints::GrantConstraints(JsonView jsonValue) : 
     m_encryptionContextSubsetHasBeenSet(false),
     m_encryptionContextEqualsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GrantConstraints& GrantConstraints::operator =(const JsonValue& jsonValue)
+GrantConstraints& GrantConstraints::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EncryptionContextSubset"))
   {
-    Aws::Map<Aws::String, JsonValue> encryptionContextSubsetJsonMap = jsonValue.GetObject("EncryptionContextSubset").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> encryptionContextSubsetJsonMap = jsonValue.GetObject("EncryptionContextSubset").GetAllObjects();
     for(auto& encryptionContextSubsetItem : encryptionContextSubsetJsonMap)
     {
       m_encryptionContextSubset[encryptionContextSubsetItem.first] = encryptionContextSubsetItem.second.AsString();
@@ -55,7 +55,7 @@ GrantConstraints& GrantConstraints::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EncryptionContextEquals"))
   {
-    Aws::Map<Aws::String, JsonValue> encryptionContextEqualsJsonMap = jsonValue.GetObject("EncryptionContextEquals").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> encryptionContextEqualsJsonMap = jsonValue.GetObject("EncryptionContextEquals").GetAllObjects();
     for(auto& encryptionContextEqualsItem : encryptionContextEqualsJsonMap)
     {
       m_encryptionContextEquals[encryptionContextEqualsItem.first] = encryptionContextEqualsItem.second.AsString();

@@ -81,7 +81,7 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -36,7 +36,7 @@ Root::Root() :
 {
 }
 
-Root::Root(const JsonValue& jsonValue) : 
+Root::Root(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -45,7 +45,7 @@ Root::Root(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Root& Root::operator =(const JsonValue& jsonValue)
+Root& Root::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -70,7 +70,7 @@ Root& Root::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PolicyTypes"))
   {
-    Array<JsonValue> policyTypesJsonList = jsonValue.GetArray("PolicyTypes");
+    Array<JsonView> policyTypesJsonList = jsonValue.GetArray("PolicyTypes");
     for(unsigned policyTypesIndex = 0; policyTypesIndex < policyTypesJsonList.GetLength(); ++policyTypesIndex)
     {
       m_policyTypes.push_back(policyTypesJsonList[policyTypesIndex].AsObject());

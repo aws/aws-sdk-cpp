@@ -37,7 +37,7 @@ DescribeDRTAccessResult::DescribeDRTAccessResult(const Aws::AmazonWebServiceResu
 
 DescribeDRTAccessResult& DescribeDRTAccessResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
@@ -46,7 +46,7 @@ DescribeDRTAccessResult& DescribeDRTAccessResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("LogBucketList"))
   {
-    Array<JsonValue> logBucketListJsonList = jsonValue.GetArray("LogBucketList");
+    Array<JsonView> logBucketListJsonList = jsonValue.GetArray("LogBucketList");
     for(unsigned logBucketListIndex = 0; logBucketListIndex < logBucketListJsonList.GetLength(); ++logBucketListIndex)
     {
       m_logBucketList.push_back(logBucketListJsonList[logBucketListIndex].AsString());

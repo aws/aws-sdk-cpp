@@ -42,7 +42,7 @@ JobDefinition::JobDefinition() :
 {
 }
 
-JobDefinition::JobDefinition(const JsonValue& jsonValue) : 
+JobDefinition::JobDefinition(JsonView jsonValue) : 
     m_jobDefinitionNameHasBeenSet(false),
     m_jobDefinitionArnHasBeenSet(false),
     m_revision(0),
@@ -57,7 +57,7 @@ JobDefinition::JobDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobDefinition& JobDefinition::operator =(const JsonValue& jsonValue)
+JobDefinition& JobDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobDefinitionName"))
   {
@@ -96,7 +96,7 @@ JobDefinition& JobDefinition::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

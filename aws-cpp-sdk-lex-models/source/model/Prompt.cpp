@@ -36,7 +36,7 @@ Prompt::Prompt() :
 {
 }
 
-Prompt::Prompt(const JsonValue& jsonValue) : 
+Prompt::Prompt(JsonView jsonValue) : 
     m_messagesHasBeenSet(false),
     m_maxAttempts(0),
     m_maxAttemptsHasBeenSet(false),
@@ -45,11 +45,11 @@ Prompt::Prompt(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Prompt& Prompt::operator =(const JsonValue& jsonValue)
+Prompt& Prompt::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("messages"))
   {
-    Array<JsonValue> messagesJsonList = jsonValue.GetArray("messages");
+    Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
     for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
     {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());

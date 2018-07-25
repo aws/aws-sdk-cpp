@@ -40,7 +40,7 @@ ResourceMetadata::ResourceMetadata() :
 {
 }
 
-ResourceMetadata::ResourceMetadata(const JsonValue& jsonValue) : 
+ResourceMetadata::ResourceMetadata(JsonView jsonValue) : 
     m_type(ResourceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -53,7 +53,7 @@ ResourceMetadata::ResourceMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceMetadata& ResourceMetadata::operator =(const JsonValue& jsonValue)
+ResourceMetadata& ResourceMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

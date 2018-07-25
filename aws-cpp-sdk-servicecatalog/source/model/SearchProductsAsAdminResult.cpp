@@ -37,10 +37,10 @@ SearchProductsAsAdminResult::SearchProductsAsAdminResult(const Aws::AmazonWebSer
 
 SearchProductsAsAdminResult& SearchProductsAsAdminResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProductViewDetails"))
   {
-    Array<JsonValue> productViewDetailsJsonList = jsonValue.GetArray("ProductViewDetails");
+    Array<JsonView> productViewDetailsJsonList = jsonValue.GetArray("ProductViewDetails");
     for(unsigned productViewDetailsIndex = 0; productViewDetailsIndex < productViewDetailsJsonList.GetLength(); ++productViewDetailsIndex)
     {
       m_productViewDetails.push_back(productViewDetailsJsonList[productViewDetailsIndex].AsObject());

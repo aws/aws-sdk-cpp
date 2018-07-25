@@ -54,7 +54,7 @@ DocumentDescription::DocumentDescription() :
 {
 }
 
-DocumentDescription::DocumentDescription(const JsonValue& jsonValue) : 
+DocumentDescription::DocumentDescription(JsonView jsonValue) : 
     m_sha1HasBeenSet(false),
     m_hashHasBeenSet(false),
     m_hashType(DocumentHashType::NOT_SET),
@@ -81,7 +81,7 @@ DocumentDescription::DocumentDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentDescription& DocumentDescription::operator =(const JsonValue& jsonValue)
+DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Sha1"))
   {
@@ -148,7 +148,7 @@ DocumentDescription& DocumentDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonValue> parametersJsonList = jsonValue.GetArray("Parameters");
+    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
@@ -158,7 +158,7 @@ DocumentDescription& DocumentDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PlatformTypes"))
   {
-    Array<JsonValue> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
+    Array<JsonView> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
     for(unsigned platformTypesIndex = 0; platformTypesIndex < platformTypesJsonList.GetLength(); ++platformTypesIndex)
     {
       m_platformTypes.push_back(PlatformTypeMapper::GetPlatformTypeForName(platformTypesJsonList[platformTypesIndex].AsString()));
@@ -210,7 +210,7 @@ DocumentDescription& DocumentDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

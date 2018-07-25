@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Polly
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Voice();
-    Voice(const Aws::Utils::Json::JsonValue& jsonValue);
-    Voice& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Voice(Aws::Utils::Json::JsonView jsonValue);
+    Voice& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

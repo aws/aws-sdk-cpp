@@ -35,7 +35,7 @@ DataPoint::DataPoint() :
 {
 }
 
-DataPoint::DataPoint(const JsonValue& jsonValue) : 
+DataPoint::DataPoint(JsonView jsonValue) : 
     m_timestampHasBeenSet(false),
     m_value(0.0),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ DataPoint::DataPoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DataPoint& DataPoint::operator =(const JsonValue& jsonValue)
+DataPoint& DataPoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {

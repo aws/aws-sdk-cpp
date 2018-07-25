@@ -37,7 +37,7 @@ ListReservationsResult::ListReservationsResult(const Aws::AmazonWebServiceResult
 
 ListReservationsResult& ListReservationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
@@ -46,7 +46,7 @@ ListReservationsResult& ListReservationsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("reservations"))
   {
-    Array<JsonValue> reservationsJsonList = jsonValue.GetArray("reservations");
+    Array<JsonView> reservationsJsonList = jsonValue.GetArray("reservations");
     for(unsigned reservationsIndex = 0; reservationsIndex < reservationsJsonList.GetLength(); ++reservationsIndex)
     {
       m_reservations.push_back(reservationsJsonList[reservationsIndex].AsObject());

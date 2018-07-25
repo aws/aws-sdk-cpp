@@ -49,7 +49,7 @@ CommandInvocation::CommandInvocation() :
 {
 }
 
-CommandInvocation::CommandInvocation(const JsonValue& jsonValue) : 
+CommandInvocation::CommandInvocation(JsonView jsonValue) : 
     m_commandIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
@@ -71,7 +71,7 @@ CommandInvocation::CommandInvocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
+CommandInvocation& CommandInvocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CommandId"))
   {
@@ -159,7 +159,7 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CommandPlugins"))
   {
-    Array<JsonValue> commandPluginsJsonList = jsonValue.GetArray("CommandPlugins");
+    Array<JsonView> commandPluginsJsonList = jsonValue.GetArray("CommandPlugins");
     for(unsigned commandPluginsIndex = 0; commandPluginsIndex < commandPluginsJsonList.GetLength(); ++commandPluginsIndex)
     {
       m_commandPlugins.push_back(commandPluginsJsonList[commandPluginsIndex].AsObject());

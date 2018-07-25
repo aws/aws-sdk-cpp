@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServerlessApplicationRepository
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ParameterDefinition();
-    ParameterDefinition(const Aws::Utils::Json::JsonValue& jsonValue);
-    ParameterDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ParameterDefinition(Aws::Utils::Json::JsonView jsonValue);
+    ParameterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

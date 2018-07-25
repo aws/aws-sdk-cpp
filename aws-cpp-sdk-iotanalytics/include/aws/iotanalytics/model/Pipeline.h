@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoTAnalytics
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     Pipeline();
-    Pipeline(const Aws::Utils::Json::JsonValue& jsonValue);
-    Pipeline& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Pipeline(Aws::Utils::Json::JsonView jsonValue);
+    Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

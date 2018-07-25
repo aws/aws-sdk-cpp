@@ -35,7 +35,7 @@ Operator::Operator() :
 {
 }
 
-Operator::Operator(const JsonValue& jsonValue) : 
+Operator::Operator(JsonView jsonValue) : 
     m_type(OperatorType::NOT_SET),
     m_typeHasBeenSet(false),
     m_valuesHasBeenSet(false)
@@ -43,7 +43,7 @@ Operator::Operator(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Operator& Operator::operator =(const JsonValue& jsonValue)
+Operator& Operator::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {
@@ -54,7 +54,7 @@ Operator& Operator::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

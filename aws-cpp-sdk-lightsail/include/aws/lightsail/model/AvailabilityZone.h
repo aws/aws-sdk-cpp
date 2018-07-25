@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     AvailabilityZone();
-    AvailabilityZone(const Aws::Utils::Json::JsonValue& jsonValue);
-    AvailabilityZone& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AvailabilityZone(Aws::Utils::Json::JsonView jsonValue);
+    AvailabilityZone& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

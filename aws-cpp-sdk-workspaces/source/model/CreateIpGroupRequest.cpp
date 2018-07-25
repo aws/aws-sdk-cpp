@@ -56,7 +56,7 @@ Aws::String CreateIpGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateIpGroupRequest::GetRequestSpecificHeaders() const

@@ -55,7 +55,7 @@ Aws::String ActivatePipelineRequest::SerializePayload() const
    payload.WithDouble("startTimestamp", m_startTimestamp.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ActivatePipelineRequest::GetRequestSpecificHeaders() const

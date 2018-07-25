@@ -36,7 +36,7 @@ CampaignHook::CampaignHook() :
 {
 }
 
-CampaignHook::CampaignHook(const JsonValue& jsonValue) : 
+CampaignHook::CampaignHook(JsonView jsonValue) : 
     m_lambdaFunctionNameHasBeenSet(false),
     m_mode(Mode::NOT_SET),
     m_modeHasBeenSet(false),
@@ -45,7 +45,7 @@ CampaignHook::CampaignHook(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CampaignHook& CampaignHook::operator =(const JsonValue& jsonValue)
+CampaignHook& CampaignHook::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LambdaFunctionName"))
   {

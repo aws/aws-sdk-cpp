@@ -65,7 +65,7 @@ Aws::String CreateFacetRequest::SerializePayload() const
    payload.WithString("FacetStyle", FacetStyleMapper::GetNameForFacetStyle(m_facetStyle));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateFacetRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ PurchaseReservedElasticsearchInstanceOfferingResult::PurchaseReservedElasticsear
 
 PurchaseReservedElasticsearchInstanceOfferingResult& PurchaseReservedElasticsearchInstanceOfferingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReservedElasticsearchInstanceId"))
   {
     m_reservedElasticsearchInstanceId = jsonValue.GetString("ReservedElasticsearchInstanceId");

@@ -40,7 +40,7 @@ AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::AutoScalingTargetTrac
 {
 }
 
-AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate(const JsonValue& jsonValue) : 
+AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate(JsonView jsonValue) : 
     m_disableScaleIn(false),
     m_disableScaleInHasBeenSet(false),
     m_scaleInCooldown(0),
@@ -53,7 +53,7 @@ AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::AutoScalingTargetTrac
   *this = jsonValue;
 }
 
-AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::operator =(const JsonValue& jsonValue)
+AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DisableScaleIn"))
   {

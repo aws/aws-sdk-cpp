@@ -57,7 +57,7 @@ StepExecution::StepExecution() :
 {
 }
 
-StepExecution::StepExecution(const JsonValue& jsonValue) : 
+StepExecution::StepExecution(JsonView jsonValue) : 
     m_stepNameHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_timeoutSeconds(0),
@@ -87,7 +87,7 @@ StepExecution::StepExecution(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
+StepExecution& StepExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StepName"))
   {
@@ -154,7 +154,7 @@ StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Aws::Map<Aws::String, JsonValue> inputsJsonMap = jsonValue.GetObject("Inputs").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> inputsJsonMap = jsonValue.GetObject("Inputs").GetAllObjects();
     for(auto& inputsItem : inputsJsonMap)
     {
       m_inputs[inputsItem.first] = inputsItem.second.AsString();
@@ -164,10 +164,10 @@ StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Outputs"))
   {
-    Aws::Map<Aws::String, JsonValue> outputsJsonMap = jsonValue.GetObject("Outputs").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> outputsJsonMap = jsonValue.GetObject("Outputs").GetAllObjects();
     for(auto& outputsItem : outputsJsonMap)
     {
-      Array<JsonValue> automationParameterValueListJsonList = outputsItem.second.AsArray();
+      Array<JsonView> automationParameterValueListJsonList = outputsItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
@@ -209,10 +209,10 @@ StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("OverriddenParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> overriddenParametersJsonMap = jsonValue.GetObject("OverriddenParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> overriddenParametersJsonMap = jsonValue.GetObject("OverriddenParameters").GetAllObjects();
     for(auto& overriddenParametersItem : overriddenParametersJsonMap)
     {
-      Array<JsonValue> automationParameterValueListJsonList = overriddenParametersItem.second.AsArray();
+      Array<JsonView> automationParameterValueListJsonList = overriddenParametersItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
@@ -247,7 +247,7 @@ StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ValidNextSteps"))
   {
-    Array<JsonValue> validNextStepsJsonList = jsonValue.GetArray("ValidNextSteps");
+    Array<JsonView> validNextStepsJsonList = jsonValue.GetArray("ValidNextSteps");
     for(unsigned validNextStepsIndex = 0; validNextStepsIndex < validNextStepsJsonList.GetLength(); ++validNextStepsIndex)
     {
       m_validNextSteps.push_back(validNextStepsJsonList[validNextStepsIndex].AsString());

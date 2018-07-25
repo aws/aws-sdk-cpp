@@ -66,7 +66,7 @@ Aws::String ListServicesRequest::SerializePayload() const
    payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListServicesRequest::GetRequestSpecificHeaders() const

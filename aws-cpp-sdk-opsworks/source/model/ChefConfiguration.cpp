@@ -35,7 +35,7 @@ ChefConfiguration::ChefConfiguration() :
 {
 }
 
-ChefConfiguration::ChefConfiguration(const JsonValue& jsonValue) : 
+ChefConfiguration::ChefConfiguration(JsonView jsonValue) : 
     m_manageBerkshelf(false),
     m_manageBerkshelfHasBeenSet(false),
     m_berkshelfVersionHasBeenSet(false)
@@ -43,7 +43,7 @@ ChefConfiguration::ChefConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ChefConfiguration& ChefConfiguration::operator =(const JsonValue& jsonValue)
+ChefConfiguration& ChefConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ManageBerkshelf"))
   {

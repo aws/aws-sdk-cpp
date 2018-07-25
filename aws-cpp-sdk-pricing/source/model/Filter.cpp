@@ -36,7 +36,7 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(const JsonValue& jsonValue) : 
+Filter::Filter(JsonView jsonValue) : 
     m_type(FilterType::NOT_SET),
     m_typeHasBeenSet(false),
     m_fieldHasBeenSet(false),
@@ -45,7 +45,7 @@ Filter::Filter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Filter& Filter::operator =(const JsonValue& jsonValue)
+Filter& Filter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

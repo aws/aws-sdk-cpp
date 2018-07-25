@@ -35,7 +35,7 @@ StorageType::StorageType() :
 {
 }
 
-StorageType::StorageType(const JsonValue& jsonValue) : 
+StorageType::StorageType(JsonView jsonValue) : 
     m_storageTypeNameHasBeenSet(false),
     m_storageSubTypeNameHasBeenSet(false),
     m_storageTypeLimitsHasBeenSet(false)
@@ -43,7 +43,7 @@ StorageType::StorageType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StorageType& StorageType::operator =(const JsonValue& jsonValue)
+StorageType& StorageType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StorageTypeName"))
   {
@@ -61,7 +61,7 @@ StorageType& StorageType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("StorageTypeLimits"))
   {
-    Array<JsonValue> storageTypeLimitsJsonList = jsonValue.GetArray("StorageTypeLimits");
+    Array<JsonView> storageTypeLimitsJsonList = jsonValue.GetArray("StorageTypeLimits");
     for(unsigned storageTypeLimitsIndex = 0; storageTypeLimitsIndex < storageTypeLimitsJsonList.GetLength(); ++storageTypeLimitsIndex)
     {
       m_storageTypeLimits.push_back(storageTypeLimitsJsonList[storageTypeLimitsIndex].AsObject());

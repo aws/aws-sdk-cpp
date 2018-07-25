@@ -35,7 +35,7 @@ MetricQuery::MetricQuery() :
 {
 }
 
-MetricQuery::MetricQuery(const JsonValue& jsonValue) : 
+MetricQuery::MetricQuery(JsonView jsonValue) : 
     m_metricHasBeenSet(false),
     m_groupByHasBeenSet(false),
     m_filterHasBeenSet(false)
@@ -43,7 +43,7 @@ MetricQuery::MetricQuery(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MetricQuery& MetricQuery::operator =(const JsonValue& jsonValue)
+MetricQuery& MetricQuery::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Metric"))
   {
@@ -61,7 +61,7 @@ MetricQuery& MetricQuery::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Filter"))
   {
-    Aws::Map<Aws::String, JsonValue> filterJsonMap = jsonValue.GetObject("Filter").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> filterJsonMap = jsonValue.GetObject("Filter").GetAllObjects();
     for(auto& filterItem : filterJsonMap)
     {
       m_filter[filterItem.first] = filterItem.second.AsString();

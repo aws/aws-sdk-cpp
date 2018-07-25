@@ -50,7 +50,7 @@ Job::Job() :
 {
 }
 
-Job::Job(const JsonValue& jsonValue) : 
+Job::Job(JsonView jsonValue) : 
     m_jobArnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_targetSelection(TargetSelection::NOT_SET),
@@ -73,7 +73,7 @@ Job::Job(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Job& Job::operator =(const JsonValue& jsonValue)
+Job& Job::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobArn"))
   {
@@ -119,7 +119,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
@@ -178,7 +178,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("documentParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> documentParametersJsonMap = jsonValue.GetObject("documentParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> documentParametersJsonMap = jsonValue.GetObject("documentParameters").GetAllObjects();
     for(auto& documentParametersItem : documentParametersJsonMap)
     {
       m_documentParameters[documentParametersItem.first] = documentParametersItem.second.AsString();

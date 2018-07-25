@@ -37,10 +37,10 @@ ListSentimentDetectionJobsResult::ListSentimentDetectionJobsResult(const Aws::Am
 
 ListSentimentDetectionJobsResult& ListSentimentDetectionJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SentimentDetectionJobPropertiesList"))
   {
-    Array<JsonValue> sentimentDetectionJobPropertiesListJsonList = jsonValue.GetArray("SentimentDetectionJobPropertiesList");
+    Array<JsonView> sentimentDetectionJobPropertiesListJsonList = jsonValue.GetArray("SentimentDetectionJobPropertiesList");
     for(unsigned sentimentDetectionJobPropertiesListIndex = 0; sentimentDetectionJobPropertiesListIndex < sentimentDetectionJobPropertiesListJsonList.GetLength(); ++sentimentDetectionJobPropertiesListIndex)
     {
       m_sentimentDetectionJobPropertiesList.push_back(sentimentDetectionJobPropertiesListJsonList[sentimentDetectionJobPropertiesListIndex].AsObject());

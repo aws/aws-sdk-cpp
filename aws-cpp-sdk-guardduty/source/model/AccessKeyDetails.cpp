@@ -36,7 +36,7 @@ AccessKeyDetails::AccessKeyDetails() :
 {
 }
 
-AccessKeyDetails::AccessKeyDetails(const JsonValue& jsonValue) : 
+AccessKeyDetails::AccessKeyDetails(JsonView jsonValue) : 
     m_accessKeyIdHasBeenSet(false),
     m_principalIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
@@ -45,7 +45,7 @@ AccessKeyDetails::AccessKeyDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AccessKeyDetails& AccessKeyDetails::operator =(const JsonValue& jsonValue)
+AccessKeyDetails& AccessKeyDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accessKeyId"))
   {

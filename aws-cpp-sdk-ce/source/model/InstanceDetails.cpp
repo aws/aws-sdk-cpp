@@ -37,7 +37,7 @@ InstanceDetails::InstanceDetails() :
 {
 }
 
-InstanceDetails::InstanceDetails(const JsonValue& jsonValue) : 
+InstanceDetails::InstanceDetails(JsonView jsonValue) : 
     m_eC2InstanceDetailsHasBeenSet(false),
     m_rDSInstanceDetailsHasBeenSet(false),
     m_redshiftInstanceDetailsHasBeenSet(false),
@@ -47,7 +47,7 @@ InstanceDetails::InstanceDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceDetails& InstanceDetails::operator =(const JsonValue& jsonValue)
+InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EC2InstanceDetails"))
   {

@@ -39,7 +39,7 @@ Environment::Environment() :
 {
 }
 
-Environment::Environment(const JsonValue& jsonValue) : 
+Environment::Environment(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -51,7 +51,7 @@ Environment::Environment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Environment& Environment::operator =(const JsonValue& jsonValue)
+Environment& Environment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

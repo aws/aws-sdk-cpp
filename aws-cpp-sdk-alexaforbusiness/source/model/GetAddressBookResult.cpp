@@ -37,7 +37,7 @@ GetAddressBookResult::GetAddressBookResult(const Aws::AmazonWebServiceResult<Jso
 
 GetAddressBookResult& GetAddressBookResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AddressBook"))
   {
     m_addressBook = jsonValue.GetObject("AddressBook");

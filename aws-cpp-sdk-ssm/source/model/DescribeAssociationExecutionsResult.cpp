@@ -37,10 +37,10 @@ DescribeAssociationExecutionsResult::DescribeAssociationExecutionsResult(const A
 
 DescribeAssociationExecutionsResult& DescribeAssociationExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociationExecutions"))
   {
-    Array<JsonValue> associationExecutionsJsonList = jsonValue.GetArray("AssociationExecutions");
+    Array<JsonView> associationExecutionsJsonList = jsonValue.GetArray("AssociationExecutions");
     for(unsigned associationExecutionsIndex = 0; associationExecutionsIndex < associationExecutionsJsonList.GetLength(); ++associationExecutionsIndex)
     {
       m_associationExecutions.push_back(associationExecutionsJsonList[associationExecutionsIndex].AsObject());

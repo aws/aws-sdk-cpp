@@ -37,7 +37,7 @@ AwsApiCallAction::AwsApiCallAction() :
 {
 }
 
-AwsApiCallAction::AwsApiCallAction(const JsonValue& jsonValue) : 
+AwsApiCallAction::AwsApiCallAction(JsonView jsonValue) : 
     m_apiHasBeenSet(false),
     m_callerTypeHasBeenSet(false),
     m_domainDetailsHasBeenSet(false),
@@ -47,7 +47,7 @@ AwsApiCallAction::AwsApiCallAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AwsApiCallAction& AwsApiCallAction::operator =(const JsonValue& jsonValue)
+AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("api"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace PI
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DataPoint();
-    DataPoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    DataPoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DataPoint(Aws::Utils::Json::JsonView jsonValue);
+    DataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

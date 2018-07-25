@@ -35,7 +35,7 @@ ConfigurationRevision::ConfigurationRevision() :
 {
 }
 
-ConfigurationRevision::ConfigurationRevision(const JsonValue& jsonValue) : 
+ConfigurationRevision::ConfigurationRevision(JsonView jsonValue) : 
     m_descriptionHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false)
@@ -43,7 +43,7 @@ ConfigurationRevision::ConfigurationRevision(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigurationRevision& ConfigurationRevision::operator =(const JsonValue& jsonValue)
+ConfigurationRevision& ConfigurationRevision::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("description"))
   {

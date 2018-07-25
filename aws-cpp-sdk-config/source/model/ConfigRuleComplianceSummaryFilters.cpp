@@ -34,14 +34,14 @@ ConfigRuleComplianceSummaryFilters::ConfigRuleComplianceSummaryFilters() :
 {
 }
 
-ConfigRuleComplianceSummaryFilters::ConfigRuleComplianceSummaryFilters(const JsonValue& jsonValue) : 
+ConfigRuleComplianceSummaryFilters::ConfigRuleComplianceSummaryFilters(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_awsRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ConfigRuleComplianceSummaryFilters& ConfigRuleComplianceSummaryFilters::operator =(const JsonValue& jsonValue)
+ConfigRuleComplianceSummaryFilters& ConfigRuleComplianceSummaryFilters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccountId"))
   {

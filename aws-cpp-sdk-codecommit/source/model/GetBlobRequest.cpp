@@ -44,7 +44,7 @@ Aws::String GetBlobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetBlobRequest::GetRequestSpecificHeaders() const

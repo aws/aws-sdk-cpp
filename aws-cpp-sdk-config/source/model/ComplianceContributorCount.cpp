@@ -36,7 +36,7 @@ ComplianceContributorCount::ComplianceContributorCount() :
 {
 }
 
-ComplianceContributorCount::ComplianceContributorCount(const JsonValue& jsonValue) : 
+ComplianceContributorCount::ComplianceContributorCount(JsonView jsonValue) : 
     m_cappedCount(0),
     m_cappedCountHasBeenSet(false),
     m_capExceeded(false),
@@ -45,7 +45,7 @@ ComplianceContributorCount::ComplianceContributorCount(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ComplianceContributorCount& ComplianceContributorCount::operator =(const JsonValue& jsonValue)
+ComplianceContributorCount& ComplianceContributorCount::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CappedCount"))
   {

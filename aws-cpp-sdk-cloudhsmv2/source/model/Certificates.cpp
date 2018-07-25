@@ -37,7 +37,7 @@ Certificates::Certificates() :
 {
 }
 
-Certificates::Certificates(const JsonValue& jsonValue) : 
+Certificates::Certificates(JsonView jsonValue) : 
     m_clusterCsrHasBeenSet(false),
     m_hsmCertificateHasBeenSet(false),
     m_awsHardwareCertificateHasBeenSet(false),
@@ -47,7 +47,7 @@ Certificates::Certificates(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Certificates& Certificates::operator =(const JsonValue& jsonValue)
+Certificates& Certificates::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClusterCsr"))
   {

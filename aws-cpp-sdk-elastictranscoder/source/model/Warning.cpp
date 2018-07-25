@@ -34,14 +34,14 @@ Warning::Warning() :
 {
 }
 
-Warning::Warning(const JsonValue& jsonValue) : 
+Warning::Warning(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Warning& Warning::operator =(const JsonValue& jsonValue)
+Warning& Warning::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

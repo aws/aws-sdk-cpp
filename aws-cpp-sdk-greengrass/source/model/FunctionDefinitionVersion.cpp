@@ -33,17 +33,17 @@ FunctionDefinitionVersion::FunctionDefinitionVersion() :
 {
 }
 
-FunctionDefinitionVersion::FunctionDefinitionVersion(const JsonValue& jsonValue) : 
+FunctionDefinitionVersion::FunctionDefinitionVersion(JsonView jsonValue) : 
     m_functionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FunctionDefinitionVersion& FunctionDefinitionVersion::operator =(const JsonValue& jsonValue)
+FunctionDefinitionVersion& FunctionDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Functions"))
   {
-    Array<JsonValue> functionsJsonList = jsonValue.GetArray("Functions");
+    Array<JsonView> functionsJsonList = jsonValue.GetArray("Functions");
     for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
     {
       m_functions.push_back(functionsJsonList[functionsIndex].AsObject());

@@ -99,7 +99,7 @@ Aws::String CreateRestApiRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DomainDescriptionType();
-    DomainDescriptionType(const Aws::Utils::Json::JsonValue& jsonValue);
-    DomainDescriptionType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DomainDescriptionType(Aws::Utils::Json::JsonView jsonValue);
+    DomainDescriptionType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

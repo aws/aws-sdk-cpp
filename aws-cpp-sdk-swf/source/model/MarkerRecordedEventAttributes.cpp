@@ -36,7 +36,7 @@ MarkerRecordedEventAttributes::MarkerRecordedEventAttributes() :
 {
 }
 
-MarkerRecordedEventAttributes::MarkerRecordedEventAttributes(const JsonValue& jsonValue) : 
+MarkerRecordedEventAttributes::MarkerRecordedEventAttributes(JsonView jsonValue) : 
     m_markerNameHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
@@ -45,7 +45,7 @@ MarkerRecordedEventAttributes::MarkerRecordedEventAttributes(const JsonValue& js
   *this = jsonValue;
 }
 
-MarkerRecordedEventAttributes& MarkerRecordedEventAttributes::operator =(const JsonValue& jsonValue)
+MarkerRecordedEventAttributes& MarkerRecordedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("markerName"))
   {

@@ -37,7 +37,7 @@ CreateTransformJobResult::CreateTransformJobResult(const Aws::AmazonWebServiceRe
 
 CreateTransformJobResult& CreateTransformJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TransformJobArn"))
   {
     m_transformJobArn = jsonValue.GetString("TransformJobArn");

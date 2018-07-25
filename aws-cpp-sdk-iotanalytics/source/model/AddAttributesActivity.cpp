@@ -35,7 +35,7 @@ AddAttributesActivity::AddAttributesActivity() :
 {
 }
 
-AddAttributesActivity::AddAttributesActivity(const JsonValue& jsonValue) : 
+AddAttributesActivity::AddAttributesActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_nextHasBeenSet(false)
@@ -43,7 +43,7 @@ AddAttributesActivity::AddAttributesActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AddAttributesActivity& AddAttributesActivity::operator =(const JsonValue& jsonValue)
+AddAttributesActivity& AddAttributesActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -54,7 +54,7 @@ AddAttributesActivity& AddAttributesActivity::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

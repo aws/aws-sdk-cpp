@@ -34,14 +34,14 @@ EffectivePatch::EffectivePatch() :
 {
 }
 
-EffectivePatch::EffectivePatch(const JsonValue& jsonValue) : 
+EffectivePatch::EffectivePatch(JsonView jsonValue) : 
     m_patchHasBeenSet(false),
     m_patchStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EffectivePatch& EffectivePatch::operator =(const JsonValue& jsonValue)
+EffectivePatch& EffectivePatch::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Patch"))
   {

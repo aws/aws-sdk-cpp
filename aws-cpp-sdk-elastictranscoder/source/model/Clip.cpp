@@ -33,13 +33,13 @@ Clip::Clip() :
 {
 }
 
-Clip::Clip(const JsonValue& jsonValue) : 
+Clip::Clip(JsonView jsonValue) : 
     m_timeSpanHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Clip& Clip::operator =(const JsonValue& jsonValue)
+Clip& Clip::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimeSpan"))
   {

@@ -40,7 +40,7 @@ Radios::Radios() :
 {
 }
 
-Radios::Radios(const JsonValue& jsonValue) : 
+Radios::Radios(JsonView jsonValue) : 
     m_wifi(false),
     m_wifiHasBeenSet(false),
     m_bluetooth(false),
@@ -53,7 +53,7 @@ Radios::Radios(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Radios& Radios::operator =(const JsonValue& jsonValue)
+Radios& Radios::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("wifi"))
   {

@@ -33,13 +33,13 @@ LambdaFunctionSucceededEventDetails::LambdaFunctionSucceededEventDetails() :
 {
 }
 
-LambdaFunctionSucceededEventDetails::LambdaFunctionSucceededEventDetails(const JsonValue& jsonValue) : 
+LambdaFunctionSucceededEventDetails::LambdaFunctionSucceededEventDetails(JsonView jsonValue) : 
     m_outputHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaFunctionSucceededEventDetails& LambdaFunctionSucceededEventDetails::operator =(const JsonValue& jsonValue)
+LambdaFunctionSucceededEventDetails& LambdaFunctionSucceededEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("output"))
   {

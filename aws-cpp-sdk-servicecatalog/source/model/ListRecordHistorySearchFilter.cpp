@@ -34,14 +34,14 @@ ListRecordHistorySearchFilter::ListRecordHistorySearchFilter() :
 {
 }
 
-ListRecordHistorySearchFilter::ListRecordHistorySearchFilter(const JsonValue& jsonValue) : 
+ListRecordHistorySearchFilter::ListRecordHistorySearchFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ListRecordHistorySearchFilter& ListRecordHistorySearchFilter::operator =(const JsonValue& jsonValue)
+ListRecordHistorySearchFilter& ListRecordHistorySearchFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

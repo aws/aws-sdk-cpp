@@ -37,10 +37,10 @@ DescribeCommunicationsResult::DescribeCommunicationsResult(const Aws::AmazonWebS
 
 DescribeCommunicationsResult& DescribeCommunicationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("communications"))
   {
-    Array<JsonValue> communicationsJsonList = jsonValue.GetArray("communications");
+    Array<JsonView> communicationsJsonList = jsonValue.GetArray("communications");
     for(unsigned communicationsIndex = 0; communicationsIndex < communicationsJsonList.GetLength(); ++communicationsIndex)
     {
       m_communications.push_back(communicationsJsonList[communicationsIndex].AsObject());

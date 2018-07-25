@@ -49,7 +49,7 @@ Aws::String StartMaintenanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartMaintenanceRequest::GetRequestSpecificHeaders() const

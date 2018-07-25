@@ -34,14 +34,14 @@ ResultConfiguration::ResultConfiguration() :
 {
 }
 
-ResultConfiguration::ResultConfiguration(const JsonValue& jsonValue) : 
+ResultConfiguration::ResultConfiguration(JsonView jsonValue) : 
     m_outputLocationHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResultConfiguration& ResultConfiguration::operator =(const JsonValue& jsonValue)
+ResultConfiguration& ResultConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OutputLocation"))
   {

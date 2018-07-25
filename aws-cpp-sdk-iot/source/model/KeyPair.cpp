@@ -34,14 +34,14 @@ KeyPair::KeyPair() :
 {
 }
 
-KeyPair::KeyPair(const JsonValue& jsonValue) : 
+KeyPair::KeyPair(JsonView jsonValue) : 
     m_publicKeyHasBeenSet(false),
     m_privateKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KeyPair& KeyPair::operator =(const JsonValue& jsonValue)
+KeyPair& KeyPair::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PublicKey"))
   {

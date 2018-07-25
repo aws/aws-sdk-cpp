@@ -115,7 +115,7 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateTrainingJobRequest::GetRequestSpecificHeaders() const

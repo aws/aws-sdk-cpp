@@ -37,7 +37,7 @@ EncryptionConfig::EncryptionConfig() :
 {
 }
 
-EncryptionConfig::EncryptionConfig(const JsonValue& jsonValue) : 
+EncryptionConfig::EncryptionConfig(JsonView jsonValue) : 
     m_keyIdHasBeenSet(false),
     m_status(EncryptionStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -47,7 +47,7 @@ EncryptionConfig::EncryptionConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EncryptionConfig& EncryptionConfig::operator =(const JsonValue& jsonValue)
+EncryptionConfig& EncryptionConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("KeyId"))
   {

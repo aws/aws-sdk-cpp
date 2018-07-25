@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisVideoMedia
@@ -53,8 +54,8 @@ namespace Model
   {
   public:
     StartSelector();
-    StartSelector(const Aws::Utils::Json::JsonValue& jsonValue);
-    StartSelector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StartSelector(Aws::Utils::Json::JsonView jsonValue);
+    StartSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

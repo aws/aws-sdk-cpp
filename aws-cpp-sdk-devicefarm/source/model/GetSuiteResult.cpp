@@ -37,7 +37,7 @@ GetSuiteResult::GetSuiteResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 GetSuiteResult& GetSuiteResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("suite"))
   {
     m_suite = jsonValue.GetObject("suite");

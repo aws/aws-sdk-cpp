@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glacier
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     DataRetrievalRule();
-    DataRetrievalRule(const Aws::Utils::Json::JsonValue& jsonValue);
-    DataRetrievalRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DataRetrievalRule(Aws::Utils::Json::JsonView jsonValue);
+    DataRetrievalRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

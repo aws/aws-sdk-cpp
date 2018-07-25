@@ -37,7 +37,7 @@ Aws::String DeletePermissionPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeletePermissionPolicyRequest::GetRequestSpecificHeaders() const

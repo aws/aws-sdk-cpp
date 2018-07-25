@@ -38,7 +38,7 @@ VolumeRecoveryPointInfo::VolumeRecoveryPointInfo() :
 {
 }
 
-VolumeRecoveryPointInfo::VolumeRecoveryPointInfo(const JsonValue& jsonValue) : 
+VolumeRecoveryPointInfo::VolumeRecoveryPointInfo(JsonView jsonValue) : 
     m_volumeARNHasBeenSet(false),
     m_volumeSizeInBytes(0),
     m_volumeSizeInBytesHasBeenSet(false),
@@ -49,7 +49,7 @@ VolumeRecoveryPointInfo::VolumeRecoveryPointInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VolumeRecoveryPointInfo& VolumeRecoveryPointInfo::operator =(const JsonValue& jsonValue)
+VolumeRecoveryPointInfo& VolumeRecoveryPointInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeARN"))
   {

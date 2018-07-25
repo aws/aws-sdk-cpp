@@ -36,7 +36,7 @@ PolicyVersion::PolicyVersion() :
 {
 }
 
-PolicyVersion::PolicyVersion(const JsonValue& jsonValue) : 
+PolicyVersion::PolicyVersion(JsonView jsonValue) : 
     m_versionIdHasBeenSet(false),
     m_isDefaultVersion(false),
     m_isDefaultVersionHasBeenSet(false),
@@ -45,7 +45,7 @@ PolicyVersion::PolicyVersion(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PolicyVersion& PolicyVersion::operator =(const JsonValue& jsonValue)
+PolicyVersion& PolicyVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("versionId"))
   {

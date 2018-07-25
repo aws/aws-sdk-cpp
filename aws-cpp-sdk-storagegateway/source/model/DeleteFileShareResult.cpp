@@ -37,7 +37,7 @@ DeleteFileShareResult::DeleteFileShareResult(const Aws::AmazonWebServiceResult<J
 
 DeleteFileShareResult& DeleteFileShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FileShareARN"))
   {
     m_fileShareARN = jsonValue.GetString("FileShareARN");

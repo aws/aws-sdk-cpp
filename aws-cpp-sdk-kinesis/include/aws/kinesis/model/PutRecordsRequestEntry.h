@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Kinesis
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PutRecordsRequestEntry();
-    PutRecordsRequestEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    PutRecordsRequestEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PutRecordsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    PutRecordsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

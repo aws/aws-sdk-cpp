@@ -34,14 +34,14 @@ FaceRecord::FaceRecord() :
 {
 }
 
-FaceRecord::FaceRecord(const JsonValue& jsonValue) : 
+FaceRecord::FaceRecord(JsonView jsonValue) : 
     m_faceHasBeenSet(false),
     m_faceDetailHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FaceRecord& FaceRecord::operator =(const JsonValue& jsonValue)
+FaceRecord& FaceRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Face"))
   {

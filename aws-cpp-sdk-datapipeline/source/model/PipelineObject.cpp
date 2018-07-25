@@ -35,7 +35,7 @@ PipelineObject::PipelineObject() :
 {
 }
 
-PipelineObject::PipelineObject(const JsonValue& jsonValue) : 
+PipelineObject::PipelineObject(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_fieldsHasBeenSet(false)
@@ -43,7 +43,7 @@ PipelineObject::PipelineObject(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineObject& PipelineObject::operator =(const JsonValue& jsonValue)
+PipelineObject& PipelineObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -61,7 +61,7 @@ PipelineObject& PipelineObject::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("fields"))
   {
-    Array<JsonValue> fieldsJsonList = jsonValue.GetArray("fields");
+    Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
     for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());

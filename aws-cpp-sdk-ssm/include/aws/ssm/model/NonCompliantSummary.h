@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     NonCompliantSummary();
-    NonCompliantSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    NonCompliantSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NonCompliantSummary(Aws::Utils::Json::JsonView jsonValue);
+    NonCompliantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

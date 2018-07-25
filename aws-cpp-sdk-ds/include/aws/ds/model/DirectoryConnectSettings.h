@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectoryService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     DirectoryConnectSettings();
-    DirectoryConnectSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    DirectoryConnectSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DirectoryConnectSettings(Aws::Utils::Json::JsonView jsonValue);
+    DirectoryConnectSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     EventStream();
-    EventStream(const Aws::Utils::Json::JsonValue& jsonValue);
-    EventStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EventStream(Aws::Utils::Json::JsonView jsonValue);
+    EventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

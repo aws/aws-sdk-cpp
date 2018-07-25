@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SecretsManager
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     SecretListEntry();
-    SecretListEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    SecretListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SecretListEntry(Aws::Utils::Json::JsonView jsonValue);
+    SecretListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

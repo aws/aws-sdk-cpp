@@ -33,13 +33,13 @@ OutputSettings::OutputSettings() :
 {
 }
 
-OutputSettings::OutputSettings(const JsonValue& jsonValue) : 
+OutputSettings::OutputSettings(JsonView jsonValue) : 
     m_hlsSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputSettings& OutputSettings::operator =(const JsonValue& jsonValue)
+OutputSettings& OutputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("hlsSettings"))
   {

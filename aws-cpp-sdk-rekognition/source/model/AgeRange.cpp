@@ -36,7 +36,7 @@ AgeRange::AgeRange() :
 {
 }
 
-AgeRange::AgeRange(const JsonValue& jsonValue) : 
+AgeRange::AgeRange(JsonView jsonValue) : 
     m_low(0),
     m_lowHasBeenSet(false),
     m_high(0),
@@ -45,7 +45,7 @@ AgeRange::AgeRange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AgeRange& AgeRange::operator =(const JsonValue& jsonValue)
+AgeRange& AgeRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Low"))
   {

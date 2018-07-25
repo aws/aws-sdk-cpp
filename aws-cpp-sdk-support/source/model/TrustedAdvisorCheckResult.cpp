@@ -38,7 +38,7 @@ TrustedAdvisorCheckResult::TrustedAdvisorCheckResult() :
 {
 }
 
-TrustedAdvisorCheckResult::TrustedAdvisorCheckResult(const JsonValue& jsonValue) : 
+TrustedAdvisorCheckResult::TrustedAdvisorCheckResult(JsonView jsonValue) : 
     m_checkIdHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -49,7 +49,7 @@ TrustedAdvisorCheckResult::TrustedAdvisorCheckResult(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-TrustedAdvisorCheckResult& TrustedAdvisorCheckResult::operator =(const JsonValue& jsonValue)
+TrustedAdvisorCheckResult& TrustedAdvisorCheckResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("checkId"))
   {
@@ -88,7 +88,7 @@ TrustedAdvisorCheckResult& TrustedAdvisorCheckResult::operator =(const JsonValue
 
   if(jsonValue.ValueExists("flaggedResources"))
   {
-    Array<JsonValue> flaggedResourcesJsonList = jsonValue.GetArray("flaggedResources");
+    Array<JsonView> flaggedResourcesJsonList = jsonValue.GetArray("flaggedResources");
     for(unsigned flaggedResourcesIndex = 0; flaggedResourcesIndex < flaggedResourcesJsonList.GetLength(); ++flaggedResourcesIndex)
     {
       m_flaggedResources.push_back(flaggedResourcesJsonList[flaggedResourcesIndex].AsObject());

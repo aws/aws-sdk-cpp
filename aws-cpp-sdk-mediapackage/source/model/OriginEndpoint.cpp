@@ -47,7 +47,7 @@ OriginEndpoint::OriginEndpoint() :
 {
 }
 
-OriginEndpoint::OriginEndpoint(const JsonValue& jsonValue) : 
+OriginEndpoint::OriginEndpoint(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_cmafPackageHasBeenSet(false),
@@ -67,7 +67,7 @@ OriginEndpoint::OriginEndpoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OriginEndpoint& OriginEndpoint::operator =(const JsonValue& jsonValue)
+OriginEndpoint& OriginEndpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -155,7 +155,7 @@ OriginEndpoint& OriginEndpoint::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("whitelist"))
   {
-    Array<JsonValue> whitelistJsonList = jsonValue.GetArray("whitelist");
+    Array<JsonView> whitelistJsonList = jsonValue.GetArray("whitelist");
     for(unsigned whitelistIndex = 0; whitelistIndex < whitelistJsonList.GetLength(); ++whitelistIndex)
     {
       m_whitelist.push_back(whitelistJsonList[whitelistIndex].AsString());

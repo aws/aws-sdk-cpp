@@ -32,12 +32,12 @@ BatchDetachPolicyResponse::BatchDetachPolicyResponse()
 {
 }
 
-BatchDetachPolicyResponse::BatchDetachPolicyResponse(const JsonValue& jsonValue)
+BatchDetachPolicyResponse::BatchDetachPolicyResponse(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-BatchDetachPolicyResponse& BatchDetachPolicyResponse::operator =(const JsonValue& jsonValue)
+BatchDetachPolicyResponse& BatchDetachPolicyResponse::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

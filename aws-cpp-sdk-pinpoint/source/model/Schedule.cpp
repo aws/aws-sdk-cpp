@@ -40,7 +40,7 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(const JsonValue& jsonValue) : 
+Schedule::Schedule(JsonView jsonValue) : 
     m_endTimeHasBeenSet(false),
     m_frequency(Frequency::NOT_SET),
     m_frequencyHasBeenSet(false),
@@ -53,7 +53,7 @@ Schedule::Schedule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Schedule& Schedule::operator =(const JsonValue& jsonValue)
+Schedule& Schedule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EndTime"))
   {

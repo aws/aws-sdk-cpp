@@ -51,7 +51,7 @@ Aws::String StopExecutionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopExecutionRequest::GetRequestSpecificHeaders() const

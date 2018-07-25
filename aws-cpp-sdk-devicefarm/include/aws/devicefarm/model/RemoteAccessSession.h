@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     RemoteAccessSession();
-    RemoteAccessSession(const Aws::Utils::Json::JsonValue& jsonValue);
-    RemoteAccessSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RemoteAccessSession(Aws::Utils::Json::JsonView jsonValue);
+    RemoteAccessSession& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

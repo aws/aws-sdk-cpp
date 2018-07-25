@@ -39,7 +39,7 @@ RtmpOutputSettings::RtmpOutputSettings() :
 {
 }
 
-RtmpOutputSettings::RtmpOutputSettings(const JsonValue& jsonValue) : 
+RtmpOutputSettings::RtmpOutputSettings(JsonView jsonValue) : 
     m_certificateMode(RtmpOutputCertificateMode::NOT_SET),
     m_certificateModeHasBeenSet(false),
     m_connectionRetryInterval(0),
@@ -51,7 +51,7 @@ RtmpOutputSettings::RtmpOutputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RtmpOutputSettings& RtmpOutputSettings::operator =(const JsonValue& jsonValue)
+RtmpOutputSettings& RtmpOutputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("certificateMode"))
   {

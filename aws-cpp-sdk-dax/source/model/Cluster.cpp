@@ -50,7 +50,7 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(const JsonValue& jsonValue) : 
+Cluster::Cluster(JsonView jsonValue) : 
     m_clusterNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
@@ -73,7 +73,7 @@ Cluster::Cluster(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Cluster& Cluster::operator =(const JsonValue& jsonValue)
+Cluster& Cluster::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClusterName"))
   {
@@ -133,7 +133,7 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("NodeIdsToRemove"))
   {
-    Array<JsonValue> nodeIdsToRemoveJsonList = jsonValue.GetArray("NodeIdsToRemove");
+    Array<JsonView> nodeIdsToRemoveJsonList = jsonValue.GetArray("NodeIdsToRemove");
     for(unsigned nodeIdsToRemoveIndex = 0; nodeIdsToRemoveIndex < nodeIdsToRemoveJsonList.GetLength(); ++nodeIdsToRemoveIndex)
     {
       m_nodeIdsToRemove.push_back(nodeIdsToRemoveJsonList[nodeIdsToRemoveIndex].AsString());
@@ -143,7 +143,7 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Nodes"))
   {
-    Array<JsonValue> nodesJsonList = jsonValue.GetArray("Nodes");
+    Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
     for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
     {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());
@@ -174,7 +174,7 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonValue> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsObject());

@@ -33,13 +33,13 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(const JsonValue& jsonValue) : 
+Schedule::Schedule(JsonView jsonValue) : 
     m_expressionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Schedule& Schedule::operator =(const JsonValue& jsonValue)
+Schedule& Schedule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("expression"))
   {

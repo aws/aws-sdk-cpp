@@ -33,17 +33,17 @@ ExplicitDeny::ExplicitDeny() :
 {
 }
 
-ExplicitDeny::ExplicitDeny(const JsonValue& jsonValue) : 
+ExplicitDeny::ExplicitDeny(JsonView jsonValue) : 
     m_policiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ExplicitDeny& ExplicitDeny::operator =(const JsonValue& jsonValue)
+ExplicitDeny& ExplicitDeny::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("policies"))
   {
-    Array<JsonValue> policiesJsonList = jsonValue.GetArray("policies");
+    Array<JsonView> policiesJsonList = jsonValue.GetArray("policies");
     for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
     {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());

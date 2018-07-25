@@ -36,7 +36,7 @@ EcsCluster::EcsCluster() :
 {
 }
 
-EcsCluster::EcsCluster(const JsonValue& jsonValue) : 
+EcsCluster::EcsCluster(JsonView jsonValue) : 
     m_ecsClusterArnHasBeenSet(false),
     m_ecsClusterNameHasBeenSet(false),
     m_stackIdHasBeenSet(false),
@@ -45,7 +45,7 @@ EcsCluster::EcsCluster(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EcsCluster& EcsCluster::operator =(const JsonValue& jsonValue)
+EcsCluster& EcsCluster::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EcsClusterArn"))
   {

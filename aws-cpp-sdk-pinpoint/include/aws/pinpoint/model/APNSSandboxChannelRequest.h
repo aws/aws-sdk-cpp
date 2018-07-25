@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     APNSSandboxChannelRequest();
-    APNSSandboxChannelRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    APNSSandboxChannelRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    APNSSandboxChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    APNSSandboxChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

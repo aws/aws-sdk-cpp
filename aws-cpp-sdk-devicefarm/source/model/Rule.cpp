@@ -37,7 +37,7 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(const JsonValue& jsonValue) : 
+Rule::Rule(JsonView jsonValue) : 
     m_attribute(DeviceAttribute::NOT_SET),
     m_attributeHasBeenSet(false),
     m_operator(RuleOperator::NOT_SET),
@@ -47,7 +47,7 @@ Rule::Rule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Rule& Rule::operator =(const JsonValue& jsonValue)
+Rule& Rule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attribute"))
   {

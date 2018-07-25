@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     TimeBasedAutoScalingConfiguration();
-    TimeBasedAutoScalingConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    TimeBasedAutoScalingConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TimeBasedAutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    TimeBasedAutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

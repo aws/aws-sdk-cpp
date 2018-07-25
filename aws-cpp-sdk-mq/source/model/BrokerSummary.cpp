@@ -40,7 +40,7 @@ BrokerSummary::BrokerSummary() :
 {
 }
 
-BrokerSummary::BrokerSummary(const JsonValue& jsonValue) : 
+BrokerSummary::BrokerSummary(JsonView jsonValue) : 
     m_brokerArnHasBeenSet(false),
     m_brokerIdHasBeenSet(false),
     m_brokerNameHasBeenSet(false),
@@ -53,7 +53,7 @@ BrokerSummary::BrokerSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BrokerSummary& BrokerSummary::operator =(const JsonValue& jsonValue)
+BrokerSummary& BrokerSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("brokerArn"))
   {

@@ -37,10 +37,10 @@ GetItemResult::GetItemResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 GetItemResult& GetItemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Item"))
   {
-    Aws::Map<Aws::String, JsonValue> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
     for(auto& itemItem : itemJsonMap)
     {
       m_item[itemItem.first] = itemItem.second.AsObject();

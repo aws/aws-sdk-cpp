@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ReplicationInstanceTaskLog();
-    ReplicationInstanceTaskLog(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReplicationInstanceTaskLog& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReplicationInstanceTaskLog(Aws::Utils::Json::JsonView jsonValue);
+    ReplicationInstanceTaskLog& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

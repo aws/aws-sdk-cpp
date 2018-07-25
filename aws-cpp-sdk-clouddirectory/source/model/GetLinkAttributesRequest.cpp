@@ -58,7 +58,7 @@ Aws::String GetLinkAttributesRequest::SerializePayload() const
    payload.WithString("ConsistencyLevel", ConsistencyLevelMapper::GetNameForConsistencyLevel(m_consistencyLevel));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetLinkAttributesRequest::GetRequestSpecificHeaders() const

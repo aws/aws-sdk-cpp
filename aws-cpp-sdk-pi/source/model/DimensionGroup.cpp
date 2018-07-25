@@ -36,7 +36,7 @@ DimensionGroup::DimensionGroup() :
 {
 }
 
-DimensionGroup::DimensionGroup(const JsonValue& jsonValue) : 
+DimensionGroup::DimensionGroup(JsonView jsonValue) : 
     m_groupHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_limit(0),
@@ -45,7 +45,7 @@ DimensionGroup::DimensionGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DimensionGroup& DimensionGroup::operator =(const JsonValue& jsonValue)
+DimensionGroup& DimensionGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Group"))
   {
@@ -56,7 +56,7 @@ DimensionGroup& DimensionGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonValue> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsString());

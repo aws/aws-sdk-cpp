@@ -33,17 +33,17 @@ Query::Query() :
 {
 }
 
-Query::Query(const JsonValue& jsonValue) : 
+Query::Query(JsonView jsonValue) : 
     m_selectorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Query& Query::operator =(const JsonValue& jsonValue)
+Query& Query::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("selectors"))
   {
-    Array<JsonValue> selectorsJsonList = jsonValue.GetArray("selectors");
+    Array<JsonView> selectorsJsonList = jsonValue.GetArray("selectors");
     for(unsigned selectorsIndex = 0; selectorsIndex < selectorsJsonList.GetLength(); ++selectorsIndex)
     {
       m_selectors.push_back(selectorsJsonList[selectorsIndex].AsObject());

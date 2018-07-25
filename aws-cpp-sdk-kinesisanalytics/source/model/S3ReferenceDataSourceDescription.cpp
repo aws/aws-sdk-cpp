@@ -35,7 +35,7 @@ S3ReferenceDataSourceDescription::S3ReferenceDataSourceDescription() :
 {
 }
 
-S3ReferenceDataSourceDescription::S3ReferenceDataSourceDescription(const JsonValue& jsonValue) : 
+S3ReferenceDataSourceDescription::S3ReferenceDataSourceDescription(JsonView jsonValue) : 
     m_bucketARNHasBeenSet(false),
     m_fileKeyHasBeenSet(false),
     m_referenceRoleARNHasBeenSet(false)
@@ -43,7 +43,7 @@ S3ReferenceDataSourceDescription::S3ReferenceDataSourceDescription(const JsonVal
   *this = jsonValue;
 }
 
-S3ReferenceDataSourceDescription& S3ReferenceDataSourceDescription::operator =(const JsonValue& jsonValue)
+S3ReferenceDataSourceDescription& S3ReferenceDataSourceDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BucketARN"))
   {

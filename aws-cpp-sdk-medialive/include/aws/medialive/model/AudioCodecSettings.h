@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     AudioCodecSettings();
-    AudioCodecSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    AudioCodecSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AudioCodecSettings(Aws::Utils::Json::JsonView jsonValue);
+    AudioCodecSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

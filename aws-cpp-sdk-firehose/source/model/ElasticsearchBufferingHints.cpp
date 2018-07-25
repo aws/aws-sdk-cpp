@@ -36,7 +36,7 @@ ElasticsearchBufferingHints::ElasticsearchBufferingHints() :
 {
 }
 
-ElasticsearchBufferingHints::ElasticsearchBufferingHints(const JsonValue& jsonValue) : 
+ElasticsearchBufferingHints::ElasticsearchBufferingHints(JsonView jsonValue) : 
     m_intervalInSeconds(0),
     m_intervalInSecondsHasBeenSet(false),
     m_sizeInMBs(0),
@@ -45,7 +45,7 @@ ElasticsearchBufferingHints::ElasticsearchBufferingHints(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ElasticsearchBufferingHints& ElasticsearchBufferingHints::operator =(const JsonValue& jsonValue)
+ElasticsearchBufferingHints& ElasticsearchBufferingHints::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IntervalInSeconds"))
   {

@@ -41,6 +41,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -58,8 +59,8 @@ namespace Model
   {
   public:
     Mpeg2Settings();
-    Mpeg2Settings(const Aws::Utils::Json::JsonValue& jsonValue);
-    Mpeg2Settings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
+    Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -32,12 +32,12 @@ RtmpCaptionInfoDestinationSettings::RtmpCaptionInfoDestinationSettings()
 {
 }
 
-RtmpCaptionInfoDestinationSettings::RtmpCaptionInfoDestinationSettings(const JsonValue& jsonValue)
+RtmpCaptionInfoDestinationSettings::RtmpCaptionInfoDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-RtmpCaptionInfoDestinationSettings& RtmpCaptionInfoDestinationSettings::operator =(const JsonValue& jsonValue)
+RtmpCaptionInfoDestinationSettings& RtmpCaptionInfoDestinationSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

@@ -38,7 +38,7 @@ HTTPRequest::HTTPRequest() :
 {
 }
 
-HTTPRequest::HTTPRequest(const JsonValue& jsonValue) : 
+HTTPRequest::HTTPRequest(JsonView jsonValue) : 
     m_clientIPHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_uRIHasBeenSet(false),
@@ -49,7 +49,7 @@ HTTPRequest::HTTPRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HTTPRequest& HTTPRequest::operator =(const JsonValue& jsonValue)
+HTTPRequest& HTTPRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClientIP"))
   {
@@ -88,7 +88,7 @@ HTTPRequest& HTTPRequest::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Headers"))
   {
-    Array<JsonValue> headersJsonList = jsonValue.GetArray("Headers");
+    Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
     for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
     {
       m_headers.push_back(headersJsonList[headersIndex].AsObject());

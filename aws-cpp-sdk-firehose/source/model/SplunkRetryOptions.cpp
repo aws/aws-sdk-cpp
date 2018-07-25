@@ -34,14 +34,14 @@ SplunkRetryOptions::SplunkRetryOptions() :
 {
 }
 
-SplunkRetryOptions::SplunkRetryOptions(const JsonValue& jsonValue) : 
+SplunkRetryOptions::SplunkRetryOptions(JsonView jsonValue) : 
     m_durationInSeconds(0),
     m_durationInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SplunkRetryOptions& SplunkRetryOptions::operator =(const JsonValue& jsonValue)
+SplunkRetryOptions& SplunkRetryOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DurationInSeconds"))
   {

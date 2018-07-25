@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoTAnalytics
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DeviceRegistryEnrichActivity();
-    DeviceRegistryEnrichActivity(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeviceRegistryEnrichActivity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeviceRegistryEnrichActivity(Aws::Utils::Json::JsonView jsonValue);
+    DeviceRegistryEnrichActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

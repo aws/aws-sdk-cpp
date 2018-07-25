@@ -37,7 +37,7 @@ StopGameSessionPlacementResult::StopGameSessionPlacementResult(const Aws::Amazon
 
 StopGameSessionPlacementResult& StopGameSessionPlacementResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GameSessionPlacement"))
   {
     m_gameSessionPlacement = jsonValue.GetObject("GameSessionPlacement");

@@ -37,10 +37,10 @@ DescribeConfigurationAggregatorsResult::DescribeConfigurationAggregatorsResult(c
 
 DescribeConfigurationAggregatorsResult& DescribeConfigurationAggregatorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigurationAggregators"))
   {
-    Array<JsonValue> configurationAggregatorsJsonList = jsonValue.GetArray("ConfigurationAggregators");
+    Array<JsonView> configurationAggregatorsJsonList = jsonValue.GetArray("ConfigurationAggregators");
     for(unsigned configurationAggregatorsIndex = 0; configurationAggregatorsIndex < configurationAggregatorsJsonList.GetLength(); ++configurationAggregatorsIndex)
     {
       m_configurationAggregators.push_back(configurationAggregatorsJsonList[configurationAggregatorsIndex].AsObject());

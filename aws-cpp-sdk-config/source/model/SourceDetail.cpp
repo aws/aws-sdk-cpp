@@ -38,7 +38,7 @@ SourceDetail::SourceDetail() :
 {
 }
 
-SourceDetail::SourceDetail(const JsonValue& jsonValue) : 
+SourceDetail::SourceDetail(JsonView jsonValue) : 
     m_eventSource(EventSource::NOT_SET),
     m_eventSourceHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
@@ -49,7 +49,7 @@ SourceDetail::SourceDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SourceDetail& SourceDetail::operator =(const JsonValue& jsonValue)
+SourceDetail& SourceDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EventSource"))
   {

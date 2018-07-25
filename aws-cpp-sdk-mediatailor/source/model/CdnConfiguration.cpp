@@ -34,14 +34,14 @@ CdnConfiguration::CdnConfiguration() :
 {
 }
 
-CdnConfiguration::CdnConfiguration(const JsonValue& jsonValue) : 
+CdnConfiguration::CdnConfiguration(JsonView jsonValue) : 
     m_adSegmentUrlPrefixHasBeenSet(false),
     m_contentSegmentUrlPrefixHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CdnConfiguration& CdnConfiguration::operator =(const JsonValue& jsonValue)
+CdnConfiguration& CdnConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdSegmentUrlPrefix"))
   {

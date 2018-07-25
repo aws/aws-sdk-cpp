@@ -37,7 +37,7 @@ CreateWebACLResult::CreateWebACLResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CreateWebACLResult& CreateWebACLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WebACL"))
   {
     m_webACL = jsonValue.GetObject("WebACL");

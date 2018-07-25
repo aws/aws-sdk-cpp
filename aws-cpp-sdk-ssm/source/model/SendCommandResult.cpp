@@ -37,7 +37,7 @@ SendCommandResult::SendCommandResult(const Aws::AmazonWebServiceResult<JsonValue
 
 SendCommandResult& SendCommandResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Command"))
   {
     m_command = jsonValue.GetObject("Command");

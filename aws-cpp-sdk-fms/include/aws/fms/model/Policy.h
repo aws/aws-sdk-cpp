@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace FMS
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Policy();
-    Policy(const Aws::Utils::Json::JsonValue& jsonValue);
-    Policy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Policy(Aws::Utils::Json::JsonView jsonValue);
+    Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

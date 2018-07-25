@@ -43,7 +43,7 @@ TapeArchive::TapeArchive() :
 {
 }
 
-TapeArchive::TapeArchive(const JsonValue& jsonValue) : 
+TapeArchive::TapeArchive(JsonView jsonValue) : 
     m_tapeARNHasBeenSet(false),
     m_tapeBarcodeHasBeenSet(false),
     m_tapeCreatedDateHasBeenSet(false),
@@ -59,7 +59,7 @@ TapeArchive::TapeArchive(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TapeArchive& TapeArchive::operator =(const JsonValue& jsonValue)
+TapeArchive& TapeArchive::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TapeARN"))
   {

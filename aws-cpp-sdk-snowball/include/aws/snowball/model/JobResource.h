@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Snowball
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     JobResource();
-    JobResource(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobResource(Aws::Utils::Json::JsonView jsonValue);
+    JobResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

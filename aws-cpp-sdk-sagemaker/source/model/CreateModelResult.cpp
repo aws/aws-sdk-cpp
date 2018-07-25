@@ -37,7 +37,7 @@ CreateModelResult::CreateModelResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateModelResult& CreateModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");

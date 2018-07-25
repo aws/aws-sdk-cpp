@@ -37,7 +37,7 @@ PutPolicyResult::PutPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 PutPolicyResult& PutPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetObject("Policy");

@@ -35,7 +35,7 @@ StreamProcessor::StreamProcessor() :
 {
 }
 
-StreamProcessor::StreamProcessor(const JsonValue& jsonValue) : 
+StreamProcessor::StreamProcessor(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_status(StreamProcessorStatus::NOT_SET),
     m_statusHasBeenSet(false)
@@ -43,7 +43,7 @@ StreamProcessor::StreamProcessor(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamProcessor& StreamProcessor::operator =(const JsonValue& jsonValue)
+StreamProcessor& StreamProcessor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

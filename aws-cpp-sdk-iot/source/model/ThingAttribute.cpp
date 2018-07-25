@@ -38,7 +38,7 @@ ThingAttribute::ThingAttribute() :
 {
 }
 
-ThingAttribute::ThingAttribute(const JsonValue& jsonValue) : 
+ThingAttribute::ThingAttribute(JsonView jsonValue) : 
     m_thingNameHasBeenSet(false),
     m_thingTypeNameHasBeenSet(false),
     m_thingArnHasBeenSet(false),
@@ -49,7 +49,7 @@ ThingAttribute::ThingAttribute(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ThingAttribute& ThingAttribute::operator =(const JsonValue& jsonValue)
+ThingAttribute& ThingAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("thingName"))
   {
@@ -74,7 +74,7 @@ ThingAttribute& ThingAttribute::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

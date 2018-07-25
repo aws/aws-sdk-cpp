@@ -37,7 +37,7 @@ DescribeEndpointResult::DescribeEndpointResult(const Aws::AmazonWebServiceResult
 
 DescribeEndpointResult& DescribeEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("endpointAddress"))
   {
     m_endpointAddress = jsonValue.GetString("endpointAddress");

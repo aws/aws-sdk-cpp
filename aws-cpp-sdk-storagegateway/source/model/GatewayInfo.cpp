@@ -37,7 +37,7 @@ GatewayInfo::GatewayInfo() :
 {
 }
 
-GatewayInfo::GatewayInfo(const JsonValue& jsonValue) : 
+GatewayInfo::GatewayInfo(JsonView jsonValue) : 
     m_gatewayIdHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
     m_gatewayTypeHasBeenSet(false),
@@ -47,7 +47,7 @@ GatewayInfo::GatewayInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GatewayInfo& GatewayInfo::operator =(const JsonValue& jsonValue)
+GatewayInfo& GatewayInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GatewayId"))
   {

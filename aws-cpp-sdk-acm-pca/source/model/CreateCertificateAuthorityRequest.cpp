@@ -58,7 +58,7 @@ Aws::String CreateCertificateAuthorityRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateCertificateAuthorityRequest::GetRequestSpecificHeaders() const

@@ -40,7 +40,7 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
 {
 }
 
-HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(const JsonValue& jsonValue) : 
+HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonView jsonValue) : 
     m_staticHyperParametersHasBeenSet(false),
     m_algorithmSpecificationHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -53,11 +53,11 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(const J
   *this = jsonValue;
 }
 
-HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operator =(const JsonValue& jsonValue)
+HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StaticHyperParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> staticHyperParametersJsonMap = jsonValue.GetObject("StaticHyperParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> staticHyperParametersJsonMap = jsonValue.GetObject("StaticHyperParameters").GetAllObjects();
     for(auto& staticHyperParametersItem : staticHyperParametersJsonMap)
     {
       m_staticHyperParameters[staticHyperParametersItem.first] = staticHyperParametersItem.second.AsString();
@@ -81,7 +81,7 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
 
   if(jsonValue.ValueExists("InputDataConfig"))
   {
-    Array<JsonValue> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
+    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());

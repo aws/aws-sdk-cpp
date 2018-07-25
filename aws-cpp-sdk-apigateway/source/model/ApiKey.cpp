@@ -42,7 +42,7 @@ ApiKey::ApiKey() :
 {
 }
 
-ApiKey::ApiKey(const JsonValue& jsonValue) : 
+ApiKey::ApiKey(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -57,7 +57,7 @@ ApiKey::ApiKey(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApiKey& ApiKey::operator =(const JsonValue& jsonValue)
+ApiKey& ApiKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -117,7 +117,7 @@ ApiKey& ApiKey::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("stageKeys"))
   {
-    Array<JsonValue> stageKeysJsonList = jsonValue.GetArray("stageKeys");
+    Array<JsonView> stageKeysJsonList = jsonValue.GetArray("stageKeys");
     for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
     {
       m_stageKeys.push_back(stageKeysJsonList[stageKeysIndex].AsString());

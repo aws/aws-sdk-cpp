@@ -33,13 +33,13 @@ ELBInfo::ELBInfo() :
 {
 }
 
-ELBInfo::ELBInfo(const JsonValue& jsonValue) : 
+ELBInfo::ELBInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ELBInfo& ELBInfo::operator =(const JsonValue& jsonValue)
+ELBInfo& ELBInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

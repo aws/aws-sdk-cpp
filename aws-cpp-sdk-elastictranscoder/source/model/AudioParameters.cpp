@@ -38,7 +38,7 @@ AudioParameters::AudioParameters() :
 {
 }
 
-AudioParameters::AudioParameters(const JsonValue& jsonValue) : 
+AudioParameters::AudioParameters(JsonView jsonValue) : 
     m_codecHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
     m_bitRateHasBeenSet(false),
@@ -49,7 +49,7 @@ AudioParameters::AudioParameters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AudioParameters& AudioParameters::operator =(const JsonValue& jsonValue)
+AudioParameters& AudioParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Codec"))
   {

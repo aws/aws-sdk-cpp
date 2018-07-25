@@ -37,7 +37,7 @@ ScheduleRunTest::ScheduleRunTest() :
 {
 }
 
-ScheduleRunTest::ScheduleRunTest(const JsonValue& jsonValue) : 
+ScheduleRunTest::ScheduleRunTest(JsonView jsonValue) : 
     m_type(TestType::NOT_SET),
     m_typeHasBeenSet(false),
     m_testPackageArnHasBeenSet(false),
@@ -47,7 +47,7 @@ ScheduleRunTest::ScheduleRunTest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScheduleRunTest& ScheduleRunTest::operator =(const JsonValue& jsonValue)
+ScheduleRunTest& ScheduleRunTest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {
@@ -72,7 +72,7 @@ ScheduleRunTest& ScheduleRunTest::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

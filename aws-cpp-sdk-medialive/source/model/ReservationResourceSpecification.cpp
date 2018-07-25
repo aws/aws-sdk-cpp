@@ -46,7 +46,7 @@ ReservationResourceSpecification::ReservationResourceSpecification() :
 {
 }
 
-ReservationResourceSpecification::ReservationResourceSpecification(const JsonValue& jsonValue) : 
+ReservationResourceSpecification::ReservationResourceSpecification(JsonView jsonValue) : 
     m_codec(ReservationCodec::NOT_SET),
     m_codecHasBeenSet(false),
     m_maximumBitrate(ReservationMaximumBitrate::NOT_SET),
@@ -65,7 +65,7 @@ ReservationResourceSpecification::ReservationResourceSpecification(const JsonVal
   *this = jsonValue;
 }
 
-ReservationResourceSpecification& ReservationResourceSpecification::operator =(const JsonValue& jsonValue)
+ReservationResourceSpecification& ReservationResourceSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("codec"))
   {

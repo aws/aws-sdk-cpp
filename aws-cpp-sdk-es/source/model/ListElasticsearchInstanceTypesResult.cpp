@@ -37,10 +37,10 @@ ListElasticsearchInstanceTypesResult::ListElasticsearchInstanceTypesResult(const
 
 ListElasticsearchInstanceTypesResult& ListElasticsearchInstanceTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ElasticsearchInstanceTypes"))
   {
-    Array<JsonValue> elasticsearchInstanceTypesJsonList = jsonValue.GetArray("ElasticsearchInstanceTypes");
+    Array<JsonView> elasticsearchInstanceTypesJsonList = jsonValue.GetArray("ElasticsearchInstanceTypes");
     for(unsigned elasticsearchInstanceTypesIndex = 0; elasticsearchInstanceTypesIndex < elasticsearchInstanceTypesJsonList.GetLength(); ++elasticsearchInstanceTypesIndex)
     {
       m_elasticsearchInstanceTypes.push_back(ESPartitionInstanceTypeMapper::GetESPartitionInstanceTypeForName(elasticsearchInstanceTypesJsonList[elasticsearchInstanceTypesIndex].AsString()));

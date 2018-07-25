@@ -67,7 +67,7 @@ Aws::String GetWorkflowExecutionHistoryRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetWorkflowExecutionHistoryRequest::GetRequestSpecificHeaders() const

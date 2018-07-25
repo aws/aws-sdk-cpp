@@ -37,7 +37,7 @@ MigrationTask::MigrationTask() :
 {
 }
 
-MigrationTask::MigrationTask(const JsonValue& jsonValue) : 
+MigrationTask::MigrationTask(JsonView jsonValue) : 
     m_progressUpdateStreamHasBeenSet(false),
     m_migrationTaskNameHasBeenSet(false),
     m_taskHasBeenSet(false),
@@ -47,7 +47,7 @@ MigrationTask::MigrationTask(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MigrationTask& MigrationTask::operator =(const JsonValue& jsonValue)
+MigrationTask& MigrationTask::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProgressUpdateStream"))
   {
@@ -79,7 +79,7 @@ MigrationTask& MigrationTask::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ResourceAttributeList"))
   {
-    Array<JsonValue> resourceAttributeListJsonList = jsonValue.GetArray("ResourceAttributeList");
+    Array<JsonView> resourceAttributeListJsonList = jsonValue.GetArray("ResourceAttributeList");
     for(unsigned resourceAttributeListIndex = 0; resourceAttributeListIndex < resourceAttributeListJsonList.GetLength(); ++resourceAttributeListIndex)
     {
       m_resourceAttributeList.push_back(resourceAttributeListJsonList[resourceAttributeListIndex].AsObject());

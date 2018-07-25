@@ -59,7 +59,7 @@ Aws::String ListAcceptedPortfolioSharesRequest::SerializePayload() const
    payload.WithString("PortfolioShareType", PortfolioShareTypeMapper::GetNameForPortfolioShareType(m_portfolioShareType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListAcceptedPortfolioSharesRequest::GetRequestSpecificHeaders() const

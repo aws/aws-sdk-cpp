@@ -46,7 +46,7 @@ CommandPlugin::CommandPlugin() :
 {
 }
 
-CommandPlugin::CommandPlugin(const JsonValue& jsonValue) : 
+CommandPlugin::CommandPlugin(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_status(CommandPluginStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -65,7 +65,7 @@ CommandPlugin::CommandPlugin(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CommandPlugin& CommandPlugin::operator =(const JsonValue& jsonValue)
+CommandPlugin& CommandPlugin::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

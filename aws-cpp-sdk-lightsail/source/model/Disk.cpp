@@ -51,7 +51,7 @@ Disk::Disk() :
 {
 }
 
-Disk::Disk(const JsonValue& jsonValue) : 
+Disk::Disk(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -75,7 +75,7 @@ Disk::Disk(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Disk& Disk::operator =(const JsonValue& jsonValue)
+Disk& Disk::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

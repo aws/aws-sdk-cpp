@@ -37,7 +37,7 @@ OperationFilter::OperationFilter() :
 {
 }
 
-OperationFilter::OperationFilter(const JsonValue& jsonValue) : 
+OperationFilter::OperationFilter(JsonView jsonValue) : 
     m_name(OperationFilterName::NOT_SET),
     m_nameHasBeenSet(false),
     m_valuesHasBeenSet(false),
@@ -47,7 +47,7 @@ OperationFilter::OperationFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OperationFilter& OperationFilter::operator =(const JsonValue& jsonValue)
+OperationFilter& OperationFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -58,7 +58,7 @@ OperationFilter& OperationFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

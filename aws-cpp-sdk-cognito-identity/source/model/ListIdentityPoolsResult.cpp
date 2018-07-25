@@ -37,10 +37,10 @@ ListIdentityPoolsResult::ListIdentityPoolsResult(const Aws::AmazonWebServiceResu
 
 ListIdentityPoolsResult& ListIdentityPoolsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityPools"))
   {
-    Array<JsonValue> identityPoolsJsonList = jsonValue.GetArray("IdentityPools");
+    Array<JsonView> identityPoolsJsonList = jsonValue.GetArray("IdentityPools");
     for(unsigned identityPoolsIndex = 0; identityPoolsIndex < identityPoolsJsonList.GetLength(); ++identityPoolsIndex)
     {
       m_identityPools.push_back(identityPoolsJsonList[identityPoolsIndex].AsObject());

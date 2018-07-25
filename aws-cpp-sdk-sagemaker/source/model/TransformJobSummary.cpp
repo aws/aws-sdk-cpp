@@ -40,7 +40,7 @@ TransformJobSummary::TransformJobSummary() :
 {
 }
 
-TransformJobSummary::TransformJobSummary(const JsonValue& jsonValue) : 
+TransformJobSummary::TransformJobSummary(JsonView jsonValue) : 
     m_transformJobNameHasBeenSet(false),
     m_transformJobArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -53,7 +53,7 @@ TransformJobSummary::TransformJobSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TransformJobSummary& TransformJobSummary::operator =(const JsonValue& jsonValue)
+TransformJobSummary& TransformJobSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TransformJobName"))
   {

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     HlsCdnSettings();
-    HlsCdnSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    HlsCdnSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HlsCdnSettings(Aws::Utils::Json::JsonView jsonValue);
+    HlsCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

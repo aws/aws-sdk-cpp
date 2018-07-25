@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Route53Domains
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ContactDetail();
-    ContactDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContactDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContactDetail(Aws::Utils::Json::JsonView jsonValue);
+    ContactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

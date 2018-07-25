@@ -37,10 +37,10 @@ ListDirectoriesResult::ListDirectoriesResult(const Aws::AmazonWebServiceResult<J
 
 ListDirectoriesResult& ListDirectoriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Directories"))
   {
-    Array<JsonValue> directoriesJsonList = jsonValue.GetArray("Directories");
+    Array<JsonView> directoriesJsonList = jsonValue.GetArray("Directories");
     for(unsigned directoriesIndex = 0; directoriesIndex < directoriesJsonList.GetLength(); ++directoriesIndex)
     {
       m_directories.push_back(directoriesJsonList[directoriesIndex].AsObject());

@@ -38,7 +38,7 @@ NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings() :
 {
 }
 
-NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings(const JsonValue& jsonValue) : 
+NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings(JsonView jsonValue) : 
     m_postFilterSharpenStrength(0),
     m_postFilterSharpenStrengthHasBeenSet(false),
     m_speed(0),
@@ -49,7 +49,7 @@ NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings(const JsonV
   *this = jsonValue;
 }
 
-NoiseReducerSpatialFilterSettings& NoiseReducerSpatialFilterSettings::operator =(const JsonValue& jsonValue)
+NoiseReducerSpatialFilterSettings& NoiseReducerSpatialFilterSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("postFilterSharpenStrength"))
   {

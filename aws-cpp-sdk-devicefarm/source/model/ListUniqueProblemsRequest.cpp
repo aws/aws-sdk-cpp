@@ -44,7 +44,7 @@ Aws::String ListUniqueProblemsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListUniqueProblemsRequest::GetRequestSpecificHeaders() const

@@ -51,7 +51,7 @@ Aws::String UpdateLinkAttributesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateLinkAttributesRequest::GetRequestSpecificHeaders() const

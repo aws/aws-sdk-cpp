@@ -35,7 +35,7 @@ DocumentFilter::DocumentFilter() :
 {
 }
 
-DocumentFilter::DocumentFilter(const JsonValue& jsonValue) : 
+DocumentFilter::DocumentFilter(JsonView jsonValue) : 
     m_key(DocumentFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ DocumentFilter::DocumentFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentFilter& DocumentFilter::operator =(const JsonValue& jsonValue)
+DocumentFilter& DocumentFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("key"))
   {

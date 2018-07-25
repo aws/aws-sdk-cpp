@@ -37,10 +37,10 @@ ListRemoteAccessSessionsResult::ListRemoteAccessSessionsResult(const Aws::Amazon
 
 ListRemoteAccessSessionsResult& ListRemoteAccessSessionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("remoteAccessSessions"))
   {
-    Array<JsonValue> remoteAccessSessionsJsonList = jsonValue.GetArray("remoteAccessSessions");
+    Array<JsonView> remoteAccessSessionsJsonList = jsonValue.GetArray("remoteAccessSessions");
     for(unsigned remoteAccessSessionsIndex = 0; remoteAccessSessionsIndex < remoteAccessSessionsJsonList.GetLength(); ++remoteAccessSessionsIndex)
     {
       m_remoteAccessSessions.push_back(remoteAccessSessionsJsonList[remoteAccessSessionsIndex].AsObject());

@@ -36,7 +36,7 @@ CognitoStreams::CognitoStreams() :
 {
 }
 
-CognitoStreams::CognitoStreams(const JsonValue& jsonValue) : 
+CognitoStreams::CognitoStreams(JsonView jsonValue) : 
     m_streamNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_streamingStatus(StreamingStatus::NOT_SET),
@@ -45,7 +45,7 @@ CognitoStreams::CognitoStreams(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CognitoStreams& CognitoStreams::operator =(const JsonValue& jsonValue)
+CognitoStreams& CognitoStreams::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StreamName"))
   {

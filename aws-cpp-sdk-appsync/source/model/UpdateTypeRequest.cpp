@@ -46,7 +46,7 @@ Aws::String UpdateTypeRequest::SerializePayload() const
    payload.WithString("format", TypeDefinitionFormatMapper::GetNameForTypeDefinitionFormat(m_format));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

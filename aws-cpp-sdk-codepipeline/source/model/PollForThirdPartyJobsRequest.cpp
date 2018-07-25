@@ -45,7 +45,7 @@ Aws::String PollForThirdPartyJobsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PollForThirdPartyJobsRequest::GetRequestSpecificHeaders() const

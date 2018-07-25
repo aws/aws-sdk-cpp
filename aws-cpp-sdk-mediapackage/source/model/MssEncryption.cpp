@@ -33,13 +33,13 @@ MssEncryption::MssEncryption() :
 {
 }
 
-MssEncryption::MssEncryption(const JsonValue& jsonValue) : 
+MssEncryption::MssEncryption(JsonView jsonValue) : 
     m_spekeKeyProviderHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MssEncryption& MssEncryption::operator =(const JsonValue& jsonValue)
+MssEncryption& MssEncryption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {

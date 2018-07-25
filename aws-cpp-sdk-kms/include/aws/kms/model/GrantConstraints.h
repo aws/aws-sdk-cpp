@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KMS
@@ -54,8 +55,8 @@ namespace Model
   {
   public:
     GrantConstraints();
-    GrantConstraints(const Aws::Utils::Json::JsonValue& jsonValue);
-    GrantConstraints& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GrantConstraints(Aws::Utils::Json::JsonView jsonValue);
+    GrantConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

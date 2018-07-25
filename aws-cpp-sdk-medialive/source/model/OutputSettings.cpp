@@ -37,7 +37,7 @@ OutputSettings::OutputSettings() :
 {
 }
 
-OutputSettings::OutputSettings(const JsonValue& jsonValue) : 
+OutputSettings::OutputSettings(JsonView jsonValue) : 
     m_archiveOutputSettingsHasBeenSet(false),
     m_hlsOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
@@ -47,7 +47,7 @@ OutputSettings::OutputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputSettings& OutputSettings::operator =(const JsonValue& jsonValue)
+OutputSettings& OutputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("archiveOutputSettings"))
   {

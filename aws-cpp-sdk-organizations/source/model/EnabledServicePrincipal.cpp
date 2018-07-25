@@ -34,14 +34,14 @@ EnabledServicePrincipal::EnabledServicePrincipal() :
 {
 }
 
-EnabledServicePrincipal::EnabledServicePrincipal(const JsonValue& jsonValue) : 
+EnabledServicePrincipal::EnabledServicePrincipal(JsonView jsonValue) : 
     m_servicePrincipalHasBeenSet(false),
     m_dateEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EnabledServicePrincipal& EnabledServicePrincipal::operator =(const JsonValue& jsonValue)
+EnabledServicePrincipal& EnabledServicePrincipal::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServicePrincipal"))
   {

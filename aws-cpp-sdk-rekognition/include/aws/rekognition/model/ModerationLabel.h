@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ModerationLabel();
-    ModerationLabel(const Aws::Utils::Json::JsonValue& jsonValue);
-    ModerationLabel& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ModerationLabel(Aws::Utils::Json::JsonView jsonValue);
+    ModerationLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

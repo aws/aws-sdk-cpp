@@ -34,18 +34,18 @@ ResultSet::ResultSet() :
 {
 }
 
-ResultSet::ResultSet(const JsonValue& jsonValue) : 
+ResultSet::ResultSet(JsonView jsonValue) : 
     m_rowsHasBeenSet(false),
     m_resultSetMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResultSet& ResultSet::operator =(const JsonValue& jsonValue)
+ResultSet& ResultSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Rows"))
   {
-    Array<JsonValue> rowsJsonList = jsonValue.GetArray("Rows");
+    Array<JsonView> rowsJsonList = jsonValue.GetArray("Rows");
     for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
     {
       m_rows.push_back(rowsJsonList[rowsIndex].AsObject());

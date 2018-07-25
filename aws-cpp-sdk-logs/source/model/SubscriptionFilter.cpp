@@ -41,7 +41,7 @@ SubscriptionFilter::SubscriptionFilter() :
 {
 }
 
-SubscriptionFilter::SubscriptionFilter(const JsonValue& jsonValue) : 
+SubscriptionFilter::SubscriptionFilter(JsonView jsonValue) : 
     m_filterNameHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_filterPatternHasBeenSet(false),
@@ -55,7 +55,7 @@ SubscriptionFilter::SubscriptionFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SubscriptionFilter& SubscriptionFilter::operator =(const JsonValue& jsonValue)
+SubscriptionFilter& SubscriptionFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("filterName"))
   {

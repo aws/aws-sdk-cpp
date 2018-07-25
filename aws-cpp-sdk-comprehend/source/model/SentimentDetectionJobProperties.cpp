@@ -44,7 +44,7 @@ SentimentDetectionJobProperties::SentimentDetectionJobProperties() :
 {
 }
 
-SentimentDetectionJobProperties::SentimentDetectionJobProperties(const JsonValue& jsonValue) : 
+SentimentDetectionJobProperties::SentimentDetectionJobProperties(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
@@ -61,7 +61,7 @@ SentimentDetectionJobProperties::SentimentDetectionJobProperties(const JsonValue
   *this = jsonValue;
 }
 
-SentimentDetectionJobProperties& SentimentDetectionJobProperties::operator =(const JsonValue& jsonValue)
+SentimentDetectionJobProperties& SentimentDetectionJobProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobId"))
   {

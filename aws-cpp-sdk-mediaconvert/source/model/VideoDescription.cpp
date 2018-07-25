@@ -58,7 +58,7 @@ VideoDescription::VideoDescription() :
 {
 }
 
-VideoDescription::VideoDescription(const JsonValue& jsonValue) : 
+VideoDescription::VideoDescription(JsonView jsonValue) : 
     m_afdSignaling(AfdSignaling::NOT_SET),
     m_afdSignalingHasBeenSet(false),
     m_antiAlias(AntiAlias::NOT_SET),
@@ -89,7 +89,7 @@ VideoDescription::VideoDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VideoDescription& VideoDescription::operator =(const JsonValue& jsonValue)
+VideoDescription& VideoDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("afdSignaling"))
   {

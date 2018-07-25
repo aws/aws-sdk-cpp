@@ -34,14 +34,14 @@ BatchDetachFromIndex::BatchDetachFromIndex() :
 {
 }
 
-BatchDetachFromIndex::BatchDetachFromIndex(const JsonValue& jsonValue) : 
+BatchDetachFromIndex::BatchDetachFromIndex(JsonView jsonValue) : 
     m_indexReferenceHasBeenSet(false),
     m_targetReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchDetachFromIndex& BatchDetachFromIndex::operator =(const JsonValue& jsonValue)
+BatchDetachFromIndex& BatchDetachFromIndex::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexReference"))
   {

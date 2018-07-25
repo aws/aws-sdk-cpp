@@ -35,7 +35,7 @@ DatasetContentStatus::DatasetContentStatus() :
 {
 }
 
-DatasetContentStatus::DatasetContentStatus(const JsonValue& jsonValue) : 
+DatasetContentStatus::DatasetContentStatus(JsonView jsonValue) : 
     m_state(DatasetContentState::NOT_SET),
     m_stateHasBeenSet(false),
     m_reasonHasBeenSet(false)
@@ -43,7 +43,7 @@ DatasetContentStatus::DatasetContentStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DatasetContentStatus& DatasetContentStatus::operator =(const JsonValue& jsonValue)
+DatasetContentStatus& DatasetContentStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("state"))
   {

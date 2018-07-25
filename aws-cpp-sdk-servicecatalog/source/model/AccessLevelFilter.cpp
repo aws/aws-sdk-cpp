@@ -35,7 +35,7 @@ AccessLevelFilter::AccessLevelFilter() :
 {
 }
 
-AccessLevelFilter::AccessLevelFilter(const JsonValue& jsonValue) : 
+AccessLevelFilter::AccessLevelFilter(JsonView jsonValue) : 
     m_key(AccessLevelFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ AccessLevelFilter::AccessLevelFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AccessLevelFilter& AccessLevelFilter::operator =(const JsonValue& jsonValue)
+AccessLevelFilter& AccessLevelFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

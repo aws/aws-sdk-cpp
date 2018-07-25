@@ -34,14 +34,14 @@ SnapshotOptions::SnapshotOptions() :
 {
 }
 
-SnapshotOptions::SnapshotOptions(const JsonValue& jsonValue) : 
+SnapshotOptions::SnapshotOptions(JsonView jsonValue) : 
     m_automatedSnapshotStartHour(0),
     m_automatedSnapshotStartHourHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SnapshotOptions& SnapshotOptions::operator =(const JsonValue& jsonValue)
+SnapshotOptions& SnapshotOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AutomatedSnapshotStartHour"))
   {

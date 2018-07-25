@@ -46,7 +46,7 @@ ADMChannelResponse::ADMChannelResponse() :
 {
 }
 
-ADMChannelResponse::ADMChannelResponse(const JsonValue& jsonValue) : 
+ADMChannelResponse::ADMChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_enabled(false),
@@ -65,7 +65,7 @@ ADMChannelResponse::ADMChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ADMChannelResponse& ADMChannelResponse::operator =(const JsonValue& jsonValue)
+ADMChannelResponse& ADMChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

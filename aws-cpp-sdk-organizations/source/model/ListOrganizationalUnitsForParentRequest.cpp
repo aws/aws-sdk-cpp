@@ -52,7 +52,7 @@ Aws::String ListOrganizationalUnitsForParentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListOrganizationalUnitsForParentRequest::GetRequestSpecificHeaders() const

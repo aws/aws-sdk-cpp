@@ -49,7 +49,7 @@ DescribePatchGroupStateResult::DescribePatchGroupStateResult(const Aws::AmazonWe
 
 DescribePatchGroupStateResult& DescribePatchGroupStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Instances"))
   {
     m_instances = jsonValue.GetInteger("Instances");

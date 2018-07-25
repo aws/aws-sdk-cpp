@@ -39,7 +39,7 @@ Member::Member() :
 {
 }
 
-Member::Member(const JsonValue& jsonValue) : 
+Member::Member(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_detectorIdHasBeenSet(false),
     m_emailHasBeenSet(false),
@@ -51,7 +51,7 @@ Member::Member(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Member& Member::operator =(const JsonValue& jsonValue)
+Member& Member::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {

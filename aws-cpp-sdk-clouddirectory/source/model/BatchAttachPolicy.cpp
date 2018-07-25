@@ -34,14 +34,14 @@ BatchAttachPolicy::BatchAttachPolicy() :
 {
 }
 
-BatchAttachPolicy::BatchAttachPolicy(const JsonValue& jsonValue) : 
+BatchAttachPolicy::BatchAttachPolicy(JsonView jsonValue) : 
     m_policyReferenceHasBeenSet(false),
     m_objectReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchAttachPolicy& BatchAttachPolicy::operator =(const JsonValue& jsonValue)
+BatchAttachPolicy& BatchAttachPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyReference"))
   {

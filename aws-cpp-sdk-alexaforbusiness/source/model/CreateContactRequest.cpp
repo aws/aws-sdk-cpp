@@ -66,7 +66,7 @@ Aws::String CreateContactRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateContactRequest::GetRequestSpecificHeaders() const

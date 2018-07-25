@@ -37,7 +37,7 @@ Prediction::Prediction() :
 {
 }
 
-Prediction::Prediction(const JsonValue& jsonValue) : 
+Prediction::Prediction(JsonView jsonValue) : 
     m_predictedLabelHasBeenSet(false),
     m_predictedValue(0.0),
     m_predictedValueHasBeenSet(false),
@@ -47,7 +47,7 @@ Prediction::Prediction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Prediction& Prediction::operator =(const JsonValue& jsonValue)
+Prediction& Prediction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("predictedLabel"))
   {
@@ -65,7 +65,7 @@ Prediction& Prediction::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("predictedScores"))
   {
-    Aws::Map<Aws::String, JsonValue> predictedScoresJsonMap = jsonValue.GetObject("predictedScores").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> predictedScoresJsonMap = jsonValue.GetObject("predictedScores").GetAllObjects();
     for(auto& predictedScoresItem : predictedScoresJsonMap)
     {
       m_predictedScores[predictedScoresItem.first] = predictedScoresItem.second.AsDouble();
@@ -75,7 +75,7 @@ Prediction& Prediction::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("details"))
   {
-    Aws::Map<Aws::String, JsonValue> detailsJsonMap = jsonValue.GetObject("details").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("details").GetAllObjects();
     for(auto& detailsItem : detailsJsonMap)
     {
       m_details[DetailsAttributesMapper::GetDetailsAttributesForName(detailsItem.first)] = detailsItem.second.AsString();

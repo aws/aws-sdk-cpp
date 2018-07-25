@@ -37,10 +37,10 @@ ListMemberAccountsResult::ListMemberAccountsResult(const Aws::AmazonWebServiceRe
 
 ListMemberAccountsResult& ListMemberAccountsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("memberAccounts"))
   {
-    Array<JsonValue> memberAccountsJsonList = jsonValue.GetArray("memberAccounts");
+    Array<JsonView> memberAccountsJsonList = jsonValue.GetArray("memberAccounts");
     for(unsigned memberAccountsIndex = 0; memberAccountsIndex < memberAccountsJsonList.GetLength(); ++memberAccountsIndex)
     {
       m_memberAccounts.push_back(memberAccountsJsonList[memberAccountsIndex].AsObject());

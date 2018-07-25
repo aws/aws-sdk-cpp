@@ -37,7 +37,7 @@ ContactData::ContactData() :
 {
 }
 
-ContactData::ContactData(const JsonValue& jsonValue) : 
+ContactData::ContactData(JsonView jsonValue) : 
     m_contactArnHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_firstNameHasBeenSet(false),
@@ -47,7 +47,7 @@ ContactData::ContactData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContactData& ContactData::operator =(const JsonValue& jsonValue)
+ContactData& ContactData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ContactArn"))
   {

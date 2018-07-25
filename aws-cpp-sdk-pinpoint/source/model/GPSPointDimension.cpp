@@ -35,7 +35,7 @@ GPSPointDimension::GPSPointDimension() :
 {
 }
 
-GPSPointDimension::GPSPointDimension(const JsonValue& jsonValue) : 
+GPSPointDimension::GPSPointDimension(JsonView jsonValue) : 
     m_coordinatesHasBeenSet(false),
     m_rangeInKilometers(0.0),
     m_rangeInKilometersHasBeenSet(false)
@@ -43,7 +43,7 @@ GPSPointDimension::GPSPointDimension(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GPSPointDimension& GPSPointDimension::operator =(const JsonValue& jsonValue)
+GPSPointDimension& GPSPointDimension::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Coordinates"))
   {

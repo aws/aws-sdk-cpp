@@ -37,10 +37,10 @@ DescribeInstanceInformationResult::DescribeInstanceInformationResult(const Aws::
 
 DescribeInstanceInformationResult& DescribeInstanceInformationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceInformationList"))
   {
-    Array<JsonValue> instanceInformationListJsonList = jsonValue.GetArray("InstanceInformationList");
+    Array<JsonView> instanceInformationListJsonList = jsonValue.GetArray("InstanceInformationList");
     for(unsigned instanceInformationListIndex = 0; instanceInformationListIndex < instanceInformationListJsonList.GetLength(); ++instanceInformationListIndex)
     {
       m_instanceInformationList.push_back(instanceInformationListJsonList[instanceInformationListIndex].AsObject());

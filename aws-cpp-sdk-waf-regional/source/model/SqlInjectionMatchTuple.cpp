@@ -35,7 +35,7 @@ SqlInjectionMatchTuple::SqlInjectionMatchTuple() :
 {
 }
 
-SqlInjectionMatchTuple::SqlInjectionMatchTuple(const JsonValue& jsonValue) : 
+SqlInjectionMatchTuple::SqlInjectionMatchTuple(JsonView jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
     m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false)
@@ -43,7 +43,7 @@ SqlInjectionMatchTuple::SqlInjectionMatchTuple(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SqlInjectionMatchTuple& SqlInjectionMatchTuple::operator =(const JsonValue& jsonValue)
+SqlInjectionMatchTuple& SqlInjectionMatchTuple::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FieldToMatch"))
   {

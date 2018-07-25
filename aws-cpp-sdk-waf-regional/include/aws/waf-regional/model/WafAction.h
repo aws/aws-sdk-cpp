@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     WafAction();
-    WafAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    WafAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WafAction(Aws::Utils::Json::JsonView jsonValue);
+    WafAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

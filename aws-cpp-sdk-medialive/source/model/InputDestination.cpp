@@ -35,7 +35,7 @@ InputDestination::InputDestination() :
 {
 }
 
-InputDestination::InputDestination(const JsonValue& jsonValue) : 
+InputDestination::InputDestination(JsonView jsonValue) : 
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
     m_urlHasBeenSet(false)
@@ -43,7 +43,7 @@ InputDestination::InputDestination(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputDestination& InputDestination::operator =(const JsonValue& jsonValue)
+InputDestination& InputDestination::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ip"))
   {

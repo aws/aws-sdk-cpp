@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     ElasticsearchRetryOptions();
-    ElasticsearchRetryOptions(const Aws::Utils::Json::JsonValue& jsonValue);
-    ElasticsearchRetryOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ElasticsearchRetryOptions(Aws::Utils::Json::JsonView jsonValue);
+    ElasticsearchRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

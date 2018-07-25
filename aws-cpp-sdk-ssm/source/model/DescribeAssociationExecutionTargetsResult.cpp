@@ -37,10 +37,10 @@ DescribeAssociationExecutionTargetsResult::DescribeAssociationExecutionTargetsRe
 
 DescribeAssociationExecutionTargetsResult& DescribeAssociationExecutionTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociationExecutionTargets"))
   {
-    Array<JsonValue> associationExecutionTargetsJsonList = jsonValue.GetArray("AssociationExecutionTargets");
+    Array<JsonView> associationExecutionTargetsJsonList = jsonValue.GetArray("AssociationExecutionTargets");
     for(unsigned associationExecutionTargetsIndex = 0; associationExecutionTargetsIndex < associationExecutionTargetsJsonList.GetLength(); ++associationExecutionTargetsIndex)
     {
       m_associationExecutionTargets.push_back(associationExecutionTargetsJsonList[associationExecutionTargetsIndex].AsObject());

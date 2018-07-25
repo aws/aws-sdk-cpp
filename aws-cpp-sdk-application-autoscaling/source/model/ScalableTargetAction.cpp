@@ -36,7 +36,7 @@ ScalableTargetAction::ScalableTargetAction() :
 {
 }
 
-ScalableTargetAction::ScalableTargetAction(const JsonValue& jsonValue) : 
+ScalableTargetAction::ScalableTargetAction(JsonView jsonValue) : 
     m_minCapacity(0),
     m_minCapacityHasBeenSet(false),
     m_maxCapacity(0),
@@ -45,7 +45,7 @@ ScalableTargetAction::ScalableTargetAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalableTargetAction& ScalableTargetAction::operator =(const JsonValue& jsonValue)
+ScalableTargetAction& ScalableTargetAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MinCapacity"))
   {

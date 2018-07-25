@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     InstanceInformationFilter();
-    InstanceInformationFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceInformationFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceInformationFilter(Aws::Utils::Json::JsonView jsonValue);
+    InstanceInformationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

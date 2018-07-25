@@ -42,7 +42,7 @@ ProductionVariantSummary::ProductionVariantSummary() :
 {
 }
 
-ProductionVariantSummary::ProductionVariantSummary(const JsonValue& jsonValue) : 
+ProductionVariantSummary::ProductionVariantSummary(JsonView jsonValue) : 
     m_variantNameHasBeenSet(false),
     m_deployedImagesHasBeenSet(false),
     m_currentWeight(0.0),
@@ -57,7 +57,7 @@ ProductionVariantSummary::ProductionVariantSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProductionVariantSummary& ProductionVariantSummary::operator =(const JsonValue& jsonValue)
+ProductionVariantSummary& ProductionVariantSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VariantName"))
   {
@@ -68,7 +68,7 @@ ProductionVariantSummary& ProductionVariantSummary::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("DeployedImages"))
   {
-    Array<JsonValue> deployedImagesJsonList = jsonValue.GetArray("DeployedImages");
+    Array<JsonView> deployedImagesJsonList = jsonValue.GetArray("DeployedImages");
     for(unsigned deployedImagesIndex = 0; deployedImagesIndex < deployedImagesJsonList.GetLength(); ++deployedImagesIndex)
     {
       m_deployedImages.push_back(deployedImagesJsonList[deployedImagesIndex].AsObject());

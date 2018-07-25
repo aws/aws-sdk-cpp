@@ -56,7 +56,7 @@ Aws::String NotifyWorkersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection NotifyWorkersRequest::GetRequestSpecificHeaders() const

@@ -49,7 +49,7 @@ APNSChannelResponse::APNSChannelResponse() :
 {
 }
 
-APNSChannelResponse::APNSChannelResponse(const JsonValue& jsonValue) : 
+APNSChannelResponse::APNSChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_defaultAuthenticationMethodHasBeenSet(false),
@@ -71,7 +71,7 @@ APNSChannelResponse::APNSChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-APNSChannelResponse& APNSChannelResponse::operator =(const JsonValue& jsonValue)
+APNSChannelResponse& APNSChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

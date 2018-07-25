@@ -37,7 +37,7 @@ Aws::String CreateExportJobRequest::SerializePayload() const
    payload = m_exportJobRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

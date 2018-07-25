@@ -80,7 +80,7 @@ Aws::String ReEncryptRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ReEncryptRequest::GetRequestSpecificHeaders() const

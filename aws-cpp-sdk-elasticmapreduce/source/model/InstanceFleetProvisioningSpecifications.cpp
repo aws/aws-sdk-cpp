@@ -33,13 +33,13 @@ InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications
 {
 }
 
-InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications(const JsonValue& jsonValue) : 
+InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications(JsonView jsonValue) : 
     m_spotSpecificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceFleetProvisioningSpecifications& InstanceFleetProvisioningSpecifications::operator =(const JsonValue& jsonValue)
+InstanceFleetProvisioningSpecifications& InstanceFleetProvisioningSpecifications::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SpotSpecification"))
   {

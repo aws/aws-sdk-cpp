@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     GCMMessage();
-    GCMMessage(const Aws::Utils::Json::JsonValue& jsonValue);
-    GCMMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GCMMessage(Aws::Utils::Json::JsonView jsonValue);
+    GCMMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

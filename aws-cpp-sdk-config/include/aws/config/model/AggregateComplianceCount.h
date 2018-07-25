@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     AggregateComplianceCount();
-    AggregateComplianceCount(const Aws::Utils::Json::JsonValue& jsonValue);
-    AggregateComplianceCount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AggregateComplianceCount(Aws::Utils::Json::JsonView jsonValue);
+    AggregateComplianceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

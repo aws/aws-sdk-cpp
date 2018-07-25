@@ -36,7 +36,7 @@ StorageConnector::StorageConnector() :
 {
 }
 
-StorageConnector::StorageConnector(const JsonValue& jsonValue) : 
+StorageConnector::StorageConnector(JsonView jsonValue) : 
     m_connectorType(StorageConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
     m_resourceIdentifierHasBeenSet(false),
@@ -45,7 +45,7 @@ StorageConnector::StorageConnector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StorageConnector& StorageConnector::operator =(const JsonValue& jsonValue)
+StorageConnector& StorageConnector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConnectorType"))
   {
@@ -63,7 +63,7 @@ StorageConnector& StorageConnector::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Domains"))
   {
-    Array<JsonValue> domainsJsonList = jsonValue.GetArray("Domains");
+    Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
     for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
     {
       m_domains.push_back(domainsJsonList[domainsIndex].AsString());

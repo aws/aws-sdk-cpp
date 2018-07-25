@@ -41,7 +41,7 @@ AttackProperty::AttackProperty() :
 {
 }
 
-AttackProperty::AttackProperty(const JsonValue& jsonValue) : 
+AttackProperty::AttackProperty(JsonView jsonValue) : 
     m_attackLayer(AttackLayer::NOT_SET),
     m_attackLayerHasBeenSet(false),
     m_attackPropertyIdentifier(AttackPropertyIdentifier::NOT_SET),
@@ -55,7 +55,7 @@ AttackProperty::AttackProperty(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttackProperty& AttackProperty::operator =(const JsonValue& jsonValue)
+AttackProperty& AttackProperty::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttackLayer"))
   {
@@ -73,7 +73,7 @@ AttackProperty& AttackProperty::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("TopContributors"))
   {
-    Array<JsonValue> topContributorsJsonList = jsonValue.GetArray("TopContributors");
+    Array<JsonView> topContributorsJsonList = jsonValue.GetArray("TopContributors");
     for(unsigned topContributorsIndex = 0; topContributorsIndex < topContributorsJsonList.GetLength(); ++topContributorsIndex)
     {
       m_topContributors.push_back(topContributorsJsonList[topContributorsIndex].AsObject());

@@ -34,14 +34,14 @@ UniqueProblem::UniqueProblem() :
 {
 }
 
-UniqueProblem::UniqueProblem(const JsonValue& jsonValue) : 
+UniqueProblem::UniqueProblem(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
     m_problemsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UniqueProblem& UniqueProblem::operator =(const JsonValue& jsonValue)
+UniqueProblem& UniqueProblem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("message"))
   {
@@ -52,7 +52,7 @@ UniqueProblem& UniqueProblem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("problems"))
   {
-    Array<JsonValue> problemsJsonList = jsonValue.GetArray("problems");
+    Array<JsonView> problemsJsonList = jsonValue.GetArray("problems");
     for(unsigned problemsIndex = 0; problemsIndex < problemsJsonList.GetLength(); ++problemsIndex)
     {
       m_problems.push_back(problemsJsonList[problemsIndex].AsObject());

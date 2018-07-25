@@ -35,7 +35,7 @@ PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdate
 {
 }
 
-PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdatedEventMetadata(const JsonValue& jsonValue) : 
+PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdatedEventMetadata(JsonView jsonValue) : 
     m_repositoryNameHasBeenSet(false),
     m_beforeCommitIdHasBeenSet(false),
     m_afterCommitIdHasBeenSet(false)
@@ -43,7 +43,7 @@ PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdate
   *this = jsonValue;
 }
 
-PullRequestSourceReferenceUpdatedEventMetadata& PullRequestSourceReferenceUpdatedEventMetadata::operator =(const JsonValue& jsonValue)
+PullRequestSourceReferenceUpdatedEventMetadata& PullRequestSourceReferenceUpdatedEventMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositoryName"))
   {

@@ -40,7 +40,7 @@ ProvisionedThroughputDescription::ProvisionedThroughputDescription() :
 {
 }
 
-ProvisionedThroughputDescription::ProvisionedThroughputDescription(const JsonValue& jsonValue) : 
+ProvisionedThroughputDescription::ProvisionedThroughputDescription(JsonView jsonValue) : 
     m_lastIncreaseDateTimeHasBeenSet(false),
     m_lastDecreaseDateTimeHasBeenSet(false),
     m_numberOfDecreasesToday(0),
@@ -53,7 +53,7 @@ ProvisionedThroughputDescription::ProvisionedThroughputDescription(const JsonVal
   *this = jsonValue;
 }
 
-ProvisionedThroughputDescription& ProvisionedThroughputDescription::operator =(const JsonValue& jsonValue)
+ProvisionedThroughputDescription& ProvisionedThroughputDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LastIncreaseDateTime"))
   {

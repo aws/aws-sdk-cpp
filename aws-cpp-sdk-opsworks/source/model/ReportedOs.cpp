@@ -35,7 +35,7 @@ ReportedOs::ReportedOs() :
 {
 }
 
-ReportedOs::ReportedOs(const JsonValue& jsonValue) : 
+ReportedOs::ReportedOs(JsonView jsonValue) : 
     m_familyHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false)
@@ -43,7 +43,7 @@ ReportedOs::ReportedOs(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReportedOs& ReportedOs::operator =(const JsonValue& jsonValue)
+ReportedOs& ReportedOs::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Family"))
   {

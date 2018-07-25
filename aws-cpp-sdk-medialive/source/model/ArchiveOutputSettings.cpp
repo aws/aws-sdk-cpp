@@ -35,7 +35,7 @@ ArchiveOutputSettings::ArchiveOutputSettings() :
 {
 }
 
-ArchiveOutputSettings::ArchiveOutputSettings(const JsonValue& jsonValue) : 
+ArchiveOutputSettings::ArchiveOutputSettings(JsonView jsonValue) : 
     m_containerSettingsHasBeenSet(false),
     m_extensionHasBeenSet(false),
     m_nameModifierHasBeenSet(false)
@@ -43,7 +43,7 @@ ArchiveOutputSettings::ArchiveOutputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ArchiveOutputSettings& ArchiveOutputSettings::operator =(const JsonValue& jsonValue)
+ArchiveOutputSettings& ArchiveOutputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerSettings"))
   {

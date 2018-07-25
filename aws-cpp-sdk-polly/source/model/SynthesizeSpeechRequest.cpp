@@ -90,7 +90,7 @@ Aws::String SynthesizeSpeechRequest::SerializePayload() const
    payload.WithString("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

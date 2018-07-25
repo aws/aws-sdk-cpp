@@ -83,7 +83,7 @@ Aws::String GenerateDataSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GenerateDataSetRequest::GetRequestSpecificHeaders() const

@@ -34,14 +34,14 @@ CodeHook::CodeHook() :
 {
 }
 
-CodeHook::CodeHook(const JsonValue& jsonValue) : 
+CodeHook::CodeHook(JsonView jsonValue) : 
     m_uriHasBeenSet(false),
     m_messageVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CodeHook& CodeHook::operator =(const JsonValue& jsonValue)
+CodeHook& CodeHook::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("uri"))
   {

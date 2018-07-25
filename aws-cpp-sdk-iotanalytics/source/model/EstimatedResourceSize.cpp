@@ -35,7 +35,7 @@ EstimatedResourceSize::EstimatedResourceSize() :
 {
 }
 
-EstimatedResourceSize::EstimatedResourceSize(const JsonValue& jsonValue) : 
+EstimatedResourceSize::EstimatedResourceSize(JsonView jsonValue) : 
     m_estimatedSizeInBytes(0.0),
     m_estimatedSizeInBytesHasBeenSet(false),
     m_estimatedOnHasBeenSet(false)
@@ -43,7 +43,7 @@ EstimatedResourceSize::EstimatedResourceSize(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EstimatedResourceSize& EstimatedResourceSize::operator =(const JsonValue& jsonValue)
+EstimatedResourceSize& EstimatedResourceSize::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("estimatedSizeInBytes"))
   {

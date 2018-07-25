@@ -37,7 +37,7 @@ RepositoryTrigger::RepositoryTrigger() :
 {
 }
 
-RepositoryTrigger::RepositoryTrigger(const JsonValue& jsonValue) : 
+RepositoryTrigger::RepositoryTrigger(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_destinationArnHasBeenSet(false),
     m_customDataHasBeenSet(false),
@@ -47,7 +47,7 @@ RepositoryTrigger::RepositoryTrigger(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RepositoryTrigger& RepositoryTrigger::operator =(const JsonValue& jsonValue)
+RepositoryTrigger& RepositoryTrigger::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -72,7 +72,7 @@ RepositoryTrigger& RepositoryTrigger::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("branches"))
   {
-    Array<JsonValue> branchesJsonList = jsonValue.GetArray("branches");
+    Array<JsonView> branchesJsonList = jsonValue.GetArray("branches");
     for(unsigned branchesIndex = 0; branchesIndex < branchesJsonList.GetLength(); ++branchesIndex)
     {
       m_branches.push_back(branchesJsonList[branchesIndex].AsString());
@@ -82,7 +82,7 @@ RepositoryTrigger& RepositoryTrigger::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonValue> eventsJsonList = jsonValue.GetArray("events");
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(RepositoryTriggerEventEnumMapper::GetRepositoryTriggerEventEnumForName(eventsJsonList[eventsIndex].AsString()));

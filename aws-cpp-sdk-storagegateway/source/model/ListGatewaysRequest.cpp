@@ -45,7 +45,7 @@ Aws::String ListGatewaysRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListGatewaysRequest::GetRequestSpecificHeaders() const

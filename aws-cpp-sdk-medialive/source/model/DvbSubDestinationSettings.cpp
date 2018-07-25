@@ -64,7 +64,7 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
 {
 }
 
-DvbSubDestinationSettings::DvbSubDestinationSettings(const JsonValue& jsonValue) : 
+DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) : 
     m_alignment(DvbSubDestinationAlignment::NOT_SET),
     m_alignmentHasBeenSet(false),
     m_backgroundColor(DvbSubDestinationBackgroundColor::NOT_SET),
@@ -101,7 +101,7 @@ DvbSubDestinationSettings::DvbSubDestinationSettings(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(const JsonValue& jsonValue)
+DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("alignment"))
   {

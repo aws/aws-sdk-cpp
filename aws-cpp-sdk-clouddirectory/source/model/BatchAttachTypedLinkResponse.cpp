@@ -33,13 +33,13 @@ BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse() :
 {
 }
 
-BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse(const JsonValue& jsonValue) : 
+BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse(JsonView jsonValue) : 
     m_typedLinkSpecifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchAttachTypedLinkResponse& BatchAttachTypedLinkResponse::operator =(const JsonValue& jsonValue)
+BatchAttachTypedLinkResponse& BatchAttachTypedLinkResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TypedLinkSpecifier"))
   {

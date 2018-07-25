@@ -36,7 +36,7 @@ NotificationConfig::NotificationConfig() :
 {
 }
 
-NotificationConfig::NotificationConfig(const JsonValue& jsonValue) : 
+NotificationConfig::NotificationConfig(JsonView jsonValue) : 
     m_notificationArnHasBeenSet(false),
     m_notificationEventsHasBeenSet(false),
     m_notificationType(NotificationType::NOT_SET),
@@ -45,7 +45,7 @@ NotificationConfig::NotificationConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NotificationConfig& NotificationConfig::operator =(const JsonValue& jsonValue)
+NotificationConfig& NotificationConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NotificationArn"))
   {
@@ -56,7 +56,7 @@ NotificationConfig& NotificationConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("NotificationEvents"))
   {
-    Array<JsonValue> notificationEventsJsonList = jsonValue.GetArray("NotificationEvents");
+    Array<JsonView> notificationEventsJsonList = jsonValue.GetArray("NotificationEvents");
     for(unsigned notificationEventsIndex = 0; notificationEventsIndex < notificationEventsJsonList.GetLength(); ++notificationEventsIndex)
     {
       m_notificationEvents.push_back(NotificationEventMapper::GetNotificationEventForName(notificationEventsJsonList[notificationEventsIndex].AsString()));

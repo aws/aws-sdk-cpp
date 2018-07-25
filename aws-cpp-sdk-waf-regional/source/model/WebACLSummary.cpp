@@ -34,14 +34,14 @@ WebACLSummary::WebACLSummary() :
 {
 }
 
-WebACLSummary::WebACLSummary(const JsonValue& jsonValue) : 
+WebACLSummary::WebACLSummary(JsonView jsonValue) : 
     m_webACLIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WebACLSummary& WebACLSummary::operator =(const JsonValue& jsonValue)
+WebACLSummary& WebACLSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WebACLId"))
   {

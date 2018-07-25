@@ -57,7 +57,7 @@ Aws::String DescribeDirectoriesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeDirectoriesRequest::GetRequestSpecificHeaders() const

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Principal();
-    Principal(const Aws::Utils::Json::JsonValue& jsonValue);
-    Principal& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Principal(Aws::Utils::Json::JsonView jsonValue);
+    Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

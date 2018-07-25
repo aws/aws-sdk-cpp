@@ -38,7 +38,7 @@ RequestValidator::RequestValidator() :
 {
 }
 
-RequestValidator::RequestValidator(const JsonValue& jsonValue) : 
+RequestValidator::RequestValidator(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_validateRequestBody(false),
@@ -49,7 +49,7 @@ RequestValidator::RequestValidator(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RequestValidator& RequestValidator::operator =(const JsonValue& jsonValue)
+RequestValidator& RequestValidator::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

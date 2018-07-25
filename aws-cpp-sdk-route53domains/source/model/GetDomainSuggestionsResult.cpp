@@ -37,10 +37,10 @@ GetDomainSuggestionsResult::GetDomainSuggestionsResult(const Aws::AmazonWebServi
 
 GetDomainSuggestionsResult& GetDomainSuggestionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SuggestionsList"))
   {
-    Array<JsonValue> suggestionsListJsonList = jsonValue.GetArray("SuggestionsList");
+    Array<JsonView> suggestionsListJsonList = jsonValue.GetArray("SuggestionsList");
     for(unsigned suggestionsListIndex = 0; suggestionsListIndex < suggestionsListJsonList.GetLength(); ++suggestionsListIndex)
     {
       m_suggestionsList.push_back(suggestionsListJsonList[suggestionsListIndex].AsObject());

@@ -39,7 +39,7 @@ UpdateThingGroupResult::UpdateThingGroupResult(const Aws::AmazonWebServiceResult
 
 UpdateThingGroupResult& UpdateThingGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInt64("version");

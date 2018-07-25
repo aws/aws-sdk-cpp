@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     SchemaAttributeType();
-    SchemaAttributeType(const Aws::Utils::Json::JsonValue& jsonValue);
-    SchemaAttributeType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SchemaAttributeType(Aws::Utils::Json::JsonView jsonValue);
+    SchemaAttributeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

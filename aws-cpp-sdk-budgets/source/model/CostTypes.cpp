@@ -54,7 +54,7 @@ CostTypes::CostTypes() :
 {
 }
 
-CostTypes::CostTypes(const JsonValue& jsonValue) : 
+CostTypes::CostTypes(JsonView jsonValue) : 
     m_includeTax(false),
     m_includeTaxHasBeenSet(false),
     m_includeSubscription(false),
@@ -81,7 +81,7 @@ CostTypes::CostTypes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CostTypes& CostTypes::operator =(const JsonValue& jsonValue)
+CostTypes& CostTypes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IncludeTax"))
   {

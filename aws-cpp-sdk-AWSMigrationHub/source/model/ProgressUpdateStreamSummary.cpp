@@ -33,13 +33,13 @@ ProgressUpdateStreamSummary::ProgressUpdateStreamSummary() :
 {
 }
 
-ProgressUpdateStreamSummary::ProgressUpdateStreamSummary(const JsonValue& jsonValue) : 
+ProgressUpdateStreamSummary::ProgressUpdateStreamSummary(JsonView jsonValue) : 
     m_progressUpdateStreamNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ProgressUpdateStreamSummary& ProgressUpdateStreamSummary::operator =(const JsonValue& jsonValue)
+ProgressUpdateStreamSummary& ProgressUpdateStreamSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProgressUpdateStreamName"))
   {

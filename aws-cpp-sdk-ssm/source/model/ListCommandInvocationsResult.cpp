@@ -37,10 +37,10 @@ ListCommandInvocationsResult::ListCommandInvocationsResult(const Aws::AmazonWebS
 
 ListCommandInvocationsResult& ListCommandInvocationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CommandInvocations"))
   {
-    Array<JsonValue> commandInvocationsJsonList = jsonValue.GetArray("CommandInvocations");
+    Array<JsonView> commandInvocationsJsonList = jsonValue.GetArray("CommandInvocations");
     for(unsigned commandInvocationsIndex = 0; commandInvocationsIndex < commandInvocationsJsonList.GetLength(); ++commandInvocationsIndex)
     {
       m_commandInvocations.push_back(commandInvocationsJsonList[commandInvocationsIndex].AsObject());

@@ -37,7 +37,7 @@ DescribeDimensionKeysResult::DescribeDimensionKeysResult(const Aws::AmazonWebSer
 
 DescribeDimensionKeysResult& DescribeDimensionKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AlignedStartTime"))
   {
     m_alignedStartTime = jsonValue.GetDouble("AlignedStartTime");
@@ -52,7 +52,7 @@ DescribeDimensionKeysResult& DescribeDimensionKeysResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("PartitionKeys"))
   {
-    Array<JsonValue> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
+    Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
     for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
     {
       m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
@@ -61,7 +61,7 @@ DescribeDimensionKeysResult& DescribeDimensionKeysResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonValue> keysJsonList = jsonValue.GetArray("Keys");
+    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
       m_keys.push_back(keysJsonList[keysIndex].AsObject());

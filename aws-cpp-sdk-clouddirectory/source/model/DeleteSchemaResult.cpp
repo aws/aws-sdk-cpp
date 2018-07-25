@@ -37,7 +37,7 @@ DeleteSchemaResult::DeleteSchemaResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DeleteSchemaResult& DeleteSchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");

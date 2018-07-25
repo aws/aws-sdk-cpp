@@ -38,7 +38,7 @@ TransformInput::TransformInput() :
 {
 }
 
-TransformInput::TransformInput(const JsonValue& jsonValue) : 
+TransformInput::TransformInput(JsonView jsonValue) : 
     m_dataSourceHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
     m_compressionType(CompressionType::NOT_SET),
@@ -49,7 +49,7 @@ TransformInput::TransformInput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TransformInput& TransformInput::operator =(const JsonValue& jsonValue)
+TransformInput& TransformInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DataSource"))
   {

@@ -37,10 +37,10 @@ ListCertificatesResult::ListCertificatesResult(const Aws::AmazonWebServiceResult
 
 ListCertificatesResult& ListCertificatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("certificates"))
   {
-    Array<JsonValue> certificatesJsonList = jsonValue.GetArray("certificates");
+    Array<JsonView> certificatesJsonList = jsonValue.GetArray("certificates");
     for(unsigned certificatesIndex = 0; certificatesIndex < certificatesJsonList.GetLength(); ++certificatesIndex)
     {
       m_certificates.push_back(certificatesJsonList[certificatesIndex].AsObject());

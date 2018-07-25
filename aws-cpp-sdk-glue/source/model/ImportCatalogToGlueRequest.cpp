@@ -37,7 +37,7 @@ Aws::String ImportCatalogToGlueRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ImportCatalogToGlueRequest::GetRequestSpecificHeaders() const

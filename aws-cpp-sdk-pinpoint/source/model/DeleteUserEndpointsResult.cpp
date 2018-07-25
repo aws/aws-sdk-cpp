@@ -37,7 +37,7 @@ DeleteUserEndpointsResult::DeleteUserEndpointsResult(const Aws::AmazonWebService
 
 DeleteUserEndpointsResult& DeleteUserEndpointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_endpointsResponse = jsonValue;
 
 

@@ -35,7 +35,7 @@ ObjectAttributeAction::ObjectAttributeAction() :
 {
 }
 
-ObjectAttributeAction::ObjectAttributeAction(const JsonValue& jsonValue) : 
+ObjectAttributeAction::ObjectAttributeAction(JsonView jsonValue) : 
     m_objectAttributeActionType(UpdateActionType::NOT_SET),
     m_objectAttributeActionTypeHasBeenSet(false),
     m_objectAttributeUpdateValueHasBeenSet(false)
@@ -43,7 +43,7 @@ ObjectAttributeAction::ObjectAttributeAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ObjectAttributeAction& ObjectAttributeAction::operator =(const JsonValue& jsonValue)
+ObjectAttributeAction& ObjectAttributeAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectAttributeActionType"))
   {

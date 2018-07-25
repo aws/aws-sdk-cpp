@@ -34,6 +34,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -52,8 +53,8 @@ namespace Model
   {
   public:
     CmafGroupSettings();
-    CmafGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    CmafGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CmafGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    CmafGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

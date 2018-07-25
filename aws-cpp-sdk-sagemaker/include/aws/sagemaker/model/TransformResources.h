@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TransformResources();
-    TransformResources(const Aws::Utils::Json::JsonValue& jsonValue);
-    TransformResources& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TransformResources(Aws::Utils::Json::JsonView jsonValue);
+    TransformResources& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

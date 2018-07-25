@@ -36,7 +36,7 @@ PlayerLatencyPolicy::PlayerLatencyPolicy() :
 {
 }
 
-PlayerLatencyPolicy::PlayerLatencyPolicy(const JsonValue& jsonValue) : 
+PlayerLatencyPolicy::PlayerLatencyPolicy(JsonView jsonValue) : 
     m_maximumIndividualPlayerLatencyMilliseconds(0),
     m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet(false),
     m_policyDurationSeconds(0),
@@ -45,7 +45,7 @@ PlayerLatencyPolicy::PlayerLatencyPolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlayerLatencyPolicy& PlayerLatencyPolicy::operator =(const JsonValue& jsonValue)
+PlayerLatencyPolicy& PlayerLatencyPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MaximumIndividualPlayerLatencyMilliseconds"))
   {

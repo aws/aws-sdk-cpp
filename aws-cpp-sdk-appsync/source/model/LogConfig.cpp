@@ -35,7 +35,7 @@ LogConfig::LogConfig() :
 {
 }
 
-LogConfig::LogConfig(const JsonValue& jsonValue) : 
+LogConfig::LogConfig(JsonView jsonValue) : 
     m_fieldLogLevel(FieldLogLevel::NOT_SET),
     m_fieldLogLevelHasBeenSet(false),
     m_cloudWatchLogsRoleArnHasBeenSet(false)
@@ -43,7 +43,7 @@ LogConfig::LogConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LogConfig& LogConfig::operator =(const JsonValue& jsonValue)
+LogConfig& LogConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fieldLogLevel"))
   {

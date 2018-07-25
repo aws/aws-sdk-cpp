@@ -80,7 +80,7 @@ Aws::String GetAggregateComplianceDetailsByConfigRuleRequest::SerializePayload()
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetAggregateComplianceDetailsByConfigRuleRequest::GetRequestSpecificHeaders() const

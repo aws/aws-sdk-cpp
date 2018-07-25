@@ -35,7 +35,7 @@ CustomerArtifactPaths::CustomerArtifactPaths() :
 {
 }
 
-CustomerArtifactPaths::CustomerArtifactPaths(const JsonValue& jsonValue) : 
+CustomerArtifactPaths::CustomerArtifactPaths(JsonView jsonValue) : 
     m_iosPathsHasBeenSet(false),
     m_androidPathsHasBeenSet(false),
     m_deviceHostPathsHasBeenSet(false)
@@ -43,11 +43,11 @@ CustomerArtifactPaths::CustomerArtifactPaths(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CustomerArtifactPaths& CustomerArtifactPaths::operator =(const JsonValue& jsonValue)
+CustomerArtifactPaths& CustomerArtifactPaths::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("iosPaths"))
   {
-    Array<JsonValue> iosPathsJsonList = jsonValue.GetArray("iosPaths");
+    Array<JsonView> iosPathsJsonList = jsonValue.GetArray("iosPaths");
     for(unsigned iosPathsIndex = 0; iosPathsIndex < iosPathsJsonList.GetLength(); ++iosPathsIndex)
     {
       m_iosPaths.push_back(iosPathsJsonList[iosPathsIndex].AsString());
@@ -57,7 +57,7 @@ CustomerArtifactPaths& CustomerArtifactPaths::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("androidPaths"))
   {
-    Array<JsonValue> androidPathsJsonList = jsonValue.GetArray("androidPaths");
+    Array<JsonView> androidPathsJsonList = jsonValue.GetArray("androidPaths");
     for(unsigned androidPathsIndex = 0; androidPathsIndex < androidPathsJsonList.GetLength(); ++androidPathsIndex)
     {
       m_androidPaths.push_back(androidPathsJsonList[androidPathsIndex].AsString());
@@ -67,7 +67,7 @@ CustomerArtifactPaths& CustomerArtifactPaths::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("deviceHostPaths"))
   {
-    Array<JsonValue> deviceHostPathsJsonList = jsonValue.GetArray("deviceHostPaths");
+    Array<JsonView> deviceHostPathsJsonList = jsonValue.GetArray("deviceHostPaths");
     for(unsigned deviceHostPathsIndex = 0; deviceHostPathsIndex < deviceHostPathsJsonList.GetLength(); ++deviceHostPathsIndex)
     {
       m_deviceHostPaths.push_back(deviceHostPathsJsonList[deviceHostPathsIndex].AsString());

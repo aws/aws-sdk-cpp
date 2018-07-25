@@ -37,10 +37,10 @@ PutTraceSegmentsResult::PutTraceSegmentsResult(const Aws::AmazonWebServiceResult
 
 PutTraceSegmentsResult& PutTraceSegmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UnprocessedTraceSegments"))
   {
-    Array<JsonValue> unprocessedTraceSegmentsJsonList = jsonValue.GetArray("UnprocessedTraceSegments");
+    Array<JsonView> unprocessedTraceSegmentsJsonList = jsonValue.GetArray("UnprocessedTraceSegments");
     for(unsigned unprocessedTraceSegmentsIndex = 0; unprocessedTraceSegmentsIndex < unprocessedTraceSegmentsJsonList.GetLength(); ++unprocessedTraceSegmentsIndex)
     {
       m_unprocessedTraceSegments.push_back(unprocessedTraceSegmentsJsonList[unprocessedTraceSegmentsIndex].AsObject());

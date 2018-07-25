@@ -46,7 +46,7 @@ Suite::Suite() :
 {
 }
 
-Suite::Suite(const JsonValue& jsonValue) : 
+Suite::Suite(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(TestType::NOT_SET),
@@ -65,7 +65,7 @@ Suite::Suite(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Suite& Suite::operator =(const JsonValue& jsonValue)
+Suite& Suite::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

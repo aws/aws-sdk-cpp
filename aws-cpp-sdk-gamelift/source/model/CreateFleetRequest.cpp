@@ -150,7 +150,7 @@ Aws::String CreateFleetRequest::SerializePayload() const
    payload.WithString("FleetType", FleetTypeMapper::GetNameForFleetType(m_fleetType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateFleetRequest::GetRequestSpecificHeaders() const

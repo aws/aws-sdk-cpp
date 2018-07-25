@@ -37,7 +37,7 @@ WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttribut
 {
 }
 
-WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttributes(const JsonValue& jsonValue) : 
+WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttributes(JsonView jsonValue) : 
     m_signalNameHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_externalWorkflowExecutionHasBeenSet(false),
@@ -47,7 +47,7 @@ WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttribut
   *this = jsonValue;
 }
 
-WorkflowExecutionSignaledEventAttributes& WorkflowExecutionSignaledEventAttributes::operator =(const JsonValue& jsonValue)
+WorkflowExecutionSignaledEventAttributes& WorkflowExecutionSignaledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("signalName"))
   {

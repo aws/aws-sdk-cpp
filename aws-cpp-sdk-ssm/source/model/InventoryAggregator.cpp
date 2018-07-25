@@ -34,14 +34,14 @@ InventoryAggregator::InventoryAggregator() :
 {
 }
 
-InventoryAggregator::InventoryAggregator(const JsonValue& jsonValue) : 
+InventoryAggregator::InventoryAggregator(JsonView jsonValue) : 
     m_expressionHasBeenSet(false),
     m_aggregatorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InventoryAggregator& InventoryAggregator::operator =(const JsonValue& jsonValue)
+InventoryAggregator& InventoryAggregator::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Expression"))
   {
@@ -52,7 +52,7 @@ InventoryAggregator& InventoryAggregator::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Aggregators"))
   {
-    Array<JsonValue> aggregatorsJsonList = jsonValue.GetArray("Aggregators");
+    Array<JsonView> aggregatorsJsonList = jsonValue.GetArray("Aggregators");
     for(unsigned aggregatorsIndex = 0; aggregatorsIndex < aggregatorsJsonList.GetLength(); ++aggregatorsIndex)
     {
       m_aggregators.push_back(aggregatorsJsonList[aggregatorsIndex].AsObject());

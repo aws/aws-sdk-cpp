@@ -52,7 +52,7 @@ Aws::String AddApplicationReferenceDataSourceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddApplicationReferenceDataSourceRequest::GetRequestSpecificHeaders() const

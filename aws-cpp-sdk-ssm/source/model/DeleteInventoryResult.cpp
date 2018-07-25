@@ -37,7 +37,7 @@ DeleteInventoryResult::DeleteInventoryResult(const Aws::AmazonWebServiceResult<J
 
 DeleteInventoryResult& DeleteInventoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeletionId"))
   {
     m_deletionId = jsonValue.GetString("DeletionId");

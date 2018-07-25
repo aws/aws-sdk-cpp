@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Comprehend
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     KeyPhrasesDetectionJobProperties();
-    KeyPhrasesDetectionJobProperties(const Aws::Utils::Json::JsonValue& jsonValue);
-    KeyPhrasesDetectionJobProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KeyPhrasesDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    KeyPhrasesDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

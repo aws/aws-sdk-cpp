@@ -37,7 +37,7 @@ DescribeDeliveryStreamResult::DescribeDeliveryStreamResult(const Aws::AmazonWebS
 
 DescribeDeliveryStreamResult& DescribeDeliveryStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeliveryStreamDescription"))
   {
     m_deliveryStreamDescription = jsonValue.GetObject("DeliveryStreamDescription");

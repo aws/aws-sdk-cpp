@@ -78,7 +78,7 @@ Aws::String DescribeWorkspacesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeWorkspacesRequest::GetRequestSpecificHeaders() const

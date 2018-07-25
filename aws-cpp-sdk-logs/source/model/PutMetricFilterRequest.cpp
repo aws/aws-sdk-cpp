@@ -63,7 +63,7 @@ Aws::String PutMetricFilterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutMetricFilterRequest::GetRequestSpecificHeaders() const

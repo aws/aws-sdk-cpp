@@ -37,7 +37,7 @@ GetApnsVoipChannelResult::GetApnsVoipChannelResult(const Aws::AmazonWebServiceRe
 
 GetApnsVoipChannelResult& GetApnsVoipChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_aPNSVoipChannelResponse = jsonValue;
 
 

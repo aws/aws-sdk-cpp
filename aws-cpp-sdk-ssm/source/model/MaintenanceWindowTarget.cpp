@@ -40,7 +40,7 @@ MaintenanceWindowTarget::MaintenanceWindowTarget() :
 {
 }
 
-MaintenanceWindowTarget::MaintenanceWindowTarget(const JsonValue& jsonValue) : 
+MaintenanceWindowTarget::MaintenanceWindowTarget(JsonView jsonValue) : 
     m_windowIdHasBeenSet(false),
     m_windowTargetIdHasBeenSet(false),
     m_resourceType(MaintenanceWindowResourceType::NOT_SET),
@@ -53,7 +53,7 @@ MaintenanceWindowTarget::MaintenanceWindowTarget(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MaintenanceWindowTarget& MaintenanceWindowTarget::operator =(const JsonValue& jsonValue)
+MaintenanceWindowTarget& MaintenanceWindowTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WindowId"))
   {
@@ -78,7 +78,7 @@ MaintenanceWindowTarget& MaintenanceWindowTarget::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());

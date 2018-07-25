@@ -64,7 +64,7 @@ Aws::String DescribeRepositoriesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeRepositoriesRequest::GetRequestSpecificHeaders() const

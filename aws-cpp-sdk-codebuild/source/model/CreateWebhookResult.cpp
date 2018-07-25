@@ -37,7 +37,7 @@ CreateWebhookResult::CreateWebhookResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateWebhookResult& CreateWebhookResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("webhook"))
   {
     m_webhook = jsonValue.GetObject("webhook");

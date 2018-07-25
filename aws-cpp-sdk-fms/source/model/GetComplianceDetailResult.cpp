@@ -37,7 +37,7 @@ GetComplianceDetailResult::GetComplianceDetailResult(const Aws::AmazonWebService
 
 GetComplianceDetailResult& GetComplianceDetailResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PolicyComplianceDetail"))
   {
     m_policyComplianceDetail = jsonValue.GetObject("PolicyComplianceDetail");

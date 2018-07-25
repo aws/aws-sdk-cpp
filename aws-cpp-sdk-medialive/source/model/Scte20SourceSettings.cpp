@@ -36,7 +36,7 @@ Scte20SourceSettings::Scte20SourceSettings() :
 {
 }
 
-Scte20SourceSettings::Scte20SourceSettings(const JsonValue& jsonValue) : 
+Scte20SourceSettings::Scte20SourceSettings(JsonView jsonValue) : 
     m_convert608To708(Scte20Convert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
     m_source608ChannelNumber(0),
@@ -45,7 +45,7 @@ Scte20SourceSettings::Scte20SourceSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Scte20SourceSettings& Scte20SourceSettings::operator =(const JsonValue& jsonValue)
+Scte20SourceSettings& Scte20SourceSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("convert608To708"))
   {

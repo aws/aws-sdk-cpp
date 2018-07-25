@@ -36,7 +36,7 @@ CaptionLanguageMapping::CaptionLanguageMapping() :
 {
 }
 
-CaptionLanguageMapping::CaptionLanguageMapping(const JsonValue& jsonValue) : 
+CaptionLanguageMapping::CaptionLanguageMapping(JsonView jsonValue) : 
     m_captionChannel(0),
     m_captionChannelHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
@@ -45,7 +45,7 @@ CaptionLanguageMapping::CaptionLanguageMapping(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionLanguageMapping& CaptionLanguageMapping::operator =(const JsonValue& jsonValue)
+CaptionLanguageMapping& CaptionLanguageMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("captionChannel"))
   {

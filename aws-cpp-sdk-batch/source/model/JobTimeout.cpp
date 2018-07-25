@@ -34,14 +34,14 @@ JobTimeout::JobTimeout() :
 {
 }
 
-JobTimeout::JobTimeout(const JsonValue& jsonValue) : 
+JobTimeout::JobTimeout(JsonView jsonValue) : 
     m_attemptDurationSeconds(0),
     m_attemptDurationSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JobTimeout& JobTimeout::operator =(const JsonValue& jsonValue)
+JobTimeout& JobTimeout::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attemptDurationSeconds"))
   {

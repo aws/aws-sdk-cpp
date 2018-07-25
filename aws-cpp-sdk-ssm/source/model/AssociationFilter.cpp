@@ -35,7 +35,7 @@ AssociationFilter::AssociationFilter() :
 {
 }
 
-AssociationFilter::AssociationFilter(const JsonValue& jsonValue) : 
+AssociationFilter::AssociationFilter(JsonView jsonValue) : 
     m_key(AssociationFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ AssociationFilter::AssociationFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssociationFilter& AssociationFilter::operator =(const JsonValue& jsonValue)
+AssociationFilter& AssociationFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("key"))
   {

@@ -66,7 +66,7 @@ MsSmoothGroupSettings::MsSmoothGroupSettings() :
 {
 }
 
-MsSmoothGroupSettings::MsSmoothGroupSettings(const JsonValue& jsonValue) : 
+MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue) : 
     m_acquisitionPointIdHasBeenSet(false),
     m_audioOnlyTimecodeControl(SmoothGroupAudioOnlyTimecodeControl::NOT_SET),
     m_audioOnlyTimecodeControlHasBeenSet(false),
@@ -105,7 +105,7 @@ MsSmoothGroupSettings::MsSmoothGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MsSmoothGroupSettings& MsSmoothGroupSettings::operator =(const JsonValue& jsonValue)
+MsSmoothGroupSettings& MsSmoothGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("acquisitionPointId"))
   {

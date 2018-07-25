@@ -34,14 +34,14 @@ TimeBasedAutoScalingConfiguration::TimeBasedAutoScalingConfiguration() :
 {
 }
 
-TimeBasedAutoScalingConfiguration::TimeBasedAutoScalingConfiguration(const JsonValue& jsonValue) : 
+TimeBasedAutoScalingConfiguration::TimeBasedAutoScalingConfiguration(JsonView jsonValue) : 
     m_instanceIdHasBeenSet(false),
     m_autoScalingScheduleHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TimeBasedAutoScalingConfiguration& TimeBasedAutoScalingConfiguration::operator =(const JsonValue& jsonValue)
+TimeBasedAutoScalingConfiguration& TimeBasedAutoScalingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceId"))
   {

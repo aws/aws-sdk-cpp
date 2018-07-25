@@ -35,7 +35,7 @@ Permission::Permission() :
 {
 }
 
-Permission::Permission(const JsonValue& jsonValue) : 
+Permission::Permission(JsonView jsonValue) : 
     m_granteeTypeHasBeenSet(false),
     m_granteeHasBeenSet(false),
     m_accessHasBeenSet(false)
@@ -43,7 +43,7 @@ Permission::Permission(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Permission& Permission::operator =(const JsonValue& jsonValue)
+Permission& Permission::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GranteeType"))
   {
@@ -61,7 +61,7 @@ Permission& Permission::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Access"))
   {
-    Array<JsonValue> accessJsonList = jsonValue.GetArray("Access");
+    Array<JsonView> accessJsonList = jsonValue.GetArray("Access");
     for(unsigned accessIndex = 0; accessIndex < accessJsonList.GetLength(); ++accessIndex)
     {
       m_access.push_back(accessJsonList[accessIndex].AsString());

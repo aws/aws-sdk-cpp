@@ -35,7 +35,7 @@ AttributeDimension::AttributeDimension() :
 {
 }
 
-AttributeDimension::AttributeDimension(const JsonValue& jsonValue) : 
+AttributeDimension::AttributeDimension(JsonView jsonValue) : 
     m_attributeType(AttributeType::NOT_SET),
     m_attributeTypeHasBeenSet(false),
     m_valuesHasBeenSet(false)
@@ -43,7 +43,7 @@ AttributeDimension::AttributeDimension(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttributeDimension& AttributeDimension::operator =(const JsonValue& jsonValue)
+AttributeDimension& AttributeDimension::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeType"))
   {
@@ -54,7 +54,7 @@ AttributeDimension& AttributeDimension::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

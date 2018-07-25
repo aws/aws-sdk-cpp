@@ -37,10 +37,10 @@ GetMappingResult::GetMappingResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetMappingResult& GetMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Mapping"))
   {
-    Array<JsonValue> mappingJsonList = jsonValue.GetArray("Mapping");
+    Array<JsonView> mappingJsonList = jsonValue.GetArray("Mapping");
     for(unsigned mappingIndex = 0; mappingIndex < mappingJsonList.GetLength(); ++mappingIndex)
     {
       m_mapping.push_back(mappingJsonList[mappingIndex].AsObject());

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     BatchCreateIndex();
-    BatchCreateIndex(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchCreateIndex& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchCreateIndex(Aws::Utils::Json::JsonView jsonValue);
+    BatchCreateIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

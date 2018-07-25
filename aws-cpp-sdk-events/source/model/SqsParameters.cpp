@@ -33,13 +33,13 @@ SqsParameters::SqsParameters() :
 {
 }
 
-SqsParameters::SqsParameters(const JsonValue& jsonValue) : 
+SqsParameters::SqsParameters(JsonView jsonValue) : 
     m_messageGroupIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SqsParameters& SqsParameters::operator =(const JsonValue& jsonValue)
+SqsParameters& SqsParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MessageGroupId"))
   {

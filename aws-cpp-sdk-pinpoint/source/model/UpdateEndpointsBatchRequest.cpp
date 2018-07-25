@@ -37,7 +37,7 @@ Aws::String UpdateEndpointsBatchRequest::SerializePayload() const
    payload = m_endpointBatchRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

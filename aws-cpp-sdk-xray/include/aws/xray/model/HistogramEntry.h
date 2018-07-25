@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace XRay
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     HistogramEntry();
-    HistogramEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    HistogramEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HistogramEntry(Aws::Utils::Json::JsonView jsonValue);
+    HistogramEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

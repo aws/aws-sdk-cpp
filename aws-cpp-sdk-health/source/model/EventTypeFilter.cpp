@@ -35,7 +35,7 @@ EventTypeFilter::EventTypeFilter() :
 {
 }
 
-EventTypeFilter::EventTypeFilter(const JsonValue& jsonValue) : 
+EventTypeFilter::EventTypeFilter(JsonView jsonValue) : 
     m_eventTypeCodesHasBeenSet(false),
     m_servicesHasBeenSet(false),
     m_eventTypeCategoriesHasBeenSet(false)
@@ -43,11 +43,11 @@ EventTypeFilter::EventTypeFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventTypeFilter& EventTypeFilter::operator =(const JsonValue& jsonValue)
+EventTypeFilter& EventTypeFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventTypeCodes"))
   {
-    Array<JsonValue> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
+    Array<JsonView> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
     for(unsigned eventTypeCodesIndex = 0; eventTypeCodesIndex < eventTypeCodesJsonList.GetLength(); ++eventTypeCodesIndex)
     {
       m_eventTypeCodes.push_back(eventTypeCodesJsonList[eventTypeCodesIndex].AsString());
@@ -57,7 +57,7 @@ EventTypeFilter& EventTypeFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("services"))
   {
-    Array<JsonValue> servicesJsonList = jsonValue.GetArray("services");
+    Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsString());
@@ -67,7 +67,7 @@ EventTypeFilter& EventTypeFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("eventTypeCategories"))
   {
-    Array<JsonValue> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
+    Array<JsonView> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
     for(unsigned eventTypeCategoriesIndex = 0; eventTypeCategoriesIndex < eventTypeCategoriesJsonList.GetLength(); ++eventTypeCategoriesIndex)
     {
       m_eventTypeCategories.push_back(EventTypeCategoryMapper::GetEventTypeCategoryForName(eventTypeCategoriesJsonList[eventTypeCategoriesIndex].AsString()));

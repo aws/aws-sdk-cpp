@@ -49,7 +49,7 @@ Aws::String AssociateS3ResourcesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateS3ResourcesRequest::GetRequestSpecificHeaders() const

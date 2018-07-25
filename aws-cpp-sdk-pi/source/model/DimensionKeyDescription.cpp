@@ -36,7 +36,7 @@ DimensionKeyDescription::DimensionKeyDescription() :
 {
 }
 
-DimensionKeyDescription::DimensionKeyDescription(const JsonValue& jsonValue) : 
+DimensionKeyDescription::DimensionKeyDescription(JsonView jsonValue) : 
     m_dimensionsHasBeenSet(false),
     m_total(0.0),
     m_totalHasBeenSet(false),
@@ -45,11 +45,11 @@ DimensionKeyDescription::DimensionKeyDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DimensionKeyDescription& DimensionKeyDescription::operator =(const JsonValue& jsonValue)
+DimensionKeyDescription& DimensionKeyDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Aws::Map<Aws::String, JsonValue> dimensionsJsonMap = jsonValue.GetObject("Dimensions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> dimensionsJsonMap = jsonValue.GetObject("Dimensions").GetAllObjects();
     for(auto& dimensionsItem : dimensionsJsonMap)
     {
       m_dimensions[dimensionsItem.first] = dimensionsItem.second.AsString();
@@ -66,7 +66,7 @@ DimensionKeyDescription& DimensionKeyDescription::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Partitions"))
   {
-    Array<JsonValue> partitionsJsonList = jsonValue.GetArray("Partitions");
+    Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
     for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
     {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsDouble());

@@ -39,7 +39,7 @@ BotAliasMetadata::BotAliasMetadata() :
 {
 }
 
-BotAliasMetadata::BotAliasMetadata(const JsonValue& jsonValue) : 
+BotAliasMetadata::BotAliasMetadata(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_botVersionHasBeenSet(false),
@@ -51,7 +51,7 @@ BotAliasMetadata::BotAliasMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BotAliasMetadata& BotAliasMetadata::operator =(const JsonValue& jsonValue)
+BotAliasMetadata& BotAliasMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

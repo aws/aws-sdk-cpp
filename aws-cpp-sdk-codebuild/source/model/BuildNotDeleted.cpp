@@ -34,14 +34,14 @@ BuildNotDeleted::BuildNotDeleted() :
 {
 }
 
-BuildNotDeleted::BuildNotDeleted(const JsonValue& jsonValue) : 
+BuildNotDeleted::BuildNotDeleted(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_statusCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BuildNotDeleted& BuildNotDeleted::operator =(const JsonValue& jsonValue)
+BuildNotDeleted& BuildNotDeleted::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

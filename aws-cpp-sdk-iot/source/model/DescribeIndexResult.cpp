@@ -39,7 +39,7 @@ DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonV
 
 DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("indexName"))
   {
     m_indexName = jsonValue.GetString("indexName");

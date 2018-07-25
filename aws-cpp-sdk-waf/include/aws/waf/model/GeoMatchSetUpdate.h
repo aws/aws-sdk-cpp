@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     GeoMatchSetUpdate();
-    GeoMatchSetUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    GeoMatchSetUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GeoMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    GeoMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

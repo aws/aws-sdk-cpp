@@ -37,7 +37,7 @@ Aws::String DeleteVPCEConfigurationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteVPCEConfigurationRequest::GetRequestSpecificHeaders() const

@@ -45,7 +45,7 @@ Aws::String StopDeploymentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopDeploymentRequest::GetRequestSpecificHeaders() const

@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     DvbSubDestinationSettings();
-    DvbSubDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    DvbSubDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DvbSubDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    DvbSubDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

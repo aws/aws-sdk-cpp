@@ -44,7 +44,7 @@ PlayerSession::PlayerSession() :
 {
 }
 
-PlayerSession::PlayerSession(const JsonValue& jsonValue) : 
+PlayerSession::PlayerSession(JsonView jsonValue) : 
     m_playerSessionIdHasBeenSet(false),
     m_playerIdHasBeenSet(false),
     m_gameSessionIdHasBeenSet(false),
@@ -61,7 +61,7 @@ PlayerSession::PlayerSession(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlayerSession& PlayerSession::operator =(const JsonValue& jsonValue)
+PlayerSession& PlayerSession::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PlayerSessionId"))
   {

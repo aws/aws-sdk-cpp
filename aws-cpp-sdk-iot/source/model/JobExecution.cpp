@@ -46,7 +46,7 @@ JobExecution::JobExecution() :
 {
 }
 
-JobExecution::JobExecution(const JsonValue& jsonValue) : 
+JobExecution::JobExecution(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_status(JobExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -65,7 +65,7 @@ JobExecution::JobExecution(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobExecution& JobExecution::operator =(const JsonValue& jsonValue)
+JobExecution& JobExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobId"))
   {

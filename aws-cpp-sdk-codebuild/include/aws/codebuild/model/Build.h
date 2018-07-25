@@ -36,6 +36,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -52,8 +53,8 @@ namespace Model
   {
   public:
     Build();
-    Build(const Aws::Utils::Json::JsonValue& jsonValue);
-    Build& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Build(Aws::Utils::Json::JsonView jsonValue);
+    Build& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

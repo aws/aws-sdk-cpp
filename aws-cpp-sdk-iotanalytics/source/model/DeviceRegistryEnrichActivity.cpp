@@ -37,7 +37,7 @@ DeviceRegistryEnrichActivity::DeviceRegistryEnrichActivity() :
 {
 }
 
-DeviceRegistryEnrichActivity::DeviceRegistryEnrichActivity(const JsonValue& jsonValue) : 
+DeviceRegistryEnrichActivity::DeviceRegistryEnrichActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_attributeHasBeenSet(false),
     m_thingNameHasBeenSet(false),
@@ -47,7 +47,7 @@ DeviceRegistryEnrichActivity::DeviceRegistryEnrichActivity(const JsonValue& json
   *this = jsonValue;
 }
 
-DeviceRegistryEnrichActivity& DeviceRegistryEnrichActivity::operator =(const JsonValue& jsonValue)
+DeviceRegistryEnrichActivity& DeviceRegistryEnrichActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

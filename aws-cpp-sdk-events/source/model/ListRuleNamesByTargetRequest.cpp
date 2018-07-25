@@ -52,7 +52,7 @@ Aws::String ListRuleNamesByTargetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListRuleNamesByTargetRequest::GetRequestSpecificHeaders() const

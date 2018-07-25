@@ -42,7 +42,7 @@ ReplicationRun::ReplicationRun() :
 {
 }
 
-ReplicationRun::ReplicationRun(const JsonValue& jsonValue) : 
+ReplicationRun::ReplicationRun(JsonView jsonValue) : 
     m_replicationRunIdHasBeenSet(false),
     m_state(ReplicationRunState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -57,7 +57,7 @@ ReplicationRun::ReplicationRun(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReplicationRun& ReplicationRun::operator =(const JsonValue& jsonValue)
+ReplicationRun& ReplicationRun::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("replicationRunId"))
   {

@@ -57,7 +57,7 @@ Aws::String ListComplianceSummariesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListComplianceSummariesRequest::GetRequestSpecificHeaders() const

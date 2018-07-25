@@ -38,7 +38,7 @@ SegmentGroup::SegmentGroup() :
 {
 }
 
-SegmentGroup::SegmentGroup(const JsonValue& jsonValue) : 
+SegmentGroup::SegmentGroup(JsonView jsonValue) : 
     m_dimensionsHasBeenSet(false),
     m_sourceSegmentsHasBeenSet(false),
     m_sourceType(SourceType::NOT_SET),
@@ -49,11 +49,11 @@ SegmentGroup::SegmentGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SegmentGroup& SegmentGroup::operator =(const JsonValue& jsonValue)
+SegmentGroup& SegmentGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonValue> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
@@ -63,7 +63,7 @@ SegmentGroup& SegmentGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SourceSegments"))
   {
-    Array<JsonValue> sourceSegmentsJsonList = jsonValue.GetArray("SourceSegments");
+    Array<JsonView> sourceSegmentsJsonList = jsonValue.GetArray("SourceSegments");
     for(unsigned sourceSegmentsIndex = 0; sourceSegmentsIndex < sourceSegmentsJsonList.GetLength(); ++sourceSegmentsIndex)
     {
       m_sourceSegments.push_back(sourceSegmentsJsonList[sourceSegmentsIndex].AsObject());

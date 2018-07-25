@@ -33,13 +33,13 @@ BatchGetObjectInformation::BatchGetObjectInformation() :
 {
 }
 
-BatchGetObjectInformation::BatchGetObjectInformation(const JsonValue& jsonValue) : 
+BatchGetObjectInformation::BatchGetObjectInformation(JsonView jsonValue) : 
     m_objectReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchGetObjectInformation& BatchGetObjectInformation::operator =(const JsonValue& jsonValue)
+BatchGetObjectInformation& BatchGetObjectInformation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectReference"))
   {

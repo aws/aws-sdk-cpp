@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodePipeline
@@ -36,8 +37,8 @@ namespace Model
   {
   public:
     WebhookAuthConfiguration();
-    WebhookAuthConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    WebhookAuthConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WebhookAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    WebhookAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

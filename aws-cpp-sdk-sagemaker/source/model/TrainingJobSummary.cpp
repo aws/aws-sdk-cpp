@@ -39,7 +39,7 @@ TrainingJobSummary::TrainingJobSummary() :
 {
 }
 
-TrainingJobSummary::TrainingJobSummary(const JsonValue& jsonValue) : 
+TrainingJobSummary::TrainingJobSummary(JsonView jsonValue) : 
     m_trainingJobNameHasBeenSet(false),
     m_trainingJobArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -51,7 +51,7 @@ TrainingJobSummary::TrainingJobSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TrainingJobSummary& TrainingJobSummary::operator =(const JsonValue& jsonValue)
+TrainingJobSummary& TrainingJobSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TrainingJobName"))
   {

@@ -108,7 +108,7 @@ Aws::String UpdateAssociationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateAssociationRequest::GetRequestSpecificHeaders() const

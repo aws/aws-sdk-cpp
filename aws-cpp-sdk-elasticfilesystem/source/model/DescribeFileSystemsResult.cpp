@@ -37,7 +37,7 @@ DescribeFileSystemsResult::DescribeFileSystemsResult(const Aws::AmazonWebService
 
 DescribeFileSystemsResult& DescribeFileSystemsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeFileSystemsResult& DescribeFileSystemsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("FileSystems"))
   {
-    Array<JsonValue> fileSystemsJsonList = jsonValue.GetArray("FileSystems");
+    Array<JsonView> fileSystemsJsonList = jsonValue.GetArray("FileSystems");
     for(unsigned fileSystemsIndex = 0; fileSystemsIndex < fileSystemsJsonList.GetLength(); ++fileSystemsIndex)
     {
       m_fileSystems.push_back(fileSystemsJsonList[fileSystemsIndex].AsObject());

@@ -37,7 +37,7 @@ CreateCustomActionTypeResult::CreateCustomActionTypeResult(const Aws::AmazonWebS
 
 CreateCustomActionTypeResult& CreateCustomActionTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = jsonValue.GetObject("actionType");

@@ -42,7 +42,7 @@ LambdaConfigType::LambdaConfigType() :
 {
 }
 
-LambdaConfigType::LambdaConfigType(const JsonValue& jsonValue) : 
+LambdaConfigType::LambdaConfigType(JsonView jsonValue) : 
     m_preSignUpHasBeenSet(false),
     m_customMessageHasBeenSet(false),
     m_postConfirmationHasBeenSet(false),
@@ -57,7 +57,7 @@ LambdaConfigType::LambdaConfigType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LambdaConfigType& LambdaConfigType::operator =(const JsonValue& jsonValue)
+LambdaConfigType& LambdaConfigType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PreSignUp"))
   {

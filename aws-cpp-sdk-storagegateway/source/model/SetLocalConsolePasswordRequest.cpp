@@ -44,7 +44,7 @@ Aws::String SetLocalConsolePasswordRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SetLocalConsolePasswordRequest::GetRequestSpecificHeaders() const

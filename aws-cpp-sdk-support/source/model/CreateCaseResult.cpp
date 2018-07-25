@@ -37,7 +37,7 @@ CreateCaseResult::CreateCaseResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 CreateCaseResult& CreateCaseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("caseId"))
   {
     m_caseId = jsonValue.GetString("caseId");

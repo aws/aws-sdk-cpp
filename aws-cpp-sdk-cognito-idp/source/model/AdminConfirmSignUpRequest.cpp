@@ -44,7 +44,7 @@ Aws::String AdminConfirmSignUpRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminConfirmSignUpRequest::GetRequestSpecificHeaders() const

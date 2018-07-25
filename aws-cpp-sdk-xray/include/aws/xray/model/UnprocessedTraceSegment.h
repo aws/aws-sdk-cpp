@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace XRay
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     UnprocessedTraceSegment();
-    UnprocessedTraceSegment(const Aws::Utils::Json::JsonValue& jsonValue);
-    UnprocessedTraceSegment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UnprocessedTraceSegment(Aws::Utils::Json::JsonView jsonValue);
+    UnprocessedTraceSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

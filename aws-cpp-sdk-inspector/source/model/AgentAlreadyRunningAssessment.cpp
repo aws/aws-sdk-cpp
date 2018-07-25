@@ -34,14 +34,14 @@ AgentAlreadyRunningAssessment::AgentAlreadyRunningAssessment() :
 {
 }
 
-AgentAlreadyRunningAssessment::AgentAlreadyRunningAssessment(const JsonValue& jsonValue) : 
+AgentAlreadyRunningAssessment::AgentAlreadyRunningAssessment(JsonView jsonValue) : 
     m_agentIdHasBeenSet(false),
     m_assessmentRunArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AgentAlreadyRunningAssessment& AgentAlreadyRunningAssessment::operator =(const JsonValue& jsonValue)
+AgentAlreadyRunningAssessment& AgentAlreadyRunningAssessment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("agentId"))
   {

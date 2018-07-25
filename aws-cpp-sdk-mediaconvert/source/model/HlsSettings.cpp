@@ -39,7 +39,7 @@ HlsSettings::HlsSettings() :
 {
 }
 
-HlsSettings::HlsSettings(const JsonValue& jsonValue) : 
+HlsSettings::HlsSettings(JsonView jsonValue) : 
     m_audioGroupIdHasBeenSet(false),
     m_audioRenditionSetsHasBeenSet(false),
     m_audioTrackType(HlsAudioTrackType::NOT_SET),
@@ -51,7 +51,7 @@ HlsSettings::HlsSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsSettings& HlsSettings::operator =(const JsonValue& jsonValue)
+HlsSettings& HlsSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioGroupId"))
   {

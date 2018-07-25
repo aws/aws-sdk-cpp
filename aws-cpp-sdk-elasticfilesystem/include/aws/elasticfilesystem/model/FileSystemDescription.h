@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EFS
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     FileSystemDescription();
-    FileSystemDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    FileSystemDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FileSystemDescription(Aws::Utils::Json::JsonView jsonValue);
+    FileSystemDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

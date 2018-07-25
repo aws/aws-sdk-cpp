@@ -37,7 +37,7 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(const JsonValue& jsonValue) : 
+Resource::Resource(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_parentIdHasBeenSet(false),
     m_pathPartHasBeenSet(false),
@@ -47,7 +47,7 @@ Resource::Resource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Resource& Resource::operator =(const JsonValue& jsonValue)
+Resource& Resource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -79,7 +79,7 @@ Resource& Resource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("resourceMethods"))
   {
-    Aws::Map<Aws::String, JsonValue> resourceMethodsJsonMap = jsonValue.GetObject("resourceMethods").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> resourceMethodsJsonMap = jsonValue.GetObject("resourceMethods").GetAllObjects();
     for(auto& resourceMethodsItem : resourceMethodsJsonMap)
     {
       m_resourceMethods[resourceMethodsItem.first] = resourceMethodsItem.second.AsObject();

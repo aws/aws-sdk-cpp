@@ -35,7 +35,7 @@ WriteSegmentRequest::WriteSegmentRequest() :
 {
 }
 
-WriteSegmentRequest::WriteSegmentRequest(const JsonValue& jsonValue) : 
+WriteSegmentRequest::WriteSegmentRequest(JsonView jsonValue) : 
     m_dimensionsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_segmentGroupsHasBeenSet(false)
@@ -43,7 +43,7 @@ WriteSegmentRequest::WriteSegmentRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WriteSegmentRequest& WriteSegmentRequest::operator =(const JsonValue& jsonValue)
+WriteSegmentRequest& WriteSegmentRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Dimensions"))
   {

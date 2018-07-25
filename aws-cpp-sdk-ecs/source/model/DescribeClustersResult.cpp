@@ -37,10 +37,10 @@ DescribeClustersResult::DescribeClustersResult(const Aws::AmazonWebServiceResult
 
 DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("clusters"))
   {
-    Array<JsonValue> clustersJsonList = jsonValue.GetArray("clusters");
+    Array<JsonView> clustersJsonList = jsonValue.GetArray("clusters");
     for(unsigned clustersIndex = 0; clustersIndex < clustersJsonList.GetLength(); ++clustersIndex)
     {
       m_clusters.push_back(clustersJsonList[clustersIndex].AsObject());
@@ -49,7 +49,7 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonValue> failuresJsonList = jsonValue.GetArray("failures");
+    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

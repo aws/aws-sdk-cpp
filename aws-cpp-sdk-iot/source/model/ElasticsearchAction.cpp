@@ -37,7 +37,7 @@ ElasticsearchAction::ElasticsearchAction() :
 {
 }
 
-ElasticsearchAction::ElasticsearchAction(const JsonValue& jsonValue) : 
+ElasticsearchAction::ElasticsearchAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_indexHasBeenSet(false),
@@ -47,7 +47,7 @@ ElasticsearchAction::ElasticsearchAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ElasticsearchAction& ElasticsearchAction::operator =(const JsonValue& jsonValue)
+ElasticsearchAction& ElasticsearchAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

@@ -37,7 +37,7 @@ CreateBuildResult::CreateBuildResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateBuildResult& CreateBuildResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Build"))
   {
     m_build = jsonValue.GetObject("Build");

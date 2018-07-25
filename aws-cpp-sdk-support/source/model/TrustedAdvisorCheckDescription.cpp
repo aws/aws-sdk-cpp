@@ -37,7 +37,7 @@ TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription() :
 {
 }
 
-TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription(const JsonValue& jsonValue) : 
+TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -47,7 +47,7 @@ TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription(const JsonValue& 
   *this = jsonValue;
 }
 
-TrustedAdvisorCheckDescription& TrustedAdvisorCheckDescription::operator =(const JsonValue& jsonValue)
+TrustedAdvisorCheckDescription& TrustedAdvisorCheckDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -79,7 +79,7 @@ TrustedAdvisorCheckDescription& TrustedAdvisorCheckDescription::operator =(const
 
   if(jsonValue.ValueExists("metadata"))
   {
-    Array<JsonValue> metadataJsonList = jsonValue.GetArray("metadata");
+    Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
     for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
     {
       m_metadata.push_back(metadataJsonList[metadataIndex].AsString());

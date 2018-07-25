@@ -37,10 +37,10 @@ ListLexiconsResult::ListLexiconsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListLexiconsResult& ListLexiconsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Lexicons"))
   {
-    Array<JsonValue> lexiconsJsonList = jsonValue.GetArray("Lexicons");
+    Array<JsonView> lexiconsJsonList = jsonValue.GetArray("Lexicons");
     for(unsigned lexiconsIndex = 0; lexiconsIndex < lexiconsJsonList.GetLength(); ++lexiconsIndex)
     {
       m_lexicons.push_back(lexiconsJsonList[lexiconsIndex].AsObject());

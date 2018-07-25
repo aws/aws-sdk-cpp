@@ -47,7 +47,7 @@ Job::Job() :
 {
 }
 
-Job::Job(const JsonValue& jsonValue) : 
+Job::Job(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_errorCode(0),
@@ -67,7 +67,7 @@ Job::Job(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Job& Job::operator =(const JsonValue& jsonValue)
+Job& Job::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -113,7 +113,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("outputGroupDetails"))
   {
-    Array<JsonValue> outputGroupDetailsJsonList = jsonValue.GetArray("outputGroupDetails");
+    Array<JsonView> outputGroupDetailsJsonList = jsonValue.GetArray("outputGroupDetails");
     for(unsigned outputGroupDetailsIndex = 0; outputGroupDetailsIndex < outputGroupDetailsJsonList.GetLength(); ++outputGroupDetailsIndex)
     {
       m_outputGroupDetails.push_back(outputGroupDetailsJsonList[outputGroupDetailsIndex].AsObject());
@@ -158,7 +158,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("userMetadata"))
   {
-    Aws::Map<Aws::String, JsonValue> userMetadataJsonMap = jsonValue.GetObject("userMetadata").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> userMetadataJsonMap = jsonValue.GetObject("userMetadata").GetAllObjects();
     for(auto& userMetadataItem : userMetadataJsonMap)
     {
       m_userMetadata[userMetadataItem.first] = userMetadataItem.second.AsString();

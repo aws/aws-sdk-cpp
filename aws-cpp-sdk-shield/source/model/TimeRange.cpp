@@ -34,14 +34,14 @@ TimeRange::TimeRange() :
 {
 }
 
-TimeRange::TimeRange(const JsonValue& jsonValue) : 
+TimeRange::TimeRange(JsonView jsonValue) : 
     m_fromInclusiveHasBeenSet(false),
     m_toExclusiveHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TimeRange& TimeRange::operator =(const JsonValue& jsonValue)
+TimeRange& TimeRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FromInclusive"))
   {

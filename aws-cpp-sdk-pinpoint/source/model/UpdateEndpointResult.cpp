@@ -37,7 +37,7 @@ UpdateEndpointResult::UpdateEndpointResult(const Aws::AmazonWebServiceResult<Jso
 
 UpdateEndpointResult& UpdateEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_messageBody = jsonValue;
 
 

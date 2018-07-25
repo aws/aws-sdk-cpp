@@ -37,7 +37,7 @@ GetSqlInjectionMatchSetResult::GetSqlInjectionMatchSetResult(const Aws::AmazonWe
 
 GetSqlInjectionMatchSetResult& GetSqlInjectionMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SqlInjectionMatchSet"))
   {
     m_sqlInjectionMatchSet = jsonValue.GetObject("SqlInjectionMatchSet");

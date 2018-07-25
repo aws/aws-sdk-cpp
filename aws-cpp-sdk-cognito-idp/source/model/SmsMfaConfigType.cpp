@@ -34,14 +34,14 @@ SmsMfaConfigType::SmsMfaConfigType() :
 {
 }
 
-SmsMfaConfigType::SmsMfaConfigType(const JsonValue& jsonValue) : 
+SmsMfaConfigType::SmsMfaConfigType(JsonView jsonValue) : 
     m_smsAuthenticationMessageHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SmsMfaConfigType& SmsMfaConfigType::operator =(const JsonValue& jsonValue)
+SmsMfaConfigType& SmsMfaConfigType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SmsAuthenticationMessage"))
   {

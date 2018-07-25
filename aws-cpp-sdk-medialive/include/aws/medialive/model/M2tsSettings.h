@@ -46,6 +46,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -62,8 +63,8 @@ namespace Model
   {
   public:
     M2tsSettings();
-    M2tsSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    M2tsSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
+    M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

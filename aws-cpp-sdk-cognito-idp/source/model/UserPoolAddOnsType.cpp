@@ -34,14 +34,14 @@ UserPoolAddOnsType::UserPoolAddOnsType() :
 {
 }
 
-UserPoolAddOnsType::UserPoolAddOnsType(const JsonValue& jsonValue) : 
+UserPoolAddOnsType::UserPoolAddOnsType(JsonView jsonValue) : 
     m_advancedSecurityMode(AdvancedSecurityModeType::NOT_SET),
     m_advancedSecurityModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UserPoolAddOnsType& UserPoolAddOnsType::operator =(const JsonValue& jsonValue)
+UserPoolAddOnsType& UserPoolAddOnsType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdvancedSecurityMode"))
   {

@@ -41,7 +41,7 @@ DescribeWorkingStorageResult::DescribeWorkingStorageResult(const Aws::AmazonWebS
 
 DescribeWorkingStorageResult& DescribeWorkingStorageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
@@ -50,7 +50,7 @@ DescribeWorkingStorageResult& DescribeWorkingStorageResult::operator =(const Aws
 
   if(jsonValue.ValueExists("DiskIds"))
   {
-    Array<JsonValue> diskIdsJsonList = jsonValue.GetArray("DiskIds");
+    Array<JsonView> diskIdsJsonList = jsonValue.GetArray("DiskIds");
     for(unsigned diskIdsIndex = 0; diskIdsIndex < diskIdsJsonList.GetLength(); ++diskIdsIndex)
     {
       m_diskIds.push_back(diskIdsJsonList[diskIdsIndex].AsString());

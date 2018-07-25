@@ -38,7 +38,7 @@ SampledHTTPRequest::SampledHTTPRequest() :
 {
 }
 
-SampledHTTPRequest::SampledHTTPRequest(const JsonValue& jsonValue) : 
+SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue) : 
     m_requestHasBeenSet(false),
     m_weight(0),
     m_weightHasBeenSet(false),
@@ -49,7 +49,7 @@ SampledHTTPRequest::SampledHTTPRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SampledHTTPRequest& SampledHTTPRequest::operator =(const JsonValue& jsonValue)
+SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Request"))
   {

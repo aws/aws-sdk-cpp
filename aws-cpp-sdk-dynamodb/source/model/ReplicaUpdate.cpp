@@ -34,14 +34,14 @@ ReplicaUpdate::ReplicaUpdate() :
 {
 }
 
-ReplicaUpdate::ReplicaUpdate(const JsonValue& jsonValue) : 
+ReplicaUpdate::ReplicaUpdate(JsonView jsonValue) : 
     m_createHasBeenSet(false),
     m_deleteHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ReplicaUpdate& ReplicaUpdate::operator =(const JsonValue& jsonValue)
+ReplicaUpdate& ReplicaUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Create"))
   {

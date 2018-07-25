@@ -40,7 +40,7 @@ DataTransfer::DataTransfer() :
 {
 }
 
-DataTransfer::DataTransfer(const JsonValue& jsonValue) : 
+DataTransfer::DataTransfer(JsonView jsonValue) : 
     m_bytesTransferred(0),
     m_bytesTransferredHasBeenSet(false),
     m_objectsTransferred(0),
@@ -53,7 +53,7 @@ DataTransfer::DataTransfer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DataTransfer& DataTransfer::operator =(const JsonValue& jsonValue)
+DataTransfer& DataTransfer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BytesTransferred"))
   {

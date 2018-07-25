@@ -40,7 +40,7 @@ WavSettings::WavSettings() :
 {
 }
 
-WavSettings::WavSettings(const JsonValue& jsonValue) : 
+WavSettings::WavSettings(JsonView jsonValue) : 
     m_bitDepth(0),
     m_bitDepthHasBeenSet(false),
     m_channels(0),
@@ -53,7 +53,7 @@ WavSettings::WavSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WavSettings& WavSettings::operator =(const JsonValue& jsonValue)
+WavSettings& WavSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bitDepth"))
   {

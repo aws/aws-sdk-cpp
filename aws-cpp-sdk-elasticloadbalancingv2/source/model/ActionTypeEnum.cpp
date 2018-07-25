@@ -33,6 +33,8 @@ namespace Aws
         static const int forward_HASH = HashingUtils::HashString("forward");
         static const int authenticate_oidc_HASH = HashingUtils::HashString("authenticate-oidc");
         static const int authenticate_cognito_HASH = HashingUtils::HashString("authenticate-cognito");
+        static const int redirect_HASH = HashingUtils::HashString("redirect");
+        static const int fixed_response_HASH = HashingUtils::HashString("fixed-response");
 
 
         ActionTypeEnum GetActionTypeEnumForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == authenticate_cognito_HASH)
           {
             return ActionTypeEnum::authenticate_cognito;
+          }
+          else if (hashCode == redirect_HASH)
+          {
+            return ActionTypeEnum::redirect;
+          }
+          else if (hashCode == fixed_response_HASH)
+          {
+            return ActionTypeEnum::fixed_response;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +80,10 @@ namespace Aws
             return "authenticate-oidc";
           case ActionTypeEnum::authenticate_cognito:
             return "authenticate-cognito";
+          case ActionTypeEnum::redirect:
+            return "redirect";
+          case ActionTypeEnum::fixed_response:
+            return "fixed-response";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -56,7 +56,7 @@ Aws::String GetMappingRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetMappingRequest::GetRequestSpecificHeaders() const

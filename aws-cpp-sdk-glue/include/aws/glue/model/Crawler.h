@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -51,8 +52,8 @@ namespace Model
   {
   public:
     Crawler();
-    Crawler(const Aws::Utils::Json::JsonValue& jsonValue);
-    Crawler& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Crawler(Aws::Utils::Json::JsonView jsonValue);
+    Crawler& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

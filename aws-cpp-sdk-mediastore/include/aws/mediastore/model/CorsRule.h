@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaStore
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     CorsRule();
-    CorsRule(const Aws::Utils::Json::JsonValue& jsonValue);
-    CorsRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CorsRule(Aws::Utils::Json::JsonView jsonValue);
+    CorsRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     ObjectReference();
-    ObjectReference(const Aws::Utils::Json::JsonValue& jsonValue);
-    ObjectReference& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ObjectReference(Aws::Utils::Json::JsonView jsonValue);
+    ObjectReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

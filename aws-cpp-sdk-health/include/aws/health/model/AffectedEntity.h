@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Health
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     AffectedEntity();
-    AffectedEntity(const Aws::Utils::Json::JsonValue& jsonValue);
-    AffectedEntity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AffectedEntity(Aws::Utils::Json::JsonView jsonValue);
+    AffectedEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

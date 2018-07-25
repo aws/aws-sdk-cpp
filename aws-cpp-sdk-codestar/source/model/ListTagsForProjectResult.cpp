@@ -37,10 +37,10 @@ ListTagsForProjectResult::ListTagsForProjectResult(const Aws::AmazonWebServiceRe
 
 ListTagsForProjectResult& ListTagsForProjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();

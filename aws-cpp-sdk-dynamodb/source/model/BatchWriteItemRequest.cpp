@@ -61,7 +61,7 @@ Aws::String BatchWriteItemRequest::SerializePayload() const
    payload.WithString("ReturnItemCollectionMetrics", ReturnItemCollectionMetricsMapper::GetNameForReturnItemCollectionMetrics(m_returnItemCollectionMetrics));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchWriteItemRequest::GetRequestSpecificHeaders() const

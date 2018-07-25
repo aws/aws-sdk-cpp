@@ -35,7 +35,7 @@ ResourceAttribute::ResourceAttribute() :
 {
 }
 
-ResourceAttribute::ResourceAttribute(const JsonValue& jsonValue) : 
+ResourceAttribute::ResourceAttribute(JsonView jsonValue) : 
     m_type(ResourceAttributeType::NOT_SET),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ ResourceAttribute::ResourceAttribute(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceAttribute& ResourceAttribute::operator =(const JsonValue& jsonValue)
+ResourceAttribute& ResourceAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

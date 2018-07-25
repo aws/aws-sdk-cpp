@@ -45,7 +45,7 @@ ProductViewSummary::ProductViewSummary() :
 {
 }
 
-ProductViewSummary::ProductViewSummary(const JsonValue& jsonValue) : 
+ProductViewSummary::ProductViewSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -63,7 +63,7 @@ ProductViewSummary::ProductViewSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProductViewSummary& ProductViewSummary::operator =(const JsonValue& jsonValue)
+ProductViewSummary& ProductViewSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

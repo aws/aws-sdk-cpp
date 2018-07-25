@@ -43,7 +43,7 @@ ScalableTarget::ScalableTarget() :
 {
 }
 
-ScalableTarget::ScalableTarget(const JsonValue& jsonValue) : 
+ScalableTarget::ScalableTarget(JsonView jsonValue) : 
     m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
@@ -59,7 +59,7 @@ ScalableTarget::ScalableTarget(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalableTarget& ScalableTarget::operator =(const JsonValue& jsonValue)
+ScalableTarget& ScalableTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServiceNamespace"))
   {

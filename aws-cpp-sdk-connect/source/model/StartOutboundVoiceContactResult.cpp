@@ -37,7 +37,7 @@ StartOutboundVoiceContactResult::StartOutboundVoiceContactResult(const Aws::Amaz
 
 StartOutboundVoiceContactResult& StartOutboundVoiceContactResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");

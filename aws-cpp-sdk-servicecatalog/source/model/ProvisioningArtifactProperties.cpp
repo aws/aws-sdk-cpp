@@ -37,7 +37,7 @@ ProvisioningArtifactProperties::ProvisioningArtifactProperties() :
 {
 }
 
-ProvisioningArtifactProperties::ProvisioningArtifactProperties(const JsonValue& jsonValue) : 
+ProvisioningArtifactProperties::ProvisioningArtifactProperties(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_infoHasBeenSet(false),
@@ -47,7 +47,7 @@ ProvisioningArtifactProperties::ProvisioningArtifactProperties(const JsonValue& 
   *this = jsonValue;
 }
 
-ProvisioningArtifactProperties& ProvisioningArtifactProperties::operator =(const JsonValue& jsonValue)
+ProvisioningArtifactProperties& ProvisioningArtifactProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -65,7 +65,7 @@ ProvisioningArtifactProperties& ProvisioningArtifactProperties::operator =(const
 
   if(jsonValue.ValueExists("Info"))
   {
-    Aws::Map<Aws::String, JsonValue> infoJsonMap = jsonValue.GetObject("Info").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> infoJsonMap = jsonValue.GetObject("Info").GetAllObjects();
     for(auto& infoItem : infoJsonMap)
     {
       m_info[infoItem.first] = infoItem.second.AsString();

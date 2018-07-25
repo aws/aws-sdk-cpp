@@ -37,7 +37,7 @@ Communication::Communication() :
 {
 }
 
-Communication::Communication(const JsonValue& jsonValue) : 
+Communication::Communication(JsonView jsonValue) : 
     m_caseIdHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_submittedByHasBeenSet(false),
@@ -47,7 +47,7 @@ Communication::Communication(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Communication& Communication::operator =(const JsonValue& jsonValue)
+Communication& Communication::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("caseId"))
   {
@@ -79,7 +79,7 @@ Communication& Communication::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attachmentSet"))
   {
-    Array<JsonValue> attachmentSetJsonList = jsonValue.GetArray("attachmentSet");
+    Array<JsonView> attachmentSetJsonList = jsonValue.GetArray("attachmentSet");
     for(unsigned attachmentSetIndex = 0; attachmentSetIndex < attachmentSetJsonList.GetLength(); ++attachmentSetIndex)
     {
       m_attachmentSet.push_back(attachmentSetJsonList[attachmentSetIndex].AsObject());

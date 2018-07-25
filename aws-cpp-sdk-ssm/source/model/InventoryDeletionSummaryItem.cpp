@@ -37,7 +37,7 @@ InventoryDeletionSummaryItem::InventoryDeletionSummaryItem() :
 {
 }
 
-InventoryDeletionSummaryItem::InventoryDeletionSummaryItem(const JsonValue& jsonValue) : 
+InventoryDeletionSummaryItem::InventoryDeletionSummaryItem(JsonView jsonValue) : 
     m_versionHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
@@ -47,7 +47,7 @@ InventoryDeletionSummaryItem::InventoryDeletionSummaryItem(const JsonValue& json
   *this = jsonValue;
 }
 
-InventoryDeletionSummaryItem& InventoryDeletionSummaryItem::operator =(const JsonValue& jsonValue)
+InventoryDeletionSummaryItem& InventoryDeletionSummaryItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Version"))
   {

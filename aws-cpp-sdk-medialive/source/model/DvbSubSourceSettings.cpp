@@ -34,14 +34,14 @@ DvbSubSourceSettings::DvbSubSourceSettings() :
 {
 }
 
-DvbSubSourceSettings::DvbSubSourceSettings(const JsonValue& jsonValue) : 
+DvbSubSourceSettings::DvbSubSourceSettings(JsonView jsonValue) : 
     m_pid(0),
     m_pidHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DvbSubSourceSettings& DvbSubSourceSettings::operator =(const JsonValue& jsonValue)
+DvbSubSourceSettings& DvbSubSourceSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pid"))
   {

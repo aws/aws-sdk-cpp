@@ -38,7 +38,7 @@ PipelineDeclaration::PipelineDeclaration() :
 {
 }
 
-PipelineDeclaration::PipelineDeclaration(const JsonValue& jsonValue) : 
+PipelineDeclaration::PipelineDeclaration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_artifactStoreHasBeenSet(false),
@@ -49,7 +49,7 @@ PipelineDeclaration::PipelineDeclaration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineDeclaration& PipelineDeclaration::operator =(const JsonValue& jsonValue)
+PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -74,7 +74,7 @@ PipelineDeclaration& PipelineDeclaration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("stages"))
   {
-    Array<JsonValue> stagesJsonList = jsonValue.GetArray("stages");
+    Array<JsonView> stagesJsonList = jsonValue.GetArray("stages");
     for(unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex)
     {
       m_stages.push_back(stagesJsonList[stagesIndex].AsObject());

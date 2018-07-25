@@ -39,7 +39,7 @@ WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule() :
 {
 }
 
-WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule(const JsonValue& jsonValue) : 
+WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule(JsonView jsonValue) : 
     m_mondayHasBeenSet(false),
     m_tuesdayHasBeenSet(false),
     m_wednesdayHasBeenSet(false),
@@ -51,11 +51,11 @@ WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(const JsonValue& jsonValue)
+WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Monday"))
   {
-    Aws::Map<Aws::String, JsonValue> mondayJsonMap = jsonValue.GetObject("Monday").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> mondayJsonMap = jsonValue.GetObject("Monday").GetAllObjects();
     for(auto& mondayItem : mondayJsonMap)
     {
       m_monday[mondayItem.first] = mondayItem.second.AsString();
@@ -65,7 +65,7 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Tuesday"))
   {
-    Aws::Map<Aws::String, JsonValue> tuesdayJsonMap = jsonValue.GetObject("Tuesday").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tuesdayJsonMap = jsonValue.GetObject("Tuesday").GetAllObjects();
     for(auto& tuesdayItem : tuesdayJsonMap)
     {
       m_tuesday[tuesdayItem.first] = tuesdayItem.second.AsString();
@@ -75,7 +75,7 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Wednesday"))
   {
-    Aws::Map<Aws::String, JsonValue> wednesdayJsonMap = jsonValue.GetObject("Wednesday").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> wednesdayJsonMap = jsonValue.GetObject("Wednesday").GetAllObjects();
     for(auto& wednesdayItem : wednesdayJsonMap)
     {
       m_wednesday[wednesdayItem.first] = wednesdayItem.second.AsString();
@@ -85,7 +85,7 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Thursday"))
   {
-    Aws::Map<Aws::String, JsonValue> thursdayJsonMap = jsonValue.GetObject("Thursday").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> thursdayJsonMap = jsonValue.GetObject("Thursday").GetAllObjects();
     for(auto& thursdayItem : thursdayJsonMap)
     {
       m_thursday[thursdayItem.first] = thursdayItem.second.AsString();
@@ -95,7 +95,7 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Friday"))
   {
-    Aws::Map<Aws::String, JsonValue> fridayJsonMap = jsonValue.GetObject("Friday").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> fridayJsonMap = jsonValue.GetObject("Friday").GetAllObjects();
     for(auto& fridayItem : fridayJsonMap)
     {
       m_friday[fridayItem.first] = fridayItem.second.AsString();
@@ -105,7 +105,7 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Saturday"))
   {
-    Aws::Map<Aws::String, JsonValue> saturdayJsonMap = jsonValue.GetObject("Saturday").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> saturdayJsonMap = jsonValue.GetObject("Saturday").GetAllObjects();
     for(auto& saturdayItem : saturdayJsonMap)
     {
       m_saturday[saturdayItem.first] = saturdayItem.second.AsString();
@@ -115,7 +115,7 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Sunday"))
   {
-    Aws::Map<Aws::String, JsonValue> sundayJsonMap = jsonValue.GetObject("Sunday").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> sundayJsonMap = jsonValue.GetObject("Sunday").GetAllObjects();
     for(auto& sundayItem : sundayJsonMap)
     {
       m_sunday[sundayItem.first] = sundayItem.second.AsString();

@@ -34,14 +34,14 @@ WorkflowType::WorkflowType() :
 {
 }
 
-WorkflowType::WorkflowType(const JsonValue& jsonValue) : 
+WorkflowType::WorkflowType(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WorkflowType& WorkflowType::operator =(const JsonValue& jsonValue)
+WorkflowType& WorkflowType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

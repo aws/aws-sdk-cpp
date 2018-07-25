@@ -40,7 +40,7 @@ AffectedEntity::AffectedEntity() :
 {
 }
 
-AffectedEntity::AffectedEntity(const JsonValue& jsonValue) : 
+AffectedEntity::AffectedEntity(JsonView jsonValue) : 
     m_entityArnHasBeenSet(false),
     m_eventArnHasBeenSet(false),
     m_entityValueHasBeenSet(false),
@@ -53,7 +53,7 @@ AffectedEntity::AffectedEntity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AffectedEntity& AffectedEntity::operator =(const JsonValue& jsonValue)
+AffectedEntity& AffectedEntity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("entityArn"))
   {
@@ -99,7 +99,7 @@ AffectedEntity& AffectedEntity::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();

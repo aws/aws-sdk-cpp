@@ -39,7 +39,7 @@ Aws::String DeleteFacetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteFacetRequest::GetRequestSpecificHeaders() const

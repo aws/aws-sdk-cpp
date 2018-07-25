@@ -58,7 +58,7 @@ Aws::String CreateAccountRequest::SerializePayload() const
    payload.WithString("IamUserAccessToBilling", IAMUserAccessToBillingMapper::GetNameForIAMUserAccessToBilling(m_iamUserAccessToBilling));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateAccountRequest::GetRequestSpecificHeaders() const

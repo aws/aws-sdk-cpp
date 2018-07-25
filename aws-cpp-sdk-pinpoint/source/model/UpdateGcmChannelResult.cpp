@@ -37,7 +37,7 @@ UpdateGcmChannelResult::UpdateGcmChannelResult(const Aws::AmazonWebServiceResult
 
 UpdateGcmChannelResult& UpdateGcmChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_gCMChannelResponse = jsonValue;
 
 

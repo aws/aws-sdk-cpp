@@ -83,7 +83,7 @@ Aws::String GetLogEventsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetLogEventsRequest::GetRequestSpecificHeaders() const

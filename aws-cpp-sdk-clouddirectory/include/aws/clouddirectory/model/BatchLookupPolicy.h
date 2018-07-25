@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     BatchLookupPolicy();
-    BatchLookupPolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchLookupPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchLookupPolicy(Aws::Utils::Json::JsonView jsonValue);
+    BatchLookupPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

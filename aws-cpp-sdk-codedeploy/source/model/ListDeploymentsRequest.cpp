@@ -70,7 +70,7 @@ Aws::String ListDeploymentsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListDeploymentsRequest::GetRequestSpecificHeaders() const

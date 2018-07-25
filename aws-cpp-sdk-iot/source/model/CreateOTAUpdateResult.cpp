@@ -39,7 +39,7 @@ CreateOTAUpdateResult::CreateOTAUpdateResult(const Aws::AmazonWebServiceResult<J
 
 CreateOTAUpdateResult& CreateOTAUpdateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("otaUpdateId"))
   {
     m_otaUpdateId = jsonValue.GetString("otaUpdateId");

@@ -37,7 +37,7 @@ GetAdminAccountResult::GetAdminAccountResult(const Aws::AmazonWebServiceResult<J
 
 GetAdminAccountResult& GetAdminAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AdminAccount"))
   {
     m_adminAccount = jsonValue.GetString("AdminAccount");

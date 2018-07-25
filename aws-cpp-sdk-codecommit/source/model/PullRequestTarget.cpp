@@ -38,7 +38,7 @@ PullRequestTarget::PullRequestTarget() :
 {
 }
 
-PullRequestTarget::PullRequestTarget(const JsonValue& jsonValue) : 
+PullRequestTarget::PullRequestTarget(JsonView jsonValue) : 
     m_repositoryNameHasBeenSet(false),
     m_sourceReferenceHasBeenSet(false),
     m_destinationReferenceHasBeenSet(false),
@@ -49,7 +49,7 @@ PullRequestTarget::PullRequestTarget(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PullRequestTarget& PullRequestTarget::operator =(const JsonValue& jsonValue)
+PullRequestTarget& PullRequestTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositoryName"))
   {

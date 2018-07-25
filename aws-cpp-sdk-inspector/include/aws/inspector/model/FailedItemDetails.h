@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     FailedItemDetails();
-    FailedItemDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    FailedItemDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FailedItemDetails(Aws::Utils::Json::JsonView jsonValue);
+    FailedItemDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

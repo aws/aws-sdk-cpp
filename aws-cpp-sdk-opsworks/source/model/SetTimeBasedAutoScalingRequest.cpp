@@ -44,7 +44,7 @@ Aws::String SetTimeBasedAutoScalingRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SetTimeBasedAutoScalingRequest::GetRequestSpecificHeaders() const

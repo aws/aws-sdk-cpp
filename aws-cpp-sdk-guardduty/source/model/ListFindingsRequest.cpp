@@ -60,7 +60,7 @@ Aws::String ListFindingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

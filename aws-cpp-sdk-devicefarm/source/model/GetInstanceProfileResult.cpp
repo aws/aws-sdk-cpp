@@ -37,7 +37,7 @@ GetInstanceProfileResult::GetInstanceProfileResult(const Aws::AmazonWebServiceRe
 
 GetInstanceProfileResult& GetInstanceProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceProfile"))
   {
     m_instanceProfile = jsonValue.GetObject("instanceProfile");

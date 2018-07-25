@@ -42,7 +42,7 @@ VideoMetadata::VideoMetadata() :
 {
 }
 
-VideoMetadata::VideoMetadata(const JsonValue& jsonValue) : 
+VideoMetadata::VideoMetadata(JsonView jsonValue) : 
     m_codecHasBeenSet(false),
     m_durationMillis(0),
     m_durationMillisHasBeenSet(false),
@@ -57,7 +57,7 @@ VideoMetadata::VideoMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VideoMetadata& VideoMetadata::operator =(const JsonValue& jsonValue)
+VideoMetadata& VideoMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Codec"))
   {

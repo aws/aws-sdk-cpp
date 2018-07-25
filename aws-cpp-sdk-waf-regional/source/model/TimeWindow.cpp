@@ -34,14 +34,14 @@ TimeWindow::TimeWindow() :
 {
 }
 
-TimeWindow::TimeWindow(const JsonValue& jsonValue) : 
+TimeWindow::TimeWindow(JsonView jsonValue) : 
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TimeWindow& TimeWindow::operator =(const JsonValue& jsonValue)
+TimeWindow& TimeWindow::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartTime"))
   {

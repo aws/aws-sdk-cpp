@@ -35,7 +35,7 @@ Limit::Limit() :
 {
 }
 
-Limit::Limit(const JsonValue& jsonValue) : 
+Limit::Limit(JsonView jsonValue) : 
     m_typeHasBeenSet(false),
     m_max(0),
     m_maxHasBeenSet(false)
@@ -43,7 +43,7 @@ Limit::Limit(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Limit& Limit::operator =(const JsonValue& jsonValue)
+Limit& Limit::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

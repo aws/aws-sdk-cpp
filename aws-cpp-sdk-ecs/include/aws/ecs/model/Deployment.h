@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Deployment();
-    Deployment(const Aws::Utils::Json::JsonValue& jsonValue);
-    Deployment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Deployment(Aws::Utils::Json::JsonView jsonValue);
+    Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -365,35 +366,35 @@ namespace Model
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline Deployment& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline Deployment& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}

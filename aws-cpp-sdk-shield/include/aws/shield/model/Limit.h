@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Shield
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Limit();
-    Limit(const Aws::Utils::Json::JsonValue& jsonValue);
-    Limit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Limit(Aws::Utils::Json::JsonView jsonValue);
+    Limit& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

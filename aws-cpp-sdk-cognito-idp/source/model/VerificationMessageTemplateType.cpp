@@ -39,7 +39,7 @@ VerificationMessageTemplateType::VerificationMessageTemplateType() :
 {
 }
 
-VerificationMessageTemplateType::VerificationMessageTemplateType(const JsonValue& jsonValue) : 
+VerificationMessageTemplateType::VerificationMessageTemplateType(JsonView jsonValue) : 
     m_smsMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_emailSubjectHasBeenSet(false),
@@ -51,7 +51,7 @@ VerificationMessageTemplateType::VerificationMessageTemplateType(const JsonValue
   *this = jsonValue;
 }
 
-VerificationMessageTemplateType& VerificationMessageTemplateType::operator =(const JsonValue& jsonValue)
+VerificationMessageTemplateType& VerificationMessageTemplateType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SmsMessage"))
   {

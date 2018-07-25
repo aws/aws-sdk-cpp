@@ -34,14 +34,14 @@ UtteranceList::UtteranceList() :
 {
 }
 
-UtteranceList::UtteranceList(const JsonValue& jsonValue) : 
+UtteranceList::UtteranceList(JsonView jsonValue) : 
     m_botVersionHasBeenSet(false),
     m_utterancesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UtteranceList& UtteranceList::operator =(const JsonValue& jsonValue)
+UtteranceList& UtteranceList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("botVersion"))
   {
@@ -52,7 +52,7 @@ UtteranceList& UtteranceList::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("utterances"))
   {
-    Array<JsonValue> utterancesJsonList = jsonValue.GetArray("utterances");
+    Array<JsonView> utterancesJsonList = jsonValue.GetArray("utterances");
     for(unsigned utterancesIndex = 0; utterancesIndex < utterancesJsonList.GetLength(); ++utterancesIndex)
     {
       m_utterances.push_back(utterancesJsonList[utterancesIndex].AsObject());

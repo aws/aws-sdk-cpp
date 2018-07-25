@@ -35,7 +35,7 @@ LinkAttributeAction::LinkAttributeAction() :
 {
 }
 
-LinkAttributeAction::LinkAttributeAction(const JsonValue& jsonValue) : 
+LinkAttributeAction::LinkAttributeAction(JsonView jsonValue) : 
     m_attributeActionType(UpdateActionType::NOT_SET),
     m_attributeActionTypeHasBeenSet(false),
     m_attributeUpdateValueHasBeenSet(false)
@@ -43,7 +43,7 @@ LinkAttributeAction::LinkAttributeAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LinkAttributeAction& LinkAttributeAction::operator =(const JsonValue& jsonValue)
+LinkAttributeAction& LinkAttributeAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeActionType"))
   {

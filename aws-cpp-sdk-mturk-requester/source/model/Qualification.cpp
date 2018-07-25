@@ -40,7 +40,7 @@ Qualification::Qualification() :
 {
 }
 
-Qualification::Qualification(const JsonValue& jsonValue) : 
+Qualification::Qualification(JsonView jsonValue) : 
     m_qualificationTypeIdHasBeenSet(false),
     m_workerIdHasBeenSet(false),
     m_grantTimeHasBeenSet(false),
@@ -53,7 +53,7 @@ Qualification::Qualification(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Qualification& Qualification::operator =(const JsonValue& jsonValue)
+Qualification& Qualification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("QualificationTypeId"))
   {

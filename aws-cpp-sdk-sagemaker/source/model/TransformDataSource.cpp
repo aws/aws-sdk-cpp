@@ -33,13 +33,13 @@ TransformDataSource::TransformDataSource() :
 {
 }
 
-TransformDataSource::TransformDataSource(const JsonValue& jsonValue) : 
+TransformDataSource::TransformDataSource(JsonView jsonValue) : 
     m_s3DataSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TransformDataSource& TransformDataSource::operator =(const JsonValue& jsonValue)
+TransformDataSource& TransformDataSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3DataSource"))
   {

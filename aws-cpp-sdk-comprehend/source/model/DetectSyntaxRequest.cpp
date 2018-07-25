@@ -44,7 +44,7 @@ Aws::String DetectSyntaxRequest::SerializePayload() const
    payload.WithString("LanguageCode", SyntaxLanguageCodeMapper::GetNameForSyntaxLanguageCode(m_languageCode));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DetectSyntaxRequest::GetRequestSpecificHeaders() const

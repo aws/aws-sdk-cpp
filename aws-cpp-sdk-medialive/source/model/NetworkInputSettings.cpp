@@ -35,7 +35,7 @@ NetworkInputSettings::NetworkInputSettings() :
 {
 }
 
-NetworkInputSettings::NetworkInputSettings(const JsonValue& jsonValue) : 
+NetworkInputSettings::NetworkInputSettings(JsonView jsonValue) : 
     m_hlsInputSettingsHasBeenSet(false),
     m_serverValidation(NetworkInputServerValidation::NOT_SET),
     m_serverValidationHasBeenSet(false)
@@ -43,7 +43,7 @@ NetworkInputSettings::NetworkInputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NetworkInputSettings& NetworkInputSettings::operator =(const JsonValue& jsonValue)
+NetworkInputSettings& NetworkInputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("hlsInputSettings"))
   {

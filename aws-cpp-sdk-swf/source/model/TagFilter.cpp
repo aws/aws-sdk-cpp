@@ -33,13 +33,13 @@ TagFilter::TagFilter() :
 {
 }
 
-TagFilter::TagFilter(const JsonValue& jsonValue) : 
+TagFilter::TagFilter(JsonView jsonValue) : 
     m_tagHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TagFilter& TagFilter::operator =(const JsonValue& jsonValue)
+TagFilter& TagFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tag"))
   {

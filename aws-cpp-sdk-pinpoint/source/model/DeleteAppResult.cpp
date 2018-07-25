@@ -37,7 +37,7 @@ DeleteAppResult::DeleteAppResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 DeleteAppResult& DeleteAppResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_applicationResponse = jsonValue;
 
 

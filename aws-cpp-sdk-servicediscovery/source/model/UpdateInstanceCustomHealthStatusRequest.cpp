@@ -51,7 +51,7 @@ Aws::String UpdateInstanceCustomHealthStatusRequest::SerializePayload() const
    payload.WithString("Status", CustomHealthStatusMapper::GetNameForCustomHealthStatus(m_status));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateInstanceCustomHealthStatusRequest::GetRequestSpecificHeaders() const

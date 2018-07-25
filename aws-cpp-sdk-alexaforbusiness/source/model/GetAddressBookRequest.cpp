@@ -37,7 +37,7 @@ Aws::String GetAddressBookRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetAddressBookRequest::GetRequestSpecificHeaders() const

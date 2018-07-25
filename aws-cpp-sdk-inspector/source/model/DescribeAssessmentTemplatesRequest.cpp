@@ -42,7 +42,7 @@ Aws::String DescribeAssessmentTemplatesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeAssessmentTemplatesRequest::GetRequestSpecificHeaders() const

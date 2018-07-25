@@ -37,7 +37,7 @@ DescribeTableStatisticsResult::DescribeTableStatisticsResult(const Aws::AmazonWe
 
 DescribeTableStatisticsResult& DescribeTableStatisticsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReplicationTaskArn"))
   {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");
@@ -46,7 +46,7 @@ DescribeTableStatisticsResult& DescribeTableStatisticsResult::operator =(const A
 
   if(jsonValue.ValueExists("TableStatistics"))
   {
-    Array<JsonValue> tableStatisticsJsonList = jsonValue.GetArray("TableStatistics");
+    Array<JsonView> tableStatisticsJsonList = jsonValue.GetArray("TableStatistics");
     for(unsigned tableStatisticsIndex = 0; tableStatisticsIndex < tableStatisticsJsonList.GetLength(); ++tableStatisticsIndex)
     {
       m_tableStatistics.push_back(tableStatisticsJsonList[tableStatisticsIndex].AsObject());

@@ -35,7 +35,7 @@ EncryptionKey::EncryptionKey() :
 {
 }
 
-EncryptionKey::EncryptionKey(const JsonValue& jsonValue) : 
+EncryptionKey::EncryptionKey(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_type(EncryptionKeyType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -43,7 +43,7 @@ EncryptionKey::EncryptionKey(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EncryptionKey& EncryptionKey::operator =(const JsonValue& jsonValue)
+EncryptionKey& EncryptionKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

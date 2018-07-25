@@ -44,7 +44,7 @@ Aws::String CreateDatabaseRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDatabaseRequest::GetRequestSpecificHeaders() const

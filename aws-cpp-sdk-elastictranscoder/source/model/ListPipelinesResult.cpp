@@ -37,10 +37,10 @@ ListPipelinesResult::ListPipelinesResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListPipelinesResult& ListPipelinesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Pipelines"))
   {
-    Array<JsonValue> pipelinesJsonList = jsonValue.GetArray("Pipelines");
+    Array<JsonView> pipelinesJsonList = jsonValue.GetArray("Pipelines");
     for(unsigned pipelinesIndex = 0; pipelinesIndex < pipelinesJsonList.GetLength(); ++pipelinesIndex)
     {
       m_pipelines.push_back(pipelinesJsonList[pipelinesIndex].AsObject());

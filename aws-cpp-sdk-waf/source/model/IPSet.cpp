@@ -35,7 +35,7 @@ IPSet::IPSet() :
 {
 }
 
-IPSet::IPSet(const JsonValue& jsonValue) : 
+IPSet::IPSet(JsonView jsonValue) : 
     m_iPSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_iPSetDescriptorsHasBeenSet(false)
@@ -43,7 +43,7 @@ IPSet::IPSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IPSet& IPSet::operator =(const JsonValue& jsonValue)
+IPSet& IPSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IPSetId"))
   {
@@ -61,7 +61,7 @@ IPSet& IPSet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("IPSetDescriptors"))
   {
-    Array<JsonValue> iPSetDescriptorsJsonList = jsonValue.GetArray("IPSetDescriptors");
+    Array<JsonView> iPSetDescriptorsJsonList = jsonValue.GetArray("IPSetDescriptors");
     for(unsigned iPSetDescriptorsIndex = 0; iPSetDescriptorsIndex < iPSetDescriptorsJsonList.GetLength(); ++iPSetDescriptorsIndex)
     {
       m_iPSetDescriptors.push_back(iPSetDescriptorsJsonList[iPSetDescriptorsIndex].AsObject());

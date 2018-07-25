@@ -51,7 +51,7 @@ Aws::String UpdateCertificateAuthorityRequest::SerializePayload() const
    payload.WithString("Status", CertificateAuthorityStatusMapper::GetNameForCertificateAuthorityStatus(m_status));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateCertificateAuthorityRequest::GetRequestSpecificHeaders() const

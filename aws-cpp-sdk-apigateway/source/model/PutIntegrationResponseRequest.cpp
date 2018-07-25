@@ -72,7 +72,7 @@ Aws::String PutIntegrationResponseRequest::SerializePayload() const
    payload.WithString("contentHandling", ContentHandlingStrategyMapper::GetNameForContentHandlingStrategy(m_contentHandling));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

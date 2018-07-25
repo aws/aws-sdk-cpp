@@ -37,7 +37,7 @@ GetVaultNotificationsResult::GetVaultNotificationsResult(const Aws::AmazonWebSer
 
 GetVaultNotificationsResult& GetVaultNotificationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_vaultNotificationConfig = jsonValue;
 
 

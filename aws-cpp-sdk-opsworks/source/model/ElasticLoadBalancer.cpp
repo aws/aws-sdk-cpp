@@ -41,7 +41,7 @@ ElasticLoadBalancer::ElasticLoadBalancer() :
 {
 }
 
-ElasticLoadBalancer::ElasticLoadBalancer(const JsonValue& jsonValue) : 
+ElasticLoadBalancer::ElasticLoadBalancer(JsonView jsonValue) : 
     m_elasticLoadBalancerNameHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_dnsNameHasBeenSet(false),
@@ -55,7 +55,7 @@ ElasticLoadBalancer::ElasticLoadBalancer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ElasticLoadBalancer& ElasticLoadBalancer::operator =(const JsonValue& jsonValue)
+ElasticLoadBalancer& ElasticLoadBalancer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ElasticLoadBalancerName"))
   {
@@ -101,7 +101,7 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonValue> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
@@ -111,7 +111,7 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -121,7 +121,7 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Ec2InstanceIds"))
   {
-    Array<JsonValue> ec2InstanceIdsJsonList = jsonValue.GetArray("Ec2InstanceIds");
+    Array<JsonView> ec2InstanceIdsJsonList = jsonValue.GetArray("Ec2InstanceIds");
     for(unsigned ec2InstanceIdsIndex = 0; ec2InstanceIdsIndex < ec2InstanceIdsJsonList.GetLength(); ++ec2InstanceIdsIndex)
     {
       m_ec2InstanceIds.push_back(ec2InstanceIdsJsonList[ec2InstanceIdsIndex].AsString());

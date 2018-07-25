@@ -59,7 +59,7 @@ Aws::String DisassociateCreatedArtifactRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisassociateCreatedArtifactRequest::GetRequestSpecificHeaders() const

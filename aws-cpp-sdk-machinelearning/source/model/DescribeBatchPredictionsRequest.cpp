@@ -108,7 +108,7 @@ Aws::String DescribeBatchPredictionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeBatchPredictionsRequest::GetRequestSpecificHeaders() const

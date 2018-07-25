@@ -37,7 +37,7 @@ UserPoolConfig::UserPoolConfig() :
 {
 }
 
-UserPoolConfig::UserPoolConfig(const JsonValue& jsonValue) : 
+UserPoolConfig::UserPoolConfig(JsonView jsonValue) : 
     m_userPoolIdHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
     m_defaultAction(DefaultAction::NOT_SET),
@@ -47,7 +47,7 @@ UserPoolConfig::UserPoolConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserPoolConfig& UserPoolConfig::operator =(const JsonValue& jsonValue)
+UserPoolConfig& UserPoolConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("userPoolId"))
   {

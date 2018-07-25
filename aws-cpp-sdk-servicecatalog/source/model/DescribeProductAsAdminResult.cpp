@@ -37,7 +37,7 @@ DescribeProductAsAdminResult::DescribeProductAsAdminResult(const Aws::AmazonWebS
 
 DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProductViewDetail"))
   {
     m_productViewDetail = jsonValue.GetObject("ProductViewDetail");
@@ -46,7 +46,7 @@ DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws
 
   if(jsonValue.ValueExists("ProvisioningArtifactSummaries"))
   {
-    Array<JsonValue> provisioningArtifactSummariesJsonList = jsonValue.GetArray("ProvisioningArtifactSummaries");
+    Array<JsonView> provisioningArtifactSummariesJsonList = jsonValue.GetArray("ProvisioningArtifactSummaries");
     for(unsigned provisioningArtifactSummariesIndex = 0; provisioningArtifactSummariesIndex < provisioningArtifactSummariesJsonList.GetLength(); ++provisioningArtifactSummariesIndex)
     {
       m_provisioningArtifactSummaries.push_back(provisioningArtifactSummariesJsonList[provisioningArtifactSummariesIndex].AsObject());
@@ -55,7 +55,7 @@ DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -64,7 +64,7 @@ DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws
 
   if(jsonValue.ValueExists("TagOptions"))
   {
-    Array<JsonValue> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
+    Array<JsonView> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
     for(unsigned tagOptionsIndex = 0; tagOptionsIndex < tagOptionsJsonList.GetLength(); ++tagOptionsIndex)
     {
       m_tagOptions.push_back(tagOptionsJsonList[tagOptionsIndex].AsObject());

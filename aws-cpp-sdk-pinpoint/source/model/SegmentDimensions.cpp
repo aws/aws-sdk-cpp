@@ -38,7 +38,7 @@ SegmentDimensions::SegmentDimensions() :
 {
 }
 
-SegmentDimensions::SegmentDimensions(const JsonValue& jsonValue) : 
+SegmentDimensions::SegmentDimensions(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
     m_behaviorHasBeenSet(false),
     m_demographicHasBeenSet(false),
@@ -49,11 +49,11 @@ SegmentDimensions::SegmentDimensions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SegmentDimensions& SegmentDimensions::operator =(const JsonValue& jsonValue)
+SegmentDimensions& SegmentDimensions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsObject();
@@ -84,7 +84,7 @@ SegmentDimensions& SegmentDimensions::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Metrics"))
   {
-    Aws::Map<Aws::String, JsonValue> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
     for(auto& metricsItem : metricsJsonMap)
     {
       m_metrics[metricsItem.first] = metricsItem.second.AsObject();
@@ -94,7 +94,7 @@ SegmentDimensions& SegmentDimensions::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("UserAttributes"))
   {
-    Aws::Map<Aws::String, JsonValue> userAttributesJsonMap = jsonValue.GetObject("UserAttributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> userAttributesJsonMap = jsonValue.GetObject("UserAttributes").GetAllObjects();
     for(auto& userAttributesItem : userAttributesJsonMap)
     {
       m_userAttributes[userAttributesItem.first] = userAttributesItem.second.AsObject();

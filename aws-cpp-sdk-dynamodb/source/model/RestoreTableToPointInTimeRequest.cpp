@@ -58,7 +58,7 @@ Aws::String RestoreTableToPointInTimeRequest::SerializePayload() const
    payload.WithDouble("RestoreDateTime", m_restoreDateTime.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RestoreTableToPointInTimeRequest::GetRequestSpecificHeaders() const

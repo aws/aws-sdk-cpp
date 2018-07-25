@@ -36,7 +36,7 @@ ResourcePolicy::ResourcePolicy() :
 {
 }
 
-ResourcePolicy::ResourcePolicy(const JsonValue& jsonValue) : 
+ResourcePolicy::ResourcePolicy(JsonView jsonValue) : 
     m_policyNameHasBeenSet(false),
     m_policyDocumentHasBeenSet(false),
     m_lastUpdatedTime(0),
@@ -45,7 +45,7 @@ ResourcePolicy::ResourcePolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourcePolicy& ResourcePolicy::operator =(const JsonValue& jsonValue)
+ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("policyName"))
   {

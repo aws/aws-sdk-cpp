@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Snowball
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Ec2AmiResource();
-    Ec2AmiResource(const Aws::Utils::Json::JsonValue& jsonValue);
-    Ec2AmiResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Ec2AmiResource(Aws::Utils::Json::JsonView jsonValue);
+    Ec2AmiResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

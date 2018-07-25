@@ -38,7 +38,7 @@ ReplicationPendingModifiedValues::ReplicationPendingModifiedValues() :
 {
 }
 
-ReplicationPendingModifiedValues::ReplicationPendingModifiedValues(const JsonValue& jsonValue) : 
+ReplicationPendingModifiedValues::ReplicationPendingModifiedValues(JsonView jsonValue) : 
     m_replicationInstanceClassHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
@@ -49,7 +49,7 @@ ReplicationPendingModifiedValues::ReplicationPendingModifiedValues(const JsonVal
   *this = jsonValue;
 }
 
-ReplicationPendingModifiedValues& ReplicationPendingModifiedValues::operator =(const JsonValue& jsonValue)
+ReplicationPendingModifiedValues& ReplicationPendingModifiedValues::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReplicationInstanceClass"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Budgets
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     CalculatedSpend();
-    CalculatedSpend(const Aws::Utils::Json::JsonValue& jsonValue);
-    CalculatedSpend& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CalculatedSpend(Aws::Utils::Json::JsonView jsonValue);
+    CalculatedSpend& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

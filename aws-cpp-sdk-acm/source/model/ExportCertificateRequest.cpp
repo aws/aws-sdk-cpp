@@ -44,7 +44,7 @@ Aws::String ExportCertificateRequest::SerializePayload() const
    payload.WithString("Passphrase", HashingUtils::Base64Encode(m_passphrase));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ExportCertificateRequest::GetRequestSpecificHeaders() const

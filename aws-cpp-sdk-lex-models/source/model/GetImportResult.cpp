@@ -43,7 +43,7 @@ GetImportResult::GetImportResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetImportResult& GetImportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -76,7 +76,7 @@ GetImportResult& GetImportResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("failureReason"))
   {
-    Array<JsonValue> failureReasonJsonList = jsonValue.GetArray("failureReason");
+    Array<JsonView> failureReasonJsonList = jsonValue.GetArray("failureReason");
     for(unsigned failureReasonIndex = 0; failureReasonIndex < failureReasonJsonList.GetLength(); ++failureReasonIndex)
     {
       m_failureReason.push_back(failureReasonJsonList[failureReasonIndex].AsString());

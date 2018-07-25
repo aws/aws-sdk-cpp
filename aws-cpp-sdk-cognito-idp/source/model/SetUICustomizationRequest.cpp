@@ -58,7 +58,7 @@ Aws::String SetUICustomizationRequest::SerializePayload() const
    payload.WithString("ImageFile", HashingUtils::Base64Encode(m_imageFile));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SetUICustomizationRequest::GetRequestSpecificHeaders() const

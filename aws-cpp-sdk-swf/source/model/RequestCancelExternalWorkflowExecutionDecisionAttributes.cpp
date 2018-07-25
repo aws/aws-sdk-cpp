@@ -35,7 +35,7 @@ RequestCancelExternalWorkflowExecutionDecisionAttributes::RequestCancelExternalW
 {
 }
 
-RequestCancelExternalWorkflowExecutionDecisionAttributes::RequestCancelExternalWorkflowExecutionDecisionAttributes(const JsonValue& jsonValue) : 
+RequestCancelExternalWorkflowExecutionDecisionAttributes::RequestCancelExternalWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
     m_workflowIdHasBeenSet(false),
     m_runIdHasBeenSet(false),
     m_controlHasBeenSet(false)
@@ -43,7 +43,7 @@ RequestCancelExternalWorkflowExecutionDecisionAttributes::RequestCancelExternalW
   *this = jsonValue;
 }
 
-RequestCancelExternalWorkflowExecutionDecisionAttributes& RequestCancelExternalWorkflowExecutionDecisionAttributes::operator =(const JsonValue& jsonValue)
+RequestCancelExternalWorkflowExecutionDecisionAttributes& RequestCancelExternalWorkflowExecutionDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowId"))
   {

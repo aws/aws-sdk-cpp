@@ -37,7 +37,7 @@ SendMessagesResult::SendMessagesResult(const Aws::AmazonWebServiceResult<JsonVal
 
 SendMessagesResult& SendMessagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_messageResponse = jsonValue;
 
 

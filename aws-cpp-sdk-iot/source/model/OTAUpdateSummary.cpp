@@ -35,7 +35,7 @@ OTAUpdateSummary::OTAUpdateSummary() :
 {
 }
 
-OTAUpdateSummary::OTAUpdateSummary(const JsonValue& jsonValue) : 
+OTAUpdateSummary::OTAUpdateSummary(JsonView jsonValue) : 
     m_otaUpdateIdHasBeenSet(false),
     m_otaUpdateArnHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -43,7 +43,7 @@ OTAUpdateSummary::OTAUpdateSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OTAUpdateSummary& OTAUpdateSummary::operator =(const JsonValue& jsonValue)
+OTAUpdateSummary& OTAUpdateSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("otaUpdateId"))
   {

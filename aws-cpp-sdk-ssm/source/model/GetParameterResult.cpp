@@ -37,7 +37,7 @@ GetParameterResult::GetParameterResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetParameterResult& GetParameterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Parameter"))
   {
     m_parameter = jsonValue.GetObject("Parameter");

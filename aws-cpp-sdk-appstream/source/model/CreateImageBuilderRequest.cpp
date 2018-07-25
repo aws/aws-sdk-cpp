@@ -101,7 +101,7 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateImageBuilderRequest::GetRequestSpecificHeaders() const

@@ -84,7 +84,7 @@ Aws::String AddPermissionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void AddPermissionRequest::AddQueryStringParameters(URI& uri) const

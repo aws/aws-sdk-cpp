@@ -37,7 +37,7 @@ ListCertificatesResult::ListCertificatesResult(const Aws::AmazonWebServiceResult
 
 ListCertificatesResult& ListCertificatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ ListCertificatesResult& ListCertificatesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("CertificateSummaryList"))
   {
-    Array<JsonValue> certificateSummaryListJsonList = jsonValue.GetArray("CertificateSummaryList");
+    Array<JsonView> certificateSummaryListJsonList = jsonValue.GetArray("CertificateSummaryList");
     for(unsigned certificateSummaryListIndex = 0; certificateSummaryListIndex < certificateSummaryListJsonList.GetLength(); ++certificateSummaryListIndex)
     {
       m_certificateSummaryList.push_back(certificateSummaryListJsonList[certificateSummaryListIndex].AsObject());

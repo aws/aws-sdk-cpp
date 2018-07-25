@@ -39,7 +39,7 @@ Aws::String GetTypedLinkFacetInformationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetTypedLinkFacetInformationRequest::GetRequestSpecificHeaders() const

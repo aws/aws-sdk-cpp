@@ -34,14 +34,14 @@ ParameterGroup::ParameterGroup() :
 {
 }
 
-ParameterGroup::ParameterGroup(const JsonValue& jsonValue) : 
+ParameterGroup::ParameterGroup(JsonView jsonValue) : 
     m_parameterGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ParameterGroup& ParameterGroup::operator =(const JsonValue& jsonValue)
+ParameterGroup& ParameterGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterGroupName"))
   {

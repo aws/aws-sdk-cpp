@@ -37,7 +37,7 @@ CreateKeyResult::CreateKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 CreateKeyResult& CreateKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyMetadata"))
   {
     m_keyMetadata = jsonValue.GetObject("KeyMetadata");

@@ -37,7 +37,7 @@ DescribeReservedElasticsearchInstanceOfferingsResult::DescribeReservedElasticsea
 
 DescribeReservedElasticsearchInstanceOfferingsResult& DescribeReservedElasticsearchInstanceOfferingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ DescribeReservedElasticsearchInstanceOfferingsResult& DescribeReservedElasticsea
 
   if(jsonValue.ValueExists("ReservedElasticsearchInstanceOfferings"))
   {
-    Array<JsonValue> reservedElasticsearchInstanceOfferingsJsonList = jsonValue.GetArray("ReservedElasticsearchInstanceOfferings");
+    Array<JsonView> reservedElasticsearchInstanceOfferingsJsonList = jsonValue.GetArray("ReservedElasticsearchInstanceOfferings");
     for(unsigned reservedElasticsearchInstanceOfferingsIndex = 0; reservedElasticsearchInstanceOfferingsIndex < reservedElasticsearchInstanceOfferingsJsonList.GetLength(); ++reservedElasticsearchInstanceOfferingsIndex)
     {
       m_reservedElasticsearchInstanceOfferings.push_back(reservedElasticsearchInstanceOfferingsJsonList[reservedElasticsearchInstanceOfferingsIndex].AsObject());

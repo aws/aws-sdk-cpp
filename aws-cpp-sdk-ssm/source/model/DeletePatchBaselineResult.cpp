@@ -37,7 +37,7 @@ DeletePatchBaselineResult::DeletePatchBaselineResult(const Aws::AmazonWebService
 
 DeletePatchBaselineResult& DeletePatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BaselineId"))
   {
     m_baselineId = jsonValue.GetString("BaselineId");

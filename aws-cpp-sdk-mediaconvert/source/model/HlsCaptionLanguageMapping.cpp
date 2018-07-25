@@ -38,7 +38,7 @@ HlsCaptionLanguageMapping::HlsCaptionLanguageMapping() :
 {
 }
 
-HlsCaptionLanguageMapping::HlsCaptionLanguageMapping(const JsonValue& jsonValue) : 
+HlsCaptionLanguageMapping::HlsCaptionLanguageMapping(JsonView jsonValue) : 
     m_captionChannel(0),
     m_captionChannelHasBeenSet(false),
     m_customLanguageCodeHasBeenSet(false),
@@ -49,7 +49,7 @@ HlsCaptionLanguageMapping::HlsCaptionLanguageMapping(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-HlsCaptionLanguageMapping& HlsCaptionLanguageMapping::operator =(const JsonValue& jsonValue)
+HlsCaptionLanguageMapping& HlsCaptionLanguageMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("captionChannel"))
   {

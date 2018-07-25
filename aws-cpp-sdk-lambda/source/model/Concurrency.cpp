@@ -34,14 +34,14 @@ Concurrency::Concurrency() :
 {
 }
 
-Concurrency::Concurrency(const JsonValue& jsonValue) : 
+Concurrency::Concurrency(JsonView jsonValue) : 
     m_reservedConcurrentExecutions(0),
     m_reservedConcurrentExecutionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Concurrency& Concurrency::operator =(const JsonValue& jsonValue)
+Concurrency& Concurrency::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReservedConcurrentExecutions"))
   {

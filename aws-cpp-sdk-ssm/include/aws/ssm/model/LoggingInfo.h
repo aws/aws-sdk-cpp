@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     LoggingInfo();
-    LoggingInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoggingInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoggingInfo(Aws::Utils::Json::JsonView jsonValue);
+    LoggingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -33,17 +33,17 @@ ResponsePartitionKey::ResponsePartitionKey() :
 {
 }
 
-ResponsePartitionKey::ResponsePartitionKey(const JsonValue& jsonValue) : 
+ResponsePartitionKey::ResponsePartitionKey(JsonView jsonValue) : 
     m_dimensionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResponsePartitionKey& ResponsePartitionKey::operator =(const JsonValue& jsonValue)
+ResponsePartitionKey& ResponsePartitionKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Aws::Map<Aws::String, JsonValue> dimensionsJsonMap = jsonValue.GetObject("Dimensions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> dimensionsJsonMap = jsonValue.GetObject("Dimensions").GetAllObjects();
     for(auto& dimensionsItem : dimensionsJsonMap)
     {
       m_dimensions[dimensionsItem.first] = dimensionsItem.second.AsString();

@@ -48,7 +48,7 @@ Job::Job() :
 {
 }
 
-Job::Job(const JsonValue& jsonValue) : 
+Job::Job(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(TestType::NOT_SET),
@@ -69,7 +69,7 @@ Job::Job(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Job& Job::operator =(const JsonValue& jsonValue)
+Job& Job::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

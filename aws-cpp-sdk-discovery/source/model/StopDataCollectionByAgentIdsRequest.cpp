@@ -42,7 +42,7 @@ Aws::String StopDataCollectionByAgentIdsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopDataCollectionByAgentIdsRequest::GetRequestSpecificHeaders() const

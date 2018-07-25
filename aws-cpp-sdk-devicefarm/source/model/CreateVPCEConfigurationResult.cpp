@@ -37,7 +37,7 @@ CreateVPCEConfigurationResult::CreateVPCEConfigurationResult(const Aws::AmazonWe
 
 CreateVPCEConfigurationResult& CreateVPCEConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("vpceConfiguration"))
   {
     m_vpceConfiguration = jsonValue.GetObject("vpceConfiguration");

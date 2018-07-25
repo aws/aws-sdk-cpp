@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MachineLearning
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RedshiftDatabase();
-    RedshiftDatabase(const Aws::Utils::Json::JsonValue& jsonValue);
-    RedshiftDatabase& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RedshiftDatabase(Aws::Utils::Json::JsonView jsonValue);
+    RedshiftDatabase& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

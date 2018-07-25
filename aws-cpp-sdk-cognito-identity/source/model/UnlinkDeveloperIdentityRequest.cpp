@@ -58,7 +58,7 @@ Aws::String UnlinkDeveloperIdentityRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UnlinkDeveloperIdentityRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ ResourceKey::ResourceKey() :
 {
 }
 
-ResourceKey::ResourceKey(const JsonValue& jsonValue) : 
+ResourceKey::ResourceKey(JsonView jsonValue) : 
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false)
@@ -43,7 +43,7 @@ ResourceKey::ResourceKey(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceKey& ResourceKey::operator =(const JsonValue& jsonValue)
+ResourceKey& ResourceKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resourceType"))
   {

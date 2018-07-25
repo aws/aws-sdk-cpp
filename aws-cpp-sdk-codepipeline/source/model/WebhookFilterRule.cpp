@@ -34,14 +34,14 @@ WebhookFilterRule::WebhookFilterRule() :
 {
 }
 
-WebhookFilterRule::WebhookFilterRule(const JsonValue& jsonValue) : 
+WebhookFilterRule::WebhookFilterRule(JsonView jsonValue) : 
     m_jsonPathHasBeenSet(false),
     m_matchEqualsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WebhookFilterRule& WebhookFilterRule::operator =(const JsonValue& jsonValue)
+WebhookFilterRule& WebhookFilterRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jsonPath"))
   {

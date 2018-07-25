@@ -44,7 +44,7 @@ CaseDetails::CaseDetails() :
 {
 }
 
-CaseDetails::CaseDetails(const JsonValue& jsonValue) : 
+CaseDetails::CaseDetails(JsonView jsonValue) : 
     m_caseIdHasBeenSet(false),
     m_displayIdHasBeenSet(false),
     m_subjectHasBeenSet(false),
@@ -61,7 +61,7 @@ CaseDetails::CaseDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaseDetails& CaseDetails::operator =(const JsonValue& jsonValue)
+CaseDetails& CaseDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("caseId"))
   {
@@ -135,7 +135,7 @@ CaseDetails& CaseDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ccEmailAddresses"))
   {
-    Array<JsonValue> ccEmailAddressesJsonList = jsonValue.GetArray("ccEmailAddresses");
+    Array<JsonView> ccEmailAddressesJsonList = jsonValue.GetArray("ccEmailAddresses");
     for(unsigned ccEmailAddressesIndex = 0; ccEmailAddressesIndex < ccEmailAddressesJsonList.GetLength(); ++ccEmailAddressesIndex)
     {
       m_ccEmailAddresses.push_back(ccEmailAddressesJsonList[ccEmailAddressesIndex].AsString());

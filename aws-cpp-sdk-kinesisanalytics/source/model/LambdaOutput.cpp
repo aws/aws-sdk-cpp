@@ -34,14 +34,14 @@ LambdaOutput::LambdaOutput() :
 {
 }
 
-LambdaOutput::LambdaOutput(const JsonValue& jsonValue) : 
+LambdaOutput::LambdaOutput(JsonView jsonValue) : 
     m_resourceARNHasBeenSet(false),
     m_roleARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaOutput& LambdaOutput::operator =(const JsonValue& jsonValue)
+LambdaOutput& LambdaOutput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceARN"))
   {

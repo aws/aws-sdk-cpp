@@ -37,10 +37,10 @@ ListResourcesResult::ListResourcesResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListResourcesResult& ListResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resources"))
   {
-    Array<JsonValue> resourcesJsonList = jsonValue.GetArray("resources");
+    Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());

@@ -40,7 +40,7 @@ Rectangle::Rectangle() :
 {
 }
 
-Rectangle::Rectangle(const JsonValue& jsonValue) : 
+Rectangle::Rectangle(JsonView jsonValue) : 
     m_height(0),
     m_heightHasBeenSet(false),
     m_width(0),
@@ -53,7 +53,7 @@ Rectangle::Rectangle(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Rectangle& Rectangle::operator =(const JsonValue& jsonValue)
+Rectangle& Rectangle::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("height"))
   {

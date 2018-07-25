@@ -37,7 +37,7 @@ GetTriggerResult::GetTriggerResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetTriggerResult& GetTriggerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Trigger"))
   {
     m_trigger = jsonValue.GetObject("Trigger");

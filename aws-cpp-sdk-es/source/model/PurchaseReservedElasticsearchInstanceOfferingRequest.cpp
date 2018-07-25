@@ -52,7 +52,7 @@ Aws::String PurchaseReservedElasticsearchInstanceOfferingRequest::SerializePaylo
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

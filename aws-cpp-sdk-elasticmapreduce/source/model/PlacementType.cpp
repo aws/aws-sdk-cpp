@@ -34,14 +34,14 @@ PlacementType::PlacementType() :
 {
 }
 
-PlacementType::PlacementType(const JsonValue& jsonValue) : 
+PlacementType::PlacementType(JsonView jsonValue) : 
     m_availabilityZoneHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PlacementType& PlacementType::operator =(const JsonValue& jsonValue)
+PlacementType& PlacementType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
@@ -52,7 +52,7 @@ PlacementType& PlacementType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonValue> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());

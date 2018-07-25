@@ -39,7 +39,7 @@ DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult(const A
 
 DescribeNodeAssociationStatusResult& DescribeNodeAssociationStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NodeAssociationStatus"))
   {
     m_nodeAssociationStatus = NodeAssociationStatusMapper::GetNodeAssociationStatusForName(jsonValue.GetString("NodeAssociationStatus"));
@@ -48,7 +48,7 @@ DescribeNodeAssociationStatusResult& DescribeNodeAssociationStatusResult::operat
 
   if(jsonValue.ValueExists("EngineAttributes"))
   {
-    Array<JsonValue> engineAttributesJsonList = jsonValue.GetArray("EngineAttributes");
+    Array<JsonView> engineAttributesJsonList = jsonValue.GetArray("EngineAttributes");
     for(unsigned engineAttributesIndex = 0; engineAttributesIndex < engineAttributesJsonList.GetLength(); ++engineAttributesIndex)
     {
       m_engineAttributes.push_back(engineAttributesJsonList[engineAttributesIndex].AsObject());

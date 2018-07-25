@@ -37,7 +37,7 @@ CreateBatchPredictionResult::CreateBatchPredictionResult(const Aws::AmazonWebSer
 
 CreateBatchPredictionResult& CreateBatchPredictionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BatchPredictionId"))
   {
     m_batchPredictionId = jsonValue.GetString("BatchPredictionId");

@@ -36,7 +36,7 @@ ConditionalForwarder::ConditionalForwarder() :
 {
 }
 
-ConditionalForwarder::ConditionalForwarder(const JsonValue& jsonValue) : 
+ConditionalForwarder::ConditionalForwarder(JsonView jsonValue) : 
     m_remoteDomainNameHasBeenSet(false),
     m_dnsIpAddrsHasBeenSet(false),
     m_replicationScope(ReplicationScope::NOT_SET),
@@ -45,7 +45,7 @@ ConditionalForwarder::ConditionalForwarder(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConditionalForwarder& ConditionalForwarder::operator =(const JsonValue& jsonValue)
+ConditionalForwarder& ConditionalForwarder::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RemoteDomainName"))
   {
@@ -56,7 +56,7 @@ ConditionalForwarder& ConditionalForwarder::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("DnsIpAddrs"))
   {
-    Array<JsonValue> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
+    Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
     for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
     {
       m_dnsIpAddrs.push_back(dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString());

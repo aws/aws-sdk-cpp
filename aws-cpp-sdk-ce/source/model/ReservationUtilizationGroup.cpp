@@ -36,7 +36,7 @@ ReservationUtilizationGroup::ReservationUtilizationGroup() :
 {
 }
 
-ReservationUtilizationGroup::ReservationUtilizationGroup(const JsonValue& jsonValue) : 
+ReservationUtilizationGroup::ReservationUtilizationGroup(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_attributesHasBeenSet(false),
@@ -45,7 +45,7 @@ ReservationUtilizationGroup::ReservationUtilizationGroup(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ReservationUtilizationGroup& ReservationUtilizationGroup::operator =(const JsonValue& jsonValue)
+ReservationUtilizationGroup& ReservationUtilizationGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -63,7 +63,7 @@ ReservationUtilizationGroup& ReservationUtilizationGroup::operator =(const JsonV
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

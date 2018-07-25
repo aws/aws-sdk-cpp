@@ -35,7 +35,7 @@ CodeSigningCertificateChain::CodeSigningCertificateChain() :
 {
 }
 
-CodeSigningCertificateChain::CodeSigningCertificateChain(const JsonValue& jsonValue) : 
+CodeSigningCertificateChain::CodeSigningCertificateChain(JsonView jsonValue) : 
     m_streamHasBeenSet(false),
     m_certificateNameHasBeenSet(false),
     m_inlineDocumentHasBeenSet(false)
@@ -43,7 +43,7 @@ CodeSigningCertificateChain::CodeSigningCertificateChain(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-CodeSigningCertificateChain& CodeSigningCertificateChain::operator =(const JsonValue& jsonValue)
+CodeSigningCertificateChain& CodeSigningCertificateChain::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("stream"))
   {

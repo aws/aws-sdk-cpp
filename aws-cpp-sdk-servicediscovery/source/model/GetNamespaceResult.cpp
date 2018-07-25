@@ -37,7 +37,7 @@ GetNamespaceResult::GetNamespaceResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetNamespaceResult& GetNamespaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetObject("Namespace");

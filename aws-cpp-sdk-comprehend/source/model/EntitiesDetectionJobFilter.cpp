@@ -37,7 +37,7 @@ EntitiesDetectionJobFilter::EntitiesDetectionJobFilter() :
 {
 }
 
-EntitiesDetectionJobFilter::EntitiesDetectionJobFilter(const JsonValue& jsonValue) : 
+EntitiesDetectionJobFilter::EntitiesDetectionJobFilter(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
@@ -47,7 +47,7 @@ EntitiesDetectionJobFilter::EntitiesDetectionJobFilter(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-EntitiesDetectionJobFilter& EntitiesDetectionJobFilter::operator =(const JsonValue& jsonValue)
+EntitiesDetectionJobFilter& EntitiesDetectionJobFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

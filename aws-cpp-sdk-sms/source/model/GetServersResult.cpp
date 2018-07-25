@@ -39,7 +39,7 @@ GetServersResult::GetServersResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetServersResult& GetServersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("lastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("lastModifiedOn");
@@ -54,7 +54,7 @@ GetServersResult& GetServersResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("serverList"))
   {
-    Array<JsonValue> serverListJsonList = jsonValue.GetArray("serverList");
+    Array<JsonView> serverListJsonList = jsonValue.GetArray("serverList");
     for(unsigned serverListIndex = 0; serverListIndex < serverListJsonList.GetLength(); ++serverListIndex)
     {
       m_serverList.push_back(serverListJsonList[serverListIndex].AsObject());

@@ -94,7 +94,7 @@ Aws::String GetReservationPurchaseRecommendationRequest::SerializePayload() cons
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetReservationPurchaseRecommendationRequest::GetRequestSpecificHeaders() const

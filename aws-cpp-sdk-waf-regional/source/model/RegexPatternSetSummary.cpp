@@ -34,14 +34,14 @@ RegexPatternSetSummary::RegexPatternSetSummary() :
 {
 }
 
-RegexPatternSetSummary::RegexPatternSetSummary(const JsonValue& jsonValue) : 
+RegexPatternSetSummary::RegexPatternSetSummary(JsonView jsonValue) : 
     m_regexPatternSetIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RegexPatternSetSummary& RegexPatternSetSummary::operator =(const JsonValue& jsonValue)
+RegexPatternSetSummary& RegexPatternSetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RegexPatternSetId"))
   {

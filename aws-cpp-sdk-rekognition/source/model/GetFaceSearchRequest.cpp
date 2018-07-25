@@ -59,7 +59,7 @@ Aws::String GetFaceSearchRequest::SerializePayload() const
    payload.WithString("SortBy", FaceSearchSortByMapper::GetNameForFaceSearchSortBy(m_sortBy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetFaceSearchRequest::GetRequestSpecificHeaders() const

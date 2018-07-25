@@ -120,7 +120,7 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RegisterTaskDefinitionRequest::GetRequestSpecificHeaders() const

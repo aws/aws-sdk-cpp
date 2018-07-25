@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ActivityTaskStartedEventAttributes();
-    ActivityTaskStartedEventAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    ActivityTaskStartedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ActivityTaskStartedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    ActivityTaskStartedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

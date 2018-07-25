@@ -35,7 +35,7 @@ RenewalSummary::RenewalSummary() :
 {
 }
 
-RenewalSummary::RenewalSummary(const JsonValue& jsonValue) : 
+RenewalSummary::RenewalSummary(JsonView jsonValue) : 
     m_renewalStatus(RenewalStatus::NOT_SET),
     m_renewalStatusHasBeenSet(false),
     m_domainValidationOptionsHasBeenSet(false)
@@ -43,7 +43,7 @@ RenewalSummary::RenewalSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RenewalSummary& RenewalSummary::operator =(const JsonValue& jsonValue)
+RenewalSummary& RenewalSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RenewalStatus"))
   {
@@ -54,7 +54,7 @@ RenewalSummary& RenewalSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DomainValidationOptions"))
   {
-    Array<JsonValue> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
+    Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
     for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
     {
       m_domainValidationOptions.push_back(domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject());

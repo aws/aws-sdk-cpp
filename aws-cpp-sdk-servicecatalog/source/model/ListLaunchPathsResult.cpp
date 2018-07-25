@@ -37,10 +37,10 @@ ListLaunchPathsResult::ListLaunchPathsResult(const Aws::AmazonWebServiceResult<J
 
 ListLaunchPathsResult& ListLaunchPathsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LaunchPathSummaries"))
   {
-    Array<JsonValue> launchPathSummariesJsonList = jsonValue.GetArray("LaunchPathSummaries");
+    Array<JsonView> launchPathSummariesJsonList = jsonValue.GetArray("LaunchPathSummaries");
     for(unsigned launchPathSummariesIndex = 0; launchPathSummariesIndex < launchPathSummariesJsonList.GetLength(); ++launchPathSummariesIndex)
     {
       m_launchPathSummaries.push_back(launchPathSummariesJsonList[launchPathSummariesIndex].AsObject());

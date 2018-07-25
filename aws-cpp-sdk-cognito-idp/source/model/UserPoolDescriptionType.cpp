@@ -39,7 +39,7 @@ UserPoolDescriptionType::UserPoolDescriptionType() :
 {
 }
 
-UserPoolDescriptionType::UserPoolDescriptionType(const JsonValue& jsonValue) : 
+UserPoolDescriptionType::UserPoolDescriptionType(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
@@ -51,7 +51,7 @@ UserPoolDescriptionType::UserPoolDescriptionType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserPoolDescriptionType& UserPoolDescriptionType::operator =(const JsonValue& jsonValue)
+UserPoolDescriptionType& UserPoolDescriptionType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

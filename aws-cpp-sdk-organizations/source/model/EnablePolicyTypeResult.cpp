@@ -37,7 +37,7 @@ EnablePolicyTypeResult::EnablePolicyTypeResult(const Aws::AmazonWebServiceResult
 
 EnablePolicyTypeResult& EnablePolicyTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Root"))
   {
     m_root = jsonValue.GetObject("Root");

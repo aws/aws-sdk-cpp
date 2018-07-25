@@ -47,7 +47,7 @@ DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("autoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("autoMinorVersionUpgrade");
@@ -68,7 +68,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("brokerInstances"))
   {
-    Array<JsonValue> brokerInstancesJsonList = jsonValue.GetArray("brokerInstances");
+    Array<JsonView> brokerInstancesJsonList = jsonValue.GetArray("brokerInstances");
     for(unsigned brokerInstancesIndex = 0; brokerInstancesIndex < brokerInstancesJsonList.GetLength(); ++brokerInstancesIndex)
     {
       m_brokerInstances.push_back(brokerInstancesJsonList[brokerInstancesIndex].AsObject());
@@ -131,7 +131,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonValue> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -140,7 +140,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("subnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -149,7 +149,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("users"))
   {
-    Array<JsonValue> usersJsonList = jsonValue.GetArray("users");
+    Array<JsonView> usersJsonList = jsonValue.GetArray("users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());

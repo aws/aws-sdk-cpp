@@ -73,7 +73,7 @@ Run::Run() :
 {
 }
 
-Run::Run(const JsonValue& jsonValue) : 
+Run::Run(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(TestType::NOT_SET),
@@ -119,7 +119,7 @@ Run::Run(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Run& Run::operator =(const JsonValue& jsonValue)
+Run& Run::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

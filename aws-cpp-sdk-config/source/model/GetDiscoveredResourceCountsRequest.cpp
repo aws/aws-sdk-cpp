@@ -57,7 +57,7 @@ Aws::String GetDiscoveredResourceCountsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDiscoveredResourceCountsRequest::GetRequestSpecificHeaders() const

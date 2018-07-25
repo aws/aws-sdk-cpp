@@ -49,7 +49,7 @@ APNSVoipSandboxChannelResponse::APNSVoipSandboxChannelResponse() :
 {
 }
 
-APNSVoipSandboxChannelResponse::APNSVoipSandboxChannelResponse(const JsonValue& jsonValue) : 
+APNSVoipSandboxChannelResponse::APNSVoipSandboxChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_defaultAuthenticationMethodHasBeenSet(false),
@@ -71,7 +71,7 @@ APNSVoipSandboxChannelResponse::APNSVoipSandboxChannelResponse(const JsonValue& 
   *this = jsonValue;
 }
 
-APNSVoipSandboxChannelResponse& APNSVoipSandboxChannelResponse::operator =(const JsonValue& jsonValue)
+APNSVoipSandboxChannelResponse& APNSVoipSandboxChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

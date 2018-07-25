@@ -34,18 +34,18 @@ BatchLookupPolicyResponse::BatchLookupPolicyResponse() :
 {
 }
 
-BatchLookupPolicyResponse::BatchLookupPolicyResponse(const JsonValue& jsonValue) : 
+BatchLookupPolicyResponse::BatchLookupPolicyResponse(JsonView jsonValue) : 
     m_policyToPathListHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchLookupPolicyResponse& BatchLookupPolicyResponse::operator =(const JsonValue& jsonValue)
+BatchLookupPolicyResponse& BatchLookupPolicyResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyToPathList"))
   {
-    Array<JsonValue> policyToPathListJsonList = jsonValue.GetArray("PolicyToPathList");
+    Array<JsonView> policyToPathListJsonList = jsonValue.GetArray("PolicyToPathList");
     for(unsigned policyToPathListIndex = 0; policyToPathListIndex < policyToPathListJsonList.GetLength(); ++policyToPathListIndex)
     {
       m_policyToPathList.push_back(policyToPathListJsonList[policyToPathListIndex].AsObject());

@@ -37,10 +37,10 @@ GetInstancesHealthStatusResult::GetInstancesHealthStatusResult(const Aws::Amazon
 
 GetInstancesHealthStatusResult& GetInstancesHealthStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Status"))
   {
-    Aws::Map<Aws::String, JsonValue> statusJsonMap = jsonValue.GetObject("Status").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> statusJsonMap = jsonValue.GetObject("Status").GetAllObjects();
     for(auto& statusItem : statusJsonMap)
     {
       m_status[statusItem.first] = HealthStatusMapper::GetHealthStatusForName(statusItem.second.AsString());

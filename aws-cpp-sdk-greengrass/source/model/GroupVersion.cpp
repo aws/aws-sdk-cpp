@@ -38,7 +38,7 @@ GroupVersion::GroupVersion() :
 {
 }
 
-GroupVersion::GroupVersion(const JsonValue& jsonValue) : 
+GroupVersion::GroupVersion(JsonView jsonValue) : 
     m_coreDefinitionVersionArnHasBeenSet(false),
     m_deviceDefinitionVersionArnHasBeenSet(false),
     m_functionDefinitionVersionArnHasBeenSet(false),
@@ -49,7 +49,7 @@ GroupVersion::GroupVersion(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GroupVersion& GroupVersion::operator =(const JsonValue& jsonValue)
+GroupVersion& GroupVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CoreDefinitionVersionArn"))
   {

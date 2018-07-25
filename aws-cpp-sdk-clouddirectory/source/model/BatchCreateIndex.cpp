@@ -38,7 +38,7 @@ BatchCreateIndex::BatchCreateIndex() :
 {
 }
 
-BatchCreateIndex::BatchCreateIndex(const JsonValue& jsonValue) : 
+BatchCreateIndex::BatchCreateIndex(JsonView jsonValue) : 
     m_orderedIndexedAttributeListHasBeenSet(false),
     m_isUnique(false),
     m_isUniqueHasBeenSet(false),
@@ -49,11 +49,11 @@ BatchCreateIndex::BatchCreateIndex(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchCreateIndex& BatchCreateIndex::operator =(const JsonValue& jsonValue)
+BatchCreateIndex& BatchCreateIndex::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OrderedIndexedAttributeList"))
   {
-    Array<JsonValue> orderedIndexedAttributeListJsonList = jsonValue.GetArray("OrderedIndexedAttributeList");
+    Array<JsonView> orderedIndexedAttributeListJsonList = jsonValue.GetArray("OrderedIndexedAttributeList");
     for(unsigned orderedIndexedAttributeListIndex = 0; orderedIndexedAttributeListIndex < orderedIndexedAttributeListJsonList.GetLength(); ++orderedIndexedAttributeListIndex)
     {
       m_orderedIndexedAttributeList.push_back(orderedIndexedAttributeListJsonList[orderedIndexedAttributeListIndex].AsObject());

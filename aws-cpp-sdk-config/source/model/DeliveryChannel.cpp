@@ -37,7 +37,7 @@ DeliveryChannel::DeliveryChannel() :
 {
 }
 
-DeliveryChannel::DeliveryChannel(const JsonValue& jsonValue) : 
+DeliveryChannel::DeliveryChannel(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
     m_s3KeyPrefixHasBeenSet(false),
@@ -47,7 +47,7 @@ DeliveryChannel::DeliveryChannel(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeliveryChannel& DeliveryChannel::operator =(const JsonValue& jsonValue)
+DeliveryChannel& DeliveryChannel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

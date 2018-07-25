@@ -37,7 +37,7 @@ CognitoOptions::CognitoOptions() :
 {
 }
 
-CognitoOptions::CognitoOptions(const JsonValue& jsonValue) : 
+CognitoOptions::CognitoOptions(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_userPoolIdHasBeenSet(false),
@@ -47,7 +47,7 @@ CognitoOptions::CognitoOptions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CognitoOptions& CognitoOptions::operator =(const JsonValue& jsonValue)
+CognitoOptions& CognitoOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

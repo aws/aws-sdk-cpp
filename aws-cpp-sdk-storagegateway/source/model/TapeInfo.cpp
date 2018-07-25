@@ -38,7 +38,7 @@ TapeInfo::TapeInfo() :
 {
 }
 
-TapeInfo::TapeInfo(const JsonValue& jsonValue) : 
+TapeInfo::TapeInfo(JsonView jsonValue) : 
     m_tapeARNHasBeenSet(false),
     m_tapeBarcodeHasBeenSet(false),
     m_tapeSizeInBytes(0),
@@ -49,7 +49,7 @@ TapeInfo::TapeInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TapeInfo& TapeInfo::operator =(const JsonValue& jsonValue)
+TapeInfo& TapeInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TapeARN"))
   {

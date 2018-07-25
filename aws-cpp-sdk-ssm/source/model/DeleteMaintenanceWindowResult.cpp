@@ -37,7 +37,7 @@ DeleteMaintenanceWindowResult::DeleteMaintenanceWindowResult(const Aws::AmazonWe
 
 DeleteMaintenanceWindowResult& DeleteMaintenanceWindowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");

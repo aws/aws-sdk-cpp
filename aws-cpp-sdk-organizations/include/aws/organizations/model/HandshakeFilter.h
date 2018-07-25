@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Organizations
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     HandshakeFilter();
-    HandshakeFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    HandshakeFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HandshakeFilter(Aws::Utils::Json::JsonView jsonValue);
+    HandshakeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -36,7 +36,7 @@ ThingTypeDefinition::ThingTypeDefinition() :
 {
 }
 
-ThingTypeDefinition::ThingTypeDefinition(const JsonValue& jsonValue) : 
+ThingTypeDefinition::ThingTypeDefinition(JsonView jsonValue) : 
     m_thingTypeNameHasBeenSet(false),
     m_thingTypeArnHasBeenSet(false),
     m_thingTypePropertiesHasBeenSet(false),
@@ -45,7 +45,7 @@ ThingTypeDefinition::ThingTypeDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ThingTypeDefinition& ThingTypeDefinition::operator =(const JsonValue& jsonValue)
+ThingTypeDefinition& ThingTypeDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("thingTypeName"))
   {

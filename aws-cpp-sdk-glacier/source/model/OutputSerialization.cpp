@@ -33,13 +33,13 @@ OutputSerialization::OutputSerialization() :
 {
 }
 
-OutputSerialization::OutputSerialization(const JsonValue& jsonValue) : 
+OutputSerialization::OutputSerialization(JsonView jsonValue) : 
     m_csvHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputSerialization& OutputSerialization::operator =(const JsonValue& jsonValue)
+OutputSerialization& OutputSerialization::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("csv"))
   {

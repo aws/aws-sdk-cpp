@@ -37,7 +37,7 @@ GenericRevisionInfo::GenericRevisionInfo() :
 {
 }
 
-GenericRevisionInfo::GenericRevisionInfo(const JsonValue& jsonValue) : 
+GenericRevisionInfo::GenericRevisionInfo(JsonView jsonValue) : 
     m_descriptionHasBeenSet(false),
     m_deploymentGroupsHasBeenSet(false),
     m_firstUsedTimeHasBeenSet(false),
@@ -47,7 +47,7 @@ GenericRevisionInfo::GenericRevisionInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GenericRevisionInfo& GenericRevisionInfo::operator =(const JsonValue& jsonValue)
+GenericRevisionInfo& GenericRevisionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("description"))
   {
@@ -58,7 +58,7 @@ GenericRevisionInfo& GenericRevisionInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("deploymentGroups"))
   {
-    Array<JsonValue> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
+    Array<JsonView> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
     for(unsigned deploymentGroupsIndex = 0; deploymentGroupsIndex < deploymentGroupsJsonList.GetLength(); ++deploymentGroupsIndex)
     {
       m_deploymentGroups.push_back(deploymentGroupsJsonList[deploymentGroupsIndex].AsString());

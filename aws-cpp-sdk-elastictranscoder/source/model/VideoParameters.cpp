@@ -47,7 +47,7 @@ VideoParameters::VideoParameters() :
 {
 }
 
-VideoParameters::VideoParameters(const JsonValue& jsonValue) : 
+VideoParameters::VideoParameters(JsonView jsonValue) : 
     m_codecHasBeenSet(false),
     m_codecOptionsHasBeenSet(false),
     m_keyframesMaxDistHasBeenSet(false),
@@ -67,7 +67,7 @@ VideoParameters::VideoParameters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VideoParameters& VideoParameters::operator =(const JsonValue& jsonValue)
+VideoParameters& VideoParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Codec"))
   {
@@ -78,7 +78,7 @@ VideoParameters& VideoParameters::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CodecOptions"))
   {
-    Aws::Map<Aws::String, JsonValue> codecOptionsJsonMap = jsonValue.GetObject("CodecOptions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> codecOptionsJsonMap = jsonValue.GetObject("CodecOptions").GetAllObjects();
     for(auto& codecOptionsItem : codecOptionsJsonMap)
     {
       m_codecOptions[codecOptionsItem.first] = codecOptionsItem.second.AsString();
@@ -172,7 +172,7 @@ VideoParameters& VideoParameters::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Watermarks"))
   {
-    Array<JsonValue> watermarksJsonList = jsonValue.GetArray("Watermarks");
+    Array<JsonView> watermarksJsonList = jsonValue.GetArray("Watermarks");
     for(unsigned watermarksIndex = 0; watermarksIndex < watermarksJsonList.GetLength(); ++watermarksIndex)
     {
       m_watermarks.push_back(watermarksJsonList[watermarksIndex].AsObject());

@@ -38,7 +38,7 @@ InstanceAccess::InstanceAccess() :
 {
 }
 
-InstanceAccess::InstanceAccess(const JsonValue& jsonValue) : 
+InstanceAccess::InstanceAccess(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
@@ -49,7 +49,7 @@ InstanceAccess::InstanceAccess(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceAccess& InstanceAccess::operator =(const JsonValue& jsonValue)
+InstanceAccess& InstanceAccess::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {

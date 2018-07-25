@@ -34,14 +34,14 @@ EbsBlockDevice::EbsBlockDevice() :
 {
 }
 
-EbsBlockDevice::EbsBlockDevice(const JsonValue& jsonValue) : 
+EbsBlockDevice::EbsBlockDevice(JsonView jsonValue) : 
     m_volumeSpecificationHasBeenSet(false),
     m_deviceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EbsBlockDevice& EbsBlockDevice::operator =(const JsonValue& jsonValue)
+EbsBlockDevice& EbsBlockDevice::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeSpecification"))
   {

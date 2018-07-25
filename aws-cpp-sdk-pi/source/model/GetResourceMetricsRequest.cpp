@@ -91,7 +91,7 @@ Aws::String GetResourceMetricsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetResourceMetricsRequest::GetRequestSpecificHeaders() const

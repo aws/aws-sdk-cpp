@@ -35,7 +35,7 @@ CoverageByTime::CoverageByTime() :
 {
 }
 
-CoverageByTime::CoverageByTime(const JsonValue& jsonValue) : 
+CoverageByTime::CoverageByTime(JsonView jsonValue) : 
     m_timePeriodHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_totalHasBeenSet(false)
@@ -43,7 +43,7 @@ CoverageByTime::CoverageByTime(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CoverageByTime& CoverageByTime::operator =(const JsonValue& jsonValue)
+CoverageByTime& CoverageByTime::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimePeriod"))
   {
@@ -54,7 +54,7 @@ CoverageByTime& CoverageByTime::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonValue> groupsJsonList = jsonValue.GetArray("Groups");
+    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsObject());

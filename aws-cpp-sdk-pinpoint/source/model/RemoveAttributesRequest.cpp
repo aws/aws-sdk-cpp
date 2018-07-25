@@ -38,7 +38,7 @@ Aws::String RemoveAttributesRequest::SerializePayload() const
    payload = m_updateAttributesRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ServiceAccountCredentials();
-    ServiceAccountCredentials(const Aws::Utils::Json::JsonValue& jsonValue);
-    ServiceAccountCredentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ServiceAccountCredentials(Aws::Utils::Json::JsonView jsonValue);
+    ServiceAccountCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ GetQualificationScoreResult::GetQualificationScoreResult(const Aws::AmazonWebSer
 
 GetQualificationScoreResult& GetQualificationScoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Qualification"))
   {
     m_qualification = jsonValue.GetObject("Qualification");

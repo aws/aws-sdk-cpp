@@ -38,7 +38,7 @@ DvbSdtSettings::DvbSdtSettings() :
 {
 }
 
-DvbSdtSettings::DvbSdtSettings(const JsonValue& jsonValue) : 
+DvbSdtSettings::DvbSdtSettings(JsonView jsonValue) : 
     m_outputSdt(OutputSdt::NOT_SET),
     m_outputSdtHasBeenSet(false),
     m_sdtInterval(0),
@@ -49,7 +49,7 @@ DvbSdtSettings::DvbSdtSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DvbSdtSettings& DvbSdtSettings::operator =(const JsonValue& jsonValue)
+DvbSdtSettings& DvbSdtSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("outputSdt"))
   {

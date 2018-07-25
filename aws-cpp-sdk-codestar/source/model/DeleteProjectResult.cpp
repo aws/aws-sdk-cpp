@@ -37,7 +37,7 @@ DeleteProjectResult::DeleteProjectResult(const Aws::AmazonWebServiceResult<JsonV
 
 DeleteProjectResult& DeleteProjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("stackId"))
   {
     m_stackId = jsonValue.GetString("stackId");

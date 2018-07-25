@@ -37,10 +37,10 @@ DescribeExclusionsResult::DescribeExclusionsResult(const Aws::AmazonWebServiceRe
 
 DescribeExclusionsResult& DescribeExclusionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("exclusions"))
   {
-    Aws::Map<Aws::String, JsonValue> exclusionsJsonMap = jsonValue.GetObject("exclusions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> exclusionsJsonMap = jsonValue.GetObject("exclusions").GetAllObjects();
     for(auto& exclusionsItem : exclusionsJsonMap)
     {
       m_exclusions[exclusionsItem.first] = exclusionsItem.second.AsObject();
@@ -49,7 +49,7 @@ DescribeExclusionsResult& DescribeExclusionsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("failedItems"))
   {
-    Aws::Map<Aws::String, JsonValue> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
     for(auto& failedItemsItem : failedItemsJsonMap)
     {
       m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();

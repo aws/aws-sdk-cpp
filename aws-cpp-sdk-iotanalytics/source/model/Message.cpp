@@ -35,14 +35,14 @@ Message::Message() :
 {
 }
 
-Message::Message(const JsonValue& jsonValue) : 
+Message::Message(JsonView jsonValue) : 
     m_messageIdHasBeenSet(false),
     m_payloadHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Message& Message::operator =(const JsonValue& jsonValue)
+Message& Message::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("messageId"))
   {

@@ -34,14 +34,14 @@ LambdaResource::LambdaResource() :
 {
 }
 
-LambdaResource::LambdaResource(const JsonValue& jsonValue) : 
+LambdaResource::LambdaResource(JsonView jsonValue) : 
     m_lambdaArnHasBeenSet(false),
     m_eventTriggersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaResource& LambdaResource::operator =(const JsonValue& jsonValue)
+LambdaResource& LambdaResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LambdaArn"))
   {
@@ -52,7 +52,7 @@ LambdaResource& LambdaResource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EventTriggers"))
   {
-    Array<JsonValue> eventTriggersJsonList = jsonValue.GetArray("EventTriggers");
+    Array<JsonView> eventTriggersJsonList = jsonValue.GetArray("EventTriggers");
     for(unsigned eventTriggersIndex = 0; eventTriggersIndex < eventTriggersJsonList.GetLength(); ++eventTriggersIndex)
     {
       m_eventTriggers.push_back(eventTriggersJsonList[eventTriggersIndex].AsObject());

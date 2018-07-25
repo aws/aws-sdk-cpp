@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TimeBasedLinear();
-    TimeBasedLinear(const Aws::Utils::Json::JsonValue& jsonValue);
-    TimeBasedLinear& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TimeBasedLinear(Aws::Utils::Json::JsonView jsonValue);
+    TimeBasedLinear& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

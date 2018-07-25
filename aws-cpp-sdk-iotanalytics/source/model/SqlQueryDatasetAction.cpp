@@ -33,13 +33,13 @@ SqlQueryDatasetAction::SqlQueryDatasetAction() :
 {
 }
 
-SqlQueryDatasetAction::SqlQueryDatasetAction(const JsonValue& jsonValue) : 
+SqlQueryDatasetAction::SqlQueryDatasetAction(JsonView jsonValue) : 
     m_sqlQueryHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SqlQueryDatasetAction& SqlQueryDatasetAction::operator =(const JsonValue& jsonValue)
+SqlQueryDatasetAction& SqlQueryDatasetAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sqlQuery"))
   {

@@ -34,14 +34,14 @@ StepDetail::StepDetail() :
 {
 }
 
-StepDetail::StepDetail(const JsonValue& jsonValue) : 
+StepDetail::StepDetail(JsonView jsonValue) : 
     m_stepConfigHasBeenSet(false),
     m_executionStatusDetailHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StepDetail& StepDetail::operator =(const JsonValue& jsonValue)
+StepDetail& StepDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StepConfig"))
   {

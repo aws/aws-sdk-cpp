@@ -86,7 +86,7 @@ Aws::String UpdateClusterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateClusterRequest::GetRequestSpecificHeaders() const

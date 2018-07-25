@@ -35,7 +35,7 @@ UnprocessedTraceSegment::UnprocessedTraceSegment() :
 {
 }
 
-UnprocessedTraceSegment::UnprocessedTraceSegment(const JsonValue& jsonValue) : 
+UnprocessedTraceSegment::UnprocessedTraceSegment(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ UnprocessedTraceSegment::UnprocessedTraceSegment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UnprocessedTraceSegment& UnprocessedTraceSegment::operator =(const JsonValue& jsonValue)
+UnprocessedTraceSegment& UnprocessedTraceSegment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

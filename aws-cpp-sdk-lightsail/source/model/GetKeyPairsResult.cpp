@@ -37,10 +37,10 @@ GetKeyPairsResult::GetKeyPairsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GetKeyPairsResult& GetKeyPairsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("keyPairs"))
   {
-    Array<JsonValue> keyPairsJsonList = jsonValue.GetArray("keyPairs");
+    Array<JsonView> keyPairsJsonList = jsonValue.GetArray("keyPairs");
     for(unsigned keyPairsIndex = 0; keyPairsIndex < keyPairsJsonList.GetLength(); ++keyPairsIndex)
     {
       m_keyPairs.push_back(keyPairsJsonList[keyPairsIndex].AsObject());

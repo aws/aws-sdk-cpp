@@ -37,10 +37,10 @@ ListGitHubAccountTokenNamesResult::ListGitHubAccountTokenNamesResult(const Aws::
 
 ListGitHubAccountTokenNamesResult& ListGitHubAccountTokenNamesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tokenNameList"))
   {
-    Array<JsonValue> tokenNameListJsonList = jsonValue.GetArray("tokenNameList");
+    Array<JsonView> tokenNameListJsonList = jsonValue.GetArray("tokenNameList");
     for(unsigned tokenNameListIndex = 0; tokenNameListIndex < tokenNameListJsonList.GetLength(); ++tokenNameListIndex)
     {
       m_tokenNameList.push_back(tokenNameListJsonList[tokenNameListIndex].AsString());

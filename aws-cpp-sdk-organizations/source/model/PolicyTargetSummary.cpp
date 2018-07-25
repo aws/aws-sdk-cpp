@@ -37,7 +37,7 @@ PolicyTargetSummary::PolicyTargetSummary() :
 {
 }
 
-PolicyTargetSummary::PolicyTargetSummary(const JsonValue& jsonValue) : 
+PolicyTargetSummary::PolicyTargetSummary(JsonView jsonValue) : 
     m_targetIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -47,7 +47,7 @@ PolicyTargetSummary::PolicyTargetSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PolicyTargetSummary& PolicyTargetSummary::operator =(const JsonValue& jsonValue)
+PolicyTargetSummary& PolicyTargetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetId"))
   {

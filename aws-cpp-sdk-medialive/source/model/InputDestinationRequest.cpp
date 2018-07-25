@@ -33,13 +33,13 @@ InputDestinationRequest::InputDestinationRequest() :
 {
 }
 
-InputDestinationRequest::InputDestinationRequest(const JsonValue& jsonValue) : 
+InputDestinationRequest::InputDestinationRequest(JsonView jsonValue) : 
     m_streamNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputDestinationRequest& InputDestinationRequest::operator =(const JsonValue& jsonValue)
+InputDestinationRequest& InputDestinationRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("streamName"))
   {

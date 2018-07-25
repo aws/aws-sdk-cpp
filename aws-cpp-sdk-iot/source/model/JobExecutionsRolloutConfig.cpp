@@ -34,14 +34,14 @@ JobExecutionsRolloutConfig::JobExecutionsRolloutConfig() :
 {
 }
 
-JobExecutionsRolloutConfig::JobExecutionsRolloutConfig(const JsonValue& jsonValue) : 
+JobExecutionsRolloutConfig::JobExecutionsRolloutConfig(JsonView jsonValue) : 
     m_maximumPerMinute(0),
     m_maximumPerMinuteHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JobExecutionsRolloutConfig& JobExecutionsRolloutConfig::operator =(const JsonValue& jsonValue)
+JobExecutionsRolloutConfig& JobExecutionsRolloutConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("maximumPerMinute"))
   {

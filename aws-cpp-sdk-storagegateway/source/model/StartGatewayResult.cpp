@@ -37,7 +37,7 @@ StartGatewayResult::StartGatewayResult(const Aws::AmazonWebServiceResult<JsonVal
 
 StartGatewayResult& StartGatewayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");

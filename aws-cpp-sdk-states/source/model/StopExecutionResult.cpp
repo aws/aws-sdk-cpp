@@ -37,7 +37,7 @@ StopExecutionResult::StopExecutionResult(const Aws::AmazonWebServiceResult<JsonV
 
 StopExecutionResult& StopExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("stopDate"))
   {
     m_stopDate = jsonValue.GetDouble("stopDate");

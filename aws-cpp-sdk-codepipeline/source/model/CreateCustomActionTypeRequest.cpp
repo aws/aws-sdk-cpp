@@ -84,7 +84,7 @@ Aws::String CreateCustomActionTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateCustomActionTypeRequest::GetRequestSpecificHeaders() const

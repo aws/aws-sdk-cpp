@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodePipeline
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ActionState();
-    ActionState(const Aws::Utils::Json::JsonValue& jsonValue);
-    ActionState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ActionState(Aws::Utils::Json::JsonView jsonValue);
+    ActionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

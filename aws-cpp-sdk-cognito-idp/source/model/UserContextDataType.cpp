@@ -33,13 +33,13 @@ UserContextDataType::UserContextDataType() :
 {
 }
 
-UserContextDataType::UserContextDataType(const JsonValue& jsonValue) : 
+UserContextDataType::UserContextDataType(JsonView jsonValue) : 
     m_encodedDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UserContextDataType& UserContextDataType::operator =(const JsonValue& jsonValue)
+UserContextDataType& UserContextDataType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EncodedData"))
   {

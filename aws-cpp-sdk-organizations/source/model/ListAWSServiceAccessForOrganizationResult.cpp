@@ -37,10 +37,10 @@ ListAWSServiceAccessForOrganizationResult::ListAWSServiceAccessForOrganizationRe
 
 ListAWSServiceAccessForOrganizationResult& ListAWSServiceAccessForOrganizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EnabledServicePrincipals"))
   {
-    Array<JsonValue> enabledServicePrincipalsJsonList = jsonValue.GetArray("EnabledServicePrincipals");
+    Array<JsonView> enabledServicePrincipalsJsonList = jsonValue.GetArray("EnabledServicePrincipals");
     for(unsigned enabledServicePrincipalsIndex = 0; enabledServicePrincipalsIndex < enabledServicePrincipalsJsonList.GetLength(); ++enabledServicePrincipalsIndex)
     {
       m_enabledServicePrincipals.push_back(enabledServicePrincipalsJsonList[enabledServicePrincipalsIndex].AsObject());

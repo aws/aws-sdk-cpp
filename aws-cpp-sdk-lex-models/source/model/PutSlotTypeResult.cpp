@@ -41,7 +41,7 @@ PutSlotTypeResult::PutSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue
 
 PutSlotTypeResult& PutSlotTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -56,7 +56,7 @@ PutSlotTypeResult& PutSlotTypeResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("enumerationValues"))
   {
-    Array<JsonValue> enumerationValuesJsonList = jsonValue.GetArray("enumerationValues");
+    Array<JsonView> enumerationValuesJsonList = jsonValue.GetArray("enumerationValues");
     for(unsigned enumerationValuesIndex = 0; enumerationValuesIndex < enumerationValuesJsonList.GetLength(); ++enumerationValuesIndex)
     {
       m_enumerationValues.push_back(enumerationValuesJsonList[enumerationValuesIndex].AsObject());

@@ -330,37 +330,37 @@ namespace Model
 
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

@@ -44,7 +44,7 @@ TargetTrackingConfiguration::TargetTrackingConfiguration() :
 {
 }
 
-TargetTrackingConfiguration::TargetTrackingConfiguration(const JsonValue& jsonValue) : 
+TargetTrackingConfiguration::TargetTrackingConfiguration(JsonView jsonValue) : 
     m_predefinedScalingMetricSpecificationHasBeenSet(false),
     m_customizedScalingMetricSpecificationHasBeenSet(false),
     m_targetValue(0.0),
@@ -61,7 +61,7 @@ TargetTrackingConfiguration::TargetTrackingConfiguration(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-TargetTrackingConfiguration& TargetTrackingConfiguration::operator =(const JsonValue& jsonValue)
+TargetTrackingConfiguration& TargetTrackingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PredefinedScalingMetricSpecification"))
   {

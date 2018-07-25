@@ -34,14 +34,14 @@ LinkAttributeUpdate::LinkAttributeUpdate() :
 {
 }
 
-LinkAttributeUpdate::LinkAttributeUpdate(const JsonValue& jsonValue) : 
+LinkAttributeUpdate::LinkAttributeUpdate(JsonView jsonValue) : 
     m_attributeKeyHasBeenSet(false),
     m_attributeActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LinkAttributeUpdate& LinkAttributeUpdate::operator =(const JsonValue& jsonValue)
+LinkAttributeUpdate& LinkAttributeUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeKey"))
   {

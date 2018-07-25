@@ -50,7 +50,7 @@ ReplicationJob::ReplicationJob() :
 {
 }
 
-ReplicationJob::ReplicationJob(const JsonValue& jsonValue) : 
+ReplicationJob::ReplicationJob(JsonView jsonValue) : 
     m_replicationJobIdHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_serverType(ServerType::NOT_SET),
@@ -73,7 +73,7 @@ ReplicationJob::ReplicationJob(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReplicationJob& ReplicationJob::operator =(const JsonValue& jsonValue)
+ReplicationJob& ReplicationJob::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("replicationJobId"))
   {
@@ -168,7 +168,7 @@ ReplicationJob& ReplicationJob::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("replicationRunList"))
   {
-    Array<JsonValue> replicationRunListJsonList = jsonValue.GetArray("replicationRunList");
+    Array<JsonView> replicationRunListJsonList = jsonValue.GetArray("replicationRunList");
     for(unsigned replicationRunListIndex = 0; replicationRunListIndex < replicationRunListJsonList.GetLength(); ++replicationRunListIndex)
     {
       m_replicationRunList.push_back(replicationRunListJsonList[replicationRunListIndex].AsObject());

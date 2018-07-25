@@ -39,7 +39,7 @@ GetExclusionsPreviewResult::GetExclusionsPreviewResult(const Aws::AmazonWebServi
 
 GetExclusionsPreviewResult& GetExclusionsPreviewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("previewStatus"))
   {
     m_previewStatus = PreviewStatusMapper::GetPreviewStatusForName(jsonValue.GetString("previewStatus"));
@@ -48,7 +48,7 @@ GetExclusionsPreviewResult& GetExclusionsPreviewResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("exclusionPreviews"))
   {
-    Array<JsonValue> exclusionPreviewsJsonList = jsonValue.GetArray("exclusionPreviews");
+    Array<JsonView> exclusionPreviewsJsonList = jsonValue.GetArray("exclusionPreviews");
     for(unsigned exclusionPreviewsIndex = 0; exclusionPreviewsIndex < exclusionPreviewsJsonList.GetLength(); ++exclusionPreviewsIndex)
     {
       m_exclusionPreviews.push_back(exclusionPreviewsJsonList[exclusionPreviewsIndex].AsObject());

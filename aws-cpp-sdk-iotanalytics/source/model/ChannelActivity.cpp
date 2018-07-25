@@ -35,7 +35,7 @@ ChannelActivity::ChannelActivity() :
 {
 }
 
-ChannelActivity::ChannelActivity(const JsonValue& jsonValue) : 
+ChannelActivity::ChannelActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_nextHasBeenSet(false)
@@ -43,7 +43,7 @@ ChannelActivity::ChannelActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ChannelActivity& ChannelActivity::operator =(const JsonValue& jsonValue)
+ChannelActivity& ChannelActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

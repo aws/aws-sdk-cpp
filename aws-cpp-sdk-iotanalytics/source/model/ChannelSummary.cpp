@@ -37,7 +37,7 @@ ChannelSummary::ChannelSummary() :
 {
 }
 
-ChannelSummary::ChannelSummary(const JsonValue& jsonValue) : 
+ChannelSummary::ChannelSummary(JsonView jsonValue) : 
     m_channelNameHasBeenSet(false),
     m_status(ChannelStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -47,7 +47,7 @@ ChannelSummary::ChannelSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ChannelSummary& ChannelSummary::operator =(const JsonValue& jsonValue)
+ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("channelName"))
   {

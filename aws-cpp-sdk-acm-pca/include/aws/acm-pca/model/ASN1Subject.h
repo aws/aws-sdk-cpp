@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ACMPCA
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     ASN1Subject();
-    ASN1Subject(const Aws::Utils::Json::JsonValue& jsonValue);
-    ASN1Subject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ASN1Subject(Aws::Utils::Json::JsonView jsonValue);
+    ASN1Subject& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

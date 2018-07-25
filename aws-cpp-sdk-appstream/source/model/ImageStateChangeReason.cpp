@@ -35,7 +35,7 @@ ImageStateChangeReason::ImageStateChangeReason() :
 {
 }
 
-ImageStateChangeReason::ImageStateChangeReason(const JsonValue& jsonValue) : 
+ImageStateChangeReason::ImageStateChangeReason(JsonView jsonValue) : 
     m_code(ImageStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ ImageStateChangeReason::ImageStateChangeReason(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ImageStateChangeReason& ImageStateChangeReason::operator =(const JsonValue& jsonValue)
+ImageStateChangeReason& ImageStateChangeReason::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

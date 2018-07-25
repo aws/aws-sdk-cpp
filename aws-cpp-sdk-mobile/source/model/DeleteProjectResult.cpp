@@ -37,10 +37,10 @@ DeleteProjectResult::DeleteProjectResult(const Aws::AmazonWebServiceResult<JsonV
 
 DeleteProjectResult& DeleteProjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deletedResources"))
   {
-    Array<JsonValue> deletedResourcesJsonList = jsonValue.GetArray("deletedResources");
+    Array<JsonView> deletedResourcesJsonList = jsonValue.GetArray("deletedResources");
     for(unsigned deletedResourcesIndex = 0; deletedResourcesIndex < deletedResourcesJsonList.GetLength(); ++deletedResourcesIndex)
     {
       m_deletedResources.push_back(deletedResourcesJsonList[deletedResourcesIndex].AsObject());
@@ -49,7 +49,7 @@ DeleteProjectResult& DeleteProjectResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("orphanedResources"))
   {
-    Array<JsonValue> orphanedResourcesJsonList = jsonValue.GetArray("orphanedResources");
+    Array<JsonView> orphanedResourcesJsonList = jsonValue.GetArray("orphanedResources");
     for(unsigned orphanedResourcesIndex = 0; orphanedResourcesIndex < orphanedResourcesJsonList.GetLength(); ++orphanedResourcesIndex)
     {
       m_orphanedResources.push_back(orphanedResourcesJsonList[orphanedResourcesIndex].AsObject());

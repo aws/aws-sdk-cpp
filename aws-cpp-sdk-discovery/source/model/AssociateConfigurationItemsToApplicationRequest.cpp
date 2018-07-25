@@ -49,7 +49,7 @@ Aws::String AssociateConfigurationItemsToApplicationRequest::SerializePayload() 
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateConfigurationItemsToApplicationRequest::GetRequestSpecificHeaders() const

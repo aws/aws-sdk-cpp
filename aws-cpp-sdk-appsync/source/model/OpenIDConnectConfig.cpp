@@ -38,7 +38,7 @@ OpenIDConnectConfig::OpenIDConnectConfig() :
 {
 }
 
-OpenIDConnectConfig::OpenIDConnectConfig(const JsonValue& jsonValue) : 
+OpenIDConnectConfig::OpenIDConnectConfig(JsonView jsonValue) : 
     m_issuerHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_iatTTL(0),
@@ -49,7 +49,7 @@ OpenIDConnectConfig::OpenIDConnectConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OpenIDConnectConfig& OpenIDConnectConfig::operator =(const JsonValue& jsonValue)
+OpenIDConnectConfig& OpenIDConnectConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("issuer"))
   {

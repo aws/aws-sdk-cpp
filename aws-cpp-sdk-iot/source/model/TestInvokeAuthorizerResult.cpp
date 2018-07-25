@@ -43,7 +43,7 @@ TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const Aws::AmazonWebServi
 
 TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("isAuthenticated"))
   {
     m_isAuthenticated = jsonValue.GetBool("isAuthenticated");
@@ -58,7 +58,7 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("policyDocuments"))
   {
-    Array<JsonValue> policyDocumentsJsonList = jsonValue.GetArray("policyDocuments");
+    Array<JsonView> policyDocumentsJsonList = jsonValue.GetArray("policyDocuments");
     for(unsigned policyDocumentsIndex = 0; policyDocumentsIndex < policyDocumentsJsonList.GetLength(); ++policyDocumentsIndex)
     {
       m_policyDocuments.push_back(policyDocumentsJsonList[policyDocumentsIndex].AsString());

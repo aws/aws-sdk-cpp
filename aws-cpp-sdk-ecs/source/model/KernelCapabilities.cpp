@@ -34,18 +34,18 @@ KernelCapabilities::KernelCapabilities() :
 {
 }
 
-KernelCapabilities::KernelCapabilities(const JsonValue& jsonValue) : 
+KernelCapabilities::KernelCapabilities(JsonView jsonValue) : 
     m_addHasBeenSet(false),
     m_dropHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KernelCapabilities& KernelCapabilities::operator =(const JsonValue& jsonValue)
+KernelCapabilities& KernelCapabilities::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("add"))
   {
-    Array<JsonValue> addJsonList = jsonValue.GetArray("add");
+    Array<JsonView> addJsonList = jsonValue.GetArray("add");
     for(unsigned addIndex = 0; addIndex < addJsonList.GetLength(); ++addIndex)
     {
       m_add.push_back(addJsonList[addIndex].AsString());
@@ -55,7 +55,7 @@ KernelCapabilities& KernelCapabilities::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("drop"))
   {
-    Array<JsonValue> dropJsonList = jsonValue.GetArray("drop");
+    Array<JsonView> dropJsonList = jsonValue.GetArray("drop");
     for(unsigned dropIndex = 0; dropIndex < dropJsonList.GetLength(); ++dropIndex)
     {
       m_drop.push_back(dropJsonList[dropIndex].AsString());

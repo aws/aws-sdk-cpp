@@ -37,10 +37,10 @@ ListOfferingPromotionsResult::ListOfferingPromotionsResult(const Aws::AmazonWebS
 
 ListOfferingPromotionsResult& ListOfferingPromotionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("offeringPromotions"))
   {
-    Array<JsonValue> offeringPromotionsJsonList = jsonValue.GetArray("offeringPromotions");
+    Array<JsonView> offeringPromotionsJsonList = jsonValue.GetArray("offeringPromotions");
     for(unsigned offeringPromotionsIndex = 0; offeringPromotionsIndex < offeringPromotionsJsonList.GetLength(); ++offeringPromotionsIndex)
     {
       m_offeringPromotions.push_back(offeringPromotionsJsonList[offeringPromotionsIndex].AsObject());

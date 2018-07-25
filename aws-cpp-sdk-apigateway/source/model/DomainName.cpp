@@ -43,7 +43,7 @@ DomainName::DomainName() :
 {
 }
 
-DomainName::DomainName(const JsonValue& jsonValue) : 
+DomainName::DomainName(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_certificateNameHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
@@ -59,7 +59,7 @@ DomainName::DomainName(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DomainName& DomainName::operator =(const JsonValue& jsonValue)
+DomainName& DomainName::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("domainName"))
   {

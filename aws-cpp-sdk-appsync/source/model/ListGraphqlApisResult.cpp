@@ -37,10 +37,10 @@ ListGraphqlApisResult::ListGraphqlApisResult(const Aws::AmazonWebServiceResult<J
 
 ListGraphqlApisResult& ListGraphqlApisResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("graphqlApis"))
   {
-    Array<JsonValue> graphqlApisJsonList = jsonValue.GetArray("graphqlApis");
+    Array<JsonView> graphqlApisJsonList = jsonValue.GetArray("graphqlApis");
     for(unsigned graphqlApisIndex = 0; graphqlApisIndex < graphqlApisJsonList.GetLength(); ++graphqlApisIndex)
     {
       m_graphqlApis.push_back(graphqlApisJsonList[graphqlApisIndex].AsObject());

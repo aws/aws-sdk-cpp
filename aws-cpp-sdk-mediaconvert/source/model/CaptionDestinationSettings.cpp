@@ -39,7 +39,7 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
 {
 }
 
-CaptionDestinationSettings::CaptionDestinationSettings(const JsonValue& jsonValue) : 
+CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) : 
     m_burninDestinationSettingsHasBeenSet(false),
     m_destinationType(CaptionDestinationType::NOT_SET),
     m_destinationTypeHasBeenSet(false),
@@ -51,7 +51,7 @@ CaptionDestinationSettings::CaptionDestinationSettings(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-CaptionDestinationSettings& CaptionDestinationSettings::operator =(const JsonValue& jsonValue)
+CaptionDestinationSettings& CaptionDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("burninDestinationSettings"))
   {

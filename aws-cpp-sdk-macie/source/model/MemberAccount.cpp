@@ -33,13 +33,13 @@ MemberAccount::MemberAccount() :
 {
 }
 
-MemberAccount::MemberAccount(const JsonValue& jsonValue) : 
+MemberAccount::MemberAccount(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MemberAccount& MemberAccount::operator =(const JsonValue& jsonValue)
+MemberAccount& MemberAccount::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {

@@ -42,7 +42,7 @@ BackupSummary::BackupSummary() :
 {
 }
 
-BackupSummary::BackupSummary(const JsonValue& jsonValue) : 
+BackupSummary::BackupSummary(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_tableIdHasBeenSet(false),
     m_tableArnHasBeenSet(false),
@@ -57,7 +57,7 @@ BackupSummary::BackupSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BackupSummary& BackupSummary::operator =(const JsonValue& jsonValue)
+BackupSummary& BackupSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TableName"))
   {

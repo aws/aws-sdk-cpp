@@ -35,7 +35,7 @@ SegmentReference::SegmentReference() :
 {
 }
 
-SegmentReference::SegmentReference(const JsonValue& jsonValue) : 
+SegmentReference::SegmentReference(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
@@ -43,7 +43,7 @@ SegmentReference::SegmentReference(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SegmentReference& SegmentReference::operator =(const JsonValue& jsonValue)
+SegmentReference& SegmentReference::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

@@ -39,7 +39,7 @@ Aws::String DeleteTypedLinkFacetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteTypedLinkFacetRequest::GetRequestSpecificHeaders() const

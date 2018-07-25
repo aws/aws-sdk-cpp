@@ -48,7 +48,7 @@ HlsPackage::HlsPackage() :
 {
 }
 
-HlsPackage::HlsPackage(const JsonValue& jsonValue) : 
+HlsPackage::HlsPackage(JsonView jsonValue) : 
     m_adMarkers(AdMarkers::NOT_SET),
     m_adMarkersHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -69,7 +69,7 @@ HlsPackage::HlsPackage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsPackage& HlsPackage::operator =(const JsonValue& jsonValue)
+HlsPackage& HlsPackage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adMarkers"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     NotifyEmailType();
-    NotifyEmailType(const Aws::Utils::Json::JsonValue& jsonValue);
-    NotifyEmailType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NotifyEmailType(Aws::Utils::Json::JsonView jsonValue);
+    NotifyEmailType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

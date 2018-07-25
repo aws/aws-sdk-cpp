@@ -35,7 +35,7 @@ ApplicationPolicyStatement::ApplicationPolicyStatement() :
 {
 }
 
-ApplicationPolicyStatement::ApplicationPolicyStatement(const JsonValue& jsonValue) : 
+ApplicationPolicyStatement::ApplicationPolicyStatement(JsonView jsonValue) : 
     m_actionsHasBeenSet(false),
     m_principalsHasBeenSet(false),
     m_statementIdHasBeenSet(false)
@@ -43,11 +43,11 @@ ApplicationPolicyStatement::ApplicationPolicyStatement(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ApplicationPolicyStatement& ApplicationPolicyStatement::operator =(const JsonValue& jsonValue)
+ApplicationPolicyStatement& ApplicationPolicyStatement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonValue> actionsJsonList = jsonValue.GetArray("actions");
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsString());
@@ -57,7 +57,7 @@ ApplicationPolicyStatement& ApplicationPolicyStatement::operator =(const JsonVal
 
   if(jsonValue.ValueExists("principals"))
   {
-    Array<JsonValue> principalsJsonList = jsonValue.GetArray("principals");
+    Array<JsonView> principalsJsonList = jsonValue.GetArray("principals");
     for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
     {
       m_principals.push_back(principalsJsonList[principalsIndex].AsString());

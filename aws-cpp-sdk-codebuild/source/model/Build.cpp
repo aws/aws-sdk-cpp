@@ -55,7 +55,7 @@ Build::Build() :
 {
 }
 
-Build::Build(const JsonValue& jsonValue) : 
+Build::Build(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -83,7 +83,7 @@ Build::Build(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Build& Build::operator =(const JsonValue& jsonValue)
+Build& Build::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -143,7 +143,7 @@ Build& Build::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("phases"))
   {
-    Array<JsonValue> phasesJsonList = jsonValue.GetArray("phases");
+    Array<JsonView> phasesJsonList = jsonValue.GetArray("phases");
     for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
     {
       m_phases.push_back(phasesJsonList[phasesIndex].AsObject());

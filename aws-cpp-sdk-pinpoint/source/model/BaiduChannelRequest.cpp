@@ -36,7 +36,7 @@ BaiduChannelRequest::BaiduChannelRequest() :
 {
 }
 
-BaiduChannelRequest::BaiduChannelRequest(const JsonValue& jsonValue) : 
+BaiduChannelRequest::BaiduChannelRequest(JsonView jsonValue) : 
     m_apiKeyHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
@@ -45,7 +45,7 @@ BaiduChannelRequest::BaiduChannelRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BaiduChannelRequest& BaiduChannelRequest::operator =(const JsonValue& jsonValue)
+BaiduChannelRequest& BaiduChannelRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApiKey"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DLM
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     LifecyclePolicySummary();
-    LifecyclePolicySummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    LifecyclePolicySummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LifecyclePolicySummary(Aws::Utils::Json::JsonView jsonValue);
+    LifecyclePolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

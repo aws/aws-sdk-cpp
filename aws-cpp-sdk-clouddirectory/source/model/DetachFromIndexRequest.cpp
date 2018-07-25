@@ -46,7 +46,7 @@ Aws::String DetachFromIndexRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DetachFromIndexRequest::GetRequestSpecificHeaders() const

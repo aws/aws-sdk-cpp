@@ -37,7 +37,7 @@ GetServiceGraphResult::GetServiceGraphResult(const Aws::AmazonWebServiceResult<J
 
 GetServiceGraphResult& GetServiceGraphResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
@@ -52,7 +52,7 @@ GetServiceGraphResult& GetServiceGraphResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("Services"))
   {
-    Array<JsonValue> servicesJsonList = jsonValue.GetArray("Services");
+    Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsObject());

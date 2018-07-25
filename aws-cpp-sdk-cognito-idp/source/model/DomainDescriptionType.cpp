@@ -40,7 +40,7 @@ DomainDescriptionType::DomainDescriptionType() :
 {
 }
 
-DomainDescriptionType::DomainDescriptionType(const JsonValue& jsonValue) : 
+DomainDescriptionType::DomainDescriptionType(JsonView jsonValue) : 
     m_userPoolIdHasBeenSet(false),
     m_aWSAccountIdHasBeenSet(false),
     m_domainHasBeenSet(false),
@@ -53,7 +53,7 @@ DomainDescriptionType::DomainDescriptionType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DomainDescriptionType& DomainDescriptionType::operator =(const JsonValue& jsonValue)
+DomainDescriptionType& DomainDescriptionType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserPoolId"))
   {

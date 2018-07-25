@@ -35,7 +35,7 @@ WebACLUpdate::WebACLUpdate() :
 {
 }
 
-WebACLUpdate::WebACLUpdate(const JsonValue& jsonValue) : 
+WebACLUpdate::WebACLUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_activatedRuleHasBeenSet(false)
@@ -43,7 +43,7 @@ WebACLUpdate::WebACLUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WebACLUpdate& WebACLUpdate::operator =(const JsonValue& jsonValue)
+WebACLUpdate& WebACLUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

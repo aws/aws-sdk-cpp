@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Geometry();
-    Geometry(const Aws::Utils::Json::JsonValue& jsonValue);
-    Geometry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Geometry(Aws::Utils::Json::JsonView jsonValue);
+    Geometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

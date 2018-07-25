@@ -37,7 +37,7 @@ DescribeProvisionedProductResult::DescribeProvisionedProductResult(const Aws::Am
 
 DescribeProvisionedProductResult& DescribeProvisionedProductResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisionedProductDetail"))
   {
     m_provisionedProductDetail = jsonValue.GetObject("ProvisionedProductDetail");
@@ -46,7 +46,7 @@ DescribeProvisionedProductResult& DescribeProvisionedProductResult::operator =(c
 
   if(jsonValue.ValueExists("CloudWatchDashboards"))
   {
-    Array<JsonValue> cloudWatchDashboardsJsonList = jsonValue.GetArray("CloudWatchDashboards");
+    Array<JsonView> cloudWatchDashboardsJsonList = jsonValue.GetArray("CloudWatchDashboards");
     for(unsigned cloudWatchDashboardsIndex = 0; cloudWatchDashboardsIndex < cloudWatchDashboardsJsonList.GetLength(); ++cloudWatchDashboardsIndex)
     {
       m_cloudWatchDashboards.push_back(cloudWatchDashboardsJsonList[cloudWatchDashboardsIndex].AsObject());

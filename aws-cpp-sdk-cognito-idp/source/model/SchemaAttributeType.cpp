@@ -43,7 +43,7 @@ SchemaAttributeType::SchemaAttributeType() :
 {
 }
 
-SchemaAttributeType::SchemaAttributeType(const JsonValue& jsonValue) : 
+SchemaAttributeType::SchemaAttributeType(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_attributeDataType(AttributeDataType::NOT_SET),
     m_attributeDataTypeHasBeenSet(false),
@@ -59,7 +59,7 @@ SchemaAttributeType::SchemaAttributeType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SchemaAttributeType& SchemaAttributeType::operator =(const JsonValue& jsonValue)
+SchemaAttributeType& SchemaAttributeType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

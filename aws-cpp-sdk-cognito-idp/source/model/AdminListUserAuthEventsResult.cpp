@@ -37,10 +37,10 @@ AdminListUserAuthEventsResult::AdminListUserAuthEventsResult(const Aws::AmazonWe
 
 AdminListUserAuthEventsResult& AdminListUserAuthEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AuthEvents"))
   {
-    Array<JsonValue> authEventsJsonList = jsonValue.GetArray("AuthEvents");
+    Array<JsonView> authEventsJsonList = jsonValue.GetArray("AuthEvents");
     for(unsigned authEventsIndex = 0; authEventsIndex < authEventsJsonList.GetLength(); ++authEventsIndex)
     {
       m_authEvents.push_back(authEventsJsonList[authEventsIndex].AsObject());

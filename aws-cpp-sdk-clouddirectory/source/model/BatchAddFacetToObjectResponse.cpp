@@ -32,12 +32,12 @@ BatchAddFacetToObjectResponse::BatchAddFacetToObjectResponse()
 {
 }
 
-BatchAddFacetToObjectResponse::BatchAddFacetToObjectResponse(const JsonValue& jsonValue)
+BatchAddFacetToObjectResponse::BatchAddFacetToObjectResponse(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-BatchAddFacetToObjectResponse& BatchAddFacetToObjectResponse::operator =(const JsonValue& jsonValue)
+BatchAddFacetToObjectResponse& BatchAddFacetToObjectResponse::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

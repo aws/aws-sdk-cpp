@@ -39,7 +39,7 @@ GetChangeTokenStatusResult::GetChangeTokenStatusResult(const Aws::AmazonWebServi
 
 GetChangeTokenStatusResult& GetChangeTokenStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ChangeTokenStatus"))
   {
     m_changeTokenStatus = ChangeTokenStatusMapper::GetChangeTokenStatusForName(jsonValue.GetString("ChangeTokenStatus"));

@@ -79,7 +79,7 @@ Aws::String CountClosedWorkflowExecutionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CountClosedWorkflowExecutionsRequest::GetRequestSpecificHeaders() const

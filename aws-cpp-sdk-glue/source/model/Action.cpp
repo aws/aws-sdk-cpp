@@ -37,7 +37,7 @@ Action::Action() :
 {
 }
 
-Action::Action(const JsonValue& jsonValue) : 
+Action::Action(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_argumentsHasBeenSet(false),
     m_timeout(0),
@@ -47,7 +47,7 @@ Action::Action(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Action& Action::operator =(const JsonValue& jsonValue)
+Action& Action::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {
@@ -58,7 +58,7 @@ Action& Action::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Arguments"))
   {
-    Aws::Map<Aws::String, JsonValue> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
     for(auto& argumentsItem : argumentsJsonMap)
     {
       m_arguments[argumentsItem.first] = argumentsItem.second.AsString();

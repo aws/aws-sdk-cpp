@@ -35,7 +35,7 @@ FleetError::FleetError() :
 {
 }
 
-FleetError::FleetError(const JsonValue& jsonValue) : 
+FleetError::FleetError(JsonView jsonValue) : 
     m_errorCode(FleetErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ FleetError::FleetError(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FleetError& FleetError::operator =(const JsonValue& jsonValue)
+FleetError& FleetError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ErrorCode"))
   {

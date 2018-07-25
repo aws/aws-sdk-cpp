@@ -32,12 +32,12 @@ TeletextDestinationSettings::TeletextDestinationSettings()
 {
 }
 
-TeletextDestinationSettings::TeletextDestinationSettings(const JsonValue& jsonValue)
+TeletextDestinationSettings::TeletextDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-TeletextDestinationSettings& TeletextDestinationSettings::operator =(const JsonValue& jsonValue)
+TeletextDestinationSettings& TeletextDestinationSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

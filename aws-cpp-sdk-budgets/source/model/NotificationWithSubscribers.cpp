@@ -34,14 +34,14 @@ NotificationWithSubscribers::NotificationWithSubscribers() :
 {
 }
 
-NotificationWithSubscribers::NotificationWithSubscribers(const JsonValue& jsonValue) : 
+NotificationWithSubscribers::NotificationWithSubscribers(JsonView jsonValue) : 
     m_notificationHasBeenSet(false),
     m_subscribersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NotificationWithSubscribers& NotificationWithSubscribers::operator =(const JsonValue& jsonValue)
+NotificationWithSubscribers& NotificationWithSubscribers::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Notification"))
   {
@@ -52,7 +52,7 @@ NotificationWithSubscribers& NotificationWithSubscribers::operator =(const JsonV
 
   if(jsonValue.ValueExists("Subscribers"))
   {
-    Array<JsonValue> subscribersJsonList = jsonValue.GetArray("Subscribers");
+    Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
     for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
     {
       m_subscribers.push_back(subscribersJsonList[subscribersIndex].AsObject());

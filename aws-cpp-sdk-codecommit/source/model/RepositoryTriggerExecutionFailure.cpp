@@ -34,14 +34,14 @@ RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure() :
 {
 }
 
-RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure(const JsonValue& jsonValue) : 
+RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure(JsonView jsonValue) : 
     m_triggerHasBeenSet(false),
     m_failureMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RepositoryTriggerExecutionFailure& RepositoryTriggerExecutionFailure::operator =(const JsonValue& jsonValue)
+RepositoryTriggerExecutionFailure& RepositoryTriggerExecutionFailure::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("trigger"))
   {

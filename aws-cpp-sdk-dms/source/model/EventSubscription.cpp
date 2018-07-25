@@ -42,7 +42,7 @@ EventSubscription::EventSubscription() :
 {
 }
 
-EventSubscription::EventSubscription(const JsonValue& jsonValue) : 
+EventSubscription::EventSubscription(JsonView jsonValue) : 
     m_customerAwsIdHasBeenSet(false),
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
@@ -57,7 +57,7 @@ EventSubscription::EventSubscription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventSubscription& EventSubscription::operator =(const JsonValue& jsonValue)
+EventSubscription& EventSubscription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CustomerAwsId"))
   {
@@ -103,7 +103,7 @@ EventSubscription& EventSubscription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SourceIdsList"))
   {
-    Array<JsonValue> sourceIdsListJsonList = jsonValue.GetArray("SourceIdsList");
+    Array<JsonView> sourceIdsListJsonList = jsonValue.GetArray("SourceIdsList");
     for(unsigned sourceIdsListIndex = 0; sourceIdsListIndex < sourceIdsListJsonList.GetLength(); ++sourceIdsListIndex)
     {
       m_sourceIdsList.push_back(sourceIdsListJsonList[sourceIdsListIndex].AsString());
@@ -113,7 +113,7 @@ EventSubscription& EventSubscription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EventCategoriesList"))
   {
-    Array<JsonValue> eventCategoriesListJsonList = jsonValue.GetArray("EventCategoriesList");
+    Array<JsonView> eventCategoriesListJsonList = jsonValue.GetArray("EventCategoriesList");
     for(unsigned eventCategoriesListIndex = 0; eventCategoriesListIndex < eventCategoriesListJsonList.GetLength(); ++eventCategoriesListIndex)
     {
       m_eventCategoriesList.push_back(eventCategoriesListJsonList[eventCategoriesListIndex].AsString());

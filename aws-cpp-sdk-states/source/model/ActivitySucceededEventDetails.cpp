@@ -33,13 +33,13 @@ ActivitySucceededEventDetails::ActivitySucceededEventDetails() :
 {
 }
 
-ActivitySucceededEventDetails::ActivitySucceededEventDetails(const JsonValue& jsonValue) : 
+ActivitySucceededEventDetails::ActivitySucceededEventDetails(JsonView jsonValue) : 
     m_outputHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActivitySucceededEventDetails& ActivitySucceededEventDetails::operator =(const JsonValue& jsonValue)
+ActivitySucceededEventDetails& ActivitySucceededEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("output"))
   {

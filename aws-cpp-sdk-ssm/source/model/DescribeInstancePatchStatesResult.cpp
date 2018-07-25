@@ -37,10 +37,10 @@ DescribeInstancePatchStatesResult::DescribeInstancePatchStatesResult(const Aws::
 
 DescribeInstancePatchStatesResult& DescribeInstancePatchStatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstancePatchStates"))
   {
-    Array<JsonValue> instancePatchStatesJsonList = jsonValue.GetArray("InstancePatchStates");
+    Array<JsonView> instancePatchStatesJsonList = jsonValue.GetArray("InstancePatchStates");
     for(unsigned instancePatchStatesIndex = 0; instancePatchStatesIndex < instancePatchStatesJsonList.GetLength(); ++instancePatchStatesIndex)
     {
       m_instancePatchStates.push_back(instancePatchStatesJsonList[instancePatchStatesIndex].AsObject());

@@ -33,13 +33,13 @@ ServiceSpecification::ServiceSpecification() :
 {
 }
 
-ServiceSpecification::ServiceSpecification(const JsonValue& jsonValue) : 
+ServiceSpecification::ServiceSpecification(JsonView jsonValue) : 
     m_eC2SpecificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ServiceSpecification& ServiceSpecification::operator =(const JsonValue& jsonValue)
+ServiceSpecification& ServiceSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EC2Specification"))
   {

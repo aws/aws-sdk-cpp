@@ -37,7 +37,7 @@ DatastoreSummary::DatastoreSummary() :
 {
 }
 
-DatastoreSummary::DatastoreSummary(const JsonValue& jsonValue) : 
+DatastoreSummary::DatastoreSummary(JsonView jsonValue) : 
     m_datastoreNameHasBeenSet(false),
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -47,7 +47,7 @@ DatastoreSummary::DatastoreSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DatastoreSummary& DatastoreSummary::operator =(const JsonValue& jsonValue)
+DatastoreSummary& DatastoreSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("datastoreName"))
   {

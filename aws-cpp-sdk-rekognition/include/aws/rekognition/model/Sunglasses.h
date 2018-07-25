@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     Sunglasses();
-    Sunglasses(const Aws::Utils::Json::JsonValue& jsonValue);
-    Sunglasses& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Sunglasses(Aws::Utils::Json::JsonView jsonValue);
+    Sunglasses& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

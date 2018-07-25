@@ -38,7 +38,7 @@ RealtimeEndpointInfo::RealtimeEndpointInfo() :
 {
 }
 
-RealtimeEndpointInfo::RealtimeEndpointInfo(const JsonValue& jsonValue) : 
+RealtimeEndpointInfo::RealtimeEndpointInfo(JsonView jsonValue) : 
     m_peakRequestsPerSecond(0),
     m_peakRequestsPerSecondHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -49,7 +49,7 @@ RealtimeEndpointInfo::RealtimeEndpointInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RealtimeEndpointInfo& RealtimeEndpointInfo::operator =(const JsonValue& jsonValue)
+RealtimeEndpointInfo& RealtimeEndpointInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PeakRequestsPerSecond"))
   {

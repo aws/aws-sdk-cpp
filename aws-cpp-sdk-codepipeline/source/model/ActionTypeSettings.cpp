@@ -36,7 +36,7 @@ ActionTypeSettings::ActionTypeSettings() :
 {
 }
 
-ActionTypeSettings::ActionTypeSettings(const JsonValue& jsonValue) : 
+ActionTypeSettings::ActionTypeSettings(JsonView jsonValue) : 
     m_thirdPartyConfigurationUrlHasBeenSet(false),
     m_entityUrlTemplateHasBeenSet(false),
     m_executionUrlTemplateHasBeenSet(false),
@@ -45,7 +45,7 @@ ActionTypeSettings::ActionTypeSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActionTypeSettings& ActionTypeSettings::operator =(const JsonValue& jsonValue)
+ActionTypeSettings& ActionTypeSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("thirdPartyConfigurationUrl"))
   {

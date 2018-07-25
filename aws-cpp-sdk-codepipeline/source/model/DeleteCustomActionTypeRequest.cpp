@@ -51,7 +51,7 @@ Aws::String DeleteCustomActionTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteCustomActionTypeRequest::GetRequestSpecificHeaders() const

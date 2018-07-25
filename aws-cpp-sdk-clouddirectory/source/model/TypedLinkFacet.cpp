@@ -35,7 +35,7 @@ TypedLinkFacet::TypedLinkFacet() :
 {
 }
 
-TypedLinkFacet::TypedLinkFacet(const JsonValue& jsonValue) : 
+TypedLinkFacet::TypedLinkFacet(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_identityAttributeOrderHasBeenSet(false)
@@ -43,7 +43,7 @@ TypedLinkFacet::TypedLinkFacet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TypedLinkFacet& TypedLinkFacet::operator =(const JsonValue& jsonValue)
+TypedLinkFacet& TypedLinkFacet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -54,7 +54,7 @@ TypedLinkFacet& TypedLinkFacet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("Attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -64,7 +64,7 @@ TypedLinkFacet& TypedLinkFacet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("IdentityAttributeOrder"))
   {
-    Array<JsonValue> identityAttributeOrderJsonList = jsonValue.GetArray("IdentityAttributeOrder");
+    Array<JsonView> identityAttributeOrderJsonList = jsonValue.GetArray("IdentityAttributeOrder");
     for(unsigned identityAttributeOrderIndex = 0; identityAttributeOrderIndex < identityAttributeOrderJsonList.GetLength(); ++identityAttributeOrderIndex)
     {
       m_identityAttributeOrder.push_back(identityAttributeOrderJsonList[identityAttributeOrderIndex].AsString());

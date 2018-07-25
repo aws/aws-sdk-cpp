@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     HlsCaptionLanguageMapping();
-    HlsCaptionLanguageMapping(const Aws::Utils::Json::JsonValue& jsonValue);
-    HlsCaptionLanguageMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HlsCaptionLanguageMapping(Aws::Utils::Json::JsonView jsonValue);
+    HlsCaptionLanguageMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -36,7 +36,7 @@ CoverageHours::CoverageHours() :
 {
 }
 
-CoverageHours::CoverageHours(const JsonValue& jsonValue) : 
+CoverageHours::CoverageHours(JsonView jsonValue) : 
     m_onDemandHoursHasBeenSet(false),
     m_reservedHoursHasBeenSet(false),
     m_totalRunningHoursHasBeenSet(false),
@@ -45,7 +45,7 @@ CoverageHours::CoverageHours(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CoverageHours& CoverageHours::operator =(const JsonValue& jsonValue)
+CoverageHours& CoverageHours::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OnDemandHours"))
   {

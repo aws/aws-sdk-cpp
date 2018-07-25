@@ -35,7 +35,7 @@ PredefinedMetricSpecification::PredefinedMetricSpecification() :
 {
 }
 
-PredefinedMetricSpecification::PredefinedMetricSpecification(const JsonValue& jsonValue) : 
+PredefinedMetricSpecification::PredefinedMetricSpecification(JsonView jsonValue) : 
     m_predefinedMetricType(MetricType::NOT_SET),
     m_predefinedMetricTypeHasBeenSet(false),
     m_resourceLabelHasBeenSet(false)
@@ -43,7 +43,7 @@ PredefinedMetricSpecification::PredefinedMetricSpecification(const JsonValue& js
   *this = jsonValue;
 }
 
-PredefinedMetricSpecification& PredefinedMetricSpecification::operator =(const JsonValue& jsonValue)
+PredefinedMetricSpecification& PredefinedMetricSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PredefinedMetricType"))
   {

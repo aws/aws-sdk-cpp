@@ -35,7 +35,7 @@ SearchedLogStream::SearchedLogStream() :
 {
 }
 
-SearchedLogStream::SearchedLogStream(const JsonValue& jsonValue) : 
+SearchedLogStream::SearchedLogStream(JsonView jsonValue) : 
     m_logStreamNameHasBeenSet(false),
     m_searchedCompletely(false),
     m_searchedCompletelyHasBeenSet(false)
@@ -43,7 +43,7 @@ SearchedLogStream::SearchedLogStream(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SearchedLogStream& SearchedLogStream::operator =(const JsonValue& jsonValue)
+SearchedLogStream& SearchedLogStream::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("logStreamName"))
   {

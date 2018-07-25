@@ -41,7 +41,7 @@ HealthCheck::HealthCheck() :
 {
 }
 
-HealthCheck::HealthCheck(const JsonValue& jsonValue) : 
+HealthCheck::HealthCheck(JsonView jsonValue) : 
     m_commandHasBeenSet(false),
     m_interval(0),
     m_intervalHasBeenSet(false),
@@ -55,11 +55,11 @@ HealthCheck::HealthCheck(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HealthCheck& HealthCheck::operator =(const JsonValue& jsonValue)
+HealthCheck& HealthCheck::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonValue> commandJsonList = jsonValue.GetArray("command");
+    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());

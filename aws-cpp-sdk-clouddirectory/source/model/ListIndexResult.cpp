@@ -37,10 +37,10 @@ ListIndexResult::ListIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 ListIndexResult& ListIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IndexAttachments"))
   {
-    Array<JsonValue> indexAttachmentsJsonList = jsonValue.GetArray("IndexAttachments");
+    Array<JsonView> indexAttachmentsJsonList = jsonValue.GetArray("IndexAttachments");
     for(unsigned indexAttachmentsIndex = 0; indexAttachmentsIndex < indexAttachmentsJsonList.GetLength(); ++indexAttachmentsIndex)
     {
       m_indexAttachments.push_back(indexAttachmentsJsonList[indexAttachmentsIndex].AsObject());

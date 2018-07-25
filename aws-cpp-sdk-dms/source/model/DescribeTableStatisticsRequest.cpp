@@ -64,7 +64,7 @@ Aws::String DescribeTableStatisticsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTableStatisticsRequest::GetRequestSpecificHeaders() const

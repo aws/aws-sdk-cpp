@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ConfigRuleComplianceSummaryFilters();
-    ConfigRuleComplianceSummaryFilters(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConfigRuleComplianceSummaryFilters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConfigRuleComplianceSummaryFilters(Aws::Utils::Json::JsonView jsonValue);
+    ConfigRuleComplianceSummaryFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

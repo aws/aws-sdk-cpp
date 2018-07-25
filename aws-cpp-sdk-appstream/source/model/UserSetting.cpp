@@ -36,7 +36,7 @@ UserSetting::UserSetting() :
 {
 }
 
-UserSetting::UserSetting(const JsonValue& jsonValue) : 
+UserSetting::UserSetting(JsonView jsonValue) : 
     m_action(Action::NOT_SET),
     m_actionHasBeenSet(false),
     m_permission(Permission::NOT_SET),
@@ -45,7 +45,7 @@ UserSetting::UserSetting(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserSetting& UserSetting::operator =(const JsonValue& jsonValue)
+UserSetting& UserSetting::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

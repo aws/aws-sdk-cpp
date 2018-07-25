@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     StageKey();
-    StageKey(const Aws::Utils::Json::JsonValue& jsonValue);
-    StageKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StageKey(Aws::Utils::Json::JsonView jsonValue);
+    StageKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

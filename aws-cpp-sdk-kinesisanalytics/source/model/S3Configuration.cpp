@@ -35,7 +35,7 @@ S3Configuration::S3Configuration() :
 {
 }
 
-S3Configuration::S3Configuration(const JsonValue& jsonValue) : 
+S3Configuration::S3Configuration(JsonView jsonValue) : 
     m_roleARNHasBeenSet(false),
     m_bucketARNHasBeenSet(false),
     m_fileKeyHasBeenSet(false)
@@ -43,7 +43,7 @@ S3Configuration::S3Configuration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3Configuration& S3Configuration::operator =(const JsonValue& jsonValue)
+S3Configuration& S3Configuration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RoleARN"))
   {

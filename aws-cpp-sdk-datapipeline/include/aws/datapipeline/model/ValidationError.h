@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DataPipeline
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ValidationError();
-    ValidationError(const Aws::Utils::Json::JsonValue& jsonValue);
-    ValidationError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ValidationError(Aws::Utils::Json::JsonView jsonValue);
+    ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

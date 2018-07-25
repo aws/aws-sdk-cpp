@@ -36,7 +36,7 @@ Permission::Permission() :
 {
 }
 
-Permission::Permission(const JsonValue& jsonValue) : 
+Permission::Permission(JsonView jsonValue) : 
     m_granteeIdHasBeenSet(false),
     m_granteeType(MemberType::NOT_SET),
     m_granteeTypeHasBeenSet(false),
@@ -45,7 +45,7 @@ Permission::Permission(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Permission& Permission::operator =(const JsonValue& jsonValue)
+Permission& Permission::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GranteeId"))
   {
@@ -63,7 +63,7 @@ Permission& Permission::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PermissionValues"))
   {
-    Array<JsonValue> permissionValuesJsonList = jsonValue.GetArray("PermissionValues");
+    Array<JsonView> permissionValuesJsonList = jsonValue.GetArray("PermissionValues");
     for(unsigned permissionValuesIndex = 0; permissionValuesIndex < permissionValuesJsonList.GetLength(); ++permissionValuesIndex)
     {
       m_permissionValues.push_back(PermissionTypeMapper::GetPermissionTypeForName(permissionValuesJsonList[permissionValuesIndex].AsString()));

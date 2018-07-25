@@ -34,14 +34,14 @@ JobAlbumArt::JobAlbumArt() :
 {
 }
 
-JobAlbumArt::JobAlbumArt(const JsonValue& jsonValue) : 
+JobAlbumArt::JobAlbumArt(JsonView jsonValue) : 
     m_mergePolicyHasBeenSet(false),
     m_artworkHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JobAlbumArt& JobAlbumArt::operator =(const JsonValue& jsonValue)
+JobAlbumArt& JobAlbumArt::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MergePolicy"))
   {
@@ -52,7 +52,7 @@ JobAlbumArt& JobAlbumArt::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Artwork"))
   {
-    Array<JsonValue> artworkJsonList = jsonValue.GetArray("Artwork");
+    Array<JsonView> artworkJsonList = jsonValue.GetArray("Artwork");
     for(unsigned artworkIndex = 0; artworkIndex < artworkJsonList.GetLength(); ++artworkIndex)
     {
       m_artwork.push_back(artworkJsonList[artworkIndex].AsObject());

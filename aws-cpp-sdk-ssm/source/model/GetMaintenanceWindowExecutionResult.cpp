@@ -39,7 +39,7 @@ GetMaintenanceWindowExecutionResult::GetMaintenanceWindowExecutionResult(const A
 
 GetMaintenanceWindowExecutionResult& GetMaintenanceWindowExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WindowExecutionId"))
   {
     m_windowExecutionId = jsonValue.GetString("WindowExecutionId");
@@ -48,7 +48,7 @@ GetMaintenanceWindowExecutionResult& GetMaintenanceWindowExecutionResult::operat
 
   if(jsonValue.ValueExists("TaskIds"))
   {
-    Array<JsonValue> taskIdsJsonList = jsonValue.GetArray("TaskIds");
+    Array<JsonView> taskIdsJsonList = jsonValue.GetArray("TaskIds");
     for(unsigned taskIdsIndex = 0; taskIdsIndex < taskIdsJsonList.GetLength(); ++taskIdsIndex)
     {
       m_taskIds.push_back(taskIdsJsonList[taskIdsIndex].AsString());

@@ -139,7 +139,7 @@ Aws::String CreateBrokerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

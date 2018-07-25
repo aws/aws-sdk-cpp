@@ -56,7 +56,7 @@ Aws::String CreateScalingPlanRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateScalingPlanRequest::GetRequestSpecificHeaders() const

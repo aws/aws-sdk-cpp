@@ -34,14 +34,14 @@ AutoScalingPolicy::AutoScalingPolicy() :
 {
 }
 
-AutoScalingPolicy::AutoScalingPolicy(const JsonValue& jsonValue) : 
+AutoScalingPolicy::AutoScalingPolicy(JsonView jsonValue) : 
     m_constraintsHasBeenSet(false),
     m_rulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AutoScalingPolicy& AutoScalingPolicy::operator =(const JsonValue& jsonValue)
+AutoScalingPolicy& AutoScalingPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Constraints"))
   {
@@ -52,7 +52,7 @@ AutoScalingPolicy& AutoScalingPolicy::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonValue> rulesJsonList = jsonValue.GetArray("Rules");
+    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

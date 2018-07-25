@@ -58,7 +58,7 @@ TableStatistics::TableStatistics() :
 {
 }
 
-TableStatistics::TableStatistics(const JsonValue& jsonValue) : 
+TableStatistics::TableStatistics(JsonView jsonValue) : 
     m_schemaNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_inserts(0),
@@ -89,7 +89,7 @@ TableStatistics::TableStatistics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TableStatistics& TableStatistics::operator =(const JsonValue& jsonValue)
+TableStatistics& TableStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaName"))
   {

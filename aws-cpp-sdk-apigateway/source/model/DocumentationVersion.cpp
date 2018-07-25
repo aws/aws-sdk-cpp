@@ -35,7 +35,7 @@ DocumentationVersion::DocumentationVersion() :
 {
 }
 
-DocumentationVersion::DocumentationVersion(const JsonValue& jsonValue) : 
+DocumentationVersion::DocumentationVersion(JsonView jsonValue) : 
     m_versionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -43,7 +43,7 @@ DocumentationVersion::DocumentationVersion(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentationVersion& DocumentationVersion::operator =(const JsonValue& jsonValue)
+DocumentationVersion& DocumentationVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("version"))
   {

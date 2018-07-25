@@ -33,13 +33,13 @@ FileGroupSettings::FileGroupSettings() :
 {
 }
 
-FileGroupSettings::FileGroupSettings(const JsonValue& jsonValue) : 
+FileGroupSettings::FileGroupSettings(JsonView jsonValue) : 
     m_destinationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FileGroupSettings& FileGroupSettings::operator =(const JsonValue& jsonValue)
+FileGroupSettings& FileGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("destination"))
   {

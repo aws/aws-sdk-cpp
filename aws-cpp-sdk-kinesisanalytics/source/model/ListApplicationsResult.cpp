@@ -39,10 +39,10 @@ ListApplicationsResult::ListApplicationsResult(const Aws::AmazonWebServiceResult
 
 ListApplicationsResult& ListApplicationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApplicationSummaries"))
   {
-    Array<JsonValue> applicationSummariesJsonList = jsonValue.GetArray("ApplicationSummaries");
+    Array<JsonView> applicationSummariesJsonList = jsonValue.GetArray("ApplicationSummaries");
     for(unsigned applicationSummariesIndex = 0; applicationSummariesIndex < applicationSummariesJsonList.GetLength(); ++applicationSummariesIndex)
     {
       m_applicationSummaries.push_back(applicationSummariesJsonList[applicationSummariesIndex].AsObject());

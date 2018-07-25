@@ -34,14 +34,14 @@ RawString::RawString() :
 {
 }
 
-RawString::RawString(const JsonValue& jsonValue) : 
+RawString::RawString(JsonView jsonValue) : 
     m_contentHasBeenSet(false),
     m_sha256HasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RawString& RawString::operator =(const JsonValue& jsonValue)
+RawString& RawString::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("content"))
   {

@@ -34,14 +34,14 @@ VpcSecurityGroupMembership::VpcSecurityGroupMembership() :
 {
 }
 
-VpcSecurityGroupMembership::VpcSecurityGroupMembership(const JsonValue& jsonValue) : 
+VpcSecurityGroupMembership::VpcSecurityGroupMembership(JsonView jsonValue) : 
     m_vpcSecurityGroupIdHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VpcSecurityGroupMembership& VpcSecurityGroupMembership::operator =(const JsonValue& jsonValue)
+VpcSecurityGroupMembership& VpcSecurityGroupMembership::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VpcSecurityGroupId"))
   {

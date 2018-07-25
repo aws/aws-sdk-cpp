@@ -72,7 +72,7 @@ Aws::String ConnectDirectoryRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ConnectDirectoryRequest::GetRequestSpecificHeaders() const

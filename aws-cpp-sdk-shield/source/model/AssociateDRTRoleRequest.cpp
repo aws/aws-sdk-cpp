@@ -37,7 +37,7 @@ Aws::String AssociateDRTRoleRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateDRTRoleRequest::GetRequestSpecificHeaders() const

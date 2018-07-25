@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     MaintenanceWindowTaskInvocationParameters();
-    MaintenanceWindowTaskInvocationParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    MaintenanceWindowTaskInvocationParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MaintenanceWindowTaskInvocationParameters(Aws::Utils::Json::JsonView jsonValue);
+    MaintenanceWindowTaskInvocationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

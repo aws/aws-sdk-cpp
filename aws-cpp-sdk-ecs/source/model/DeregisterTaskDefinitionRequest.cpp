@@ -37,7 +37,7 @@ Aws::String DeregisterTaskDefinitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeregisterTaskDefinitionRequest::GetRequestSpecificHeaders() const

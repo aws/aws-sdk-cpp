@@ -34,14 +34,14 @@ DateInterval::DateInterval() :
 {
 }
 
-DateInterval::DateInterval(const JsonValue& jsonValue) : 
+DateInterval::DateInterval(JsonView jsonValue) : 
     m_startHasBeenSet(false),
     m_endHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DateInterval& DateInterval::operator =(const JsonValue& jsonValue)
+DateInterval& DateInterval::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Start"))
   {

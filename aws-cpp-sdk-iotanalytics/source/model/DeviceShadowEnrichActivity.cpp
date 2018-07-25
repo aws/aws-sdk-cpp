@@ -37,7 +37,7 @@ DeviceShadowEnrichActivity::DeviceShadowEnrichActivity() :
 {
 }
 
-DeviceShadowEnrichActivity::DeviceShadowEnrichActivity(const JsonValue& jsonValue) : 
+DeviceShadowEnrichActivity::DeviceShadowEnrichActivity(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_attributeHasBeenSet(false),
     m_thingNameHasBeenSet(false),
@@ -47,7 +47,7 @@ DeviceShadowEnrichActivity::DeviceShadowEnrichActivity(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-DeviceShadowEnrichActivity& DeviceShadowEnrichActivity::operator =(const JsonValue& jsonValue)
+DeviceShadowEnrichActivity& DeviceShadowEnrichActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

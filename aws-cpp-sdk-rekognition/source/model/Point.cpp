@@ -36,7 +36,7 @@ Point::Point() :
 {
 }
 
-Point::Point(const JsonValue& jsonValue) : 
+Point::Point(JsonView jsonValue) : 
     m_x(0.0),
     m_xHasBeenSet(false),
     m_y(0.0),
@@ -45,7 +45,7 @@ Point::Point(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Point& Point::operator =(const JsonValue& jsonValue)
+Point& Point::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("X"))
   {

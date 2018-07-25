@@ -129,7 +129,7 @@ Aws::String UpdateFleetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateFleetRequest::GetRequestSpecificHeaders() const

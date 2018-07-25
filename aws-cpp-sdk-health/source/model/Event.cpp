@@ -44,7 +44,7 @@ Event::Event() :
 {
 }
 
-Event::Event(const JsonValue& jsonValue) : 
+Event::Event(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_serviceHasBeenSet(false),
     m_eventTypeCodeHasBeenSet(false),
@@ -61,7 +61,7 @@ Event::Event(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Event& Event::operator =(const JsonValue& jsonValue)
+Event& Event::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

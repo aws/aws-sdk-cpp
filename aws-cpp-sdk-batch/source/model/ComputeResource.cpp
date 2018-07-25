@@ -50,7 +50,7 @@ ComputeResource::ComputeResource() :
 {
 }
 
-ComputeResource::ComputeResource(const JsonValue& jsonValue) : 
+ComputeResource::ComputeResource(JsonView jsonValue) : 
     m_type(CRType::NOT_SET),
     m_typeHasBeenSet(false),
     m_minvCpus(0),
@@ -73,7 +73,7 @@ ComputeResource::ComputeResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComputeResource& ComputeResource::operator =(const JsonValue& jsonValue)
+ComputeResource& ComputeResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {
@@ -105,7 +105,7 @@ ComputeResource& ComputeResource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("instanceTypes"))
   {
-    Array<JsonValue> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
+    Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
     for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
     {
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
@@ -122,7 +122,7 @@ ComputeResource& ComputeResource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("subnets"))
   {
-    Array<JsonValue> subnetsJsonList = jsonValue.GetArray("subnets");
+    Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
@@ -132,7 +132,7 @@ ComputeResource& ComputeResource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -156,7 +156,7 @@ ComputeResource& ComputeResource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();

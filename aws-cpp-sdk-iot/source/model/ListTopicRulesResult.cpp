@@ -37,10 +37,10 @@ ListTopicRulesResult::ListTopicRulesResult(const Aws::AmazonWebServiceResult<Jso
 
 ListTopicRulesResult& ListTopicRulesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("rules"))
   {
-    Array<JsonValue> rulesJsonList = jsonValue.GetArray("rules");
+    Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

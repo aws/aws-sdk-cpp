@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     JobFlowDetail();
-    JobFlowDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobFlowDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobFlowDetail(Aws::Utils::Json::JsonView jsonValue);
+    JobFlowDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

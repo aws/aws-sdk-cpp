@@ -38,7 +38,7 @@ LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDoma
 {
 }
 
-LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDomainValidationRecord(const JsonValue& jsonValue) : 
+LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDomainValidationRecord(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false),
@@ -49,7 +49,7 @@ LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDoma
   *this = jsonValue;
 }
 
-LoadBalancerTlsCertificateDomainValidationRecord& LoadBalancerTlsCertificateDomainValidationRecord::operator =(const JsonValue& jsonValue)
+LoadBalancerTlsCertificateDomainValidationRecord& LoadBalancerTlsCertificateDomainValidationRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

@@ -48,7 +48,7 @@ Offering::Offering() :
 {
 }
 
-Offering::Offering(const JsonValue& jsonValue) : 
+Offering::Offering(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_currencyCodeHasBeenSet(false),
     m_duration(0),
@@ -69,7 +69,7 @@ Offering::Offering(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Offering& Offering::operator =(const JsonValue& jsonValue)
+Offering& Offering::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

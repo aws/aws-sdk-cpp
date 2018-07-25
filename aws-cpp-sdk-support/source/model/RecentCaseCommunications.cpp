@@ -34,18 +34,18 @@ RecentCaseCommunications::RecentCaseCommunications() :
 {
 }
 
-RecentCaseCommunications::RecentCaseCommunications(const JsonValue& jsonValue) : 
+RecentCaseCommunications::RecentCaseCommunications(JsonView jsonValue) : 
     m_communicationsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RecentCaseCommunications& RecentCaseCommunications::operator =(const JsonValue& jsonValue)
+RecentCaseCommunications& RecentCaseCommunications::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("communications"))
   {
-    Array<JsonValue> communicationsJsonList = jsonValue.GetArray("communications");
+    Array<JsonView> communicationsJsonList = jsonValue.GetArray("communications");
     for(unsigned communicationsIndex = 0; communicationsIndex < communicationsJsonList.GetLength(); ++communicationsIndex)
     {
       m_communications.push_back(communicationsJsonList[communicationsIndex].AsObject());

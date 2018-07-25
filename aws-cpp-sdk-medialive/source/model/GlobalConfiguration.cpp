@@ -41,7 +41,7 @@ GlobalConfiguration::GlobalConfiguration() :
 {
 }
 
-GlobalConfiguration::GlobalConfiguration(const JsonValue& jsonValue) : 
+GlobalConfiguration::GlobalConfiguration(JsonView jsonValue) : 
     m_initialAudioGain(0),
     m_initialAudioGainHasBeenSet(false),
     m_inputEndAction(GlobalConfigurationInputEndAction::NOT_SET),
@@ -55,7 +55,7 @@ GlobalConfiguration::GlobalConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GlobalConfiguration& GlobalConfiguration::operator =(const JsonValue& jsonValue)
+GlobalConfiguration& GlobalConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("initialAudioGain"))
   {

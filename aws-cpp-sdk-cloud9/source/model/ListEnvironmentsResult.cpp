@@ -37,7 +37,7 @@ ListEnvironmentsResult::ListEnvironmentsResult(const Aws::AmazonWebServiceResult
 
 ListEnvironmentsResult& ListEnvironmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
@@ -46,7 +46,7 @@ ListEnvironmentsResult& ListEnvironmentsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("environmentIds"))
   {
-    Array<JsonValue> environmentIdsJsonList = jsonValue.GetArray("environmentIds");
+    Array<JsonView> environmentIdsJsonList = jsonValue.GetArray("environmentIds");
     for(unsigned environmentIdsIndex = 0; environmentIdsIndex < environmentIdsJsonList.GetLength(); ++environmentIdsIndex)
     {
       m_environmentIds.push_back(environmentIdsJsonList[environmentIdsIndex].AsString());

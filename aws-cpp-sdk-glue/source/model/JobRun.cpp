@@ -53,7 +53,7 @@ JobRun::JobRun() :
 {
 }
 
-JobRun::JobRun(const JsonValue& jsonValue) : 
+JobRun::JobRun(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_attempt(0),
     m_attemptHasBeenSet(false),
@@ -79,7 +79,7 @@ JobRun::JobRun(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobRun& JobRun::operator =(const JsonValue& jsonValue)
+JobRun& JobRun::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -146,7 +146,7 @@ JobRun& JobRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Arguments"))
   {
-    Aws::Map<Aws::String, JsonValue> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
     for(auto& argumentsItem : argumentsJsonMap)
     {
       m_arguments[argumentsItem.first] = argumentsItem.second.AsString();
@@ -163,7 +163,7 @@ JobRun& JobRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PredecessorRuns"))
   {
-    Array<JsonValue> predecessorRunsJsonList = jsonValue.GetArray("PredecessorRuns");
+    Array<JsonView> predecessorRunsJsonList = jsonValue.GetArray("PredecessorRuns");
     for(unsigned predecessorRunsIndex = 0; predecessorRunsIndex < predecessorRunsJsonList.GetLength(); ++predecessorRunsIndex)
     {
       m_predecessorRuns.push_back(predecessorRunsJsonList[predecessorRunsIndex].AsObject());

@@ -40,7 +40,7 @@ TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary() :
 {
 }
 
-TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary(const JsonValue& jsonValue) : 
+TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary(JsonView jsonValue) : 
     m_resourcesProcessed(0),
     m_resourcesProcessedHasBeenSet(false),
     m_resourcesFlagged(0),
@@ -53,7 +53,7 @@ TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary(const JsonValue& 
   *this = jsonValue;
 }
 
-TrustedAdvisorResourcesSummary& TrustedAdvisorResourcesSummary::operator =(const JsonValue& jsonValue)
+TrustedAdvisorResourcesSummary& TrustedAdvisorResourcesSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resourcesProcessed"))
   {

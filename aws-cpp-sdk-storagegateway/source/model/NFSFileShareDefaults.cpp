@@ -38,7 +38,7 @@ NFSFileShareDefaults::NFSFileShareDefaults() :
 {
 }
 
-NFSFileShareDefaults::NFSFileShareDefaults(const JsonValue& jsonValue) : 
+NFSFileShareDefaults::NFSFileShareDefaults(JsonView jsonValue) : 
     m_fileModeHasBeenSet(false),
     m_directoryModeHasBeenSet(false),
     m_groupId(0),
@@ -49,7 +49,7 @@ NFSFileShareDefaults::NFSFileShareDefaults(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NFSFileShareDefaults& NFSFileShareDefaults::operator =(const JsonValue& jsonValue)
+NFSFileShareDefaults& NFSFileShareDefaults::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FileMode"))
   {

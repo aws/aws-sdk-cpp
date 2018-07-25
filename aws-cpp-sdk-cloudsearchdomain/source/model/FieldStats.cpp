@@ -45,7 +45,7 @@ FieldStats::FieldStats() :
 {
 }
 
-FieldStats::FieldStats(const JsonValue& jsonValue) : 
+FieldStats::FieldStats(JsonView jsonValue) : 
     m_minHasBeenSet(false),
     m_maxHasBeenSet(false),
     m_count(0),
@@ -63,7 +63,7 @@ FieldStats::FieldStats(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FieldStats& FieldStats::operator =(const JsonValue& jsonValue)
+FieldStats& FieldStats::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("min"))
   {

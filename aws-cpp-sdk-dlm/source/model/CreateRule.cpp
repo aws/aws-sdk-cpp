@@ -37,7 +37,7 @@ CreateRule::CreateRule() :
 {
 }
 
-CreateRule::CreateRule(const JsonValue& jsonValue) : 
+CreateRule::CreateRule(JsonView jsonValue) : 
     m_interval(0),
     m_intervalHasBeenSet(false),
     m_intervalUnit(IntervalUnitValues::NOT_SET),
@@ -47,7 +47,7 @@ CreateRule::CreateRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CreateRule& CreateRule::operator =(const JsonValue& jsonValue)
+CreateRule& CreateRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Interval"))
   {
@@ -65,7 +65,7 @@ CreateRule& CreateRule::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Times"))
   {
-    Array<JsonValue> timesJsonList = jsonValue.GetArray("Times");
+    Array<JsonView> timesJsonList = jsonValue.GetArray("Times");
     for(unsigned timesIndex = 0; timesIndex < timesJsonList.GetLength(); ++timesIndex)
     {
       m_times.push_back(timesJsonList[timesIndex].AsString());

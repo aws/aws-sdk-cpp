@@ -39,7 +39,7 @@ Subscription::Subscription() :
 {
 }
 
-Subscription::Subscription(const JsonValue& jsonValue) : 
+Subscription::Subscription(JsonView jsonValue) : 
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_timeCommitmentInSeconds(0),
@@ -51,7 +51,7 @@ Subscription::Subscription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Subscription& Subscription::operator =(const JsonValue& jsonValue)
+Subscription& Subscription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartTime"))
   {
@@ -83,7 +83,7 @@ Subscription& Subscription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Limits"))
   {
-    Array<JsonValue> limitsJsonList = jsonValue.GetArray("Limits");
+    Array<JsonView> limitsJsonList = jsonValue.GetArray("Limits");
     for(unsigned limitsIndex = 0; limitsIndex < limitsJsonList.GetLength(); ++limitsIndex)
     {
       m_limits.push_back(limitsJsonList[limitsIndex].AsObject());

@@ -35,7 +35,7 @@ BasePathMapping::BasePathMapping() :
 {
 }
 
-BasePathMapping::BasePathMapping(const JsonValue& jsonValue) : 
+BasePathMapping::BasePathMapping(JsonView jsonValue) : 
     m_basePathHasBeenSet(false),
     m_restApiIdHasBeenSet(false),
     m_stageHasBeenSet(false)
@@ -43,7 +43,7 @@ BasePathMapping::BasePathMapping(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BasePathMapping& BasePathMapping::operator =(const JsonValue& jsonValue)
+BasePathMapping& BasePathMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("basePath"))
   {

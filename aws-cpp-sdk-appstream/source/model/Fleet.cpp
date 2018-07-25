@@ -54,7 +54,7 @@ Fleet::Fleet() :
 {
 }
 
-Fleet::Fleet(const JsonValue& jsonValue) : 
+Fleet::Fleet(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
@@ -81,7 +81,7 @@ Fleet::Fleet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Fleet& Fleet::operator =(const JsonValue& jsonValue)
+Fleet& Fleet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {
@@ -183,7 +183,7 @@ Fleet& Fleet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("FleetErrors"))
   {
-    Array<JsonValue> fleetErrorsJsonList = jsonValue.GetArray("FleetErrors");
+    Array<JsonView> fleetErrorsJsonList = jsonValue.GetArray("FleetErrors");
     for(unsigned fleetErrorsIndex = 0; fleetErrorsIndex < fleetErrorsJsonList.GetLength(); ++fleetErrorsIndex)
     {
       m_fleetErrors.push_back(fleetErrorsJsonList[fleetErrorsIndex].AsObject());

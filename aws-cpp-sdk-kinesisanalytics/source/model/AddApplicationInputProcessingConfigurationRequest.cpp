@@ -59,7 +59,7 @@ Aws::String AddApplicationInputProcessingConfigurationRequest::SerializePayload(
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddApplicationInputProcessingConfigurationRequest::GetRequestSpecificHeaders() const

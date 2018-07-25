@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     RdsDbInstance();
-    RdsDbInstance(const Aws::Utils::Json::JsonValue& jsonValue);
-    RdsDbInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RdsDbInstance(Aws::Utils::Json::JsonView jsonValue);
+    RdsDbInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ Aws::String GetCrawlerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCrawlerRequest::GetRequestSpecificHeaders() const

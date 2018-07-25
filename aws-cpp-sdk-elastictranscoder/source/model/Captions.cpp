@@ -33,17 +33,17 @@ Captions::Captions() :
 {
 }
 
-Captions::Captions(const JsonValue& jsonValue) : 
+Captions::Captions(JsonView jsonValue) : 
     m_captionFormatsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Captions& Captions::operator =(const JsonValue& jsonValue)
+Captions& Captions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CaptionFormats"))
   {
-    Array<JsonValue> captionFormatsJsonList = jsonValue.GetArray("CaptionFormats");
+    Array<JsonView> captionFormatsJsonList = jsonValue.GetArray("CaptionFormats");
     for(unsigned captionFormatsIndex = 0; captionFormatsIndex < captionFormatsJsonList.GetLength(); ++captionFormatsIndex)
     {
       m_captionFormats.push_back(captionFormatsJsonList[captionFormatsIndex].AsObject());

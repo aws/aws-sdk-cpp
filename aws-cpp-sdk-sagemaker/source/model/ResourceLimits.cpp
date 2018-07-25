@@ -36,7 +36,7 @@ ResourceLimits::ResourceLimits() :
 {
 }
 
-ResourceLimits::ResourceLimits(const JsonValue& jsonValue) : 
+ResourceLimits::ResourceLimits(JsonView jsonValue) : 
     m_maxNumberOfTrainingJobs(0),
     m_maxNumberOfTrainingJobsHasBeenSet(false),
     m_maxParallelTrainingJobs(0),
@@ -45,7 +45,7 @@ ResourceLimits::ResourceLimits(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceLimits& ResourceLimits::operator =(const JsonValue& jsonValue)
+ResourceLimits& ResourceLimits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MaxNumberOfTrainingJobs"))
   {

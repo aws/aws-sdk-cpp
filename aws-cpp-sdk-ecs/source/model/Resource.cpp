@@ -41,7 +41,7 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(const JsonValue& jsonValue) : 
+Resource::Resource(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_doubleValue(0.0),
@@ -55,7 +55,7 @@ Resource::Resource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Resource& Resource::operator =(const JsonValue& jsonValue)
+Resource& Resource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -94,7 +94,7 @@ Resource& Resource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("stringSetValue"))
   {
-    Array<JsonValue> stringSetValueJsonList = jsonValue.GetArray("stringSetValue");
+    Array<JsonView> stringSetValueJsonList = jsonValue.GetArray("stringSetValue");
     for(unsigned stringSetValueIndex = 0; stringSetValueIndex < stringSetValueJsonList.GetLength(); ++stringSetValueIndex)
     {
       m_stringSetValue.push_back(stringSetValueJsonList[stringSetValueIndex].AsString());

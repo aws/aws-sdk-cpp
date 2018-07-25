@@ -37,10 +37,10 @@ ListChannelsResult::ListChannelsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListChannelsResult& ListChannelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("channelSummaries"))
   {
-    Array<JsonValue> channelSummariesJsonList = jsonValue.GetArray("channelSummaries");
+    Array<JsonView> channelSummariesJsonList = jsonValue.GetArray("channelSummaries");
     for(unsigned channelSummariesIndex = 0; channelSummariesIndex < channelSummariesJsonList.GetLength(); ++channelSummariesIndex)
     {
       m_channelSummaries.push_back(channelSummariesJsonList[channelSummariesIndex].AsObject());

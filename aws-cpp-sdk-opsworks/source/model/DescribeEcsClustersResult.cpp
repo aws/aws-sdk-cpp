@@ -37,10 +37,10 @@ DescribeEcsClustersResult::DescribeEcsClustersResult(const Aws::AmazonWebService
 
 DescribeEcsClustersResult& DescribeEcsClustersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EcsClusters"))
   {
-    Array<JsonValue> ecsClustersJsonList = jsonValue.GetArray("EcsClusters");
+    Array<JsonView> ecsClustersJsonList = jsonValue.GetArray("EcsClusters");
     for(unsigned ecsClustersIndex = 0; ecsClustersIndex < ecsClustersJsonList.GetLength(); ++ecsClustersIndex)
     {
       m_ecsClusters.push_back(ecsClustersJsonList[ecsClustersIndex].AsObject());

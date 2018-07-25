@@ -37,10 +37,10 @@ ListApplicationRevisionsResult::ListApplicationRevisionsResult(const Aws::Amazon
 
 ListApplicationRevisionsResult& ListApplicationRevisionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("revisions"))
   {
-    Array<JsonValue> revisionsJsonList = jsonValue.GetArray("revisions");
+    Array<JsonView> revisionsJsonList = jsonValue.GetArray("revisions");
     for(unsigned revisionsIndex = 0; revisionsIndex < revisionsJsonList.GetLength(); ++revisionsIndex)
     {
       m_revisions.push_back(revisionsJsonList[revisionsIndex].AsObject());

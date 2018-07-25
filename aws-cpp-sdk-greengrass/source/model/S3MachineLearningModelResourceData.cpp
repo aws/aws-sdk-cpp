@@ -34,14 +34,14 @@ S3MachineLearningModelResourceData::S3MachineLearningModelResourceData() :
 {
 }
 
-S3MachineLearningModelResourceData::S3MachineLearningModelResourceData(const JsonValue& jsonValue) : 
+S3MachineLearningModelResourceData::S3MachineLearningModelResourceData(JsonView jsonValue) : 
     m_destinationPathHasBeenSet(false),
     m_s3UriHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-S3MachineLearningModelResourceData& S3MachineLearningModelResourceData::operator =(const JsonValue& jsonValue)
+S3MachineLearningModelResourceData& S3MachineLearningModelResourceData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DestinationPath"))
   {

@@ -49,7 +49,7 @@ Aws::String UpdateGlobalTableRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateGlobalTableRequest::GetRequestSpecificHeaders() const

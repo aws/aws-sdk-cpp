@@ -37,7 +37,7 @@ GetBuiltinIntentResult::GetBuiltinIntentResult(const Aws::AmazonWebServiceResult
 
 GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("signature"))
   {
     m_signature = jsonValue.GetString("signature");
@@ -46,7 +46,7 @@ GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("supportedLocales"))
   {
-    Array<JsonValue> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
+    Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
     for(unsigned supportedLocalesIndex = 0; supportedLocalesIndex < supportedLocalesJsonList.GetLength(); ++supportedLocalesIndex)
     {
       m_supportedLocales.push_back(LocaleMapper::GetLocaleForName(supportedLocalesJsonList[supportedLocalesIndex].AsString()));
@@ -55,7 +55,7 @@ GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("slots"))
   {
-    Array<JsonValue> slotsJsonList = jsonValue.GetArray("slots");
+    Array<JsonView> slotsJsonList = jsonValue.GetArray("slots");
     for(unsigned slotsIndex = 0; slotsIndex < slotsJsonList.GetLength(); ++slotsIndex)
     {
       m_slots.push_back(slotsJsonList[slotsIndex].AsObject());

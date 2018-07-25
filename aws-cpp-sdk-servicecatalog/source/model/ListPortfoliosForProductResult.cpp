@@ -37,10 +37,10 @@ ListPortfoliosForProductResult::ListPortfoliosForProductResult(const Aws::Amazon
 
 ListPortfoliosForProductResult& ListPortfoliosForProductResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PortfolioDetails"))
   {
-    Array<JsonValue> portfolioDetailsJsonList = jsonValue.GetArray("PortfolioDetails");
+    Array<JsonView> portfolioDetailsJsonList = jsonValue.GetArray("PortfolioDetails");
     for(unsigned portfolioDetailsIndex = 0; portfolioDetailsIndex < portfolioDetailsJsonList.GetLength(); ++portfolioDetailsIndex)
     {
       m_portfolioDetails.push_back(portfolioDetailsJsonList[portfolioDetailsIndex].AsObject());

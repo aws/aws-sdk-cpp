@@ -37,10 +37,10 @@ GetEffectivePoliciesResult::GetEffectivePoliciesResult(const Aws::AmazonWebServi
 
 GetEffectivePoliciesResult& GetEffectivePoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("effectivePolicies"))
   {
-    Array<JsonValue> effectivePoliciesJsonList = jsonValue.GetArray("effectivePolicies");
+    Array<JsonView> effectivePoliciesJsonList = jsonValue.GetArray("effectivePolicies");
     for(unsigned effectivePoliciesIndex = 0; effectivePoliciesIndex < effectivePoliciesJsonList.GetLength(); ++effectivePoliciesIndex)
     {
       m_effectivePolicies.push_back(effectivePoliciesJsonList[effectivePoliciesIndex].AsObject());

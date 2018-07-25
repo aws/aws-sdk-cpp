@@ -41,7 +41,7 @@ DetectedProperties::DetectedProperties() :
 {
 }
 
-DetectedProperties::DetectedProperties(const JsonValue& jsonValue) : 
+DetectedProperties::DetectedProperties(JsonView jsonValue) : 
     m_width(0),
     m_widthHasBeenSet(false),
     m_height(0),
@@ -55,7 +55,7 @@ DetectedProperties::DetectedProperties(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DetectedProperties& DetectedProperties::operator =(const JsonValue& jsonValue)
+DetectedProperties& DetectedProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Width"))
   {

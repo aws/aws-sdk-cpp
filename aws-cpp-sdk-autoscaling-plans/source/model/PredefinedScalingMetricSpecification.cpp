@@ -35,7 +35,7 @@ PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification() :
 {
 }
 
-PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification(const JsonValue& jsonValue) : 
+PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification(JsonView jsonValue) : 
     m_predefinedScalingMetricType(ScalingMetricType::NOT_SET),
     m_predefinedScalingMetricTypeHasBeenSet(false),
     m_resourceLabelHasBeenSet(false)
@@ -43,7 +43,7 @@ PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification(const
   *this = jsonValue;
 }
 
-PredefinedScalingMetricSpecification& PredefinedScalingMetricSpecification::operator =(const JsonValue& jsonValue)
+PredefinedScalingMetricSpecification& PredefinedScalingMetricSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PredefinedScalingMetricType"))
   {

@@ -48,7 +48,7 @@ ContainerProperties::ContainerProperties() :
 {
 }
 
-ContainerProperties::ContainerProperties(const JsonValue& jsonValue) : 
+ContainerProperties::ContainerProperties(JsonView jsonValue) : 
     m_imageHasBeenSet(false),
     m_vcpus(0),
     m_vcpusHasBeenSet(false),
@@ -69,7 +69,7 @@ ContainerProperties::ContainerProperties(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerProperties& ContainerProperties::operator =(const JsonValue& jsonValue)
+ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("image"))
   {
@@ -94,7 +94,7 @@ ContainerProperties& ContainerProperties::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonValue> commandJsonList = jsonValue.GetArray("command");
+    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -111,7 +111,7 @@ ContainerProperties& ContainerProperties::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("volumes"))
   {
-    Array<JsonValue> volumesJsonList = jsonValue.GetArray("volumes");
+    Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
     for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
     {
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
@@ -121,7 +121,7 @@ ContainerProperties& ContainerProperties::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("environment"))
   {
-    Array<JsonValue> environmentJsonList = jsonValue.GetArray("environment");
+    Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
@@ -131,7 +131,7 @@ ContainerProperties& ContainerProperties::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("mountPoints"))
   {
-    Array<JsonValue> mountPointsJsonList = jsonValue.GetArray("mountPoints");
+    Array<JsonView> mountPointsJsonList = jsonValue.GetArray("mountPoints");
     for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
     {
       m_mountPoints.push_back(mountPointsJsonList[mountPointsIndex].AsObject());
@@ -155,7 +155,7 @@ ContainerProperties& ContainerProperties::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ulimits"))
   {
-    Array<JsonValue> ulimitsJsonList = jsonValue.GetArray("ulimits");
+    Array<JsonView> ulimitsJsonList = jsonValue.GetArray("ulimits");
     for(unsigned ulimitsIndex = 0; ulimitsIndex < ulimitsJsonList.GetLength(); ++ulimitsIndex)
     {
       m_ulimits.push_back(ulimitsJsonList[ulimitsIndex].AsObject());

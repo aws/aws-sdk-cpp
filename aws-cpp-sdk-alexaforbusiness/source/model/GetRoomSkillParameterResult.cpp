@@ -37,7 +37,7 @@ GetRoomSkillParameterResult::GetRoomSkillParameterResult(const Aws::AmazonWebSer
 
 GetRoomSkillParameterResult& GetRoomSkillParameterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RoomSkillParameter"))
   {
     m_roomSkillParameter = jsonValue.GetObject("RoomSkillParameter");

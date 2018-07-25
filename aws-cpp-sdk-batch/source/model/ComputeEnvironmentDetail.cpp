@@ -44,7 +44,7 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
 {
 }
 
-ComputeEnvironmentDetail::ComputeEnvironmentDetail(const JsonValue& jsonValue) : 
+ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) : 
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
@@ -61,7 +61,7 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(const JsonValue& jsonValue)
+ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("computeEnvironmentName"))
   {

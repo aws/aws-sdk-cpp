@@ -38,7 +38,7 @@ FileShareInfo::FileShareInfo() :
 {
 }
 
-FileShareInfo::FileShareInfo(const JsonValue& jsonValue) : 
+FileShareInfo::FileShareInfo(JsonView jsonValue) : 
     m_fileShareType(FileShareType::NOT_SET),
     m_fileShareTypeHasBeenSet(false),
     m_fileShareARNHasBeenSet(false),
@@ -49,7 +49,7 @@ FileShareInfo::FileShareInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FileShareInfo& FileShareInfo::operator =(const JsonValue& jsonValue)
+FileShareInfo& FileShareInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FileShareType"))
   {

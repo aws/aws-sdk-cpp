@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationDiscoveryService
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AgentNetworkInfo();
-    AgentNetworkInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    AgentNetworkInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AgentNetworkInfo(Aws::Utils::Json::JsonView jsonValue);
+    AgentNetworkInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

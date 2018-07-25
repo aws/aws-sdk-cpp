@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     Serializer();
-    Serializer(const Aws::Utils::Json::JsonValue& jsonValue);
-    Serializer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Serializer(Aws::Utils::Json::JsonView jsonValue);
+    Serializer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

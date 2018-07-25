@@ -44,7 +44,7 @@ Aws::String UpdateBatchPredictionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateBatchPredictionRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ RulesPackage::RulesPackage() :
 {
 }
 
-RulesPackage::RulesPackage(const JsonValue& jsonValue) : 
+RulesPackage::RulesPackage(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
@@ -47,7 +47,7 @@ RulesPackage::RulesPackage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RulesPackage& RulesPackage::operator =(const JsonValue& jsonValue)
+RulesPackage& RulesPackage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

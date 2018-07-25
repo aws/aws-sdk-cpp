@@ -54,7 +54,7 @@ Aws::String ListTypedLinkFacetAttributesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListTypedLinkFacetAttributesRequest::GetRequestSpecificHeaders() const

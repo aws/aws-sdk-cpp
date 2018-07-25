@@ -37,7 +37,7 @@ ListSubscribedRuleGroupsResult::ListSubscribedRuleGroupsResult(const Aws::Amazon
 
 ListSubscribedRuleGroupsResult& ListSubscribedRuleGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListSubscribedRuleGroupsResult& ListSubscribedRuleGroupsResult::operator =(const
 
   if(jsonValue.ValueExists("RuleGroups"))
   {
-    Array<JsonValue> ruleGroupsJsonList = jsonValue.GetArray("RuleGroups");
+    Array<JsonView> ruleGroupsJsonList = jsonValue.GetArray("RuleGroups");
     for(unsigned ruleGroupsIndex = 0; ruleGroupsIndex < ruleGroupsJsonList.GetLength(); ++ruleGroupsIndex)
     {
       m_ruleGroups.push_back(ruleGroupsJsonList[ruleGroupsIndex].AsObject());

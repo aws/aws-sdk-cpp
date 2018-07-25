@@ -39,7 +39,7 @@ BillingRecord::BillingRecord() :
 {
 }
 
-BillingRecord::BillingRecord(const JsonValue& jsonValue) : 
+BillingRecord::BillingRecord(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_operation(OperationType::NOT_SET),
     m_operationHasBeenSet(false),
@@ -51,7 +51,7 @@ BillingRecord::BillingRecord(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BillingRecord& BillingRecord::operator =(const JsonValue& jsonValue)
+BillingRecord& BillingRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DomainName"))
   {

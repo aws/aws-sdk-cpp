@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ExportJobsResponse();
-    ExportJobsResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    ExportJobsResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ExportJobsResponse(Aws::Utils::Json::JsonView jsonValue);
+    ExportJobsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

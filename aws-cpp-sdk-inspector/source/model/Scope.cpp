@@ -35,7 +35,7 @@ Scope::Scope() :
 {
 }
 
-Scope::Scope(const JsonValue& jsonValue) : 
+Scope::Scope(JsonView jsonValue) : 
     m_key(ScopeType::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ Scope::Scope(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Scope& Scope::operator =(const JsonValue& jsonValue)
+Scope& Scope::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("key"))
   {

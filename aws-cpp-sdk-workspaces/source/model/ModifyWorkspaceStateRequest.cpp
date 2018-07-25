@@ -44,7 +44,7 @@ Aws::String ModifyWorkspaceStateRequest::SerializePayload() const
    payload.WithString("WorkspaceState", TargetWorkspaceStateMapper::GetNameForTargetWorkspaceState(m_workspaceState));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ModifyWorkspaceStateRequest::GetRequestSpecificHeaders() const

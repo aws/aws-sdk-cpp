@@ -52,7 +52,7 @@ GCMMessage::GCMMessage() :
 {
 }
 
-GCMMessage::GCMMessage(const JsonValue& jsonValue) : 
+GCMMessage::GCMMessage(JsonView jsonValue) : 
     m_action(Action::NOT_SET),
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
@@ -77,7 +77,7 @@ GCMMessage::GCMMessage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GCMMessage& GCMMessage::operator =(const JsonValue& jsonValue)
+GCMMessage& GCMMessage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {
@@ -102,7 +102,7 @@ GCMMessage& GCMMessage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Data"))
   {
-    Aws::Map<Aws::String, JsonValue> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
     for(auto& dataItem : dataJsonMap)
     {
       m_data[dataItem.first] = dataItem.second.AsString();
@@ -175,10 +175,10 @@ GCMMessage& GCMMessage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Substitutions"))
   {
-    Aws::Map<Aws::String, JsonValue> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
     for(auto& substitutionsItem : substitutionsJsonMap)
     {
-      Array<JsonValue> listOf__stringJsonList = substitutionsItem.second.AsArray();
+      Array<JsonView> listOf__stringJsonList = substitutionsItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)

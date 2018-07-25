@@ -37,7 +37,7 @@ CreateStateMachineResult::CreateStateMachineResult(const Aws::AmazonWebServiceRe
 
 CreateStateMachineResult& CreateStateMachineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("stateMachineArn"))
   {
     m_stateMachineArn = jsonValue.GetString("stateMachineArn");

@@ -37,10 +37,10 @@ ListS3ResourcesResult::ListS3ResourcesResult(const Aws::AmazonWebServiceResult<J
 
 ListS3ResourcesResult& ListS3ResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("s3Resources"))
   {
-    Array<JsonValue> s3ResourcesJsonList = jsonValue.GetArray("s3Resources");
+    Array<JsonView> s3ResourcesJsonList = jsonValue.GetArray("s3Resources");
     for(unsigned s3ResourcesIndex = 0; s3ResourcesIndex < s3ResourcesJsonList.GetLength(); ++s3ResourcesIndex)
     {
       m_s3Resources.push_back(s3ResourcesJsonList[s3ResourcesIndex].AsObject());

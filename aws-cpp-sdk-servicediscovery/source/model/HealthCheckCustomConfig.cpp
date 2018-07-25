@@ -34,14 +34,14 @@ HealthCheckCustomConfig::HealthCheckCustomConfig() :
 {
 }
 
-HealthCheckCustomConfig::HealthCheckCustomConfig(const JsonValue& jsonValue) : 
+HealthCheckCustomConfig::HealthCheckCustomConfig(JsonView jsonValue) : 
     m_failureThreshold(0),
     m_failureThresholdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HealthCheckCustomConfig& HealthCheckCustomConfig::operator =(const JsonValue& jsonValue)
+HealthCheckCustomConfig& HealthCheckCustomConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FailureThreshold"))
   {

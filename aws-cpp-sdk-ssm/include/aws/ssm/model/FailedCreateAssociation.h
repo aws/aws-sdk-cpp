@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     FailedCreateAssociation();
-    FailedCreateAssociation(const Aws::Utils::Json::JsonValue& jsonValue);
-    FailedCreateAssociation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FailedCreateAssociation(Aws::Utils::Json::JsonView jsonValue);
+    FailedCreateAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

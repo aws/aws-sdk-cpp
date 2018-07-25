@@ -51,7 +51,7 @@ FileSystemDescription::FileSystemDescription() :
 {
 }
 
-FileSystemDescription::FileSystemDescription(const JsonValue& jsonValue) : 
+FileSystemDescription::FileSystemDescription(JsonView jsonValue) : 
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
@@ -75,7 +75,7 @@ FileSystemDescription::FileSystemDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FileSystemDescription& FileSystemDescription::operator =(const JsonValue& jsonValue)
+FileSystemDescription& FileSystemDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OwnerId"))
   {

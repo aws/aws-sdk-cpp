@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     ResourceServerScopeType();
-    ResourceServerScopeType(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceServerScopeType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceServerScopeType(Aws::Utils::Json::JsonView jsonValue);
+    ResourceServerScopeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

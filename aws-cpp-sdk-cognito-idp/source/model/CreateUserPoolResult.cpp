@@ -37,7 +37,7 @@ CreateUserPoolResult::CreateUserPoolResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateUserPoolResult& CreateUserPoolResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserPool"))
   {
     m_userPool = jsonValue.GetObject("UserPool");

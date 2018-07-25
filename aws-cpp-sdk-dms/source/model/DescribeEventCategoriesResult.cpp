@@ -37,10 +37,10 @@ DescribeEventCategoriesResult::DescribeEventCategoriesResult(const Aws::AmazonWe
 
 DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventCategoryGroupList"))
   {
-    Array<JsonValue> eventCategoryGroupListJsonList = jsonValue.GetArray("EventCategoryGroupList");
+    Array<JsonView> eventCategoryGroupListJsonList = jsonValue.GetArray("EventCategoryGroupList");
     for(unsigned eventCategoryGroupListIndex = 0; eventCategoryGroupListIndex < eventCategoryGroupListJsonList.GetLength(); ++eventCategoryGroupListIndex)
     {
       m_eventCategoryGroupList.push_back(eventCategoryGroupListJsonList[eventCategoryGroupListIndex].AsObject());

@@ -37,7 +37,7 @@ RotateSecretResult::RotateSecretResult(const Aws::AmazonWebServiceResult<JsonVal
 
 RotateSecretResult& RotateSecretResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");

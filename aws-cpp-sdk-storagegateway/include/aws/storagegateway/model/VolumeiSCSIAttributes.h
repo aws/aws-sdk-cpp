@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     VolumeiSCSIAttributes();
-    VolumeiSCSIAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    VolumeiSCSIAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VolumeiSCSIAttributes(Aws::Utils::Json::JsonView jsonValue);
+    VolumeiSCSIAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

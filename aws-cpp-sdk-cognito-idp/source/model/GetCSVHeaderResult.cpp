@@ -37,7 +37,7 @@ GetCSVHeaderResult::GetCSVHeaderResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetCSVHeaderResult& GetCSVHeaderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
@@ -46,7 +46,7 @@ GetCSVHeaderResult& GetCSVHeaderResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("CSVHeader"))
   {
-    Array<JsonValue> cSVHeaderJsonList = jsonValue.GetArray("CSVHeader");
+    Array<JsonView> cSVHeaderJsonList = jsonValue.GetArray("CSVHeader");
     for(unsigned cSVHeaderIndex = 0; cSVHeaderIndex < cSVHeaderJsonList.GetLength(); ++cSVHeaderIndex)
     {
       m_cSVHeader.push_back(cSVHeaderJsonList[cSVHeaderIndex].AsString());

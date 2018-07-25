@@ -35,7 +35,7 @@ LogTarget::LogTarget() :
 {
 }
 
-LogTarget::LogTarget(const JsonValue& jsonValue) : 
+LogTarget::LogTarget(JsonView jsonValue) : 
     m_targetType(LogTargetType::NOT_SET),
     m_targetTypeHasBeenSet(false),
     m_targetNameHasBeenSet(false)
@@ -43,7 +43,7 @@ LogTarget::LogTarget(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LogTarget& LogTarget::operator =(const JsonValue& jsonValue)
+LogTarget& LogTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("targetType"))
   {

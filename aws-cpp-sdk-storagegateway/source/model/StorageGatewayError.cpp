@@ -35,7 +35,7 @@ StorageGatewayError::StorageGatewayError() :
 {
 }
 
-StorageGatewayError::StorageGatewayError(const JsonValue& jsonValue) : 
+StorageGatewayError::StorageGatewayError(JsonView jsonValue) : 
     m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
@@ -43,7 +43,7 @@ StorageGatewayError::StorageGatewayError(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StorageGatewayError& StorageGatewayError::operator =(const JsonValue& jsonValue)
+StorageGatewayError& StorageGatewayError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("errorCode"))
   {
@@ -54,7 +54,7 @@ StorageGatewayError& StorageGatewayError::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("errorDetails"))
   {
-    Aws::Map<Aws::String, JsonValue> errorDetailsJsonMap = jsonValue.GetObject("errorDetails").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> errorDetailsJsonMap = jsonValue.GetObject("errorDetails").GetAllObjects();
     for(auto& errorDetailsItem : errorDetailsJsonMap)
     {
       m_errorDetails[errorDetailsItem.first] = errorDetailsItem.second.AsString();

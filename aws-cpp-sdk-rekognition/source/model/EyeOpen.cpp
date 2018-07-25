@@ -36,7 +36,7 @@ EyeOpen::EyeOpen() :
 {
 }
 
-EyeOpen::EyeOpen(const JsonValue& jsonValue) : 
+EyeOpen::EyeOpen(JsonView jsonValue) : 
     m_value(false),
     m_valueHasBeenSet(false),
     m_confidence(0.0),
@@ -45,7 +45,7 @@ EyeOpen::EyeOpen(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EyeOpen& EyeOpen::operator =(const JsonValue& jsonValue)
+EyeOpen& EyeOpen::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

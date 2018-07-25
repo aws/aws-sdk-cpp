@@ -36,7 +36,7 @@ ReferenceDataSourceUpdate::ReferenceDataSourceUpdate() :
 {
 }
 
-ReferenceDataSourceUpdate::ReferenceDataSourceUpdate(const JsonValue& jsonValue) : 
+ReferenceDataSourceUpdate::ReferenceDataSourceUpdate(JsonView jsonValue) : 
     m_referenceIdHasBeenSet(false),
     m_tableNameUpdateHasBeenSet(false),
     m_s3ReferenceDataSourceUpdateHasBeenSet(false),
@@ -45,7 +45,7 @@ ReferenceDataSourceUpdate::ReferenceDataSourceUpdate(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-ReferenceDataSourceUpdate& ReferenceDataSourceUpdate::operator =(const JsonValue& jsonValue)
+ReferenceDataSourceUpdate& ReferenceDataSourceUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReferenceId"))
   {

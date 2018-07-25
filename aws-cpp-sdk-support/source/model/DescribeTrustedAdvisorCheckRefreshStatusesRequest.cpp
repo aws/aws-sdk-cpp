@@ -42,7 +42,7 @@ Aws::String DescribeTrustedAdvisorCheckRefreshStatusesRequest::SerializePayload(
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTrustedAdvisorCheckRefreshStatusesRequest::GetRequestSpecificHeaders() const

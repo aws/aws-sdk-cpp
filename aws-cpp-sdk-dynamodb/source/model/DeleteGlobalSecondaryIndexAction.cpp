@@ -33,13 +33,13 @@ DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction() :
 {
 }
 
-DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(const JsonValue& jsonValue) : 
+DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(JsonView jsonValue) : 
     m_indexNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeleteGlobalSecondaryIndexAction& DeleteGlobalSecondaryIndexAction::operator =(const JsonValue& jsonValue)
+DeleteGlobalSecondaryIndexAction& DeleteGlobalSecondaryIndexAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexName"))
   {

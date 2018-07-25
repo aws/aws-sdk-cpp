@@ -37,7 +37,7 @@ UpdateResourceServerResult::UpdateResourceServerResult(const Aws::AmazonWebServi
 
 UpdateResourceServerResult& UpdateResourceServerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceServer"))
   {
     m_resourceServer = jsonValue.GetObject("ResourceServer");

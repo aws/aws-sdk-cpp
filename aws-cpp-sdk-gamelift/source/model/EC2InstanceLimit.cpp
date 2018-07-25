@@ -38,7 +38,7 @@ EC2InstanceLimit::EC2InstanceLimit() :
 {
 }
 
-EC2InstanceLimit::EC2InstanceLimit(const JsonValue& jsonValue) : 
+EC2InstanceLimit::EC2InstanceLimit(JsonView jsonValue) : 
     m_eC2InstanceType(EC2InstanceType::NOT_SET),
     m_eC2InstanceTypeHasBeenSet(false),
     m_currentInstances(0),
@@ -49,7 +49,7 @@ EC2InstanceLimit::EC2InstanceLimit(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EC2InstanceLimit& EC2InstanceLimit::operator =(const JsonValue& jsonValue)
+EC2InstanceLimit& EC2InstanceLimit::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EC2InstanceType"))
   {

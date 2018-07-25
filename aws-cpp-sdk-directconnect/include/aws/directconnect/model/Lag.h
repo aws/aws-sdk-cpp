@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectConnect
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     Lag();
-    Lag(const Aws::Utils::Json::JsonValue& jsonValue);
-    Lag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Lag(Aws::Utils::Json::JsonView jsonValue);
+    Lag& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -70,7 +70,7 @@ Aws::String GetReservationCoverageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetReservationCoverageRequest::GetRequestSpecificHeaders() const

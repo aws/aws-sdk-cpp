@@ -37,10 +37,10 @@ DescribeAgentVersionsResult::DescribeAgentVersionsResult(const Aws::AmazonWebSer
 
 DescribeAgentVersionsResult& DescribeAgentVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AgentVersions"))
   {
-    Array<JsonValue> agentVersionsJsonList = jsonValue.GetArray("AgentVersions");
+    Array<JsonView> agentVersionsJsonList = jsonValue.GetArray("AgentVersions");
     for(unsigned agentVersionsIndex = 0; agentVersionsIndex < agentVersionsJsonList.GetLength(); ++agentVersionsIndex)
     {
       m_agentVersions.push_back(agentVersionsJsonList[agentVersionsIndex].AsObject());

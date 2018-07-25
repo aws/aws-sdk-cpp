@@ -41,7 +41,7 @@ GetTagsResult::GetTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 GetTagsResult& GetTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
@@ -50,7 +50,7 @@ GetTagsResult& GetTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsString());

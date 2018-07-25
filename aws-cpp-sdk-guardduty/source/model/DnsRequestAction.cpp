@@ -33,13 +33,13 @@ DnsRequestAction::DnsRequestAction() :
 {
 }
 
-DnsRequestAction::DnsRequestAction(const JsonValue& jsonValue) : 
+DnsRequestAction::DnsRequestAction(JsonView jsonValue) : 
     m_domainHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DnsRequestAction& DnsRequestAction::operator =(const JsonValue& jsonValue)
+DnsRequestAction& DnsRequestAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("domain"))
   {

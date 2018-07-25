@@ -38,7 +38,7 @@ StepExecutionStatusDetail::StepExecutionStatusDetail() :
 {
 }
 
-StepExecutionStatusDetail::StepExecutionStatusDetail(const JsonValue& jsonValue) : 
+StepExecutionStatusDetail::StepExecutionStatusDetail(JsonView jsonValue) : 
     m_state(StepExecutionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -49,7 +49,7 @@ StepExecutionStatusDetail::StepExecutionStatusDetail(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-StepExecutionStatusDetail& StepExecutionStatusDetail::operator =(const JsonValue& jsonValue)
+StepExecutionStatusDetail& StepExecutionStatusDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("State"))
   {

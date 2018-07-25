@@ -37,10 +37,10 @@ DetectEntitiesResult::DetectEntitiesResult(const Aws::AmazonWebServiceResult<Jso
 
 DetectEntitiesResult& DetectEntitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Entities"))
   {
-    Array<JsonValue> entitiesJsonList = jsonValue.GetArray("Entities");
+    Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());

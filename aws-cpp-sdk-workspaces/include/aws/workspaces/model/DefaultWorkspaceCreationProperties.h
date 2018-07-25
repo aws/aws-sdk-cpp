@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkSpaces
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DefaultWorkspaceCreationProperties();
-    DefaultWorkspaceCreationProperties(const Aws::Utils::Json::JsonValue& jsonValue);
-    DefaultWorkspaceCreationProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DefaultWorkspaceCreationProperties(Aws::Utils::Json::JsonView jsonValue);
+    DefaultWorkspaceCreationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

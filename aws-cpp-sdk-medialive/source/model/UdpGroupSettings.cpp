@@ -38,7 +38,7 @@ UdpGroupSettings::UdpGroupSettings() :
 {
 }
 
-UdpGroupSettings::UdpGroupSettings(const JsonValue& jsonValue) : 
+UdpGroupSettings::UdpGroupSettings(JsonView jsonValue) : 
     m_inputLossAction(InputLossActionForUdpOut::NOT_SET),
     m_inputLossActionHasBeenSet(false),
     m_timedMetadataId3Frame(UdpTimedMetadataId3Frame::NOT_SET),
@@ -49,7 +49,7 @@ UdpGroupSettings::UdpGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UdpGroupSettings& UdpGroupSettings::operator =(const JsonValue& jsonValue)
+UdpGroupSettings& UdpGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("inputLossAction"))
   {

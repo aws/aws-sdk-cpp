@@ -37,7 +37,7 @@ InventoryDeletionSummary::InventoryDeletionSummary() :
 {
 }
 
-InventoryDeletionSummary::InventoryDeletionSummary(const JsonValue& jsonValue) : 
+InventoryDeletionSummary::InventoryDeletionSummary(JsonView jsonValue) : 
     m_totalCount(0),
     m_totalCountHasBeenSet(false),
     m_remainingCount(0),
@@ -47,7 +47,7 @@ InventoryDeletionSummary::InventoryDeletionSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InventoryDeletionSummary& InventoryDeletionSummary::operator =(const JsonValue& jsonValue)
+InventoryDeletionSummary& InventoryDeletionSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TotalCount"))
   {
@@ -65,7 +65,7 @@ InventoryDeletionSummary& InventoryDeletionSummary::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("SummaryItems"))
   {
-    Array<JsonValue> summaryItemsJsonList = jsonValue.GetArray("SummaryItems");
+    Array<JsonView> summaryItemsJsonList = jsonValue.GetArray("SummaryItems");
     for(unsigned summaryItemsIndex = 0; summaryItemsIndex < summaryItemsJsonList.GetLength(); ++summaryItemsIndex)
     {
       m_summaryItems.push_back(summaryItemsJsonList[summaryItemsIndex].AsObject());

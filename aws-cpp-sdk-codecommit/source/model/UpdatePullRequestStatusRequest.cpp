@@ -44,7 +44,7 @@ Aws::String UpdatePullRequestStatusRequest::SerializePayload() const
    payload.WithString("pullRequestStatus", PullRequestStatusEnumMapper::GetNameForPullRequestStatusEnum(m_pullRequestStatus));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdatePullRequestStatusRequest::GetRequestSpecificHeaders() const

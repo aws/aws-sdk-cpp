@@ -35,7 +35,7 @@ ParameterRanges::ParameterRanges() :
 {
 }
 
-ParameterRanges::ParameterRanges(const JsonValue& jsonValue) : 
+ParameterRanges::ParameterRanges(JsonView jsonValue) : 
     m_integerParameterRangesHasBeenSet(false),
     m_continuousParameterRangesHasBeenSet(false),
     m_categoricalParameterRangesHasBeenSet(false)
@@ -43,11 +43,11 @@ ParameterRanges::ParameterRanges(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ParameterRanges& ParameterRanges::operator =(const JsonValue& jsonValue)
+ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IntegerParameterRanges"))
   {
-    Array<JsonValue> integerParameterRangesJsonList = jsonValue.GetArray("IntegerParameterRanges");
+    Array<JsonView> integerParameterRangesJsonList = jsonValue.GetArray("IntegerParameterRanges");
     for(unsigned integerParameterRangesIndex = 0; integerParameterRangesIndex < integerParameterRangesJsonList.GetLength(); ++integerParameterRangesIndex)
     {
       m_integerParameterRanges.push_back(integerParameterRangesJsonList[integerParameterRangesIndex].AsObject());
@@ -57,7 +57,7 @@ ParameterRanges& ParameterRanges::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ContinuousParameterRanges"))
   {
-    Array<JsonValue> continuousParameterRangesJsonList = jsonValue.GetArray("ContinuousParameterRanges");
+    Array<JsonView> continuousParameterRangesJsonList = jsonValue.GetArray("ContinuousParameterRanges");
     for(unsigned continuousParameterRangesIndex = 0; continuousParameterRangesIndex < continuousParameterRangesJsonList.GetLength(); ++continuousParameterRangesIndex)
     {
       m_continuousParameterRanges.push_back(continuousParameterRangesJsonList[continuousParameterRangesIndex].AsObject());
@@ -67,7 +67,7 @@ ParameterRanges& ParameterRanges::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CategoricalParameterRanges"))
   {
-    Array<JsonValue> categoricalParameterRangesJsonList = jsonValue.GetArray("CategoricalParameterRanges");
+    Array<JsonView> categoricalParameterRangesJsonList = jsonValue.GetArray("CategoricalParameterRanges");
     for(unsigned categoricalParameterRangesIndex = 0; categoricalParameterRangesIndex < categoricalParameterRangesJsonList.GetLength(); ++categoricalParameterRangesIndex)
     {
       m_categoricalParameterRanges.push_back(categoricalParameterRangesJsonList[categoricalParameterRangesIndex].AsObject());

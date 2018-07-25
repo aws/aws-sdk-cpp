@@ -37,7 +37,7 @@ CreateContactResult::CreateContactResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateContactResult& CreateContactResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ContactArn"))
   {
     m_contactArn = jsonValue.GetString("ContactArn");

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     LocalVolumeResourceData();
-    LocalVolumeResourceData(const Aws::Utils::Json::JsonValue& jsonValue);
-    LocalVolumeResourceData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LocalVolumeResourceData(Aws::Utils::Json::JsonView jsonValue);
+    LocalVolumeResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

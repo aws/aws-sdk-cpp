@@ -34,14 +34,14 @@ TagOptionSummary::TagOptionSummary() :
 {
 }
 
-TagOptionSummary::TagOptionSummary(const JsonValue& jsonValue) : 
+TagOptionSummary::TagOptionSummary(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TagOptionSummary& TagOptionSummary::operator =(const JsonValue& jsonValue)
+TagOptionSummary& TagOptionSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -52,7 +52,7 @@ TagOptionSummary& TagOptionSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

@@ -35,7 +35,7 @@ ArchiveGroupSettings::ArchiveGroupSettings() :
 {
 }
 
-ArchiveGroupSettings::ArchiveGroupSettings(const JsonValue& jsonValue) : 
+ArchiveGroupSettings::ArchiveGroupSettings(JsonView jsonValue) : 
     m_destinationHasBeenSet(false),
     m_rolloverInterval(0),
     m_rolloverIntervalHasBeenSet(false)
@@ -43,7 +43,7 @@ ArchiveGroupSettings::ArchiveGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ArchiveGroupSettings& ArchiveGroupSettings::operator =(const JsonValue& jsonValue)
+ArchiveGroupSettings& ArchiveGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("destination"))
   {

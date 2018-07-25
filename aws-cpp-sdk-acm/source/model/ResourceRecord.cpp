@@ -36,7 +36,7 @@ ResourceRecord::ResourceRecord() :
 {
 }
 
-ResourceRecord::ResourceRecord(const JsonValue& jsonValue) : 
+ResourceRecord::ResourceRecord(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_type(RecordType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -45,7 +45,7 @@ ResourceRecord::ResourceRecord(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceRecord& ResourceRecord::operator =(const JsonValue& jsonValue)
+ResourceRecord& ResourceRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

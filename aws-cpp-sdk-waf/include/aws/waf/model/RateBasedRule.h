@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -54,8 +55,8 @@ namespace Model
   {
   public:
     RateBasedRule();
-    RateBasedRule(const Aws::Utils::Json::JsonValue& jsonValue);
-    RateBasedRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RateBasedRule(Aws::Utils::Json::JsonView jsonValue);
+    RateBasedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

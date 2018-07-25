@@ -103,7 +103,7 @@ Aws::String CreateTrailRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateTrailRequest::GetRequestSpecificHeaders() const

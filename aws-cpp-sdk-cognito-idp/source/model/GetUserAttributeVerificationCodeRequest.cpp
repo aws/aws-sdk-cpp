@@ -44,7 +44,7 @@ Aws::String GetUserAttributeVerificationCodeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetUserAttributeVerificationCodeRequest::GetRequestSpecificHeaders() const

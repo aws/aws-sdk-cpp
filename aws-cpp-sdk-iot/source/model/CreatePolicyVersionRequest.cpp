@@ -43,7 +43,7 @@ Aws::String CreatePolicyVersionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void CreatePolicyVersionRequest::AddQueryStringParameters(URI& uri) const

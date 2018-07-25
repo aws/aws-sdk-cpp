@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MTurk
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     QualificationRequirement();
-    QualificationRequirement(const Aws::Utils::Json::JsonValue& jsonValue);
-    QualificationRequirement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    QualificationRequirement(Aws::Utils::Json::JsonView jsonValue);
+    QualificationRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

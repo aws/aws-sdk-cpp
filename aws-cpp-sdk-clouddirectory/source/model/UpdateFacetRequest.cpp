@@ -58,7 +58,7 @@ Aws::String UpdateFacetRequest::SerializePayload() const
    payload.WithString("ObjectType", ObjectTypeMapper::GetNameForObjectType(m_objectType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateFacetRequest::GetRequestSpecificHeaders() const

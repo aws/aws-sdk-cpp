@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     Deserializer();
-    Deserializer(const Aws::Utils::Json::JsonValue& jsonValue);
-    Deserializer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Deserializer(Aws::Utils::Json::JsonView jsonValue);
+    Deserializer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

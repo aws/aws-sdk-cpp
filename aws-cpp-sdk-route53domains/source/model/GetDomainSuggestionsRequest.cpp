@@ -53,7 +53,7 @@ Aws::String GetDomainSuggestionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDomainSuggestionsRequest::GetRequestSpecificHeaders() const

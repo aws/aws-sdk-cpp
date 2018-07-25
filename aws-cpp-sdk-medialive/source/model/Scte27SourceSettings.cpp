@@ -34,14 +34,14 @@ Scte27SourceSettings::Scte27SourceSettings() :
 {
 }
 
-Scte27SourceSettings::Scte27SourceSettings(const JsonValue& jsonValue) : 
+Scte27SourceSettings::Scte27SourceSettings(JsonView jsonValue) : 
     m_pid(0),
     m_pidHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Scte27SourceSettings& Scte27SourceSettings::operator =(const JsonValue& jsonValue)
+Scte27SourceSettings& Scte27SourceSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pid"))
   {

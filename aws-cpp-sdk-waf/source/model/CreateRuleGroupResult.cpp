@@ -37,7 +37,7 @@ CreateRuleGroupResult::CreateRuleGroupResult(const Aws::AmazonWebServiceResult<J
 
 CreateRuleGroupResult& CreateRuleGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RuleGroup"))
   {
     m_ruleGroup = jsonValue.GetObject("RuleGroup");

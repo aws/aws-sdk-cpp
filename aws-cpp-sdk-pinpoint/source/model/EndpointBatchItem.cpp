@@ -45,7 +45,7 @@ EndpointBatchItem::EndpointBatchItem() :
 {
 }
 
-EndpointBatchItem::EndpointBatchItem(const JsonValue& jsonValue) : 
+EndpointBatchItem::EndpointBatchItem(JsonView jsonValue) : 
     m_addressHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_channelType(ChannelType::NOT_SET),
@@ -63,7 +63,7 @@ EndpointBatchItem::EndpointBatchItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EndpointBatchItem& EndpointBatchItem::operator =(const JsonValue& jsonValue)
+EndpointBatchItem& EndpointBatchItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Address"))
   {
@@ -74,10 +74,10 @@ EndpointBatchItem& EndpointBatchItem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
-      Array<JsonValue> listOf__stringJsonList = attributesItem.second.AsArray();
+      Array<JsonView> listOf__stringJsonList = attributesItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)
@@ -133,7 +133,7 @@ EndpointBatchItem& EndpointBatchItem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Metrics"))
   {
-    Aws::Map<Aws::String, JsonValue> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
     for(auto& metricsItem : metricsJsonMap)
     {
       m_metrics[metricsItem.first] = metricsItem.second.AsDouble();

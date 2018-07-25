@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glacier
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Encryption();
-    Encryption(const Aws::Utils::Json::JsonValue& jsonValue);
-    Encryption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Encryption(Aws::Utils::Json::JsonView jsonValue);
+    Encryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

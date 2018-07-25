@@ -39,7 +39,7 @@ WebhookDefinition::WebhookDefinition() :
 {
 }
 
-WebhookDefinition::WebhookDefinition(const JsonValue& jsonValue) : 
+WebhookDefinition::WebhookDefinition(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_targetPipelineHasBeenSet(false),
     m_targetActionHasBeenSet(false),
@@ -51,7 +51,7 @@ WebhookDefinition::WebhookDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WebhookDefinition& WebhookDefinition::operator =(const JsonValue& jsonValue)
+WebhookDefinition& WebhookDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -76,7 +76,7 @@ WebhookDefinition& WebhookDefinition::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("filters"))
   {
-    Array<JsonValue> filtersJsonList = jsonValue.GetArray("filters");
+    Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
     for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
     {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());

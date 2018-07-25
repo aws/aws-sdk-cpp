@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     XssMatchTuple();
-    XssMatchTuple(const Aws::Utils::Json::JsonValue& jsonValue);
-    XssMatchTuple& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    XssMatchTuple(Aws::Utils::Json::JsonView jsonValue);
+    XssMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

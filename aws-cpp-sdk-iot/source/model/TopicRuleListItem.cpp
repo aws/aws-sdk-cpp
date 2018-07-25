@@ -38,7 +38,7 @@ TopicRuleListItem::TopicRuleListItem() :
 {
 }
 
-TopicRuleListItem::TopicRuleListItem(const JsonValue& jsonValue) : 
+TopicRuleListItem::TopicRuleListItem(JsonView jsonValue) : 
     m_ruleArnHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_topicPatternHasBeenSet(false),
@@ -49,7 +49,7 @@ TopicRuleListItem::TopicRuleListItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TopicRuleListItem& TopicRuleListItem::operator =(const JsonValue& jsonValue)
+TopicRuleListItem& TopicRuleListItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ruleArn"))
   {

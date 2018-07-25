@@ -41,7 +41,7 @@ DescribeTrainingJobResult::DescribeTrainingJobResult(const Aws::AmazonWebService
 
 DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TrainingJobName"))
   {
     m_trainingJobName = jsonValue.GetString("TrainingJobName");
@@ -86,7 +86,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("HyperParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> hyperParametersJsonMap = jsonValue.GetObject("HyperParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> hyperParametersJsonMap = jsonValue.GetObject("HyperParameters").GetAllObjects();
     for(auto& hyperParametersItem : hyperParametersJsonMap)
     {
       m_hyperParameters[hyperParametersItem.first] = hyperParametersItem.second.AsString();
@@ -107,7 +107,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("InputDataConfig"))
   {
-    Array<JsonValue> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
+    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());

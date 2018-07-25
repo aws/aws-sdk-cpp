@@ -95,7 +95,7 @@ M2tsSettings::M2tsSettings() :
 {
 }
 
-M2tsSettings::M2tsSettings(const JsonValue& jsonValue) : 
+M2tsSettings::M2tsSettings(JsonView jsonValue) : 
     m_audioBufferModel(M2tsAudioBufferModel::NOT_SET),
     m_audioBufferModelHasBeenSet(false),
     m_audioFramesPerPes(0),
@@ -163,7 +163,7 @@ M2tsSettings::M2tsSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
+M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioBufferModel"))
   {
@@ -181,7 +181,7 @@ M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("audioPids"))
   {
-    Array<JsonValue> audioPidsJsonList = jsonValue.GetArray("audioPids");
+    Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
     for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
     {
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
@@ -219,7 +219,7 @@ M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("dvbSubPids"))
   {
-    Array<JsonValue> dvbSubPidsJsonList = jsonValue.GetArray("dvbSubPids");
+    Array<JsonView> dvbSubPidsJsonList = jsonValue.GetArray("dvbSubPids");
     for(unsigned dvbSubPidsIndex = 0; dvbSubPidsIndex < dvbSubPidsJsonList.GetLength(); ++dvbSubPidsIndex)
     {
       m_dvbSubPids.push_back(dvbSubPidsJsonList[dvbSubPidsIndex].AsInteger());

@@ -97,7 +97,7 @@ Aws::String ListTrainingJobsRequest::SerializePayload() const
    payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListTrainingJobsRequest::GetRequestSpecificHeaders() const

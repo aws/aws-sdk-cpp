@@ -40,7 +40,7 @@ Dataset::Dataset() :
 {
 }
 
-Dataset::Dataset(const JsonValue& jsonValue) : 
+Dataset::Dataset(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_actionsHasBeenSet(false),
@@ -53,7 +53,7 @@ Dataset::Dataset(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Dataset& Dataset::operator =(const JsonValue& jsonValue)
+Dataset& Dataset::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -71,7 +71,7 @@ Dataset& Dataset::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonValue> actionsJsonList = jsonValue.GetArray("actions");
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
@@ -81,7 +81,7 @@ Dataset& Dataset::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("triggers"))
   {
-    Array<JsonValue> triggersJsonList = jsonValue.GetArray("triggers");
+    Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
     for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
     {
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());

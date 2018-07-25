@@ -37,10 +37,10 @@ DescribeConfigurationAggregatorSourcesStatusResult::DescribeConfigurationAggrega
 
 DescribeConfigurationAggregatorSourcesStatusResult& DescribeConfigurationAggregatorSourcesStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregatedSourceStatusList"))
   {
-    Array<JsonValue> aggregatedSourceStatusListJsonList = jsonValue.GetArray("AggregatedSourceStatusList");
+    Array<JsonView> aggregatedSourceStatusListJsonList = jsonValue.GetArray("AggregatedSourceStatusList");
     for(unsigned aggregatedSourceStatusListIndex = 0; aggregatedSourceStatusListIndex < aggregatedSourceStatusListJsonList.GetLength(); ++aggregatedSourceStatusListIndex)
     {
       m_aggregatedSourceStatusList.push_back(aggregatedSourceStatusListJsonList[aggregatedSourceStatusListIndex].AsObject());

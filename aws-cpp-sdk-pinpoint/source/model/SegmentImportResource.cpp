@@ -40,7 +40,7 @@ SegmentImportResource::SegmentImportResource() :
 {
 }
 
-SegmentImportResource::SegmentImportResource(const JsonValue& jsonValue) : 
+SegmentImportResource::SegmentImportResource(JsonView jsonValue) : 
     m_channelCountsHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_format(Format::NOT_SET),
@@ -53,11 +53,11 @@ SegmentImportResource::SegmentImportResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SegmentImportResource& SegmentImportResource::operator =(const JsonValue& jsonValue)
+SegmentImportResource& SegmentImportResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ChannelCounts"))
   {
-    Aws::Map<Aws::String, JsonValue> channelCountsJsonMap = jsonValue.GetObject("ChannelCounts").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> channelCountsJsonMap = jsonValue.GetObject("ChannelCounts").GetAllObjects();
     for(auto& channelCountsItem : channelCountsJsonMap)
     {
       m_channelCounts[channelCountsItem.first] = channelCountsItem.second.AsInteger();

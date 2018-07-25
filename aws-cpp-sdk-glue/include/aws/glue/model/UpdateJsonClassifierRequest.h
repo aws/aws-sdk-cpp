@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     UpdateJsonClassifierRequest();
-    UpdateJsonClassifierRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    UpdateJsonClassifierRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UpdateJsonClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
+    UpdateJsonClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

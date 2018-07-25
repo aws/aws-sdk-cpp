@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Polly
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     SynthesisTask();
-    SynthesisTask(const Aws::Utils::Json::JsonValue& jsonValue);
-    SynthesisTask& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SynthesisTask(Aws::Utils::Json::JsonView jsonValue);
+    SynthesisTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

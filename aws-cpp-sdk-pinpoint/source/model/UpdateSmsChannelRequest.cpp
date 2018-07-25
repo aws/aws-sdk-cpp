@@ -37,7 +37,7 @@ Aws::String UpdateSmsChannelRequest::SerializePayload() const
    payload = m_sMSChannelRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

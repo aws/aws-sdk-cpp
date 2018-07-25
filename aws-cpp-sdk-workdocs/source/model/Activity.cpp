@@ -41,7 +41,7 @@ Activity::Activity() :
 {
 }
 
-Activity::Activity(const JsonValue& jsonValue) : 
+Activity::Activity(JsonView jsonValue) : 
     m_type(ActivityType::NOT_SET),
     m_typeHasBeenSet(false),
     m_timeStampHasBeenSet(false),
@@ -55,7 +55,7 @@ Activity::Activity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Activity& Activity::operator =(const JsonValue& jsonValue)
+Activity& Activity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

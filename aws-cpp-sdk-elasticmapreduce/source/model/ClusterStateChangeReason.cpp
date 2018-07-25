@@ -35,7 +35,7 @@ ClusterStateChangeReason::ClusterStateChangeReason() :
 {
 }
 
-ClusterStateChangeReason::ClusterStateChangeReason(const JsonValue& jsonValue) : 
+ClusterStateChangeReason::ClusterStateChangeReason(JsonView jsonValue) : 
     m_code(ClusterStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ ClusterStateChangeReason::ClusterStateChangeReason(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ClusterStateChangeReason& ClusterStateChangeReason::operator =(const JsonValue& jsonValue)
+ClusterStateChangeReason& ClusterStateChangeReason::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

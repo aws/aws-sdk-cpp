@@ -37,7 +37,7 @@ DeleteBaiduChannelResult::DeleteBaiduChannelResult(const Aws::AmazonWebServiceRe
 
 DeleteBaiduChannelResult& DeleteBaiduChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_baiduChannelResponse = jsonValue;
 
 

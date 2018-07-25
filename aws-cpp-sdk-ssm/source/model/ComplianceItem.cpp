@@ -43,7 +43,7 @@ ComplianceItem::ComplianceItem() :
 {
 }
 
-ComplianceItem::ComplianceItem(const JsonValue& jsonValue) : 
+ComplianceItem::ComplianceItem(JsonView jsonValue) : 
     m_complianceTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
@@ -59,7 +59,7 @@ ComplianceItem::ComplianceItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComplianceItem& ComplianceItem::operator =(const JsonValue& jsonValue)
+ComplianceItem& ComplianceItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceType"))
   {
@@ -119,7 +119,7 @@ ComplianceItem& ComplianceItem::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Details"))
   {
-    Aws::Map<Aws::String, JsonValue> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
     for(auto& detailsItem : detailsJsonMap)
     {
       m_details[detailsItem.first] = detailsItem.second.AsString();

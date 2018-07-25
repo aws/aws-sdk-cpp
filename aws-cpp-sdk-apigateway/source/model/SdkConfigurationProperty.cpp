@@ -38,7 +38,7 @@ SdkConfigurationProperty::SdkConfigurationProperty() :
 {
 }
 
-SdkConfigurationProperty::SdkConfigurationProperty(const JsonValue& jsonValue) : 
+SdkConfigurationProperty::SdkConfigurationProperty(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_friendlyNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -49,7 +49,7 @@ SdkConfigurationProperty::SdkConfigurationProperty(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SdkConfigurationProperty& SdkConfigurationProperty::operator =(const JsonValue& jsonValue)
+SdkConfigurationProperty& SdkConfigurationProperty::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

@@ -49,7 +49,7 @@ Aws::String BatchGetItemRequest::SerializePayload() const
    payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchGetItemRequest::GetRequestSpecificHeaders() const

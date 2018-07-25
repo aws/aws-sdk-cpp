@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SMS
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     ReplicationJob();
-    ReplicationJob(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReplicationJob& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReplicationJob(Aws::Utils::Json::JsonView jsonValue);
+    ReplicationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

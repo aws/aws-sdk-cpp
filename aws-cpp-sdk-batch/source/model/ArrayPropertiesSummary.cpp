@@ -36,7 +36,7 @@ ArrayPropertiesSummary::ArrayPropertiesSummary() :
 {
 }
 
-ArrayPropertiesSummary::ArrayPropertiesSummary(const JsonValue& jsonValue) : 
+ArrayPropertiesSummary::ArrayPropertiesSummary(JsonView jsonValue) : 
     m_size(0),
     m_sizeHasBeenSet(false),
     m_index(0),
@@ -45,7 +45,7 @@ ArrayPropertiesSummary::ArrayPropertiesSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ArrayPropertiesSummary& ArrayPropertiesSummary::operator =(const JsonValue& jsonValue)
+ArrayPropertiesSummary& ArrayPropertiesSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("size"))
   {

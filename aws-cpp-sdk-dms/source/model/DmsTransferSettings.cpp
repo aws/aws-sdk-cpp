@@ -34,14 +34,14 @@ DmsTransferSettings::DmsTransferSettings() :
 {
 }
 
-DmsTransferSettings::DmsTransferSettings(const JsonValue& jsonValue) : 
+DmsTransferSettings::DmsTransferSettings(JsonView jsonValue) : 
     m_serviceAccessRoleArnHasBeenSet(false),
     m_bucketNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DmsTransferSettings& DmsTransferSettings::operator =(const JsonValue& jsonValue)
+DmsTransferSettings& DmsTransferSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {

@@ -72,7 +72,7 @@ Aws::String TerminateWorkflowExecutionRequest::SerializePayload() const
    payload.WithString("childPolicy", ChildPolicyMapper::GetNameForChildPolicy(m_childPolicy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection TerminateWorkflowExecutionRequest::GetRequestSpecificHeaders() const

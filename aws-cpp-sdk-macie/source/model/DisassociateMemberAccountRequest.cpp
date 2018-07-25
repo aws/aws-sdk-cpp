@@ -37,7 +37,7 @@ Aws::String DisassociateMemberAccountRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisassociateMemberAccountRequest::GetRequestSpecificHeaders() const

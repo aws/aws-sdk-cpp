@@ -41,7 +41,7 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity() :
 {
 }
 
-MaintenanceWindowIdentity::MaintenanceWindowIdentity(const JsonValue& jsonValue) : 
+MaintenanceWindowIdentity::MaintenanceWindowIdentity(JsonView jsonValue) : 
     m_windowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -55,7 +55,7 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-MaintenanceWindowIdentity& MaintenanceWindowIdentity::operator =(const JsonValue& jsonValue)
+MaintenanceWindowIdentity& MaintenanceWindowIdentity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WindowId"))
   {

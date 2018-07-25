@@ -44,7 +44,7 @@ Aws::String CreateDirectConnectGatewayAssociationRequest::SerializePayload() con
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDirectConnectGatewayAssociationRequest::GetRequestSpecificHeaders() const

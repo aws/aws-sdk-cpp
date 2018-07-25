@@ -37,7 +37,7 @@ Aws::String DescribeSnapshotScheduleRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeSnapshotScheduleRequest::GetRequestSpecificHeaders() const

@@ -39,7 +39,7 @@ IdentityUsage::IdentityUsage() :
 {
 }
 
-IdentityUsage::IdentityUsage(const JsonValue& jsonValue) : 
+IdentityUsage::IdentityUsage(JsonView jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_identityPoolIdHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
@@ -51,7 +51,7 @@ IdentityUsage::IdentityUsage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IdentityUsage& IdentityUsage::operator =(const JsonValue& jsonValue)
+IdentityUsage& IdentityUsage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IdentityId"))
   {

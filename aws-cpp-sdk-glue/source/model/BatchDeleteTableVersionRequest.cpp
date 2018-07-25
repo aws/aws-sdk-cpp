@@ -63,7 +63,7 @@ Aws::String BatchDeleteTableVersionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchDeleteTableVersionRequest::GetRequestSpecificHeaders() const

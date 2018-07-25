@@ -51,7 +51,7 @@ Aws::String AdminAddUserToGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminAddUserToGroupRequest::GetRequestSpecificHeaders() const

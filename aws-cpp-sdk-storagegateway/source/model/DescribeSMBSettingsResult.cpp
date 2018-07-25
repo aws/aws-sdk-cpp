@@ -39,7 +39,7 @@ DescribeSMBSettingsResult::DescribeSMBSettingsResult(const Aws::AmazonWebService
 
 DescribeSMBSettingsResult& DescribeSMBSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");

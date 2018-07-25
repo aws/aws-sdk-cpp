@@ -35,7 +35,7 @@ RecordColumn::RecordColumn() :
 {
 }
 
-RecordColumn::RecordColumn(const JsonValue& jsonValue) : 
+RecordColumn::RecordColumn(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_mappingHasBeenSet(false),
     m_sqlTypeHasBeenSet(false)
@@ -43,7 +43,7 @@ RecordColumn::RecordColumn(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RecordColumn& RecordColumn::operator =(const JsonValue& jsonValue)
+RecordColumn& RecordColumn::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

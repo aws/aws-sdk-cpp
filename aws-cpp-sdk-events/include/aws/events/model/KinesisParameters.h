@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchEvents
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     KinesisParameters();
-    KinesisParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    KinesisParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
+    KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

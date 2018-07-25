@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchEvents
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     BatchRetryStrategy();
-    BatchRetryStrategy(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchRetryStrategy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchRetryStrategy(Aws::Utils::Json::JsonView jsonValue);
+    BatchRetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

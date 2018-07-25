@@ -51,7 +51,7 @@ InputTemplate::InputTemplate() :
 {
 }
 
-InputTemplate::InputTemplate(const JsonValue& jsonValue) : 
+InputTemplate::InputTemplate(JsonView jsonValue) : 
     m_audioSelectorGroupsHasBeenSet(false),
     m_audioSelectorsHasBeenSet(false),
     m_captionSelectorsHasBeenSet(false),
@@ -75,11 +75,11 @@ InputTemplate::InputTemplate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputTemplate& InputTemplate::operator =(const JsonValue& jsonValue)
+InputTemplate& InputTemplate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioSelectorGroups"))
   {
-    Aws::Map<Aws::String, JsonValue> audioSelectorGroupsJsonMap = jsonValue.GetObject("audioSelectorGroups").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> audioSelectorGroupsJsonMap = jsonValue.GetObject("audioSelectorGroups").GetAllObjects();
     for(auto& audioSelectorGroupsItem : audioSelectorGroupsJsonMap)
     {
       m_audioSelectorGroups[audioSelectorGroupsItem.first] = audioSelectorGroupsItem.second.AsObject();
@@ -89,7 +89,7 @@ InputTemplate& InputTemplate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("audioSelectors"))
   {
-    Aws::Map<Aws::String, JsonValue> audioSelectorsJsonMap = jsonValue.GetObject("audioSelectors").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> audioSelectorsJsonMap = jsonValue.GetObject("audioSelectors").GetAllObjects();
     for(auto& audioSelectorsItem : audioSelectorsJsonMap)
     {
       m_audioSelectors[audioSelectorsItem.first] = audioSelectorsItem.second.AsObject();
@@ -99,7 +99,7 @@ InputTemplate& InputTemplate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("captionSelectors"))
   {
-    Aws::Map<Aws::String, JsonValue> captionSelectorsJsonMap = jsonValue.GetObject("captionSelectors").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> captionSelectorsJsonMap = jsonValue.GetObject("captionSelectors").GetAllObjects();
     for(auto& captionSelectorsItem : captionSelectorsJsonMap)
     {
       m_captionSelectors[captionSelectorsItem.first] = captionSelectorsItem.second.AsObject();
@@ -137,7 +137,7 @@ InputTemplate& InputTemplate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("inputClippings"))
   {
-    Array<JsonValue> inputClippingsJsonList = jsonValue.GetArray("inputClippings");
+    Array<JsonView> inputClippingsJsonList = jsonValue.GetArray("inputClippings");
     for(unsigned inputClippingsIndex = 0; inputClippingsIndex < inputClippingsJsonList.GetLength(); ++inputClippingsIndex)
     {
       m_inputClippings.push_back(inputClippingsJsonList[inputClippingsIndex].AsObject());

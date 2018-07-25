@@ -34,14 +34,14 @@ OutputSource::OutputSource() :
 {
 }
 
-OutputSource::OutputSource(const JsonValue& jsonValue) : 
+OutputSource::OutputSource(JsonView jsonValue) : 
     m_outputSourceIdHasBeenSet(false),
     m_outputSourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputSource& OutputSource::operator =(const JsonValue& jsonValue)
+OutputSource& OutputSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OutputSourceId"))
   {

@@ -37,10 +37,10 @@ GetEntitlementsResult::GetEntitlementsResult(const Aws::AmazonWebServiceResult<J
 
 GetEntitlementsResult& GetEntitlementsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Entitlements"))
   {
-    Array<JsonValue> entitlementsJsonList = jsonValue.GetArray("Entitlements");
+    Array<JsonView> entitlementsJsonList = jsonValue.GetArray("Entitlements");
     for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
     {
       m_entitlements.push_back(entitlementsJsonList[entitlementsIndex].AsObject());

@@ -41,7 +41,7 @@ ContainerOverride::ContainerOverride() :
 {
 }
 
-ContainerOverride::ContainerOverride(const JsonValue& jsonValue) : 
+ContainerOverride::ContainerOverride(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -55,7 +55,7 @@ ContainerOverride::ContainerOverride(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerOverride& ContainerOverride::operator =(const JsonValue& jsonValue)
+ContainerOverride& ContainerOverride::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -66,7 +66,7 @@ ContainerOverride& ContainerOverride::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonValue> commandJsonList = jsonValue.GetArray("command");
+    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -76,7 +76,7 @@ ContainerOverride& ContainerOverride::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("environment"))
   {
-    Array<JsonValue> environmentJsonList = jsonValue.GetArray("environment");
+    Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());

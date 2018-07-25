@@ -37,7 +37,7 @@ UpdateProductResult::UpdateProductResult(const Aws::AmazonWebServiceResult<JsonV
 
 UpdateProductResult& UpdateProductResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProductViewDetail"))
   {
     m_productViewDetail = jsonValue.GetObject("ProductViewDetail");
@@ -46,7 +46,7 @@ UpdateProductResult& UpdateProductResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

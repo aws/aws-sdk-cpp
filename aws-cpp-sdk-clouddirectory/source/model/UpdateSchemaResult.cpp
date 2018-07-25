@@ -37,7 +37,7 @@ UpdateSchemaResult::UpdateSchemaResult(const Aws::AmazonWebServiceResult<JsonVal
 
 UpdateSchemaResult& UpdateSchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");

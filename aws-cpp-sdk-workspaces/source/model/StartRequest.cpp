@@ -33,13 +33,13 @@ StartRequest::StartRequest() :
 {
 }
 
-StartRequest::StartRequest(const JsonValue& jsonValue) : 
+StartRequest::StartRequest(JsonView jsonValue) : 
     m_workspaceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StartRequest& StartRequest::operator =(const JsonValue& jsonValue)
+StartRequest& StartRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkspaceId"))
   {

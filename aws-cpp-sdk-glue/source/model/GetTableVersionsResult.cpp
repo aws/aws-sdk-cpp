@@ -37,10 +37,10 @@ GetTableVersionsResult::GetTableVersionsResult(const Aws::AmazonWebServiceResult
 
 GetTableVersionsResult& GetTableVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TableVersions"))
   {
-    Array<JsonValue> tableVersionsJsonList = jsonValue.GetArray("TableVersions");
+    Array<JsonView> tableVersionsJsonList = jsonValue.GetArray("TableVersions");
     for(unsigned tableVersionsIndex = 0; tableVersionsIndex < tableVersionsJsonList.GetLength(); ++tableVersionsIndex)
     {
       m_tableVersions.push_back(tableVersionsJsonList[tableVersionsIndex].AsObject());

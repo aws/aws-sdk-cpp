@@ -44,7 +44,7 @@ Aws::String ListRemoteAccessSessionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListRemoteAccessSessionsRequest::GetRequestSpecificHeaders() const

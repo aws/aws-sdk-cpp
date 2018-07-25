@@ -39,7 +39,7 @@ PolicyComplianceDetail::PolicyComplianceDetail() :
 {
 }
 
-PolicyComplianceDetail::PolicyComplianceDetail(const JsonValue& jsonValue) : 
+PolicyComplianceDetail::PolicyComplianceDetail(JsonView jsonValue) : 
     m_policyOwnerHasBeenSet(false),
     m_policyIdHasBeenSet(false),
     m_memberAccountHasBeenSet(false),
@@ -51,7 +51,7 @@ PolicyComplianceDetail::PolicyComplianceDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PolicyComplianceDetail& PolicyComplianceDetail::operator =(const JsonValue& jsonValue)
+PolicyComplianceDetail& PolicyComplianceDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyOwner"))
   {
@@ -76,7 +76,7 @@ PolicyComplianceDetail& PolicyComplianceDetail::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("Violators"))
   {
-    Array<JsonValue> violatorsJsonList = jsonValue.GetArray("Violators");
+    Array<JsonView> violatorsJsonList = jsonValue.GetArray("Violators");
     for(unsigned violatorsIndex = 0; violatorsIndex < violatorsJsonList.GetLength(); ++violatorsIndex)
     {
       m_violators.push_back(violatorsJsonList[violatorsIndex].AsObject());

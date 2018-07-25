@@ -54,7 +54,7 @@ Aws::String AddTagsToOnPremisesInstancesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddTagsToOnPremisesInstancesRequest::GetRequestSpecificHeaders() const

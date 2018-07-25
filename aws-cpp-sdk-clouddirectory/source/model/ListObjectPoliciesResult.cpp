@@ -37,10 +37,10 @@ ListObjectPoliciesResult::ListObjectPoliciesResult(const Aws::AmazonWebServiceRe
 
 ListObjectPoliciesResult& ListObjectPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AttachedPolicyIds"))
   {
-    Array<JsonValue> attachedPolicyIdsJsonList = jsonValue.GetArray("AttachedPolicyIds");
+    Array<JsonView> attachedPolicyIdsJsonList = jsonValue.GetArray("AttachedPolicyIds");
     for(unsigned attachedPolicyIdsIndex = 0; attachedPolicyIdsIndex < attachedPolicyIdsJsonList.GetLength(); ++attachedPolicyIdsIndex)
     {
       m_attachedPolicyIds.push_back(attachedPolicyIdsJsonList[attachedPolicyIdsIndex].AsString());

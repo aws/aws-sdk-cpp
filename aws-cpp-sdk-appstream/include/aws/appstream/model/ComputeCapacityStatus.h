@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     ComputeCapacityStatus();
-    ComputeCapacityStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    ComputeCapacityStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ComputeCapacityStatus(Aws::Utils::Json::JsonView jsonValue);
+    ComputeCapacityStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

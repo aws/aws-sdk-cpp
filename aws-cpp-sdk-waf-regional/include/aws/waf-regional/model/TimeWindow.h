@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     TimeWindow();
-    TimeWindow(const Aws::Utils::Json::JsonValue& jsonValue);
-    TimeWindow& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TimeWindow(Aws::Utils::Json::JsonView jsonValue);
+    TimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

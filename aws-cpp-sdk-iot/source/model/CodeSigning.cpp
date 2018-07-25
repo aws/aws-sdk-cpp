@@ -34,14 +34,14 @@ CodeSigning::CodeSigning() :
 {
 }
 
-CodeSigning::CodeSigning(const JsonValue& jsonValue) : 
+CodeSigning::CodeSigning(JsonView jsonValue) : 
     m_awsSignerJobIdHasBeenSet(false),
     m_customCodeSigningHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CodeSigning& CodeSigning::operator =(const JsonValue& jsonValue)
+CodeSigning& CodeSigning::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("awsSignerJobId"))
   {

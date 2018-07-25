@@ -34,14 +34,14 @@ ActivityTimedOutEventDetails::ActivityTimedOutEventDetails() :
 {
 }
 
-ActivityTimedOutEventDetails::ActivityTimedOutEventDetails(const JsonValue& jsonValue) : 
+ActivityTimedOutEventDetails::ActivityTimedOutEventDetails(JsonView jsonValue) : 
     m_errorHasBeenSet(false),
     m_causeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActivityTimedOutEventDetails& ActivityTimedOutEventDetails::operator =(const JsonValue& jsonValue)
+ActivityTimedOutEventDetails& ActivityTimedOutEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("error"))
   {

@@ -37,7 +37,7 @@ SharePrincipal::SharePrincipal() :
 {
 }
 
-SharePrincipal::SharePrincipal(const JsonValue& jsonValue) : 
+SharePrincipal::SharePrincipal(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_type(PrincipalType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -47,7 +47,7 @@ SharePrincipal::SharePrincipal(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SharePrincipal& SharePrincipal::operator =(const JsonValue& jsonValue)
+SharePrincipal& SharePrincipal::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

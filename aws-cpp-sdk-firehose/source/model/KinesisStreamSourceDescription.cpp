@@ -35,7 +35,7 @@ KinesisStreamSourceDescription::KinesisStreamSourceDescription() :
 {
 }
 
-KinesisStreamSourceDescription::KinesisStreamSourceDescription(const JsonValue& jsonValue) : 
+KinesisStreamSourceDescription::KinesisStreamSourceDescription(JsonView jsonValue) : 
     m_kinesisStreamARNHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_deliveryStartTimestampHasBeenSet(false)
@@ -43,7 +43,7 @@ KinesisStreamSourceDescription::KinesisStreamSourceDescription(const JsonValue& 
   *this = jsonValue;
 }
 
-KinesisStreamSourceDescription& KinesisStreamSourceDescription::operator =(const JsonValue& jsonValue)
+KinesisStreamSourceDescription& KinesisStreamSourceDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("KinesisStreamARN"))
   {

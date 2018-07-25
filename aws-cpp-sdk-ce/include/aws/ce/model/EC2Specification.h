@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CostExplorer
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     EC2Specification();
-    EC2Specification(const Aws::Utils::Json::JsonValue& jsonValue);
-    EC2Specification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EC2Specification(Aws::Utils::Json::JsonView jsonValue);
+    EC2Specification& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

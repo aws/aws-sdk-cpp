@@ -40,7 +40,7 @@ SyntaxToken::SyntaxToken() :
 {
 }
 
-SyntaxToken::SyntaxToken(const JsonValue& jsonValue) : 
+SyntaxToken::SyntaxToken(JsonView jsonValue) : 
     m_tokenId(0),
     m_tokenIdHasBeenSet(false),
     m_textHasBeenSet(false),
@@ -53,7 +53,7 @@ SyntaxToken::SyntaxToken(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SyntaxToken& SyntaxToken::operator =(const JsonValue& jsonValue)
+SyntaxToken& SyntaxToken::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TokenId"))
   {

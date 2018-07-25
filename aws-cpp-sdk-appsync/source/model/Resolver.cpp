@@ -38,7 +38,7 @@ Resolver::Resolver() :
 {
 }
 
-Resolver::Resolver(const JsonValue& jsonValue) : 
+Resolver::Resolver(JsonView jsonValue) : 
     m_typeNameHasBeenSet(false),
     m_fieldNameHasBeenSet(false),
     m_dataSourceNameHasBeenSet(false),
@@ -49,7 +49,7 @@ Resolver::Resolver(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Resolver& Resolver::operator =(const JsonValue& jsonValue)
+Resolver& Resolver::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("typeName"))
   {

@@ -45,10 +45,10 @@ ListRecordsResult::ListRecordsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListRecordsResult& ListRecordsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonValue> recordsJsonList = jsonValue.GetArray("Records");
+    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
@@ -81,7 +81,7 @@ ListRecordsResult& ListRecordsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("MergedDatasetNames"))
   {
-    Array<JsonValue> mergedDatasetNamesJsonList = jsonValue.GetArray("MergedDatasetNames");
+    Array<JsonView> mergedDatasetNamesJsonList = jsonValue.GetArray("MergedDatasetNames");
     for(unsigned mergedDatasetNamesIndex = 0; mergedDatasetNamesIndex < mergedDatasetNamesJsonList.GetLength(); ++mergedDatasetNamesIndex)
     {
       m_mergedDatasetNames.push_back(mergedDatasetNamesJsonList[mergedDatasetNamesIndex].AsString());

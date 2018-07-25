@@ -114,7 +114,7 @@ Aws::String UpdateSMBFileShareRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateSMBFileShareRequest::GetRequestSpecificHeaders() const

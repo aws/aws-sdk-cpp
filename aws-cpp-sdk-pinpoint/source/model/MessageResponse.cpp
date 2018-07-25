@@ -36,7 +36,7 @@ MessageResponse::MessageResponse() :
 {
 }
 
-MessageResponse::MessageResponse(const JsonValue& jsonValue) : 
+MessageResponse::MessageResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_endpointResultHasBeenSet(false),
     m_requestIdHasBeenSet(false),
@@ -45,7 +45,7 @@ MessageResponse::MessageResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MessageResponse& MessageResponse::operator =(const JsonValue& jsonValue)
+MessageResponse& MessageResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {
@@ -56,7 +56,7 @@ MessageResponse& MessageResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EndpointResult"))
   {
-    Aws::Map<Aws::String, JsonValue> endpointResultJsonMap = jsonValue.GetObject("EndpointResult").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> endpointResultJsonMap = jsonValue.GetObject("EndpointResult").GetAllObjects();
     for(auto& endpointResultItem : endpointResultJsonMap)
     {
       m_endpointResult[endpointResultItem.first] = endpointResultItem.second.AsObject();
@@ -73,7 +73,7 @@ MessageResponse& MessageResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Result"))
   {
-    Aws::Map<Aws::String, JsonValue> resultJsonMap = jsonValue.GetObject("Result").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> resultJsonMap = jsonValue.GetObject("Result").GetAllObjects();
     for(auto& resultItem : resultJsonMap)
     {
       m_result[resultItem.first] = resultItem.second.AsObject();

@@ -34,14 +34,14 @@ InputAttachment::InputAttachment() :
 {
 }
 
-InputAttachment::InputAttachment(const JsonValue& jsonValue) : 
+InputAttachment::InputAttachment(JsonView jsonValue) : 
     m_inputIdHasBeenSet(false),
     m_inputSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputAttachment& InputAttachment::operator =(const JsonValue& jsonValue)
+InputAttachment& InputAttachment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("inputId"))
   {

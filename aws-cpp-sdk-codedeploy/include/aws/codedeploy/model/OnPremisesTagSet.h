@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     OnPremisesTagSet();
-    OnPremisesTagSet(const Aws::Utils::Json::JsonValue& jsonValue);
-    OnPremisesTagSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OnPremisesTagSet(Aws::Utils::Json::JsonView jsonValue);
+    OnPremisesTagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

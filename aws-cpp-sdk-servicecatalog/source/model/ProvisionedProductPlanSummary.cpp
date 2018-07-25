@@ -39,7 +39,7 @@ ProvisionedProductPlanSummary::ProvisionedProductPlanSummary() :
 {
 }
 
-ProvisionedProductPlanSummary::ProvisionedProductPlanSummary(const JsonValue& jsonValue) : 
+ProvisionedProductPlanSummary::ProvisionedProductPlanSummary(JsonView jsonValue) : 
     m_planNameHasBeenSet(false),
     m_planIdHasBeenSet(false),
     m_provisionProductIdHasBeenSet(false),
@@ -51,7 +51,7 @@ ProvisionedProductPlanSummary::ProvisionedProductPlanSummary(const JsonValue& js
   *this = jsonValue;
 }
 
-ProvisionedProductPlanSummary& ProvisionedProductPlanSummary::operator =(const JsonValue& jsonValue)
+ProvisionedProductPlanSummary& ProvisionedProductPlanSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PlanName"))
   {

@@ -101,7 +101,7 @@ Aws::String UpdateOriginEndpointRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

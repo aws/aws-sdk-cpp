@@ -33,17 +33,17 @@ ResourcePath::ResourcePath() :
 {
 }
 
-ResourcePath::ResourcePath(const JsonValue& jsonValue) : 
+ResourcePath::ResourcePath(JsonView jsonValue) : 
     m_componentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourcePath& ResourcePath::operator =(const JsonValue& jsonValue)
+ResourcePath& ResourcePath::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Components"))
   {
-    Array<JsonValue> componentsJsonList = jsonValue.GetArray("Components");
+    Array<JsonView> componentsJsonList = jsonValue.GetArray("Components");
     for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
     {
       m_components.push_back(componentsJsonList[componentsIndex].AsObject());

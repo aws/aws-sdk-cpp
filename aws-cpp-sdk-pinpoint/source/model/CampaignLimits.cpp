@@ -40,7 +40,7 @@ CampaignLimits::CampaignLimits() :
 {
 }
 
-CampaignLimits::CampaignLimits(const JsonValue& jsonValue) : 
+CampaignLimits::CampaignLimits(JsonView jsonValue) : 
     m_daily(0),
     m_dailyHasBeenSet(false),
     m_maximumDuration(0),
@@ -53,7 +53,7 @@ CampaignLimits::CampaignLimits(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CampaignLimits& CampaignLimits::operator =(const JsonValue& jsonValue)
+CampaignLimits& CampaignLimits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Daily"))
   {

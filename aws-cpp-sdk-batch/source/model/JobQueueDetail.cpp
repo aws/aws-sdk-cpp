@@ -42,7 +42,7 @@ JobQueueDetail::JobQueueDetail() :
 {
 }
 
-JobQueueDetail::JobQueueDetail(const JsonValue& jsonValue) : 
+JobQueueDetail::JobQueueDetail(JsonView jsonValue) : 
     m_jobQueueNameHasBeenSet(false),
     m_jobQueueArnHasBeenSet(false),
     m_state(JQState::NOT_SET),
@@ -57,7 +57,7 @@ JobQueueDetail::JobQueueDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobQueueDetail& JobQueueDetail::operator =(const JsonValue& jsonValue)
+JobQueueDetail& JobQueueDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobQueueName"))
   {
@@ -103,7 +103,7 @@ JobQueueDetail& JobQueueDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("computeEnvironmentOrder"))
   {
-    Array<JsonValue> computeEnvironmentOrderJsonList = jsonValue.GetArray("computeEnvironmentOrder");
+    Array<JsonView> computeEnvironmentOrderJsonList = jsonValue.GetArray("computeEnvironmentOrder");
     for(unsigned computeEnvironmentOrderIndex = 0; computeEnvironmentOrderIndex < computeEnvironmentOrderJsonList.GetLength(); ++computeEnvironmentOrderIndex)
     {
       m_computeEnvironmentOrder.push_back(computeEnvironmentOrderJsonList[computeEnvironmentOrderIndex].AsObject());

@@ -37,7 +37,7 @@ ApplicationSettingsResource::ApplicationSettingsResource() :
 {
 }
 
-ApplicationSettingsResource::ApplicationSettingsResource(const JsonValue& jsonValue) : 
+ApplicationSettingsResource::ApplicationSettingsResource(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_campaignHookHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
@@ -47,7 +47,7 @@ ApplicationSettingsResource::ApplicationSettingsResource(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ApplicationSettingsResource& ApplicationSettingsResource::operator =(const JsonValue& jsonValue)
+ApplicationSettingsResource& ApplicationSettingsResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

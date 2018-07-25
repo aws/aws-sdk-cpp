@@ -34,14 +34,14 @@ UploadMetadata::UploadMetadata() :
 {
 }
 
-UploadMetadata::UploadMetadata(const JsonValue& jsonValue) : 
+UploadMetadata::UploadMetadata(JsonView jsonValue) : 
     m_uploadUrlHasBeenSet(false),
     m_signedHeadersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UploadMetadata& UploadMetadata::operator =(const JsonValue& jsonValue)
+UploadMetadata& UploadMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UploadUrl"))
   {
@@ -52,7 +52,7 @@ UploadMetadata& UploadMetadata::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SignedHeaders"))
   {
-    Aws::Map<Aws::String, JsonValue> signedHeadersJsonMap = jsonValue.GetObject("SignedHeaders").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> signedHeadersJsonMap = jsonValue.GetObject("SignedHeaders").GetAllObjects();
     for(auto& signedHeadersItem : signedHeadersJsonMap)
     {
       m_signedHeaders[signedHeadersItem.first] = signedHeadersItem.second.AsString();

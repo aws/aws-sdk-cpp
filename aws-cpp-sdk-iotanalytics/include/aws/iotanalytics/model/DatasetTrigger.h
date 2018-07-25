@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoTAnalytics
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DatasetTrigger();
-    DatasetTrigger(const Aws::Utils::Json::JsonValue& jsonValue);
-    DatasetTrigger& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DatasetTrigger(Aws::Utils::Json::JsonView jsonValue);
+    DatasetTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

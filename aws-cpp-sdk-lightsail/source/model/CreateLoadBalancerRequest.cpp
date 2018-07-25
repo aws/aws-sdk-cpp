@@ -78,7 +78,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateLoadBalancerRequest::GetRequestSpecificHeaders() const

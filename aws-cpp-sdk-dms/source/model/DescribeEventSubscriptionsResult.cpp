@@ -37,7 +37,7 @@ DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult(const Aws::Am
 
 DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(c
 
   if(jsonValue.ValueExists("EventSubscriptionsList"))
   {
-    Array<JsonValue> eventSubscriptionsListJsonList = jsonValue.GetArray("EventSubscriptionsList");
+    Array<JsonView> eventSubscriptionsListJsonList = jsonValue.GetArray("EventSubscriptionsList");
     for(unsigned eventSubscriptionsListIndex = 0; eventSubscriptionsListIndex < eventSubscriptionsListJsonList.GetLength(); ++eventSubscriptionsListIndex)
     {
       m_eventSubscriptionsList.push_back(eventSubscriptionsListJsonList[eventSubscriptionsListIndex].AsObject());

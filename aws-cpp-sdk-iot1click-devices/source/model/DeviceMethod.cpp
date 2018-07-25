@@ -34,14 +34,14 @@ DeviceMethod::DeviceMethod() :
 {
 }
 
-DeviceMethod::DeviceMethod(const JsonValue& jsonValue) : 
+DeviceMethod::DeviceMethod(JsonView jsonValue) : 
     m_deviceTypeHasBeenSet(false),
     m_methodNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeviceMethod& DeviceMethod::operator =(const JsonValue& jsonValue)
+DeviceMethod& DeviceMethod::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deviceType"))
   {

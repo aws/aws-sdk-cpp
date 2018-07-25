@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppSync
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     HttpDataSourceConfig();
-    HttpDataSourceConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    HttpDataSourceConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HttpDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    HttpDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

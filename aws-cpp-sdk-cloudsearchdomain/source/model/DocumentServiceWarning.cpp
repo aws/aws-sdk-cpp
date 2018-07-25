@@ -33,13 +33,13 @@ DocumentServiceWarning::DocumentServiceWarning() :
 {
 }
 
-DocumentServiceWarning::DocumentServiceWarning(const JsonValue& jsonValue) : 
+DocumentServiceWarning::DocumentServiceWarning(JsonView jsonValue) : 
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DocumentServiceWarning& DocumentServiceWarning::operator =(const JsonValue& jsonValue)
+DocumentServiceWarning& DocumentServiceWarning::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("message"))
   {

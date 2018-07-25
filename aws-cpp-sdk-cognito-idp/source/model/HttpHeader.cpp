@@ -34,14 +34,14 @@ HttpHeader::HttpHeader() :
 {
 }
 
-HttpHeader::HttpHeader(const JsonValue& jsonValue) : 
+HttpHeader::HttpHeader(JsonView jsonValue) : 
     m_headerNameHasBeenSet(false),
     m_headerValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HttpHeader& HttpHeader::operator =(const JsonValue& jsonValue)
+HttpHeader& HttpHeader::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("headerName"))
   {

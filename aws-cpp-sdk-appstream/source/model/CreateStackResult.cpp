@@ -37,7 +37,7 @@ CreateStackResult::CreateStackResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateStackResult& CreateStackResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Stack"))
   {
     m_stack = jsonValue.GetObject("Stack");

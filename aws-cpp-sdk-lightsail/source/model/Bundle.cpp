@@ -50,7 +50,7 @@ Bundle::Bundle() :
 {
 }
 
-Bundle::Bundle(const JsonValue& jsonValue) : 
+Bundle::Bundle(JsonView jsonValue) : 
     m_price(0.0),
     m_priceHasBeenSet(false),
     m_cpuCount(0),
@@ -73,7 +73,7 @@ Bundle::Bundle(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Bundle& Bundle::operator =(const JsonValue& jsonValue)
+Bundle& Bundle::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("price"))
   {
@@ -147,7 +147,7 @@ Bundle& Bundle::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("supportedPlatforms"))
   {
-    Array<JsonValue> supportedPlatformsJsonList = jsonValue.GetArray("supportedPlatforms");
+    Array<JsonView> supportedPlatformsJsonList = jsonValue.GetArray("supportedPlatforms");
     for(unsigned supportedPlatformsIndex = 0; supportedPlatformsIndex < supportedPlatformsJsonList.GetLength(); ++supportedPlatformsIndex)
     {
       m_supportedPlatforms.push_back(InstancePlatformMapper::GetInstancePlatformForName(supportedPlatformsJsonList[supportedPlatformsIndex].AsString()));

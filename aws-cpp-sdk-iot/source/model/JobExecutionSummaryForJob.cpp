@@ -34,14 +34,14 @@ JobExecutionSummaryForJob::JobExecutionSummaryForJob() :
 {
 }
 
-JobExecutionSummaryForJob::JobExecutionSummaryForJob(const JsonValue& jsonValue) : 
+JobExecutionSummaryForJob::JobExecutionSummaryForJob(JsonView jsonValue) : 
     m_thingArnHasBeenSet(false),
     m_jobExecutionSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JobExecutionSummaryForJob& JobExecutionSummaryForJob::operator =(const JsonValue& jsonValue)
+JobExecutionSummaryForJob& JobExecutionSummaryForJob::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("thingArn"))
   {

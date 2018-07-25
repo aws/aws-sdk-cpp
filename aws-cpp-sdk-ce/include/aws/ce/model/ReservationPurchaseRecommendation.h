@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CostExplorer
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     ReservationPurchaseRecommendation();
-    ReservationPurchaseRecommendation(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReservationPurchaseRecommendation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReservationPurchaseRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    ReservationPurchaseRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

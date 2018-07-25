@@ -44,7 +44,7 @@ Aws::String DeleteConstraintRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteConstraintRequest::GetRequestSpecificHeaders() const

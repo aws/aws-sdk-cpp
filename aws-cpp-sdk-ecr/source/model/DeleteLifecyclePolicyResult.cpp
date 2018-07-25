@@ -37,7 +37,7 @@ DeleteLifecyclePolicyResult::DeleteLifecyclePolicyResult(const Aws::AmazonWebSer
 
 DeleteLifecyclePolicyResult& DeleteLifecyclePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");

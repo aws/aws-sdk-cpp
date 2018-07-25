@@ -37,10 +37,10 @@ GetDatasetContentResult::GetDatasetContentResult(const Aws::AmazonWebServiceResu
 
 GetDatasetContentResult& GetDatasetContentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entries"))
   {
-    Array<JsonValue> entriesJsonList = jsonValue.GetArray("entries");
+    Array<JsonView> entriesJsonList = jsonValue.GetArray("entries");
     for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());

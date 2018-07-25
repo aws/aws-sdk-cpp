@@ -51,7 +51,7 @@ Aws::String UpdateServerEngineAttributesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateServerEngineAttributesRequest::GetRequestSpecificHeaders() const

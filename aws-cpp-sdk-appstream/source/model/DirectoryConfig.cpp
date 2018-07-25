@@ -36,7 +36,7 @@ DirectoryConfig::DirectoryConfig() :
 {
 }
 
-DirectoryConfig::DirectoryConfig(const JsonValue& jsonValue) : 
+DirectoryConfig::DirectoryConfig(JsonView jsonValue) : 
     m_directoryNameHasBeenSet(false),
     m_organizationalUnitDistinguishedNamesHasBeenSet(false),
     m_serviceAccountCredentialsHasBeenSet(false),
@@ -45,7 +45,7 @@ DirectoryConfig::DirectoryConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DirectoryConfig& DirectoryConfig::operator =(const JsonValue& jsonValue)
+DirectoryConfig& DirectoryConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryName"))
   {
@@ -56,7 +56,7 @@ DirectoryConfig& DirectoryConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("OrganizationalUnitDistinguishedNames"))
   {
-    Array<JsonValue> organizationalUnitDistinguishedNamesJsonList = jsonValue.GetArray("OrganizationalUnitDistinguishedNames");
+    Array<JsonView> organizationalUnitDistinguishedNamesJsonList = jsonValue.GetArray("OrganizationalUnitDistinguishedNames");
     for(unsigned organizationalUnitDistinguishedNamesIndex = 0; organizationalUnitDistinguishedNamesIndex < organizationalUnitDistinguishedNamesJsonList.GetLength(); ++organizationalUnitDistinguishedNamesIndex)
     {
       m_organizationalUnitDistinguishedNames.push_back(organizationalUnitDistinguishedNamesJsonList[organizationalUnitDistinguishedNamesIndex].AsString());

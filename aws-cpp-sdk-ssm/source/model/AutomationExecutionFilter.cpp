@@ -35,7 +35,7 @@ AutomationExecutionFilter::AutomationExecutionFilter() :
 {
 }
 
-AutomationExecutionFilter::AutomationExecutionFilter(const JsonValue& jsonValue) : 
+AutomationExecutionFilter::AutomationExecutionFilter(JsonView jsonValue) : 
     m_key(AutomationExecutionFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false)
@@ -43,7 +43,7 @@ AutomationExecutionFilter::AutomationExecutionFilter(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-AutomationExecutionFilter& AutomationExecutionFilter::operator =(const JsonValue& jsonValue)
+AutomationExecutionFilter& AutomationExecutionFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -54,7 +54,7 @@ AutomationExecutionFilter& AutomationExecutionFilter::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

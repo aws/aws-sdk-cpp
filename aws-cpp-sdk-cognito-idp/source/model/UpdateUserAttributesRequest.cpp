@@ -49,7 +49,7 @@ Aws::String UpdateUserAttributesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateUserAttributesRequest::GetRequestSpecificHeaders() const

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     CampaignState();
-    CampaignState(const Aws::Utils::Json::JsonValue& jsonValue);
-    CampaignState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CampaignState(Aws::Utils::Json::JsonView jsonValue);
+    CampaignState& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

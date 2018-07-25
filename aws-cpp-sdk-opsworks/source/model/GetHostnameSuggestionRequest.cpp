@@ -37,7 +37,7 @@ Aws::String GetHostnameSuggestionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetHostnameSuggestionRequest::GetRequestSpecificHeaders() const

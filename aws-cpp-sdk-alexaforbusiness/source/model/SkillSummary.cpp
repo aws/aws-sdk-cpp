@@ -36,7 +36,7 @@ SkillSummary::SkillSummary() :
 {
 }
 
-SkillSummary::SkillSummary(const JsonValue& jsonValue) : 
+SkillSummary::SkillSummary(JsonView jsonValue) : 
     m_skillIdHasBeenSet(false),
     m_skillNameHasBeenSet(false),
     m_supportsLinking(false),
@@ -45,7 +45,7 @@ SkillSummary::SkillSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SkillSummary& SkillSummary::operator =(const JsonValue& jsonValue)
+SkillSummary& SkillSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SkillId"))
   {

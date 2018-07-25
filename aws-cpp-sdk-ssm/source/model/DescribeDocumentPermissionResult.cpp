@@ -37,10 +37,10 @@ DescribeDocumentPermissionResult::DescribeDocumentPermissionResult(const Aws::Am
 
 DescribeDocumentPermissionResult& DescribeDocumentPermissionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountIds"))
   {
-    Array<JsonValue> accountIdsJsonList = jsonValue.GetArray("AccountIds");
+    Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
     for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());

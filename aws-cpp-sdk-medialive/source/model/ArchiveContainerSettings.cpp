@@ -33,13 +33,13 @@ ArchiveContainerSettings::ArchiveContainerSettings() :
 {
 }
 
-ArchiveContainerSettings::ArchiveContainerSettings(const JsonValue& jsonValue) : 
+ArchiveContainerSettings::ArchiveContainerSettings(JsonView jsonValue) : 
     m_m2tsSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ArchiveContainerSettings& ArchiveContainerSettings::operator =(const JsonValue& jsonValue)
+ArchiveContainerSettings& ArchiveContainerSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("m2tsSettings"))
   {

@@ -37,7 +37,7 @@ DescribeGatewayInformationResult::DescribeGatewayInformationResult(const Aws::Am
 
 DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
@@ -70,7 +70,7 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
 
   if(jsonValue.ValueExists("GatewayNetworkInterfaces"))
   {
-    Array<JsonValue> gatewayNetworkInterfacesJsonList = jsonValue.GetArray("GatewayNetworkInterfaces");
+    Array<JsonView> gatewayNetworkInterfacesJsonList = jsonValue.GetArray("GatewayNetworkInterfaces");
     for(unsigned gatewayNetworkInterfacesIndex = 0; gatewayNetworkInterfacesIndex < gatewayNetworkInterfacesJsonList.GetLength(); ++gatewayNetworkInterfacesIndex)
     {
       m_gatewayNetworkInterfaces.push_back(gatewayNetworkInterfacesJsonList[gatewayNetworkInterfacesIndex].AsObject());

@@ -37,7 +37,7 @@ ClientCertificate::ClientCertificate() :
 {
 }
 
-ClientCertificate::ClientCertificate(const JsonValue& jsonValue) : 
+ClientCertificate::ClientCertificate(JsonView jsonValue) : 
     m_clientCertificateIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_pemEncodedCertificateHasBeenSet(false),
@@ -47,7 +47,7 @@ ClientCertificate::ClientCertificate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ClientCertificate& ClientCertificate::operator =(const JsonValue& jsonValue)
+ClientCertificate& ClientCertificate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("clientCertificateId"))
   {

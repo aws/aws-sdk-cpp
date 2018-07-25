@@ -36,7 +36,7 @@ ImagePermissions::ImagePermissions() :
 {
 }
 
-ImagePermissions::ImagePermissions(const JsonValue& jsonValue) : 
+ImagePermissions::ImagePermissions(JsonView jsonValue) : 
     m_allowFleet(false),
     m_allowFleetHasBeenSet(false),
     m_allowImageBuilder(false),
@@ -45,7 +45,7 @@ ImagePermissions::ImagePermissions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ImagePermissions& ImagePermissions::operator =(const JsonValue& jsonValue)
+ImagePermissions& ImagePermissions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allowFleet"))
   {

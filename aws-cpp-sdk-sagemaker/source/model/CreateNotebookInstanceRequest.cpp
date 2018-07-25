@@ -103,7 +103,7 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
    payload.WithString("DirectInternetAccess", DirectInternetAccessMapper::GetNameForDirectInternetAccess(m_directInternetAccess));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateNotebookInstanceRequest::GetRequestSpecificHeaders() const

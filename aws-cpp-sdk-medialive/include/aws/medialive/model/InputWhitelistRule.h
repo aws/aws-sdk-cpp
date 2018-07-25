@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     InputWhitelistRule();
-    InputWhitelistRule(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputWhitelistRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputWhitelistRule(Aws::Utils::Json::JsonView jsonValue);
+    InputWhitelistRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

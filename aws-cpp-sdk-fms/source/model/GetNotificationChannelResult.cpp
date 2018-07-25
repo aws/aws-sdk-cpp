@@ -37,7 +37,7 @@ GetNotificationChannelResult::GetNotificationChannelResult(const Aws::AmazonWebS
 
 GetNotificationChannelResult& GetNotificationChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SnsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");

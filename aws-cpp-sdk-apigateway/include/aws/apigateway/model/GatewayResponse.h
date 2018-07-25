@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -84,8 +85,8 @@ namespace Model
   {
   public:
     GatewayResponse();
-    GatewayResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    GatewayResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GatewayResponse(Aws::Utils::Json::JsonView jsonValue);
+    GatewayResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

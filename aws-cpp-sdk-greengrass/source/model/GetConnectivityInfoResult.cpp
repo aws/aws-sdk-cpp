@@ -37,10 +37,10 @@ GetConnectivityInfoResult::GetConnectivityInfoResult(const Aws::AmazonWebService
 
 GetConnectivityInfoResult& GetConnectivityInfoResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConnectivityInfo"))
   {
-    Array<JsonValue> connectivityInfoJsonList = jsonValue.GetArray("ConnectivityInfo");
+    Array<JsonView> connectivityInfoJsonList = jsonValue.GetArray("ConnectivityInfo");
     for(unsigned connectivityInfoIndex = 0; connectivityInfoIndex < connectivityInfoJsonList.GetLength(); ++connectivityInfoIndex)
     {
       m_connectivityInfo.push_back(connectivityInfoJsonList[connectivityInfoIndex].AsObject());

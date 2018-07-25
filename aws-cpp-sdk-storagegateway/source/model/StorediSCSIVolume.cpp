@@ -48,7 +48,7 @@ StorediSCSIVolume::StorediSCSIVolume() :
 {
 }
 
-StorediSCSIVolume::StorediSCSIVolume(const JsonValue& jsonValue) : 
+StorediSCSIVolume::StorediSCSIVolume(JsonView jsonValue) : 
     m_volumeARNHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
@@ -69,7 +69,7 @@ StorediSCSIVolume::StorediSCSIVolume(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StorediSCSIVolume& StorediSCSIVolume::operator =(const JsonValue& jsonValue)
+StorediSCSIVolume& StorediSCSIVolume::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeARN"))
   {

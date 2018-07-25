@@ -44,7 +44,7 @@ Aws::String RejectAssignmentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RejectAssignmentRequest::GetRequestSpecificHeaders() const

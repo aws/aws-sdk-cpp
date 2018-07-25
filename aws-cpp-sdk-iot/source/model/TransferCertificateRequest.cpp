@@ -42,7 +42,7 @@ Aws::String TransferCertificateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void TransferCertificateRequest::AddQueryStringParameters(URI& uri) const

@@ -33,13 +33,13 @@ AnalyticsMetadataType::AnalyticsMetadataType() :
 {
 }
 
-AnalyticsMetadataType::AnalyticsMetadataType(const JsonValue& jsonValue) : 
+AnalyticsMetadataType::AnalyticsMetadataType(JsonView jsonValue) : 
     m_analyticsEndpointIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AnalyticsMetadataType& AnalyticsMetadataType::operator =(const JsonValue& jsonValue)
+AnalyticsMetadataType& AnalyticsMetadataType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AnalyticsEndpointId"))
   {

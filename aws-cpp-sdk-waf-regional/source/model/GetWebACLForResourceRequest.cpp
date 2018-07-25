@@ -37,7 +37,7 @@ Aws::String GetWebACLForResourceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetWebACLForResourceRequest::GetRequestSpecificHeaders() const

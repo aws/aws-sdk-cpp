@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisVideoArchivedMedia
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     HLSTimestampRange();
-    HLSTimestampRange(const Aws::Utils::Json::JsonValue& jsonValue);
-    HLSTimestampRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HLSTimestampRange(Aws::Utils::Json::JsonView jsonValue);
+    HLSTimestampRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

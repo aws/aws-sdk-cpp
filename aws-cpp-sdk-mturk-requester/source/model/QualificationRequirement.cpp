@@ -39,7 +39,7 @@ QualificationRequirement::QualificationRequirement() :
 {
 }
 
-QualificationRequirement::QualificationRequirement(const JsonValue& jsonValue) : 
+QualificationRequirement::QualificationRequirement(JsonView jsonValue) : 
     m_qualificationTypeIdHasBeenSet(false),
     m_comparator(Comparator::NOT_SET),
     m_comparatorHasBeenSet(false),
@@ -51,7 +51,7 @@ QualificationRequirement::QualificationRequirement(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-QualificationRequirement& QualificationRequirement::operator =(const JsonValue& jsonValue)
+QualificationRequirement& QualificationRequirement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("QualificationTypeId"))
   {
@@ -69,7 +69,7 @@ QualificationRequirement& QualificationRequirement::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("IntegerValues"))
   {
-    Array<JsonValue> integerValuesJsonList = jsonValue.GetArray("IntegerValues");
+    Array<JsonView> integerValuesJsonList = jsonValue.GetArray("IntegerValues");
     for(unsigned integerValuesIndex = 0; integerValuesIndex < integerValuesJsonList.GetLength(); ++integerValuesIndex)
     {
       m_integerValues.push_back(integerValuesJsonList[integerValuesIndex].AsInteger());
@@ -79,7 +79,7 @@ QualificationRequirement& QualificationRequirement::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("LocaleValues"))
   {
-    Array<JsonValue> localeValuesJsonList = jsonValue.GetArray("LocaleValues");
+    Array<JsonView> localeValuesJsonList = jsonValue.GetArray("LocaleValues");
     for(unsigned localeValuesIndex = 0; localeValuesIndex < localeValuesJsonList.GetLength(); ++localeValuesIndex)
     {
       m_localeValues.push_back(localeValuesJsonList[localeValuesIndex].AsObject());

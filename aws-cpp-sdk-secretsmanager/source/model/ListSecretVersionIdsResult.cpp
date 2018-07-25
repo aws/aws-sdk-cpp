@@ -37,10 +37,10 @@ ListSecretVersionIdsResult::ListSecretVersionIdsResult(const Aws::AmazonWebServi
 
 ListSecretVersionIdsResult& ListSecretVersionIdsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Versions"))
   {
-    Array<JsonValue> versionsJsonList = jsonValue.GetArray("Versions");
+    Array<JsonView> versionsJsonList = jsonValue.GetArray("Versions");
     for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsObject());

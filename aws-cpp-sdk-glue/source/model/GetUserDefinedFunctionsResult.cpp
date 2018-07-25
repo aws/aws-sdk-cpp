@@ -37,10 +37,10 @@ GetUserDefinedFunctionsResult::GetUserDefinedFunctionsResult(const Aws::AmazonWe
 
 GetUserDefinedFunctionsResult& GetUserDefinedFunctionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserDefinedFunctions"))
   {
-    Array<JsonValue> userDefinedFunctionsJsonList = jsonValue.GetArray("UserDefinedFunctions");
+    Array<JsonView> userDefinedFunctionsJsonList = jsonValue.GetArray("UserDefinedFunctions");
     for(unsigned userDefinedFunctionsIndex = 0; userDefinedFunctionsIndex < userDefinedFunctionsJsonList.GetLength(); ++userDefinedFunctionsIndex)
     {
       m_userDefinedFunctions.push_back(userDefinedFunctionsJsonList[userDefinedFunctionsIndex].AsObject());

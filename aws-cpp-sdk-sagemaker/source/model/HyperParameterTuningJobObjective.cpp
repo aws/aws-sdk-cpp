@@ -35,7 +35,7 @@ HyperParameterTuningJobObjective::HyperParameterTuningJobObjective() :
 {
 }
 
-HyperParameterTuningJobObjective::HyperParameterTuningJobObjective(const JsonValue& jsonValue) : 
+HyperParameterTuningJobObjective::HyperParameterTuningJobObjective(JsonView jsonValue) : 
     m_type(HyperParameterTuningJobObjectiveType::NOT_SET),
     m_typeHasBeenSet(false),
     m_metricNameHasBeenSet(false)
@@ -43,7 +43,7 @@ HyperParameterTuningJobObjective::HyperParameterTuningJobObjective(const JsonVal
   *this = jsonValue;
 }
 
-HyperParameterTuningJobObjective& HyperParameterTuningJobObjective::operator =(const JsonValue& jsonValue)
+HyperParameterTuningJobObjective& HyperParameterTuningJobObjective::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

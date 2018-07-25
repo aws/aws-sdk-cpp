@@ -43,7 +43,7 @@ Aws::String StartNextPendingJobExecutionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

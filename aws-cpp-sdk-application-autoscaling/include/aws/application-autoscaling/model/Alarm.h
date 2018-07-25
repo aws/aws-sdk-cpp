@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationAutoScaling
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Alarm();
-    Alarm(const Aws::Utils::Json::JsonValue& jsonValue);
-    Alarm& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Alarm(Aws::Utils::Json::JsonView jsonValue);
+    Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

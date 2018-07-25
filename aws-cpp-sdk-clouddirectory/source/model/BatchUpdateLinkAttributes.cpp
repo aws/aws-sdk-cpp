@@ -34,14 +34,14 @@ BatchUpdateLinkAttributes::BatchUpdateLinkAttributes() :
 {
 }
 
-BatchUpdateLinkAttributes::BatchUpdateLinkAttributes(const JsonValue& jsonValue) : 
+BatchUpdateLinkAttributes::BatchUpdateLinkAttributes(JsonView jsonValue) : 
     m_typedLinkSpecifierHasBeenSet(false),
     m_attributeUpdatesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchUpdateLinkAttributes& BatchUpdateLinkAttributes::operator =(const JsonValue& jsonValue)
+BatchUpdateLinkAttributes& BatchUpdateLinkAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TypedLinkSpecifier"))
   {
@@ -52,7 +52,7 @@ BatchUpdateLinkAttributes& BatchUpdateLinkAttributes::operator =(const JsonValue
 
   if(jsonValue.ValueExists("AttributeUpdates"))
   {
-    Array<JsonValue> attributeUpdatesJsonList = jsonValue.GetArray("AttributeUpdates");
+    Array<JsonView> attributeUpdatesJsonList = jsonValue.GetArray("AttributeUpdates");
     for(unsigned attributeUpdatesIndex = 0; attributeUpdatesIndex < attributeUpdatesJsonList.GetLength(); ++attributeUpdatesIndex)
     {
       m_attributeUpdates.push_back(attributeUpdatesJsonList[attributeUpdatesIndex].AsObject());

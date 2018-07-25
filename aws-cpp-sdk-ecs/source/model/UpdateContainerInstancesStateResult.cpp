@@ -37,10 +37,10 @@ UpdateContainerInstancesStateResult::UpdateContainerInstancesStateResult(const A
 
 UpdateContainerInstancesStateResult& UpdateContainerInstancesStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("containerInstances"))
   {
-    Array<JsonValue> containerInstancesJsonList = jsonValue.GetArray("containerInstances");
+    Array<JsonView> containerInstancesJsonList = jsonValue.GetArray("containerInstances");
     for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
     {
       m_containerInstances.push_back(containerInstancesJsonList[containerInstancesIndex].AsObject());
@@ -49,7 +49,7 @@ UpdateContainerInstancesStateResult& UpdateContainerInstancesStateResult::operat
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonValue> failuresJsonList = jsonValue.GetArray("failures");
+    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

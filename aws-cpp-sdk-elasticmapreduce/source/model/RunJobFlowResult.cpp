@@ -37,7 +37,7 @@ RunJobFlowResult::RunJobFlowResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 RunJobFlowResult& RunJobFlowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobFlowId"))
   {
     m_jobFlowId = jsonValue.GetString("JobFlowId");

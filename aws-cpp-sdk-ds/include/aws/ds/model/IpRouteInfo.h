@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectoryService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     IpRouteInfo();
-    IpRouteInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    IpRouteInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    IpRouteInfo(Aws::Utils::Json::JsonView jsonValue);
+    IpRouteInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

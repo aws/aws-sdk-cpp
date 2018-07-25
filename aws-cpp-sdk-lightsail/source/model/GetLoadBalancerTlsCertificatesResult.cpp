@@ -37,10 +37,10 @@ GetLoadBalancerTlsCertificatesResult::GetLoadBalancerTlsCertificatesResult(const
 
 GetLoadBalancerTlsCertificatesResult& GetLoadBalancerTlsCertificatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tlsCertificates"))
   {
-    Array<JsonValue> tlsCertificatesJsonList = jsonValue.GetArray("tlsCertificates");
+    Array<JsonView> tlsCertificatesJsonList = jsonValue.GetArray("tlsCertificates");
     for(unsigned tlsCertificatesIndex = 0; tlsCertificatesIndex < tlsCertificatesJsonList.GetLength(); ++tlsCertificatesIndex)
     {
       m_tlsCertificates.push_back(tlsCertificatesJsonList[tlsCertificatesIndex].AsObject());

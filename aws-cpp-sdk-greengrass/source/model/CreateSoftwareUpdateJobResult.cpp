@@ -37,7 +37,7 @@ CreateSoftwareUpdateJobResult::CreateSoftwareUpdateJobResult(const Aws::AmazonWe
 
 CreateSoftwareUpdateJobResult& CreateSoftwareUpdateJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IotJobArn"))
   {
     m_iotJobArn = jsonValue.GetString("IotJobArn");

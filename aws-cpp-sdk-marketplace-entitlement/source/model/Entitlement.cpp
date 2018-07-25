@@ -37,7 +37,7 @@ Entitlement::Entitlement() :
 {
 }
 
-Entitlement::Entitlement(const JsonValue& jsonValue) : 
+Entitlement::Entitlement(JsonView jsonValue) : 
     m_productCodeHasBeenSet(false),
     m_dimensionHasBeenSet(false),
     m_customerIdentifierHasBeenSet(false),
@@ -47,7 +47,7 @@ Entitlement::Entitlement(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Entitlement& Entitlement::operator =(const JsonValue& jsonValue)
+Entitlement& Entitlement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProductCode"))
   {

@@ -59,7 +59,7 @@ Aws::String CreateDiskFromSnapshotRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDiskFromSnapshotRequest::GetRequestSpecificHeaders() const

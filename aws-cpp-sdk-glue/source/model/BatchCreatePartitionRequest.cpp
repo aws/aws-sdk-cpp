@@ -63,7 +63,7 @@ Aws::String BatchCreatePartitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchCreatePartitionRequest::GetRequestSpecificHeaders() const

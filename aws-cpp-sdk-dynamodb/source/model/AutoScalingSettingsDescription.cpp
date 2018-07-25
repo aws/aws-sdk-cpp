@@ -40,7 +40,7 @@ AutoScalingSettingsDescription::AutoScalingSettingsDescription() :
 {
 }
 
-AutoScalingSettingsDescription::AutoScalingSettingsDescription(const JsonValue& jsonValue) : 
+AutoScalingSettingsDescription::AutoScalingSettingsDescription(JsonView jsonValue) : 
     m_minimumUnits(0),
     m_minimumUnitsHasBeenSet(false),
     m_maximumUnits(0),
@@ -53,7 +53,7 @@ AutoScalingSettingsDescription::AutoScalingSettingsDescription(const JsonValue& 
   *this = jsonValue;
 }
 
-AutoScalingSettingsDescription& AutoScalingSettingsDescription::operator =(const JsonValue& jsonValue)
+AutoScalingSettingsDescription& AutoScalingSettingsDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MinimumUnits"))
   {
@@ -85,7 +85,7 @@ AutoScalingSettingsDescription& AutoScalingSettingsDescription::operator =(const
 
   if(jsonValue.ValueExists("ScalingPolicies"))
   {
-    Array<JsonValue> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
+    Array<JsonView> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
     for(unsigned scalingPoliciesIndex = 0; scalingPoliciesIndex < scalingPoliciesJsonList.GetLength(); ++scalingPoliciesIndex)
     {
       m_scalingPolicies.push_back(scalingPoliciesJsonList[scalingPoliciesIndex].AsObject());

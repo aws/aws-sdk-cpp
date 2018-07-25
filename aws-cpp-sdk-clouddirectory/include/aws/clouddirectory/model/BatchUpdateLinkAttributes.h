@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     BatchUpdateLinkAttributes();
-    BatchUpdateLinkAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchUpdateLinkAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchUpdateLinkAttributes(Aws::Utils::Json::JsonView jsonValue);
+    BatchUpdateLinkAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

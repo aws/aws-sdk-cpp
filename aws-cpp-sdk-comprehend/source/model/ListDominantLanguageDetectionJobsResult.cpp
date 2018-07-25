@@ -37,10 +37,10 @@ ListDominantLanguageDetectionJobsResult::ListDominantLanguageDetectionJobsResult
 
 ListDominantLanguageDetectionJobsResult& ListDominantLanguageDetectionJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DominantLanguageDetectionJobPropertiesList"))
   {
-    Array<JsonValue> dominantLanguageDetectionJobPropertiesListJsonList = jsonValue.GetArray("DominantLanguageDetectionJobPropertiesList");
+    Array<JsonView> dominantLanguageDetectionJobPropertiesListJsonList = jsonValue.GetArray("DominantLanguageDetectionJobPropertiesList");
     for(unsigned dominantLanguageDetectionJobPropertiesListIndex = 0; dominantLanguageDetectionJobPropertiesListIndex < dominantLanguageDetectionJobPropertiesListJsonList.GetLength(); ++dominantLanguageDetectionJobPropertiesListIndex)
     {
       m_dominantLanguageDetectionJobPropertiesList.push_back(dominantLanguageDetectionJobPropertiesListJsonList[dominantLanguageDetectionJobPropertiesListIndex].AsObject());

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Shield
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     AttackVectorDescription();
-    AttackVectorDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    AttackVectorDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AttackVectorDescription(Aws::Utils::Json::JsonView jsonValue);
+    AttackVectorDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -34,14 +34,14 @@ PlacedPlayerSession::PlacedPlayerSession() :
 {
 }
 
-PlacedPlayerSession::PlacedPlayerSession(const JsonValue& jsonValue) : 
+PlacedPlayerSession::PlacedPlayerSession(JsonView jsonValue) : 
     m_playerIdHasBeenSet(false),
     m_playerSessionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PlacedPlayerSession& PlacedPlayerSession::operator =(const JsonValue& jsonValue)
+PlacedPlayerSession& PlacedPlayerSession::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PlayerId"))
   {

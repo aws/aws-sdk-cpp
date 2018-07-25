@@ -36,7 +36,7 @@ LaunchPathSummary::LaunchPathSummary() :
 {
 }
 
-LaunchPathSummary::LaunchPathSummary(const JsonValue& jsonValue) : 
+LaunchPathSummary::LaunchPathSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_constraintSummariesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -45,7 +45,7 @@ LaunchPathSummary::LaunchPathSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LaunchPathSummary& LaunchPathSummary::operator =(const JsonValue& jsonValue)
+LaunchPathSummary& LaunchPathSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -56,7 +56,7 @@ LaunchPathSummary& LaunchPathSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ConstraintSummaries"))
   {
-    Array<JsonValue> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
+    Array<JsonView> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
     for(unsigned constraintSummariesIndex = 0; constraintSummariesIndex < constraintSummariesJsonList.GetLength(); ++constraintSummariesIndex)
     {
       m_constraintSummaries.push_back(constraintSummariesJsonList[constraintSummariesIndex].AsObject());
@@ -66,7 +66,7 @@ LaunchPathSummary& LaunchPathSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

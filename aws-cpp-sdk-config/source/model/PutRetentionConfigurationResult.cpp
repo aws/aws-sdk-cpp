@@ -37,7 +37,7 @@ PutRetentionConfigurationResult::PutRetentionConfigurationResult(const Aws::Amaz
 
 PutRetentionConfigurationResult& PutRetentionConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RetentionConfiguration"))
   {
     m_retentionConfiguration = jsonValue.GetObject("RetentionConfiguration");

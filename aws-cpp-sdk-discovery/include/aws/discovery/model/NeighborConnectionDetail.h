@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationDiscoveryService
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     NeighborConnectionDetail();
-    NeighborConnectionDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    NeighborConnectionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NeighborConnectionDetail(Aws::Utils::Json::JsonView jsonValue);
+    NeighborConnectionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

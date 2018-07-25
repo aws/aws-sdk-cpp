@@ -37,7 +37,7 @@ EventContextDataType::EventContextDataType() :
 {
 }
 
-EventContextDataType::EventContextDataType(const JsonValue& jsonValue) : 
+EventContextDataType::EventContextDataType(JsonView jsonValue) : 
     m_ipAddressHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_timezoneHasBeenSet(false),
@@ -47,7 +47,7 @@ EventContextDataType::EventContextDataType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventContextDataType& EventContextDataType::operator =(const JsonValue& jsonValue)
+EventContextDataType& EventContextDataType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IpAddress"))
   {

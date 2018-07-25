@@ -34,14 +34,14 @@ PendingAggregationRequest::PendingAggregationRequest() :
 {
 }
 
-PendingAggregationRequest::PendingAggregationRequest(const JsonValue& jsonValue) : 
+PendingAggregationRequest::PendingAggregationRequest(JsonView jsonValue) : 
     m_requesterAccountIdHasBeenSet(false),
     m_requesterAwsRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PendingAggregationRequest& PendingAggregationRequest::operator =(const JsonValue& jsonValue)
+PendingAggregationRequest& PendingAggregationRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RequesterAccountId"))
   {

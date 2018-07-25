@@ -43,7 +43,7 @@ NewPublicVirtualInterfaceAllocation::NewPublicVirtualInterfaceAllocation() :
 {
 }
 
-NewPublicVirtualInterfaceAllocation::NewPublicVirtualInterfaceAllocation(const JsonValue& jsonValue) : 
+NewPublicVirtualInterfaceAllocation::NewPublicVirtualInterfaceAllocation(JsonView jsonValue) : 
     m_virtualInterfaceNameHasBeenSet(false),
     m_vlan(0),
     m_vlanHasBeenSet(false),
@@ -59,7 +59,7 @@ NewPublicVirtualInterfaceAllocation::NewPublicVirtualInterfaceAllocation(const J
   *this = jsonValue;
 }
 
-NewPublicVirtualInterfaceAllocation& NewPublicVirtualInterfaceAllocation::operator =(const JsonValue& jsonValue)
+NewPublicVirtualInterfaceAllocation& NewPublicVirtualInterfaceAllocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("virtualInterfaceName"))
   {
@@ -112,7 +112,7 @@ NewPublicVirtualInterfaceAllocation& NewPublicVirtualInterfaceAllocation::operat
 
   if(jsonValue.ValueExists("routeFilterPrefixes"))
   {
-    Array<JsonValue> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
+    Array<JsonView> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
     for(unsigned routeFilterPrefixesIndex = 0; routeFilterPrefixesIndex < routeFilterPrefixesJsonList.GetLength(); ++routeFilterPrefixesIndex)
     {
       m_routeFilterPrefixes.push_back(routeFilterPrefixesJsonList[routeFilterPrefixesIndex].AsObject());

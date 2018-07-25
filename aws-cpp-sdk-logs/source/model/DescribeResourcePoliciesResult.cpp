@@ -37,10 +37,10 @@ DescribeResourcePoliciesResult::DescribeResourcePoliciesResult(const Aws::Amazon
 
 DescribeResourcePoliciesResult& DescribeResourcePoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourcePolicies"))
   {
-    Array<JsonValue> resourcePoliciesJsonList = jsonValue.GetArray("resourcePolicies");
+    Array<JsonView> resourcePoliciesJsonList = jsonValue.GetArray("resourcePolicies");
     for(unsigned resourcePoliciesIndex = 0; resourcePoliciesIndex < resourcePoliciesJsonList.GetLength(); ++resourcePoliciesIndex)
     {
       m_resourcePolicies.push_back(resourcePoliciesJsonList[resourcePoliciesIndex].AsObject());

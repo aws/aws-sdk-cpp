@@ -43,7 +43,7 @@ AccountSettings::AccountSettings() :
 {
 }
 
-AccountSettings::AccountSettings(const JsonValue& jsonValue) : 
+AccountSettings::AccountSettings(JsonView jsonValue) : 
     m_awsAccountNumberHasBeenSet(false),
     m_unmeteredDevicesHasBeenSet(false),
     m_unmeteredRemoteAccessDevicesHasBeenSet(false),
@@ -59,7 +59,7 @@ AccountSettings::AccountSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AccountSettings& AccountSettings::operator =(const JsonValue& jsonValue)
+AccountSettings& AccountSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("awsAccountNumber"))
   {
@@ -70,7 +70,7 @@ AccountSettings& AccountSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("unmeteredDevices"))
   {
-    Aws::Map<Aws::String, JsonValue> unmeteredDevicesJsonMap = jsonValue.GetObject("unmeteredDevices").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> unmeteredDevicesJsonMap = jsonValue.GetObject("unmeteredDevices").GetAllObjects();
     for(auto& unmeteredDevicesItem : unmeteredDevicesJsonMap)
     {
       m_unmeteredDevices[DevicePlatformMapper::GetDevicePlatformForName(unmeteredDevicesItem.first)] = unmeteredDevicesItem.second.AsInteger();
@@ -80,7 +80,7 @@ AccountSettings& AccountSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("unmeteredRemoteAccessDevices"))
   {
-    Aws::Map<Aws::String, JsonValue> unmeteredRemoteAccessDevicesJsonMap = jsonValue.GetObject("unmeteredRemoteAccessDevices").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> unmeteredRemoteAccessDevicesJsonMap = jsonValue.GetObject("unmeteredRemoteAccessDevices").GetAllObjects();
     for(auto& unmeteredRemoteAccessDevicesItem : unmeteredRemoteAccessDevicesJsonMap)
     {
       m_unmeteredRemoteAccessDevices[DevicePlatformMapper::GetDevicePlatformForName(unmeteredRemoteAccessDevicesItem.first)] = unmeteredRemoteAccessDevicesItem.second.AsInteger();
@@ -104,7 +104,7 @@ AccountSettings& AccountSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("maxSlots"))
   {
-    Aws::Map<Aws::String, JsonValue> maxSlotsJsonMap = jsonValue.GetObject("maxSlots").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> maxSlotsJsonMap = jsonValue.GetObject("maxSlots").GetAllObjects();
     for(auto& maxSlotsItem : maxSlotsJsonMap)
     {
       m_maxSlots[maxSlotsItem.first] = maxSlotsItem.second.AsInteger();

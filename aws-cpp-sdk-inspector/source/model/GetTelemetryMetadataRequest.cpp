@@ -37,7 +37,7 @@ Aws::String GetTelemetryMetadataRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetTelemetryMetadataRequest::GetRequestSpecificHeaders() const

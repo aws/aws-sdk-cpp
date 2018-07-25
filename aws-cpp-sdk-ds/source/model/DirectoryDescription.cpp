@@ -59,7 +59,7 @@ DirectoryDescription::DirectoryDescription() :
 {
 }
 
-DirectoryDescription::DirectoryDescription(const JsonValue& jsonValue) : 
+DirectoryDescription::DirectoryDescription(JsonView jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_shortNameHasBeenSet(false),
@@ -91,7 +91,7 @@ DirectoryDescription::DirectoryDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DirectoryDescription& DirectoryDescription::operator =(const JsonValue& jsonValue)
+DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryId"))
   {
@@ -151,7 +151,7 @@ DirectoryDescription& DirectoryDescription::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("DnsIpAddrs"))
   {
-    Array<JsonValue> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
+    Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
     for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
     {
       m_dnsIpAddrs.push_back(dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString());

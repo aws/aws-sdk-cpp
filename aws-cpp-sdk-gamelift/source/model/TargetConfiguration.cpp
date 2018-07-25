@@ -34,14 +34,14 @@ TargetConfiguration::TargetConfiguration() :
 {
 }
 
-TargetConfiguration::TargetConfiguration(const JsonValue& jsonValue) : 
+TargetConfiguration::TargetConfiguration(JsonView jsonValue) : 
     m_targetValue(0.0),
     m_targetValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TargetConfiguration& TargetConfiguration::operator =(const JsonValue& jsonValue)
+TargetConfiguration& TargetConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetValue"))
   {

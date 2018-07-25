@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     CloudWatchLogsLogStream();
-    CloudWatchLogsLogStream(const Aws::Utils::Json::JsonValue& jsonValue);
-    CloudWatchLogsLogStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CloudWatchLogsLogStream(Aws::Utils::Json::JsonView jsonValue);
+    CloudWatchLogsLogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

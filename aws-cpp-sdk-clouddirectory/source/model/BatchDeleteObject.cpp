@@ -33,13 +33,13 @@ BatchDeleteObject::BatchDeleteObject() :
 {
 }
 
-BatchDeleteObject::BatchDeleteObject(const JsonValue& jsonValue) : 
+BatchDeleteObject::BatchDeleteObject(JsonView jsonValue) : 
     m_objectReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchDeleteObject& BatchDeleteObject::operator =(const JsonValue& jsonValue)
+BatchDeleteObject& BatchDeleteObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectReference"))
   {

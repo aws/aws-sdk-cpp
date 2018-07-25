@@ -37,10 +37,10 @@ GetDiskSnapshotsResult::GetDiskSnapshotsResult(const Aws::AmazonWebServiceResult
 
 GetDiskSnapshotsResult& GetDiskSnapshotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("diskSnapshots"))
   {
-    Array<JsonValue> diskSnapshotsJsonList = jsonValue.GetArray("diskSnapshots");
+    Array<JsonView> diskSnapshotsJsonList = jsonValue.GetArray("diskSnapshots");
     for(unsigned diskSnapshotsIndex = 0; diskSnapshotsIndex < diskSnapshotsJsonList.GetLength(); ++diskSnapshotsIndex)
     {
       m_diskSnapshots.push_back(diskSnapshotsJsonList[diskSnapshotsIndex].AsObject());

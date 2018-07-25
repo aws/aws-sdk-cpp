@@ -38,7 +38,7 @@ ObjectiveStatusCounters::ObjectiveStatusCounters() :
 {
 }
 
-ObjectiveStatusCounters::ObjectiveStatusCounters(const JsonValue& jsonValue) : 
+ObjectiveStatusCounters::ObjectiveStatusCounters(JsonView jsonValue) : 
     m_succeeded(0),
     m_succeededHasBeenSet(false),
     m_pending(0),
@@ -49,7 +49,7 @@ ObjectiveStatusCounters::ObjectiveStatusCounters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ObjectiveStatusCounters& ObjectiveStatusCounters::operator =(const JsonValue& jsonValue)
+ObjectiveStatusCounters& ObjectiveStatusCounters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Succeeded"))
   {

@@ -41,7 +41,7 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
 {
 }
 
-EventSourceMappingConfiguration::EventSourceMappingConfiguration(const JsonValue& jsonValue) : 
+EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonValue) : 
     m_uUIDHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
@@ -55,7 +55,7 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(const JsonValue
   *this = jsonValue;
 }
 
-EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(const JsonValue& jsonValue)
+EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UUID"))
   {

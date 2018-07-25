@@ -37,7 +37,7 @@ Aws::String CreateExclusionsPreviewRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateExclusionsPreviewRequest::GetRequestSpecificHeaders() const

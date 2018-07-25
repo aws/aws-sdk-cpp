@@ -38,7 +38,7 @@ PlayReadyDrm::PlayReadyDrm() :
 {
 }
 
-PlayReadyDrm::PlayReadyDrm(const JsonValue& jsonValue) : 
+PlayReadyDrm::PlayReadyDrm(JsonView jsonValue) : 
     m_formatHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_keyMd5HasBeenSet(false),
@@ -49,7 +49,7 @@ PlayReadyDrm::PlayReadyDrm(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlayReadyDrm& PlayReadyDrm::operator =(const JsonValue& jsonValue)
+PlayReadyDrm& PlayReadyDrm::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Format"))
   {

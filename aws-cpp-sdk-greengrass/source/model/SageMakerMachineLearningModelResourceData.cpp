@@ -34,14 +34,14 @@ SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResource
 {
 }
 
-SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResourceData(const JsonValue& jsonValue) : 
+SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResourceData(JsonView jsonValue) : 
     m_destinationPathHasBeenSet(false),
     m_sageMakerJobArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SageMakerMachineLearningModelResourceData& SageMakerMachineLearningModelResourceData::operator =(const JsonValue& jsonValue)
+SageMakerMachineLearningModelResourceData& SageMakerMachineLearningModelResourceData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DestinationPath"))
   {

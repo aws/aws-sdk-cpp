@@ -37,10 +37,10 @@ ListUserProfilesResult::ListUserProfilesResult(const Aws::AmazonWebServiceResult
 
 ListUserProfilesResult& ListUserProfilesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("userProfiles"))
   {
-    Array<JsonValue> userProfilesJsonList = jsonValue.GetArray("userProfiles");
+    Array<JsonView> userProfilesJsonList = jsonValue.GetArray("userProfiles");
     for(unsigned userProfilesIndex = 0; userProfilesIndex < userProfilesJsonList.GetLength(); ++userProfilesIndex)
     {
       m_userProfiles.push_back(userProfilesJsonList[userProfilesIndex].AsObject());

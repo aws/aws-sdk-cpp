@@ -49,7 +49,7 @@ Job::Job() :
 {
 }
 
-Job::Job(const JsonValue& jsonValue) : 
+Job::Job(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_logUriHasBeenSet(false),
@@ -71,7 +71,7 @@ Job::Job(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Job& Job::operator =(const JsonValue& jsonValue)
+Job& Job::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -131,7 +131,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DefaultArguments"))
   {
-    Aws::Map<Aws::String, JsonValue> defaultArgumentsJsonMap = jsonValue.GetObject("DefaultArguments").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> defaultArgumentsJsonMap = jsonValue.GetObject("DefaultArguments").GetAllObjects();
     for(auto& defaultArgumentsItem : defaultArgumentsJsonMap)
     {
       m_defaultArguments[defaultArgumentsItem.first] = defaultArgumentsItem.second.AsString();

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MarketplaceEntitlementService
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     Entitlement();
-    Entitlement(const Aws::Utils::Json::JsonValue& jsonValue);
-    Entitlement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Entitlement(Aws::Utils::Json::JsonView jsonValue);
+    Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

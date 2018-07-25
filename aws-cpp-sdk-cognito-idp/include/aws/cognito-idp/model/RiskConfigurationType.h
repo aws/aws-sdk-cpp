@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     RiskConfigurationType();
-    RiskConfigurationType(const Aws::Utils::Json::JsonValue& jsonValue);
-    RiskConfigurationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RiskConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    RiskConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

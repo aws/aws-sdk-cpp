@@ -67,7 +67,7 @@ Aws::String CreateTapeWithBarcodeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateTapeWithBarcodeRequest::GetRequestSpecificHeaders() const

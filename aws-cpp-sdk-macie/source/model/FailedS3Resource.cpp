@@ -35,7 +35,7 @@ FailedS3Resource::FailedS3Resource() :
 {
 }
 
-FailedS3Resource::FailedS3Resource(const JsonValue& jsonValue) : 
+FailedS3Resource::FailedS3Resource(JsonView jsonValue) : 
     m_failedItemHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ FailedS3Resource::FailedS3Resource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FailedS3Resource& FailedS3Resource::operator =(const JsonValue& jsonValue)
+FailedS3Resource& FailedS3Resource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("failedItem"))
   {

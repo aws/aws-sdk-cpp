@@ -34,14 +34,14 @@ InventoryResultEntity::InventoryResultEntity() :
 {
 }
 
-InventoryResultEntity::InventoryResultEntity(const JsonValue& jsonValue) : 
+InventoryResultEntity::InventoryResultEntity(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InventoryResultEntity& InventoryResultEntity::operator =(const JsonValue& jsonValue)
+InventoryResultEntity& InventoryResultEntity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -52,7 +52,7 @@ InventoryResultEntity& InventoryResultEntity::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("Data"))
   {
-    Aws::Map<Aws::String, JsonValue> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
     for(auto& dataItem : dataJsonMap)
     {
       m_data[dataItem.first] = dataItem.second.AsObject();

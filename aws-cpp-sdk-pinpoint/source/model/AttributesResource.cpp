@@ -35,7 +35,7 @@ AttributesResource::AttributesResource() :
 {
 }
 
-AttributesResource::AttributesResource(const JsonValue& jsonValue) : 
+AttributesResource::AttributesResource(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_attributeTypeHasBeenSet(false),
     m_attributesHasBeenSet(false)
@@ -43,7 +43,7 @@ AttributesResource::AttributesResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttributesResource& AttributesResource::operator =(const JsonValue& jsonValue)
+AttributesResource& AttributesResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {
@@ -61,7 +61,7 @@ AttributesResource& AttributesResource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("Attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsString());

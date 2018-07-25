@@ -37,7 +37,7 @@ ResourceIdentifier::ResourceIdentifier() :
 {
 }
 
-ResourceIdentifier::ResourceIdentifier(const JsonValue& jsonValue) : 
+ResourceIdentifier::ResourceIdentifier(JsonView jsonValue) : 
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
@@ -47,7 +47,7 @@ ResourceIdentifier::ResourceIdentifier(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceIdentifier& ResourceIdentifier::operator =(const JsonValue& jsonValue)
+ResourceIdentifier& ResourceIdentifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resourceType"))
   {

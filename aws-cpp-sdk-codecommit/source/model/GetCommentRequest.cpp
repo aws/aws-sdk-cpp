@@ -37,7 +37,7 @@ Aws::String GetCommentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCommentRequest::GetRequestSpecificHeaders() const

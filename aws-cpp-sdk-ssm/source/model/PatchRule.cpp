@@ -39,7 +39,7 @@ PatchRule::PatchRule() :
 {
 }
 
-PatchRule::PatchRule(const JsonValue& jsonValue) : 
+PatchRule::PatchRule(JsonView jsonValue) : 
     m_patchFilterGroupHasBeenSet(false),
     m_complianceLevel(PatchComplianceLevel::NOT_SET),
     m_complianceLevelHasBeenSet(false),
@@ -51,7 +51,7 @@ PatchRule::PatchRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PatchRule& PatchRule::operator =(const JsonValue& jsonValue)
+PatchRule& PatchRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PatchFilterGroup"))
   {

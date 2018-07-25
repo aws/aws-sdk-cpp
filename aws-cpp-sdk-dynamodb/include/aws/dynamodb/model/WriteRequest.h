@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     WriteRequest();
-    WriteRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    WriteRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WriteRequest(Aws::Utils::Json::JsonView jsonValue);
+    WriteRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

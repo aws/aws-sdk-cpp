@@ -39,7 +39,7 @@ Aws::String UpdateSchemaRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateSchemaRequest::GetRequestSpecificHeaders() const

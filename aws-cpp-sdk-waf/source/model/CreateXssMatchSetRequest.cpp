@@ -44,7 +44,7 @@ Aws::String CreateXssMatchSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateXssMatchSetRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ FacetAttributeUpdate::FacetAttributeUpdate() :
 {
 }
 
-FacetAttributeUpdate::FacetAttributeUpdate(const JsonValue& jsonValue) : 
+FacetAttributeUpdate::FacetAttributeUpdate(JsonView jsonValue) : 
     m_attributeHasBeenSet(false),
     m_action(UpdateActionType::NOT_SET),
     m_actionHasBeenSet(false)
@@ -43,7 +43,7 @@ FacetAttributeUpdate::FacetAttributeUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FacetAttributeUpdate& FacetAttributeUpdate::operator =(const JsonValue& jsonValue)
+FacetAttributeUpdate& FacetAttributeUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Attribute"))
   {

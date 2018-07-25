@@ -33,13 +33,13 @@ EmergencyContact::EmergencyContact() :
 {
 }
 
-EmergencyContact::EmergencyContact(const JsonValue& jsonValue) : 
+EmergencyContact::EmergencyContact(JsonView jsonValue) : 
     m_emailAddressHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EmergencyContact& EmergencyContact::operator =(const JsonValue& jsonValue)
+EmergencyContact& EmergencyContact::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EmailAddress"))
   {

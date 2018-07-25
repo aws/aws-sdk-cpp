@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     SqlInjectionMatchSet();
-    SqlInjectionMatchSet(const Aws::Utils::Json::JsonValue& jsonValue);
-    SqlInjectionMatchSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SqlInjectionMatchSet(Aws::Utils::Json::JsonView jsonValue);
+    SqlInjectionMatchSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

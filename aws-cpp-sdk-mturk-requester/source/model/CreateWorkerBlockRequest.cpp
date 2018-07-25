@@ -44,7 +44,7 @@ Aws::String CreateWorkerBlockRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateWorkerBlockRequest::GetRequestSpecificHeaders() const

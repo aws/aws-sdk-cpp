@@ -37,10 +37,10 @@ DescribeEventConfigurationsResult::DescribeEventConfigurationsResult(const Aws::
 
 DescribeEventConfigurationsResult& DescribeEventConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eventConfigurations"))
   {
-    Aws::Map<Aws::String, JsonValue> eventConfigurationsJsonMap = jsonValue.GetObject("eventConfigurations").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> eventConfigurationsJsonMap = jsonValue.GetObject("eventConfigurations").GetAllObjects();
     for(auto& eventConfigurationsItem : eventConfigurationsJsonMap)
     {
       m_eventConfigurations[EventTypeMapper::GetEventTypeForName(eventConfigurationsItem.first)] = eventConfigurationsItem.second.AsObject();

@@ -37,7 +37,7 @@ GetCampaignActivitiesResult::GetCampaignActivitiesResult(const Aws::AmazonWebSer
 
 GetCampaignActivitiesResult& GetCampaignActivitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_activitiesResponse = jsonValue;
 
 

@@ -76,7 +76,7 @@ Aws::String UpdateGlobalTableSettingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateGlobalTableSettingsRequest::GetRequestSpecificHeaders() const

@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     SSESpecification();
-    SSESpecification(const Aws::Utils::Json::JsonValue& jsonValue);
-    SSESpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SSESpecification(Aws::Utils::Json::JsonView jsonValue);
+    SSESpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

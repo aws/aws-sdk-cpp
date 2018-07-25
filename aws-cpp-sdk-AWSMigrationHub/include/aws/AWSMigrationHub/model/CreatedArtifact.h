@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MigrationHub
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     CreatedArtifact();
-    CreatedArtifact(const Aws::Utils::Json::JsonValue& jsonValue);
-    CreatedArtifact& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CreatedArtifact(Aws::Utils::Json::JsonView jsonValue);
+    CreatedArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

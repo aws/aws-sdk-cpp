@@ -34,14 +34,14 @@ StaticKeySettings::StaticKeySettings() :
 {
 }
 
-StaticKeySettings::StaticKeySettings(const JsonValue& jsonValue) : 
+StaticKeySettings::StaticKeySettings(JsonView jsonValue) : 
     m_keyProviderServerHasBeenSet(false),
     m_staticKeyValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StaticKeySettings& StaticKeySettings::operator =(const JsonValue& jsonValue)
+StaticKeySettings& StaticKeySettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("keyProviderServer"))
   {

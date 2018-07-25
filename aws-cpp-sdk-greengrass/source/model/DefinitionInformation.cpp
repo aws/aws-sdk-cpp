@@ -39,7 +39,7 @@ DefinitionInformation::DefinitionInformation() :
 {
 }
 
-DefinitionInformation::DefinitionInformation(const JsonValue& jsonValue) : 
+DefinitionInformation::DefinitionInformation(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -51,7 +51,7 @@ DefinitionInformation::DefinitionInformation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DefinitionInformation& DefinitionInformation::operator =(const JsonValue& jsonValue)
+DefinitionInformation& DefinitionInformation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {

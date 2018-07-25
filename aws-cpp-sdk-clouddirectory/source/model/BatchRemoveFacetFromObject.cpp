@@ -34,14 +34,14 @@ BatchRemoveFacetFromObject::BatchRemoveFacetFromObject() :
 {
 }
 
-BatchRemoveFacetFromObject::BatchRemoveFacetFromObject(const JsonValue& jsonValue) : 
+BatchRemoveFacetFromObject::BatchRemoveFacetFromObject(JsonView jsonValue) : 
     m_schemaFacetHasBeenSet(false),
     m_objectReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchRemoveFacetFromObject& BatchRemoveFacetFromObject::operator =(const JsonValue& jsonValue)
+BatchRemoveFacetFromObject& BatchRemoveFacetFromObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaFacet"))
   {

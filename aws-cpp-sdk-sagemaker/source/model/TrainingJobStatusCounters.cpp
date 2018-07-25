@@ -42,7 +42,7 @@ TrainingJobStatusCounters::TrainingJobStatusCounters() :
 {
 }
 
-TrainingJobStatusCounters::TrainingJobStatusCounters(const JsonValue& jsonValue) : 
+TrainingJobStatusCounters::TrainingJobStatusCounters(JsonView jsonValue) : 
     m_completed(0),
     m_completedHasBeenSet(false),
     m_inProgress(0),
@@ -57,7 +57,7 @@ TrainingJobStatusCounters::TrainingJobStatusCounters(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-TrainingJobStatusCounters& TrainingJobStatusCounters::operator =(const JsonValue& jsonValue)
+TrainingJobStatusCounters& TrainingJobStatusCounters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Completed"))
   {

@@ -36,7 +36,7 @@ PipelineSummary::PipelineSummary() :
 {
 }
 
-PipelineSummary::PipelineSummary(const JsonValue& jsonValue) : 
+PipelineSummary::PipelineSummary(JsonView jsonValue) : 
     m_pipelineNameHasBeenSet(false),
     m_reprocessingSummariesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -45,7 +45,7 @@ PipelineSummary::PipelineSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineSummary& PipelineSummary::operator =(const JsonValue& jsonValue)
+PipelineSummary& PipelineSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pipelineName"))
   {
@@ -56,7 +56,7 @@ PipelineSummary& PipelineSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("reprocessingSummaries"))
   {
-    Array<JsonValue> reprocessingSummariesJsonList = jsonValue.GetArray("reprocessingSummaries");
+    Array<JsonView> reprocessingSummariesJsonList = jsonValue.GetArray("reprocessingSummaries");
     for(unsigned reprocessingSummariesIndex = 0; reprocessingSummariesIndex < reprocessingSummariesJsonList.GetLength(); ++reprocessingSummariesIndex)
     {
       m_reprocessingSummaries.push_back(reprocessingSummariesJsonList[reprocessingSummariesIndex].AsObject());

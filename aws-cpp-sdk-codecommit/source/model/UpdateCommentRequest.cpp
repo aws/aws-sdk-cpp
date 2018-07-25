@@ -44,7 +44,7 @@ Aws::String UpdateCommentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateCommentRequest::GetRequestSpecificHeaders() const

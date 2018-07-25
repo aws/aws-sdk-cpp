@@ -34,14 +34,14 @@ ThingIndexingConfiguration::ThingIndexingConfiguration() :
 {
 }
 
-ThingIndexingConfiguration::ThingIndexingConfiguration(const JsonValue& jsonValue) : 
+ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue) : 
     m_thingIndexingMode(ThingIndexingMode::NOT_SET),
     m_thingIndexingModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(const JsonValue& jsonValue)
+ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("thingIndexingMode"))
   {

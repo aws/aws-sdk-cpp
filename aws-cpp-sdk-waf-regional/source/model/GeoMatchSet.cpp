@@ -35,7 +35,7 @@ GeoMatchSet::GeoMatchSet() :
 {
 }
 
-GeoMatchSet::GeoMatchSet(const JsonValue& jsonValue) : 
+GeoMatchSet::GeoMatchSet(JsonView jsonValue) : 
     m_geoMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_geoMatchConstraintsHasBeenSet(false)
@@ -43,7 +43,7 @@ GeoMatchSet::GeoMatchSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GeoMatchSet& GeoMatchSet::operator =(const JsonValue& jsonValue)
+GeoMatchSet& GeoMatchSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GeoMatchSetId"))
   {
@@ -61,7 +61,7 @@ GeoMatchSet& GeoMatchSet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("GeoMatchConstraints"))
   {
-    Array<JsonValue> geoMatchConstraintsJsonList = jsonValue.GetArray("GeoMatchConstraints");
+    Array<JsonView> geoMatchConstraintsJsonList = jsonValue.GetArray("GeoMatchConstraints");
     for(unsigned geoMatchConstraintsIndex = 0; geoMatchConstraintsIndex < geoMatchConstraintsJsonList.GetLength(); ++geoMatchConstraintsIndex)
     {
       m_geoMatchConstraints.push_back(geoMatchConstraintsJsonList[geoMatchConstraintsIndex].AsObject());

@@ -37,7 +37,7 @@ CreateBrokerResult::CreateBrokerResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CreateBrokerResult& CreateBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("brokerArn"))
   {
     m_brokerArn = jsonValue.GetString("brokerArn");

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     ConstraintSummary();
-    ConstraintSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConstraintSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConstraintSummary(Aws::Utils::Json::JsonView jsonValue);
+    ConstraintSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

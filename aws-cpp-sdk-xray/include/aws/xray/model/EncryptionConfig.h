@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace XRay
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     EncryptionConfig();
-    EncryptionConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    EncryptionConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
+    EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -36,7 +36,7 @@ IdentityDescription::IdentityDescription() :
 {
 }
 
-IdentityDescription::IdentityDescription(const JsonValue& jsonValue) : 
+IdentityDescription::IdentityDescription(JsonView jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -45,7 +45,7 @@ IdentityDescription::IdentityDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IdentityDescription& IdentityDescription::operator =(const JsonValue& jsonValue)
+IdentityDescription& IdentityDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IdentityId"))
   {
@@ -56,7 +56,7 @@ IdentityDescription& IdentityDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Logins"))
   {
-    Array<JsonValue> loginsJsonList = jsonValue.GetArray("Logins");
+    Array<JsonView> loginsJsonList = jsonValue.GetArray("Logins");
     for(unsigned loginsIndex = 0; loginsIndex < loginsJsonList.GetLength(); ++loginsIndex)
     {
       m_logins.push_back(loginsJsonList[loginsIndex].AsString());

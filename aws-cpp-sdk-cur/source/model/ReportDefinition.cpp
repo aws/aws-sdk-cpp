@@ -45,7 +45,7 @@ ReportDefinition::ReportDefinition() :
 {
 }
 
-ReportDefinition::ReportDefinition(const JsonValue& jsonValue) : 
+ReportDefinition::ReportDefinition(JsonView jsonValue) : 
     m_reportNameHasBeenSet(false),
     m_timeUnit(TimeUnit::NOT_SET),
     m_timeUnitHasBeenSet(false),
@@ -63,7 +63,7 @@ ReportDefinition::ReportDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReportDefinition& ReportDefinition::operator =(const JsonValue& jsonValue)
+ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReportName"))
   {
@@ -95,7 +95,7 @@ ReportDefinition& ReportDefinition::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AdditionalSchemaElements"))
   {
-    Array<JsonValue> additionalSchemaElementsJsonList = jsonValue.GetArray("AdditionalSchemaElements");
+    Array<JsonView> additionalSchemaElementsJsonList = jsonValue.GetArray("AdditionalSchemaElements");
     for(unsigned additionalSchemaElementsIndex = 0; additionalSchemaElementsIndex < additionalSchemaElementsJsonList.GetLength(); ++additionalSchemaElementsIndex)
     {
       m_additionalSchemaElements.push_back(SchemaElementMapper::GetSchemaElementForName(additionalSchemaElementsJsonList[additionalSchemaElementsIndex].AsString()));
@@ -126,7 +126,7 @@ ReportDefinition& ReportDefinition::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AdditionalArtifacts"))
   {
-    Array<JsonValue> additionalArtifactsJsonList = jsonValue.GetArray("AdditionalArtifacts");
+    Array<JsonView> additionalArtifactsJsonList = jsonValue.GetArray("AdditionalArtifacts");
     for(unsigned additionalArtifactsIndex = 0; additionalArtifactsIndex < additionalArtifactsJsonList.GetLength(); ++additionalArtifactsIndex)
     {
       m_additionalArtifacts.push_back(AdditionalArtifactMapper::GetAdditionalArtifactForName(additionalArtifactsJsonList[additionalArtifactsIndex].AsString()));

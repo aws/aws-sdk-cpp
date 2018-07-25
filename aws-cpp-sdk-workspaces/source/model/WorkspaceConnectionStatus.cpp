@@ -37,7 +37,7 @@ WorkspaceConnectionStatus::WorkspaceConnectionStatus() :
 {
 }
 
-WorkspaceConnectionStatus::WorkspaceConnectionStatus(const JsonValue& jsonValue) : 
+WorkspaceConnectionStatus::WorkspaceConnectionStatus(JsonView jsonValue) : 
     m_workspaceIdHasBeenSet(false),
     m_connectionState(ConnectionState::NOT_SET),
     m_connectionStateHasBeenSet(false),
@@ -47,7 +47,7 @@ WorkspaceConnectionStatus::WorkspaceConnectionStatus(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-WorkspaceConnectionStatus& WorkspaceConnectionStatus::operator =(const JsonValue& jsonValue)
+WorkspaceConnectionStatus& WorkspaceConnectionStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkspaceId"))
   {

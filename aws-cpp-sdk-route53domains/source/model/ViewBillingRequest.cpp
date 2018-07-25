@@ -57,7 +57,7 @@ Aws::String ViewBillingRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ViewBillingRequest::GetRequestSpecificHeaders() const

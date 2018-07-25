@@ -37,10 +37,10 @@ DescribeProvisioningParametersResult::DescribeProvisioningParametersResult(const
 
 DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisioningArtifactParameters"))
   {
-    Array<JsonValue> provisioningArtifactParametersJsonList = jsonValue.GetArray("ProvisioningArtifactParameters");
+    Array<JsonView> provisioningArtifactParametersJsonList = jsonValue.GetArray("ProvisioningArtifactParameters");
     for(unsigned provisioningArtifactParametersIndex = 0; provisioningArtifactParametersIndex < provisioningArtifactParametersJsonList.GetLength(); ++provisioningArtifactParametersIndex)
     {
       m_provisioningArtifactParameters.push_back(provisioningArtifactParametersJsonList[provisioningArtifactParametersIndex].AsObject());
@@ -49,7 +49,7 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   if(jsonValue.ValueExists("ConstraintSummaries"))
   {
-    Array<JsonValue> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
+    Array<JsonView> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
     for(unsigned constraintSummariesIndex = 0; constraintSummariesIndex < constraintSummariesJsonList.GetLength(); ++constraintSummariesIndex)
     {
       m_constraintSummaries.push_back(constraintSummariesJsonList[constraintSummariesIndex].AsObject());
@@ -58,7 +58,7 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   if(jsonValue.ValueExists("UsageInstructions"))
   {
-    Array<JsonValue> usageInstructionsJsonList = jsonValue.GetArray("UsageInstructions");
+    Array<JsonView> usageInstructionsJsonList = jsonValue.GetArray("UsageInstructions");
     for(unsigned usageInstructionsIndex = 0; usageInstructionsIndex < usageInstructionsJsonList.GetLength(); ++usageInstructionsIndex)
     {
       m_usageInstructions.push_back(usageInstructionsJsonList[usageInstructionsIndex].AsObject());
@@ -67,7 +67,7 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   if(jsonValue.ValueExists("TagOptions"))
   {
-    Array<JsonValue> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
+    Array<JsonView> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
     for(unsigned tagOptionsIndex = 0; tagOptionsIndex < tagOptionsJsonList.GetLength(); ++tagOptionsIndex)
     {
       m_tagOptions.push_back(tagOptionsJsonList[tagOptionsIndex].AsObject());

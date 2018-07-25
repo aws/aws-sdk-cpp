@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoTAnalytics
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Datastore();
-    Datastore(const Aws::Utils::Json::JsonValue& jsonValue);
-    Datastore& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Datastore(Aws::Utils::Json::JsonView jsonValue);
+    Datastore& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

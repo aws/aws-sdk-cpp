@@ -37,10 +37,10 @@ DescribeMatchmakingConfigurationsResult::DescribeMatchmakingConfigurationsResult
 
 DescribeMatchmakingConfigurationsResult& DescribeMatchmakingConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());

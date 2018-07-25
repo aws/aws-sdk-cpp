@@ -80,7 +80,7 @@ Aws::String UpdateIdentityProviderRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateIdentityProviderRequest::GetRequestSpecificHeaders() const

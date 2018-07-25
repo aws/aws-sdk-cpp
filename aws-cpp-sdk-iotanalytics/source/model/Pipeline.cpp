@@ -38,7 +38,7 @@ Pipeline::Pipeline() :
 {
 }
 
-Pipeline::Pipeline(const JsonValue& jsonValue) : 
+Pipeline::Pipeline(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_activitiesHasBeenSet(false),
@@ -49,7 +49,7 @@ Pipeline::Pipeline(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Pipeline& Pipeline::operator =(const JsonValue& jsonValue)
+Pipeline& Pipeline::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -67,7 +67,7 @@ Pipeline& Pipeline::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("activities"))
   {
-    Array<JsonValue> activitiesJsonList = jsonValue.GetArray("activities");
+    Array<JsonView> activitiesJsonList = jsonValue.GetArray("activities");
     for(unsigned activitiesIndex = 0; activitiesIndex < activitiesJsonList.GetLength(); ++activitiesIndex)
     {
       m_activities.push_back(activitiesJsonList[activitiesIndex].AsObject());
@@ -77,7 +77,7 @@ Pipeline& Pipeline::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("reprocessingSummaries"))
   {
-    Array<JsonValue> reprocessingSummariesJsonList = jsonValue.GetArray("reprocessingSummaries");
+    Array<JsonView> reprocessingSummariesJsonList = jsonValue.GetArray("reprocessingSummaries");
     for(unsigned reprocessingSummariesIndex = 0; reprocessingSummariesIndex < reprocessingSummariesJsonList.GetLength(); ++reprocessingSummariesIndex)
     {
       m_reprocessingSummaries.push_back(reprocessingSummariesJsonList[reprocessingSummariesIndex].AsObject());

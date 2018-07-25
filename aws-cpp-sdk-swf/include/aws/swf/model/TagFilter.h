@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TagFilter();
-    TagFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    TagFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TagFilter(Aws::Utils::Json::JsonView jsonValue);
+    TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

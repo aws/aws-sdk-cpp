@@ -51,7 +51,7 @@ Aws::String CreateProjectRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

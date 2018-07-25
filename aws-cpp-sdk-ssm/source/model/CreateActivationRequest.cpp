@@ -65,7 +65,7 @@ Aws::String CreateActivationRequest::SerializePayload() const
    payload.WithDouble("ExpirationDate", m_expirationDate.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateActivationRequest::GetRequestSpecificHeaders() const

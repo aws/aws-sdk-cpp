@@ -35,7 +35,7 @@ LogPublishingOption::LogPublishingOption() :
 {
 }
 
-LogPublishingOption::LogPublishingOption(const JsonValue& jsonValue) : 
+LogPublishingOption::LogPublishingOption(JsonView jsonValue) : 
     m_cloudWatchLogsLogGroupArnHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false)
@@ -43,7 +43,7 @@ LogPublishingOption::LogPublishingOption(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LogPublishingOption& LogPublishingOption::operator =(const JsonValue& jsonValue)
+LogPublishingOption& LogPublishingOption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CloudWatchLogsLogGroupArn"))
   {

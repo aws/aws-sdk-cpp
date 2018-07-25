@@ -63,7 +63,7 @@ Aws::String CreateHyperParameterTuningJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateHyperParameterTuningJobRequest::GetRequestSpecificHeaders() const

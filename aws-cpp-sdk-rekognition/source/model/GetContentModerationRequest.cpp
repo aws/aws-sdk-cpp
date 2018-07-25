@@ -59,7 +59,7 @@ Aws::String GetContentModerationRequest::SerializePayload() const
    payload.WithString("SortBy", ContentModerationSortByMapper::GetNameForContentModerationSortBy(m_sortBy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetContentModerationRequest::GetRequestSpecificHeaders() const

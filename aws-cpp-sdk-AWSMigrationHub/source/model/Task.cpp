@@ -37,7 +37,7 @@ Task::Task() :
 {
 }
 
-Task::Task(const JsonValue& jsonValue) : 
+Task::Task(JsonView jsonValue) : 
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusDetailHasBeenSet(false),
@@ -47,7 +47,7 @@ Task::Task(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Task& Task::operator =(const JsonValue& jsonValue)
+Task& Task::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Status"))
   {

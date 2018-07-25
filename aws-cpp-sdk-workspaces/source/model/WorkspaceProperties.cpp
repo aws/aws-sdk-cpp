@@ -42,7 +42,7 @@ WorkspaceProperties::WorkspaceProperties() :
 {
 }
 
-WorkspaceProperties::WorkspaceProperties(const JsonValue& jsonValue) : 
+WorkspaceProperties::WorkspaceProperties(JsonView jsonValue) : 
     m_runningMode(RunningMode::NOT_SET),
     m_runningModeHasBeenSet(false),
     m_runningModeAutoStopTimeoutInMinutes(0),
@@ -57,7 +57,7 @@ WorkspaceProperties::WorkspaceProperties(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WorkspaceProperties& WorkspaceProperties::operator =(const JsonValue& jsonValue)
+WorkspaceProperties& WorkspaceProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RunningMode"))
   {

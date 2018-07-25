@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     CreateAssociationBatchRequestEntry();
-    CreateAssociationBatchRequestEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    CreateAssociationBatchRequestEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CreateAssociationBatchRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    CreateAssociationBatchRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

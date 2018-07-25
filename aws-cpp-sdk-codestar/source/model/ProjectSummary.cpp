@@ -34,14 +34,14 @@ ProjectSummary::ProjectSummary() :
 {
 }
 
-ProjectSummary::ProjectSummary(const JsonValue& jsonValue) : 
+ProjectSummary::ProjectSummary(JsonView jsonValue) : 
     m_projectIdHasBeenSet(false),
     m_projectArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ProjectSummary& ProjectSummary::operator =(const JsonValue& jsonValue)
+ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("projectId"))
   {

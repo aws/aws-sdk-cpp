@@ -36,7 +36,7 @@ SuggestModel::SuggestModel() :
 {
 }
 
-SuggestModel::SuggestModel(const JsonValue& jsonValue) : 
+SuggestModel::SuggestModel(JsonView jsonValue) : 
     m_queryHasBeenSet(false),
     m_found(0),
     m_foundHasBeenSet(false),
@@ -45,7 +45,7 @@ SuggestModel::SuggestModel(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SuggestModel& SuggestModel::operator =(const JsonValue& jsonValue)
+SuggestModel& SuggestModel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("query"))
   {
@@ -63,7 +63,7 @@ SuggestModel& SuggestModel::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("suggestions"))
   {
-    Array<JsonValue> suggestionsJsonList = jsonValue.GetArray("suggestions");
+    Array<JsonView> suggestionsJsonList = jsonValue.GetArray("suggestions");
     for(unsigned suggestionsIndex = 0; suggestionsIndex < suggestionsJsonList.GetLength(); ++suggestionsIndex)
     {
       m_suggestions.push_back(suggestionsJsonList[suggestionsIndex].AsObject());

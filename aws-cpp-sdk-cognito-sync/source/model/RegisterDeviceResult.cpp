@@ -37,7 +37,7 @@ RegisterDeviceResult::RegisterDeviceResult(const Aws::AmazonWebServiceResult<Jso
 
 RegisterDeviceResult& RegisterDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");

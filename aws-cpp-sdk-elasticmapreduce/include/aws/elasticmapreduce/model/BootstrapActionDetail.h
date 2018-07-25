@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     BootstrapActionDetail();
-    BootstrapActionDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    BootstrapActionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BootstrapActionDetail(Aws::Utils::Json::JsonView jsonValue);
+    BootstrapActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -48,7 +48,7 @@ Aws::String CreateCustomMetadataRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateCustomMetadataRequest::GetRequestSpecificHeaders() const

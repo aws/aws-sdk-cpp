@@ -51,7 +51,7 @@ Aws::String RevokeCertificateRequest::SerializePayload() const
    payload.WithString("RevocationReason", RevocationReasonMapper::GetNameForRevocationReason(m_revocationReason));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RevokeCertificateRequest::GetRequestSpecificHeaders() const

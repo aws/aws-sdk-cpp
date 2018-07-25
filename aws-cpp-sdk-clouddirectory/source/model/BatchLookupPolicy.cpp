@@ -36,7 +36,7 @@ BatchLookupPolicy::BatchLookupPolicy() :
 {
 }
 
-BatchLookupPolicy::BatchLookupPolicy(const JsonValue& jsonValue) : 
+BatchLookupPolicy::BatchLookupPolicy(JsonView jsonValue) : 
     m_objectReferenceHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -45,7 +45,7 @@ BatchLookupPolicy::BatchLookupPolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchLookupPolicy& BatchLookupPolicy::operator =(const JsonValue& jsonValue)
+BatchLookupPolicy& BatchLookupPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectReference"))
   {

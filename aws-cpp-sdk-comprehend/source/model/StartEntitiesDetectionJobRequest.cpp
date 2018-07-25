@@ -73,7 +73,7 @@ Aws::String StartEntitiesDetectionJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartEntitiesDetectionJobRequest::GetRequestSpecificHeaders() const

@@ -44,7 +44,7 @@ NewPrivateVirtualInterface::NewPrivateVirtualInterface() :
 {
 }
 
-NewPrivateVirtualInterface::NewPrivateVirtualInterface(const JsonValue& jsonValue) : 
+NewPrivateVirtualInterface::NewPrivateVirtualInterface(JsonView jsonValue) : 
     m_virtualInterfaceNameHasBeenSet(false),
     m_vlan(0),
     m_vlanHasBeenSet(false),
@@ -61,7 +61,7 @@ NewPrivateVirtualInterface::NewPrivateVirtualInterface(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-NewPrivateVirtualInterface& NewPrivateVirtualInterface::operator =(const JsonValue& jsonValue)
+NewPrivateVirtualInterface& NewPrivateVirtualInterface::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("virtualInterfaceName"))
   {

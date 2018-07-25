@@ -37,7 +37,7 @@ CreateCertificateAuthorityResult::CreateCertificateAuthorityResult(const Aws::Am
 
 CreateCertificateAuthorityResult& CreateCertificateAuthorityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CertificateAuthorityArn"))
   {
     m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");

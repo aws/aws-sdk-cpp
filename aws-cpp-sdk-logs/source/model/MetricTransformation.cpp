@@ -37,7 +37,7 @@ MetricTransformation::MetricTransformation() :
 {
 }
 
-MetricTransformation::MetricTransformation(const JsonValue& jsonValue) : 
+MetricTransformation::MetricTransformation(JsonView jsonValue) : 
     m_metricNameHasBeenSet(false),
     m_metricNamespaceHasBeenSet(false),
     m_metricValueHasBeenSet(false),
@@ -47,7 +47,7 @@ MetricTransformation::MetricTransformation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MetricTransformation& MetricTransformation::operator =(const JsonValue& jsonValue)
+MetricTransformation& MetricTransformation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("metricName"))
   {

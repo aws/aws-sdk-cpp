@@ -34,14 +34,14 @@ UpdateJsonClassifierRequest::UpdateJsonClassifierRequest() :
 {
 }
 
-UpdateJsonClassifierRequest::UpdateJsonClassifierRequest(const JsonValue& jsonValue) : 
+UpdateJsonClassifierRequest::UpdateJsonClassifierRequest(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_jsonPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UpdateJsonClassifierRequest& UpdateJsonClassifierRequest::operator =(const JsonValue& jsonValue)
+UpdateJsonClassifierRequest& UpdateJsonClassifierRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

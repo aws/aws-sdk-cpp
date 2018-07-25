@@ -36,7 +36,7 @@ PointInTimeRecoveryDescription::PointInTimeRecoveryDescription() :
 {
 }
 
-PointInTimeRecoveryDescription::PointInTimeRecoveryDescription(const JsonValue& jsonValue) : 
+PointInTimeRecoveryDescription::PointInTimeRecoveryDescription(JsonView jsonValue) : 
     m_pointInTimeRecoveryStatus(PointInTimeRecoveryStatus::NOT_SET),
     m_pointInTimeRecoveryStatusHasBeenSet(false),
     m_earliestRestorableDateTimeHasBeenSet(false),
@@ -45,7 +45,7 @@ PointInTimeRecoveryDescription::PointInTimeRecoveryDescription(const JsonValue& 
   *this = jsonValue;
 }
 
-PointInTimeRecoveryDescription& PointInTimeRecoveryDescription::operator =(const JsonValue& jsonValue)
+PointInTimeRecoveryDescription& PointInTimeRecoveryDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PointInTimeRecoveryStatus"))
   {

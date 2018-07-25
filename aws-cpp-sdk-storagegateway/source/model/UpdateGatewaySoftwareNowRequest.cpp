@@ -37,7 +37,7 @@ Aws::String UpdateGatewaySoftwareNowRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateGatewaySoftwareNowRequest::GetRequestSpecificHeaders() const

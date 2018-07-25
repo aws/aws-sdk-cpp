@@ -33,13 +33,13 @@ CloudWatchDashboard::CloudWatchDashboard() :
 {
 }
 
-CloudWatchDashboard::CloudWatchDashboard(const JsonValue& jsonValue) : 
+CloudWatchDashboard::CloudWatchDashboard(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CloudWatchDashboard& CloudWatchDashboard::operator =(const JsonValue& jsonValue)
+CloudWatchDashboard& CloudWatchDashboard::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

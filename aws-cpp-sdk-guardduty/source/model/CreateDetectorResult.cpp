@@ -37,7 +37,7 @@ CreateDetectorResult::CreateDetectorResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateDetectorResult& CreateDetectorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");

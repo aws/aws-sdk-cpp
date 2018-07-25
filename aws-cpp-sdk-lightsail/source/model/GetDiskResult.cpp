@@ -37,7 +37,7 @@ GetDiskResult::GetDiskResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 GetDiskResult& GetDiskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("disk"))
   {
     m_disk = jsonValue.GetObject("disk");

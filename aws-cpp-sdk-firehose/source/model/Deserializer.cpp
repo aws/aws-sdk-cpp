@@ -34,14 +34,14 @@ Deserializer::Deserializer() :
 {
 }
 
-Deserializer::Deserializer(const JsonValue& jsonValue) : 
+Deserializer::Deserializer(JsonView jsonValue) : 
     m_openXJsonSerDeHasBeenSet(false),
     m_hiveJsonSerDeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Deserializer& Deserializer::operator =(const JsonValue& jsonValue)
+Deserializer& Deserializer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OpenXJsonSerDe"))
   {

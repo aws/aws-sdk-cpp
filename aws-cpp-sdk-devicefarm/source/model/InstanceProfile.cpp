@@ -40,7 +40,7 @@ InstanceProfile::InstanceProfile() :
 {
 }
 
-InstanceProfile::InstanceProfile(const JsonValue& jsonValue) : 
+InstanceProfile::InstanceProfile(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_packageCleanup(false),
     m_packageCleanupHasBeenSet(false),
@@ -53,7 +53,7 @@ InstanceProfile::InstanceProfile(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceProfile& InstanceProfile::operator =(const JsonValue& jsonValue)
+InstanceProfile& InstanceProfile::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -71,7 +71,7 @@ InstanceProfile& InstanceProfile::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("excludeAppPackagesFromCleanup"))
   {
-    Array<JsonValue> excludeAppPackagesFromCleanupJsonList = jsonValue.GetArray("excludeAppPackagesFromCleanup");
+    Array<JsonView> excludeAppPackagesFromCleanupJsonList = jsonValue.GetArray("excludeAppPackagesFromCleanup");
     for(unsigned excludeAppPackagesFromCleanupIndex = 0; excludeAppPackagesFromCleanupIndex < excludeAppPackagesFromCleanupJsonList.GetLength(); ++excludeAppPackagesFromCleanupIndex)
     {
       m_excludeAppPackagesFromCleanup.push_back(excludeAppPackagesFromCleanupJsonList[excludeAppPackagesFromCleanupIndex].AsString());

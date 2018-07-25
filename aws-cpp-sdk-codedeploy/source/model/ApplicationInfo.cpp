@@ -40,7 +40,7 @@ ApplicationInfo::ApplicationInfo() :
 {
 }
 
-ApplicationInfo::ApplicationInfo(const JsonValue& jsonValue) : 
+ApplicationInfo::ApplicationInfo(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -53,7 +53,7 @@ ApplicationInfo::ApplicationInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApplicationInfo& ApplicationInfo::operator =(const JsonValue& jsonValue)
+ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("applicationId"))
   {

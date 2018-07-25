@@ -33,13 +33,13 @@ DatasetTrigger::DatasetTrigger() :
 {
 }
 
-DatasetTrigger::DatasetTrigger(const JsonValue& jsonValue) : 
+DatasetTrigger::DatasetTrigger(JsonView jsonValue) : 
     m_scheduleHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DatasetTrigger& DatasetTrigger::operator =(const JsonValue& jsonValue)
+DatasetTrigger& DatasetTrigger::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("schedule"))
   {

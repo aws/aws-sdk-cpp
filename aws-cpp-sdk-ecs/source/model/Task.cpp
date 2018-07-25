@@ -63,7 +63,7 @@ Task::Task() :
 {
 }
 
-Task::Task(const JsonValue& jsonValue) : 
+Task::Task(JsonView jsonValue) : 
     m_taskArnHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_taskDefinitionArnHasBeenSet(false),
@@ -99,7 +99,7 @@ Task::Task(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Task& Task::operator =(const JsonValue& jsonValue)
+Task& Task::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("taskArn"))
   {
@@ -166,7 +166,7 @@ Task& Task::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("containers"))
   {
-    Array<JsonValue> containersJsonList = jsonValue.GetArray("containers");
+    Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
     for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
     {
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
@@ -281,7 +281,7 @@ Task& Task::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attachments"))
   {
-    Array<JsonValue> attachmentsJsonList = jsonValue.GetArray("attachments");
+    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
     for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
     {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());

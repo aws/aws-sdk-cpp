@@ -38,10 +38,10 @@ SampleChannelDataResult::SampleChannelDataResult(const Aws::AmazonWebServiceResu
 
 SampleChannelDataResult& SampleChannelDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("payloads"))
   {
-    Array<JsonValue> payloadsJsonList = jsonValue.GetArray("payloads");
+    Array<JsonView> payloadsJsonList = jsonValue.GetArray("payloads");
     for(unsigned payloadsIndex = 0; payloadsIndex < payloadsJsonList.GetLength(); ++payloadsIndex)
     {
       m_payloads.push_back(HashingUtils::Base64Decode(payloadsJsonList[payloadsIndex].AsString()));

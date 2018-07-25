@@ -50,7 +50,7 @@ Stage::Stage() :
 {
 }
 
-Stage::Stage(const JsonValue& jsonValue) : 
+Stage::Stage(JsonView jsonValue) : 
     m_deploymentIdHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
     m_stageNameHasBeenSet(false),
@@ -73,7 +73,7 @@ Stage::Stage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Stage& Stage::operator =(const JsonValue& jsonValue)
+Stage& Stage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deploymentId"))
   {
@@ -126,7 +126,7 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("methodSettings"))
   {
-    Aws::Map<Aws::String, JsonValue> methodSettingsJsonMap = jsonValue.GetObject("methodSettings").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> methodSettingsJsonMap = jsonValue.GetObject("methodSettings").GetAllObjects();
     for(auto& methodSettingsItem : methodSettingsJsonMap)
     {
       m_methodSettings[methodSettingsItem.first] = methodSettingsItem.second.AsObject();
@@ -136,7 +136,7 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("variables"))
   {
-    Aws::Map<Aws::String, JsonValue> variablesJsonMap = jsonValue.GetObject("variables").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("variables").GetAllObjects();
     for(auto& variablesItem : variablesJsonMap)
     {
       m_variables[variablesItem.first] = variablesItem.second.AsString();
@@ -167,7 +167,7 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();

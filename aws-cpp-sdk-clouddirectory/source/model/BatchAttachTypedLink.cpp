@@ -36,7 +36,7 @@ BatchAttachTypedLink::BatchAttachTypedLink() :
 {
 }
 
-BatchAttachTypedLink::BatchAttachTypedLink(const JsonValue& jsonValue) : 
+BatchAttachTypedLink::BatchAttachTypedLink(JsonView jsonValue) : 
     m_sourceObjectReferenceHasBeenSet(false),
     m_targetObjectReferenceHasBeenSet(false),
     m_typedLinkFacetHasBeenSet(false),
@@ -45,7 +45,7 @@ BatchAttachTypedLink::BatchAttachTypedLink(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchAttachTypedLink& BatchAttachTypedLink::operator =(const JsonValue& jsonValue)
+BatchAttachTypedLink& BatchAttachTypedLink::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SourceObjectReference"))
   {
@@ -70,7 +70,7 @@ BatchAttachTypedLink& BatchAttachTypedLink::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("Attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());

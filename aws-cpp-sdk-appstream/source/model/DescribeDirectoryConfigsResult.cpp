@@ -37,10 +37,10 @@ DescribeDirectoryConfigsResult::DescribeDirectoryConfigsResult(const Aws::Amazon
 
 DescribeDirectoryConfigsResult& DescribeDirectoryConfigsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DirectoryConfigs"))
   {
-    Array<JsonValue> directoryConfigsJsonList = jsonValue.GetArray("DirectoryConfigs");
+    Array<JsonView> directoryConfigsJsonList = jsonValue.GetArray("DirectoryConfigs");
     for(unsigned directoryConfigsIndex = 0; directoryConfigsIndex < directoryConfigsJsonList.GetLength(); ++directoryConfigsIndex)
     {
       m_directoryConfigs.push_back(directoryConfigsJsonList[directoryConfigsIndex].AsObject());

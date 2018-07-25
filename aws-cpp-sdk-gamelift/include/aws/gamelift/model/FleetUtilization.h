@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -55,8 +56,8 @@ namespace Model
   {
   public:
     FleetUtilization();
-    FleetUtilization(const Aws::Utils::Json::JsonValue& jsonValue);
-    FleetUtilization& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FleetUtilization(Aws::Utils::Json::JsonView jsonValue);
+    FleetUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

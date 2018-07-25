@@ -37,7 +37,7 @@ FailureInfo::FailureInfo() :
 {
 }
 
-FailureInfo::FailureInfo(const JsonValue& jsonValue) : 
+FailureInfo::FailureInfo(JsonView jsonValue) : 
     m_statusCode(0),
     m_statusCodeHasBeenSet(false),
     m_errorCode(ErrorCode::NOT_SET),
@@ -47,7 +47,7 @@ FailureInfo::FailureInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FailureInfo& FailureInfo::operator =(const JsonValue& jsonValue)
+FailureInfo& FailureInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StatusCode"))
   {

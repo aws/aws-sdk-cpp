@@ -37,7 +37,7 @@ PipelineDescription::PipelineDescription() :
 {
 }
 
-PipelineDescription::PipelineDescription(const JsonValue& jsonValue) : 
+PipelineDescription::PipelineDescription(JsonView jsonValue) : 
     m_pipelineIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_fieldsHasBeenSet(false),
@@ -47,7 +47,7 @@ PipelineDescription::PipelineDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineDescription& PipelineDescription::operator =(const JsonValue& jsonValue)
+PipelineDescription& PipelineDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pipelineId"))
   {
@@ -65,7 +65,7 @@ PipelineDescription& PipelineDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("fields"))
   {
-    Array<JsonValue> fieldsJsonList = jsonValue.GetArray("fields");
+    Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
     for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
@@ -82,7 +82,7 @@ PipelineDescription& PipelineDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

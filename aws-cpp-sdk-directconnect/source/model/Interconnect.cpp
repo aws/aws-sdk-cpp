@@ -42,7 +42,7 @@ Interconnect::Interconnect() :
 {
 }
 
-Interconnect::Interconnect(const JsonValue& jsonValue) : 
+Interconnect::Interconnect(JsonView jsonValue) : 
     m_interconnectIdHasBeenSet(false),
     m_interconnectNameHasBeenSet(false),
     m_interconnectState(InterconnectState::NOT_SET),
@@ -57,7 +57,7 @@ Interconnect::Interconnect(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Interconnect& Interconnect::operator =(const JsonValue& jsonValue)
+Interconnect& Interconnect::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("interconnectId"))
   {

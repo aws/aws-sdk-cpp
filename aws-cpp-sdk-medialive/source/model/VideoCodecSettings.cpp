@@ -33,13 +33,13 @@ VideoCodecSettings::VideoCodecSettings() :
 {
 }
 
-VideoCodecSettings::VideoCodecSettings(const JsonValue& jsonValue) : 
+VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) : 
     m_h264SettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VideoCodecSettings& VideoCodecSettings::operator =(const JsonValue& jsonValue)
+VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("h264Settings"))
   {

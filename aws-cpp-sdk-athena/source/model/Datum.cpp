@@ -33,13 +33,13 @@ Datum::Datum() :
 {
 }
 
-Datum::Datum(const JsonValue& jsonValue) : 
+Datum::Datum(JsonView jsonValue) : 
     m_varCharValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Datum& Datum::operator =(const JsonValue& jsonValue)
+Datum& Datum::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VarCharValue"))
   {

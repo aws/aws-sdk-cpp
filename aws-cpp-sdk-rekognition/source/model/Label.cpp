@@ -35,7 +35,7 @@ Label::Label() :
 {
 }
 
-Label::Label(const JsonValue& jsonValue) : 
+Label::Label(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_confidence(0.0),
     m_confidenceHasBeenSet(false)
@@ -43,7 +43,7 @@ Label::Label(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Label& Label::operator =(const JsonValue& jsonValue)
+Label& Label::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

@@ -37,7 +37,7 @@ ListOfferingsResult::ListOfferingsResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListOfferingsResult& ListOfferingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
@@ -46,7 +46,7 @@ ListOfferingsResult& ListOfferingsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("offerings"))
   {
-    Array<JsonValue> offeringsJsonList = jsonValue.GetArray("offerings");
+    Array<JsonView> offeringsJsonList = jsonValue.GetArray("offerings");
     for(unsigned offeringsIndex = 0; offeringsIndex < offeringsJsonList.GetLength(); ++offeringsIndex)
     {
       m_offerings.push_back(offeringsJsonList[offeringsIndex].AsObject());

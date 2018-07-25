@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     OfferingPromotion();
-    OfferingPromotion(const Aws::Utils::Json::JsonValue& jsonValue);
-    OfferingPromotion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OfferingPromotion(Aws::Utils::Json::JsonView jsonValue);
+    OfferingPromotion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

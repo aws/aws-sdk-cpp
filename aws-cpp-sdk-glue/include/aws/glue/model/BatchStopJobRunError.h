@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     BatchStopJobRunError();
-    BatchStopJobRunError(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchStopJobRunError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchStopJobRunError(Aws::Utils::Json::JsonView jsonValue);
+    BatchStopJobRunError& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

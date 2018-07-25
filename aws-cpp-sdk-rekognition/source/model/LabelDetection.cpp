@@ -35,7 +35,7 @@ LabelDetection::LabelDetection() :
 {
 }
 
-LabelDetection::LabelDetection(const JsonValue& jsonValue) : 
+LabelDetection::LabelDetection(JsonView jsonValue) : 
     m_timestamp(0),
     m_timestampHasBeenSet(false),
     m_labelHasBeenSet(false)
@@ -43,7 +43,7 @@ LabelDetection::LabelDetection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LabelDetection& LabelDetection::operator =(const JsonValue& jsonValue)
+LabelDetection& LabelDetection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {

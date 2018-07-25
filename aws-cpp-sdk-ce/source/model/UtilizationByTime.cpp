@@ -35,7 +35,7 @@ UtilizationByTime::UtilizationByTime() :
 {
 }
 
-UtilizationByTime::UtilizationByTime(const JsonValue& jsonValue) : 
+UtilizationByTime::UtilizationByTime(JsonView jsonValue) : 
     m_timePeriodHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_totalHasBeenSet(false)
@@ -43,7 +43,7 @@ UtilizationByTime::UtilizationByTime(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UtilizationByTime& UtilizationByTime::operator =(const JsonValue& jsonValue)
+UtilizationByTime& UtilizationByTime::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimePeriod"))
   {
@@ -54,7 +54,7 @@ UtilizationByTime& UtilizationByTime::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonValue> groupsJsonList = jsonValue.GetArray("Groups");
+    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsObject());

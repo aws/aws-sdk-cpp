@@ -56,7 +56,7 @@ Aws::String PutConfigurationAggregatorRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutConfigurationAggregatorRequest::GetRequestSpecificHeaders() const

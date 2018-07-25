@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Message();
-    Message(const Aws::Utils::Json::JsonValue& jsonValue);
-    Message& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Message(Aws::Utils::Json::JsonView jsonValue);
+    Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

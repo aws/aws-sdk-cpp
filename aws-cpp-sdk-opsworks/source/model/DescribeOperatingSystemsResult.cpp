@@ -37,10 +37,10 @@ DescribeOperatingSystemsResult::DescribeOperatingSystemsResult(const Aws::Amazon
 
 DescribeOperatingSystemsResult& DescribeOperatingSystemsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OperatingSystems"))
   {
-    Array<JsonValue> operatingSystemsJsonList = jsonValue.GetArray("OperatingSystems");
+    Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("OperatingSystems");
     for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
     {
       m_operatingSystems.push_back(operatingSystemsJsonList[operatingSystemsIndex].AsObject());

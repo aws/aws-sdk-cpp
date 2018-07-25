@@ -79,7 +79,7 @@ Aws::String ListCommandInvocationsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListCommandInvocationsRequest::GetRequestSpecificHeaders() const

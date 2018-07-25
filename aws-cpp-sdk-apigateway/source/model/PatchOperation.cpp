@@ -37,7 +37,7 @@ PatchOperation::PatchOperation() :
 {
 }
 
-PatchOperation::PatchOperation(const JsonValue& jsonValue) : 
+PatchOperation::PatchOperation(JsonView jsonValue) : 
     m_op(Op::NOT_SET),
     m_opHasBeenSet(false),
     m_pathHasBeenSet(false),
@@ -47,7 +47,7 @@ PatchOperation::PatchOperation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PatchOperation& PatchOperation::operator =(const JsonValue& jsonValue)
+PatchOperation& PatchOperation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("op"))
   {

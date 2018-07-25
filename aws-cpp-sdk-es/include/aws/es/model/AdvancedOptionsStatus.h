@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -54,8 +55,8 @@ namespace Model
   {
   public:
     AdvancedOptionsStatus();
-    AdvancedOptionsStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    AdvancedOptionsStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AdvancedOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    AdvancedOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -45,7 +45,7 @@ DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeLimitsResult& DescribeLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountMaxReadCapacityUnits"))
   {
     m_accountMaxReadCapacityUnits = jsonValue.GetInt64("AccountMaxReadCapacityUnits");

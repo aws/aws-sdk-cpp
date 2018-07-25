@@ -37,10 +37,10 @@ UntagResourcesResult::UntagResourcesResult(const Aws::AmazonWebServiceResult<Jso
 
 UntagResourcesResult& UntagResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedResourcesMap"))
   {
-    Aws::Map<Aws::String, JsonValue> failedResourcesMapJsonMap = jsonValue.GetObject("FailedResourcesMap").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> failedResourcesMapJsonMap = jsonValue.GetObject("FailedResourcesMap").GetAllObjects();
     for(auto& failedResourcesMapItem : failedResourcesMapJsonMap)
     {
       m_failedResourcesMap[failedResourcesMapItem.first] = failedResourcesMapItem.second.AsObject();

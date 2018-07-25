@@ -37,7 +37,7 @@ GetActivityTaskResult::GetActivityTaskResult(const Aws::AmazonWebServiceResult<J
 
 GetActivityTaskResult& GetActivityTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskToken"))
   {
     m_taskToken = jsonValue.GetString("taskToken");

@@ -38,7 +38,7 @@ AliasConfiguration::AliasConfiguration() :
 {
 }
 
-AliasConfiguration::AliasConfiguration(const JsonValue& jsonValue) : 
+AliasConfiguration::AliasConfiguration(JsonView jsonValue) : 
     m_aliasArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_functionVersionHasBeenSet(false),
@@ -49,7 +49,7 @@ AliasConfiguration::AliasConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AliasConfiguration& AliasConfiguration::operator =(const JsonValue& jsonValue)
+AliasConfiguration& AliasConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AliasArn"))
   {

@@ -34,14 +34,14 @@ HashKeyRange::HashKeyRange() :
 {
 }
 
-HashKeyRange::HashKeyRange(const JsonValue& jsonValue) : 
+HashKeyRange::HashKeyRange(JsonView jsonValue) : 
     m_startingHashKeyHasBeenSet(false),
     m_endingHashKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HashKeyRange& HashKeyRange::operator =(const JsonValue& jsonValue)
+HashKeyRange& HashKeyRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartingHashKey"))
   {

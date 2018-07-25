@@ -47,7 +47,7 @@ Service::Service() :
 {
 }
 
-Service::Service(const JsonValue& jsonValue) : 
+Service::Service(JsonView jsonValue) : 
     m_referenceId(0),
     m_referenceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -67,7 +67,7 @@ Service::Service(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Service& Service::operator =(const JsonValue& jsonValue)
+Service& Service::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReferenceId"))
   {
@@ -85,7 +85,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Names"))
   {
-    Array<JsonValue> namesJsonList = jsonValue.GetArray("Names");
+    Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
     for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
     {
       m_names.push_back(namesJsonList[namesIndex].AsString());
@@ -137,7 +137,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Edges"))
   {
-    Array<JsonValue> edgesJsonList = jsonValue.GetArray("Edges");
+    Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
     for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
     {
       m_edges.push_back(edgesJsonList[edgesIndex].AsObject());
@@ -154,7 +154,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DurationHistogram"))
   {
-    Array<JsonValue> durationHistogramJsonList = jsonValue.GetArray("DurationHistogram");
+    Array<JsonView> durationHistogramJsonList = jsonValue.GetArray("DurationHistogram");
     for(unsigned durationHistogramIndex = 0; durationHistogramIndex < durationHistogramJsonList.GetLength(); ++durationHistogramIndex)
     {
       m_durationHistogram.push_back(durationHistogramJsonList[durationHistogramIndex].AsObject());
@@ -164,7 +164,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
   {
-    Array<JsonValue> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
+    Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
     for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
     {
       m_responseTimeHistogram.push_back(responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject());

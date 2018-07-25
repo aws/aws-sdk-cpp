@@ -37,7 +37,7 @@ StartSpeechSynthesisTaskResult::StartSpeechSynthesisTaskResult(const Aws::Amazon
 
 StartSpeechSynthesisTaskResult& StartSpeechSynthesisTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SynthesisTask"))
   {
     m_synthesisTask = jsonValue.GetObject("SynthesisTask");
