@@ -42,7 +42,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
         PosixDirectory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_dir(nullptr)
         {
             m_dir = opendir(m_directoryEntry.path.c_str());
-			AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Entering directory " << m_directoryEntry.path);
+            AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Entering directory " << m_directoryEntry.path);
 
             if(m_dir)
             {
@@ -201,13 +201,31 @@ Aws::String GetHomeDirectory()
     return retVal;
 }
 
-bool CreateDirectoryIfNotExists(const char* path)
+bool CreateDirectoryIfNotExists(const char* path, bool createParentDirs)
 {
-    AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Creating directory " << path);
+    Aws::String directoryName = path;
+    AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Creating directory " << directoryName);
 
-    int errorCode = mkdir(path, S_IRWXU | S_IRWXG | S_IRWXO);
-    AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Creation of directory " << path << " returned code: " << errno);
-    return errorCode == 0 || errno == EEXIST;
+    for (size_t i = (createParentDirs ? 0 : directoryName.size() - 1); i < directoryName.size(); i++)
+    {
+        // Create the parent directory if we find a delimiter and the delimiter is not the first char, or if this is the target directory.
+        if (i != 0 && (directoryName[i] == FileSystem::PATH_DELIM || i == directoryName.size() - 1))
+        {
+            if (directoryName[i] == FileSystem::PATH_DELIM)
+            {
+                directoryName[i] = '\0';
+            }
+            int errorCode = mkdir(directoryName.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
+            if (errorCode != 0 && errno != EEXIST)
+            {
+                AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Creation of directory " << directoryName.c_str() << " returned code: " << errno);
+                return false;
+            }
+            AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Creation of directory " << directoryName.c_str() << " returned code: " << errno);
+            directoryName[i] = FileSystem::PATH_DELIM;
+        }
+    }
+    return true;
 }
 
 bool RemoveFileIfExists(const char* path)
@@ -262,15 +280,15 @@ Aws::String GetExecutableDirectory()
         if(lastSlash != std::string::npos)
         {
             return executablePath.substr(0, lastSlash);
-        }	
+        }    
     }    
 
     return "./";
 }
 
-std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
+Aws::UniquePtr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
-    return Aws::MakeShared<PosixDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
+    return Aws::MakeUnique<PosixDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem

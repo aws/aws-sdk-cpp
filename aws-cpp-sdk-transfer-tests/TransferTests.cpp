@@ -790,12 +790,14 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
     ASSERT_TRUE(Aws::FileSystem::CreateDirectoryIfNotExists(uploadDir.c_str()));
     auto smallTestFileName = Aws::FileSystem::Join(uploadDir, SMALL_TEST_FILE_NAME);
     auto contentTestFileName = Aws::FileSystem::Join(uploadDir, CONTENT_TEST_FILE_NAME);
+    auto emptyTestFileName = Aws::FileSystem::Join(uploadDir, EMPTY_TEST_FILE_NAME);
     auto nestedDirectory = Aws::FileSystem::Join(uploadDir, "nested");
     ASSERT_TRUE(Aws::FileSystem::CreateDirectoryIfNotExists(nestedDirectory.c_str()));
     auto nestedFileName = Aws::FileSystem::Join(nestedDirectory, "nestedFile");
 
     ScopedTestFile smallFile(smallTestFileName, SMALL_TEST_SIZE, testString);
     ScopedTestFile contentFile(contentTestFileName, CONTENT_TEST_FILE_TEXT);
+    ScopedTestFile emptyFile(emptyTestFileName, 0, testString);
     ScopedTestFile nestedFile(nestedFileName, CONTENT_TEST_FILE_TEXT);
 
     if (EmptyBucket(GetTestBucketName()))
@@ -817,7 +819,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
             {
                 directoryUploads.push_back(std::const_pointer_cast<TransferHandle>(handle)); 
 
-                if (directoryUploads.size() == 3)
+                if (directoryUploads.size() == 4)
                 {
                     directoryUploadSignal.notify_one();
                 }
@@ -826,7 +828,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
             {
                 directoryDownloads.push_back(std::const_pointer_cast<TransferHandle>(handle));
 
-                if (directoryDownloads.size() == 3)
+                if (directoryDownloads.size() == 4)
                 {
                     directoryDownloadSignal.notify_one();
                 }
@@ -843,14 +845,14 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
     {
         std::unique_lock<std::mutex> locker(semaphoreLock);
         // if upload is fast enough, we might not need to wait here
-        if (directoryUploads.size() < 3)
+        if (directoryUploads.size() < 4)
         {
             directoryUploadSignal.wait(locker);
         }
     }
 
-    ASSERT_EQ(3u, directoryUploads.size());
-    Aws::Set<Aws::String> pathsUploading = { smallTestFileName, contentTestFileName, nestedFileName };
+    ASSERT_EQ(4u, directoryUploads.size());
+    Aws::Set<Aws::String> pathsUploading = { smallTestFileName, contentTestFileName, emptyTestFileName, nestedFileName };
 
     for (auto handle : directoryUploads)
     {
@@ -881,13 +883,13 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
 
     {
         std::unique_lock<std::mutex> locker(semaphoreLock);
-        if (directoryDownloads.size() < 3)
+        if (directoryDownloads.size() < 4)
         {
             directoryDownloadSignal.wait(locker);
         }
     }
 
-    ASSERT_EQ(3u, directoryDownloads.size());
+    ASSERT_EQ(4u, directoryDownloads.size());
     
     for (auto handle : directoryDownloads)
     {

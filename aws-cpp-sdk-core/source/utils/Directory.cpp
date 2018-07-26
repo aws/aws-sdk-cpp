@@ -27,54 +27,54 @@ namespace Aws
     {
         Aws::String Join(const Aws::String& leftSegment, const Aws::String& rightSegment)
         {
-			return Join(PATH_DELIM, leftSegment, rightSegment);
+            return Join(PATH_DELIM, leftSegment, rightSegment);
         }
 
-		Aws::String Join(char delimiter, const Aws::String& leftSegment, const Aws::String& rightSegment)
-		{
-			Aws::StringStream ss;
+        Aws::String Join(char delimiter, const Aws::String& leftSegment, const Aws::String& rightSegment)
+        {
+            Aws::StringStream ss;
 
-			if (!leftSegment.empty())
-			{
-				if (leftSegment.back() == delimiter)
-				{
-					ss << leftSegment.substr(0, leftSegment.length() - 1);
-				}
-				else
-				{
-					ss << leftSegment;
-				}
-			}
+            if (!leftSegment.empty())
+            {
+                if (leftSegment.back() == delimiter)
+                {
+                    ss << leftSegment.substr(0, leftSegment.length() - 1);
+                }
+                else
+                {
+                    ss << leftSegment;
+                }
+            }
 
-			ss << delimiter;
+            ss << delimiter;
 
-			if (!rightSegment.empty())
-			{
-				if (rightSegment.front() == delimiter)
-				{
-					ss << rightSegment.substr(1);
-				}
-				else
-				{
-					ss << rightSegment;
-				}
-			}
+            if (!rightSegment.empty())
+            {
+                if (rightSegment.front() == delimiter)
+                {
+                    ss << rightSegment.substr(1);
+                }
+                else
+                {
+                    ss << rightSegment;
+                }
+            }
 
-			return ss.str();
-		}
+            return ss.str();
+        }
 
         bool DeepCopyDirectory(const char* from, const char* to)
         {
-			if (!from || !to) return false;
+            if (!from || !to) return false;
 
             DirectoryTree fromDir(from);
 
-			if (!fromDir) return false;
+            if (!fromDir) return false;
 
             CreateDirectoryIfNotExists(to);
             DirectoryTree toDir(to);
 
-			if (!toDir) return false;
+            if (!toDir) return false;
 
             bool success(true);            
 
@@ -159,22 +159,20 @@ namespace Aws
                 m_directoryEntry.path = trimmedPath;
             }    
 
-			if (!trimmedRelativePath.empty() && trimmedRelativePath[trimmedRelativePath.length() - 1] == PATH_DELIM)
-			{
-				m_directoryEntry.relativePath = trimmedRelativePath.substr(0, trimmedRelativePath.length() - 1);
-			}
-			else
-			{
-				m_directoryEntry.relativePath = trimmedRelativePath;
-			}          
+            if (!trimmedRelativePath.empty() && trimmedRelativePath[trimmedRelativePath.length() - 1] == PATH_DELIM)
+            {
+                m_directoryEntry.relativePath = trimmedRelativePath.substr(0, trimmedRelativePath.length() - 1);
+            }
+            else
+            {
+                m_directoryEntry.relativePath = trimmedRelativePath;
+            }          
         }        
 
-        Directory& Directory::Descend(const DirectoryEntry& directoryEntry)
+        Aws::UniquePtr<Directory> Directory::Descend(const DirectoryEntry& directoryEntry)
         {
             assert(directoryEntry.fileType != FileType::File);
-            auto openDir = OpenDirectory(directoryEntry.path, directoryEntry.relativePath);
-            m_openDirectories.push_back(openDir);
-            return *openDir;
+            return OpenDirectory(directoryEntry.path, directoryEntry.relativePath);
         }
 
         Aws::Vector<Aws::String> Directory::GetAllFilePathsInDirectory(const Aws::String& path)
@@ -278,9 +276,9 @@ namespace Aws
                 {
                     if(entry.fileType == FileType::Directory)
                     {
-                        auto& currentDir = dir.Descend(entry);
+                        auto currentDir = dir.Descend(entry);
 
-                        while (DirectoryEntry&& dirEntry = currentDir.Next())
+                        while (DirectoryEntry&& dirEntry = currentDir->Next())
                         {
                             queue.push(std::move(dirEntry));
                         }
@@ -315,7 +313,8 @@ namespace Aws
 
                 if (entry.fileType == FileType::Directory)
                 {
-                    exitTraversal = !TraverseDepthFirst(dir.Descend(entry), visitor);
+                    auto subDir = dir.Descend(entry);
+                    exitTraversal = !TraverseDepthFirst(*subDir, visitor, postOrder);
                 } 
                 
                 if (postOrder)

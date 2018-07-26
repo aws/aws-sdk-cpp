@@ -19,6 +19,7 @@
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/HeadObjectRequest.h>
@@ -35,6 +36,11 @@ namespace Aws
 {
     namespace Transfer
     {
+        static inline bool IsS3KeyPrefix(const Aws::String& path)
+        {
+            return (path.find_last_of('/') == path.size() - 1 || path.find_last_of('\\') == path.size() - 1);
+        }
+
         struct TransferHandleAsyncContext : public Aws::Client::AsyncCallerContext
         {
             std::shared_ptr<TransferHandle> handle;
@@ -1008,16 +1014,14 @@ namespace Aws
                 // take the new prefix and call list again. if it's an object key, go ahead and initiate download.
                 for (auto& content : result.GetContents())
                 {
-                    if (content.GetSize() <= 0 && content.GetKey() != request.GetPrefix())
-                    {
-                        Aws::FileSystem::CreateDirectoryIfNotExists(DetermineFilePath(directory, prefix, content.GetKey()).c_str());
-                        requestCpy.SetPrefix(content.GetKey());
-                        m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
-                    }
-                    //this is our fixed point in the algorithm. Eventually, everything will return an object.
-                    else if (content.GetSize() > 0)
+                    if (!IsS3KeyPrefix(content.GetKey()))
                     {
                         Aws::String fileName = DetermineFilePath(downloadContext->rootDirectory, downloadContext->prefix, content.GetKey());
+                        auto lastDelimter = fileName.find_last_of(Aws::FileSystem::PATH_DELIM);
+                        if (lastDelimter != std::string::npos)
+                        {
+                            Aws::FileSystem::CreateDirectoryIfNotExists(fileName.substr(0, lastDelimter).c_str(), true/*create parent dirs*/);
+                        }
                         AWS_LOGSTREAM_INFO(CLASS_TAG, "Initiating download of key: [" << content.GetKey() <<
                                 "] in bucket: [" << directory << "] to destination file: [" << fileName << "]");
                         m_transferConfig.transferInitiatedCallback(this, DownloadFile(request.GetBucket(), content.GetKey(), fileName));
@@ -1051,7 +1055,7 @@ namespace Aws
             char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
             Aws::Utils::StringUtils::Replace(shortenedFileName, "/", delimiter);
             Aws::StringStream ss;
-            ss << directory << delimiter << shortenedFileName;
+            ss << directory << shortenedFileName;
 
             return ss.str();
         }
