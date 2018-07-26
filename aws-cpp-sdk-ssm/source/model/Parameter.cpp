@@ -34,7 +34,11 @@ Parameter::Parameter() :
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_selectorHasBeenSet(false),
+    m_sourceResultHasBeenSet(false),
+    m_lastModifiedDateHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -44,7 +48,11 @@ Parameter::Parameter(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_selectorHasBeenSet(false),
+    m_sourceResultHasBeenSet(false),
+    m_lastModifiedDateHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +87,34 @@ Parameter& Parameter::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Selector"))
+  {
+    m_selector = jsonValue.GetString("Selector");
+
+    m_selectorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceResult"))
+  {
+    m_sourceResult = jsonValue.GetString("SourceResult");
+
+    m_sourceResultHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
+
+    m_lastModifiedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ARN"))
+  {
+    m_aRN = jsonValue.GetString("ARN");
+
+    m_aRNHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -106,6 +142,29 @@ JsonValue Parameter::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInt64("Version", m_version);
+
+  }
+
+  if(m_selectorHasBeenSet)
+  {
+   payload.WithString("Selector", m_selector);
+
+  }
+
+  if(m_sourceResultHasBeenSet)
+  {
+   payload.WithString("SourceResult", m_sourceResult);
+
+  }
+
+  if(m_lastModifiedDateHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
+  }
+
+  if(m_aRNHasBeenSet)
+  {
+   payload.WithString("ARN", m_aRN);
 
   }
 

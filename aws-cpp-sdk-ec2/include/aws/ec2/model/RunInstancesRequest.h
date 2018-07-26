@@ -1327,27 +1327,42 @@ namespace Model
 
 
     /**
-     * <p>The market (purchasing) option for the instances.</p>
+     * <p>The market (purchasing) option for the instances.</p> <p>For
+     * <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
+     * <code>stop</code>.</p>
      */
     inline const InstanceMarketOptionsRequest& GetInstanceMarketOptions() const{ return m_instanceMarketOptions; }
 
     /**
-     * <p>The market (purchasing) option for the instances.</p>
+     * <p>The market (purchasing) option for the instances.</p> <p>For
+     * <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
+     * <code>stop</code>.</p>
      */
     inline void SetInstanceMarketOptions(const InstanceMarketOptionsRequest& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = value; }
 
     /**
-     * <p>The market (purchasing) option for the instances.</p>
+     * <p>The market (purchasing) option for the instances.</p> <p>For
+     * <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
+     * <code>stop</code>.</p>
      */
     inline void SetInstanceMarketOptions(InstanceMarketOptionsRequest&& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = std::move(value); }
 
     /**
-     * <p>The market (purchasing) option for the instances.</p>
+     * <p>The market (purchasing) option for the instances.</p> <p>For
+     * <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
+     * <code>stop</code>.</p>
      */
     inline RunInstancesRequest& WithInstanceMarketOptions(const InstanceMarketOptionsRequest& value) { SetInstanceMarketOptions(value); return *this;}
 
     /**
-     * <p>The market (purchasing) option for the instances.</p>
+     * <p>The market (purchasing) option for the instances.</p> <p>For
+     * <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
+     * <code>stop</code>.</p>
      */
     inline RunInstancesRequest& WithInstanceMarketOptions(InstanceMarketOptionsRequest&& value) { SetInstanceMarketOptions(std::move(value)); return *this;}
 

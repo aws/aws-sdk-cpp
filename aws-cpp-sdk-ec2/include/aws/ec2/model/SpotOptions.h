@@ -53,31 +53,31 @@ namespace Model
 
     /**
      * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * by the Spot Fleet request. The default is <code>lowest-price</code>.</p>
      */
     inline const SpotAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
     /**
      * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * by the Spot Fleet request. The default is <code>lowest-price</code>.</p>
      */
     inline void SetAllocationStrategy(const SpotAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
      * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * by the Spot Fleet request. The default is <code>lowest-price</code>.</p>
      */
     inline void SetAllocationStrategy(SpotAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
     /**
      * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * by the Spot Fleet request. The default is <code>lowest-price</code>.</p>
      */
     inline SpotOptions& WithAllocationStrategy(const SpotAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
     /**
      * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * by the Spot Fleet request. The default is <code>lowest-price</code>.</p>
      */
     inline SpotOptions& WithAllocationStrategy(SpotAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 
@@ -112,6 +112,31 @@ namespace Model
      */
     inline SpotOptions& WithInstanceInterruptionBehavior(SpotInstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when <b>AllocationStrategy</b> is set to <code>lowestPrice</code>.
+     * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
+     * capacity across the number of Spot pools that you specify.</p>
+     */
+    inline int GetInstancePoolsToUseCount() const{ return m_instancePoolsToUseCount; }
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when <b>AllocationStrategy</b> is set to <code>lowestPrice</code>.
+     * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
+     * capacity across the number of Spot pools that you specify.</p>
+     */
+    inline void SetInstancePoolsToUseCount(int value) { m_instancePoolsToUseCountHasBeenSet = true; m_instancePoolsToUseCount = value; }
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when <b>AllocationStrategy</b> is set to <code>lowestPrice</code>.
+     * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
+     * capacity across the number of Spot pools that you specify.</p>
+     */
+    inline SpotOptions& WithInstancePoolsToUseCount(int value) { SetInstancePoolsToUseCount(value); return *this;}
+
   private:
 
     SpotAllocationStrategy m_allocationStrategy;
@@ -119,6 +144,9 @@ namespace Model
 
     SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior;
     bool m_instanceInterruptionBehaviorHasBeenSet;
+
+    int m_instancePoolsToUseCount;
+    bool m_instancePoolsToUseCountHasBeenSet;
   };
 
 } // namespace Model

@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/AllocationStrategy.h>
+#include <aws/ec2/model/OnDemandAllocationStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -88,6 +89,57 @@ namespace Model
      * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithAllocationStrategy(AllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The order of the launch template overrides to use in fulfilling On-Demand
+     * capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to
+     * determine the order, launching the lowest price first. If you specify
+     * <code>prioritized</code>, Spot Fleet uses the priority that you assign to each
+     * Spot Fleet launch template override, launching the highest priority first. If
+     * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
+     */
+    inline const OnDemandAllocationStrategy& GetOnDemandAllocationStrategy() const{ return m_onDemandAllocationStrategy; }
+
+    /**
+     * <p>The order of the launch template overrides to use in fulfilling On-Demand
+     * capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to
+     * determine the order, launching the lowest price first. If you specify
+     * <code>prioritized</code>, Spot Fleet uses the priority that you assign to each
+     * Spot Fleet launch template override, launching the highest priority first. If
+     * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
+     */
+    inline void SetOnDemandAllocationStrategy(const OnDemandAllocationStrategy& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = value; }
+
+    /**
+     * <p>The order of the launch template overrides to use in fulfilling On-Demand
+     * capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to
+     * determine the order, launching the lowest price first. If you specify
+     * <code>prioritized</code>, Spot Fleet uses the priority that you assign to each
+     * Spot Fleet launch template override, launching the highest priority first. If
+     * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
+     */
+    inline void SetOnDemandAllocationStrategy(OnDemandAllocationStrategy&& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = std::move(value); }
+
+    /**
+     * <p>The order of the launch template overrides to use in fulfilling On-Demand
+     * capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to
+     * determine the order, launching the lowest price first. If you specify
+     * <code>prioritized</code>, Spot Fleet uses the priority that you assign to each
+     * Spot Fleet launch template override, launching the highest priority first. If
+     * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
+     */
+    inline SpotFleetRequestConfigData& WithOnDemandAllocationStrategy(const OnDemandAllocationStrategy& value) { SetOnDemandAllocationStrategy(value); return *this;}
+
+    /**
+     * <p>The order of the launch template overrides to use in fulfilling On-Demand
+     * capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to
+     * determine the order, launching the lowest price first. If you specify
+     * <code>prioritized</code>, Spot Fleet uses the priority that you assign to each
+     * Spot Fleet launch template override, launching the highest priority first. If
+     * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
+     */
+    inline SpotFleetRequestConfigData& WithOnDemandAllocationStrategy(OnDemandAllocationStrategy&& value) { SetOnDemandAllocationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -710,10 +762,41 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithLoadBalancersConfig(LoadBalancersConfig&& value) { SetLoadBalancersConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when Spot <b>AllocationStrategy</b> is set to
+     * <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly
+     * allocates your target Spot capacity across the number of Spot pools that you
+     * specify.</p>
+     */
+    inline int GetInstancePoolsToUseCount() const{ return m_instancePoolsToUseCount; }
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when Spot <b>AllocationStrategy</b> is set to
+     * <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly
+     * allocates your target Spot capacity across the number of Spot pools that you
+     * specify.</p>
+     */
+    inline void SetInstancePoolsToUseCount(int value) { m_instancePoolsToUseCountHasBeenSet = true; m_instancePoolsToUseCount = value; }
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when Spot <b>AllocationStrategy</b> is set to
+     * <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly
+     * allocates your target Spot capacity across the number of Spot pools that you
+     * specify.</p>
+     */
+    inline SpotFleetRequestConfigData& WithInstancePoolsToUseCount(int value) { SetInstancePoolsToUseCount(value); return *this;}
+
   private:
 
     AllocationStrategy m_allocationStrategy;
     bool m_allocationStrategyHasBeenSet;
+
+    OnDemandAllocationStrategy m_onDemandAllocationStrategy;
+    bool m_onDemandAllocationStrategyHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
@@ -765,6 +848,9 @@ namespace Model
 
     LoadBalancersConfig m_loadBalancersConfig;
     bool m_loadBalancersConfigHasBeenSet;
+
+    int m_instancePoolsToUseCount;
+    bool m_instancePoolsToUseCountHasBeenSet;
   };
 
 } // namespace Model

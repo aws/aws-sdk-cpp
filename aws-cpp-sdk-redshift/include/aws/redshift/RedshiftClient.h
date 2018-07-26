@@ -43,6 +43,7 @@
 #include <aws/redshift/model/DescribeClusterSecurityGroupsResult.h>
 #include <aws/redshift/model/DescribeClusterSnapshotsResult.h>
 #include <aws/redshift/model/DescribeClusterSubnetGroupsResult.h>
+#include <aws/redshift/model/DescribeClusterTracksResult.h>
 #include <aws/redshift/model/DescribeClusterVersionsResult.h>
 #include <aws/redshift/model/DescribeClustersResult.h>
 #include <aws/redshift/model/DescribeDefaultClusterParametersResult.h>
@@ -156,6 +157,7 @@ namespace Model
         class DescribeClusterSecurityGroupsRequest;
         class DescribeClusterSnapshotsRequest;
         class DescribeClusterSubnetGroupsRequest;
+        class DescribeClusterTracksRequest;
         class DescribeClusterVersionsRequest;
         class DescribeClustersRequest;
         class DescribeDefaultClusterParametersRequest;
@@ -224,6 +226,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeClusterSecurityGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterSnapshotsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterSnapshotsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterSubnetGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterSubnetGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterTracksResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterTracksOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterVersionsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeClustersResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClustersOutcome;
         typedef Aws::Utils::Outcome<DescribeDefaultClusterParametersResult, Aws::Client::AWSError<RedshiftErrors>> DescribeDefaultClusterParametersOutcome;
@@ -292,6 +295,7 @@ namespace Model
         typedef std::future<DescribeClusterSecurityGroupsOutcome> DescribeClusterSecurityGroupsOutcomeCallable;
         typedef std::future<DescribeClusterSnapshotsOutcome> DescribeClusterSnapshotsOutcomeCallable;
         typedef std::future<DescribeClusterSubnetGroupsOutcome> DescribeClusterSubnetGroupsOutcomeCallable;
+        typedef std::future<DescribeClusterTracksOutcome> DescribeClusterTracksOutcomeCallable;
         typedef std::future<DescribeClusterVersionsOutcome> DescribeClusterVersionsOutcomeCallable;
         typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
         typedef std::future<DescribeDefaultClusterParametersOutcome> DescribeDefaultClusterParametersOutcomeCallable;
@@ -363,6 +367,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterSecurityGroupsRequest&, const Model::DescribeClusterSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterSnapshotsRequest&, const Model::DescribeClusterSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterSnapshotsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterSubnetGroupsRequest&, const Model::DescribeClusterSubnetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterSubnetGroupsResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterTracksRequest&, const Model::DescribeClusterTracksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterTracksResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterVersionsRequest&, const Model::DescribeClusterVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterVersionsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClustersResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeDefaultClusterParametersRequest&, const Model::DescribeDefaultClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDefaultClusterParametersResponseReceivedHandler;
@@ -1841,6 +1846,34 @@ namespace Model
         virtual void DescribeClusterSubnetGroupsAsync(const Model::DescribeClusterSubnetGroupsRequest& request, const DescribeClusterSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of all the available maintenance tracks.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterTracksOutcome DescribeClusterTracks(const Model::DescribeClusterTracksRequest& request) const;
+
+        /**
+         * <p>Returns a list of all the available maintenance tracks.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeClusterTracksOutcomeCallable DescribeClusterTracksCallable(const Model::DescribeClusterTracksRequest& request) const;
+
+        /**
+         * <p>Returns a list of all the available maintenance tracks.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeClusterTracksAsync(const Model::DescribeClusterTracksRequest& request, const DescribeClusterTracksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns descriptions of the available Amazon Redshift cluster versions. You
          * can call this operation even before creating any clusters to learn more about
          * the Amazon Redshift versions. For more information about managing clusters, go
@@ -2804,16 +2837,18 @@ namespace Model
         virtual void GetClusterCredentialsAsync(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of ReservedNodeOfferings which is filtered by payment type,
-         * term, and instance type.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type,
+         * term, and usage price of the given DC1 reserved node.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetReservedNodeExchangeOfferingsOutcome GetReservedNodeExchangeOfferings(const Model::GetReservedNodeExchangeOfferingsRequest& request) const;
 
         /**
-         * <p>Returns an array of ReservedNodeOfferings which is filtered by payment type,
-         * term, and instance type.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type,
+         * term, and usage price of the given DC1 reserved node.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">AWS
          * API Reference</a></p>
          *
@@ -2822,8 +2857,9 @@ namespace Model
         virtual Model::GetReservedNodeExchangeOfferingsOutcomeCallable GetReservedNodeExchangeOfferingsCallable(const Model::GetReservedNodeExchangeOfferingsRequest& request) const;
 
         /**
-         * <p>Returns an array of ReservedNodeOfferings which is filtered by payment type,
-         * term, and instance type.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type,
+         * term, and usage price of the given DC1 reserved node.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">AWS
          * API Reference</a></p>
          *
@@ -3478,6 +3514,7 @@ namespace Model
         void DescribeClusterSecurityGroupsAsyncHelper(const Model::DescribeClusterSecurityGroupsRequest& request, const DescribeClusterSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterSnapshotsAsyncHelper(const Model::DescribeClusterSnapshotsRequest& request, const DescribeClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterSubnetGroupsAsyncHelper(const Model::DescribeClusterSubnetGroupsRequest& request, const DescribeClusterSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeClusterTracksAsyncHelper(const Model::DescribeClusterTracksRequest& request, const DescribeClusterTracksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterVersionsAsyncHelper(const Model::DescribeClusterVersionsRequest& request, const DescribeClusterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClustersAsyncHelper(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDefaultClusterParametersAsyncHelper(const Model::DescribeDefaultClusterParametersRequest& request, const DescribeDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

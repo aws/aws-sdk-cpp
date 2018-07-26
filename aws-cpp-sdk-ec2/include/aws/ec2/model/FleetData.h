@@ -25,6 +25,7 @@
 #include <aws/ec2/model/TargetCapacitySpecification.h>
 #include <aws/ec2/model/FleetType.h>
 #include <aws/ec2/model/SpotOptions.h>
+#include <aws/ec2/model/OnDemandOptions.h>
 #include <aws/ec2/model/FleetLaunchTemplateConfig.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -616,6 +617,32 @@ namespace Model
 
 
     /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline const OnDemandOptions& GetOnDemandOptions() const{ return m_onDemandOptions; }
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline void SetOnDemandOptions(const OnDemandOptions& value) { m_onDemandOptionsHasBeenSet = true; m_onDemandOptions = value; }
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline void SetOnDemandOptions(OnDemandOptions&& value) { m_onDemandOptionsHasBeenSet = true; m_onDemandOptions = std::move(value); }
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline FleetData& WithOnDemandOptions(const OnDemandOptions& value) { SetOnDemandOptions(value); return *this;}
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline FleetData& WithOnDemandOptions(OnDemandOptions&& value) { SetOnDemandOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags for an EC2 Fleet resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -699,6 +726,9 @@ namespace Model
 
     SpotOptions m_spotOptions;
     bool m_spotOptionsHasBeenSet;
+
+    OnDemandOptions m_onDemandOptions;
+    bool m_onDemandOptionsHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

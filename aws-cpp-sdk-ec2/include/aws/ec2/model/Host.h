@@ -146,8 +146,8 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -155,8 +155,8 @@ namespace Model
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -164,8 +164,8 @@ namespace Model
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -173,8 +173,8 @@ namespace Model
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -182,8 +182,8 @@ namespace Model
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -191,8 +191,8 @@ namespace Model
     inline Host& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -200,8 +200,8 @@ namespace Model
     inline Host& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>

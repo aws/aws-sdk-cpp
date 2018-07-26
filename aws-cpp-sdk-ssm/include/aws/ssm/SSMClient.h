@@ -88,6 +88,7 @@
 #include <aws/ssm/model/GetParametersByPathResult.h>
 #include <aws/ssm/model/GetPatchBaselineResult.h>
 #include <aws/ssm/model/GetPatchBaselineForPatchGroupResult.h>
+#include <aws/ssm/model/LabelParameterVersionResult.h>
 #include <aws/ssm/model/ListAssociationVersionsResult.h>
 #include <aws/ssm/model/ListAssociationsResult.h>
 #include <aws/ssm/model/ListCommandInvocationsResult.h>
@@ -230,6 +231,7 @@ namespace Model
         class GetParametersByPathRequest;
         class GetPatchBaselineRequest;
         class GetPatchBaselineForPatchGroupRequest;
+        class LabelParameterVersionRequest;
         class ListAssociationVersionsRequest;
         class ListAssociationsRequest;
         class ListCommandInvocationsRequest;
@@ -333,6 +335,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetParametersByPathResult, Aws::Client::AWSError<SSMErrors>> GetParametersByPathOutcome;
         typedef Aws::Utils::Outcome<GetPatchBaselineResult, Aws::Client::AWSError<SSMErrors>> GetPatchBaselineOutcome;
         typedef Aws::Utils::Outcome<GetPatchBaselineForPatchGroupResult, Aws::Client::AWSError<SSMErrors>> GetPatchBaselineForPatchGroupOutcome;
+        typedef Aws::Utils::Outcome<LabelParameterVersionResult, Aws::Client::AWSError<SSMErrors>> LabelParameterVersionOutcome;
         typedef Aws::Utils::Outcome<ListAssociationVersionsResult, Aws::Client::AWSError<SSMErrors>> ListAssociationVersionsOutcome;
         typedef Aws::Utils::Outcome<ListAssociationsResult, Aws::Client::AWSError<SSMErrors>> ListAssociationsOutcome;
         typedef Aws::Utils::Outcome<ListCommandInvocationsResult, Aws::Client::AWSError<SSMErrors>> ListCommandInvocationsOutcome;
@@ -436,6 +439,7 @@ namespace Model
         typedef std::future<GetParametersByPathOutcome> GetParametersByPathOutcomeCallable;
         typedef std::future<GetPatchBaselineOutcome> GetPatchBaselineOutcomeCallable;
         typedef std::future<GetPatchBaselineForPatchGroupOutcome> GetPatchBaselineForPatchGroupOutcomeCallable;
+        typedef std::future<LabelParameterVersionOutcome> LabelParameterVersionOutcomeCallable;
         typedef std::future<ListAssociationVersionsOutcome> ListAssociationVersionsOutcomeCallable;
         typedef std::future<ListAssociationsOutcome> ListAssociationsOutcomeCallable;
         typedef std::future<ListCommandInvocationsOutcome> ListCommandInvocationsOutcomeCallable;
@@ -542,6 +546,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::GetParametersByPathRequest&, const Model::GetParametersByPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParametersByPathResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetPatchBaselineRequest&, const Model::GetPatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetPatchBaselineForPatchGroupRequest&, const Model::GetPatchBaselineForPatchGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPatchBaselineForPatchGroupResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::LabelParameterVersionRequest&, const Model::LabelParameterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LabelParameterVersionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListAssociationVersionsRequest&, const Model::ListAssociationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationVersionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListAssociationsRequest&, const Model::ListAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListCommandInvocationsRequest&, const Model::ListCommandInvocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCommandInvocationsResponseReceivedHandler;
@@ -2770,6 +2775,25 @@ namespace Model
         virtual void GetPatchBaselineForPatchGroupAsync(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::LabelParameterVersionOutcome LabelParameterVersion(const Model::LabelParameterVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::LabelParameterVersionOutcomeCallable LabelParameterVersionCallable(const Model::LabelParameterVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void LabelParameterVersionAsync(const Model::LabelParameterVersionRequest& request, const LabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves all versions of an association for a specific association
          * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">AWS
@@ -3971,6 +3995,7 @@ namespace Model
         void GetParametersByPathAsyncHelper(const Model::GetParametersByPathRequest& request, const GetParametersByPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPatchBaselineAsyncHelper(const Model::GetPatchBaselineRequest& request, const GetPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPatchBaselineForPatchGroupAsyncHelper(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void LabelParameterVersionAsyncHelper(const Model::LabelParameterVersionRequest& request, const LabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociationVersionsAsyncHelper(const Model::ListAssociationVersionsRequest& request, const ListAssociationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociationsAsyncHelper(const Model::ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCommandInvocationsAsyncHelper(const Model::ListCommandInvocationsRequest& request, const ListCommandInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

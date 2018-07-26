@@ -112,6 +112,34 @@ namespace Model
      */
     inline SpotOptionsRequest& WithInstanceInterruptionBehavior(SpotInstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when Spot <b>AllocationStrategy</b> is set to
+     * <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly
+     * allocates your target Spot capacity across the number of Spot pools that you
+     * specify.</p>
+     */
+    inline int GetInstancePoolsToUseCount() const{ return m_instancePoolsToUseCount; }
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when Spot <b>AllocationStrategy</b> is set to
+     * <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly
+     * allocates your target Spot capacity across the number of Spot pools that you
+     * specify.</p>
+     */
+    inline void SetInstancePoolsToUseCount(int value) { m_instancePoolsToUseCountHasBeenSet = true; m_instancePoolsToUseCount = value; }
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when Spot <b>AllocationStrategy</b> is set to
+     * <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly
+     * allocates your target Spot capacity across the number of Spot pools that you
+     * specify.</p>
+     */
+    inline SpotOptionsRequest& WithInstancePoolsToUseCount(int value) { SetInstancePoolsToUseCount(value); return *this;}
+
   private:
 
     SpotAllocationStrategy m_allocationStrategy;
@@ -119,6 +147,9 @@ namespace Model
 
     SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior;
     bool m_instanceInterruptionBehaviorHasBeenSet;
+
+    int m_instancePoolsToUseCount;
+    bool m_instancePoolsToUseCountHasBeenSet;
   };
 
 } // namespace Model

@@ -325,6 +325,49 @@ namespace Model
      */
     inline PendingModifiedValues& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
 
+
+    /**
+     * <p>The name of the maintenance track that the cluster will change to during the
+     * next maintenance window.</p>
+     */
+    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>The name of the maintenance track that the cluster will change to during the
+     * next maintenance window.</p>
+     */
+    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
+
+    /**
+     * <p>The name of the maintenance track that the cluster will change to during the
+     * next maintenance window.</p>
+     */
+    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
+
+    /**
+     * <p>The name of the maintenance track that the cluster will change to during the
+     * next maintenance window.</p>
+     */
+    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
+
+    /**
+     * <p>The name of the maintenance track that the cluster will change to during the
+     * next maintenance window.</p>
+     */
+    inline PendingModifiedValues& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
+
+    /**
+     * <p>The name of the maintenance track that the cluster will change to during the
+     * next maintenance window.</p>
+     */
+    inline PendingModifiedValues& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the maintenance track that the cluster will change to during the
+     * next maintenance window.</p>
+     */
+    inline PendingModifiedValues& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+
   private:
 
     Aws::String m_masterUserPassword;
@@ -353,6 +396,9 @@ namespace Model
 
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet;
+
+    Aws::String m_maintenanceTrackName;
+    bool m_maintenanceTrackNameHasBeenSet;
   };
 
 } // namespace Model

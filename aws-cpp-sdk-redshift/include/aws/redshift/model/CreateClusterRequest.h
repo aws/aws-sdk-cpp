@@ -1576,6 +1576,56 @@ namespace Model
      */
     inline CreateClusterRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline CreateClusterRequest& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline CreateClusterRequest& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline CreateClusterRequest& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -1658,6 +1708,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_iamRoles;
     bool m_iamRolesHasBeenSet;
+
+    Aws::String m_maintenanceTrackName;
+    bool m_maintenanceTrackNameHasBeenSet;
   };
 
 } // namespace Model

@@ -1152,6 +1152,77 @@ namespace Model
      */
     inline ModifyClusterRequest& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
 
+
+    /**
+     * <p>The name for the maintenance track that you want to assign for the cluster.
+     * This name change is asynchronous. The new track name stays in the
+     * <code>PendingModifiedValues</code> for the cluster until the next maintenance
+     * window. When the maintenance track changes, the cluster is switched to the
+     * latest cluster release available for the maintenance track. At this point, the
+     * maintenance track name is applied.</p>
+     */
+    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>The name for the maintenance track that you want to assign for the cluster.
+     * This name change is asynchronous. The new track name stays in the
+     * <code>PendingModifiedValues</code> for the cluster until the next maintenance
+     * window. When the maintenance track changes, the cluster is switched to the
+     * latest cluster release available for the maintenance track. At this point, the
+     * maintenance track name is applied.</p>
+     */
+    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
+
+    /**
+     * <p>The name for the maintenance track that you want to assign for the cluster.
+     * This name change is asynchronous. The new track name stays in the
+     * <code>PendingModifiedValues</code> for the cluster until the next maintenance
+     * window. When the maintenance track changes, the cluster is switched to the
+     * latest cluster release available for the maintenance track. At this point, the
+     * maintenance track name is applied.</p>
+     */
+    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
+
+    /**
+     * <p>The name for the maintenance track that you want to assign for the cluster.
+     * This name change is asynchronous. The new track name stays in the
+     * <code>PendingModifiedValues</code> for the cluster until the next maintenance
+     * window. When the maintenance track changes, the cluster is switched to the
+     * latest cluster release available for the maintenance track. At this point, the
+     * maintenance track name is applied.</p>
+     */
+    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
+
+    /**
+     * <p>The name for the maintenance track that you want to assign for the cluster.
+     * This name change is asynchronous. The new track name stays in the
+     * <code>PendingModifiedValues</code> for the cluster until the next maintenance
+     * window. When the maintenance track changes, the cluster is switched to the
+     * latest cluster release available for the maintenance track. At this point, the
+     * maintenance track name is applied.</p>
+     */
+    inline ModifyClusterRequest& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
+
+    /**
+     * <p>The name for the maintenance track that you want to assign for the cluster.
+     * This name change is asynchronous. The new track name stays in the
+     * <code>PendingModifiedValues</code> for the cluster until the next maintenance
+     * window. When the maintenance track changes, the cluster is switched to the
+     * latest cluster release available for the maintenance track. At this point, the
+     * maintenance track name is applied.</p>
+     */
+    inline ModifyClusterRequest& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name for the maintenance track that you want to assign for the cluster.
+     * This name change is asynchronous. The new track name stays in the
+     * <code>PendingModifiedValues</code> for the cluster until the next maintenance
+     * window. When the maintenance track changes, the cluster is switched to the
+     * latest cluster release available for the maintenance track. At this point, the
+     * maintenance track name is applied.</p>
+     */
+    inline ModifyClusterRequest& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1207,6 +1278,9 @@ namespace Model
 
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet;
+
+    Aws::String m_maintenanceTrackName;
+    bool m_maintenanceTrackNameHasBeenSet;
   };
 
 } // namespace Model

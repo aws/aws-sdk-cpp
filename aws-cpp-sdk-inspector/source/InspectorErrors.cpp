@@ -37,6 +37,7 @@ static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("Inv
 static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int SERVICE_TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("ServiceTemporarilyUnavailableException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -78,6 +79,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), false);
+  }
+  else if (hashCode == SERVICE_TEMPORARILY_UNAVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::SERVICE_TEMPORARILY_UNAVAILABLE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

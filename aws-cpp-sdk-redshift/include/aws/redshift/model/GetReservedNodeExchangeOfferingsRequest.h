@@ -50,43 +50,43 @@ namespace Model
   public:
 
     /**
-     * <p>A string representing the node identifier for the Reserved Node to be
+     * <p>A string representing the node identifier for the DC1 Reserved Node to be
      * exchanged.</p>
      */
     inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
 
     /**
-     * <p>A string representing the node identifier for the Reserved Node to be
+     * <p>A string representing the node identifier for the DC1 Reserved Node to be
      * exchanged.</p>
      */
     inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
 
     /**
-     * <p>A string representing the node identifier for the Reserved Node to be
+     * <p>A string representing the node identifier for the DC1 Reserved Node to be
      * exchanged.</p>
      */
     inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
 
     /**
-     * <p>A string representing the node identifier for the Reserved Node to be
+     * <p>A string representing the node identifier for the DC1 Reserved Node to be
      * exchanged.</p>
      */
     inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
 
     /**
-     * <p>A string representing the node identifier for the Reserved Node to be
+     * <p>A string representing the node identifier for the DC1 Reserved Node to be
      * exchanged.</p>
      */
     inline GetReservedNodeExchangeOfferingsRequest& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
 
     /**
-     * <p>A string representing the node identifier for the Reserved Node to be
+     * <p>A string representing the node identifier for the DC1 Reserved Node to be
      * exchanged.</p>
      */
     inline GetReservedNodeExchangeOfferingsRequest& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
 
     /**
-     * <p>A string representing the node identifier for the Reserved Node to be
+     * <p>A string representing the node identifier for the DC1 Reserved Node to be
      * exchanged.</p>
      */
     inline GetReservedNodeExchangeOfferingsRequest& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}

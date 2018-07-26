@@ -729,6 +729,63 @@ namespace Model
      */
     inline Build& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <p>This is expressed either as
+     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <p>This is expressed either as
+     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <p>This is expressed either as
+     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <p>This is expressed either as
+     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <p>This is expressed either as
+     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline Build& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <p>This is expressed either as
+     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline Build& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <p>This is expressed either as
+     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline Build& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -790,6 +847,9 @@ namespace Model
 
     NetworkInterface m_networkInterface;
     bool m_networkInterfaceHasBeenSet;
+
+    Aws::String m_encryptionKey;
+    bool m_encryptionKeyHasBeenSet;
   };
 
 } // namespace Model

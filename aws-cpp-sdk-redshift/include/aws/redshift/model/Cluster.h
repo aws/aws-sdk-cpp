@@ -1359,6 +1359,42 @@ namespace Model
      */
     inline Cluster& AddPendingActions(const char* value) { m_pendingActionsHasBeenSet = true; m_pendingActions.push_back(value); return *this; }
 
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline Cluster& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline Cluster& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline Cluster& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1462,6 +1498,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_pendingActions;
     bool m_pendingActionsHasBeenSet;
+
+    Aws::String m_maintenanceTrackName;
+    bool m_maintenanceTrackNameHasBeenSet;
   };
 
 } // namespace Model

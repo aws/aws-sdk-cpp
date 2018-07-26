@@ -37,7 +37,9 @@ ProjectArtifacts::ProjectArtifacts() :
     m_namespaceTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_packaging(ArtifactPackaging::NOT_SET),
-    m_packagingHasBeenSet(false)
+    m_packagingHasBeenSet(false),
+    m_encryptionDisabled(false),
+    m_encryptionDisabledHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ ProjectArtifacts::ProjectArtifacts(JsonView jsonValue) :
     m_namespaceTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_packaging(ArtifactPackaging::NOT_SET),
-    m_packagingHasBeenSet(false)
+    m_packagingHasBeenSet(false),
+    m_encryptionDisabled(false),
+    m_encryptionDisabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +103,13 @@ ProjectArtifacts& ProjectArtifacts::operator =(JsonView jsonValue)
     m_packagingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("encryptionDisabled"))
+  {
+    m_encryptionDisabled = jsonValue.GetBool("encryptionDisabled");
+
+    m_encryptionDisabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +148,12 @@ JsonValue ProjectArtifacts::Jsonize() const
   if(m_packagingHasBeenSet)
   {
    payload.WithString("packaging", ArtifactPackagingMapper::GetNameForArtifactPackaging(m_packaging));
+  }
+
+  if(m_encryptionDisabledHasBeenSet)
+  {
+   payload.WithBool("encryptionDisabled", m_encryptionDisabled);
+
   }
 
   return payload;

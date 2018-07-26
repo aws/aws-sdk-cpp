@@ -55,6 +55,7 @@ FleetData::FleetData() :
     m_replaceUnhealthyInstances(false),
     m_replaceUnhealthyInstancesHasBeenSet(false),
     m_spotOptionsHasBeenSet(false),
+    m_onDemandOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -84,6 +85,7 @@ FleetData::FleetData(const XmlNode& xmlNode) :
     m_replaceUnhealthyInstances(false),
     m_replaceUnhealthyInstancesHasBeenSet(false),
     m_spotOptionsHasBeenSet(false),
+    m_onDemandOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -197,6 +199,12 @@ FleetData& FleetData::operator =(const XmlNode& xmlNode)
       m_spotOptions = spotOptionsNode;
       m_spotOptionsHasBeenSet = true;
     }
+    XmlNode onDemandOptionsNode = resultNode.FirstChild("onDemandOptions");
+    if(!onDemandOptionsNode.IsNull())
+    {
+      m_onDemandOptions = onDemandOptionsNode;
+      m_onDemandOptionsHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -306,6 +314,13 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_spotOptions.OutputToStream(oStream, spotOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_onDemandOptionsHasBeenSet)
+  {
+      Aws::StringStream onDemandOptionsLocationAndMemberSs;
+      onDemandOptionsLocationAndMemberSs << location << index << locationValue << ".OnDemandOptions";
+      m_onDemandOptions.OutputToStream(oStream, onDemandOptionsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -394,6 +409,12 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String spotOptionsLocationAndMember(location);
       spotOptionsLocationAndMember += ".SpotOptions";
       m_spotOptions.OutputToStream(oStream, spotOptionsLocationAndMember.c_str());
+  }
+  if(m_onDemandOptionsHasBeenSet)
+  {
+      Aws::String onDemandOptionsLocationAndMember(location);
+      onDemandOptionsLocationAndMember += ".OnDemandOptions";
+      m_onDemandOptions.OutputToStream(oStream, onDemandOptionsLocationAndMember.c_str());
   }
   if(m_tagsHasBeenSet)
   {

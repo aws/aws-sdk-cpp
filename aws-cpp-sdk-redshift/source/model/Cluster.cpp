@@ -70,7 +70,8 @@ Cluster::Cluster() :
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
     m_iamRolesHasBeenSet(false),
-    m_pendingActionsHasBeenSet(false)
+    m_pendingActionsHasBeenSet(false),
+    m_maintenanceTrackNameHasBeenSet(false)
 {
 }
 
@@ -114,7 +115,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
     m_iamRolesHasBeenSet(false),
-    m_pendingActionsHasBeenSet(false)
+    m_pendingActionsHasBeenSet(false),
+    m_maintenanceTrackNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -371,6 +373,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
 
       m_pendingActionsHasBeenSet = true;
     }
+    XmlNode maintenanceTrackNameNode = resultNode.FirstChild("MaintenanceTrackName");
+    if(!maintenanceTrackNameNode.IsNull())
+    {
+      m_maintenanceTrackName = StringUtils::Trim(maintenanceTrackNameNode.GetText().c_str());
+      m_maintenanceTrackNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -600,6 +608,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       }
   }
 
+  if(m_maintenanceTrackNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -791,6 +804,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       {
         oStream << location << ".PendingActions.member." << pendingActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_maintenanceTrackNameHasBeenSet)
+  {
+      oStream << location << ".MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
   }
 }
 

@@ -50,85 +50,85 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family of the offering (e.g., <code>m4</code>).</p> </li> <li> <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * instance family of the offering (for example, <code>m4</code>).</p> </li> <li>
+     * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family of the offering (e.g., <code>m4</code>).</p> </li> <li> <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * instance family of the offering (for example, <code>m4</code>).</p> </li> <li>
+     * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family of the offering (e.g., <code>m4</code>).</p> </li> <li> <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * instance family of the offering (for example, <code>m4</code>).</p> </li> <li>
+     * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family of the offering (e.g., <code>m4</code>).</p> </li> <li> <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * instance family of the offering (for example, <code>m4</code>).</p> </li> <li>
+     * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
     inline DescribeHostReservationOfferingsRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family of the offering (e.g., <code>m4</code>).</p> </li> <li> <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * instance family of the offering (for example, <code>m4</code>).</p> </li> <li>
+     * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
     inline DescribeHostReservationOfferingsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family of the offering (e.g., <code>m4</code>).</p> </li> <li> <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * instance family of the offering (for example, <code>m4</code>).</p> </li> <li>
+     * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
     inline DescribeHostReservationOfferingsRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family of the offering (e.g., <code>m4</code>).</p> </li> <li> <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * instance family of the offering (for example, <code>m4</code>).</p> </li> <li>
+     * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
     inline DescribeHostReservationOfferingsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>This is the maximum duration of the reservation you'd like to purchase,
-     * specified in seconds. Reservations are available in one-year and three-year
-     * terms. The number of seconds specified must be the number of seconds in a year
-     * (365x24x60x60) times one of the supported durations (1 or 3). For example,
-     * specify 94608000 for three years.</p>
+     * <p>This is the maximum duration of the reservation to purchase, specified in
+     * seconds. Reservations are available in one-year and three-year terms. The number
+     * of seconds specified must be the number of seconds in a year (365x24x60x60)
+     * times one of the supported durations (1 or 3). For example, specify 94608000 for
+     * three years.</p>
      */
     inline int GetMaxDuration() const{ return m_maxDuration; }
 
     /**
-     * <p>This is the maximum duration of the reservation you'd like to purchase,
-     * specified in seconds. Reservations are available in one-year and three-year
-     * terms. The number of seconds specified must be the number of seconds in a year
-     * (365x24x60x60) times one of the supported durations (1 or 3). For example,
-     * specify 94608000 for three years.</p>
+     * <p>This is the maximum duration of the reservation to purchase, specified in
+     * seconds. Reservations are available in one-year and three-year terms. The number
+     * of seconds specified must be the number of seconds in a year (365x24x60x60)
+     * times one of the supported durations (1 or 3). For example, specify 94608000 for
+     * three years.</p>
      */
     inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
 
     /**
-     * <p>This is the maximum duration of the reservation you'd like to purchase,
-     * specified in seconds. Reservations are available in one-year and three-year
-     * terms. The number of seconds specified must be the number of seconds in a year
-     * (365x24x60x60) times one of the supported durations (1 or 3). For example,
-     * specify 94608000 for three years.</p>
+     * <p>This is the maximum duration of the reservation to purchase, specified in
+     * seconds. Reservations are available in one-year and three-year terms. The number
+     * of seconds specified must be the number of seconds in a year (365x24x60x60)
+     * times one of the supported durations (1 or 3). For example, specify 94608000 for
+     * three years.</p>
      */
     inline DescribeHostReservationOfferingsRequest& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
 
@@ -136,8 +136,8 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an
+     * <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an
      * error.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -145,8 +145,8 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an
+     * <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an
      * error.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -154,8 +154,8 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an
+     * <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an
      * error.</p>
      */
     inline DescribeHostReservationOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

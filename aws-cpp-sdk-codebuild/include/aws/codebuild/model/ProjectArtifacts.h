@@ -683,6 +683,28 @@ namespace Model
      */
     inline ProjectArtifacts& WithPackaging(ArtifactPackaging&& value) { SetPackaging(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Set to true if you do not want your output artifacts encrypted. This option
+     * is only valid if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException will be thrown. </p>
+     */
+    inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
+
+    /**
+     * <p> Set to true if you do not want your output artifacts encrypted. This option
+     * is only valid if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException will be thrown. </p>
+     */
+    inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
+
+    /**
+     * <p> Set to true if you do not want your output artifacts encrypted. This option
+     * is only valid if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException will be thrown. </p>
+     */
+    inline ProjectArtifacts& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
+
   private:
 
     ArtifactsType m_type;
@@ -702,6 +724,9 @@ namespace Model
 
     ArtifactPackaging m_packaging;
     bool m_packagingHasBeenSet;
+
+    bool m_encryptionDisabled;
+    bool m_encryptionDisabledHasBeenSet;
   };
 
 } // namespace Model

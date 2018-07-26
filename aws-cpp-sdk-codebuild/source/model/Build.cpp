@@ -51,7 +51,8 @@ Build::Build() :
     m_buildCompleteHasBeenSet(false),
     m_initiatorHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false)
+    m_networkInterfaceHasBeenSet(false),
+    m_encryptionKeyHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ Build::Build(JsonView jsonValue) :
     m_buildCompleteHasBeenSet(false),
     m_initiatorHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false)
+    m_networkInterfaceHasBeenSet(false),
+    m_encryptionKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -228,6 +230,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_networkInterfaceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("encryptionKey"))
+  {
+    m_encryptionKey = jsonValue.GetString("encryptionKey");
+
+    m_encryptionKeyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -354,6 +363,12 @@ JsonValue Build::Jsonize() const
   if(m_networkInterfaceHasBeenSet)
   {
    payload.WithObject("networkInterface", m_networkInterface.Jsonize());
+
+  }
+
+  if(m_encryptionKeyHasBeenSet)
+  {
+   payload.WithString("encryptionKey", m_encryptionKey);
 
   }
 

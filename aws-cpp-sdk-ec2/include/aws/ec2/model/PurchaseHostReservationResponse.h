@@ -50,8 +50,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
-     * </p>
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -59,8 +59,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
-     * </p>
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
 
@@ -68,8 +68,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
-     * </p>
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
@@ -77,8 +77,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
-     * </p>
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
 
@@ -86,8 +86,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
-     * </p>
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline PurchaseHostReservationResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -95,8 +95,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
-     * </p>
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline PurchaseHostReservationResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -104,8 +104,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
-     * </p>
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline PurchaseHostReservationResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -219,43 +219,43 @@ namespace Model
 
 
     /**
-     * <p>The total amount that will be charged to your account when you purchase the
+     * <p>The total amount charged to your account when you purchase the
      * reservation.</p>
      */
     inline const Aws::String& GetTotalUpfrontPrice() const{ return m_totalUpfrontPrice; }
 
     /**
-     * <p>The total amount that will be charged to your account when you purchase the
+     * <p>The total amount charged to your account when you purchase the
      * reservation.</p>
      */
     inline void SetTotalUpfrontPrice(const Aws::String& value) { m_totalUpfrontPrice = value; }
 
     /**
-     * <p>The total amount that will be charged to your account when you purchase the
+     * <p>The total amount charged to your account when you purchase the
      * reservation.</p>
      */
     inline void SetTotalUpfrontPrice(Aws::String&& value) { m_totalUpfrontPrice = std::move(value); }
 
     /**
-     * <p>The total amount that will be charged to your account when you purchase the
+     * <p>The total amount charged to your account when you purchase the
      * reservation.</p>
      */
     inline void SetTotalUpfrontPrice(const char* value) { m_totalUpfrontPrice.assign(value); }
 
     /**
-     * <p>The total amount that will be charged to your account when you purchase the
+     * <p>The total amount charged to your account when you purchase the
      * reservation.</p>
      */
     inline PurchaseHostReservationResponse& WithTotalUpfrontPrice(const Aws::String& value) { SetTotalUpfrontPrice(value); return *this;}
 
     /**
-     * <p>The total amount that will be charged to your account when you purchase the
+     * <p>The total amount charged to your account when you purchase the
      * reservation.</p>
      */
     inline PurchaseHostReservationResponse& WithTotalUpfrontPrice(Aws::String&& value) { SetTotalUpfrontPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The total amount that will be charged to your account when you purchase the
+     * <p>The total amount charged to your account when you purchase the
      * reservation.</p>
      */
     inline PurchaseHostReservationResponse& WithTotalUpfrontPrice(const char* value) { SetTotalUpfrontPrice(value); return *this;}

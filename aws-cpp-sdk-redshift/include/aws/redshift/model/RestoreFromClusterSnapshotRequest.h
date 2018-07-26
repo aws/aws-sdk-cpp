@@ -1166,6 +1166,84 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1233,6 +1311,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_iamRoles;
     bool m_iamRolesHasBeenSet;
+
+    Aws::String m_maintenanceTrackName;
+    bool m_maintenanceTrackNameHasBeenSet;
   };
 
 } // namespace Model

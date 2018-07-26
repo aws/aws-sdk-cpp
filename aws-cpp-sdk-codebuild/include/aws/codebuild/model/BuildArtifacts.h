@@ -196,6 +196,25 @@ namespace Model
      */
     inline BuildArtifacts& WithMd5sum(const char* value) { SetMd5sum(value); return *this;}
 
+
+    /**
+     * <p> Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
+    inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
+
+    /**
+     * <p> Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
+    inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
+
+    /**
+     * <p> Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
+    inline BuildArtifacts& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
+
   private:
 
     Aws::String m_location;
@@ -206,6 +225,9 @@ namespace Model
 
     Aws::String m_md5sum;
     bool m_md5sumHasBeenSet;
+
+    bool m_encryptionDisabled;
+    bool m_encryptionDisabledHasBeenSet;
   };
 
 } // namespace Model

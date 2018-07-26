@@ -18,6 +18,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SpotOptionsRequest.h>
+#include <aws/ec2/model/OnDemandOptionsRequest.h>
 #include <aws/ec2/model/FleetExcessCapacityTerminationPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TargetCapacitySpecificationRequest.h>
@@ -137,34 +138,55 @@ namespace Model
 
 
     /**
-     * <p>Includes <code>SpotAllocationStrategy</code> and
-     * <code>SpotInstanceInterruptionBehavior</code> inside this structure.</p>
+     * <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
      */
     inline const SpotOptionsRequest& GetSpotOptions() const{ return m_spotOptions; }
 
     /**
-     * <p>Includes <code>SpotAllocationStrategy</code> and
-     * <code>SpotInstanceInterruptionBehavior</code> inside this structure.</p>
+     * <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
      */
     inline void SetSpotOptions(const SpotOptionsRequest& value) { m_spotOptionsHasBeenSet = true; m_spotOptions = value; }
 
     /**
-     * <p>Includes <code>SpotAllocationStrategy</code> and
-     * <code>SpotInstanceInterruptionBehavior</code> inside this structure.</p>
+     * <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
      */
     inline void SetSpotOptions(SpotOptionsRequest&& value) { m_spotOptionsHasBeenSet = true; m_spotOptions = std::move(value); }
 
     /**
-     * <p>Includes <code>SpotAllocationStrategy</code> and
-     * <code>SpotInstanceInterruptionBehavior</code> inside this structure.</p>
+     * <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
      */
     inline CreateFleetRequest& WithSpotOptions(const SpotOptionsRequest& value) { SetSpotOptions(value); return *this;}
 
     /**
-     * <p>Includes <code>SpotAllocationStrategy</code> and
-     * <code>SpotInstanceInterruptionBehavior</code> inside this structure.</p>
+     * <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
      */
     inline CreateFleetRequest& WithSpotOptions(SpotOptionsRequest&& value) { SetSpotOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline const OnDemandOptionsRequest& GetOnDemandOptions() const{ return m_onDemandOptions; }
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline void SetOnDemandOptions(const OnDemandOptionsRequest& value) { m_onDemandOptionsHasBeenSet = true; m_onDemandOptions = value; }
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline void SetOnDemandOptions(OnDemandOptionsRequest&& value) { m_onDemandOptionsHasBeenSet = true; m_onDemandOptions = std::move(value); }
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline CreateFleetRequest& WithOnDemandOptions(const OnDemandOptionsRequest& value) { SetOnDemandOptions(value); return *this;}
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
+    inline CreateFleetRequest& WithOnDemandOptions(OnDemandOptionsRequest&& value) { SetOnDemandOptions(std::move(value)); return *this;}
 
 
     /**
@@ -540,6 +562,9 @@ namespace Model
 
     SpotOptionsRequest m_spotOptions;
     bool m_spotOptionsHasBeenSet;
+
+    OnDemandOptionsRequest m_onDemandOptions;
+    bool m_onDemandOptionsHasBeenSet;
 
     FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
     bool m_excessCapacityTerminationPolicyHasBeenSet;

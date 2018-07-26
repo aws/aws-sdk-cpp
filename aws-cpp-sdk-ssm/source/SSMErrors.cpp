@@ -48,6 +48,7 @@ static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("R
 static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
 static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTarget");
 static const int INVALID_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("InvalidDocumentContent");
+static const int PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterVersionLabelLimitExceeded");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsError");
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
 static const int INVALID_INVENTORY_REQUEST_HASH = HashingUtils::HashString("InvalidInventoryRequestException");
@@ -207,6 +208,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_DOCUMENT_CONTENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_CONTENT), false);
+  }
+  else if (hashCode == PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {

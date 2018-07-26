@@ -43,17 +43,17 @@ namespace Model
 
 
     /**
-     * <p>Is <code>true</code> if the request succeeds, and an error otherwise. </p>
+     * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
      */
     inline bool GetReturn() const{ return m_return; }
 
     /**
-     * <p>Is <code>true</code> if the request succeeds, and an error otherwise. </p>
+     * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
      */
     inline void SetReturn(bool value) { m_return = value; }
 
     /**
-     * <p>Is <code>true</code> if the request succeeds, and an error otherwise. </p>
+     * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
      */
     inline ModifyFleetResponse& WithReturn(bool value) { SetReturn(value); return *this;}
 

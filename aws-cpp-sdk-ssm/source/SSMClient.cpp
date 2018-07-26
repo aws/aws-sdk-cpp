@@ -94,6 +94,7 @@
 #include <aws/ssm/model/GetParametersByPathRequest.h>
 #include <aws/ssm/model/GetPatchBaselineRequest.h>
 #include <aws/ssm/model/GetPatchBaselineForPatchGroupRequest.h>
+#include <aws/ssm/model/LabelParameterVersionRequest.h>
 #include <aws/ssm/model/ListAssociationVersionsRequest.h>
 #include <aws/ssm/model/ListAssociationsRequest.h>
 #include <aws/ssm/model/ListCommandInvocationsRequest.h>
@@ -2537,6 +2538,41 @@ void SSMClient::GetPatchBaselineForPatchGroupAsync(const GetPatchBaselineForPatc
 void SSMClient::GetPatchBaselineForPatchGroupAsyncHelper(const GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPatchBaselineForPatchGroup(request), context);
+}
+
+LabelParameterVersionOutcome SSMClient::LabelParameterVersion(const LabelParameterVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return LabelParameterVersionOutcome(LabelParameterVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return LabelParameterVersionOutcome(outcome.GetError());
+  }
+}
+
+LabelParameterVersionOutcomeCallable SSMClient::LabelParameterVersionCallable(const LabelParameterVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< LabelParameterVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->LabelParameterVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::LabelParameterVersionAsync(const LabelParameterVersionRequest& request, const LabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->LabelParameterVersionAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::LabelParameterVersionAsyncHelper(const LabelParameterVersionRequest& request, const LabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, LabelParameterVersion(request), context);
 }
 
 ListAssociationVersionsOutcome SSMClient::ListAssociationVersions(const ListAssociationVersionsRequest& request) const

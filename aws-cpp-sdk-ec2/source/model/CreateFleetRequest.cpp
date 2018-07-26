@@ -25,6 +25,7 @@ CreateFleetRequest::CreateFleetRequest() :
     m_dryRunHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_spotOptionsHasBeenSet(false),
+    m_onDemandOptionsHasBeenSet(false),
     m_excessCapacityTerminationPolicy(FleetExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
     m_launchTemplateConfigsHasBeenSet(false),
@@ -58,6 +59,11 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_spotOptionsHasBeenSet)
   {
     m_spotOptions.OutputToStream(ss, "SpotOptions");
+  }
+
+  if(m_onDemandOptionsHasBeenSet)
+  {
+    m_onDemandOptions.OutputToStream(ss, "OnDemandOptions");
   }
 
   if(m_excessCapacityTerminationPolicyHasBeenSet)

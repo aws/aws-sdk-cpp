@@ -57,6 +57,7 @@
 #include <aws/redshift/model/DescribeClusterSecurityGroupsRequest.h>
 #include <aws/redshift/model/DescribeClusterSnapshotsRequest.h>
 #include <aws/redshift/model/DescribeClusterSubnetGroupsRequest.h>
+#include <aws/redshift/model/DescribeClusterTracksRequest.h>
 #include <aws/redshift/model/DescribeClusterVersionsRequest.h>
 #include <aws/redshift/model/DescribeClustersRequest.h>
 #include <aws/redshift/model/DescribeDefaultClusterParametersRequest.h>
@@ -1218,6 +1219,41 @@ void RedshiftClient::DescribeClusterSubnetGroupsAsync(const DescribeClusterSubne
 void RedshiftClient::DescribeClusterSubnetGroupsAsyncHelper(const DescribeClusterSubnetGroupsRequest& request, const DescribeClusterSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeClusterSubnetGroups(request), context);
+}
+
+DescribeClusterTracksOutcome RedshiftClient::DescribeClusterTracks(const DescribeClusterTracksRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeClusterTracksOutcome(DescribeClusterTracksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeClusterTracksOutcome(outcome.GetError());
+  }
+}
+
+DescribeClusterTracksOutcomeCallable RedshiftClient::DescribeClusterTracksCallable(const DescribeClusterTracksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterTracksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClusterTracks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeClusterTracksAsync(const DescribeClusterTracksRequest& request, const DescribeClusterTracksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterTracksAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeClusterTracksAsyncHelper(const DescribeClusterTracksRequest& request, const DescribeClusterTracksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeClusterTracks(request), context);
 }
 
 DescribeClusterVersionsOutcome RedshiftClient::DescribeClusterVersions(const DescribeClusterVersionsRequest& request) const

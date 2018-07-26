@@ -52,37 +52,37 @@ namespace Model
 
 
     /**
-     * <p>The total number of instances that the Dedicated Host supports.</p>
+     * <p>The total number of instances supported by the Dedicated Host.</p>
      */
     inline const Aws::Vector<InstanceCapacity>& GetAvailableInstanceCapacity() const{ return m_availableInstanceCapacity; }
 
     /**
-     * <p>The total number of instances that the Dedicated Host supports.</p>
+     * <p>The total number of instances supported by the Dedicated Host.</p>
      */
     inline void SetAvailableInstanceCapacity(const Aws::Vector<InstanceCapacity>& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = value; }
 
     /**
-     * <p>The total number of instances that the Dedicated Host supports.</p>
+     * <p>The total number of instances supported by the Dedicated Host.</p>
      */
     inline void SetAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = std::move(value); }
 
     /**
-     * <p>The total number of instances that the Dedicated Host supports.</p>
+     * <p>The total number of instances supported by the Dedicated Host.</p>
      */
     inline AvailableCapacity& WithAvailableInstanceCapacity(const Aws::Vector<InstanceCapacity>& value) { SetAvailableInstanceCapacity(value); return *this;}
 
     /**
-     * <p>The total number of instances that the Dedicated Host supports.</p>
+     * <p>The total number of instances supported by the Dedicated Host.</p>
      */
     inline AvailableCapacity& WithAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { SetAvailableInstanceCapacity(std::move(value)); return *this;}
 
     /**
-     * <p>The total number of instances that the Dedicated Host supports.</p>
+     * <p>The total number of instances supported by the Dedicated Host.</p>
      */
     inline AvailableCapacity& AddAvailableInstanceCapacity(const InstanceCapacity& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(value); return *this; }
 
     /**
-     * <p>The total number of instances that the Dedicated Host supports.</p>
+     * <p>The total number of instances supported by the Dedicated Host.</p>
      */
     inline AvailableCapacity& AddAvailableInstanceCapacity(InstanceCapacity&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(std::move(value)); return *this; }
 

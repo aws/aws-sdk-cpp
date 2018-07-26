@@ -149,50 +149,50 @@ namespace Model
 
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIdSet() const{ return m_hostIdSet; }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
      */
     inline void SetHostIdSet(const Aws::Vector<Aws::String>& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = value; }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
      */
     inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = std::move(value); }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
      */
     inline PurchaseHostReservationRequest& WithHostIdSet(const Aws::Vector<Aws::String>& value) { SetHostIdSet(value); return *this;}
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
      */
     inline PurchaseHostReservationRequest& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(std::move(value)); return *this;}
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
      */
     inline PurchaseHostReservationRequest& AddHostIdSet(const Aws::String& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
      */
     inline PurchaseHostReservationRequest& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
      */
     inline PurchaseHostReservationRequest& AddHostIdSet(const char* value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
 
@@ -201,7 +201,7 @@ namespace Model
      * <p>The specified limit is checked against the total upfront cost of the
      * reservation (calculated as the offering's upfront cost multiplied by the host
      * count). If the total upfront cost is greater than the specified price limit, the
-     * request will fail. This is used to ensure that the purchase does not exceed the
+     * request fails. This is used to ensure that the purchase does not exceed the
      * expected upfront cost of the purchase. At this time, the only supported currency
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>
@@ -212,7 +212,7 @@ namespace Model
      * <p>The specified limit is checked against the total upfront cost of the
      * reservation (calculated as the offering's upfront cost multiplied by the host
      * count). If the total upfront cost is greater than the specified price limit, the
-     * request will fail. This is used to ensure that the purchase does not exceed the
+     * request fails. This is used to ensure that the purchase does not exceed the
      * expected upfront cost of the purchase. At this time, the only supported currency
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>
@@ -223,7 +223,7 @@ namespace Model
      * <p>The specified limit is checked against the total upfront cost of the
      * reservation (calculated as the offering's upfront cost multiplied by the host
      * count). If the total upfront cost is greater than the specified price limit, the
-     * request will fail. This is used to ensure that the purchase does not exceed the
+     * request fails. This is used to ensure that the purchase does not exceed the
      * expected upfront cost of the purchase. At this time, the only supported currency
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>
@@ -234,7 +234,7 @@ namespace Model
      * <p>The specified limit is checked against the total upfront cost of the
      * reservation (calculated as the offering's upfront cost multiplied by the host
      * count). If the total upfront cost is greater than the specified price limit, the
-     * request will fail. This is used to ensure that the purchase does not exceed the
+     * request fails. This is used to ensure that the purchase does not exceed the
      * expected upfront cost of the purchase. At this time, the only supported currency
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>
@@ -245,7 +245,7 @@ namespace Model
      * <p>The specified limit is checked against the total upfront cost of the
      * reservation (calculated as the offering's upfront cost multiplied by the host
      * count). If the total upfront cost is greater than the specified price limit, the
-     * request will fail. This is used to ensure that the purchase does not exceed the
+     * request fails. This is used to ensure that the purchase does not exceed the
      * expected upfront cost of the purchase. At this time, the only supported currency
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>
@@ -256,7 +256,7 @@ namespace Model
      * <p>The specified limit is checked against the total upfront cost of the
      * reservation (calculated as the offering's upfront cost multiplied by the host
      * count). If the total upfront cost is greater than the specified price limit, the
-     * request will fail. This is used to ensure that the purchase does not exceed the
+     * request fails. This is used to ensure that the purchase does not exceed the
      * expected upfront cost of the purchase. At this time, the only supported currency
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>
@@ -267,7 +267,7 @@ namespace Model
      * <p>The specified limit is checked against the total upfront cost of the
      * reservation (calculated as the offering's upfront cost multiplied by the host
      * count). If the total upfront cost is greater than the specified price limit, the
-     * request will fail. This is used to ensure that the purchase does not exceed the
+     * request fails. This is used to ensure that the purchase does not exceed the
      * expected upfront cost of the purchase. At this time, the only supported currency
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>

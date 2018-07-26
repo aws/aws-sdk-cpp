@@ -48,50 +48,42 @@ namespace Model
   public:
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIdSet() const{ return m_hostIdSet; }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline void SetHostIdSet(const Aws::Vector<Aws::String>& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = value; }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = std::move(value); }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline GetHostReservationPurchasePreviewRequest& WithHostIdSet(const Aws::Vector<Aws::String>& value) { SetHostIdSet(value); return *this;}
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline GetHostReservationPurchasePreviewRequest& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(std::move(value)); return *this;}
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(const Aws::String& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
-     * with.</p>
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(const char* value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
 

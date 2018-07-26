@@ -34,7 +34,9 @@ SpotOptions::SpotOptions() :
     m_allocationStrategy(SpotAllocationStrategy::NOT_SET),
     m_allocationStrategyHasBeenSet(false),
     m_instanceInterruptionBehavior(SpotInstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false)
+    m_instanceInterruptionBehaviorHasBeenSet(false),
+    m_instancePoolsToUseCount(0),
+    m_instancePoolsToUseCountHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ SpotOptions::SpotOptions(const XmlNode& xmlNode) :
     m_allocationStrategy(SpotAllocationStrategy::NOT_SET),
     m_allocationStrategyHasBeenSet(false),
     m_instanceInterruptionBehavior(SpotInstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false)
+    m_instanceInterruptionBehaviorHasBeenSet(false),
+    m_instancePoolsToUseCount(0),
+    m_instancePoolsToUseCountHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,6 +69,12 @@ SpotOptions& SpotOptions::operator =(const XmlNode& xmlNode)
       m_instanceInterruptionBehavior = SpotInstanceInterruptionBehaviorMapper::GetSpotInstanceInterruptionBehaviorForName(StringUtils::Trim(instanceInterruptionBehaviorNode.GetText().c_str()).c_str());
       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
+    XmlNode instancePoolsToUseCountNode = resultNode.FirstChild("instancePoolsToUseCount");
+    if(!instancePoolsToUseCountNode.IsNull())
+    {
+      m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(instancePoolsToUseCountNode.GetText().c_str()).c_str());
+      m_instancePoolsToUseCountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -82,6 +92,11 @@ void SpotOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << SpotInstanceInterruptionBehaviorMapper::GetNameForSpotInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
   }
 
+  if(m_instancePoolsToUseCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstancePoolsToUseCount=" << m_instancePoolsToUseCount << "&";
+  }
+
 }
 
 void SpotOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -93,6 +108,10 @@ void SpotOptions::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
       oStream << location << ".InstanceInterruptionBehavior=" << SpotInstanceInterruptionBehaviorMapper::GetNameForSpotInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+  }
+  if(m_instancePoolsToUseCountHasBeenSet)
+  {
+      oStream << location << ".InstancePoolsToUseCount=" << m_instancePoolsToUseCount << "&";
   }
 }
 

@@ -83,43 +83,43 @@ namespace Model
 
 
     /**
-     * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
+     * <p>The purchase information of the Dedicated Host reservation and the Dedicated
      * Hosts associated with it.</p>
      */
     inline const Aws::Vector<Purchase>& GetPurchase() const{ return m_purchase; }
 
     /**
-     * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
+     * <p>The purchase information of the Dedicated Host reservation and the Dedicated
      * Hosts associated with it.</p>
      */
     inline void SetPurchase(const Aws::Vector<Purchase>& value) { m_purchase = value; }
 
     /**
-     * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
+     * <p>The purchase information of the Dedicated Host reservation and the Dedicated
      * Hosts associated with it.</p>
      */
     inline void SetPurchase(Aws::Vector<Purchase>&& value) { m_purchase = std::move(value); }
 
     /**
-     * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
+     * <p>The purchase information of the Dedicated Host reservation and the Dedicated
      * Hosts associated with it.</p>
      */
     inline GetHostReservationPurchasePreviewResponse& WithPurchase(const Aws::Vector<Purchase>& value) { SetPurchase(value); return *this;}
 
     /**
-     * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
+     * <p>The purchase information of the Dedicated Host reservation and the Dedicated
      * Hosts associated with it.</p>
      */
     inline GetHostReservationPurchasePreviewResponse& WithPurchase(Aws::Vector<Purchase>&& value) { SetPurchase(std::move(value)); return *this;}
 
     /**
-     * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
+     * <p>The purchase information of the Dedicated Host reservation and the Dedicated
      * Hosts associated with it.</p>
      */
     inline GetHostReservationPurchasePreviewResponse& AddPurchase(const Purchase& value) { m_purchase.push_back(value); return *this; }
 
     /**
-     * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
+     * <p>The purchase information of the Dedicated Host reservation and the Dedicated
      * Hosts associated with it.</p>
      */
     inline GetHostReservationPurchasePreviewResponse& AddPurchase(Purchase&& value) { m_purchase.push_back(std::move(value)); return *this; }

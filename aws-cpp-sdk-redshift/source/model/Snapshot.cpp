@@ -70,7 +70,8 @@ Snapshot::Snapshot() :
     m_tagsHasBeenSet(false),
     m_restorableNodeTypesHasBeenSet(false),
     m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false)
+    m_enhancedVpcRoutingHasBeenSet(false),
+    m_maintenanceTrackNameHasBeenSet(false)
 {
 }
 
@@ -114,7 +115,8 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_restorableNodeTypesHasBeenSet(false),
     m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false)
+    m_enhancedVpcRoutingHasBeenSet(false),
+    m_maintenanceTrackNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -317,6 +319,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_enhancedVpcRouting = StringUtils::ConvertToBool(StringUtils::Trim(enhancedVpcRoutingNode.GetText().c_str()).c_str());
       m_enhancedVpcRoutingHasBeenSet = true;
     }
+    XmlNode maintenanceTrackNameNode = resultNode.FirstChild("MaintenanceTrackName");
+    if(!maintenanceTrackNameNode.IsNull())
+    {
+      m_maintenanceTrackName = StringUtils::Trim(maintenanceTrackNameNode.GetText().c_str());
+      m_maintenanceTrackNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -485,6 +493,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
 
+  if(m_maintenanceTrackNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
+  }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -620,6 +633,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_enhancedVpcRoutingHasBeenSet)
   {
       oStream << location << ".EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
+  }
+  if(m_maintenanceTrackNameHasBeenSet)
+  {
+      oStream << location << ".MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
   }
 }
 

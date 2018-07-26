@@ -39,7 +39,8 @@ ParameterHistory::ParameterHistory() :
     m_valueHasBeenSet(false),
     m_allowedPatternHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ ParameterHistory::ParameterHistory(JsonView jsonValue) :
     m_valueHasBeenSet(false),
     m_allowedPatternHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,16 @@ ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Labels"))
+  {
+    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
+    {
+      m_labels.push_back(labelsJsonList[labelsIndex].AsString());
+    }
+    m_labelsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +192,17 @@ JsonValue ParameterHistory::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInt64("Version", m_version);
+
+  }
+
+  if(m_labelsHasBeenSet)
+  {
+   Array<JsonValue> labelsJsonList(m_labels.size());
+   for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
+   {
+     labelsJsonList[labelsIndex].AsString(m_labels[labelsIndex]);
+   }
+   payload.WithArray("Labels", std::move(labelsJsonList));
 
   }
 

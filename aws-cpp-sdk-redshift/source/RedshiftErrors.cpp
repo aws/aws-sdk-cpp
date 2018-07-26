@@ -111,6 +111,7 @@ static const int SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = HashingUtils::HashStrin
 static const int INVALID_RESTORE_FAULT_HASH = HashingUtils::HashString("InvalidRestore");
 static const int UNSUPPORTED_OPTION_FAULT_HASH = HashingUtils::HashString("UnsupportedOptionFault");
 static const int CLUSTER_ON_LATEST_REVISION_FAULT_HASH = HashingUtils::HashString("ClusterOnLatestRevision");
+static const int INVALID_CLUSTER_TRACK_FAULT_HASH = HashingUtils::HashString("InvalidClusterTrack");
 static const int NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NumberOfNodesPerClusterLimitExceeded");
 static const int RESERVED_NODE_OFFERING_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeOfferingNotFound");
 static const int INVALID_ELASTIC_IP_FAULT_HASH = HashingUtils::HashString("InvalidElasticIpFault");
@@ -453,6 +454,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLUSTER_ON_LATEST_REVISION_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_ON_LATEST_REVISION_FAULT), false);
+  }
+  else if (hashCode == INVALID_CLUSTER_TRACK_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_TRACK_FAULT), false);
   }
   else if (hashCode == NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
   {
