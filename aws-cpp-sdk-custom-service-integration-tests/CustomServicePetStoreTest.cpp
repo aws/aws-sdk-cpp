@@ -69,7 +69,7 @@ namespace
 
         // Test GetPetRequest
         GetPetRequest getPetRequest;
-        getPetRequest.SetPetId("1");
+        getPetRequest.SetPetId(1);
 
         auto getPetOutcome = client.GetPet(getPetRequest);
         ASSERT_TRUE(getPetOutcome.IsSuccess());
@@ -84,7 +84,7 @@ namespace
         auto pets = getPetsOutcome.GetResult().GetPets();
         ASSERT_EQ(3u, pets.size());
         auto pet = pets[1];
-        ASSERT_EQ("2" , pet.GetId());
+        ASSERT_EQ(2 , pet.GetId());
         ASSERT_EQ("cat", pet.GetType());
         ASSERT_EQ(124.99, pet.GetPrice());
     }

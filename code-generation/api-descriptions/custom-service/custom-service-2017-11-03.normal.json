@@ -110,7 +110,7 @@
       "type" : "structure",
       "members" : {
         "PetId" : {
-          "shape" : "__string",
+          "shape" : "__double",
           "location" : "uri",
           "locationName" : "petId"
         }
@@ -182,7 +182,7 @@
       "type" : "structure",
       "members" : {
         "Id" : {
-          "shape" : "__string",
+          "shape" : "__double",
           "locationName" : "id"
         },
         "Price" : {
