@@ -238,6 +238,7 @@ void WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& reque
 
         if(!success)
         {
+            response = nullptr;
             return;
         }
     }
@@ -278,12 +279,11 @@ void WinSyncHttpClient::MakeRequestInternal(HttpRequest& request,
     AWS_LOGSTREAM_TRACE(GetLogTag(), "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()) <<
 			" request to uri " << uriRef.GetURIString(true));
 
-    bool success = IsRequestProcessingEnabled();
-
+    bool success = false;
     void* connection = nullptr;
     void* hHttpRequest = nullptr;
 
-    if(success)
+    if(IsRequestProcessingEnabled())
     {
         if (writeLimiter != nullptr)
         {
@@ -296,19 +296,17 @@ void WinSyncHttpClient::MakeRequestInternal(HttpRequest& request,
         hHttpRequest = AllocateWindowsHttpRequest(request, connection);
 
         AddHeadersToRequest(request, hHttpRequest);
-        success = DoSendRequest(hHttpRequest);
+        if (DoSendRequest(hHttpRequest) && StreamPayloadToRequest(request, hHttpRequest, writeLimiter))
+        {
+            success = true;
+            BuildSuccessResponse(request, response, hHttpRequest, readLimiter);
+        }
+        else
+        {
+            response = nullptr;
+        }
     }
 
-    if(success)
-    {
-        success = StreamPayloadToRequest(request, hHttpRequest, writeLimiter);
-    }
-
-    if(success)
-    {
-        BuildSuccessResponse(request, response, hHttpRequest, readLimiter);
-    }
-    
     if ((!success || response == nullptr) && !IsRequestProcessingEnabled() || !ContinueRequest(request))
     {
         AWS_LOGSTREAM_INFO(GetLogTag(), "Request cancelled by client controller");
