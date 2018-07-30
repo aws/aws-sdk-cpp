@@ -95,61 +95,78 @@ namespace Model
 
 
     /**
-     * <p>The name of the model that you want to use for the transform job.</p>
+     * <p>The name of the model that you want to use for the transform job.
+     * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
+     * within an AWS Region in an AWS account.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>The name of the model that you want to use for the transform job.</p>
+     * <p>The name of the model that you want to use for the transform job.
+     * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
+     * within an AWS Region in an AWS account.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
-     * <p>The name of the model that you want to use for the transform job.</p>
+     * <p>The name of the model that you want to use for the transform job.
+     * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
+     * within an AWS Region in an AWS account.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
-     * <p>The name of the model that you want to use for the transform job.</p>
+     * <p>The name of the model that you want to use for the transform job.
+     * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
+     * within an AWS Region in an AWS account.</p>
      */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
 
     /**
-     * <p>The name of the model that you want to use for the transform job.</p>
+     * <p>The name of the model that you want to use for the transform job.
+     * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
+     * within an AWS Region in an AWS account.</p>
      */
     inline CreateTransformJobRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>The name of the model that you want to use for the transform job.</p>
+     * <p>The name of the model that you want to use for the transform job.
+     * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
+     * within an AWS Region in an AWS account.</p>
      */
     inline CreateTransformJobRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model that you want to use for the transform job.</p>
+     * <p>The name of the model that you want to use for the transform job.
+     * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
+     * within an AWS Region in an AWS account.</p>
      */
     inline CreateTransformJobRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
 
 
     /**
-     * <p>The maximum number of parallel requests on each instance node that can be
-     * launched in a transform job. The default value is <code>1</code>. To allow
-     * Amazon SageMaker to determine the appropriate number for
+     * <p>The maximum number of parallel requests that can be sent to each instance in
+     * a transform job. This is good for algorithms that implement multiple workers on
+     * larger instances . The default value is <code>1</code>. To allow Amazon
+     * SageMaker to determine the appropriate number for
      * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.</p>
      */
     inline int GetMaxConcurrentTransforms() const{ return m_maxConcurrentTransforms; }
 
     /**
-     * <p>The maximum number of parallel requests on each instance node that can be
-     * launched in a transform job. The default value is <code>1</code>. To allow
-     * Amazon SageMaker to determine the appropriate number for
+     * <p>The maximum number of parallel requests that can be sent to each instance in
+     * a transform job. This is good for algorithms that implement multiple workers on
+     * larger instances . The default value is <code>1</code>. To allow Amazon
+     * SageMaker to determine the appropriate number for
      * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.</p>
      */
     inline void SetMaxConcurrentTransforms(int value) { m_maxConcurrentTransformsHasBeenSet = true; m_maxConcurrentTransforms = value; }
 
     /**
-     * <p>The maximum number of parallel requests on each instance node that can be
-     * launched in a transform job. The default value is <code>1</code>. To allow
-     * Amazon SageMaker to determine the appropriate number for
+     * <p>The maximum number of parallel requests that can be sent to each instance in
+     * a transform job. This is good for algorithms that implement multiple workers on
+     * larger instances . The default value is <code>1</code>. To allow Amazon
+     * SageMaker to determine the appropriate number for
      * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.</p>
      */
     inline CreateTransformJobRequest& WithMaxConcurrentTransforms(int value) { SetMaxConcurrentTransforms(value); return *this;}
@@ -158,10 +175,10 @@ namespace Model
     /**
      * <p>The maximum payload size allowed, in MB. A payload is the data portion of a
      * record (without metadata). The value in <code>MaxPayloadInMB</code> must be
-     * greater than the size of a single record.You can approximate the size of a
-     * record by dividing the size of your dataset by the number of records. The value
-     * you enter should be proportional to the number of records you want per batch. It
-     * is recommended to enter a slightly higher value to ensure the records will fit
+     * greater or equal to the size of a single record. You can approximate the size of
+     * a record by dividing the size of your dataset by the number of records. Then
+     * multiply this value by the number of records you want in a mini-batch. It is
+     * recommended to enter a value slightly larger than this to ensure the records fit
      * within the maximum payload size. The default value is <code>6</code> MB. For an
      * unlimited payload size, set the value to <code>0</code>.</p>
      */
@@ -170,10 +187,10 @@ namespace Model
     /**
      * <p>The maximum payload size allowed, in MB. A payload is the data portion of a
      * record (without metadata). The value in <code>MaxPayloadInMB</code> must be
-     * greater than the size of a single record.You can approximate the size of a
-     * record by dividing the size of your dataset by the number of records. The value
-     * you enter should be proportional to the number of records you want per batch. It
-     * is recommended to enter a slightly higher value to ensure the records will fit
+     * greater or equal to the size of a single record. You can approximate the size of
+     * a record by dividing the size of your dataset by the number of records. Then
+     * multiply this value by the number of records you want in a mini-batch. It is
+     * recommended to enter a value slightly larger than this to ensure the records fit
      * within the maximum payload size. The default value is <code>6</code> MB. For an
      * unlimited payload size, set the value to <code>0</code>.</p>
      */
@@ -182,10 +199,10 @@ namespace Model
     /**
      * <p>The maximum payload size allowed, in MB. A payload is the data portion of a
      * record (without metadata). The value in <code>MaxPayloadInMB</code> must be
-     * greater than the size of a single record.You can approximate the size of a
-     * record by dividing the size of your dataset by the number of records. The value
-     * you enter should be proportional to the number of records you want per batch. It
-     * is recommended to enter a slightly higher value to ensure the records will fit
+     * greater or equal to the size of a single record. You can approximate the size of
+     * a record by dividing the size of your dataset by the number of records. Then
+     * multiply this value by the number of records you want in a mini-batch. It is
+     * recommended to enter a value slightly larger than this to ensure the records fit
      * within the maximum payload size. The default value is <code>6</code> MB. For an
      * unlimited payload size, set the value to <code>0</code>.</p>
      */
@@ -193,42 +210,67 @@ namespace Model
 
 
     /**
-     * <p>Determins the number of records included in a single batch.
-     * <code>SingleRecord</code> means only one record is used per batch.
-     * <code>MultiRecord</code> means a batch is set to contain as many records that
-     * could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Determines the number of records included in a single mini-batch.
+     * <code>SingleRecord</code> means only one record is used per mini-batch.
+     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
+     * transform will automatically split your input data into whatever payload size is
+     * specified if you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
+     * the dataset into smaller files or to use larger payload sizes unless the records
+     * in your dataset are very large.</p>
      */
     inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
 
     /**
-     * <p>Determins the number of records included in a single batch.
-     * <code>SingleRecord</code> means only one record is used per batch.
-     * <code>MultiRecord</code> means a batch is set to contain as many records that
-     * could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Determines the number of records included in a single mini-batch.
+     * <code>SingleRecord</code> means only one record is used per mini-batch.
+     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
+     * transform will automatically split your input data into whatever payload size is
+     * specified if you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
+     * the dataset into smaller files or to use larger payload sizes unless the records
+     * in your dataset are very large.</p>
      */
     inline void SetBatchStrategy(const BatchStrategy& value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = value; }
 
     /**
-     * <p>Determins the number of records included in a single batch.
-     * <code>SingleRecord</code> means only one record is used per batch.
-     * <code>MultiRecord</code> means a batch is set to contain as many records that
-     * could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Determines the number of records included in a single mini-batch.
+     * <code>SingleRecord</code> means only one record is used per mini-batch.
+     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
+     * transform will automatically split your input data into whatever payload size is
+     * specified if you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
+     * the dataset into smaller files or to use larger payload sizes unless the records
+     * in your dataset are very large.</p>
      */
     inline void SetBatchStrategy(BatchStrategy&& value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = std::move(value); }
 
     /**
-     * <p>Determins the number of records included in a single batch.
-     * <code>SingleRecord</code> means only one record is used per batch.
-     * <code>MultiRecord</code> means a batch is set to contain as many records that
-     * could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Determines the number of records included in a single mini-batch.
+     * <code>SingleRecord</code> means only one record is used per mini-batch.
+     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
+     * transform will automatically split your input data into whatever payload size is
+     * specified if you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
+     * the dataset into smaller files or to use larger payload sizes unless the records
+     * in your dataset are very large.</p>
      */
     inline CreateTransformJobRequest& WithBatchStrategy(const BatchStrategy& value) { SetBatchStrategy(value); return *this;}
 
     /**
-     * <p>Determins the number of records included in a single batch.
-     * <code>SingleRecord</code> means only one record is used per batch.
-     * <code>MultiRecord</code> means a batch is set to contain as many records that
-     * could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Determines the number of records included in a single mini-batch.
+     * <code>SingleRecord</code> means only one record is used per mini-batch.
+     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
+     * transform will automatically split your input data into whatever payload size is
+     * specified if you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
+     * the dataset into smaller files or to use larger payload sizes unless the records
+     * in your dataset are very large.</p>
      */
     inline CreateTransformJobRequest& WithBatchStrategy(BatchStrategy&& value) { SetBatchStrategy(std::move(value)); return *this;}
 

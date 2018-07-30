@@ -35,6 +35,7 @@ CreateBrokerRequest::CreateBrokerRequest() :
     m_engineTypeHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false),
+    m_logsHasBeenSet(false),
     m_maintenanceWindowStartTimeHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
@@ -91,6 +92,12 @@ Aws::String CreateBrokerRequest::SerializePayload() const
   if(m_hostInstanceTypeHasBeenSet)
   {
    payload.WithString("hostInstanceType", m_hostInstanceType);
+
+  }
+
+  if(m_logsHasBeenSet)
+  {
+   payload.WithObject("logs", m_logs.Jsonize());
 
   }
 

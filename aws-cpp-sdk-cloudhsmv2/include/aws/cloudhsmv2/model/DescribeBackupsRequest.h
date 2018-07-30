@@ -221,6 +221,16 @@ namespace Model
      */
     inline DescribeBackupsRequest& AddFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 
+
+    
+    inline bool GetSortAscending() const{ return m_sortAscending; }
+
+    
+    inline void SetSortAscending(bool value) { m_sortAscendingHasBeenSet = true; m_sortAscending = value; }
+
+    
+    inline DescribeBackupsRequest& WithSortAscending(bool value) { SetSortAscending(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -231,6 +241,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_filters;
     bool m_filtersHasBeenSet;
+
+    bool m_sortAscending;
+    bool m_sortAscendingHasBeenSet;
   };
 
 } // namespace Model

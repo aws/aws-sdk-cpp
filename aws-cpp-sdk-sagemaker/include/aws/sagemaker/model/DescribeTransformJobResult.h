@@ -261,36 +261,36 @@ namespace Model
 
     /**
      * <p>SingleRecord means only one record was used per a batch.
-     * &lt;code&gt;MultiRecord&lt;/code&gt; means batches contained as many records
-     * that could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <code>MultiRecord</code> means batches contained as many records that could
+     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
 
     /**
      * <p>SingleRecord means only one record was used per a batch.
-     * &lt;code&gt;MultiRecord&lt;/code&gt; means batches contained as many records
-     * that could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <code>MultiRecord</code> means batches contained as many records that could
+     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline void SetBatchStrategy(const BatchStrategy& value) { m_batchStrategy = value; }
 
     /**
      * <p>SingleRecord means only one record was used per a batch.
-     * &lt;code&gt;MultiRecord&lt;/code&gt; means batches contained as many records
-     * that could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <code>MultiRecord</code> means batches contained as many records that could
+     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline void SetBatchStrategy(BatchStrategy&& value) { m_batchStrategy = std::move(value); }
 
     /**
      * <p>SingleRecord means only one record was used per a batch.
-     * &lt;code&gt;MultiRecord&lt;/code&gt; means batches contained as many records
-     * that could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <code>MultiRecord</code> means batches contained as many records that could
+     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline DescribeTransformJobResult& WithBatchStrategy(const BatchStrategy& value) { SetBatchStrategy(value); return *this;}
 
     /**
      * <p>SingleRecord means only one record was used per a batch.
-     * &lt;code&gt;MultiRecord&lt;/code&gt; means batches contained as many records
-     * that could possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <code>MultiRecord</code> means batches contained as many records that could
+     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline DescribeTransformJobResult& WithBatchStrategy(BatchStrategy&& value) { SetBatchStrategy(std::move(value)); return *this;}
 

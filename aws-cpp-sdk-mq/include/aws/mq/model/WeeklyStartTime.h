@@ -50,32 +50,27 @@ namespace Model
 
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY,
-     * THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY,
-     * THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY,
-     * THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      */
     inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY,
-     * THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      */
     inline WeeklyStartTime& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY,
-     * THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      */
     inline WeeklyStartTime& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
 

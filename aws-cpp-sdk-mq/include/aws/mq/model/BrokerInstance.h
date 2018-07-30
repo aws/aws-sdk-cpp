@@ -124,6 +124,42 @@ namespace Model
      */
     inline BrokerInstance& AddEndpoints(const char* value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
 
+
+    /**
+     * The IP address of the ENI attached to the broker.
+     */
+    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * The IP address of the ENI attached to the broker.
+     */
+    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+
+    /**
+     * The IP address of the ENI attached to the broker.
+     */
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
+
+    /**
+     * The IP address of the ENI attached to the broker.
+     */
+    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
+
+    /**
+     * The IP address of the ENI attached to the broker.
+     */
+    inline BrokerInstance& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
+
+    /**
+     * The IP address of the ENI attached to the broker.
+     */
+    inline BrokerInstance& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
+
+    /**
+     * The IP address of the ENI attached to the broker.
+     */
+    inline BrokerInstance& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
   private:
 
     Aws::String m_consoleURL;
@@ -131,6 +167,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_endpoints;
     bool m_endpointsHasBeenSet;
+
+    Aws::String m_ipAddress;
+    bool m_ipAddressHasBeenSet;
   };
 
 } // namespace Model

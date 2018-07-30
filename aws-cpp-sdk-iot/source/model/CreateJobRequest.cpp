@@ -31,8 +31,7 @@ CreateJobRequest::CreateJobRequest() :
     m_presignedUrlConfigHasBeenSet(false),
     m_targetSelection(TargetSelection::NOT_SET),
     m_targetSelectionHasBeenSet(false),
-    m_jobExecutionsRolloutConfigHasBeenSet(false),
-    m_documentParametersHasBeenSet(false)
+    m_jobExecutionsRolloutConfigHasBeenSet(false)
 {
 }
 
@@ -83,17 +82,6 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_jobExecutionsRolloutConfigHasBeenSet)
   {
    payload.WithObject("jobExecutionsRolloutConfig", m_jobExecutionsRolloutConfig.Jsonize());
-
-  }
-
-  if(m_documentParametersHasBeenSet)
-  {
-   JsonValue documentParametersJsonMap;
-   for(auto& documentParametersItem : m_documentParameters)
-   {
-     documentParametersJsonMap.WithString(documentParametersItem.first, documentParametersItem.second);
-   }
-   payload.WithObject("documentParameters", std::move(documentParametersJsonMap));
 
   }
 

@@ -28,6 +28,7 @@ CreateDevEndpointRequest::CreateDevEndpointRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
+    m_publicKeysHasBeenSet(false),
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_extraPythonLibsS3PathHasBeenSet(false),
@@ -71,6 +72,17 @@ Aws::String CreateDevEndpointRequest::SerializePayload() const
   if(m_publicKeyHasBeenSet)
   {
    payload.WithString("PublicKey", m_publicKey);
+
+  }
+
+  if(m_publicKeysHasBeenSet)
+  {
+   Array<JsonValue> publicKeysJsonList(m_publicKeys.size());
+   for(unsigned publicKeysIndex = 0; publicKeysIndex < publicKeysJsonList.GetLength(); ++publicKeysIndex)
+   {
+     publicKeysJsonList[publicKeysIndex].AsString(m_publicKeys[publicKeysIndex]);
+   }
+   payload.WithArray("PublicKeys", std::move(publicKeysJsonList));
 
   }
 

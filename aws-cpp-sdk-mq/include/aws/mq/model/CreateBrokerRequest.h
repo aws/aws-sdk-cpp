@@ -20,6 +20,7 @@
 #include <aws/mq/model/ConfigurationId.h>
 #include <aws/mq/model/DeploymentMode.h>
 #include <aws/mq/model/EngineType.h>
+#include <aws/mq/model/Logs.h>
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/model/User.h>
@@ -215,42 +216,27 @@ namespace Model
 
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE,
-     * ACTIVE_STANDBY_MULTI_AZ SINGLE_INSTANCE creates a single-instance broker in a
-     * single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby
-     * broker for high availability.
+     * Required. The deployment mode of the broker.
      */
     inline const DeploymentMode& GetDeploymentMode() const{ return m_deploymentMode; }
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE,
-     * ACTIVE_STANDBY_MULTI_AZ SINGLE_INSTANCE creates a single-instance broker in a
-     * single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby
-     * broker for high availability.
+     * Required. The deployment mode of the broker.
      */
     inline void SetDeploymentMode(const DeploymentMode& value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = value; }
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE,
-     * ACTIVE_STANDBY_MULTI_AZ SINGLE_INSTANCE creates a single-instance broker in a
-     * single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby
-     * broker for high availability.
+     * Required. The deployment mode of the broker.
      */
     inline void SetDeploymentMode(DeploymentMode&& value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = std::move(value); }
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE,
-     * ACTIVE_STANDBY_MULTI_AZ SINGLE_INSTANCE creates a single-instance broker in a
-     * single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby
-     * broker for high availability.
+     * Required. The deployment mode of the broker.
      */
     inline CreateBrokerRequest& WithDeploymentMode(const DeploymentMode& value) { SetDeploymentMode(value); return *this;}
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE,
-     * ACTIVE_STANDBY_MULTI_AZ SINGLE_INSTANCE creates a single-instance broker in a
-     * single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby
-     * broker for high availability.
+     * Required. The deployment mode of the broker.
      */
     inline CreateBrokerRequest& WithDeploymentMode(DeploymentMode&& value) { SetDeploymentMode(std::move(value)); return *this;}
 
@@ -330,39 +316,65 @@ namespace Model
 
 
     /**
-     * Required. The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * Required. The broker's instance type.
      */
     inline const Aws::String& GetHostInstanceType() const{ return m_hostInstanceType; }
 
     /**
-     * Required. The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * Required. The broker's instance type.
      */
     inline void SetHostInstanceType(const Aws::String& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = value; }
 
     /**
-     * Required. The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * Required. The broker's instance type.
      */
     inline void SetHostInstanceType(Aws::String&& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = std::move(value); }
 
     /**
-     * Required. The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * Required. The broker's instance type.
      */
     inline void SetHostInstanceType(const char* value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType.assign(value); }
 
     /**
-     * Required. The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * Required. The broker's instance type.
      */
     inline CreateBrokerRequest& WithHostInstanceType(const Aws::String& value) { SetHostInstanceType(value); return *this;}
 
     /**
-     * Required. The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * Required. The broker's instance type.
      */
     inline CreateBrokerRequest& WithHostInstanceType(Aws::String&& value) { SetHostInstanceType(std::move(value)); return *this;}
 
     /**
-     * Required. The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * Required. The broker's instance type.
      */
     inline CreateBrokerRequest& WithHostInstanceType(const char* value) { SetHostInstanceType(value); return *this;}
+
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline const Logs& GetLogs() const{ return m_logs; }
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline void SetLogs(const Logs& value) { m_logsHasBeenSet = true; m_logs = value; }
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline void SetLogs(Logs&& value) { m_logsHasBeenSet = true; m_logs = std::move(value); }
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline CreateBrokerRequest& WithLogs(const Logs& value) { SetLogs(value); return *this;}
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline CreateBrokerRequest& WithLogs(Logs&& value) { SetLogs(std::move(value)); return *this;}
 
 
     /**
@@ -411,114 +423,114 @@ namespace Model
 
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * brokers.
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * brokers.
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * brokers.
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * brokers.
      */
     inline CreateBrokerRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * brokers.
      */
     inline CreateBrokerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
 
     /**
-     * Required. The list of groups (2 maximum) that define which subnets and IP ranges
-     * the broker can use from different Availability Zones. A SINGLE_INSTANCE
-     * deployment requires one subnet (for example, the default subnet). An
+     * The list of groups (2 maximum) that define which subnets and IP ranges the
+     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
+     * requires one subnet (for example, the default subnet). An
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * Required. The list of groups (2 maximum) that define which subnets and IP ranges
-     * the broker can use from different Availability Zones. A SINGLE_INSTANCE
-     * deployment requires one subnet (for example, the default subnet). An
+     * The list of groups (2 maximum) that define which subnets and IP ranges the
+     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
+     * requires one subnet (for example, the default subnet). An
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * Required. The list of groups (2 maximum) that define which subnets and IP ranges
-     * the broker can use from different Availability Zones. A SINGLE_INSTANCE
-     * deployment requires one subnet (for example, the default subnet). An
+     * The list of groups (2 maximum) that define which subnets and IP ranges the
+     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
+     * requires one subnet (for example, the default subnet). An
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * Required. The list of groups (2 maximum) that define which subnets and IP ranges
-     * the broker can use from different Availability Zones. A SINGLE_INSTANCE
-     * deployment requires one subnet (for example, the default subnet). An
+     * The list of groups (2 maximum) that define which subnets and IP ranges the
+     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
+     * requires one subnet (for example, the default subnet). An
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     inline CreateBrokerRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * Required. The list of groups (2 maximum) that define which subnets and IP ranges
-     * the broker can use from different Availability Zones. A SINGLE_INSTANCE
-     * deployment requires one subnet (for example, the default subnet). An
+     * The list of groups (2 maximum) that define which subnets and IP ranges the
+     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
+     * requires one subnet (for example, the default subnet). An
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     inline CreateBrokerRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * Required. The list of groups (2 maximum) that define which subnets and IP ranges
-     * the broker can use from different Availability Zones. A SINGLE_INSTANCE
-     * deployment requires one subnet (for example, the default subnet). An
+     * The list of groups (2 maximum) that define which subnets and IP ranges the
+     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
+     * requires one subnet (for example, the default subnet). An
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     inline CreateBrokerRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * Required. The list of groups (2 maximum) that define which subnets and IP ranges
-     * the broker can use from different Availability Zones. A SINGLE_INSTANCE
-     * deployment requires one subnet (for example, the default subnet). An
+     * The list of groups (2 maximum) that define which subnets and IP ranges the
+     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
+     * requires one subnet (for example, the default subnet). An
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     inline CreateBrokerRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * Required. The list of groups (2 maximum) that define which subnets and IP ranges
-     * the broker can use from different Availability Zones. A SINGLE_INSTANCE
-     * deployment requires one subnet (for example, the default subnet). An
+     * The list of groups (2 maximum) that define which subnets and IP ranges the
+     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
+     * requires one subnet (for example, the default subnet). An
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     inline CreateBrokerRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
@@ -605,6 +617,9 @@ namespace Model
 
     Aws::String m_hostInstanceType;
     bool m_hostInstanceTypeHasBeenSet;
+
+    Logs m_logs;
+    bool m_logsHasBeenSet;
 
     WeeklyStartTime m_maintenanceWindowStartTime;
     bool m_maintenanceWindowStartTimeHasBeenSet;

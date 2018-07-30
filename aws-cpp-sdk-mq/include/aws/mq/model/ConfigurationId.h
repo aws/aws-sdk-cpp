@@ -84,17 +84,17 @@ namespace Model
 
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      */
     inline int GetRevision() const{ return m_revision; }
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      */
     inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      */
     inline ConfigurationId& WithRevision(int value) { SetRevision(value); return *this;}
 

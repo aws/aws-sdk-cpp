@@ -52,7 +52,9 @@ VirtualInterface::VirtualInterface() :
     m_virtualGatewayIdHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
     m_routeFilterPrefixesHasBeenSet(false),
-    m_bgpPeersHasBeenSet(false)
+    m_bgpPeersHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_awsDeviceV2HasBeenSet(false)
 {
 }
 
@@ -80,7 +82,9 @@ VirtualInterface::VirtualInterface(JsonView jsonValue) :
     m_virtualGatewayIdHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
     m_routeFilterPrefixesHasBeenSet(false),
-    m_bgpPeersHasBeenSet(false)
+    m_bgpPeersHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_awsDeviceV2HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -226,6 +230,20 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
     m_bgpPeersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("region"))
+  {
+    m_region = jsonValue.GetString("region");
+
+    m_regionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("awsDeviceV2"))
+  {
+    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
+
+    m_awsDeviceV2HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -352,6 +370,18 @@ JsonValue VirtualInterface::Jsonize() const
      bgpPeersJsonList[bgpPeersIndex].AsObject(m_bgpPeers[bgpPeersIndex].Jsonize());
    }
    payload.WithArray("bgpPeers", std::move(bgpPeersJsonList));
+
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("region", m_region);
+
+  }
+
+  if(m_awsDeviceV2HasBeenSet)
+  {
+   payload.WithString("awsDeviceV2", m_awsDeviceV2);
 
   }
 

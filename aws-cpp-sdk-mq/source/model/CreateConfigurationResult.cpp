@@ -44,6 +44,12 @@ CreateConfigurationResult& CreateConfigurationResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
+
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");

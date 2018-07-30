@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/mq/model/ConfigurationRevision.h>
 #include <utility>
 
@@ -77,6 +78,32 @@ namespace Model
      * Required. The Amazon Resource Name (ARN) of the configuration.
      */
     inline CreateConfigurationResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_created = value; }
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_created = std::move(value); }
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline CreateConfigurationResult& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline CreateConfigurationResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
 
     /**
@@ -193,6 +220,8 @@ namespace Model
   private:
 
     Aws::String m_arn;
+
+    Aws::Utils::DateTime m_created;
 
     Aws::String m_id;
 

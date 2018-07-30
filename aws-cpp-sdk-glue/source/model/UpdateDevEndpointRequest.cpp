@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 UpdateDevEndpointRequest::UpdateDevEndpointRequest() : 
     m_endpointNameHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
+    m_addPublicKeysHasBeenSet(false),
+    m_deletePublicKeysHasBeenSet(false),
     m_customLibrariesHasBeenSet(false),
     m_updateEtlLibraries(false),
     m_updateEtlLibrariesHasBeenSet(false)
@@ -44,6 +46,28 @@ Aws::String UpdateDevEndpointRequest::SerializePayload() const
   if(m_publicKeyHasBeenSet)
   {
    payload.WithString("PublicKey", m_publicKey);
+
+  }
+
+  if(m_addPublicKeysHasBeenSet)
+  {
+   Array<JsonValue> addPublicKeysJsonList(m_addPublicKeys.size());
+   for(unsigned addPublicKeysIndex = 0; addPublicKeysIndex < addPublicKeysJsonList.GetLength(); ++addPublicKeysIndex)
+   {
+     addPublicKeysJsonList[addPublicKeysIndex].AsString(m_addPublicKeys[addPublicKeysIndex]);
+   }
+   payload.WithArray("AddPublicKeys", std::move(addPublicKeysJsonList));
+
+  }
+
+  if(m_deletePublicKeysHasBeenSet)
+  {
+   Array<JsonValue> deletePublicKeysJsonList(m_deletePublicKeys.size());
+   for(unsigned deletePublicKeysIndex = 0; deletePublicKeysIndex < deletePublicKeysJsonList.GetLength(); ++deletePublicKeysIndex)
+   {
+     deletePublicKeysJsonList[deletePublicKeysIndex].AsString(m_deletePublicKeys[deletePublicKeysIndex]);
+   }
+   payload.WithArray("DeletePublicKeys", std::move(deletePublicKeysJsonList));
 
   }
 

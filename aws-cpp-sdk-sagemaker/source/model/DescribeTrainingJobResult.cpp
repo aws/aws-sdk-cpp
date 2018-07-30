@@ -162,6 +162,15 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("SecondaryStatusTransitions"))
+  {
+    Array<JsonView> secondaryStatusTransitionsJsonList = jsonValue.GetArray("SecondaryStatusTransitions");
+    for(unsigned secondaryStatusTransitionsIndex = 0; secondaryStatusTransitionsIndex < secondaryStatusTransitionsJsonList.GetLength(); ++secondaryStatusTransitionsIndex)
+    {
+      m_secondaryStatusTransitions.push_back(secondaryStatusTransitionsJsonList[secondaryStatusTransitionsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

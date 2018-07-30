@@ -299,39 +299,82 @@ namespace Model
 
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
+     * that hosts the LAG.</p>
      */
     inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
+     * that hosts the LAG.</p>
      */
     inline void SetAwsDevice(const Aws::String& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
+     * that hosts the LAG.</p>
      */
     inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = std::move(value); }
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
+     * that hosts the LAG.</p>
      */
     inline void SetAwsDevice(const char* value) { m_awsDeviceHasBeenSet = true; m_awsDevice.assign(value); }
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
+     * that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
+     * that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
+     * that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
+
+
+    /**
+     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     */
+    inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
+
+    /**
+     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     */
+    inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
+
+    /**
+     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     */
+    inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
+
+    /**
+     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     */
+    inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
+
+    /**
+     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     */
+    inline Lag& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
+
+    /**
+     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     */
+    inline Lag& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     */
+    inline Lag& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 
 
     /**
@@ -419,6 +462,9 @@ namespace Model
 
     Aws::String m_awsDevice;
     bool m_awsDeviceHasBeenSet;
+
+    Aws::String m_awsDeviceV2;
+    bool m_awsDeviceV2HasBeenSet;
 
     Aws::Vector<Connection> m_connections;
     bool m_connectionsHasBeenSet;

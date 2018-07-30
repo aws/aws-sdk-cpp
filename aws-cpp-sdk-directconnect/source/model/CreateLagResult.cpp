@@ -106,6 +106,12 @@ CreateLagResult& CreateLagResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("awsDeviceV2"))
+  {
+    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
+
+  }
+
   if(jsonValue.ValueExists("connections"))
   {
     Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");

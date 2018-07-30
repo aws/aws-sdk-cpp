@@ -50,6 +50,12 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("logs"))
+  {
+    m_logs = jsonValue.GetObject("logs");
+
+  }
+
 
 
   return *this;

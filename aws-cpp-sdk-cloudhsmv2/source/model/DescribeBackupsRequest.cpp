@@ -26,7 +26,9 @@ DescribeBackupsRequest::DescribeBackupsRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_sortAscending(false),
+    m_sortAscendingHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,12 @@ Aws::String DescribeBackupsRequest::SerializePayload() const
      filtersJsonMap.WithArray(filtersItem.first, std::move(stringsJsonList));
    }
    payload.WithObject("Filters", std::move(filtersJsonMap));
+
+  }
+
+  if(m_sortAscendingHasBeenSet)
+  {
+   payload.WithBool("SortAscending", m_sortAscending);
 
   }
 

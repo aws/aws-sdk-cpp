@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -46,6 +47,32 @@ namespace Model
     ConfigurationRevision(Aws::Utils::Json::JsonView jsonValue);
     ConfigurationRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline ConfigurationRevision& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline ConfigurationRevision& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
 
     /**
@@ -85,21 +112,24 @@ namespace Model
 
 
     /**
-     * Required. The revision of the configuration.
+     * Required. The revision number of the configuration.
      */
     inline int GetRevision() const{ return m_revision; }
 
     /**
-     * Required. The revision of the configuration.
+     * Required. The revision number of the configuration.
      */
     inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * Required. The revision of the configuration.
+     * Required. The revision number of the configuration.
      */
     inline ConfigurationRevision& WithRevision(int value) { SetRevision(value); return *this;}
 
   private:
+
+    Aws::Utils::DateTime m_created;
+    bool m_createdHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

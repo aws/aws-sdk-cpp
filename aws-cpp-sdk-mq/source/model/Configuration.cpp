@@ -30,6 +30,7 @@ namespace Model
 
 Configuration::Configuration() : 
     m_arnHasBeenSet(false),
+    m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
@@ -42,6 +43,7 @@ Configuration::Configuration() :
 
 Configuration::Configuration(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
@@ -60,6 +62,13 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
+
+    m_createdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -115,6 +124,11 @@ JsonValue Configuration::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_createdHasBeenSet)
+  {
+   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
   if(m_descriptionHasBeenSet)

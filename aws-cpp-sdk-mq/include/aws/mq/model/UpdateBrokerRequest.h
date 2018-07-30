@@ -18,6 +18,7 @@
 #include <aws/mq/MQRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/model/ConfigurationId.h>
+#include <aws/mq/model/Logs.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +129,32 @@ namespace Model
      */
     inline UpdateBrokerRequest& WithConfiguration(ConfigurationId&& value) { SetConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline const Logs& GetLogs() const{ return m_logs; }
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline void SetLogs(const Logs& value) { m_logsHasBeenSet = true; m_logs = value; }
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline void SetLogs(Logs&& value) { m_logsHasBeenSet = true; m_logs = std::move(value); }
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline UpdateBrokerRequest& WithLogs(const Logs& value) { SetLogs(value); return *this;}
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     */
+    inline UpdateBrokerRequest& WithLogs(Logs&& value) { SetLogs(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_brokerId;
@@ -135,6 +162,9 @@ namespace Model
 
     ConfigurationId m_configuration;
     bool m_configurationHasBeenSet;
+
+    Logs m_logs;
+    bool m_logsHasBeenSet;
   };
 
 } // namespace Model

@@ -46,6 +46,12 @@ DescribeConfigurationResult& DescribeConfigurationResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
+
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");

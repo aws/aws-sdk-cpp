@@ -48,29 +48,19 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
+    
     inline const Stream& GetStream() const{ return m_stream; }
 
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
+    
     inline void SetStream(const Stream& value) { m_streamHasBeenSet = true; m_stream = value; }
 
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
+    
     inline void SetStream(Stream&& value) { m_streamHasBeenSet = true; m_stream = std::move(value); }
 
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
+    
     inline CodeSigningSignature& WithStream(const Stream& value) { SetStream(value); return *this;}
 
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
+    
     inline CodeSigningSignature& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
 
 

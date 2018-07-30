@@ -211,49 +211,49 @@ namespace Model
 
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If
-     * this value is not specified, the List Uploads operation returns up to 1,000
+     * this value is not specified, the List Uploads operation returns up to 50
      * uploads.</p>
      */
     inline const Aws::String& GetLimit() const{ return m_limit; }
 
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If
-     * this value is not specified, the List Uploads operation returns up to 1,000
+     * this value is not specified, the List Uploads operation returns up to 50
      * uploads.</p>
      */
     inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If
-     * this value is not specified, the List Uploads operation returns up to 1,000
+     * this value is not specified, the List Uploads operation returns up to 50
      * uploads.</p>
      */
     inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
 
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If
-     * this value is not specified, the List Uploads operation returns up to 1,000
+     * this value is not specified, the List Uploads operation returns up to 50
      * uploads.</p>
      */
     inline void SetLimit(const char* value) { m_limitHasBeenSet = true; m_limit.assign(value); }
 
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If
-     * this value is not specified, the List Uploads operation returns up to 1,000
+     * this value is not specified, the List Uploads operation returns up to 50
      * uploads.</p>
      */
     inline ListMultipartUploadsRequest& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
 
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If
-     * this value is not specified, the List Uploads operation returns up to 1,000
+     * this value is not specified, the List Uploads operation returns up to 50
      * uploads.</p>
      */
     inline ListMultipartUploadsRequest& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If
-     * this value is not specified, the List Uploads operation returns up to 1,000
+     * this value is not specified, the List Uploads operation returns up to 50
      * uploads.</p>
      */
     inline ListMultipartUploadsRequest& WithLimit(const char* value) { SetLimit(value); return *this;}

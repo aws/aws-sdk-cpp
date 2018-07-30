@@ -168,49 +168,49 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of vaults to be returned. The default limit is 1000. The
+     * <p>The maximum number of vaults to be returned. The default limit is 10. The
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */
     inline const Aws::String& GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of vaults to be returned. The default limit is 1000. The
+     * <p>The maximum number of vaults to be returned. The default limit is 10. The
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */
     inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of vaults to be returned. The default limit is 1000. The
+     * <p>The maximum number of vaults to be returned. The default limit is 10. The
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */
     inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
 
     /**
-     * <p>The maximum number of vaults to be returned. The default limit is 1000. The
+     * <p>The maximum number of vaults to be returned. The default limit is 10. The
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */
     inline void SetLimit(const char* value) { m_limitHasBeenSet = true; m_limit.assign(value); }
 
     /**
-     * <p>The maximum number of vaults to be returned. The default limit is 1000. The
+     * <p>The maximum number of vaults to be returned. The default limit is 10. The
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */
     inline ListVaultsRequest& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
 
     /**
-     * <p>The maximum number of vaults to be returned. The default limit is 1000. The
+     * <p>The maximum number of vaults to be returned. The default limit is 10. The
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */
     inline ListVaultsRequest& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of vaults to be returned. The default limit is 1000. The
+     * <p>The maximum number of vaults to be returned. The default limit is 10. The
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */

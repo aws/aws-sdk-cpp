@@ -44,6 +44,12 @@ DescribeConfigurationRevisionResult& DescribeConfigurationRevisionResult::operat
 
   }
 
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
+
+  }
+
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetString("data");

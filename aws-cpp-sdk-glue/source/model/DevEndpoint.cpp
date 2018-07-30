@@ -49,7 +49,8 @@ DevEndpoint::DevEndpoint() :
     m_lastUpdateStatusHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
-    m_publicKeyHasBeenSet(false)
+    m_publicKeyHasBeenSet(false),
+    m_publicKeysHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ DevEndpoint::DevEndpoint(JsonView jsonValue) :
     m_lastUpdateStatusHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
-    m_publicKeyHasBeenSet(false)
+    m_publicKeyHasBeenSet(false),
+    m_publicKeysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -217,6 +219,16 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
     m_publicKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PublicKeys"))
+  {
+    Array<JsonView> publicKeysJsonList = jsonValue.GetArray("PublicKeys");
+    for(unsigned publicKeysIndex = 0; publicKeysIndex < publicKeysJsonList.GetLength(); ++publicKeysIndex)
+    {
+      m_publicKeys.push_back(publicKeysJsonList[publicKeysIndex].AsString());
+    }
+    m_publicKeysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -338,6 +350,17 @@ JsonValue DevEndpoint::Jsonize() const
   if(m_publicKeyHasBeenSet)
   {
    payload.WithString("PublicKey", m_publicKey);
+
+  }
+
+  if(m_publicKeysHasBeenSet)
+  {
+   Array<JsonValue> publicKeysJsonList(m_publicKeys.size());
+   for(unsigned publicKeysIndex = 0; publicKeysIndex < publicKeysJsonList.GetLength(); ++publicKeysIndex)
+   {
+     publicKeysJsonList[publicKeysIndex].AsString(m_publicKeys[publicKeysIndex]);
+   }
+   payload.WithArray("PublicKeys", std::move(publicKeysJsonList));
 
   }
 

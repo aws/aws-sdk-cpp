@@ -124,32 +124,27 @@ namespace Model
 
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values:
-     * CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      */
     inline const ChangeType& GetPendingChange() const{ return m_pendingChange; }
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values:
-     * CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      */
     inline void SetPendingChange(const ChangeType& value) { m_pendingChangeHasBeenSet = true; m_pendingChange = value; }
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values:
-     * CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      */
     inline void SetPendingChange(ChangeType&& value) { m_pendingChangeHasBeenSet = true; m_pendingChange = std::move(value); }
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values:
-     * CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      */
     inline UserPendingChanges& WithPendingChange(const ChangeType& value) { SetPendingChange(value); return *this;}
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values:
-     * CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      */
     inline UserPendingChanges& WithPendingChange(ChangeType&& value) { SetPendingChange(std::move(value)); return *this;}
 

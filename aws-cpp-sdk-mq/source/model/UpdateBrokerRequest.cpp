@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 UpdateBrokerRequest::UpdateBrokerRequest() : 
     m_brokerIdHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_logsHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,12 @@ Aws::String UpdateBrokerRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_logsHasBeenSet)
+  {
+   payload.WithObject("logs", m_logs.Jsonize());
 
   }
 

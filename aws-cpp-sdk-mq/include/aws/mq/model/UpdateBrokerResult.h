@@ -17,6 +17,7 @@
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/model/ConfigurationId.h>
+#include <aws/mq/model/Logs.h>
 #include <utility>
 
 namespace Aws
@@ -104,11 +105,39 @@ namespace Model
      */
     inline UpdateBrokerResult& WithConfiguration(ConfigurationId&& value) { SetConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * The list of information about logs to be enabled for the specified broker.
+     */
+    inline const Logs& GetLogs() const{ return m_logs; }
+
+    /**
+     * The list of information about logs to be enabled for the specified broker.
+     */
+    inline void SetLogs(const Logs& value) { m_logs = value; }
+
+    /**
+     * The list of information about logs to be enabled for the specified broker.
+     */
+    inline void SetLogs(Logs&& value) { m_logs = std::move(value); }
+
+    /**
+     * The list of information about logs to be enabled for the specified broker.
+     */
+    inline UpdateBrokerResult& WithLogs(const Logs& value) { SetLogs(value); return *this;}
+
+    /**
+     * The list of information about logs to be enabled for the specified broker.
+     */
+    inline UpdateBrokerResult& WithLogs(Logs&& value) { SetLogs(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_brokerId;
 
     ConfigurationId m_configuration;
+
+    Logs m_logs;
   };
 
 } // namespace Model

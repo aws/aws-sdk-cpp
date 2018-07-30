@@ -176,11 +176,11 @@ namespace Model
     /**
      * <p>The method to use to split the transform job's data into smaller batches. The
      * default value is <code>None</code>. If you don't want to split the data, specify
-     * (<code>None</code>). If you want to split records on a newline character
-     * boundary, specify <code>Line</code>. To split records according to the RecordIO
-     * format, specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum
-     * number of records per batch in each request up to the MaxPayloadInMB limit. For
-     * more information, see <a
+     * <code>None</code>. If you want to split records on a newline character boundary,
+     * specify <code>Line</code>. To split records according to the RecordIO format,
+     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
+     * of records per batch in each request up to the MaxPayloadInMB limit. For more
+     * information, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
      * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
      * format, see <a
@@ -192,11 +192,11 @@ namespace Model
     /**
      * <p>The method to use to split the transform job's data into smaller batches. The
      * default value is <code>None</code>. If you don't want to split the data, specify
-     * (<code>None</code>). If you want to split records on a newline character
-     * boundary, specify <code>Line</code>. To split records according to the RecordIO
-     * format, specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum
-     * number of records per batch in each request up to the MaxPayloadInMB limit. For
-     * more information, see <a
+     * <code>None</code>. If you want to split records on a newline character boundary,
+     * specify <code>Line</code>. To split records according to the RecordIO format,
+     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
+     * of records per batch in each request up to the MaxPayloadInMB limit. For more
+     * information, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
      * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
      * format, see <a
@@ -208,11 +208,11 @@ namespace Model
     /**
      * <p>The method to use to split the transform job's data into smaller batches. The
      * default value is <code>None</code>. If you don't want to split the data, specify
-     * (<code>None</code>). If you want to split records on a newline character
-     * boundary, specify <code>Line</code>. To split records according to the RecordIO
-     * format, specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum
-     * number of records per batch in each request up to the MaxPayloadInMB limit. For
-     * more information, see <a
+     * <code>None</code>. If you want to split records on a newline character boundary,
+     * specify <code>Line</code>. To split records according to the RecordIO format,
+     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
+     * of records per batch in each request up to the MaxPayloadInMB limit. For more
+     * information, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
      * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
      * format, see <a
@@ -224,11 +224,11 @@ namespace Model
     /**
      * <p>The method to use to split the transform job's data into smaller batches. The
      * default value is <code>None</code>. If you don't want to split the data, specify
-     * (<code>None</code>). If you want to split records on a newline character
-     * boundary, specify <code>Line</code>. To split records according to the RecordIO
-     * format, specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum
-     * number of records per batch in each request up to the MaxPayloadInMB limit. For
-     * more information, see <a
+     * <code>None</code>. If you want to split records on a newline character boundary,
+     * specify <code>Line</code>. To split records according to the RecordIO format,
+     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
+     * of records per batch in each request up to the MaxPayloadInMB limit. For more
+     * information, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
      * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
      * format, see <a
@@ -240,11 +240,11 @@ namespace Model
     /**
      * <p>The method to use to split the transform job's data into smaller batches. The
      * default value is <code>None</code>. If you don't want to split the data, specify
-     * (<code>None</code>). If you want to split records on a newline character
-     * boundary, specify <code>Line</code>. To split records according to the RecordIO
-     * format, specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum
-     * number of records per batch in each request up to the MaxPayloadInMB limit. For
-     * more information, see <a
+     * <code>None</code>. If you want to split records on a newline character boundary,
+     * specify <code>Line</code>. To split records according to the RecordIO format,
+     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
+     * of records per batch in each request up to the MaxPayloadInMB limit. For more
+     * information, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
      * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
      * format, see <a

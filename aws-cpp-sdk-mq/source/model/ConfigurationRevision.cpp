@@ -29,6 +29,7 @@ namespace Model
 {
 
 ConfigurationRevision::ConfigurationRevision() : 
+    m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false)
@@ -36,6 +37,7 @@ ConfigurationRevision::ConfigurationRevision() :
 }
 
 ConfigurationRevision::ConfigurationRevision(JsonView jsonValue) : 
+    m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false)
@@ -45,6 +47,13 @@ ConfigurationRevision::ConfigurationRevision(JsonView jsonValue) :
 
 ConfigurationRevision& ConfigurationRevision::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
+
+    m_createdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -65,6 +74,11 @@ ConfigurationRevision& ConfigurationRevision::operator =(JsonView jsonValue)
 JsonValue ConfigurationRevision::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_createdHasBeenSet)
+  {
+   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
+  }
 
   if(m_descriptionHasBeenSet)
   {

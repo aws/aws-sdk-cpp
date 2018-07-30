@@ -39,7 +39,8 @@ BGPPeer::BGPPeer() :
     m_bgpPeerState(BGPPeerState::NOT_SET),
     m_bgpPeerStateHasBeenSet(false),
     m_bgpStatus(BGPStatus::NOT_SET),
-    m_bgpStatusHasBeenSet(false)
+    m_bgpStatusHasBeenSet(false),
+    m_awsDeviceV2HasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ BGPPeer::BGPPeer(JsonView jsonValue) :
     m_bgpPeerState(BGPPeerState::NOT_SET),
     m_bgpPeerStateHasBeenSet(false),
     m_bgpStatus(BGPStatus::NOT_SET),
-    m_bgpStatusHasBeenSet(false)
+    m_bgpStatusHasBeenSet(false),
+    m_awsDeviceV2HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,13 @@ BGPPeer& BGPPeer::operator =(JsonView jsonValue)
     m_bgpStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsDeviceV2"))
+  {
+    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
+
+    m_awsDeviceV2HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +163,12 @@ JsonValue BGPPeer::Jsonize() const
   if(m_bgpStatusHasBeenSet)
   {
    payload.WithString("bgpStatus", BGPStatusMapper::GetNameForBGPStatus(m_bgpStatus));
+  }
+
+  if(m_awsDeviceV2HasBeenSet)
+  {
+   payload.WithString("awsDeviceV2", m_awsDeviceV2);
+
   }
 
   return payload;

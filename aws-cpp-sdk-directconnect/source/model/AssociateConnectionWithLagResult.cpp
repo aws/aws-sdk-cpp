@@ -114,6 +114,12 @@ AssociateConnectionWithLagResult& AssociateConnectionWithLagResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("awsDeviceV2"))
+  {
+    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
+
+  }
+
 
 
   return *this;

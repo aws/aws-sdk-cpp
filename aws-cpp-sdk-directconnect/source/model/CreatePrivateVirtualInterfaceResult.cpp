@@ -168,6 +168,18 @@ CreatePrivateVirtualInterfaceResult& CreatePrivateVirtualInterfaceResult::operat
     }
   }
 
+  if(jsonValue.ValueExists("region"))
+  {
+    m_region = jsonValue.GetString("region");
+
+  }
+
+  if(jsonValue.ValueExists("awsDeviceV2"))
+  {
+    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
+
+  }
+
 
 
   return *this;

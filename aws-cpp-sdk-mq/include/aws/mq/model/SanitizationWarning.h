@@ -123,56 +123,26 @@ namespace Model
 
     /**
      * Required. The reason for which the XML elements or attributes were sanitized.
-     * Possible values: DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED,
-     * INVALID_ATTRIBUTE_VALUE_REMOVED DISALLOWED_ELEMENT_REMOVED shows that the
-     * provided element isn't allowed and has been removed.
-     * DISALLOWED_ATTRIBUTE_REMOVED shows that the provided attribute isn't allowed and
-     * has been removed. INVALID_ATTRIBUTE_VALUE_REMOVED shows that the provided value
-     * for the attribute isn't allowed and has been removed.
      */
     inline const SanitizationWarningReason& GetReason() const{ return m_reason; }
 
     /**
      * Required. The reason for which the XML elements or attributes were sanitized.
-     * Possible values: DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED,
-     * INVALID_ATTRIBUTE_VALUE_REMOVED DISALLOWED_ELEMENT_REMOVED shows that the
-     * provided element isn't allowed and has been removed.
-     * DISALLOWED_ATTRIBUTE_REMOVED shows that the provided attribute isn't allowed and
-     * has been removed. INVALID_ATTRIBUTE_VALUE_REMOVED shows that the provided value
-     * for the attribute isn't allowed and has been removed.
      */
     inline void SetReason(const SanitizationWarningReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
      * Required. The reason for which the XML elements or attributes were sanitized.
-     * Possible values: DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED,
-     * INVALID_ATTRIBUTE_VALUE_REMOVED DISALLOWED_ELEMENT_REMOVED shows that the
-     * provided element isn't allowed and has been removed.
-     * DISALLOWED_ATTRIBUTE_REMOVED shows that the provided attribute isn't allowed and
-     * has been removed. INVALID_ATTRIBUTE_VALUE_REMOVED shows that the provided value
-     * for the attribute isn't allowed and has been removed.
      */
     inline void SetReason(SanitizationWarningReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * Required. The reason for which the XML elements or attributes were sanitized.
-     * Possible values: DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED,
-     * INVALID_ATTRIBUTE_VALUE_REMOVED DISALLOWED_ELEMENT_REMOVED shows that the
-     * provided element isn't allowed and has been removed.
-     * DISALLOWED_ATTRIBUTE_REMOVED shows that the provided attribute isn't allowed and
-     * has been removed. INVALID_ATTRIBUTE_VALUE_REMOVED shows that the provided value
-     * for the attribute isn't allowed and has been removed.
      */
     inline SanitizationWarning& WithReason(const SanitizationWarningReason& value) { SetReason(value); return *this;}
 
     /**
      * Required. The reason for which the XML elements or attributes were sanitized.
-     * Possible values: DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED,
-     * INVALID_ATTRIBUTE_VALUE_REMOVED DISALLOWED_ELEMENT_REMOVED shows that the
-     * provided element isn't allowed and has been removed.
-     * DISALLOWED_ATTRIBUTE_REMOVED shows that the provided attribute isn't allowed and
-     * has been removed. INVALID_ATTRIBUTE_VALUE_REMOVED shows that the provided value
-     * for the attribute isn't allowed and has been removed.
      */
     inline SanitizationWarning& WithReason(SanitizationWarningReason&& value) { SetReason(std::move(value)); return *this;}
 

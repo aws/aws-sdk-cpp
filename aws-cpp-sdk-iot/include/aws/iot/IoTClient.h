@@ -666,7 +666,10 @@ namespace Model
    * and credentials to authenticate devices.</p> <p>For more information about how
    * AWS IoT works, see the <a
    * href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
-   * Guide</a>.</p>
+   * Guide</a>.</p> <p>For information about how to use the credentials provider for
+   * AWS IoT, see <a
+   * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
+   * Direct Calls to AWS Services</a>.</p>
    */
   class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient
   {
@@ -1334,14 +1337,22 @@ namespace Model
         virtual void CreateStreamAsync(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a thing record in the registry.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
+         * operation. See <a
+         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateThingOutcome CreateThing(const Model::CreateThingRequest& request) const;
 
         /**
-         * <p>Creates a thing record in the registry.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
+         * operation. See <a
+         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          *
@@ -1350,7 +1361,11 @@ namespace Model
         virtual Model::CreateThingOutcomeCallable CreateThingCallable(const Model::CreateThingRequest& request) const;
 
         /**
-         * <p>Creates a thing record in the registry.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
+         * operation. See <a
+         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          *
@@ -1359,14 +1374,20 @@ namespace Model
         virtual void CreateThingAsync(const Model::CreateThingRequest& request, const CreateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
+         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateThingGroupOutcome CreateThingGroup(const Model::CreateThingGroupRequest& request) const;
 
         /**
-         * <p>Create a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
+         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
          *
@@ -1375,7 +1396,10 @@ namespace Model
         virtual Model::CreateThingGroupOutcomeCallable CreateThingGroupCallable(const Model::CreateThingGroupRequest& request) const;
 
         /**
-         * <p>Create a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
+         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
          *
@@ -2508,14 +2532,18 @@ namespace Model
         virtual void GetJobDocumentAsync(const Model::GetJobDocumentRequest& request, const GetJobDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the logging options.</p> <p>NOTE: use of this command is not
+         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::GetLoggingOptionsOutcome GetLoggingOptions(const Model::GetLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Gets the logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the logging options.</p> <p>NOTE: use of this command is not
+         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -2524,7 +2552,9 @@ namespace Model
         virtual Model::GetLoggingOptionsOutcomeCallable GetLoggingOptionsCallable(const Model::GetLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Gets the logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the logging options.</p> <p>NOTE: use of this command is not
+         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -3715,14 +3745,18 @@ namespace Model
         virtual void SetDefaultPolicyVersionAsync(const Model::SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the logging options.</p> <p>NOTE: use of this command is not
+         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::SetLoggingOptionsOutcome SetLoggingOptions(const Model::SetLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets the logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the logging options.</p> <p>NOTE: use of this command is not
+         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -3731,7 +3765,9 @@ namespace Model
         virtual Model::SetLoggingOptionsOutcomeCallable SetLoggingOptionsCallable(const Model::SetLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets the logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the logging options.</p> <p>NOTE: use of this command is not
+         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">AWS
          * API Reference</a></p>
          *
