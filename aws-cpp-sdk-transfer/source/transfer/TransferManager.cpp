@@ -359,7 +359,7 @@ namespace Aws
 
                     uploadPartRequest.SetBody(preallocatedStreamReader);
                     uploadPartRequest.SetContentType(handle->GetContentType());
-                    if (m_transferConfig.needsComputeContentMd5) {
+                    if (m_transferConfig.computeContentMD5) {
                         uploadPartRequest.SetContentMD5(Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(*preallocatedStreamReader)));
                     }
                     auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
@@ -435,7 +435,7 @@ namespace Aws
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
             putObjectRequest.SetBody(preallocatedStreamReader);
-            if (m_transferConfig.needsComputeContentMd5) {
+            if (m_transferConfig.computeContentMD5) {
                 putObjectRequest.SetContentMD5(Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(*preallocatedStreamReader)));
             }
 
