@@ -323,7 +323,7 @@ JsonValue& JsonValue::WithObject(const char* key, const JsonValue& value)
         m_value = cJSON_CreateObject();
     }
 
-    const auto copy = cJSON_Duplicate(value.m_value, true /*recurse*/);
+    const auto copy = value.m_value == nullptr ? cJSON_CreateObject() : cJSON_Duplicate(value.m_value, true /*recurse*/);
     AddOrReplace(m_value, key, copy);
     return *this;
 }
@@ -340,7 +340,7 @@ JsonValue& JsonValue::WithObject(const char* key, JsonValue&& value)
         m_value = cJSON_CreateObject();
     }
 
-    AddOrReplace(m_value, key, value.m_value);
+    AddOrReplace(m_value, key, value.m_value == nullptr ? cJSON_CreateObject() : value.m_value);
     value.m_value = nullptr;
     return *this;
 }
