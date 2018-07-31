@@ -32,7 +32,7 @@
 #elseif($member.shape.blob)
   ${spaces}payload.WithString("${memberName}", HashingUtils::Base64Encode(m_${lowerCaseVarName}));
 #elseif($member.shape.timeStamp)
-  ${spaces}payload.WithDouble("${memberName}", m_${lowerCaseVarName}.SecondsWithMSPrecision());
+  ${spaces}payload.With${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}", m_${lowerCaseVarName}${CppViewHelper.computeJsonizeString($member.shape)});
 #else
 #if($member.shape.getName() == $shape.getName())
 #set($singleElementVector = '[0]')

@@ -122,6 +122,20 @@ public class CppViewHelper {
             return jsonizeString;
         }
 
+        if(shape.isTimeStamp()) {
+            if(shape.getTimestampFormat() == null || CORAL_TO_JSON_CPP_TYPE_MAPPING.get(shape.getTimestampFormat().toLowerCase()).equalsIgnoreCase("Double")) {
+                return ".SecondsWithMSPrecision()";
+            }
+
+            if(shape.getTimestampFormat().toLowerCase().equalsIgnoreCase("rfc822")) {
+                return ".ToGmtString(DateFormat::RFC822)";
+            }
+
+            if(shape.getTimestampFormat().toLowerCase().equalsIgnoreCase("iso8601")) {
+                return ".ToGmtString(DateFormat::ISO_8601)";
+            }
+        }
+
         return "";
     }
 
@@ -155,7 +169,7 @@ public class CppViewHelper {
     }
 
     public static String computeJsonCppType(Shape shape) {
-        if("timestamp".equalsIgnoreCase(shape.getType()) && shape.getTimestampFormat() != null) {
+        if(shape.isTimeStamp() && shape.getTimestampFormat() != null) {
             return CORAL_TO_JSON_CPP_TYPE_MAPPING.get(shape.getTimestampFormat().toLowerCase());
         }
         return CORAL_TO_JSON_CPP_TYPE_MAPPING.get(shape.getType());
