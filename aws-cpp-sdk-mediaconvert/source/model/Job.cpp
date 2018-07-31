@@ -78,7 +78,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("createdAt"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAt = jsonValue.GetDouble("createdAt");
 
     m_createdAtHasBeenSet = true;
   }

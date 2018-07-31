@@ -507,7 +507,7 @@ namespace Model
 
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -515,7 +515,7 @@ namespace Model
     inline const KeyManagerType& GetKeyManager() const{ return m_keyManager; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -523,7 +523,7 @@ namespace Model
     inline void SetKeyManager(const KeyManagerType& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -531,7 +531,7 @@ namespace Model
     inline void SetKeyManager(KeyManagerType&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -539,7 +539,7 @@ namespace Model
     inline KeyMetadata& WithKeyManager(const KeyManagerType& value) { SetKeyManager(value); return *this;}
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>

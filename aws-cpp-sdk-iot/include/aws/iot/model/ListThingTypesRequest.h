@@ -52,44 +52,37 @@ namespace Model
 
 
     /**
-     * <p>The token for the next set of results, or <b>null</b> if there are no
-     * additional results.</p>
+     * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token for the next set of results, or <b>null</b> if there are no
-     * additional results.</p>
+     * <p>The token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token for the next set of results, or <b>null</b> if there are no
-     * additional results.</p>
+     * <p>The token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of results, or <b>null</b> if there are no
-     * additional results.</p>
+     * <p>The token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token for the next set of results, or <b>null</b> if there are no
-     * additional results.</p>
+     * <p>The token to retrieve the next set of results.</p>
      */
     inline ListThingTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of results, or <b>null</b> if there are no
-     * additional results.</p>
+     * <p>The token to retrieve the next set of results.</p>
      */
     inline ListThingTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of results, or <b>null</b> if there are no
-     * additional results.</p>
+     * <p>The token to retrieve the next set of results.</p>
      */
     inline ListThingTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

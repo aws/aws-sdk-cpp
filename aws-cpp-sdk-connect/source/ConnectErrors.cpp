@@ -29,11 +29,13 @@ namespace ConnectErrorMapper
 {
 
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
 static const int OUTBOUND_CONTACT_NOT_PERMITTED_HASH = HashingUtils::HashString("OutboundContactNotPermittedException");
 static const int DESTINATION_NOT_ALLOWED_HASH = HashingUtils::HashString("DestinationNotAllowedException");
 static const int CONTACT_NOT_FOUND_HASH = HashingUtils::HashString("ContactNotFoundException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 
 
@@ -44,6 +46,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_PARAMETER), false);
+  }
+  else if (hashCode == USER_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::USER_NOT_FOUND), false);
   }
   else if (hashCode == OUTBOUND_CONTACT_NOT_PERMITTED_HASH)
   {
@@ -64,6 +70,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == DUPLICATE_RESOURCE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::DUPLICATE_RESOURCE), false);
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {

@@ -19,6 +19,7 @@
 #include <aws/iot/model/CertificateStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/TransferData.h>
+#include <aws/iot/model/CertificateValidity.h>
 #include <utility>
 
 namespace Aws
@@ -421,6 +422,32 @@ namespace Model
      */
     inline CertificateDescription& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
 
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline const CertificateValidity& GetValidity() const{ return m_validity; }
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline void SetValidity(const CertificateValidity& value) { m_validityHasBeenSet = true; m_validity = value; }
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline void SetValidity(CertificateValidity&& value) { m_validityHasBeenSet = true; m_validity = std::move(value); }
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline CertificateDescription& WithValidity(const CertificateValidity& value) { SetValidity(value); return *this;}
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline CertificateDescription& WithValidity(CertificateValidity&& value) { SetValidity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
@@ -458,6 +485,9 @@ namespace Model
 
     Aws::String m_generationId;
     bool m_generationIdHasBeenSet;
+
+    CertificateValidity m_validity;
+    bool m_validityHasBeenSet;
   };
 
 } // namespace Model

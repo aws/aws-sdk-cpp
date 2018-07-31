@@ -41,7 +41,8 @@ CACertificateDescription::CACertificateDescription() :
     m_lastModifiedDateHasBeenSet(false),
     m_customerVersion(0),
     m_customerVersionHasBeenSet(false),
-    m_generationIdHasBeenSet(false)
+    m_generationIdHasBeenSet(false),
+    m_validityHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ CACertificateDescription::CACertificateDescription(JsonView jsonValue) :
     m_lastModifiedDateHasBeenSet(false),
     m_customerVersion(0),
     m_customerVersionHasBeenSet(false),
-    m_generationIdHasBeenSet(false)
+    m_generationIdHasBeenSet(false),
+    m_validityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +137,13 @@ CACertificateDescription& CACertificateDescription::operator =(JsonView jsonValu
     m_generationIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("validity"))
+  {
+    m_validity = jsonValue.GetObject("validity");
+
+    m_validityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -195,6 +204,12 @@ JsonValue CACertificateDescription::Jsonize() const
   if(m_generationIdHasBeenSet)
   {
    payload.WithString("generationId", m_generationId);
+
+  }
+
+  if(m_validityHasBeenSet)
+  {
+   payload.WithObject("validity", m_validity.Jsonize());
 
   }
 

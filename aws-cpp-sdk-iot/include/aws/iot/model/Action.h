@@ -29,6 +29,7 @@
 #include <aws/iot/model/ElasticsearchAction.h>
 #include <aws/iot/model/SalesforceAction.h>
 #include <aws/iot/model/IotAnalyticsAction.h>
+#include <aws/iot/model/StepFunctionsAction.h>
 #include <utility>
 
 namespace Aws
@@ -433,6 +434,32 @@ namespace Model
      */
     inline Action& WithIotAnalytics(IotAnalyticsAction&& value) { SetIotAnalytics(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline const StepFunctionsAction& GetStepFunctions() const{ return m_stepFunctions; }
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline void SetStepFunctions(const StepFunctionsAction& value) { m_stepFunctionsHasBeenSet = true; m_stepFunctions = value; }
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline void SetStepFunctions(StepFunctionsAction&& value) { m_stepFunctionsHasBeenSet = true; m_stepFunctions = std::move(value); }
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline Action& WithStepFunctions(const StepFunctionsAction& value) { SetStepFunctions(value); return *this;}
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline Action& WithStepFunctions(StepFunctionsAction&& value) { SetStepFunctions(std::move(value)); return *this;}
+
   private:
 
     DynamoDBAction m_dynamoDB;
@@ -476,6 +503,9 @@ namespace Model
 
     IotAnalyticsAction m_iotAnalytics;
     bool m_iotAnalyticsHasBeenSet;
+
+    StepFunctionsAction m_stepFunctions;
+    bool m_stepFunctionsHasBeenSet;
   };
 
 } // namespace Model

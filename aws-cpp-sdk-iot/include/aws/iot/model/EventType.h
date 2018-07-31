@@ -33,7 +33,10 @@ namespace Model
     THING_GROUP_HIERARCHY,
     THING_TYPE_ASSOCIATION,
     JOB,
-    JOB_EXECUTION
+    JOB_EXECUTION,
+    POLICY,
+    CERTIFICATE,
+    CA_CERTIFICATE
   };
 
 namespace EventTypeMapper
