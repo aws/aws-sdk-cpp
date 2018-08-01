@@ -77,7 +77,7 @@ JsonValue ConfigurationRevision::Jsonize() const
 
   if(m_createdHasBeenSet)
   {
-   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
+   payload.WithString("created", m_created.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)

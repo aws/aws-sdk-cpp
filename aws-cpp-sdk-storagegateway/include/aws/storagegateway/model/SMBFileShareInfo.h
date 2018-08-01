@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>The Windows file permissions and ownership information assigned, by default,
    * to native S3 objects when file gateway discovers them in S3 buckets. This
-   * operation is only supported in file gateways.</p><p><h3>See Also:</h3>   <a
+   * operation is only supported for file gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SMBFileShareInfo">AWS
    * API Reference</a></p>
    */
@@ -140,20 +140,20 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own KMS key, or false
-     * to use a key managed by Amazon S3. Optional. </p>
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own KMS key, or false
-     * to use a key managed by Amazon S3. Optional. </p>
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own KMS key, or false
-     * to use a key managed by Amazon S3. Optional. </p>
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline SMBFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
@@ -261,58 +261,58 @@ namespace Model
 
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline SMBFileShareInfo& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline SMBFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline SMBFileShareInfo& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
@@ -334,162 +334,194 @@ namespace Model
 
 
     /**
-     * <p>Sets the write status of a file share. This value is true if the write status
-     * is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
-     * <p>Sets the write status of a file share. This value is true if the write status
-     * is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
-     * <p>Sets the write status of a file share. This value is true if the write status
-     * is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
      */
     inline SMBFileShareInfo& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
 
     /**
-     * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions. Set this value to true to enable MIME type guessing, and otherwise
-     * to false. The default value is true.</p>
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
 
     /**
-     * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions. Set this value to true to enable MIME type guessing, and otherwise
-     * to false. The default value is true.</p>
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
      */
     inline void SetGuessMIMETypeEnabled(bool value) { m_guessMIMETypeEnabledHasBeenSet = true; m_guessMIMETypeEnabled = value; }
 
     /**
-     * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions. Set this value to true to enable MIME type guessing, and otherwise
-     * to false. The default value is true.</p>
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
      */
     inline SMBFileShareInfo& WithGuessMIMETypeEnabled(bool value) { SetGuessMIMETypeEnabled(value); return *this;}
 
 
     /**
-     * <p>Sets who pays the cost of the request and the data download from the Amazon
-     * S3 bucket. Set this value to true if you want the requester to pay instead of
-     * the bucket owner, and otherwise to false.</p>
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
 
     /**
-     * <p>Sets who pays the cost of the request and the data download from the Amazon
-     * S3 bucket. Set this value to true if you want the requester to pay instead of
-     * the bucket owner, and otherwise to false.</p>
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
 
     /**
-     * <p>Sets who pays the cost of the request and the data download from the Amazon
-     * S3 bucket. Set this value to true if you want the requester to pay instead of
-     * the bucket owner, and otherwise to false.</p>
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline SMBFileShareInfo& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
 
 
     /**
-     * <p>A list of users in the Active Directory that are allowed to access the file
-     * share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValidUserList() const{ return m_validUserList; }
 
     /**
-     * <p>A list of users in the Active Directory that are allowed to access the file
-     * share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline void SetValidUserList(const Aws::Vector<Aws::String>& value) { m_validUserListHasBeenSet = true; m_validUserList = value; }
 
     /**
-     * <p>A list of users in the Active Directory that are allowed to access the file
-     * share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline void SetValidUserList(Aws::Vector<Aws::String>&& value) { m_validUserListHasBeenSet = true; m_validUserList = std::move(value); }
 
     /**
-     * <p>A list of users in the Active Directory that are allowed to access the file
-     * share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& WithValidUserList(const Aws::Vector<Aws::String>& value) { SetValidUserList(value); return *this;}
 
     /**
-     * <p>A list of users in the Active Directory that are allowed to access the file
-     * share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& WithValidUserList(Aws::Vector<Aws::String>&& value) { SetValidUserList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of users in the Active Directory that are allowed to access the file
-     * share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& AddValidUserList(const Aws::String& value) { m_validUserListHasBeenSet = true; m_validUserList.push_back(value); return *this; }
 
     /**
-     * <p>A list of users in the Active Directory that are allowed to access the file
-     * share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& AddValidUserList(Aws::String&& value) { m_validUserListHasBeenSet = true; m_validUserList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of users in the Active Directory that are allowed to access the file
-     * share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& AddValidUserList(const char* value) { m_validUserListHasBeenSet = true; m_validUserList.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of users in the Active Directory that are not allowed to access the
-     * file share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInvalidUserList() const{ return m_invalidUserList; }
 
     /**
-     * <p>A list of users in the Active Directory that are not allowed to access the
-     * file share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline void SetInvalidUserList(const Aws::Vector<Aws::String>& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList = value; }
 
     /**
-     * <p>A list of users in the Active Directory that are not allowed to access the
-     * file share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline void SetInvalidUserList(Aws::Vector<Aws::String>&& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList = std::move(value); }
 
     /**
-     * <p>A list of users in the Active Directory that are not allowed to access the
-     * file share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& WithInvalidUserList(const Aws::Vector<Aws::String>& value) { SetInvalidUserList(value); return *this;}
 
     /**
-     * <p>A list of users in the Active Directory that are not allowed to access the
-     * file share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& WithInvalidUserList(Aws::Vector<Aws::String>&& value) { SetInvalidUserList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of users in the Active Directory that are not allowed to access the
-     * file share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& AddInvalidUserList(const Aws::String& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(value); return *this; }
 
     /**
-     * <p>A list of users in the Active Directory that are not allowed to access the
-     * file share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& AddInvalidUserList(Aws::String&& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of users in the Active Directory that are not allowed to access the
-     * file share. Can only be set if Authentication is set to "ActiveDirectory".</p>
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
      */
     inline SMBFileShareInfo& AddInvalidUserList(const char* value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(value); return *this; }
 

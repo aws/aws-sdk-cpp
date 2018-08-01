@@ -266,44 +266,51 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
-     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
-     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
      */
     inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
-     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
      */
     inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
-     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
      */
     inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
-     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
      */
     inline CreateTapesRequest& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
-     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
      */
     inline CreateTapesRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
-     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
      */
     inline CreateTapesRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 

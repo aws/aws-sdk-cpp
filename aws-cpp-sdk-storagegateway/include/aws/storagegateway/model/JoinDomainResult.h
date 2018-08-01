@@ -48,37 +48,44 @@ namespace Model
 
 
     /**
-     * <p>The unique Amazon Resource Name of the gateway that joined the domain.</p>
+     * <p>The unique Amazon Resource Name (ARN) of the gateway that joined the
+     * domain.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     /**
-     * <p>The unique Amazon Resource Name of the gateway that joined the domain.</p>
+     * <p>The unique Amazon Resource Name (ARN) of the gateway that joined the
+     * domain.</p>
      */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
 
     /**
-     * <p>The unique Amazon Resource Name of the gateway that joined the domain.</p>
+     * <p>The unique Amazon Resource Name (ARN) of the gateway that joined the
+     * domain.</p>
      */
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
 
     /**
-     * <p>The unique Amazon Resource Name of the gateway that joined the domain.</p>
+     * <p>The unique Amazon Resource Name (ARN) of the gateway that joined the
+     * domain.</p>
      */
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
 
     /**
-     * <p>The unique Amazon Resource Name of the gateway that joined the domain.</p>
+     * <p>The unique Amazon Resource Name (ARN) of the gateway that joined the
+     * domain.</p>
      */
     inline JoinDomainResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     /**
-     * <p>The unique Amazon Resource Name of the gateway that joined the domain.</p>
+     * <p>The unique Amazon Resource Name (ARN) of the gateway that joined the
+     * domain.</p>
      */
     inline JoinDomainResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
-     * <p>The unique Amazon Resource Name of the gateway that joined the domain.</p>
+     * <p>The unique Amazon Resource Name (ARN) of the gateway that joined the
+     * domain.</p>
      */
     inline JoinDomainResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 

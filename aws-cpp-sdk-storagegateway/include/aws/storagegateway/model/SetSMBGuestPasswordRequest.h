@@ -91,37 +91,37 @@ namespace Model
 
 
     /**
-     * <p>The password you want to set for your SMB Server.</p>
+     * <p>The password that you want to set for your SMB Server.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>The password you want to set for your SMB Server.</p>
+     * <p>The password that you want to set for your SMB Server.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The password you want to set for your SMB Server.</p>
+     * <p>The password that you want to set for your SMB Server.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * <p>The password you want to set for your SMB Server.</p>
+     * <p>The password that you want to set for your SMB Server.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>The password you want to set for your SMB Server.</p>
+     * <p>The password that you want to set for your SMB Server.</p>
      */
     inline SetSMBGuestPasswordRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The password you want to set for your SMB Server.</p>
+     * <p>The password that you want to set for your SMB Server.</p>
      */
     inline SetSMBGuestPasswordRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password you want to set for your SMB Server.</p>
+     * <p>The password that you want to set for your SMB Server.</p>
      */
     inline SetSMBGuestPasswordRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 

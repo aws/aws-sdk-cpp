@@ -157,20 +157,20 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own KMS key, or false
-     * to use a key managed by Amazon S3. Optional. </p>
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own KMS key, or false
-     * to use a key managed by Amazon S3. Optional. </p>
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own KMS key, or false
-     * to use a key managed by Amazon S3. Optional. </p>
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline NFSFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
@@ -264,58 +264,58 @@ namespace Model
 
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
-     * this field is not populated, the default value S3_STANDARD is used.
-     * Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
@@ -384,64 +384,64 @@ namespace Model
 
 
     /**
-     * <p>Sets the write status of a file share. This value is true if the write status
-     * is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
-     * <p>Sets the write status of a file share. This value is true if the write status
-     * is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
-     * <p>Sets the write status of a file share. This value is true if the write status
-     * is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
      */
     inline NFSFileShareInfo& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
 
     /**
-     * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions. Set this value to true to enable MIME type guessing, and otherwise
-     * to false. The default value is true.</p>
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
 
     /**
-     * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions. Set this value to true to enable MIME type guessing, and otherwise
-     * to false. The default value is true.</p>
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
      */
     inline void SetGuessMIMETypeEnabled(bool value) { m_guessMIMETypeEnabledHasBeenSet = true; m_guessMIMETypeEnabled = value; }
 
     /**
-     * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions. Set this value to true to enable MIME type guessing, and otherwise
-     * to false. The default value is true.</p>
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
      */
     inline NFSFileShareInfo& WithGuessMIMETypeEnabled(bool value) { SetGuessMIMETypeEnabled(value); return *this;}
 
 
     /**
-     * <p>Sets who pays the cost of the request and the data download from the Amazon
-     * S3 bucket. Set this value to true if you want the requester to pay instead of
-     * the bucket owner, and otherwise to false.</p>
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
 
     /**
-     * <p>Sets who pays the cost of the request and the data download from the Amazon
-     * S3 bucket. Set this value to true if you want the requester to pay instead of
-     * the bucket owner, and otherwise to false.</p>
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
 
     /**
-     * <p>Sets who pays the cost of the request and the data download from the Amazon
-     * S3 bucket. Set this value to true if you want the requester to pay instead of
-     * the bucket owner, and otherwise to false.</p>
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline NFSFileShareInfo& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
 

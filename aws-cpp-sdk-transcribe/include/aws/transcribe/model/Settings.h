@@ -85,26 +85,38 @@ namespace Model
 
 
     /**
-     * <p>Determines whether the transcription job should use speaker recognition to
-     * identify different speakers in the input audio. If you set the
-     * <code>ShowSpeakerLabels</code> field to true, you must also set the maximum
-     * number of speaker labels <code>MaxSpeakerLabels</code> field.</p>
+     * <p>Determines whether the transcription job uses speaker recognition to identify
+     * different speakers in the input audio. Speaker recognition labels individual
+     * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
+     * to true, you must also set the maximum number of speaker labels
+     * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
+     * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
+     * same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
      */
     inline bool GetShowSpeakerLabels() const{ return m_showSpeakerLabels; }
 
     /**
-     * <p>Determines whether the transcription job should use speaker recognition to
-     * identify different speakers in the input audio. If you set the
-     * <code>ShowSpeakerLabels</code> field to true, you must also set the maximum
-     * number of speaker labels <code>MaxSpeakerLabels</code> field.</p>
+     * <p>Determines whether the transcription job uses speaker recognition to identify
+     * different speakers in the input audio. Speaker recognition labels individual
+     * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
+     * to true, you must also set the maximum number of speaker labels
+     * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
+     * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
+     * same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
      */
     inline void SetShowSpeakerLabels(bool value) { m_showSpeakerLabelsHasBeenSet = true; m_showSpeakerLabels = value; }
 
     /**
-     * <p>Determines whether the transcription job should use speaker recognition to
-     * identify different speakers in the input audio. If you set the
-     * <code>ShowSpeakerLabels</code> field to true, you must also set the maximum
-     * number of speaker labels <code>MaxSpeakerLabels</code> field.</p>
+     * <p>Determines whether the transcription job uses speaker recognition to identify
+     * different speakers in the input audio. Speaker recognition labels individual
+     * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
+     * to true, you must also set the maximum number of speaker labels
+     * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
+     * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
+     * same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
      */
     inline Settings& WithShowSpeakerLabels(bool value) { SetShowSpeakerLabels(value); return *this;}
 
@@ -133,6 +145,43 @@ namespace Model
      */
     inline Settings& WithMaxSpeakerLabels(int value) { SetMaxSpeakerLabels(value); return *this;}
 
+
+    /**
+     * <p>Instructs Amazon Transcribe to process each audio channel separately and then
+     * merge the transcription output of each channel into a single transcription. </p>
+     * <p>Amazon Transcribe also produces a transcription of each item detected on an
+     * audio channel, including the start time and end time of the item and alternative
+     * transcriptions of the item including the confidence that Amazon Transcribe has
+     * in the transcription.</p> <p>You can't set both <code>ShowSpeakerLabels</code>
+     * and <code>ChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline bool GetChannelIdentification() const{ return m_channelIdentification; }
+
+    /**
+     * <p>Instructs Amazon Transcribe to process each audio channel separately and then
+     * merge the transcription output of each channel into a single transcription. </p>
+     * <p>Amazon Transcribe also produces a transcription of each item detected on an
+     * audio channel, including the start time and end time of the item and alternative
+     * transcriptions of the item including the confidence that Amazon Transcribe has
+     * in the transcription.</p> <p>You can't set both <code>ShowSpeakerLabels</code>
+     * and <code>ChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline void SetChannelIdentification(bool value) { m_channelIdentificationHasBeenSet = true; m_channelIdentification = value; }
+
+    /**
+     * <p>Instructs Amazon Transcribe to process each audio channel separately and then
+     * merge the transcription output of each channel into a single transcription. </p>
+     * <p>Amazon Transcribe also produces a transcription of each item detected on an
+     * audio channel, including the start time and end time of the item and alternative
+     * transcriptions of the item including the confidence that Amazon Transcribe has
+     * in the transcription.</p> <p>You can't set both <code>ShowSpeakerLabels</code>
+     * and <code>ChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline Settings& WithChannelIdentification(bool value) { SetChannelIdentification(value); return *this;}
+
   private:
 
     Aws::String m_vocabularyName;
@@ -143,6 +192,9 @@ namespace Model
 
     int m_maxSpeakerLabels;
     bool m_maxSpeakerLabelsHasBeenSet;
+
+    bool m_channelIdentification;
+    bool m_channelIdentificationHasBeenSet;
   };
 
 } // namespace Model

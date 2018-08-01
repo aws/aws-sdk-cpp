@@ -33,7 +33,9 @@ Settings::Settings() :
     m_showSpeakerLabels(false),
     m_showSpeakerLabelsHasBeenSet(false),
     m_maxSpeakerLabels(0),
-    m_maxSpeakerLabelsHasBeenSet(false)
+    m_maxSpeakerLabelsHasBeenSet(false),
+    m_channelIdentification(false),
+    m_channelIdentificationHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ Settings::Settings(JsonView jsonValue) :
     m_showSpeakerLabels(false),
     m_showSpeakerLabelsHasBeenSet(false),
     m_maxSpeakerLabels(0),
-    m_maxSpeakerLabelsHasBeenSet(false)
+    m_maxSpeakerLabelsHasBeenSet(false),
+    m_channelIdentification(false),
+    m_channelIdentificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +74,13 @@ Settings& Settings::operator =(JsonView jsonValue)
     m_maxSpeakerLabelsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChannelIdentification"))
+  {
+    m_channelIdentification = jsonValue.GetBool("ChannelIdentification");
+
+    m_channelIdentificationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +103,12 @@ JsonValue Settings::Jsonize() const
   if(m_maxSpeakerLabelsHasBeenSet)
   {
    payload.WithInteger("MaxSpeakerLabels", m_maxSpeakerLabels);
+
+  }
+
+  if(m_channelIdentificationHasBeenSet)
+  {
+   payload.WithBool("ChannelIdentification", m_channelIdentification);
 
   }
 

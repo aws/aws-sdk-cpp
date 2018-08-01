@@ -258,16 +258,13 @@ JsonValue AttributeValueMap::Jsonize() const
 {
     JsonValue value;
 
-    if (m_m.size() > 0)
+    JsonValue mapValue;
+    for (auto& mapItem : m_m)
     {
-        JsonValue mapValue;
-        for (auto& mapItem : m_m)
-        {
-            JsonValue mapEntry = mapItem.second->Jsonize();
-            mapValue.WithObject(mapItem.first, std::move(mapEntry));
-        }
-        value.WithObject("M", std::move(mapValue));
+        JsonValue mapEntry = mapItem.second->Jsonize();
+        mapValue.WithObject(mapItem.first, std::move(mapEntry));
     }
+    value.WithObject("M", std::move(mapValue));
 
     return value;
 }
@@ -313,17 +310,14 @@ JsonValue AttributeValueList::Jsonize() const
 {
     JsonValue value;
 
-    if (m_l.size() > 0)
+    Array<JsonValue> list(m_l.size());
+
+    for (unsigned i = 0; i < m_l.size(); ++i)
     {
-        Array<JsonValue> list(m_l.size());
-
-        for (unsigned i = 0; i < m_l.size(); ++i)
-        {
-            list[i] = m_l[i]->Jsonize();
-        }
-
-        value.WithArray("L", std::move(list));
+        list[i] = m_l[i]->Jsonize();
     }
+
+    value.WithArray("L", std::move(list));
 
     return value;
 }
