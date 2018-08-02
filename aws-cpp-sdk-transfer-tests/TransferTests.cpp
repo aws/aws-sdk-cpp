@@ -1740,4 +1740,111 @@ TEST_F(TransferTests, TransferManager_MediumVersionedTest)
     }
 }
 */
+
+// Single part upload with compute content MD5
+TEST_F(TransferTests, TransferManager_SinglePartUploadWithComputeContentMd5Test)
+{
+    Aws::String testFileName = MakeFilePath( TEST_FILE_NAME );
+    ScopedTestFile testFile(testFileName, MB5, testString);
+
+    if (EmptyBucket(GetTestBucketName()))
+    {
+        WaitForBucketToEmpty(GetTestBucketName());
+    }
+
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetTestBucketName());
+    getObjectRequest.SetKey(TEST_FILE_KEY);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.computeContentMD5 = true;
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+
+    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(testFileName, GetTestBucketName(), TEST_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    requestPtr->WaitUntilFinished();
+    ASSERT_FALSE(requestPtr->IsMultipart());
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), TEST_FILE_KEY));
+
+    HeadObjectRequest headObjectRequest;
+    headObjectRequest.SetBucket(GetTestBucketName());
+    headObjectRequest.SetKey(TEST_FILE_KEY);
+
+    HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
+    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+    VerifyUploadedFile(*transferManager,
+                       testFileName,
+                       GetTestBucketName(),
+                       TEST_FILE_KEY,
+                       "text/plain",
+                       Aws::Map<Aws::String, Aws::String>());
+}
+
+// Multipart upload with compute content MD5
+TEST_F(TransferTests, MultipartUploadWithComputeContentMd5Test)
+{
+    Aws::String mediumTestFileName = MakeFilePath( MEDIUM_TEST_FILE_NAME );
+    ScopedTestFile testFile(mediumTestFileName, MEDIUM_TEST_SIZE, testString);
+
+    if (EmptyBucket(GetTestBucketName()))
+    {
+        WaitForBucketToEmpty(GetTestBucketName());
+    }
+
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetTestBucketName());
+    getObjectRequest.SetKey(MEDIUM_FILE_KEY);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    ListMultipartUploadsRequest listMultipartRequest;
+
+    listMultipartRequest.SetBucket(GetTestBucketName());
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.computeContentMD5 = true;
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+
+    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(mediumTestFileName, GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    requestPtr->WaitUntilFinished();
+
+    size_t retries = 0;
+    //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
+    while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+    {
+        transferManager->RetryUpload(mediumTestFileName, requestPtr);
+        requestPtr->WaitUntilFinished();
+    }
+    ASSERT_TRUE(requestPtr->IsMultipart());
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY));
+
+    // Check the metadata matches
+    HeadObjectRequest headObjectRequest;
+    headObjectRequest.SetBucket(GetTestBucketName());
+    headObjectRequest.SetKey(MEDIUM_FILE_KEY);
+
+    HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
+    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+    VerifyUploadedFile(*transferManager,
+                       mediumTestFileName,
+                       GetTestBucketName(),
+                       MEDIUM_FILE_KEY,
+                       "text/plain",
+                       Aws::Map<Aws::String, Aws::String>());
+}
 }
