@@ -41,7 +41,9 @@ StreamDescriptionSummary::StreamDescriptionSummary() :
     m_encryptionTypeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_openShardCount(0),
-    m_openShardCountHasBeenSet(false)
+    m_openShardCountHasBeenSet(false),
+    m_consumerCount(0),
+    m_consumerCountHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ StreamDescriptionSummary::StreamDescriptionSummary(JsonView jsonValue) :
     m_encryptionTypeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_openShardCount(0),
-    m_openShardCountHasBeenSet(false)
+    m_openShardCountHasBeenSet(false),
+    m_consumerCount(0),
+    m_consumerCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +135,13 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator =(JsonView jsonValu
     m_openShardCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConsumerCount"))
+  {
+    m_consumerCount = jsonValue.GetInteger("ConsumerCount");
+
+    m_consumerCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +202,12 @@ JsonValue StreamDescriptionSummary::Jsonize() const
   if(m_openShardCountHasBeenSet)
   {
    payload.WithInteger("OpenShardCount", m_openShardCount);
+
+  }
+
+  if(m_consumerCountHasBeenSet)
+  {
+   payload.WithInteger("ConsumerCount", m_consumerCount);
 
   }
 

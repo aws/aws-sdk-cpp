@@ -46,7 +46,9 @@ SynthesisTask::SynthesisTask() :
     m_textType(TextType::NOT_SET),
     m_textTypeHasBeenSet(false),
     m_voiceId(VoiceId::NOT_SET),
-    m_voiceIdHasBeenSet(false)
+    m_voiceIdHasBeenSet(false),
+    m_languageCode(LanguageCode::NOT_SET),
+    m_languageCodeHasBeenSet(false)
 {
 }
 
@@ -68,7 +70,9 @@ SynthesisTask::SynthesisTask(JsonView jsonValue) :
     m_textType(TextType::NOT_SET),
     m_textTypeHasBeenSet(false),
     m_voiceId(VoiceId::NOT_SET),
-    m_voiceIdHasBeenSet(false)
+    m_voiceIdHasBeenSet(false),
+    m_languageCode(LanguageCode::NOT_SET),
+    m_languageCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -172,6 +176,13 @@ SynthesisTask& SynthesisTask::operator =(JsonView jsonValue)
     m_voiceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LanguageCode"))
+  {
+    m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
+
+    m_languageCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -260,6 +271,11 @@ JsonValue SynthesisTask::Jsonize() const
   if(m_voiceIdHasBeenSet)
   {
    payload.WithString("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
   return payload;

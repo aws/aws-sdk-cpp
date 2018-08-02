@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteStreamRequest::DeleteStreamRequest() : 
-    m_streamNameHasBeenSet(false)
+    m_streamNameHasBeenSet(false),
+    m_enforceConsumerDeletion(false),
+    m_enforceConsumerDeletionHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,12 @@ Aws::String DeleteStreamRequest::SerializePayload() const
   if(m_streamNameHasBeenSet)
   {
    payload.WithString("StreamName", m_streamName);
+
+  }
+
+  if(m_enforceConsumerDeletionHasBeenSet)
+  {
+   payload.WithBool("EnforceConsumerDeletion", m_enforceConsumerDeletion);
 
   }
 

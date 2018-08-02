@@ -28,6 +28,7 @@ namespace Polly
 namespace PollyErrorMapper
 {
 
+static const int LANGUAGE_NOT_SUPPORTED_HASH = HashingUtils::HashString("LanguageNotSupportedException");
 static const int UNSUPPORTED_PLS_LANGUAGE_HASH = HashingUtils::HashString("UnsupportedPlsLanguageException");
 static const int UNSUPPORTED_PLS_ALPHABET_HASH = HashingUtils::HashString("UnsupportedPlsAlphabetException");
 static const int LEXICON_NOT_FOUND_HASH = HashingUtils::HashString("LexiconNotFoundException");
@@ -53,7 +54,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == UNSUPPORTED_PLS_LANGUAGE_HASH)
+  if (hashCode == LANGUAGE_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::LANGUAGE_NOT_SUPPORTED), false);
+  }
+  else if (hashCode == UNSUPPORTED_PLS_LANGUAGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::UNSUPPORTED_PLS_LANGUAGE), false);
   }

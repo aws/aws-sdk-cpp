@@ -36,10 +36,6 @@ class AttributeValue;
 class AttributeValueValue
 {
 public:
-    virtual ~AttributeValueValue() {}
-
-    AttributeValueValue& operator = (const AttributeValueValue&) = delete;
-
     virtual const Aws::String& GetS() const { return DEFAULT_STRING; }
 
     virtual const Aws::String& GetN() const { return DEFAULT_STRING; }
@@ -76,18 +72,15 @@ public:
 
     virtual Aws::Utils::Json::JsonValue Jsonize() const = 0;
 
-    const Aws::String DEFAULT_STRING;
-    const Aws::Utils::ByteBuffer DEFAULT_BYTEBUFFER;
-    const Aws::Vector<Aws::String> DEFAULT_STRING_SET;
-    const Aws::Vector<Aws::Utils::ByteBuffer> DEFAULT_BYTEBUFFER_SET;
-    const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>> DEFAULT_ATTRIBUTE_MAP;
-    const Aws::Vector<std::shared_ptr<AttributeValue>> DEFAULT_ATTRIBUTE_LIST;
+    const static Aws::String DEFAULT_STRING;
+    const static Aws::Utils::ByteBuffer DEFAULT_BYTEBUFFER;
+    const static Aws::Vector<Aws::String> DEFAULT_STRING_SET;
+    const static Aws::Vector<Aws::Utils::ByteBuffer> DEFAULT_BYTEBUFFER_SET;
+    const static Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>> DEFAULT_ATTRIBUTE_MAP;
+    const static Aws::Vector<std::shared_ptr<AttributeValue>> DEFAULT_ATTRIBUTE_LIST;
 
     enum class ValueType {STRING, NUMBER, BYTEBUFFER, STRING_SET, NUMBER_SET, BYTEBUFFER_SET, ATTRIBUTE_MAP, ATTRIBUTE_LIST, BOOL, NULLVALUE};
     virtual ValueType GetType() const = 0;
-
-protected:
-    AttributeValueValue() {}
 };
 
 /// String data type

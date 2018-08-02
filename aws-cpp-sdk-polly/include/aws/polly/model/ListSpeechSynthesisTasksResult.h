@@ -88,51 +88,51 @@ namespace Model
 
 
     /**
-     * <p>SynthesisTask object that provides information from the specified task in the
-     * list request, including output format, creation time, task status, and so
-     * on.</p>
+     * <p>List of SynthesisTask objects that provides information from the specified
+     * task in the list request, including output format, creation time, task status,
+     * and so on.</p>
      */
     inline const Aws::Vector<SynthesisTask>& GetSynthesisTasks() const{ return m_synthesisTasks; }
 
     /**
-     * <p>SynthesisTask object that provides information from the specified task in the
-     * list request, including output format, creation time, task status, and so
-     * on.</p>
+     * <p>List of SynthesisTask objects that provides information from the specified
+     * task in the list request, including output format, creation time, task status,
+     * and so on.</p>
      */
     inline void SetSynthesisTasks(const Aws::Vector<SynthesisTask>& value) { m_synthesisTasks = value; }
 
     /**
-     * <p>SynthesisTask object that provides information from the specified task in the
-     * list request, including output format, creation time, task status, and so
-     * on.</p>
+     * <p>List of SynthesisTask objects that provides information from the specified
+     * task in the list request, including output format, creation time, task status,
+     * and so on.</p>
      */
     inline void SetSynthesisTasks(Aws::Vector<SynthesisTask>&& value) { m_synthesisTasks = std::move(value); }
 
     /**
-     * <p>SynthesisTask object that provides information from the specified task in the
-     * list request, including output format, creation time, task status, and so
-     * on.</p>
+     * <p>List of SynthesisTask objects that provides information from the specified
+     * task in the list request, including output format, creation time, task status,
+     * and so on.</p>
      */
     inline ListSpeechSynthesisTasksResult& WithSynthesisTasks(const Aws::Vector<SynthesisTask>& value) { SetSynthesisTasks(value); return *this;}
 
     /**
-     * <p>SynthesisTask object that provides information from the specified task in the
-     * list request, including output format, creation time, task status, and so
-     * on.</p>
+     * <p>List of SynthesisTask objects that provides information from the specified
+     * task in the list request, including output format, creation time, task status,
+     * and so on.</p>
      */
     inline ListSpeechSynthesisTasksResult& WithSynthesisTasks(Aws::Vector<SynthesisTask>&& value) { SetSynthesisTasks(std::move(value)); return *this;}
 
     /**
-     * <p>SynthesisTask object that provides information from the specified task in the
-     * list request, including output format, creation time, task status, and so
-     * on.</p>
+     * <p>List of SynthesisTask objects that provides information from the specified
+     * task in the list request, including output format, creation time, task status,
+     * and so on.</p>
      */
     inline ListSpeechSynthesisTasksResult& AddSynthesisTasks(const SynthesisTask& value) { m_synthesisTasks.push_back(value); return *this; }
 
     /**
-     * <p>SynthesisTask object that provides information from the specified task in the
-     * list request, including output format, creation time, task status, and so
-     * on.</p>
+     * <p>List of SynthesisTask objects that provides information from the specified
+     * task in the list request, including output format, creation time, task status,
+     * and so on.</p>
      */
     inline ListSpeechSynthesisTasksResult& AddSynthesisTasks(SynthesisTask&& value) { m_synthesisTasks.push_back(std::move(value)); return *this; }
 

@@ -36,7 +36,8 @@ Voice::Voice() :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_languageNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_additionalLanguageCodesHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Voice::Voice(JsonView jsonValue) :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_languageNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_additionalLanguageCodesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +92,16 @@ Voice& Voice::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalLanguageCodes"))
+  {
+    Array<JsonView> additionalLanguageCodesJsonList = jsonValue.GetArray("AdditionalLanguageCodes");
+    for(unsigned additionalLanguageCodesIndex = 0; additionalLanguageCodesIndex < additionalLanguageCodesJsonList.GetLength(); ++additionalLanguageCodesIndex)
+    {
+      m_additionalLanguageCodes.push_back(LanguageCodeMapper::GetLanguageCodeForName(additionalLanguageCodesJsonList[additionalLanguageCodesIndex].AsString()));
+    }
+    m_additionalLanguageCodesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -121,6 +133,17 @@ JsonValue Voice::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_additionalLanguageCodesHasBeenSet)
+  {
+   Array<JsonValue> additionalLanguageCodesJsonList(m_additionalLanguageCodes.size());
+   for(unsigned additionalLanguageCodesIndex = 0; additionalLanguageCodesIndex < additionalLanguageCodesJsonList.GetLength(); ++additionalLanguageCodesIndex)
+   {
+     additionalLanguageCodesJsonList[additionalLanguageCodesIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_additionalLanguageCodes[additionalLanguageCodesIndex]));
+   }
+   payload.WithArray("AdditionalLanguageCodes", std::move(additionalLanguageCodesJsonList));
 
   }
 

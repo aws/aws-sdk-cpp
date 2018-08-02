@@ -35,7 +35,9 @@ StartSpeechSynthesisTaskRequest::StartSpeechSynthesisTaskRequest() :
     m_textType(TextType::NOT_SET),
     m_textTypeHasBeenSet(false),
     m_voiceId(VoiceId::NOT_SET),
-    m_voiceIdHasBeenSet(false)
+    m_voiceIdHasBeenSet(false),
+    m_languageCode(LanguageCode::NOT_SET),
+    m_languageCodeHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,11 @@ Aws::String StartSpeechSynthesisTaskRequest::SerializePayload() const
   if(m_voiceIdHasBeenSet)
   {
    payload.WithString("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
   return payload.View().WriteReadable();

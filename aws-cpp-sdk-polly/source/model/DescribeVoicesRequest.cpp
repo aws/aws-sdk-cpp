@@ -28,6 +28,8 @@ using namespace Aws::Http;
 DescribeVoicesRequest::DescribeVoicesRequest() : 
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
+    m_includeAdditionalLanguageCodes(false),
+    m_includeAdditionalLanguageCodesHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -44,6 +46,13 @@ void DescribeVoicesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << LanguageCodeMapper::GetNameForLanguageCode(m_languageCode);
       uri.AddQueryStringParameter("LanguageCode", ss.str());
+      ss.str("");
+    }
+
+    if(m_includeAdditionalLanguageCodesHasBeenSet)
+    {
+      ss << m_includeAdditionalLanguageCodes;
+      uri.AddQueryStringParameter("IncludeAdditionalLanguageCodes", ss.str());
       ss.str("");
     }
 

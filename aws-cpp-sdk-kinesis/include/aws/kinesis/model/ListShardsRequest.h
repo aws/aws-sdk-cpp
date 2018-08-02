@@ -251,58 +251,72 @@ namespace Model
 
 
     /**
-     * <p>The ID of the shard to start the list with. </p> <p>If you don't specify this
-     * parameter, the default behavior is for <code>ListShards</code> to list the
-     * shards starting with the first one in the stream.</p> <p>You cannot specify this
-     * parameter if you specify <code>NextToken</code>.</p>
+     * <p>Specify this parameter to indicate that you want to list the shards starting
+     * with the shard whose ID immediately follows
+     * <code>ExclusiveStartShardId</code>.</p> <p>If you don't specify this parameter,
+     * the default behavior is for <code>ListShards</code> to list the shards starting
+     * with the first one in the stream.</p> <p>You cannot specify this parameter if
+     * you specify <code>NextToken</code>.</p>
      */
     inline const Aws::String& GetExclusiveStartShardId() const{ return m_exclusiveStartShardId; }
 
     /**
-     * <p>The ID of the shard to start the list with. </p> <p>If you don't specify this
-     * parameter, the default behavior is for <code>ListShards</code> to list the
-     * shards starting with the first one in the stream.</p> <p>You cannot specify this
-     * parameter if you specify <code>NextToken</code>.</p>
+     * <p>Specify this parameter to indicate that you want to list the shards starting
+     * with the shard whose ID immediately follows
+     * <code>ExclusiveStartShardId</code>.</p> <p>If you don't specify this parameter,
+     * the default behavior is for <code>ListShards</code> to list the shards starting
+     * with the first one in the stream.</p> <p>You cannot specify this parameter if
+     * you specify <code>NextToken</code>.</p>
      */
     inline void SetExclusiveStartShardId(const Aws::String& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
 
     /**
-     * <p>The ID of the shard to start the list with. </p> <p>If you don't specify this
-     * parameter, the default behavior is for <code>ListShards</code> to list the
-     * shards starting with the first one in the stream.</p> <p>You cannot specify this
-     * parameter if you specify <code>NextToken</code>.</p>
+     * <p>Specify this parameter to indicate that you want to list the shards starting
+     * with the shard whose ID immediately follows
+     * <code>ExclusiveStartShardId</code>.</p> <p>If you don't specify this parameter,
+     * the default behavior is for <code>ListShards</code> to list the shards starting
+     * with the first one in the stream.</p> <p>You cannot specify this parameter if
+     * you specify <code>NextToken</code>.</p>
      */
     inline void SetExclusiveStartShardId(Aws::String&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = std::move(value); }
 
     /**
-     * <p>The ID of the shard to start the list with. </p> <p>If you don't specify this
-     * parameter, the default behavior is for <code>ListShards</code> to list the
-     * shards starting with the first one in the stream.</p> <p>You cannot specify this
-     * parameter if you specify <code>NextToken</code>.</p>
+     * <p>Specify this parameter to indicate that you want to list the shards starting
+     * with the shard whose ID immediately follows
+     * <code>ExclusiveStartShardId</code>.</p> <p>If you don't specify this parameter,
+     * the default behavior is for <code>ListShards</code> to list the shards starting
+     * with the first one in the stream.</p> <p>You cannot specify this parameter if
+     * you specify <code>NextToken</code>.</p>
      */
     inline void SetExclusiveStartShardId(const char* value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId.assign(value); }
 
     /**
-     * <p>The ID of the shard to start the list with. </p> <p>If you don't specify this
-     * parameter, the default behavior is for <code>ListShards</code> to list the
-     * shards starting with the first one in the stream.</p> <p>You cannot specify this
-     * parameter if you specify <code>NextToken</code>.</p>
+     * <p>Specify this parameter to indicate that you want to list the shards starting
+     * with the shard whose ID immediately follows
+     * <code>ExclusiveStartShardId</code>.</p> <p>If you don't specify this parameter,
+     * the default behavior is for <code>ListShards</code> to list the shards starting
+     * with the first one in the stream.</p> <p>You cannot specify this parameter if
+     * you specify <code>NextToken</code>.</p>
      */
     inline ListShardsRequest& WithExclusiveStartShardId(const Aws::String& value) { SetExclusiveStartShardId(value); return *this;}
 
     /**
-     * <p>The ID of the shard to start the list with. </p> <p>If you don't specify this
-     * parameter, the default behavior is for <code>ListShards</code> to list the
-     * shards starting with the first one in the stream.</p> <p>You cannot specify this
-     * parameter if you specify <code>NextToken</code>.</p>
+     * <p>Specify this parameter to indicate that you want to list the shards starting
+     * with the shard whose ID immediately follows
+     * <code>ExclusiveStartShardId</code>.</p> <p>If you don't specify this parameter,
+     * the default behavior is for <code>ListShards</code> to list the shards starting
+     * with the first one in the stream.</p> <p>You cannot specify this parameter if
+     * you specify <code>NextToken</code>.</p>
      */
     inline ListShardsRequest& WithExclusiveStartShardId(Aws::String&& value) { SetExclusiveStartShardId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the shard to start the list with. </p> <p>If you don't specify this
-     * parameter, the default behavior is for <code>ListShards</code> to list the
-     * shards starting with the first one in the stream.</p> <p>You cannot specify this
-     * parameter if you specify <code>NextToken</code>.</p>
+     * <p>Specify this parameter to indicate that you want to list the shards starting
+     * with the shard whose ID immediately follows
+     * <code>ExclusiveStartShardId</code>.</p> <p>If you don't specify this parameter,
+     * the default behavior is for <code>ListShards</code> to list the shards starting
+     * with the first one in the stream.</p> <p>You cannot specify this parameter if
+     * you specify <code>NextToken</code>.</p>
      */
     inline ListShardsRequest& WithExclusiveStartShardId(const char* value) { SetExclusiveStartShardId(value); return *this;}
 

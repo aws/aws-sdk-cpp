@@ -443,6 +443,22 @@ namespace Model
      */
     inline StreamDescriptionSummary& WithOpenShardCount(int value) { SetOpenShardCount(value); return *this;}
 
+
+    /**
+     * <p>The number of enhanced fan-out consumers registered with the stream.</p>
+     */
+    inline int GetConsumerCount() const{ return m_consumerCount; }
+
+    /**
+     * <p>The number of enhanced fan-out consumers registered with the stream.</p>
+     */
+    inline void SetConsumerCount(int value) { m_consumerCountHasBeenSet = true; m_consumerCount = value; }
+
+    /**
+     * <p>The number of enhanced fan-out consumers registered with the stream.</p>
+     */
+    inline StreamDescriptionSummary& WithConsumerCount(int value) { SetConsumerCount(value); return *this;}
+
   private:
 
     Aws::String m_streamName;
@@ -471,6 +487,9 @@ namespace Model
 
     int m_openShardCount;
     bool m_openShardCountHasBeenSet;
+
+    int m_consumerCount;
+    bool m_consumerCountHasBeenSet;
   };
 
 } // namespace Model

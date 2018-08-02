@@ -86,6 +86,34 @@ namespace Model
 
 
     /**
+     * <p>Boolean value indicating whether to return any bilingual voices that use the
+     * specified language as an additional language. For instance, if you request all
+     * languages that use US English (es-US), and there is an Italian voice that speaks
+     * both Italian (it-IT) and US English, that voice will be included if you specify
+     * <code>yes</code> but not if you specify <code>no</code>.</p>
+     */
+    inline bool GetIncludeAdditionalLanguageCodes() const{ return m_includeAdditionalLanguageCodes; }
+
+    /**
+     * <p>Boolean value indicating whether to return any bilingual voices that use the
+     * specified language as an additional language. For instance, if you request all
+     * languages that use US English (es-US), and there is an Italian voice that speaks
+     * both Italian (it-IT) and US English, that voice will be included if you specify
+     * <code>yes</code> but not if you specify <code>no</code>.</p>
+     */
+    inline void SetIncludeAdditionalLanguageCodes(bool value) { m_includeAdditionalLanguageCodesHasBeenSet = true; m_includeAdditionalLanguageCodes = value; }
+
+    /**
+     * <p>Boolean value indicating whether to return any bilingual voices that use the
+     * specified language as an additional language. For instance, if you request all
+     * languages that use US English (es-US), and there is an Italian voice that speaks
+     * both Italian (it-IT) and US English, that voice will be included if you specify
+     * <code>yes</code> but not if you specify <code>no</code>.</p>
+     */
+    inline DescribeVoicesRequest& WithIncludeAdditionalLanguageCodes(bool value) { SetIncludeAdditionalLanguageCodes(value); return *this;}
+
+
+    /**
      * <p>An opaque pagination token returned from the previous
      * <code>DescribeVoices</code> operation. If present, this indicates where to
      * continue the listing.</p>
@@ -138,6 +166,9 @@ namespace Model
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;
+
+    bool m_includeAdditionalLanguageCodes;
+    bool m_includeAdditionalLanguageCodesHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
