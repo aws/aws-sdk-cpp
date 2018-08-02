@@ -48,20 +48,25 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
 
+        bucketLocationConstraints.add("us-east-1");
         bucketLocationConstraints.add("us-east-2");
         bucketLocationConstraints.add("us-west-1");
         bucketLocationConstraints.add("us-west-2");
-        bucketLocationConstraints.add("ca-central-1");
-        bucketLocationConstraints.add("ap-south-1");
-        bucketLocationConstraints.add("ap-northeast-1");
-        bucketLocationConstraints.add("ap-northeast-2");
-        bucketLocationConstraints.add("ap-southeast-1");
-        bucketLocationConstraints.add("ap-southeast-2");
-        bucketLocationConstraints.add("eu-central-1");
-        bucketLocationConstraints.add("EU");
         bucketLocationConstraints.add("eu-west-1");
         bucketLocationConstraints.add("eu-west-2");
+        bucketLocationConstraints.add("eu-west-3");
+        bucketLocationConstraints.add("eu-central-1");
+        bucketLocationConstraints.add("ap-southeast-1");
+        bucketLocationConstraints.add("ap-southeast-2");
+        bucketLocationConstraints.add("ap-northeast-1");
+        bucketLocationConstraints.add("ap-northeast-2");
+        bucketLocationConstraints.add("ap-south-1");
         bucketLocationConstraints.add("sa-east-1");
+        bucketLocationConstraints.add("cn-north-1");
+        bucketLocationConstraints.add("cn-northwest-1");
+        bucketLocationConstraints.add("ca-central-1");
+        bucketLocationConstraints.add("us-gov-west-1");
+        bucketLocationConstraints.add("EU");
     }
 
     public S3RestXmlCppClientGenerator() throws Exception {
