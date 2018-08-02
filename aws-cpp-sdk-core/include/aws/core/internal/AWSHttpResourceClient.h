@@ -18,6 +18,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <memory>
 
 namespace Aws
@@ -40,6 +41,7 @@ namespace Aws
              * Builds an AWSHttpResourceClient instance by using default http stack.
              */
             AWSHttpResourceClient(const char* logtag = "AWSHttpResourceClient");
+            AWSHttpResourceClient(const Client::ClientConfiguration& clientConfiguration, const char* logtag = "AWSHttpResourceClient");
 
             AWSHttpResourceClient& operator =(const AWSHttpResourceClient& rhs) = delete;
             AWSHttpResourceClient(const AWSHttpResourceClient& rhs) = delete;
@@ -63,6 +65,7 @@ namespace Aws
             Aws::String m_logtag;
 
         private:
+            std::shared_ptr<Client::RetryStrategy> m_retryStrategy;
             std::shared_ptr<Http::HttpClient> m_httpClient;
         };
 
@@ -76,6 +79,7 @@ namespace Aws
              * Build an instance with default EC2 Metadata service endpoint
              */
             EC2MetadataClient(const char* endpoint = "http://169.254.169.254");
+            EC2MetadataClient(const Client::ClientConfiguration& clientConfiguration, const char* endpoint = "http://169.254.169.254");
 
             EC2MetadataClient& operator =(const EC2MetadataClient& rhs) = delete;
             EC2MetadataClient(const EC2MetadataClient& rhs) = delete;
@@ -121,6 +125,10 @@ namespace Aws
              */
             ECSCredentialsClient(const char* resourcePath, const char* endpoint = "http://169.254.170.2",
                     const char* authToken = "");
+            ECSCredentialsClient(const Client::ClientConfiguration& clientConfiguration,
+                                 const char* resourcePath, const char* endpoint = "http://169.254.170.2",
+                                 const char* authToken = "");
+
             ECSCredentialsClient& operator =(ECSCredentialsClient& rhs) = delete;
             ECSCredentialsClient(const ECSCredentialsClient& rhs) = delete;
             ECSCredentialsClient& operator =(ECSCredentialsClient&& rhs) = delete;
