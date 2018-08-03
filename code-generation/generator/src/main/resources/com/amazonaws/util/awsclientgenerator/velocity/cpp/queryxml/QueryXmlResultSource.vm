@@ -48,8 +48,16 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
   }
 
   if (!rootNode.IsNull()) {
+#if ($metadata.protocol == "ec2" )
+    XmlNode requestIdNode = rootNode.FirstChild("requestId");
+    if (!requestIdNode.IsNull())
+    {
+      m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+    }
+#else
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+#end
     AWS_LOGSTREAM_DEBUG("Aws::${metadata.namespace}::Model::${typeInfo.className}", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
 #if($shape.hasHeaderMembers())
