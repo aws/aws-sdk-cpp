@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The list of tags requested for the specific resource.</p>
+     * <p>The tags requested for the specified resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags requested for the specific resource.</p>
+     * <p>The tags requested for the specified resource.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>The list of tags requested for the specific resource.</p>
+     * <p>The tags requested for the specified resource.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags requested for the specific resource.</p>
+     * <p>The tags requested for the specified resource.</p>
      */
     inline ListTagsResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags requested for the specific resource.</p>
+     * <p>The tags requested for the specified resource.</p>
      */
     inline ListTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags requested for the specific resource.</p>
+     * <p>The tags requested for the specified resource.</p>
      */
     inline ListTagsResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The list of tags requested for the specific resource.</p>
+     * <p>The tags requested for the specified resource.</p>
      */
     inline ListTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

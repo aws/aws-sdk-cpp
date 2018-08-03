@@ -1056,22 +1056,16 @@ namespace Model
         virtual void GetSkillGroupAsync(const Model::GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Device Event history for up to 30 days. If EventType isn't
-         * specified in the request, this returns a list of all device events in reverse
-         * chronological order. If EventType is specified, this returns a list of device
-         * events for that EventType in reverse chronological order. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the device event history, including device connection status, for up to
+         * 30 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDeviceEventsOutcome ListDeviceEvents(const Model::ListDeviceEventsRequest& request) const;
 
         /**
-         * <p>Lists the Device Event history for up to 30 days. If EventType isn't
-         * specified in the request, this returns a list of all device events in reverse
-         * chronological order. If EventType is specified, this returns a list of device
-         * events for that EventType in reverse chronological order. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the device event history, including device connection status, for up to
+         * 30 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">AWS
          * API Reference</a></p>
          *
@@ -1080,11 +1074,8 @@ namespace Model
         virtual Model::ListDeviceEventsOutcomeCallable ListDeviceEventsCallable(const Model::ListDeviceEventsRequest& request) const;
 
         /**
-         * <p>Lists the Device Event history for up to 30 days. If EventType isn't
-         * specified in the request, this returns a list of all device events in reverse
-         * chronological order. If EventType is specified, this returns a list of device
-         * events for that EventType in reverse chronological order. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the device event history, including device connection status, for up to
+         * 30 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">AWS
          * API Reference</a></p>
          *
@@ -1121,14 +1112,14 @@ namespace Model
         virtual void ListSkillsAsync(const Model::ListSkillsRequest& request, const ListSkillsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all tags for a specific resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists all tags for a specific resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">AWS
          * API Reference</a></p>
          *
@@ -1137,7 +1128,7 @@ namespace Model
         virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists all tags for a specific resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">AWS
          * API Reference</a></p>
          *

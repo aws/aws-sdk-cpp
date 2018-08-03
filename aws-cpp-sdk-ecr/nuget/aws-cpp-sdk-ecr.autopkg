@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ECR;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.5.20150921.6;
+        version : 1.5.20150921.7;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon EC2 Container Registry);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.5.6
+            AWSSDKCPP-Core/1.5.7
        }
     }
 

@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The device events requested for the device ARN.</p>
      */
     inline const Aws::Vector<DeviceEvent>& GetDeviceEvents() const{ return m_deviceEvents; }
 
     /**
-     * <p/>
+     * <p>The device events requested for the device ARN.</p>
      */
     inline void SetDeviceEvents(const Aws::Vector<DeviceEvent>& value) { m_deviceEvents = value; }
 
     /**
-     * <p/>
+     * <p>The device events requested for the device ARN.</p>
      */
     inline void SetDeviceEvents(Aws::Vector<DeviceEvent>&& value) { m_deviceEvents = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The device events requested for the device ARN.</p>
      */
     inline ListDeviceEventsResult& WithDeviceEvents(const Aws::Vector<DeviceEvent>& value) { SetDeviceEvents(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The device events requested for the device ARN.</p>
      */
     inline ListDeviceEventsResult& WithDeviceEvents(Aws::Vector<DeviceEvent>&& value) { SetDeviceEvents(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The device events requested for the device ARN.</p>
      */
     inline ListDeviceEventsResult& AddDeviceEvents(const DeviceEvent& value) { m_deviceEvents.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The device events requested for the device ARN.</p>
      */
     inline ListDeviceEventsResult& AddDeviceEvents(DeviceEvent&& value) { m_deviceEvents.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The token returned to indicate that there is more data available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p/>
+     * <p>The token returned to indicate that there is more data available.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p/>
+     * <p>The token returned to indicate that there is more data available.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The token returned to indicate that there is more data available.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p/>
+     * <p>The token returned to indicate that there is more data available.</p>
      */
     inline ListDeviceEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The token returned to indicate that there is more data available.</p>
      */
     inline ListDeviceEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The token returned to indicate that there is more data available.</p>
      */
     inline ListDeviceEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
