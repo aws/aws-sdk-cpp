@@ -68,7 +68,7 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", result);
-        // Retries should be done when request can't be made at all
+        // 1 initial request + 4 retries should be done when request can't be made at all
         ASSERT_EQ(5u, mockHttpClient->GetAllRequestsMade().size());
     }
 
@@ -140,7 +140,7 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", result);
-        // Retries should be done for status code >= 500
+        // 1 initial request + 4 retries should be done for status code >= 500
         ASSERT_EQ(5u, mockHttpClient->GetAllRequestsMade().size());
     }
 
@@ -168,7 +168,7 @@ namespace
         ASSERT_EQ(1u, mockHttpClient->GetAllRequestsMade().size());
     }
 
-    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithTemporaryNullResponse)
+    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithSuccessResponseAfterOneNullResponse)
     {
         mockHttpClient->AddResponseToReturn(nullptr);
 
@@ -190,11 +190,11 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("{ \"Resource\": \"TestResource\" }", result);
-        // There should be one retry
+        // 1 initial request + 1 retry
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
     }
 
-    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithTemporaryInternalServerError)
+    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithSuccessResponseAfterOneInternalServerError)
     {
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
@@ -219,7 +219,7 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("{ \"Resource\": \"TestResource\" }", result);
-        // There should be one retry
+        // 1 initial request + 1 retry
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
     }
 

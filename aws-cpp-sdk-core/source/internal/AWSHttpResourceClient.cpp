@@ -41,7 +41,7 @@ static const char* ECS_CREDENTIALS_CLIENT_LOG_TAG = "ECSCredentialsClient";
 
 
 namespace {
-    ClientConfiguration makeDefaultHttpResourceClientConfiguration(const char *logtag)
+    ClientConfiguration MakeDefaultHttpResourceClientConfiguration(const char *logtag)
     {
         ClientConfiguration res;
 
@@ -87,7 +87,7 @@ AWSHttpResourceClient::AWSHttpResourceClient(const Client::ClientConfiguration& 
 }
 
 AWSHttpResourceClient::AWSHttpResourceClient(const char* logtag)
-: AWSHttpResourceClient(makeDefaultHttpResourceClientConfiguration(logtag), logtag)
+: AWSHttpResourceClient(MakeDefaultHttpResourceClientConfiguration(logtag), logtag)
 {
 }
 
