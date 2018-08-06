@@ -152,7 +152,8 @@ namespace Aws
                                                        const Aws::String& keyName,
                                                        const Aws::String& contentType, 
                                                        const Aws::Map<Aws::String, Aws::String>& metadata,
-                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr);
+                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                       const Aws::String& contentEncoding = "");
 
             /**
              * Downloads the contents of bucketName/keyName in S3 to the file specified by writeToFile. This will perform a GetObject operation.
@@ -232,7 +233,8 @@ namespace Aws
                                                                    const Aws::Map<Aws::String,
                                                                    Aws::String>& metadata,
                                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context,
-                                                                   const Aws::String& fileName = "");
+                                                                   const Aws::String& fileName = "",
+                                                                   const Aws::String& contentEncoding = "");
 
             /**
              * Submits the actual task to task schecduler
@@ -248,7 +250,8 @@ namespace Aws
                                                          const Aws::String& keyName,
                                                          const Aws::String& contentType,
                                                          const Aws::Map<Aws::String, Aws::String>& metadata,
-                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
+                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context,
+                                                         const Aws::String& contentEncoding);
 
             /**
              * Uploads the contents of file, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,

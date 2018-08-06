@@ -296,6 +296,14 @@ namespace Aws
              */
             inline void SetContentType(const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_contentType = value; } 
             /**
+             * Content encoding of the object being transferred
+             */
+            inline const Aws::String GetContentEncoding() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_contentEncoding; }
+            /**
+             * Content type of the object being transferred
+             */
+            inline void SetContentEncoding(const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_contentEncoding = value; }
+            /**
              * In case of an upload, this is the metadata that was placed on the object when it was uploaded.
              * In the case of a download, this is the object metadata from the GetObject operation.
              */
@@ -380,6 +388,7 @@ namespace Aws
             Aws::String m_key;
             Aws::String m_fileName;
             Aws::String m_contentType;
+            Aws::String m_contentEncoding;
             Aws::String m_versionId;
             Aws::Map<Aws::String, Aws::String> m_metadata;
             TransferStatus m_status;
