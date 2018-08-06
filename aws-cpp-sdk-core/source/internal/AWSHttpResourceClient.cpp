@@ -113,32 +113,28 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
 
         std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(request));
 
-        const HttpResponseCode responseCode = response ? response->GetResponseCode() : HttpResponseCode::REQUEST_NOT_MADE;
-
-        if (responseCode == HttpResponseCode::OK)
+        if (response && response->GetResponseCode() == HttpResponseCode::OK)
         {
             Aws::IStreamBufIterator eos;
             return Aws::String(Aws::IStreamBufIterator(response->GetResponseBody()), eos);
         }
-        else if (responseCode == HttpResponseCode::REQUEST_NOT_MADE)
-        {
-            AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed.");
-        }
-        else if (response->GetResponseCode() >= HttpResponseCode::INTERNAL_SERVER_ERROR)
-        {
-            AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed with error code "
-                                << static_cast<int>(response->GetResponseCode()));
-        }
-        else
-        {
-            // Client error, retrying the same request will not help
-            AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed with non-retriable error code "
-                                << static_cast<int>(response->GetResponseCode()));
-            return {};
-        }
 
-        // Internal error that is retryable
-        Aws::Client::AWSError<Aws::Client::CoreErrors> error(Aws::Client::CoreErrors::INTERNAL_FAILURE, true);
+        const Aws::Client::AWSError<Aws::Client::CoreErrors> error = [this, &response]() {
+            if (!response)
+            {
+                AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed");
+                return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true);  // Retriable
+            }
+            else
+            {
+                const auto responseCode = response->GetResponseCode();
+
+                AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed with error code "
+                                    << static_cast<int>(responseCode));
+                return CoreErrorsMapper::GetErrorForHttpResponseCode(responseCode);
+            }
+        } ();
+
         if (!m_retryStrategy->ShouldRetry(error, retries))
         {
             AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrive resource " << resource);

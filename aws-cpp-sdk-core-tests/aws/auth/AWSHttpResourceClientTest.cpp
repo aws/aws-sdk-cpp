@@ -128,7 +128,10 @@ namespace
         std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
         response->SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
         response->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
-        mockHttpClient->AddResponseToReturn(response);
+
+        // Add enough to respond to 1 initial request and 4 retries
+        for (int i = 0; i != 5; ++i)
+            mockHttpClient->AddResponseToReturn(response);
 
         auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
@@ -194,6 +197,32 @@ namespace
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
     }
 
+    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithBadRequestResponseAfterOneNullResponse)
+    {
+        // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
+        std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
+                                                                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        mockHttpClient->AddResponseToReturn(nullptr);
+
+        auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        response2->SetResponseCode(HttpResponseCode::BAD_REQUEST);
+        response2->GetResponseBody() << "Any test string";
+        mockHttpClient->AddResponseToReturn(response2);
+
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
+
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_EQ("http://www.uri.com/path/to/res", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("www.uri.com", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("", result);
+        // 1 initial request + 1 retry
+        ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
+    }
+
     TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithSuccessResponseAfterOneInternalServerError)
     {
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
@@ -219,6 +248,35 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("{ \"Resource\": \"TestResource\" }", result);
+        // 1 initial request + 1 retry
+        ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithBadRequestResponseAfterOneInternalServerError)
+    {
+        // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
+        std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
+                                                                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        response1->SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
+        response1->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
+        mockHttpClient->AddResponseToReturn(response1);
+
+        auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        response2->SetResponseCode(HttpResponseCode::BAD_REQUEST);
+        response2->GetResponseBody() << "Any test string";
+        mockHttpClient->AddResponseToReturn(response2);
+
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
+
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_EQ("http://www.uri.com/path/to/res", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("www.uri.com", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("", result);
         // 1 initial request + 1 retry
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
     }
