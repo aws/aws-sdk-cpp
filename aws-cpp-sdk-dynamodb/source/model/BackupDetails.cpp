@@ -35,7 +35,10 @@ BackupDetails::BackupDetails() :
     m_backupSizeBytesHasBeenSet(false),
     m_backupStatus(BackupStatus::NOT_SET),
     m_backupStatusHasBeenSet(false),
-    m_backupCreationDateTimeHasBeenSet(false)
+    m_backupType(BackupType::NOT_SET),
+    m_backupTypeHasBeenSet(false),
+    m_backupCreationDateTimeHasBeenSet(false),
+    m_backupExpiryDateTimeHasBeenSet(false)
 {
 }
 
@@ -46,7 +49,10 @@ BackupDetails::BackupDetails(JsonView jsonValue) :
     m_backupSizeBytesHasBeenSet(false),
     m_backupStatus(BackupStatus::NOT_SET),
     m_backupStatusHasBeenSet(false),
-    m_backupCreationDateTimeHasBeenSet(false)
+    m_backupType(BackupType::NOT_SET),
+    m_backupTypeHasBeenSet(false),
+    m_backupCreationDateTimeHasBeenSet(false),
+    m_backupExpiryDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,11 +87,25 @@ BackupDetails& BackupDetails::operator =(JsonView jsonValue)
     m_backupStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BackupType"))
+  {
+    m_backupType = BackupTypeMapper::GetBackupTypeForName(jsonValue.GetString("BackupType"));
+
+    m_backupTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("BackupCreationDateTime"))
   {
     m_backupCreationDateTime = jsonValue.GetDouble("BackupCreationDateTime");
 
     m_backupCreationDateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BackupExpiryDateTime"))
+  {
+    m_backupExpiryDateTime = jsonValue.GetDouble("BackupExpiryDateTime");
+
+    m_backupExpiryDateTimeHasBeenSet = true;
   }
 
   return *this;
@@ -118,9 +138,19 @@ JsonValue BackupDetails::Jsonize() const
    payload.WithString("BackupStatus", BackupStatusMapper::GetNameForBackupStatus(m_backupStatus));
   }
 
+  if(m_backupTypeHasBeenSet)
+  {
+   payload.WithString("BackupType", BackupTypeMapper::GetNameForBackupType(m_backupType));
+  }
+
   if(m_backupCreationDateTimeHasBeenSet)
   {
    payload.WithDouble("BackupCreationDateTime", m_backupCreationDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_backupExpiryDateTimeHasBeenSet)
+  {
+   payload.WithDouble("BackupExpiryDateTime", m_backupExpiryDateTime.SecondsWithMSPrecision());
   }
 
   return payload;

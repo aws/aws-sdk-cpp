@@ -35,8 +35,11 @@ BackupSummary::BackupSummary() :
     m_backupArnHasBeenSet(false),
     m_backupNameHasBeenSet(false),
     m_backupCreationDateTimeHasBeenSet(false),
+    m_backupExpiryDateTimeHasBeenSet(false),
     m_backupStatus(BackupStatus::NOT_SET),
     m_backupStatusHasBeenSet(false),
+    m_backupType(BackupType::NOT_SET),
+    m_backupTypeHasBeenSet(false),
     m_backupSizeBytes(0),
     m_backupSizeBytesHasBeenSet(false)
 {
@@ -49,8 +52,11 @@ BackupSummary::BackupSummary(JsonView jsonValue) :
     m_backupArnHasBeenSet(false),
     m_backupNameHasBeenSet(false),
     m_backupCreationDateTimeHasBeenSet(false),
+    m_backupExpiryDateTimeHasBeenSet(false),
     m_backupStatus(BackupStatus::NOT_SET),
     m_backupStatusHasBeenSet(false),
+    m_backupType(BackupType::NOT_SET),
+    m_backupTypeHasBeenSet(false),
     m_backupSizeBytes(0),
     m_backupSizeBytesHasBeenSet(false)
 {
@@ -101,11 +107,25 @@ BackupSummary& BackupSummary::operator =(JsonView jsonValue)
     m_backupCreationDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BackupExpiryDateTime"))
+  {
+    m_backupExpiryDateTime = jsonValue.GetDouble("BackupExpiryDateTime");
+
+    m_backupExpiryDateTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("BackupStatus"))
   {
     m_backupStatus = BackupStatusMapper::GetBackupStatusForName(jsonValue.GetString("BackupStatus"));
 
     m_backupStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BackupType"))
+  {
+    m_backupType = BackupTypeMapper::GetBackupTypeForName(jsonValue.GetString("BackupType"));
+
+    m_backupTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("BackupSizeBytes"))
@@ -157,9 +177,19 @@ JsonValue BackupSummary::Jsonize() const
    payload.WithDouble("BackupCreationDateTime", m_backupCreationDateTime.SecondsWithMSPrecision());
   }
 
+  if(m_backupExpiryDateTimeHasBeenSet)
+  {
+   payload.WithDouble("BackupExpiryDateTime", m_backupExpiryDateTime.SecondsWithMSPrecision());
+  }
+
   if(m_backupStatusHasBeenSet)
   {
    payload.WithString("BackupStatus", BackupStatusMapper::GetNameForBackupStatus(m_backupStatus));
+  }
+
+  if(m_backupTypeHasBeenSet)
+  {
+   payload.WithString("BackupType", BackupTypeMapper::GetNameForBackupType(m_backupType));
   }
 
   if(m_backupSizeBytesHasBeenSet)
