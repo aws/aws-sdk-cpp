@@ -88,96 +88,142 @@ namespace Model
 
 
     /**
-     * Segments that define the source of this segment. Currently a maximum of 1 import
-     * segment is supported.
+     * The base segment that you build your segment on. The source segment defines the
+     * starting "universe" of endpoints. When you add dimensions to the segment, it
+     * filters the source segment based on the dimensions that you specify. You can
+     * specify more than one dimensional segment. You can only specify one imported
+     * segment.
      */
     inline const Aws::Vector<SegmentReference>& GetSourceSegments() const{ return m_sourceSegments; }
 
     /**
-     * Segments that define the source of this segment. Currently a maximum of 1 import
-     * segment is supported.
+     * The base segment that you build your segment on. The source segment defines the
+     * starting "universe" of endpoints. When you add dimensions to the segment, it
+     * filters the source segment based on the dimensions that you specify. You can
+     * specify more than one dimensional segment. You can only specify one imported
+     * segment.
      */
     inline void SetSourceSegments(const Aws::Vector<SegmentReference>& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = value; }
 
     /**
-     * Segments that define the source of this segment. Currently a maximum of 1 import
-     * segment is supported.
+     * The base segment that you build your segment on. The source segment defines the
+     * starting "universe" of endpoints. When you add dimensions to the segment, it
+     * filters the source segment based on the dimensions that you specify. You can
+     * specify more than one dimensional segment. You can only specify one imported
+     * segment.
      */
     inline void SetSourceSegments(Aws::Vector<SegmentReference>&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = std::move(value); }
 
     /**
-     * Segments that define the source of this segment. Currently a maximum of 1 import
-     * segment is supported.
+     * The base segment that you build your segment on. The source segment defines the
+     * starting "universe" of endpoints. When you add dimensions to the segment, it
+     * filters the source segment based on the dimensions that you specify. You can
+     * specify more than one dimensional segment. You can only specify one imported
+     * segment.
      */
     inline SegmentGroup& WithSourceSegments(const Aws::Vector<SegmentReference>& value) { SetSourceSegments(value); return *this;}
 
     /**
-     * Segments that define the source of this segment. Currently a maximum of 1 import
-     * segment is supported.
+     * The base segment that you build your segment on. The source segment defines the
+     * starting "universe" of endpoints. When you add dimensions to the segment, it
+     * filters the source segment based on the dimensions that you specify. You can
+     * specify more than one dimensional segment. You can only specify one imported
+     * segment.
      */
     inline SegmentGroup& WithSourceSegments(Aws::Vector<SegmentReference>&& value) { SetSourceSegments(std::move(value)); return *this;}
 
     /**
-     * Segments that define the source of this segment. Currently a maximum of 1 import
-     * segment is supported.
+     * The base segment that you build your segment on. The source segment defines the
+     * starting "universe" of endpoints. When you add dimensions to the segment, it
+     * filters the source segment based on the dimensions that you specify. You can
+     * specify more than one dimensional segment. You can only specify one imported
+     * segment.
      */
     inline SegmentGroup& AddSourceSegments(const SegmentReference& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(value); return *this; }
 
     /**
-     * Segments that define the source of this segment. Currently a maximum of 1 import
-     * segment is supported.
+     * The base segment that you build your segment on. The source segment defines the
+     * starting "universe" of endpoints. When you add dimensions to the segment, it
+     * filters the source segment based on the dimensions that you specify. You can
+     * specify more than one dimensional segment. You can only specify one imported
+     * segment.
      */
     inline SegmentGroup& AddSourceSegments(SegmentReference&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(std::move(value)); return *this; }
 
 
     /**
-     * Include or exclude the source.
+     * Specify how to handle multiple source segments. For example, if you specify
+     * three source segments, should the resulting segment be based on any or all of
+     * the segments? Acceptable values: ANY or ALL.
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * Include or exclude the source.
+     * Specify how to handle multiple source segments. For example, if you specify
+     * three source segments, should the resulting segment be based on any or all of
+     * the segments? Acceptable values: ANY or ALL.
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * Include or exclude the source.
+     * Specify how to handle multiple source segments. For example, if you specify
+     * three source segments, should the resulting segment be based on any or all of
+     * the segments? Acceptable values: ANY or ALL.
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * Include or exclude the source.
+     * Specify how to handle multiple source segments. For example, if you specify
+     * three source segments, should the resulting segment be based on any or all of
+     * the segments? Acceptable values: ANY or ALL.
      */
     inline SegmentGroup& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * Include or exclude the source.
+     * Specify how to handle multiple source segments. For example, if you specify
+     * three source segments, should the resulting segment be based on any or all of
+     * the segments? Acceptable values: ANY or ALL.
      */
     inline SegmentGroup& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
 
     /**
-     * How should the dimensions be applied for the result
+     * Specify how to handle multiple segment dimensions. For example, if you specify
+     * three dimensions, should the resulting segment include endpoints that are
+     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
+     * NONE.
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * How should the dimensions be applied for the result
+     * Specify how to handle multiple segment dimensions. For example, if you specify
+     * three dimensions, should the resulting segment include endpoints that are
+     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
+     * NONE.
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * How should the dimensions be applied for the result
+     * Specify how to handle multiple segment dimensions. For example, if you specify
+     * three dimensions, should the resulting segment include endpoints that are
+     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
+     * NONE.
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * How should the dimensions be applied for the result
+     * Specify how to handle multiple segment dimensions. For example, if you specify
+     * three dimensions, should the resulting segment include endpoints that are
+     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
+     * NONE.
      */
     inline SegmentGroup& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * How should the dimensions be applied for the result
+     * Specify how to handle multiple segment dimensions. For example, if you specify
+     * three dimensions, should the resulting segment include endpoints that are
+     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
+     * NONE.
      */
     inline SegmentGroup& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

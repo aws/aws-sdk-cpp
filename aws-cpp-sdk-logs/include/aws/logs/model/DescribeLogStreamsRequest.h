@@ -82,43 +82,43 @@ namespace Model
 
 
     /**
-     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
      * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
 
     /**
-     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
      * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /**
-     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
      * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
 
     /**
-     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
      * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
 
     /**
-     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
      * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
      * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
      * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}

@@ -21,6 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeFlowLogsRequest::DescribeFlowLogsRequest() : 
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_flowLogIdsHasBeenSet(false),
     m_maxResults(0),
@@ -33,6 +35,11 @@ Aws::String DescribeFlowLogsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeFlowLogs&";
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
   if(m_filterHasBeenSet)
   {
     unsigned filterCount = 1;

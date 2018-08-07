@@ -58,7 +58,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
@@ -67,7 +67,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
@@ -76,7 +76,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
@@ -85,7 +85,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
@@ -94,7 +94,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointRequest& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
@@ -103,7 +103,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointRequest& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
@@ -112,7 +112,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointRequest& WithAddress(const char* value) { SetAddress(value); return *this;}
 
@@ -314,63 +314,63 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
 
 
     /**
-     * The endpoint demographic attributes.
+     * Demographic attributes for the endpoint.
      */
     inline const EndpointDemographic& GetDemographic() const{ return m_demographic; }
 
     /**
-     * The endpoint demographic attributes.
+     * Demographic attributes for the endpoint.
      */
     inline void SetDemographic(const EndpointDemographic& value) { m_demographicHasBeenSet = true; m_demographic = value; }
 
     /**
-     * The endpoint demographic attributes.
+     * Demographic attributes for the endpoint.
      */
     inline void SetDemographic(EndpointDemographic&& value) { m_demographicHasBeenSet = true; m_demographic = std::move(value); }
 
     /**
-     * The endpoint demographic attributes.
+     * Demographic attributes for the endpoint.
      */
     inline EndpointRequest& WithDemographic(const EndpointDemographic& value) { SetDemographic(value); return *this;}
 
     /**
-     * The endpoint demographic attributes.
+     * Demographic attributes for the endpoint.
      */
     inline EndpointRequest& WithDemographic(EndpointDemographic&& value) { SetDemographic(std::move(value)); return *this;}
 
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was updated, shown in ISO 8601 format.
      */
     inline const Aws::String& GetEffectiveDate() const{ return m_effectiveDate; }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was updated, shown in ISO 8601 format.
      */
     inline void SetEffectiveDate(const Aws::String& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was updated, shown in ISO 8601 format.
      */
     inline void SetEffectiveDate(Aws::String&& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = std::move(value); }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was updated, shown in ISO 8601 format.
      */
     inline void SetEffectiveDate(const char* value) { m_effectiveDateHasBeenSet = true; m_effectiveDate.assign(value); }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was updated, shown in ISO 8601 format.
      */
     inline EndpointRequest& WithEffectiveDate(const Aws::String& value) { SetEffectiveDate(value); return *this;}
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was updated, shown in ISO 8601 format.
      */
     inline EndpointRequest& WithEffectiveDate(Aws::String&& value) { SetEffectiveDate(std::move(value)); return *this;}
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was updated, shown in ISO 8601 format.
      */
     inline EndpointRequest& WithEffectiveDate(const char* value) { SetEffectiveDate(value); return *this;}
 

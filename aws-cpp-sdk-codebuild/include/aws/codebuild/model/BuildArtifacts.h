@@ -198,6 +198,31 @@ namespace Model
 
 
     /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline bool GetOverrideArtifactName() const{ return m_overrideArtifactName; }
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline void SetOverrideArtifactName(bool value) { m_overrideArtifactNameHasBeenSet = true; m_overrideArtifactName = value; }
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline BuildArtifacts& WithOverrideArtifactName(bool value) { SetOverrideArtifactName(value); return *this;}
+
+
+    /**
      * <p> Information that tells you if encryption for build artifacts is disabled.
      * </p>
      */
@@ -225,6 +250,9 @@ namespace Model
 
     Aws::String m_md5sum;
     bool m_md5sumHasBeenSet;
+
+    bool m_overrideArtifactName;
+    bool m_overrideArtifactNameHasBeenSet;
 
     bool m_encryptionDisabled;
     bool m_encryptionDisabledHasBeenSet;

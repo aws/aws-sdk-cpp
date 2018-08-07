@@ -76,37 +76,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Internet gateway.</p>
+     * <p>The ID of the internet gateway.</p>
      */
     inline const Aws::String& GetInternetGatewayId() const{ return m_internetGatewayId; }
 
     /**
-     * <p>The ID of the Internet gateway.</p>
+     * <p>The ID of the internet gateway.</p>
      */
     inline void SetInternetGatewayId(const Aws::String& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = value; }
 
     /**
-     * <p>The ID of the Internet gateway.</p>
+     * <p>The ID of the internet gateway.</p>
      */
     inline void SetInternetGatewayId(Aws::String&& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the Internet gateway.</p>
+     * <p>The ID of the internet gateway.</p>
      */
     inline void SetInternetGatewayId(const char* value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the Internet gateway.</p>
+     * <p>The ID of the internet gateway.</p>
      */
     inline AttachInternetGatewayRequest& WithInternetGatewayId(const Aws::String& value) { SetInternetGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the Internet gateway.</p>
+     * <p>The ID of the internet gateway.</p>
      */
     inline AttachInternetGatewayRequest& WithInternetGatewayId(Aws::String&& value) { SetInternetGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Internet gateway.</p>
+     * <p>The ID of the internet gateway.</p>
      */
     inline AttachInternetGatewayRequest& WithInternetGatewayId(const char* value) { SetInternetGatewayId(value); return *this;}
 

@@ -281,7 +281,7 @@ namespace Model
      * protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
      * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types
-     * or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * or codes that you specify. If you specify protocol <code>58</code> (ICMPv6) and
      * specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
      * regardless of any that you specify. If you specify protocol <code>58</code>
      * (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and
@@ -294,7 +294,7 @@ namespace Model
      * protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
      * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types
-     * or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * or codes that you specify. If you specify protocol <code>58</code> (ICMPv6) and
      * specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
      * regardless of any that you specify. If you specify protocol <code>58</code>
      * (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and
@@ -307,7 +307,7 @@ namespace Model
      * protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
      * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types
-     * or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * or codes that you specify. If you specify protocol <code>58</code> (ICMPv6) and
      * specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
      * regardless of any that you specify. If you specify protocol <code>58</code>
      * (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and
@@ -320,7 +320,7 @@ namespace Model
      * protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
      * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types
-     * or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * or codes that you specify. If you specify protocol <code>58</code> (ICMPv6) and
      * specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
      * regardless of any that you specify. If you specify protocol <code>58</code>
      * (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and
@@ -333,7 +333,7 @@ namespace Model
      * protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
      * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types
-     * or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * or codes that you specify. If you specify protocol <code>58</code> (ICMPv6) and
      * specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
      * regardless of any that you specify. If you specify protocol <code>58</code>
      * (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and
@@ -346,7 +346,7 @@ namespace Model
      * protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
      * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types
-     * or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * or codes that you specify. If you specify protocol <code>58</code> (ICMPv6) and
      * specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
      * regardless of any that you specify. If you specify protocol <code>58</code>
      * (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and
@@ -359,7 +359,7 @@ namespace Model
      * protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
      * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types
-     * or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * or codes that you specify. If you specify protocol <code>58</code> (ICMPv6) and
      * specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
      * regardless of any that you specify. If you specify protocol <code>58</code>
      * (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and

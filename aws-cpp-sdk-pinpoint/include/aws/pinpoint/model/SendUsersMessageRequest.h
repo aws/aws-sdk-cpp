@@ -179,6 +179,49 @@ namespace Model
 
 
     /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline SendUsersMessageRequest& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline SendUsersMessageRequest& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline SendUsersMessageRequest& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+
+
+    /**
      * A map that associates user IDs with EndpointSendConfiguration objects. Within an
      * EndpointSendConfiguration object, you can tailor the message for a user by
      * specifying message overrides or substitutions.
@@ -262,6 +305,9 @@ namespace Model
 
     DirectMessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet;
 
     Aws::Map<Aws::String, EndpointSendConfiguration> m_users;
     bool m_usersHasBeenSet;

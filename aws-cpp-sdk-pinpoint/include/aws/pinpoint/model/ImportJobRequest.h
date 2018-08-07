@@ -65,7 +65,7 @@ namespace Model
 
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -73,7 +73,7 @@ namespace Model
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -81,7 +81,7 @@ namespace Model
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -89,7 +89,7 @@ namespace Model
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -97,7 +97,7 @@ namespace Model
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -105,7 +105,7 @@ namespace Model
     inline ImportJobRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -113,7 +113,7 @@ namespace Model
     inline ImportJobRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -220,86 +220,72 @@ Valid values:
 
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that contains the
-     * endpoints to import. The location can be a folder or a single file.
-The URL
-     * should follow this format: s3://bucket-name/folder-name/file-name
+     * The URL of the S3 bucket that contains the segment information to import. The
+     * location can be a folder or a single file. The URL should use the following
+     * format: s3://bucket-name/folder-name/file-name
 
-Amazon
-     * Pinpoint will import endpoints from this location and any subfolders it
-     * contains.
+Amazon Pinpoint imports
+     * endpoints from this location and any subfolders it contains.
      */
     inline const Aws::String& GetS3Url() const{ return m_s3Url; }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that contains the
-     * endpoints to import. The location can be a folder or a single file.
-The URL
-     * should follow this format: s3://bucket-name/folder-name/file-name
+     * The URL of the S3 bucket that contains the segment information to import. The
+     * location can be a folder or a single file. The URL should use the following
+     * format: s3://bucket-name/folder-name/file-name
 
-Amazon
-     * Pinpoint will import endpoints from this location and any subfolders it
-     * contains.
+Amazon Pinpoint imports
+     * endpoints from this location and any subfolders it contains.
      */
     inline void SetS3Url(const Aws::String& value) { m_s3UrlHasBeenSet = true; m_s3Url = value; }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that contains the
-     * endpoints to import. The location can be a folder or a single file.
-The URL
-     * should follow this format: s3://bucket-name/folder-name/file-name
+     * The URL of the S3 bucket that contains the segment information to import. The
+     * location can be a folder or a single file. The URL should use the following
+     * format: s3://bucket-name/folder-name/file-name
 
-Amazon
-     * Pinpoint will import endpoints from this location and any subfolders it
-     * contains.
+Amazon Pinpoint imports
+     * endpoints from this location and any subfolders it contains.
      */
     inline void SetS3Url(Aws::String&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::move(value); }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that contains the
-     * endpoints to import. The location can be a folder or a single file.
-The URL
-     * should follow this format: s3://bucket-name/folder-name/file-name
+     * The URL of the S3 bucket that contains the segment information to import. The
+     * location can be a folder or a single file. The URL should use the following
+     * format: s3://bucket-name/folder-name/file-name
 
-Amazon
-     * Pinpoint will import endpoints from this location and any subfolders it
-     * contains.
+Amazon Pinpoint imports
+     * endpoints from this location and any subfolders it contains.
      */
     inline void SetS3Url(const char* value) { m_s3UrlHasBeenSet = true; m_s3Url.assign(value); }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that contains the
-     * endpoints to import. The location can be a folder or a single file.
-The URL
-     * should follow this format: s3://bucket-name/folder-name/file-name
+     * The URL of the S3 bucket that contains the segment information to import. The
+     * location can be a folder or a single file. The URL should use the following
+     * format: s3://bucket-name/folder-name/file-name
 
-Amazon
-     * Pinpoint will import endpoints from this location and any subfolders it
-     * contains.
+Amazon Pinpoint imports
+     * endpoints from this location and any subfolders it contains.
      */
     inline ImportJobRequest& WithS3Url(const Aws::String& value) { SetS3Url(value); return *this;}
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that contains the
-     * endpoints to import. The location can be a folder or a single file.
-The URL
-     * should follow this format: s3://bucket-name/folder-name/file-name
+     * The URL of the S3 bucket that contains the segment information to import. The
+     * location can be a folder or a single file. The URL should use the following
+     * format: s3://bucket-name/folder-name/file-name
 
-Amazon
-     * Pinpoint will import endpoints from this location and any subfolders it
-     * contains.
+Amazon Pinpoint imports
+     * endpoints from this location and any subfolders it contains.
      */
     inline ImportJobRequest& WithS3Url(Aws::String&& value) { SetS3Url(std::move(value)); return *this;}
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that contains the
-     * endpoints to import. The location can be a folder or a single file.
-The URL
-     * should follow this format: s3://bucket-name/folder-name/file-name
+     * The URL of the S3 bucket that contains the segment information to import. The
+     * location can be a folder or a single file. The URL should use the following
+     * format: s3://bucket-name/folder-name/file-name
 
-Amazon
-     * Pinpoint will import endpoints from this location and any subfolders it
-     * contains.
+Amazon Pinpoint imports
+     * endpoints from this location and any subfolders it contains.
      */
     inline ImportJobRequest& WithS3Url(const char* value) { SetS3Url(value); return *this;}
 

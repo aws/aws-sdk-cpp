@@ -48,89 +48,89 @@ namespace Model
 
 
     /**
-     * Client ID as gotten from Amazon
+     * The Client ID that you obtained from the Amazon App Distribution Portal.
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
-     * Client ID as gotten from Amazon
+     * The Client ID that you obtained from the Amazon App Distribution Portal.
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
-     * Client ID as gotten from Amazon
+     * The Client ID that you obtained from the Amazon App Distribution Portal.
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
-     * Client ID as gotten from Amazon
+     * The Client ID that you obtained from the Amazon App Distribution Portal.
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
-     * Client ID as gotten from Amazon
+     * The Client ID that you obtained from the Amazon App Distribution Portal.
      */
     inline ADMChannelRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
-     * Client ID as gotten from Amazon
+     * The Client ID that you obtained from the Amazon App Distribution Portal.
      */
     inline ADMChannelRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
-     * Client ID as gotten from Amazon
+     * The Client ID that you obtained from the Amazon App Distribution Portal.
      */
     inline ADMChannelRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
 
     /**
-     * Client secret as gotten from Amazon
+     * The Client Secret that you obtained from the Amazon App Distribution Portal.
      */
     inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
 
     /**
-     * Client secret as gotten from Amazon
+     * The Client Secret that you obtained from the Amazon App Distribution Portal.
      */
     inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
 
     /**
-     * Client secret as gotten from Amazon
+     * The Client Secret that you obtained from the Amazon App Distribution Portal.
      */
     inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
 
     /**
-     * Client secret as gotten from Amazon
+     * The Client Secret that you obtained from the Amazon App Distribution Portal.
      */
     inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
 
     /**
-     * Client secret as gotten from Amazon
+     * The Client Secret that you obtained from the Amazon App Distribution Portal.
      */
     inline ADMChannelRequest& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
 
     /**
-     * Client secret as gotten from Amazon
+     * The Client Secret that you obtained from the Amazon App Distribution Portal.
      */
     inline ADMChannelRequest& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
 
     /**
-     * Client secret as gotten from Amazon
+     * The Client Secret that you obtained from the Amazon App Distribution Portal.
      */
     inline ADMChannelRequest& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
 
 
     /**
-     * If the channel is enabled for sending messages.
+     * Indicates whether or not the channel is enabled for sending messages.
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * Indicates whether or not the channel is enabled for sending messages.
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * Indicates whether or not the channel is enabled for sending messages.
      */
     inline ADMChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

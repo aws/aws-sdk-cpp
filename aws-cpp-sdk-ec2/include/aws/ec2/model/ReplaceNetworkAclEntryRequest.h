@@ -286,10 +286,10 @@ namespace Model
      * all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
      * traffic on all ports is allowed, regardless of any ports or ICMP types or codes
-     * you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an
-     * IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any
-     * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
-     * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+     * you that specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of
+     * any that you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
@@ -298,10 +298,10 @@ namespace Model
      * all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
      * traffic on all ports is allowed, regardless of any ports or ICMP types or codes
-     * you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an
-     * IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any
-     * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
-     * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+     * you that specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of
+     * any that you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
@@ -310,10 +310,10 @@ namespace Model
      * all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
      * traffic on all ports is allowed, regardless of any ports or ICMP types or codes
-     * you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an
-     * IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any
-     * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
-     * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+     * you that specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of
+     * any that you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
@@ -322,10 +322,10 @@ namespace Model
      * all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
      * traffic on all ports is allowed, regardless of any ports or ICMP types or codes
-     * you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an
-     * IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any
-     * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
-     * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+     * you that specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of
+     * any that you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
@@ -334,10 +334,10 @@ namespace Model
      * all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
      * traffic on all ports is allowed, regardless of any ports or ICMP types or codes
-     * you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an
-     * IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any
-     * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
-     * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+     * you that specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of
+     * any that you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
     inline ReplaceNetworkAclEntryRequest& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
@@ -346,10 +346,10 @@ namespace Model
      * all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
      * traffic on all ports is allowed, regardless of any ports or ICMP types or codes
-     * you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an
-     * IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any
-     * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
-     * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+     * you that specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of
+     * any that you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
     inline ReplaceNetworkAclEntryRequest& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
@@ -358,10 +358,10 @@ namespace Model
      * all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
      * traffic on all ports is allowed, regardless of any ports or ICMP types or codes
-     * you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an
-     * IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any
-     * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
-     * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+     * you that specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of
+     * any that you specify. If you specify protocol <code>58</code> (ICMPv6) and
+     * specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
     inline ReplaceNetworkAclEntryRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 

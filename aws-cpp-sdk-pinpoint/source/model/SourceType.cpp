@@ -32,6 +32,7 @@ namespace Aws
 
         static const int ALL_HASH = HashingUtils::HashString("ALL");
         static const int ANY_HASH = HashingUtils::HashString("ANY");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ANY_HASH)
           {
             return SourceType::ANY;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return SourceType::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "ALL";
           case SourceType::ANY:
             return "ANY";
+          case SourceType::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

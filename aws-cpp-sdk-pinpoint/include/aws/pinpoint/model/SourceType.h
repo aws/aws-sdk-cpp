@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     ALL,
-    ANY
+    ANY,
+    NONE
   };
 
 namespace SourceTypeMapper

@@ -73,42 +73,42 @@ namespace Model
 
 
     /**
-     * <p>One or more egress-only Internet gateway IDs.</p>
+     * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEgressOnlyInternetGatewayIds() const{ return m_egressOnlyInternetGatewayIds; }
 
     /**
-     * <p>One or more egress-only Internet gateway IDs.</p>
+     * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline void SetEgressOnlyInternetGatewayIds(const Aws::Vector<Aws::String>& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = value; }
 
     /**
-     * <p>One or more egress-only Internet gateway IDs.</p>
+     * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline void SetEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = std::move(value); }
 
     /**
-     * <p>One or more egress-only Internet gateway IDs.</p>
+     * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(const Aws::Vector<Aws::String>& value) { SetEgressOnlyInternetGatewayIds(value); return *this;}
 
     /**
-     * <p>One or more egress-only Internet gateway IDs.</p>
+     * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetEgressOnlyInternetGatewayIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more egress-only Internet gateway IDs.</p>
+     * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(const Aws::String& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more egress-only Internet gateway IDs.</p>
+     * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(Aws::String&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more egress-only Internet gateway IDs.</p>
+     * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(const char* value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(value); return *this; }
 
@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
      * returned.</p>
      */
@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
      * returned.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
      * returned.</p>
      */

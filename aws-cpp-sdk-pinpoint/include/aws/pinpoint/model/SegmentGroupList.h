@@ -50,63 +50,78 @@ namespace Model
 
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      */
     inline const Aws::Vector<SegmentGroup>& GetGroups() const{ return m_groups; }
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      */
     inline void SetGroups(const Aws::Vector<SegmentGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      */
     inline void SetGroups(Aws::Vector<SegmentGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      */
     inline SegmentGroupList& WithGroups(const Aws::Vector<SegmentGroup>& value) { SetGroups(value); return *this;}
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      */
     inline SegmentGroupList& WithGroups(Aws::Vector<SegmentGroup>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      */
     inline SegmentGroupList& AddGroups(const SegmentGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      */
     inline SegmentGroupList& AddGroups(SegmentGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment
+     * includes three segment groups, should the resulting segment include endpoints
+     * that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      */
     inline const Include& GetInclude() const{ return m_include; }
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment
+     * includes three segment groups, should the resulting segment include endpoints
+     * that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      */
     inline void SetInclude(const Include& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment
+     * includes three segment groups, should the resulting segment include endpoints
+     * that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      */
     inline void SetInclude(Include&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment
+     * includes three segment groups, should the resulting segment include endpoints
+     * that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      */
     inline SegmentGroupList& WithInclude(const Include& value) { SetInclude(value); return *this;}
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment
+     * includes three segment groups, should the resulting segment include endpoints
+     * that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      */
     inline SegmentGroupList& WithInclude(Include&& value) { SetInclude(std::move(value)); return *this;}
 

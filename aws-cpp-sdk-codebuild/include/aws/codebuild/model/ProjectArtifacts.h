@@ -685,6 +685,31 @@ namespace Model
 
 
     /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline bool GetOverrideArtifactName() const{ return m_overrideArtifactName; }
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline void SetOverrideArtifactName(bool value) { m_overrideArtifactNameHasBeenSet = true; m_overrideArtifactName = value; }
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline ProjectArtifacts& WithOverrideArtifactName(bool value) { SetOverrideArtifactName(value); return *this;}
+
+
+    /**
      * <p> Set to true if you do not want your output artifacts encrypted. This option
      * is only valid if your artifacts type is Amazon S3. If this is set with another
      * artifacts type, an invalidInputException will be thrown. </p>
@@ -724,6 +749,9 @@ namespace Model
 
     ArtifactPackaging m_packaging;
     bool m_packagingHasBeenSet;
+
+    bool m_overrideArtifactName;
+    bool m_overrideArtifactNameHasBeenSet;
 
     bool m_encryptionDisabled;
     bool m_encryptionDisabledHasBeenSet;

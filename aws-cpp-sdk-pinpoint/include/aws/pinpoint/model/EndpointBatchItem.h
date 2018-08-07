@@ -58,7 +58,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
@@ -67,7 +67,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
@@ -76,7 +76,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
@@ -85,7 +85,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
@@ -94,7 +94,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointBatchItem& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
@@ -103,7 +103,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointBatchItem& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
@@ -112,7 +112,7 @@ namespace Model
      * by channel. For mobile push channels, use the token provided by the push
      * notification service, such as the APNs device token or the FCM registration
      * token. For the SMS channel, use a phone number in E.164 format, such as
-     * +1206XXX5550100. For the email channel, use an email address.
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointBatchItem& WithAddress(const char* value) { SetAddress(value); return *this;}
 

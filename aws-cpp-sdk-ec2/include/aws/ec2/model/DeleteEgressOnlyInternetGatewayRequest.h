@@ -72,37 +72,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the egress-only Internet gateway.</p>
+     * <p>The ID of the egress-only internet gateway.</p>
      */
     inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
 
     /**
-     * <p>The ID of the egress-only Internet gateway.</p>
+     * <p>The ID of the egress-only internet gateway.</p>
      */
     inline void SetEgressOnlyInternetGatewayId(const Aws::String& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
 
     /**
-     * <p>The ID of the egress-only Internet gateway.</p>
+     * <p>The ID of the egress-only internet gateway.</p>
      */
     inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the egress-only Internet gateway.</p>
+     * <p>The ID of the egress-only internet gateway.</p>
      */
     inline void SetEgressOnlyInternetGatewayId(const char* value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the egress-only Internet gateway.</p>
+     * <p>The ID of the egress-only internet gateway.</p>
      */
     inline DeleteEgressOnlyInternetGatewayRequest& WithEgressOnlyInternetGatewayId(const Aws::String& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the egress-only Internet gateway.</p>
+     * <p>The ID of the egress-only internet gateway.</p>
      */
     inline DeleteEgressOnlyInternetGatewayRequest& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the egress-only Internet gateway.</p>
+     * <p>The ID of the egress-only internet gateway.</p>
      */
     inline DeleteEgressOnlyInternetGatewayRequest& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 

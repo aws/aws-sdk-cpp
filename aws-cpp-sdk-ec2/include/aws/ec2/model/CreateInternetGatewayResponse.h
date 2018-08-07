@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the Internet gateway.</p>
+     * <p>Information about the internet gateway.</p>
      */
     inline const InternetGateway& GetInternetGateway() const{ return m_internetGateway; }
 
     /**
-     * <p>Information about the Internet gateway.</p>
+     * <p>Information about the internet gateway.</p>
      */
     inline void SetInternetGateway(const InternetGateway& value) { m_internetGateway = value; }
 
     /**
-     * <p>Information about the Internet gateway.</p>
+     * <p>Information about the internet gateway.</p>
      */
     inline void SetInternetGateway(InternetGateway&& value) { m_internetGateway = std::move(value); }
 
     /**
-     * <p>Information about the Internet gateway.</p>
+     * <p>Information about the internet gateway.</p>
      */
     inline CreateInternetGatewayResponse& WithInternetGateway(const InternetGateway& value) { SetInternetGateway(value); return *this;}
 
     /**
-     * <p>Information about the Internet gateway.</p>
+     * <p>Information about the internet gateway.</p>
      */
     inline CreateInternetGatewayResponse& WithInternetGateway(InternetGateway&& value) { SetInternetGateway(std::move(value)); return *this;}
 

@@ -198,49 +198,49 @@ namespace Model
 
 
     /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInternetGatewayIds() const{ return m_internetGatewayIds; }
 
     /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline void SetInternetGatewayIds(const Aws::Vector<Aws::String>& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = value; }
 
     /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline void SetInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = std::move(value); }
 
     /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(const Aws::Vector<Aws::String>& value) { SetInternetGatewayIds(value); return *this;}
 
     /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetInternetGatewayIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const Aws::String& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(Aws::String&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const char* value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }

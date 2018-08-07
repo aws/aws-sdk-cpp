@@ -112,32 +112,42 @@ namespace Model
 
 
     /**
-     * Segment definition groups. We currently only support one. If specified
-     * Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
      */
     inline const SegmentGroupList& GetSegmentGroups() const{ return m_segmentGroups; }
 
     /**
-     * Segment definition groups. We currently only support one. If specified
-     * Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
      */
     inline void SetSegmentGroups(const SegmentGroupList& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = value; }
 
     /**
-     * Segment definition groups. We currently only support one. If specified
-     * Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
      */
     inline void SetSegmentGroups(SegmentGroupList&& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = std::move(value); }
 
     /**
-     * Segment definition groups. We currently only support one. If specified
-     * Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
      */
     inline WriteSegmentRequest& WithSegmentGroups(const SegmentGroupList& value) { SetSegmentGroups(value); return *this;}
 
     /**
-     * Segment definition groups. We currently only support one. If specified
-     * Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
      */
     inline WriteSegmentRequest& WithSegmentGroups(SegmentGroupList&& value) { SetSegmentGroups(std::move(value)); return *this;}
 

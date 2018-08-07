@@ -32,6 +32,8 @@ BuildArtifacts::BuildArtifacts() :
     m_locationHasBeenSet(false),
     m_sha256sumHasBeenSet(false),
     m_md5sumHasBeenSet(false),
+    m_overrideArtifactName(false),
+    m_overrideArtifactNameHasBeenSet(false),
     m_encryptionDisabled(false),
     m_encryptionDisabledHasBeenSet(false)
 {
@@ -41,6 +43,8 @@ BuildArtifacts::BuildArtifacts(JsonView jsonValue) :
     m_locationHasBeenSet(false),
     m_sha256sumHasBeenSet(false),
     m_md5sumHasBeenSet(false),
+    m_overrideArtifactName(false),
+    m_overrideArtifactNameHasBeenSet(false),
     m_encryptionDisabled(false),
     m_encryptionDisabledHasBeenSet(false)
 {
@@ -68,6 +72,13 @@ BuildArtifacts& BuildArtifacts::operator =(JsonView jsonValue)
     m_md5sum = jsonValue.GetString("md5sum");
 
     m_md5sumHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("overrideArtifactName"))
+  {
+    m_overrideArtifactName = jsonValue.GetBool("overrideArtifactName");
+
+    m_overrideArtifactNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("encryptionDisabled"))
@@ -99,6 +110,12 @@ JsonValue BuildArtifacts::Jsonize() const
   if(m_md5sumHasBeenSet)
   {
    payload.WithString("md5sum", m_md5sum);
+
+  }
+
+  if(m_overrideArtifactNameHasBeenSet)
+  {
+   payload.WithBool("overrideArtifactName", m_overrideArtifactName);
 
   }
 

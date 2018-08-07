@@ -74,6 +74,7 @@
 #include <aws/pinpoint/model/GetUserEndpointsResult.h>
 #include <aws/pinpoint/model/PhoneNumberValidateResult.h>
 #include <aws/pinpoint/model/PutEventStreamResult.h>
+#include <aws/pinpoint/model/PutEventsResult.h>
 #include <aws/pinpoint/model/RemoveAttributesResult.h>
 #include <aws/pinpoint/model/SendMessagesResult.h>
 #include <aws/pinpoint/model/SendUsersMessagesResult.h>
@@ -184,6 +185,7 @@ namespace Model
         class GetUserEndpointsRequest;
         class PhoneNumberValidateRequest;
         class PutEventStreamRequest;
+        class PutEventsRequest;
         class RemoveAttributesRequest;
         class SendMessagesRequest;
         class SendUsersMessagesRequest;
@@ -255,6 +257,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetUserEndpointsResult, Aws::Client::AWSError<PinpointErrors>> GetUserEndpointsOutcome;
         typedef Aws::Utils::Outcome<PhoneNumberValidateResult, Aws::Client::AWSError<PinpointErrors>> PhoneNumberValidateOutcome;
         typedef Aws::Utils::Outcome<PutEventStreamResult, Aws::Client::AWSError<PinpointErrors>> PutEventStreamOutcome;
+        typedef Aws::Utils::Outcome<PutEventsResult, Aws::Client::AWSError<PinpointErrors>> PutEventsOutcome;
         typedef Aws::Utils::Outcome<RemoveAttributesResult, Aws::Client::AWSError<PinpointErrors>> RemoveAttributesOutcome;
         typedef Aws::Utils::Outcome<SendMessagesResult, Aws::Client::AWSError<PinpointErrors>> SendMessagesOutcome;
         typedef Aws::Utils::Outcome<SendUsersMessagesResult, Aws::Client::AWSError<PinpointErrors>> SendUsersMessagesOutcome;
@@ -326,6 +329,7 @@ namespace Model
         typedef std::future<GetUserEndpointsOutcome> GetUserEndpointsOutcomeCallable;
         typedef std::future<PhoneNumberValidateOutcome> PhoneNumberValidateOutcomeCallable;
         typedef std::future<PutEventStreamOutcome> PutEventStreamOutcomeCallable;
+        typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
         typedef std::future<RemoveAttributesOutcome> RemoveAttributesOutcomeCallable;
         typedef std::future<SendMessagesOutcome> SendMessagesOutcomeCallable;
         typedef std::future<SendUsersMessagesOutcome> SendUsersMessagesOutcomeCallable;
@@ -400,6 +404,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::GetUserEndpointsRequest&, const Model::GetUserEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserEndpointsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::PhoneNumberValidateRequest&, const Model::PhoneNumberValidateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PhoneNumberValidateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::PutEventStreamRequest&, const Model::PutEventStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventStreamResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::RemoveAttributesRequest&, const Model::RemoveAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::SendMessagesRequest&, const Model::SendMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessagesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::SendUsersMessagesRequest&, const Model::SendUsersMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendUsersMessagesResponseReceivedHandler;
@@ -926,14 +931,14 @@ namespace Model
         virtual void DeleteSmsChannelAsync(const Model::DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes endpoints associated with an user id.<p><h3>See Also:</h3>   <a
+         * Deletes endpoints that are associated with a User ID.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteUserEndpointsOutcome DeleteUserEndpoints(const Model::DeleteUserEndpointsRequest& request) const;
 
         /**
-         * Deletes endpoints associated with an user id.<p><h3>See Also:</h3>   <a
+         * Deletes endpoints that are associated with a User ID.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">AWS
          * API Reference</a></p>
          *
@@ -942,7 +947,7 @@ namespace Model
         virtual Model::DeleteUserEndpointsOutcomeCallable DeleteUserEndpointsCallable(const Model::DeleteUserEndpointsRequest& request) const;
 
         /**
-         * Deletes endpoints associated with an user id.<p><h3>See Also:</h3>   <a
+         * Deletes endpoints that are associated with a User ID.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">AWS
          * API Reference</a></p>
          *
@@ -1707,16 +1712,16 @@ namespace Model
         virtual void GetSmsChannelAsync(const Model::GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns information about the endpoints associated with an user id.<p><h3>See
-         * Also:</h3>   <a
+         * Returns information about the endpoints that are associated with a User
+         * ID.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::GetUserEndpointsOutcome GetUserEndpoints(const Model::GetUserEndpointsRequest& request) const;
 
         /**
-         * Returns information about the endpoints associated with an user id.<p><h3>See
-         * Also:</h3>   <a
+         * Returns information about the endpoints that are associated with a User
+         * ID.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">AWS
          * API Reference</a></p>
          *
@@ -1725,8 +1730,8 @@ namespace Model
         virtual Model::GetUserEndpointsOutcomeCallable GetUserEndpointsCallable(const Model::GetUserEndpointsRequest& request) const;
 
         /**
-         * Returns information about the endpoints associated with an user id.<p><h3>See
-         * Also:</h3>   <a
+         * Returns information about the endpoints that are associated with a User
+         * ID.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">AWS
          * API Reference</a></p>
          *
@@ -1785,6 +1790,37 @@ namespace Model
         virtual void PutEventStreamAsync(const Model::PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Use to record events for endpoints. This method creates events and creates or
+         * updates the endpoints that those events are associated with.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
+
+        /**
+         * Use to record events for endpoints. This method creates events and creates or
+         * updates the endpoints that those events are associated with.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
+
+        /**
+         * Use to record events for endpoints. This method creates events and creates or
+         * updates the endpoints that those events are associated with.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Used to remove the attributes for an app<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">AWS
          * API Reference</a></p>
@@ -1810,36 +1846,14 @@ namespace Model
         virtual void RemoveAttributesAsync(const Model::RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Use this resource to send a direct message, which is a one time message that you
-         * send to a limited audience without creating a campaign. 
-
-You can send the
-         * message to up to 100 recipients. You cannot use the message to engage a segment.
-         * When you send the message, Amazon Pinpoint delivers it immediately, and you
-         * cannot schedule the delivery. To engage a user segment, and to schedule the
-         * message delivery, create a campaign instead of sending a direct message.
-
-You
-         * can send a direct message as a push notification to your mobile app or as an SMS
-         * message to SMS-enabled devices.<p><h3>See Also:</h3>   <a
+         * Used to send a direct message.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">AWS
          * API Reference</a></p>
          */
         virtual Model::SendMessagesOutcome SendMessages(const Model::SendMessagesRequest& request) const;
 
         /**
-         * Use this resource to send a direct message, which is a one time message that you
-         * send to a limited audience without creating a campaign. 
-
-You can send the
-         * message to up to 100 recipients. You cannot use the message to engage a segment.
-         * When you send the message, Amazon Pinpoint delivers it immediately, and you
-         * cannot schedule the delivery. To engage a user segment, and to schedule the
-         * message delivery, create a campaign instead of sending a direct message.
-
-You
-         * can send a direct message as a push notification to your mobile app or as an SMS
-         * message to SMS-enabled devices.<p><h3>See Also:</h3>   <a
+         * Used to send a direct message.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">AWS
          * API Reference</a></p>
          *
@@ -1848,18 +1862,7 @@ You
         virtual Model::SendMessagesOutcomeCallable SendMessagesCallable(const Model::SendMessagesRequest& request) const;
 
         /**
-         * Use this resource to send a direct message, which is a one time message that you
-         * send to a limited audience without creating a campaign. 
-
-You can send the
-         * message to up to 100 recipients. You cannot use the message to engage a segment.
-         * When you send the message, Amazon Pinpoint delivers it immediately, and you
-         * cannot schedule the delivery. To engage a user segment, and to schedule the
-         * message delivery, create a campaign instead of sending a direct message.
-
-You
-         * can send a direct message as a push notification to your mobile app or as an SMS
-         * message to SMS-enabled devices.<p><h3>See Also:</h3>   <a
+         * Used to send a direct message.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">AWS
          * API Reference</a></p>
          *
@@ -1868,56 +1871,14 @@ You
         virtual void SendMessagesAsync(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Use this resource to message a list of users. Amazon Pinpoint sends the message
-         * to all of the endpoints that are associated with each user.
-
-A user represents
-         * an individual who is assigned a unique user ID, and this ID is assigned to one
-         * or more endpoints. For example, if an individual uses your app on multiple
-         * devices, your app could assign that person's user ID to the endpoint for each
-         * device.
-
-With the users-messages resource, you specify the message recipients as
-         * user IDs. For each user ID, Amazon Pinpoint delivers the message to all of the
-         * user's endpoints. Within the body of your request, you can specify a default
-         * message, and you can tailor your message for different channels, including those
-         * for mobile push and SMS.
-
-With this resource, you send a direct message, which
-         * is a one time message that you send to a limited audience without creating a
-         * campaign. You can send the message to up to 100 users per request. You cannot
-         * use the message to engage a segment. When you send the message, Amazon Pinpoint
-         * delivers it immediately, and you cannot schedule the delivery. To engage a user
-         * segment, and to schedule the message delivery, create a campaign instead of
-         * using the users-messages resource.<p><h3>See Also:</h3>   <a
+         * Used to send a message to a list of users.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">AWS
          * API Reference</a></p>
          */
         virtual Model::SendUsersMessagesOutcome SendUsersMessages(const Model::SendUsersMessagesRequest& request) const;
 
         /**
-         * Use this resource to message a list of users. Amazon Pinpoint sends the message
-         * to all of the endpoints that are associated with each user.
-
-A user represents
-         * an individual who is assigned a unique user ID, and this ID is assigned to one
-         * or more endpoints. For example, if an individual uses your app on multiple
-         * devices, your app could assign that person's user ID to the endpoint for each
-         * device.
-
-With the users-messages resource, you specify the message recipients as
-         * user IDs. For each user ID, Amazon Pinpoint delivers the message to all of the
-         * user's endpoints. Within the body of your request, you can specify a default
-         * message, and you can tailor your message for different channels, including those
-         * for mobile push and SMS.
-
-With this resource, you send a direct message, which
-         * is a one time message that you send to a limited audience without creating a
-         * campaign. You can send the message to up to 100 users per request. You cannot
-         * use the message to engage a segment. When you send the message, Amazon Pinpoint
-         * delivers it immediately, and you cannot schedule the delivery. To engage a user
-         * segment, and to schedule the message delivery, create a campaign instead of
-         * using the users-messages resource.<p><h3>See Also:</h3>   <a
+         * Used to send a message to a list of users.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">AWS
          * API Reference</a></p>
          *
@@ -1926,28 +1887,7 @@ With this resource, you send a direct message, which
         virtual Model::SendUsersMessagesOutcomeCallable SendUsersMessagesCallable(const Model::SendUsersMessagesRequest& request) const;
 
         /**
-         * Use this resource to message a list of users. Amazon Pinpoint sends the message
-         * to all of the endpoints that are associated with each user.
-
-A user represents
-         * an individual who is assigned a unique user ID, and this ID is assigned to one
-         * or more endpoints. For example, if an individual uses your app on multiple
-         * devices, your app could assign that person's user ID to the endpoint for each
-         * device.
-
-With the users-messages resource, you specify the message recipients as
-         * user IDs. For each user ID, Amazon Pinpoint delivers the message to all of the
-         * user's endpoints. Within the body of your request, you can specify a default
-         * message, and you can tailor your message for different channels, including those
-         * for mobile push and SMS.
-
-With this resource, you send a direct message, which
-         * is a one time message that you send to a limited audience without creating a
-         * campaign. You can send the message to up to 100 users per request. You cannot
-         * use the message to engage a segment. When you send the message, Amazon Pinpoint
-         * delivers it immediately, and you cannot schedule the delivery. To engage a user
-         * segment, and to schedule the message delivery, create a campaign instead of
-         * using the users-messages resource.<p><h3>See Also:</h3>   <a
+         * Used to send a message to a list of users.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">AWS
          * API Reference</a></p>
          *
@@ -2256,14 +2196,14 @@ With this resource, you send a direct message, which
         virtual void UpdateGcmChannelAsync(const Model::UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Use to update a segment.<p><h3>See Also:</h3>   <a
+         * Used to update a segment.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSegmentOutcome UpdateSegment(const Model::UpdateSegmentRequest& request) const;
 
         /**
-         * Use to update a segment.<p><h3>See Also:</h3>   <a
+         * Used to update a segment.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">AWS
          * API Reference</a></p>
          *
@@ -2272,7 +2212,7 @@ With this resource, you send a direct message, which
         virtual Model::UpdateSegmentOutcomeCallable UpdateSegmentCallable(const Model::UpdateSegmentRequest& request) const;
 
         /**
-         * Use to update a segment.<p><h3>See Also:</h3>   <a
+         * Used to update a segment.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">AWS
          * API Reference</a></p>
          *
@@ -2363,6 +2303,7 @@ With this resource, you send a direct message, which
         void GetUserEndpointsAsyncHelper(const Model::GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PhoneNumberValidateAsyncHelper(const Model::PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventStreamAsyncHelper(const Model::PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAttributesAsyncHelper(const Model::RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendMessagesAsyncHelper(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendUsersMessagesAsyncHelper(const Model::SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

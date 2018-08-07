@@ -50,48 +50,48 @@ namespace Model
 
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      */
     inline const Aws::Map<Aws::String, int>& GetChannelCounts() const{ return m_channelCounts; }
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      */
     inline void SetChannelCounts(const Aws::Map<Aws::String, int>& value) { m_channelCountsHasBeenSet = true; m_channelCounts = value; }
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      */
     inline void SetChannelCounts(Aws::Map<Aws::String, int>&& value) { m_channelCountsHasBeenSet = true; m_channelCounts = std::move(value); }
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      */
     inline SegmentImportResource& WithChannelCounts(const Aws::Map<Aws::String, int>& value) { SetChannelCounts(value); return *this;}
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      */
     inline SegmentImportResource& WithChannelCounts(Aws::Map<Aws::String, int>&& value) { SetChannelCounts(std::move(value)); return *this;}
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      */
     inline SegmentImportResource& AddChannelCounts(const Aws::String& key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(key, value); return *this; }
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      */
     inline SegmentImportResource& AddChannelCounts(Aws::String&& key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(std::move(key), value); return *this; }
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      */
     inline SegmentImportResource& AddChannelCounts(const char* key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(key, value); return *this; }
 
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -99,7 +99,7 @@ namespace Model
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -107,7 +107,7 @@ namespace Model
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -115,7 +115,7 @@ namespace Model
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -123,7 +123,7 @@ namespace Model
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -131,7 +131,7 @@ namespace Model
     inline SegmentImportResource& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -139,7 +139,7 @@ namespace Model
     inline SegmentImportResource& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -227,44 +227,37 @@ Valid values: CSV, JSON
 
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this
-     * segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      */
     inline const Aws::String& GetS3Url() const{ return m_s3Url; }
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this
-     * segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      */
     inline void SetS3Url(const Aws::String& value) { m_s3UrlHasBeenSet = true; m_s3Url = value; }
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this
-     * segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      */
     inline void SetS3Url(Aws::String&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::move(value); }
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this
-     * segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      */
     inline void SetS3Url(const char* value) { m_s3UrlHasBeenSet = true; m_s3Url.assign(value); }
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this
-     * segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      */
     inline SegmentImportResource& WithS3Url(const Aws::String& value) { SetS3Url(value); return *this;}
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this
-     * segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      */
     inline SegmentImportResource& WithS3Url(Aws::String&& value) { SetS3Url(std::move(value)); return *this;}
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this
-     * segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      */
     inline SegmentImportResource& WithS3Url(const char* value) { SetS3Url(value); return *this;}
 

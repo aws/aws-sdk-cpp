@@ -109,99 +109,107 @@ namespace Model
 
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to allow
-     * permission. Specify <code>*</code> to allow all principals.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddAllowedPrincipals() const{ return m_addAllowedPrincipals; }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to allow
-     * permission. Specify <code>*</code> to allow all principals.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
      */
     inline void SetAddAllowedPrincipals(const Aws::Vector<Aws::String>& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals = value; }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to allow
-     * permission. Specify <code>*</code> to allow all principals.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
      */
     inline void SetAddAllowedPrincipals(Aws::Vector<Aws::String>&& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals = std::move(value); }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to allow
-     * permission. Specify <code>*</code> to allow all principals.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& WithAddAllowedPrincipals(const Aws::Vector<Aws::String>& value) { SetAddAllowedPrincipals(value); return *this;}
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to allow
-     * permission. Specify <code>*</code> to allow all principals.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& WithAddAllowedPrincipals(Aws::Vector<Aws::String>&& value) { SetAddAllowedPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to allow
-     * permission. Specify <code>*</code> to allow all principals.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& AddAddAllowedPrincipals(const Aws::String& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals.push_back(value); return *this; }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to allow
-     * permission. Specify <code>*</code> to allow all principals.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& AddAddAllowedPrincipals(Aws::String&& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to allow
-     * permission. Specify <code>*</code> to allow all principals.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& AddAddAllowedPrincipals(const char* value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to remove
-     * permission.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveAllowedPrincipals() const{ return m_removeAllowedPrincipals; }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to remove
-     * permission.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
      */
     inline void SetRemoveAllowedPrincipals(const Aws::Vector<Aws::String>& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals = value; }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to remove
-     * permission.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
      */
     inline void SetRemoveAllowedPrincipals(Aws::Vector<Aws::String>&& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals = std::move(value); }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to remove
-     * permission.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& WithRemoveAllowedPrincipals(const Aws::Vector<Aws::String>& value) { SetRemoveAllowedPrincipals(value); return *this;}
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to remove
-     * permission.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& WithRemoveAllowedPrincipals(Aws::Vector<Aws::String>&& value) { SetRemoveAllowedPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to remove
-     * permission.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& AddRemoveAllowedPrincipals(const Aws::String& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals.push_back(value); return *this; }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to remove
-     * permission.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& AddRemoveAllowedPrincipals(Aws::String&& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Amazon Resource Names (ARNs) of principals for which to remove
-     * permission.</p>
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
      */
     inline ModifyVpcEndpointServicePermissionsRequest& AddRemoveAllowedPrincipals(const char* value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals.push_back(value); return *this; }
 

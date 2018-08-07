@@ -48,37 +48,44 @@ namespace Model
 
 
     /**
-     * The carrier that the phone number is registered with.
+     * The carrier or servive provider that the phone number is currently registered
+     * with.
      */
     inline const Aws::String& GetCarrier() const{ return m_carrier; }
 
     /**
-     * The carrier that the phone number is registered with.
+     * The carrier or servive provider that the phone number is currently registered
+     * with.
      */
     inline void SetCarrier(const Aws::String& value) { m_carrierHasBeenSet = true; m_carrier = value; }
 
     /**
-     * The carrier that the phone number is registered with.
+     * The carrier or servive provider that the phone number is currently registered
+     * with.
      */
     inline void SetCarrier(Aws::String&& value) { m_carrierHasBeenSet = true; m_carrier = std::move(value); }
 
     /**
-     * The carrier that the phone number is registered with.
+     * The carrier or servive provider that the phone number is currently registered
+     * with.
      */
     inline void SetCarrier(const char* value) { m_carrierHasBeenSet = true; m_carrier.assign(value); }
 
     /**
-     * The carrier that the phone number is registered with.
+     * The carrier or servive provider that the phone number is currently registered
+     * with.
      */
     inline NumberValidateResponse& WithCarrier(const Aws::String& value) { SetCarrier(value); return *this;}
 
     /**
-     * The carrier that the phone number is registered with.
+     * The carrier or servive provider that the phone number is currently registered
+     * with.
      */
     inline NumberValidateResponse& WithCarrier(Aws::String&& value) { SetCarrier(std::move(value)); return *this;}
 
     /**
-     * The carrier that the phone number is registered with.
+     * The carrier or servive provider that the phone number is currently registered
+     * with.
      */
     inline NumberValidateResponse& WithCarrier(const char* value) { SetCarrier(value); return *this;}
 
@@ -120,194 +127,194 @@ namespace Model
 
 
     /**
-     * The cleansed (standardized) phone number in E.164 format.
+     * The cleansed phone number, shown in E.164 format.
      */
     inline const Aws::String& GetCleansedPhoneNumberE164() const{ return m_cleansedPhoneNumberE164; }
 
     /**
-     * The cleansed (standardized) phone number in E.164 format.
+     * The cleansed phone number, shown in E.164 format.
      */
     inline void SetCleansedPhoneNumberE164(const Aws::String& value) { m_cleansedPhoneNumberE164HasBeenSet = true; m_cleansedPhoneNumberE164 = value; }
 
     /**
-     * The cleansed (standardized) phone number in E.164 format.
+     * The cleansed phone number, shown in E.164 format.
      */
     inline void SetCleansedPhoneNumberE164(Aws::String&& value) { m_cleansedPhoneNumberE164HasBeenSet = true; m_cleansedPhoneNumberE164 = std::move(value); }
 
     /**
-     * The cleansed (standardized) phone number in E.164 format.
+     * The cleansed phone number, shown in E.164 format.
      */
     inline void SetCleansedPhoneNumberE164(const char* value) { m_cleansedPhoneNumberE164HasBeenSet = true; m_cleansedPhoneNumberE164.assign(value); }
 
     /**
-     * The cleansed (standardized) phone number in E.164 format.
+     * The cleansed phone number, shown in E.164 format.
      */
     inline NumberValidateResponse& WithCleansedPhoneNumberE164(const Aws::String& value) { SetCleansedPhoneNumberE164(value); return *this;}
 
     /**
-     * The cleansed (standardized) phone number in E.164 format.
+     * The cleansed phone number, shown in E.164 format.
      */
     inline NumberValidateResponse& WithCleansedPhoneNumberE164(Aws::String&& value) { SetCleansedPhoneNumberE164(std::move(value)); return *this;}
 
     /**
-     * The cleansed (standardized) phone number in E.164 format.
+     * The cleansed phone number, shown in E.164 format.
      */
     inline NumberValidateResponse& WithCleansedPhoneNumberE164(const char* value) { SetCleansedPhoneNumberE164(value); return *this;}
 
 
     /**
-     * The cleansed phone number in national format.
+     * The cleansed phone number, shown in the local phone number format.
      */
     inline const Aws::String& GetCleansedPhoneNumberNational() const{ return m_cleansedPhoneNumberNational; }
 
     /**
-     * The cleansed phone number in national format.
+     * The cleansed phone number, shown in the local phone number format.
      */
     inline void SetCleansedPhoneNumberNational(const Aws::String& value) { m_cleansedPhoneNumberNationalHasBeenSet = true; m_cleansedPhoneNumberNational = value; }
 
     /**
-     * The cleansed phone number in national format.
+     * The cleansed phone number, shown in the local phone number format.
      */
     inline void SetCleansedPhoneNumberNational(Aws::String&& value) { m_cleansedPhoneNumberNationalHasBeenSet = true; m_cleansedPhoneNumberNational = std::move(value); }
 
     /**
-     * The cleansed phone number in national format.
+     * The cleansed phone number, shown in the local phone number format.
      */
     inline void SetCleansedPhoneNumberNational(const char* value) { m_cleansedPhoneNumberNationalHasBeenSet = true; m_cleansedPhoneNumberNational.assign(value); }
 
     /**
-     * The cleansed phone number in national format.
+     * The cleansed phone number, shown in the local phone number format.
      */
     inline NumberValidateResponse& WithCleansedPhoneNumberNational(const Aws::String& value) { SetCleansedPhoneNumberNational(value); return *this;}
 
     /**
-     * The cleansed phone number in national format.
+     * The cleansed phone number, shown in the local phone number format.
      */
     inline NumberValidateResponse& WithCleansedPhoneNumberNational(Aws::String&& value) { SetCleansedPhoneNumberNational(std::move(value)); return *this;}
 
     /**
-     * The cleansed phone number in national format.
+     * The cleansed phone number, shown in the local phone number format.
      */
     inline NumberValidateResponse& WithCleansedPhoneNumberNational(const char* value) { SetCleansedPhoneNumberNational(value); return *this;}
 
 
     /**
-     * The country where the phone number was originally registered.
+     * The country or region where the phone number was originally registered.
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
 
     /**
-     * The country where the phone number was originally registered.
+     * The country or region where the phone number was originally registered.
      */
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
-     * The country where the phone number was originally registered.
+     * The country or region where the phone number was originally registered.
      */
     inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
-     * The country where the phone number was originally registered.
+     * The country or region where the phone number was originally registered.
      */
     inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
 
     /**
-     * The country where the phone number was originally registered.
+     * The country or region where the phone number was originally registered.
      */
     inline NumberValidateResponse& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
 
     /**
-     * The country where the phone number was originally registered.
+     * The country or region where the phone number was originally registered.
      */
     inline NumberValidateResponse& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
 
     /**
-     * The country where the phone number was originally registered.
+     * The country or region where the phone number was originally registered.
      */
     inline NumberValidateResponse& WithCountry(const char* value) { SetCountry(value); return *this;}
 
 
     /**
-     * The two-character ISO country code for the country where the phone number was
+     * The two-character ISO code for the country or region where the phone number was
      * originally registered.
      */
     inline const Aws::String& GetCountryCodeIso2() const{ return m_countryCodeIso2; }
 
     /**
-     * The two-character ISO country code for the country where the phone number was
+     * The two-character ISO code for the country or region where the phone number was
      * originally registered.
      */
     inline void SetCountryCodeIso2(const Aws::String& value) { m_countryCodeIso2HasBeenSet = true; m_countryCodeIso2 = value; }
 
     /**
-     * The two-character ISO country code for the country where the phone number was
+     * The two-character ISO code for the country or region where the phone number was
      * originally registered.
      */
     inline void SetCountryCodeIso2(Aws::String&& value) { m_countryCodeIso2HasBeenSet = true; m_countryCodeIso2 = std::move(value); }
 
     /**
-     * The two-character ISO country code for the country where the phone number was
+     * The two-character ISO code for the country or region where the phone number was
      * originally registered.
      */
     inline void SetCountryCodeIso2(const char* value) { m_countryCodeIso2HasBeenSet = true; m_countryCodeIso2.assign(value); }
 
     /**
-     * The two-character ISO country code for the country where the phone number was
+     * The two-character ISO code for the country or region where the phone number was
      * originally registered.
      */
     inline NumberValidateResponse& WithCountryCodeIso2(const Aws::String& value) { SetCountryCodeIso2(value); return *this;}
 
     /**
-     * The two-character ISO country code for the country where the phone number was
+     * The two-character ISO code for the country or region where the phone number was
      * originally registered.
      */
     inline NumberValidateResponse& WithCountryCodeIso2(Aws::String&& value) { SetCountryCodeIso2(std::move(value)); return *this;}
 
     /**
-     * The two-character ISO country code for the country where the phone number was
+     * The two-character ISO code for the country or region where the phone number was
      * originally registered.
      */
     inline NumberValidateResponse& WithCountryCodeIso2(const char* value) { SetCountryCodeIso2(value); return *this;}
 
 
     /**
-     * The numeric country code for the country where the phone number was originally
+     * The numeric code for the country or region where the phone number was originally
      * registered.
      */
     inline const Aws::String& GetCountryCodeNumeric() const{ return m_countryCodeNumeric; }
 
     /**
-     * The numeric country code for the country where the phone number was originally
+     * The numeric code for the country or region where the phone number was originally
      * registered.
      */
     inline void SetCountryCodeNumeric(const Aws::String& value) { m_countryCodeNumericHasBeenSet = true; m_countryCodeNumeric = value; }
 
     /**
-     * The numeric country code for the country where the phone number was originally
+     * The numeric code for the country or region where the phone number was originally
      * registered.
      */
     inline void SetCountryCodeNumeric(Aws::String&& value) { m_countryCodeNumericHasBeenSet = true; m_countryCodeNumeric = std::move(value); }
 
     /**
-     * The numeric country code for the country where the phone number was originally
+     * The numeric code for the country or region where the phone number was originally
      * registered.
      */
     inline void SetCountryCodeNumeric(const char* value) { m_countryCodeNumericHasBeenSet = true; m_countryCodeNumeric.assign(value); }
 
     /**
-     * The numeric country code for the country where the phone number was originally
+     * The numeric code for the country or region where the phone number was originally
      * registered.
      */
     inline NumberValidateResponse& WithCountryCodeNumeric(const Aws::String& value) { SetCountryCodeNumeric(value); return *this;}
 
     /**
-     * The numeric country code for the country where the phone number was originally
+     * The numeric code for the country or region where the phone number was originally
      * registered.
      */
     inline NumberValidateResponse& WithCountryCodeNumeric(Aws::String&& value) { SetCountryCodeNumeric(std::move(value)); return *this;}
 
     /**
-     * The numeric country code for the country where the phone number was originally
+     * The numeric code for the country or region where the phone number was originally
      * registered.
      */
     inline NumberValidateResponse& WithCountryCodeNumeric(const char* value) { SetCountryCodeNumeric(value); return *this;}
@@ -350,37 +357,44 @@ namespace Model
 
 
     /**
-     * The two-character ISO country code that was included in the request body.
+     * The two-character ISO code for the country or region that you included in the
+     * request body.
      */
     inline const Aws::String& GetOriginalCountryCodeIso2() const{ return m_originalCountryCodeIso2; }
 
     /**
-     * The two-character ISO country code that was included in the request body.
+     * The two-character ISO code for the country or region that you included in the
+     * request body.
      */
     inline void SetOriginalCountryCodeIso2(const Aws::String& value) { m_originalCountryCodeIso2HasBeenSet = true; m_originalCountryCodeIso2 = value; }
 
     /**
-     * The two-character ISO country code that was included in the request body.
+     * The two-character ISO code for the country or region that you included in the
+     * request body.
      */
     inline void SetOriginalCountryCodeIso2(Aws::String&& value) { m_originalCountryCodeIso2HasBeenSet = true; m_originalCountryCodeIso2 = std::move(value); }
 
     /**
-     * The two-character ISO country code that was included in the request body.
+     * The two-character ISO code for the country or region that you included in the
+     * request body.
      */
     inline void SetOriginalCountryCodeIso2(const char* value) { m_originalCountryCodeIso2HasBeenSet = true; m_originalCountryCodeIso2.assign(value); }
 
     /**
-     * The two-character ISO country code that was included in the request body.
+     * The two-character ISO code for the country or region that you included in the
+     * request body.
      */
     inline NumberValidateResponse& WithOriginalCountryCodeIso2(const Aws::String& value) { SetOriginalCountryCodeIso2(value); return *this;}
 
     /**
-     * The two-character ISO country code that was included in the request body.
+     * The two-character ISO code for the country or region that you included in the
+     * request body.
      */
     inline NumberValidateResponse& WithOriginalCountryCodeIso2(Aws::String&& value) { SetOriginalCountryCodeIso2(std::move(value)); return *this;}
 
     /**
-     * The two-character ISO country code that was included in the request body.
+     * The two-character ISO code for the country or region that you included in the
+     * request body.
      */
     inline NumberValidateResponse& WithOriginalCountryCodeIso2(const char* value) { SetOriginalCountryCodeIso2(value); return *this;}
 
@@ -422,63 +436,63 @@ namespace Model
 
 
     /**
-     * A description of the phone type. Possible values include MOBILE, LANDLINE, VOIP,
-     * INVALID, and OTHER.
+     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
+     * INVALID, PREPAID, and OTHER.
      */
     inline const Aws::String& GetPhoneType() const{ return m_phoneType; }
 
     /**
-     * A description of the phone type. Possible values include MOBILE, LANDLINE, VOIP,
-     * INVALID, and OTHER.
+     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
+     * INVALID, PREPAID, and OTHER.
      */
     inline void SetPhoneType(const Aws::String& value) { m_phoneTypeHasBeenSet = true; m_phoneType = value; }
 
     /**
-     * A description of the phone type. Possible values include MOBILE, LANDLINE, VOIP,
-     * INVALID, and OTHER.
+     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
+     * INVALID, PREPAID, and OTHER.
      */
     inline void SetPhoneType(Aws::String&& value) { m_phoneTypeHasBeenSet = true; m_phoneType = std::move(value); }
 
     /**
-     * A description of the phone type. Possible values include MOBILE, LANDLINE, VOIP,
-     * INVALID, and OTHER.
+     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
+     * INVALID, PREPAID, and OTHER.
      */
     inline void SetPhoneType(const char* value) { m_phoneTypeHasBeenSet = true; m_phoneType.assign(value); }
 
     /**
-     * A description of the phone type. Possible values include MOBILE, LANDLINE, VOIP,
-     * INVALID, and OTHER.
+     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
+     * INVALID, PREPAID, and OTHER.
      */
     inline NumberValidateResponse& WithPhoneType(const Aws::String& value) { SetPhoneType(value); return *this;}
 
     /**
-     * A description of the phone type. Possible values include MOBILE, LANDLINE, VOIP,
-     * INVALID, and OTHER.
+     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
+     * INVALID, PREPAID, and OTHER.
      */
     inline NumberValidateResponse& WithPhoneType(Aws::String&& value) { SetPhoneType(std::move(value)); return *this;}
 
     /**
-     * A description of the phone type. Possible values include MOBILE, LANDLINE, VOIP,
-     * INVALID, and OTHER.
+     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
+     * INVALID, PREPAID, and OTHER.
      */
     inline NumberValidateResponse& WithPhoneType(const char* value) { SetPhoneType(value); return *this;}
 
 
     /**
-     * The phone type as an integer. Possible values include 0 (MOBILE), 1 (LANDLINE),
-     * 2 (VOIP), 3 (INVALID), and 4 (OTHER).
+     * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1
+     * (LANDLINE), 2 (VOIP), 3 (INVALID), 4 (OTHER), and 5 (PREPAID).
      */
     inline int GetPhoneTypeCode() const{ return m_phoneTypeCode; }
 
     /**
-     * The phone type as an integer. Possible values include 0 (MOBILE), 1 (LANDLINE),
-     * 2 (VOIP), 3 (INVALID), and 4 (OTHER).
+     * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1
+     * (LANDLINE), 2 (VOIP), 3 (INVALID), 4 (OTHER), and 5 (PREPAID).
      */
     inline void SetPhoneTypeCode(int value) { m_phoneTypeCodeHasBeenSet = true; m_phoneTypeCode = value; }
 
     /**
-     * The phone type as an integer. Possible values include 0 (MOBILE), 1 (LANDLINE),
-     * 2 (VOIP), 3 (INVALID), and 4 (OTHER).
+     * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1
+     * (LANDLINE), 2 (VOIP), 3 (INVALID), 4 (OTHER), and 5 (PREPAID).
      */
     inline NumberValidateResponse& WithPhoneTypeCode(int value) { SetPhoneTypeCode(value); return *this;}
 
@@ -520,37 +534,44 @@ namespace Model
 
 
     /**
-     * The zip code for the location where the phone number was originally registered.
+     * The postal code for the location where the phone number was originally
+     * registered.
      */
     inline const Aws::String& GetZipCode() const{ return m_zipCode; }
 
     /**
-     * The zip code for the location where the phone number was originally registered.
+     * The postal code for the location where the phone number was originally
+     * registered.
      */
     inline void SetZipCode(const Aws::String& value) { m_zipCodeHasBeenSet = true; m_zipCode = value; }
 
     /**
-     * The zip code for the location where the phone number was originally registered.
+     * The postal code for the location where the phone number was originally
+     * registered.
      */
     inline void SetZipCode(Aws::String&& value) { m_zipCodeHasBeenSet = true; m_zipCode = std::move(value); }
 
     /**
-     * The zip code for the location where the phone number was originally registered.
+     * The postal code for the location where the phone number was originally
+     * registered.
      */
     inline void SetZipCode(const char* value) { m_zipCodeHasBeenSet = true; m_zipCode.assign(value); }
 
     /**
-     * The zip code for the location where the phone number was originally registered.
+     * The postal code for the location where the phone number was originally
+     * registered.
      */
     inline NumberValidateResponse& WithZipCode(const Aws::String& value) { SetZipCode(value); return *this;}
 
     /**
-     * The zip code for the location where the phone number was originally registered.
+     * The postal code for the location where the phone number was originally
+     * registered.
      */
     inline NumberValidateResponse& WithZipCode(Aws::String&& value) { SetZipCode(std::move(value)); return *this;}
 
     /**
-     * The zip code for the location where the phone number was originally registered.
+     * The postal code for the location where the phone number was originally
+     * registered.
      */
     inline NumberValidateResponse& WithZipCode(const char* value) { SetZipCode(value); return *this;}
 

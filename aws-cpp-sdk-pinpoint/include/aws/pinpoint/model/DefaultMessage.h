@@ -36,8 +36,7 @@ namespace Model
 {
 
   /**
-   * Default Message across push notification, email, and sms.<p><h3>See Also:</h3>  
-   * <a
+   * The default message to use across all channels.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DefaultMessage">AWS
    * API Reference</a></p>
    */

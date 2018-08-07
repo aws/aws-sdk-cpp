@@ -64,6 +64,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
      * </li> </ul>
      */
@@ -81,6 +82,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
      * </li> </ul>
      */
@@ -98,6 +100,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
      * </li> </ul>
      */
@@ -115,6 +118,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
      * </li> </ul>
      */
@@ -132,6 +136,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
      * </li> </ul>
      */
@@ -149,6 +154,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
      * </li> </ul>
      */
@@ -166,6 +172,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
      * </li> </ul>
      */
@@ -250,7 +257,7 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
      * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000
      * results are returned. You cannot specify this parameter and the instance IDs
      * parameter in the same request.</p> <p>Constraint: If the value is greater than
      * 1000, we return only 1000 items.</p>
@@ -261,7 +268,7 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
      * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000
      * results are returned. You cannot specify this parameter and the instance IDs
      * parameter in the same request.</p> <p>Constraint: If the value is greater than
      * 1000, we return only 1000 items.</p>
@@ -272,7 +279,7 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
      * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000
      * results are returned. You cannot specify this parameter and the instance IDs
      * parameter in the same request.</p> <p>Constraint: If the value is greater than
      * 1000, we return only 1000 items.</p>

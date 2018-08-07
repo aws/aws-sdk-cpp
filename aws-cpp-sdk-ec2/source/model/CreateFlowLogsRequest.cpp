@@ -21,6 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateFlowLogsRequest::CreateFlowLogsRequest() : 
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_deliverLogsPermissionArnHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
@@ -28,7 +30,10 @@ CreateFlowLogsRequest::CreateFlowLogsRequest() :
     m_resourceType(FlowLogsResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false)
+    m_trafficTypeHasBeenSet(false),
+    m_logDestinationType(LogDestinationType::NOT_SET),
+    m_logDestinationTypeHasBeenSet(false),
+    m_logDestinationHasBeenSet(false)
 {
 }
 
@@ -36,6 +41,11 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateFlowLogs&";
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
@@ -70,6 +80,16 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
   if(m_trafficTypeHasBeenSet)
   {
     ss << "TrafficType=" << TrafficTypeMapper::GetNameForTrafficType(m_trafficType) << "&";
+  }
+
+  if(m_logDestinationTypeHasBeenSet)
+  {
+    ss << "LogDestinationType=" << LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType) << "&";
+  }
+
+  if(m_logDestinationHasBeenSet)
+  {
+    ss << "LogDestination=" << StringUtils::URLEncode(m_logDestination.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -90,20 +90,20 @@ namespace Model
 
 
     /**
-     * <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4
-     * addresses for any stopped instances are considered unavailable.</p>
+     * <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses
+     * for any stopped instances are considered unavailable.</p>
      */
     inline int GetAvailableIpAddressCount() const{ return m_availableIpAddressCount; }
 
     /**
-     * <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4
-     * addresses for any stopped instances are considered unavailable.</p>
+     * <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses
+     * for any stopped instances are considered unavailable.</p>
      */
     inline void SetAvailableIpAddressCount(int value) { m_availableIpAddressCountHasBeenSet = true; m_availableIpAddressCount = value; }
 
     /**
-     * <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4
-     * addresses for any stopped instances are considered unavailable.</p>
+     * <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses
+     * for any stopped instances are considered unavailable.</p>
      */
     inline Subnet& WithAvailableIpAddressCount(int value) { SetAvailableIpAddressCount(value); return *this;}
 

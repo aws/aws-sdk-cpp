@@ -21,6 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DeleteFlowLogsRequest::DeleteFlowLogsRequest() : 
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_flowLogIdsHasBeenSet(false)
 {
 }
@@ -29,6 +31,11 @@ Aws::String DeleteFlowLogsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteFlowLogs&";
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
   if(m_flowLogIdsHasBeenSet)
   {
     unsigned flowLogIdsCount = 1;

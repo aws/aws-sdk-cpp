@@ -210,106 +210,43 @@ namespace Model
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
-     * use your account's service-linked role for Systems Manager by default. If no
-     * service-linked role for Systems Manager exists in your account, it will be
-     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
-     * specifying a service role ARN.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * execution. </p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
-     * use your account's service-linked role for Systems Manager by default. If no
-     * service-linked role for Systems Manager exists in your account, it will be
-     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
-     * specifying a service role ARN.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * execution. </p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
-     * use your account's service-linked role for Systems Manager by default. If no
-     * service-linked role for Systems Manager exists in your account, it will be
-     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
-     * specifying a service role ARN.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * execution. </p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
-     * use your account's service-linked role for Systems Manager by default. If no
-     * service-linked role for Systems Manager exists in your account, it will be
-     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
-     * specifying a service role ARN.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * execution. </p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
-     * use your account's service-linked role for Systems Manager by default. If no
-     * service-linked role for Systems Manager exists in your account, it will be
-     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
-     * specifying a service role ARN.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * execution. </p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
-     * use your account's service-linked role for Systems Manager by default. If no
-     * service-linked role for Systems Manager exists in your account, it will be
-     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
-     * specifying a service role ARN.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * execution. </p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
-     * use your account's service-linked role for Systems Manager by default. If no
-     * service-linked role for Systems Manager exists in your account, it will be
-     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
-     * specifying a service role ARN.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * execution. </p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 

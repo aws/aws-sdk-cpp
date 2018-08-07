@@ -32,7 +32,8 @@ MessageRequest::MessageRequest() :
     m_addressesHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false)
+    m_messageConfigurationHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ MessageRequest::MessageRequest(JsonView jsonValue) :
     m_addressesHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false)
+    m_messageConfigurationHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +84,13 @@ MessageRequest& MessageRequest::operator =(JsonView jsonValue)
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
 
     m_messageConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TraceId"))
+  {
+    m_traceId = jsonValue.GetString("TraceId");
+
+    m_traceIdHasBeenSet = true;
   }
 
   return *this;
@@ -127,6 +136,12 @@ JsonValue MessageRequest::Jsonize() const
   if(m_messageConfigurationHasBeenSet)
   {
    payload.WithObject("MessageConfiguration", m_messageConfiguration.Jsonize());
+
+  }
+
+  if(m_traceIdHasBeenSet)
+  {
+   payload.WithString("TraceId", m_traceId);
 
   }
 

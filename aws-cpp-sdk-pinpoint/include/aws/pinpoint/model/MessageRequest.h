@@ -328,6 +328,49 @@ namespace Model
      */
     inline MessageRequest& WithMessageConfiguration(DirectMessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline MessageRequest& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline MessageRequest& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline MessageRequest& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, AddressConfiguration> m_addresses;
@@ -341,6 +384,9 @@ namespace Model
 
     DirectMessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet;
   };
 
 } // namespace Model

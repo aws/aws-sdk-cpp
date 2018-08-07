@@ -49,37 +49,44 @@ namespace Model
 
 
     /**
-     * <p>The route table association ID (needed to disassociate the route table).</p>
+     * <p>The route table association ID. This ID is required for disassociating the
+     * route table.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
     /**
-     * <p>The route table association ID (needed to disassociate the route table).</p>
+     * <p>The route table association ID. This ID is required for disassociating the
+     * route table.</p>
      */
     inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
 
     /**
-     * <p>The route table association ID (needed to disassociate the route table).</p>
+     * <p>The route table association ID. This ID is required for disassociating the
+     * route table.</p>
      */
     inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
 
     /**
-     * <p>The route table association ID (needed to disassociate the route table).</p>
+     * <p>The route table association ID. This ID is required for disassociating the
+     * route table.</p>
      */
     inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
 
     /**
-     * <p>The route table association ID (needed to disassociate the route table).</p>
+     * <p>The route table association ID. This ID is required for disassociating the
+     * route table.</p>
      */
     inline AssociateRouteTableResponse& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
     /**
-     * <p>The route table association ID (needed to disassociate the route table).</p>
+     * <p>The route table association ID. This ID is required for disassociating the
+     * route table.</p>
      */
     inline AssociateRouteTableResponse& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
-     * <p>The route table association ID (needed to disassociate the route table).</p>
+     * <p>The route table association ID. This ID is required for disassociating the
+     * route table.</p>
      */
     inline AssociateRouteTableResponse& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 

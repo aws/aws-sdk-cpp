@@ -155,7 +155,7 @@ namespace Model
 
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -163,7 +163,7 @@ namespace Model
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -171,7 +171,7 @@ namespace Model
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -179,7 +179,7 @@ namespace Model
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -187,7 +187,7 @@ namespace Model
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -195,7 +195,7 @@ namespace Model
     inline EventStream& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
@@ -203,7 +203,7 @@ namespace Model
     inline EventStream& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
      * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.

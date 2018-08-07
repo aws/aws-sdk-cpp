@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      */
     inline SegmentReference& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      */
     inline SegmentReference& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      */
     inline SegmentReference& WithId(const char* value) { SetId(value); return *this;}
 

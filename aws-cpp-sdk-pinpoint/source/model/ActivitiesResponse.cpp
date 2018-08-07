@@ -29,12 +29,14 @@ namespace Model
 {
 
 ActivitiesResponse::ActivitiesResponse() : 
-    m_itemHasBeenSet(false)
+    m_itemHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
 ActivitiesResponse::ActivitiesResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false)
+    m_itemHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ ActivitiesResponse& ActivitiesResponse::operator =(JsonView jsonValue)
       m_item.push_back(itemJsonList[itemIndex].AsObject());
     }
     m_itemHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+    m_nextTokenHasBeenSet = true;
   }
 
   return *this;
@@ -66,6 +75,12 @@ JsonValue ActivitiesResponse::Jsonize() const
      itemJsonList[itemIndex].AsObject(m_item[itemIndex].Jsonize());
    }
    payload.WithArray("Item", std::move(itemJsonList));
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
 
   }
 
