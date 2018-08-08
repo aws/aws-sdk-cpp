@@ -33,8 +33,6 @@ namespace Aws
         static const int InvokedAfter_HASH = HashingUtils::HashString("InvokedAfter");
         static const int InvokedBefore_HASH = HashingUtils::HashString("InvokedBefore");
         static const int Status_HASH = HashingUtils::HashString("Status");
-        static const int ExecutionStage_HASH = HashingUtils::HashString("ExecutionStage");
-        static const int DocumentName_HASH = HashingUtils::HashString("DocumentName");
 
 
         CommandFilterKey GetCommandFilterKeyForName(const Aws::String& name)
@@ -51,14 +49,6 @@ namespace Aws
           else if (hashCode == Status_HASH)
           {
             return CommandFilterKey::Status;
-          }
-          else if (hashCode == ExecutionStage_HASH)
-          {
-            return CommandFilterKey::ExecutionStage;
-          }
-          else if (hashCode == DocumentName_HASH)
-          {
-            return CommandFilterKey::DocumentName;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -80,10 +70,6 @@ namespace Aws
             return "InvokedBefore";
           case CommandFilterKey::Status:
             return "Status";
-          case CommandFilterKey::ExecutionStage:
-            return "ExecutionStage";
-          case CommandFilterKey::DocumentName:
-            return "DocumentName";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

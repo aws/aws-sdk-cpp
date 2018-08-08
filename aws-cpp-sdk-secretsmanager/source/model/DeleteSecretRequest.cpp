@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 DeleteSecretRequest::DeleteSecretRequest() : 
     m_secretIdHasBeenSet(false),
     m_recoveryWindowInDays(0),
-    m_recoveryWindowInDaysHasBeenSet(false)
+    m_recoveryWindowInDaysHasBeenSet(false),
+    m_forceDeleteWithoutRecovery(false),
+    m_forceDeleteWithoutRecoveryHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,12 @@ Aws::String DeleteSecretRequest::SerializePayload() const
   if(m_recoveryWindowInDaysHasBeenSet)
   {
    payload.WithInt64("RecoveryWindowInDays", m_recoveryWindowInDays);
+
+  }
+
+  if(m_forceDeleteWithoutRecoveryHasBeenSet)
+  {
+   payload.WithBool("ForceDeleteWithoutRecovery", m_forceDeleteWithoutRecovery);
 
   }
 

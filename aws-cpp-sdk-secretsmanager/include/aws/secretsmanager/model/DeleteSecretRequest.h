@@ -108,6 +108,55 @@ namespace Model
      */
     inline DeleteSecretRequest& WithRecoveryWindowInDays(long long value) { SetRecoveryWindowInDays(value); return *this;}
 
+
+    /**
+     * <p>(Optional) Specifies that the secret is to be deleted immediately without any
+     * recovery window. You cannot use both this parameter and the
+     * <code>RecoveryWindowInDays</code> parameter in the same API call.</p> <p>An
+     * asynchronous background process performs the actual deletion, so there can be a
+     * short delay before the operation completes. If you write code to delete and then
+     * immediately recreate a secret with the same name, ensure that your code includes
+     * appropriate back off and retry logic.</p> <important> <p>Use this parameter with
+     * caution. This parameter causes the operation to skip the normal waiting period
+     * before the permanent deletion that AWS would normally impose with the
+     * <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
+     * <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
+     * to recover the secret. It is permanently lost.</p> </important>
+     */
+    inline bool GetForceDeleteWithoutRecovery() const{ return m_forceDeleteWithoutRecovery; }
+
+    /**
+     * <p>(Optional) Specifies that the secret is to be deleted immediately without any
+     * recovery window. You cannot use both this parameter and the
+     * <code>RecoveryWindowInDays</code> parameter in the same API call.</p> <p>An
+     * asynchronous background process performs the actual deletion, so there can be a
+     * short delay before the operation completes. If you write code to delete and then
+     * immediately recreate a secret with the same name, ensure that your code includes
+     * appropriate back off and retry logic.</p> <important> <p>Use this parameter with
+     * caution. This parameter causes the operation to skip the normal waiting period
+     * before the permanent deletion that AWS would normally impose with the
+     * <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
+     * <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
+     * to recover the secret. It is permanently lost.</p> </important>
+     */
+    inline void SetForceDeleteWithoutRecovery(bool value) { m_forceDeleteWithoutRecoveryHasBeenSet = true; m_forceDeleteWithoutRecovery = value; }
+
+    /**
+     * <p>(Optional) Specifies that the secret is to be deleted immediately without any
+     * recovery window. You cannot use both this parameter and the
+     * <code>RecoveryWindowInDays</code> parameter in the same API call.</p> <p>An
+     * asynchronous background process performs the actual deletion, so there can be a
+     * short delay before the operation completes. If you write code to delete and then
+     * immediately recreate a secret with the same name, ensure that your code includes
+     * appropriate back off and retry logic.</p> <important> <p>Use this parameter with
+     * caution. This parameter causes the operation to skip the normal waiting period
+     * before the permanent deletion that AWS would normally impose with the
+     * <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
+     * <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
+     * to recover the secret. It is permanently lost.</p> </important>
+     */
+    inline DeleteSecretRequest& WithForceDeleteWithoutRecovery(bool value) { SetForceDeleteWithoutRecovery(value); return *this;}
+
   private:
 
     Aws::String m_secretId;
@@ -115,6 +164,9 @@ namespace Model
 
     long long m_recoveryWindowInDays;
     bool m_recoveryWindowInDaysHasBeenSet;
+
+    bool m_forceDeleteWithoutRecovery;
+    bool m_forceDeleteWithoutRecoveryHasBeenSet;
   };
 
 } // namespace Model

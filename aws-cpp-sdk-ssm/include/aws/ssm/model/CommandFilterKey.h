@@ -28,9 +28,7 @@ namespace Model
     NOT_SET,
     InvokedAfter,
     InvokedBefore,
-    Status,
-    ExecutionStage,
-    DocumentName
+    Status
   };
 
 namespace CommandFilterKeyMapper

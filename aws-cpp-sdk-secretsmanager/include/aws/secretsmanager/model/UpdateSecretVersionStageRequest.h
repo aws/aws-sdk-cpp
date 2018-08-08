@@ -218,56 +218,56 @@ namespace Model
     /**
      * <p>(Optional) The secret version ID that you want to add the staging labels
      * to.</p> <p>If any of the staging labels are already attached to a different
-     * version of the secret, then they are removed from that version before adding
-     * them to this version.</p>
+     * version of the secret, then they are automatically removed from that version
+     * before adding them to this version.</p>
      */
     inline const Aws::String& GetMoveToVersionId() const{ return m_moveToVersionId; }
 
     /**
      * <p>(Optional) The secret version ID that you want to add the staging labels
      * to.</p> <p>If any of the staging labels are already attached to a different
-     * version of the secret, then they are removed from that version before adding
-     * them to this version.</p>
+     * version of the secret, then they are automatically removed from that version
+     * before adding them to this version.</p>
      */
     inline void SetMoveToVersionId(const Aws::String& value) { m_moveToVersionIdHasBeenSet = true; m_moveToVersionId = value; }
 
     /**
      * <p>(Optional) The secret version ID that you want to add the staging labels
      * to.</p> <p>If any of the staging labels are already attached to a different
-     * version of the secret, then they are removed from that version before adding
-     * them to this version.</p>
+     * version of the secret, then they are automatically removed from that version
+     * before adding them to this version.</p>
      */
     inline void SetMoveToVersionId(Aws::String&& value) { m_moveToVersionIdHasBeenSet = true; m_moveToVersionId = std::move(value); }
 
     /**
      * <p>(Optional) The secret version ID that you want to add the staging labels
      * to.</p> <p>If any of the staging labels are already attached to a different
-     * version of the secret, then they are removed from that version before adding
-     * them to this version.</p>
+     * version of the secret, then they are automatically removed from that version
+     * before adding them to this version.</p>
      */
     inline void SetMoveToVersionId(const char* value) { m_moveToVersionIdHasBeenSet = true; m_moveToVersionId.assign(value); }
 
     /**
      * <p>(Optional) The secret version ID that you want to add the staging labels
      * to.</p> <p>If any of the staging labels are already attached to a different
-     * version of the secret, then they are removed from that version before adding
-     * them to this version.</p>
+     * version of the secret, then they are automatically removed from that version
+     * before adding them to this version.</p>
      */
     inline UpdateSecretVersionStageRequest& WithMoveToVersionId(const Aws::String& value) { SetMoveToVersionId(value); return *this;}
 
     /**
      * <p>(Optional) The secret version ID that you want to add the staging labels
      * to.</p> <p>If any of the staging labels are already attached to a different
-     * version of the secret, then they are removed from that version before adding
-     * them to this version.</p>
+     * version of the secret, then they are automatically removed from that version
+     * before adding them to this version.</p>
      */
     inline UpdateSecretVersionStageRequest& WithMoveToVersionId(Aws::String&& value) { SetMoveToVersionId(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The secret version ID that you want to add the staging labels
      * to.</p> <p>If any of the staging labels are already attached to a different
-     * version of the secret, then they are removed from that version before adding
-     * them to this version.</p>
+     * version of the secret, then they are automatically removed from that version
+     * before adding them to this version.</p>
      */
     inline UpdateSecretVersionStageRequest& WithMoveToVersionId(const char* value) { SetMoveToVersionId(value); return *this;}
 

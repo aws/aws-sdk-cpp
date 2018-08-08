@@ -47,49 +47,49 @@ namespace Model
 
 
     /**
-     * <p>Specifies the secret that you want to update or to which you want to add a
+     * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>Specifies the secret that you want to update or to which you want to add a
+     * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>Specifies the secret that you want to update or to which you want to add a
+     * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>Specifies the secret that you want to update or to which you want to add a
+     * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>Specifies the secret that you want to update or to which you want to add a
+     * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.</p>
      */
     inline UpdateSecretRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>Specifies the secret that you want to update or to which you want to add a
+     * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.</p>
      */
     inline UpdateSecretRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the secret that you want to update or to which you want to add a
+     * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.</p>
      */
@@ -294,206 +294,185 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Specifies a user-provided description of the secret.</p>
+     * <p>(Optional) Specifies an updated user-provided description of the secret.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>(Optional) Specifies a user-provided description of the secret.</p>
+     * <p>(Optional) Specifies an updated user-provided description of the secret.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>(Optional) Specifies a user-provided description of the secret.</p>
+     * <p>(Optional) Specifies an updated user-provided description of the secret.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>(Optional) Specifies a user-provided description of the secret.</p>
+     * <p>(Optional) Specifies an updated user-provided description of the secret.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>(Optional) Specifies a user-provided description of the secret.</p>
+     * <p>(Optional) Specifies an updated user-provided description of the secret.</p>
      */
     inline UpdateSecretRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>(Optional) Specifies a user-provided description of the secret.</p>
+     * <p>(Optional) Specifies an updated user-provided description of the secret.</p>
      */
     inline UpdateSecretRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Specifies a user-provided description of the secret.</p>
+     * <p>(Optional) Specifies an updated user-provided description of the secret.</p>
      */
     inline UpdateSecretRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the protected text in the versions of this
-     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
-     * using the default CMK in the account (the one named
-     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
-     * then Secrets Manager creates it for you automatically the first time it needs to
-     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
-     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the protected text in new versions of this
+     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN in this field. </p> </important>
+     * create a custom CMK and provide the ARN of that CMK in this field. The user
+     * making the call must have permissions to both the secret and the CMK in their
+     * respective accounts.</p> </important>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the protected text in the versions of this
-     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
-     * using the default CMK in the account (the one named
-     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
-     * then Secrets Manager creates it for you automatically the first time it needs to
-     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
-     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the protected text in new versions of this
+     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN in this field. </p> </important>
+     * create a custom CMK and provide the ARN of that CMK in this field. The user
+     * making the call must have permissions to both the secret and the CMK in their
+     * respective accounts.</p> </important>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the protected text in the versions of this
-     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
-     * using the default CMK in the account (the one named
-     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
-     * then Secrets Manager creates it for you automatically the first time it needs to
-     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
-     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the protected text in new versions of this
+     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN in this field. </p> </important>
+     * create a custom CMK and provide the ARN of that CMK in this field. The user
+     * making the call must have permissions to both the secret and the CMK in their
+     * respective accounts.</p> </important>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the protected text in the versions of this
-     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
-     * using the default CMK in the account (the one named
-     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
-     * then Secrets Manager creates it for you automatically the first time it needs to
-     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
-     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the protected text in new versions of this
+     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN in this field. </p> </important>
+     * create a custom CMK and provide the ARN of that CMK in this field. The user
+     * making the call must have permissions to both the secret and the CMK in their
+     * respective accounts.</p> </important>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the protected text in the versions of this
-     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
-     * using the default CMK in the account (the one named
-     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
-     * then Secrets Manager creates it for you automatically the first time it needs to
-     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
-     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the protected text in new versions of this
+     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN in this field. </p> </important>
+     * create a custom CMK and provide the ARN of that CMK in this field. The user
+     * making the call must have permissions to both the secret and the CMK in their
+     * respective accounts.</p> </important>
      */
     inline UpdateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the protected text in the versions of this
-     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
-     * using the default CMK in the account (the one named
-     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
-     * then Secrets Manager creates it for you automatically the first time it needs to
-     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
-     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the protected text in new versions of this
+     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN in this field. </p> </important>
+     * create a custom CMK and provide the ARN of that CMK in this field. The user
+     * making the call must have permissions to both the secret and the CMK in their
+     * respective accounts.</p> </important>
      */
     inline UpdateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the protected text in the versions of this
-     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
-     * using the default CMK in the account (the one named
-     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
-     * then Secrets Manager creates it for you automatically the first time it needs to
-     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
-     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the protected text in new versions of this
+     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN in this field. </p> </important>
+     * create a custom CMK and provide the ARN of that CMK in this field. The user
+     * making the call must have permissions to both the secret and the CMK in their
+     * respective accounts.</p> </important>
      */
     inline UpdateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>(Optional) Specifies binary data that you want to encrypt and store in the
-     * new version of the secret. To use this parameter in the command-line tools, we
-     * recommend that you store your binary data in a file and then use the appropriate
-     * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
-     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
-     * using the Secrets Manager console.</p>
+     * <p>(Optional) Specifies updated binary data that you want to encrypt and store
+     * in the new version of the secret. To use this parameter in the command-line
+     * tools, we recommend that you store your binary data in a file and then use the
+     * appropriate technique for your tool to pass the contents of the file as a
+     * parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must
+     * have a value, but not both. They cannot both be empty.</p> <p>This parameter is
+     * not accessible using the Secrets Manager console.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetSecretBinary() const{ return m_secretBinary; }
 
     /**
-     * <p>(Optional) Specifies binary data that you want to encrypt and store in the
-     * new version of the secret. To use this parameter in the command-line tools, we
-     * recommend that you store your binary data in a file and then use the appropriate
-     * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
-     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
-     * using the Secrets Manager console.</p>
+     * <p>(Optional) Specifies updated binary data that you want to encrypt and store
+     * in the new version of the secret. To use this parameter in the command-line
+     * tools, we recommend that you store your binary data in a file and then use the
+     * appropriate technique for your tool to pass the contents of the file as a
+     * parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must
+     * have a value, but not both. They cannot both be empty.</p> <p>This parameter is
+     * not accessible using the Secrets Manager console.</p>
      */
     inline void SetSecretBinary(const Aws::Utils::ByteBuffer& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = value; }
 
     /**
-     * <p>(Optional) Specifies binary data that you want to encrypt and store in the
-     * new version of the secret. To use this parameter in the command-line tools, we
-     * recommend that you store your binary data in a file and then use the appropriate
-     * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
-     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
-     * using the Secrets Manager console.</p>
+     * <p>(Optional) Specifies updated binary data that you want to encrypt and store
+     * in the new version of the secret. To use this parameter in the command-line
+     * tools, we recommend that you store your binary data in a file and then use the
+     * appropriate technique for your tool to pass the contents of the file as a
+     * parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must
+     * have a value, but not both. They cannot both be empty.</p> <p>This parameter is
+     * not accessible using the Secrets Manager console.</p>
      */
     inline void SetSecretBinary(Aws::Utils::ByteBuffer&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::move(value); }
 
     /**
-     * <p>(Optional) Specifies binary data that you want to encrypt and store in the
-     * new version of the secret. To use this parameter in the command-line tools, we
-     * recommend that you store your binary data in a file and then use the appropriate
-     * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
-     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
-     * using the Secrets Manager console.</p>
+     * <p>(Optional) Specifies updated binary data that you want to encrypt and store
+     * in the new version of the secret. To use this parameter in the command-line
+     * tools, we recommend that you store your binary data in a file and then use the
+     * appropriate technique for your tool to pass the contents of the file as a
+     * parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must
+     * have a value, but not both. They cannot both be empty.</p> <p>This parameter is
+     * not accessible using the Secrets Manager console.</p>
      */
     inline UpdateSecretRequest& WithSecretBinary(const Aws::Utils::ByteBuffer& value) { SetSecretBinary(value); return *this;}
 
     /**
-     * <p>(Optional) Specifies binary data that you want to encrypt and store in the
-     * new version of the secret. To use this parameter in the command-line tools, we
-     * recommend that you store your binary data in a file and then use the appropriate
-     * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
-     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
-     * using the Secrets Manager console.</p>
+     * <p>(Optional) Specifies updated binary data that you want to encrypt and store
+     * in the new version of the secret. To use this parameter in the command-line
+     * tools, we recommend that you store your binary data in a file and then use the
+     * appropriate technique for your tool to pass the contents of the file as a
+     * parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must
+     * have a value, but not both. They cannot both be empty.</p> <p>This parameter is
+     * not accessible using the Secrets Manager console.</p>
      */
     inline UpdateSecretRequest& WithSecretBinary(Aws::Utils::ByteBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
 
 
     /**
-     * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret. Either <code>SecretBinary</code> or
+     * <p>(Optional) Specifies updated text data that you want to encrypt and store in
+     * this new version of the secret. Either <code>SecretBinary</code> or
      * <code>SecretString</code> must have a value, but not both. They cannot both be
      * empty.</p> <p>If you create this secret by using the Secrets Manager console
      * then Secrets Manager puts the protected secret text in only the
@@ -508,13 +487,17 @@ namespace Model
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * the JSON text. You can also 'escape' the double quote character in the embedded
+     * JSON text by prefacing each with a backslash. For example, the following string
+     * is surrounded by double-quotes. All of the embedded double quotes are
+     * escaped:</p> <p>
+     * <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code> </p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
 
     /**
-     * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret. Either <code>SecretBinary</code> or
+     * <p>(Optional) Specifies updated text data that you want to encrypt and store in
+     * this new version of the secret. Either <code>SecretBinary</code> or
      * <code>SecretString</code> must have a value, but not both. They cannot both be
      * empty.</p> <p>If you create this secret by using the Secrets Manager console
      * then Secrets Manager puts the protected secret text in only the
@@ -529,13 +512,17 @@ namespace Model
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * the JSON text. You can also 'escape' the double quote character in the embedded
+     * JSON text by prefacing each with a backslash. For example, the following string
+     * is surrounded by double-quotes. All of the embedded double quotes are
+     * escaped:</p> <p>
+     * <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code> </p>
      */
     inline void SetSecretString(const Aws::String& value) { m_secretStringHasBeenSet = true; m_secretString = value; }
 
     /**
-     * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret. Either <code>SecretBinary</code> or
+     * <p>(Optional) Specifies updated text data that you want to encrypt and store in
+     * this new version of the secret. Either <code>SecretBinary</code> or
      * <code>SecretString</code> must have a value, but not both. They cannot both be
      * empty.</p> <p>If you create this secret by using the Secrets Manager console
      * then Secrets Manager puts the protected secret text in only the
@@ -550,13 +537,17 @@ namespace Model
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * the JSON text. You can also 'escape' the double quote character in the embedded
+     * JSON text by prefacing each with a backslash. For example, the following string
+     * is surrounded by double-quotes. All of the embedded double quotes are
+     * escaped:</p> <p>
+     * <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code> </p>
      */
     inline void SetSecretString(Aws::String&& value) { m_secretStringHasBeenSet = true; m_secretString = std::move(value); }
 
     /**
-     * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret. Either <code>SecretBinary</code> or
+     * <p>(Optional) Specifies updated text data that you want to encrypt and store in
+     * this new version of the secret. Either <code>SecretBinary</code> or
      * <code>SecretString</code> must have a value, but not both. They cannot both be
      * empty.</p> <p>If you create this secret by using the Secrets Manager console
      * then Secrets Manager puts the protected secret text in only the
@@ -571,13 +562,17 @@ namespace Model
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * the JSON text. You can also 'escape' the double quote character in the embedded
+     * JSON text by prefacing each with a backslash. For example, the following string
+     * is surrounded by double-quotes. All of the embedded double quotes are
+     * escaped:</p> <p>
+     * <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code> </p>
      */
     inline void SetSecretString(const char* value) { m_secretStringHasBeenSet = true; m_secretString.assign(value); }
 
     /**
-     * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret. Either <code>SecretBinary</code> or
+     * <p>(Optional) Specifies updated text data that you want to encrypt and store in
+     * this new version of the secret. Either <code>SecretBinary</code> or
      * <code>SecretString</code> must have a value, but not both. They cannot both be
      * empty.</p> <p>If you create this secret by using the Secrets Manager console
      * then Secrets Manager puts the protected secret text in only the
@@ -592,13 +587,17 @@ namespace Model
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * the JSON text. You can also 'escape' the double quote character in the embedded
+     * JSON text by prefacing each with a backslash. For example, the following string
+     * is surrounded by double-quotes. All of the embedded double quotes are
+     * escaped:</p> <p>
+     * <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code> </p>
      */
     inline UpdateSecretRequest& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
 
     /**
-     * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret. Either <code>SecretBinary</code> or
+     * <p>(Optional) Specifies updated text data that you want to encrypt and store in
+     * this new version of the secret. Either <code>SecretBinary</code> or
      * <code>SecretString</code> must have a value, but not both. They cannot both be
      * empty.</p> <p>If you create this secret by using the Secrets Manager console
      * then Secrets Manager puts the protected secret text in only the
@@ -613,13 +612,17 @@ namespace Model
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * the JSON text. You can also 'escape' the double quote character in the embedded
+     * JSON text by prefacing each with a backslash. For example, the following string
+     * is surrounded by double-quotes. All of the embedded double quotes are
+     * escaped:</p> <p>
+     * <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code> </p>
      */
     inline UpdateSecretRequest& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret. Either <code>SecretBinary</code> or
+     * <p>(Optional) Specifies updated text data that you want to encrypt and store in
+     * this new version of the secret. Either <code>SecretBinary</code> or
      * <code>SecretString</code> must have a value, but not both. They cannot both be
      * empty.</p> <p>If you create this secret by using the Secrets Manager console
      * then Secrets Manager puts the protected secret text in only the
@@ -634,7 +637,11 @@ namespace Model
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * the JSON text. You can also 'escape' the double quote character in the embedded
+     * JSON text by prefacing each with a backslash. For example, the following string
+     * is surrounded by double-quotes. All of the embedded double quotes are
+     * escaped:</p> <p>
+     * <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code> </p>
      */
     inline UpdateSecretRequest& WithSecretString(const char* value) { SetSecretString(value); return *this;}
 
