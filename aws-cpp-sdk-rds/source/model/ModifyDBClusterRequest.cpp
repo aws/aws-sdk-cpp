@@ -40,7 +40,8 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_backtrackWindow(0),
     m_backtrackWindowHasBeenSet(false),
     m_cloudwatchLogsExportConfigurationHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_scalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_engineVersionHasBeenSet)
   {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+
+  if(m_scalingConfigurationHasBeenSet)
+  {
+    m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
   }
 
   ss << "Version=2014-10-31";

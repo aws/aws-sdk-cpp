@@ -80,6 +80,7 @@
 #include <aws/rds/model/DownloadDBLogFilePortionResult.h>
 #include <aws/rds/model/FailoverDBClusterResult.h>
 #include <aws/rds/model/ListTagsForResourceResult.h>
+#include <aws/rds/model/ModifyCurrentDBClusterCapacityResult.h>
 #include <aws/rds/model/ModifyDBClusterResult.h>
 #include <aws/rds/model/ModifyDBClusterParameterGroupResult.h>
 #include <aws/rds/model/ModifyDBClusterSnapshotAttributeResult.h>
@@ -215,6 +216,7 @@ namespace Aws
         class DownloadDBLogFilePortionRequest;
         class FailoverDBClusterRequest;
         class ListTagsForResourceRequest;
+        class ModifyCurrentDBClusterCapacityRequest;
         class ModifyDBClusterRequest;
         class ModifyDBClusterParameterGroupRequest;
         class ModifyDBClusterSnapshotAttributeRequest;
@@ -309,6 +311,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<DownloadDBLogFilePortionResult, Aws::Client::AWSError<RDSErrors>> DownloadDBLogFilePortionOutcome;
         typedef Aws::Utils::Outcome<FailoverDBClusterResult, Aws::Client::AWSError<RDSErrors>> FailoverDBClusterOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<RDSErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ModifyCurrentDBClusterCapacityResult, Aws::Client::AWSError<RDSErrors>> ModifyCurrentDBClusterCapacityOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterSnapshotAttributeResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterSnapshotAttributeOutcome;
@@ -403,6 +406,7 @@ namespace Aws
         typedef std::future<DownloadDBLogFilePortionOutcome> DownloadDBLogFilePortionOutcomeCallable;
         typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ModifyCurrentDBClusterCapacityOutcome> ModifyCurrentDBClusterCapacityOutcomeCallable;
         typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
         typedef std::future<ModifyDBClusterParameterGroupOutcome> ModifyDBClusterParameterGroupOutcomeCallable;
         typedef std::future<ModifyDBClusterSnapshotAttributeOutcome> ModifyDBClusterSnapshotAttributeOutcomeCallable;
@@ -500,6 +504,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DownloadDBLogFilePortionRequest&, const Model::DownloadDBLogFilePortionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DownloadDBLogFilePortionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::ModifyCurrentDBClusterCapacityRequest&, const Model::ModifyCurrentDBClusterCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCurrentDBClusterCapacityResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterRequest&, const Model::ModifyDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterParameterGroupRequest&, const Model::ModifyDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterSnapshotAttributeRequest&, const Model::ModifyDBClusterSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterSnapshotAttributeResponseReceivedHandler;
@@ -3189,6 +3194,70 @@ namespace Aws
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Set the capacity of an Aurora Serverless DB cluster to a specific value.</p>
+         * <p>Aurora Serverless scales seamlessly based on the workload on the DB cluster.
+         * In some cases, the capacity might not scale fast enough to meet a sudden change
+         * in workload, such as a large number of new transactions. Call
+         * <code>ModifyCurrentDBClusterCapacity</code> to set the capacity explicitly.</p>
+         * <p>After this call sets the DB cluster capacity, Aurora Serverless can
+         * automatically scale the DB cluster based on the cooldown period for scaling up
+         * and the cooldown period for scaling down.</p> <p>For more information about
+         * Aurora Serverless, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
+         * Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * <important> <p>If you call <code>ModifyCurrentDBClusterCapacity</code> with the
+         * default <code>TimeoutAction</code>, connections to the DB cluster are dropped
+         * when the capacity is set.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyCurrentDBClusterCapacityOutcome ModifyCurrentDBClusterCapacity(const Model::ModifyCurrentDBClusterCapacityRequest& request) const;
+
+        /**
+         * <p>Set the capacity of an Aurora Serverless DB cluster to a specific value.</p>
+         * <p>Aurora Serverless scales seamlessly based on the workload on the DB cluster.
+         * In some cases, the capacity might not scale fast enough to meet a sudden change
+         * in workload, such as a large number of new transactions. Call
+         * <code>ModifyCurrentDBClusterCapacity</code> to set the capacity explicitly.</p>
+         * <p>After this call sets the DB cluster capacity, Aurora Serverless can
+         * automatically scale the DB cluster based on the cooldown period for scaling up
+         * and the cooldown period for scaling down.</p> <p>For more information about
+         * Aurora Serverless, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
+         * Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * <important> <p>If you call <code>ModifyCurrentDBClusterCapacity</code> with the
+         * default <code>TimeoutAction</code>, connections to the DB cluster are dropped
+         * when the capacity is set.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyCurrentDBClusterCapacityOutcomeCallable ModifyCurrentDBClusterCapacityCallable(const Model::ModifyCurrentDBClusterCapacityRequest& request) const;
+
+        /**
+         * <p>Set the capacity of an Aurora Serverless DB cluster to a specific value.</p>
+         * <p>Aurora Serverless scales seamlessly based on the workload on the DB cluster.
+         * In some cases, the capacity might not scale fast enough to meet a sudden change
+         * in workload, such as a large number of new transactions. Call
+         * <code>ModifyCurrentDBClusterCapacity</code> to set the capacity explicitly.</p>
+         * <p>After this call sets the DB cluster capacity, Aurora Serverless can
+         * automatically scale the DB cluster based on the cooldown period for scaling up
+         * and the cooldown period for scaling down.</p> <p>For more information about
+         * Aurora Serverless, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
+         * Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * <important> <p>If you call <code>ModifyCurrentDBClusterCapacity</code> with the
+         * default <code>TimeoutAction</code>, connections to the DB cluster are dropped
+         * when the capacity is set.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyCurrentDBClusterCapacityAsync(const Model::ModifyCurrentDBClusterCapacityRequest& request, const ModifyCurrentDBClusterCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modify a setting for an Amazon Aurora DB cluster. You can change one or more
          * database configuration parameters by specifying these parameters and the new
          * values in the request. For more information on Amazon Aurora, see <a
@@ -4579,6 +4648,7 @@ namespace Aws
         void DownloadDBLogFilePortionAsyncHelper(const Model::DownloadDBLogFilePortionRequest& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FailoverDBClusterAsyncHelper(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyCurrentDBClusterCapacityAsyncHelper(const Model::ModifyCurrentDBClusterCapacityRequest& request, const ModifyCurrentDBClusterCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterAsyncHelper(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterParameterGroupAsyncHelper(const Model::ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterSnapshotAttributeAsyncHelper(const Model::ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

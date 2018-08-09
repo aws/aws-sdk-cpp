@@ -1970,14 +1970,18 @@ namespace Model
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
      * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * default behavior varies depending on whether <code>DBSubnetGroupName</code> is
+     * specified.</p> <p>If <code>DBSubnetGroupName</code> is not specified, and
+     * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
+     * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
+     * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
+     * default VPC in the target region has an Internet gateway attached to it, the DB
+     * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
+     * specified, and <code>PubliclyAccessible</code> is not specified, the following
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
+     * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
+     * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
+     * the DB instance is public.</p> </li> </ul>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -1986,14 +1990,18 @@ namespace Model
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
      * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * default behavior varies depending on whether <code>DBSubnetGroupName</code> is
+     * specified.</p> <p>If <code>DBSubnetGroupName</code> is not specified, and
+     * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
+     * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
+     * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
+     * default VPC in the target region has an Internet gateway attached to it, the DB
+     * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
+     * specified, and <code>PubliclyAccessible</code> is not specified, the following
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
+     * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
+     * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
+     * the DB instance is public.</p> </li> </ul>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -2002,14 +2010,18 @@ namespace Model
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
      * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * default behavior varies depending on whether <code>DBSubnetGroupName</code> is
+     * specified.</p> <p>If <code>DBSubnetGroupName</code> is not specified, and
+     * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
+     * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
+     * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
+     * default VPC in the target region has an Internet gateway attached to it, the DB
+     * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
+     * specified, and <code>PubliclyAccessible</code> is not specified, the following
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
+     * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
+     * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
+     * the DB instance is public.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -2802,49 +2814,81 @@ namespace Model
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 

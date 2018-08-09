@@ -107,7 +107,8 @@ namespace Model
      * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
      * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
      * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
-     * | "norelatime" | "strictatime" | "nostrictatime"</code> </p>
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetMountOptions() const{ return m_mountOptions; }
 
@@ -117,7 +118,8 @@ namespace Model
      * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
      * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
      * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
-     * | "norelatime" | "strictatime" | "nostrictatime"</code> </p>
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline void SetMountOptions(const Aws::Vector<Aws::String>& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
 
@@ -127,7 +129,8 @@ namespace Model
      * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
      * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
      * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
-     * | "norelatime" | "strictatime" | "nostrictatime"</code> </p>
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline void SetMountOptions(Aws::Vector<Aws::String>&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
 
@@ -137,7 +140,8 @@ namespace Model
      * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
      * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
      * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
-     * | "norelatime" | "strictatime" | "nostrictatime"</code> </p>
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline Tmpfs& WithMountOptions(const Aws::Vector<Aws::String>& value) { SetMountOptions(value); return *this;}
 
@@ -147,7 +151,8 @@ namespace Model
      * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
      * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
      * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
-     * | "norelatime" | "strictatime" | "nostrictatime"</code> </p>
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline Tmpfs& WithMountOptions(Aws::Vector<Aws::String>&& value) { SetMountOptions(std::move(value)); return *this;}
 
@@ -157,7 +162,8 @@ namespace Model
      * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
      * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
      * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
-     * | "norelatime" | "strictatime" | "nostrictatime"</code> </p>
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline Tmpfs& AddMountOptions(const Aws::String& value) { m_mountOptionsHasBeenSet = true; m_mountOptions.push_back(value); return *this; }
 
@@ -167,7 +173,8 @@ namespace Model
      * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
      * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
      * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
-     * | "norelatime" | "strictatime" | "nostrictatime"</code> </p>
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline Tmpfs& AddMountOptions(Aws::String&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions.push_back(std::move(value)); return *this; }
 
@@ -177,7 +184,8 @@ namespace Model
      * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
      * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
      * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
-     * | "norelatime" | "strictatime" | "nostrictatime"</code> </p>
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline Tmpfs& AddMountOptions(const char* value) { m_mountOptionsHasBeenSet = true; m_mountOptions.push_back(value); return *this; }
 

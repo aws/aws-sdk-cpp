@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
+#include <aws/rds/model/ScalingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -823,6 +824,37 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
+    /**
+     * <p>The scaling properties of the DB cluster. You can only modify scaling
+     * properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+     */
+    inline const ScalingConfiguration& GetScalingConfiguration() const{ return m_scalingConfiguration; }
+
+    /**
+     * <p>The scaling properties of the DB cluster. You can only modify scaling
+     * properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+     */
+    inline void SetScalingConfiguration(const ScalingConfiguration& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = value; }
+
+    /**
+     * <p>The scaling properties of the DB cluster. You can only modify scaling
+     * properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+     */
+    inline void SetScalingConfiguration(ScalingConfiguration&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::move(value); }
+
+    /**
+     * <p>The scaling properties of the DB cluster. You can only modify scaling
+     * properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+     */
+    inline ModifyDBClusterRequest& WithScalingConfiguration(const ScalingConfiguration& value) { SetScalingConfiguration(value); return *this;}
+
+    /**
+     * <p>The scaling properties of the DB cluster. You can only modify scaling
+     * properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+     */
+    inline ModifyDBClusterRequest& WithScalingConfiguration(ScalingConfiguration&& value) { SetScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -869,6 +901,9 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
+    ScalingConfiguration m_scalingConfiguration;
+    bool m_scalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

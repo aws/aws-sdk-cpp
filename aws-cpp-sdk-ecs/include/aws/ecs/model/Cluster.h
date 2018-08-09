@@ -217,17 +217,23 @@ namespace Model
 
 
     /**
-     * <p>The number of container instances registered into the cluster.</p>
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status.</p>
      */
     inline int GetRegisteredContainerInstancesCount() const{ return m_registeredContainerInstancesCount; }
 
     /**
-     * <p>The number of container instances registered into the cluster.</p>
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status.</p>
      */
     inline void SetRegisteredContainerInstancesCount(int value) { m_registeredContainerInstancesCountHasBeenSet = true; m_registeredContainerInstancesCount = value; }
 
     /**
-     * <p>The number of container instances registered into the cluster.</p>
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status.</p>
      */
     inline Cluster& WithRegisteredContainerInstancesCount(int value) { SetRegisteredContainerInstancesCount(value); return *this;}
 

@@ -42,7 +42,8 @@ Parameter::Parameter() :
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
     m_applyMethod(ApplyMethod::NOT_SET),
-    m_applyMethodHasBeenSet(false)
+    m_applyMethodHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Parameter::Parameter(const XmlNode& xmlNode) :
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
     m_applyMethod(ApplyMethod::NOT_SET),
-    m_applyMethodHasBeenSet(false)
+    m_applyMethodHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -129,6 +131,18 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
       m_applyMethod = ApplyMethodMapper::GetApplyMethodForName(StringUtils::Trim(applyMethodNode.GetText().c_str()).c_str());
       m_applyMethodHasBeenSet = true;
     }
+    XmlNode supportedEngineModesNode = resultNode.FirstChild("SupportedEngineModes");
+    if(!supportedEngineModesNode.IsNull())
+    {
+      XmlNode supportedEngineModesMember = supportedEngineModesNode.FirstChild("member");
+      while(!supportedEngineModesMember.IsNull())
+      {
+        m_supportedEngineModes.push_back(StringUtils::Trim(supportedEngineModesMember.GetText().c_str()));
+        supportedEngineModesMember = supportedEngineModesMember.NextNode("member");
+      }
+
+      m_supportedEngineModesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -186,6 +200,15 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ApplyMethod=" << ApplyMethodMapper::GetNameForApplyMethod(m_applyMethod) << "&";
   }
 
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << index << locationValue << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -229,6 +252,14 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_applyMethodHasBeenSet)
   {
       oStream << location << ".ApplyMethod=" << ApplyMethodMapper::GetNameForApplyMethod(m_applyMethod) << "&";
+  }
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

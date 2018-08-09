@@ -539,6 +539,47 @@ namespace Model
      */
     inline OrderableDBInstanceOption& AddAvailableProcessorFeatures(AvailableProcessorFeature&& value) { m_availableProcessorFeaturesHasBeenSet = true; m_availableProcessorFeatures.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = value; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::move(value); }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_engine;
@@ -603,6 +644,9 @@ namespace Model
 
     Aws::Vector<AvailableProcessorFeature> m_availableProcessorFeatures;
     bool m_availableProcessorFeaturesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedEngineModes;
+    bool m_supportedEngineModesHasBeenSet;
   };
 
 } // namespace Model

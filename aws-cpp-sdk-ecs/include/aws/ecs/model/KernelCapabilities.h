@@ -59,10 +59,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-add</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>If you are using tasks that use the Fargate launch type, the <code>add</code>
      * parameter is not supported.</p> </note> <p>Valid values: <code>"ALL" |
@@ -81,10 +81,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-add</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>If you are using tasks that use the Fargate launch type, the <code>add</code>
      * parameter is not supported.</p> </note> <p>Valid values: <code>"ALL" |
@@ -103,10 +103,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-add</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>If you are using tasks that use the Fargate launch type, the <code>add</code>
      * parameter is not supported.</p> </note> <p>Valid values: <code>"ALL" |
@@ -125,10 +125,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-add</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>If you are using tasks that use the Fargate launch type, the <code>add</code>
      * parameter is not supported.</p> </note> <p>Valid values: <code>"ALL" |
@@ -147,10 +147,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-add</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>If you are using tasks that use the Fargate launch type, the <code>add</code>
      * parameter is not supported.</p> </note> <p>Valid values: <code>"ALL" |
@@ -169,10 +169,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-add</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>If you are using tasks that use the Fargate launch type, the <code>add</code>
      * parameter is not supported.</p> </note> <p>Valid values: <code>"ALL" |
@@ -191,10 +191,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-add</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>If you are using tasks that use the Fargate launch type, the <code>add</code>
      * parameter is not supported.</p> </note> <p>Valid values: <code>"ALL" |
@@ -213,10 +213,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-add</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-add</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>If you are using tasks that use the Fargate launch type, the <code>add</code>
      * parameter is not supported.</p> </note> <p>Valid values: <code>"ALL" |
@@ -236,10 +236,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
      * <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-drop</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-drop</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND"
      * | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" |
@@ -256,10 +256,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
      * <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-drop</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-drop</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND"
      * | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" |
@@ -276,10 +276,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
      * <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-drop</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-drop</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND"
      * | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" |
@@ -296,10 +296,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
      * <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-drop</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-drop</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND"
      * | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" |
@@ -316,10 +316,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
      * <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-drop</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-drop</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND"
      * | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" |
@@ -336,10 +336,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
      * <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-drop</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-drop</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND"
      * | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" |
@@ -356,10 +356,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
      * <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-drop</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-drop</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND"
      * | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" |
@@ -376,10 +376,10 @@ namespace Model
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
      * <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--cap-drop</code> option to <a
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--cap-drop</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND"
      * | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" |

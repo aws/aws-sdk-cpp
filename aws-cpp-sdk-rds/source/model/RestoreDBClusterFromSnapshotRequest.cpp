@@ -38,7 +38,9 @@ RestoreDBClusterFromSnapshotRequest::RestoreDBClusterFromSnapshotRequest() :
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
     m_backtrackWindow(0),
     m_backtrackWindowHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false)
+    m_enableCloudwatchLogsExportsHasBeenSet(false),
+    m_engineModeHasBeenSet(false),
+    m_scalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -142,6 +144,16 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       enableCloudwatchLogsExportsCount++;
     }
+  }
+
+  if(m_engineModeHasBeenSet)
+  {
+    ss << "EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
+  }
+
+  if(m_scalingConfigurationHasBeenSet)
+  {
+    m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
   }
 
   ss << "Version=2014-10-31";

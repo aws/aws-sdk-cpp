@@ -65,7 +65,8 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_minIopsPerGibHasBeenSet(false),
     m_maxIopsPerGib(0.0),
     m_maxIopsPerGibHasBeenSet(false),
-    m_availableProcessorFeaturesHasBeenSet(false)
+    m_availableProcessorFeaturesHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false)
 {
 }
 
@@ -104,7 +105,8 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_minIopsPerGibHasBeenSet(false),
     m_maxIopsPerGib(0.0),
     m_maxIopsPerGibHasBeenSet(false),
-    m_availableProcessorFeaturesHasBeenSet(false)
+    m_availableProcessorFeaturesHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -253,6 +255,18 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
 
       m_availableProcessorFeaturesHasBeenSet = true;
     }
+    XmlNode supportedEngineModesNode = resultNode.FirstChild("SupportedEngineModes");
+    if(!supportedEngineModesNode.IsNull())
+    {
+      XmlNode supportedEngineModesMember = supportedEngineModesNode.FirstChild("member");
+      while(!supportedEngineModesMember.IsNull())
+      {
+        m_supportedEngineModes.push_back(StringUtils::Trim(supportedEngineModesMember.GetText().c_str()));
+        supportedEngineModesMember = supportedEngineModesMember.NextNode("member");
+      }
+
+      m_supportedEngineModesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -377,6 +391,15 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       }
   }
 
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << index << locationValue << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -475,6 +498,14 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
         Aws::StringStream availableProcessorFeaturesSs;
         availableProcessorFeaturesSs << location <<  ".AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
         item.OutputToStream(oStream, availableProcessorFeaturesSs.str().c_str());
+      }
+  }
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

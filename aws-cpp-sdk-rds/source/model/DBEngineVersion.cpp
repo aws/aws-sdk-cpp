@@ -44,7 +44,8 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsLogExportsToCloudwatchLogs(false),
     m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
     m_supportsReadReplica(false),
-    m_supportsReadReplicaHasBeenSet(false)
+    m_supportsReadReplicaHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsLogExportsToCloudwatchLogs(false),
     m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
     m_supportsReadReplica(false),
-    m_supportsReadReplicaHasBeenSet(false)
+    m_supportsReadReplicaHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -169,6 +171,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_supportsReadReplica = StringUtils::ConvertToBool(StringUtils::Trim(supportsReadReplicaNode.GetText().c_str()).c_str());
       m_supportsReadReplicaHasBeenSet = true;
     }
+    XmlNode supportedEngineModesNode = resultNode.FirstChild("SupportedEngineModes");
+    if(!supportedEngineModesNode.IsNull())
+    {
+      XmlNode supportedEngineModesMember = supportedEngineModesNode.FirstChild("member");
+      while(!supportedEngineModesMember.IsNull())
+      {
+        m_supportedEngineModes.push_back(StringUtils::Trim(supportedEngineModesMember.GetText().c_str()));
+        supportedEngineModesMember = supportedEngineModesMember.NextNode("member");
+      }
+
+      m_supportedEngineModesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -260,6 +274,15 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".SupportsReadReplica=" << std::boolalpha << m_supportsReadReplica << "&";
   }
 
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << index << locationValue << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -335,6 +358,14 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsReadReplicaHasBeenSet)
   {
       oStream << location << ".SupportsReadReplica=" << std::boolalpha << m_supportsReadReplica << "&";
+  }
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

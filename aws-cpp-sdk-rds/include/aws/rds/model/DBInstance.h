@@ -1193,15 +1193,7 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -1209,15 +1201,7 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -1225,15 +1209,7 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address.</p>
      */
     inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -1972,49 +1948,73 @@ namespace Model
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 

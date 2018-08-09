@@ -181,32 +181,32 @@ namespace Model
 
 
     /**
-     * <p>Whether the task's elastic network interface receives a public IP
-     * address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP address.
+     * The default value is <code>DISABLED</code>.</p>
      */
     inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
 
     /**
-     * <p>Whether the task's elastic network interface receives a public IP
-     * address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP address.
+     * The default value is <code>DISABLED</code>.</p>
      */
     inline void SetAssignPublicIp(const AssignPublicIp& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = value; }
 
     /**
-     * <p>Whether the task's elastic network interface receives a public IP
-     * address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP address.
+     * The default value is <code>DISABLED</code>.</p>
      */
     inline void SetAssignPublicIp(AssignPublicIp&& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = std::move(value); }
 
     /**
-     * <p>Whether the task's elastic network interface receives a public IP
-     * address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP address.
+     * The default value is <code>DISABLED</code>.</p>
      */
     inline AwsVpcConfiguration& WithAssignPublicIp(const AssignPublicIp& value) { SetAssignPublicIp(value); return *this;}
 
     /**
-     * <p>Whether the task's elastic network interface receives a public IP
-     * address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP address.
+     * The default value is <code>DISABLED</code>.</p>
      */
     inline AwsVpcConfiguration& WithAssignPublicIp(AssignPublicIp&& value) { SetAssignPublicIp(std::move(value)); return *this;}
 

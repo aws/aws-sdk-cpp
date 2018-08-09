@@ -18,6 +18,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -1423,51 +1424,157 @@ namespace Model
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline CreateDBClusterRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline CreateDBClusterRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline CreateDBClusterRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
+
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline const ScalingConfiguration& GetScalingConfiguration() const{ return m_scalingConfiguration; }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline void SetScalingConfiguration(const ScalingConfiguration& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = value; }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline void SetScalingConfiguration(ScalingConfiguration&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::move(value); }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline CreateDBClusterRequest& WithScalingConfiguration(const ScalingConfiguration& value) { SetScalingConfiguration(value); return *this;}
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline CreateDBClusterRequest& WithScalingConfiguration(ScalingConfiguration&& value) { SetScalingConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -1542,6 +1649,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
     bool m_enableCloudwatchLogsExportsHasBeenSet;
+
+    Aws::String m_engineMode;
+    bool m_engineModeHasBeenSet;
+
+    ScalingConfiguration m_scalingConfiguration;
+    bool m_scalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

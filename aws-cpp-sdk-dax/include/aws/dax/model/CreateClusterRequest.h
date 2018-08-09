@@ -18,6 +18,7 @@
 #include <aws/dax/DAXRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dax/model/SSESpecification.h>
 #include <aws/dax/model/Tag.h>
 #include <utility>
 
@@ -661,6 +662,37 @@ namespace Model
      */
     inline CreateClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Represents the settings used to enable server-side encryption on the
+     * cluster.</p>
+     */
+    inline const SSESpecification& GetSSESpecification() const{ return m_sSESpecification; }
+
+    /**
+     * <p>Represents the settings used to enable server-side encryption on the
+     * cluster.</p>
+     */
+    inline void SetSSESpecification(const SSESpecification& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = value; }
+
+    /**
+     * <p>Represents the settings used to enable server-side encryption on the
+     * cluster.</p>
+     */
+    inline void SetSSESpecification(SSESpecification&& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = std::move(value); }
+
+    /**
+     * <p>Represents the settings used to enable server-side encryption on the
+     * cluster.</p>
+     */
+    inline CreateClusterRequest& WithSSESpecification(const SSESpecification& value) { SetSSESpecification(value); return *this;}
+
+    /**
+     * <p>Represents the settings used to enable server-side encryption on the
+     * cluster.</p>
+     */
+    inline CreateClusterRequest& WithSSESpecification(SSESpecification&& value) { SetSSESpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -698,6 +730,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    SSESpecification m_sSESpecification;
+    bool m_sSESpecificationHasBeenSet;
   };
 
 } // namespace Model

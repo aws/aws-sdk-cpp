@@ -17,6 +17,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/HostVolumeProperties.h>
+#include <aws/ecs/model/DockerVolumeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +36,12 @@ namespace Model
 {
 
   /**
-   * <p>A data volume used in a task definition.</p><p><h3>See Also:</h3>   <a
+   * <p>A data volume used in a task definition. For tasks that use a Docker volume,
+   * specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind
+   * mount host volume, specify a <code>host</code> and optional
+   * <code>sourcePath</code>. For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing_data_volumes.html">Using
+   * Data Volumes in Tasks</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
    * Reference</a></p>
    */
@@ -106,74 +112,115 @@ namespace Model
 
 
     /**
-     * <p>The contents of the <code>host</code> parameter determine whether your data
-     * volume persists on the host container instance and where it is stored. If the
-     * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>Windows containers can mount whole
-     * directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot
-     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
-     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
-     * <code>D:\:C:\my\path</code>.</p>
+     * <p>This parameter is specified when using bind mount host volumes. Bind mount
+     * host volumes are supported when using either the EC2 or Fargate launch types.
+     * The contents of the <code>host</code> parameter determine whether your bind
+     * mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon
+     * assigns a host path for your data volume, but the data is not guaranteed to
+     * persist after the containers associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline const HostVolumeProperties& GetHost() const{ return m_host; }
 
     /**
-     * <p>The contents of the <code>host</code> parameter determine whether your data
-     * volume persists on the host container instance and where it is stored. If the
-     * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>Windows containers can mount whole
-     * directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot
-     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
-     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
-     * <code>D:\:C:\my\path</code>.</p>
+     * <p>This parameter is specified when using bind mount host volumes. Bind mount
+     * host volumes are supported when using either the EC2 or Fargate launch types.
+     * The contents of the <code>host</code> parameter determine whether your bind
+     * mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon
+     * assigns a host path for your data volume, but the data is not guaranteed to
+     * persist after the containers associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline void SetHost(const HostVolumeProperties& value) { m_hostHasBeenSet = true; m_host = value; }
 
     /**
-     * <p>The contents of the <code>host</code> parameter determine whether your data
-     * volume persists on the host container instance and where it is stored. If the
-     * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>Windows containers can mount whole
-     * directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot
-     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
-     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
-     * <code>D:\:C:\my\path</code>.</p>
+     * <p>This parameter is specified when using bind mount host volumes. Bind mount
+     * host volumes are supported when using either the EC2 or Fargate launch types.
+     * The contents of the <code>host</code> parameter determine whether your bind
+     * mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon
+     * assigns a host path for your data volume, but the data is not guaranteed to
+     * persist after the containers associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline void SetHost(HostVolumeProperties&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
     /**
-     * <p>The contents of the <code>host</code> parameter determine whether your data
-     * volume persists on the host container instance and where it is stored. If the
-     * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>Windows containers can mount whole
-     * directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot
-     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
-     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
-     * <code>D:\:C:\my\path</code>.</p>
+     * <p>This parameter is specified when using bind mount host volumes. Bind mount
+     * host volumes are supported when using either the EC2 or Fargate launch types.
+     * The contents of the <code>host</code> parameter determine whether your bind
+     * mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon
+     * assigns a host path for your data volume, but the data is not guaranteed to
+     * persist after the containers associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline Volume& WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
 
     /**
-     * <p>The contents of the <code>host</code> parameter determine whether your data
-     * volume persists on the host container instance and where it is stored. If the
-     * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>Windows containers can mount whole
-     * directories on the same drive as <code>$env:ProgramData</code>. Windows
-     * containers cannot mount directories on a different drive, and mount point cannot
-     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
-     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
-     * <code>D:\:C:\my\path</code>.</p>
+     * <p>This parameter is specified when using bind mount host volumes. Bind mount
+     * host volumes are supported when using either the EC2 or Fargate launch types.
+     * The contents of the <code>host</code> parameter determine whether your bind
+     * mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon
+     * assigns a host path for your data volume, but the data is not guaranteed to
+     * persist after the containers associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline Volume& WithHost(HostVolumeProperties&& value) { SetHost(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for the Docker volume. This parameter is specified when
+     * using Docker volumes.</p>
+     */
+    inline const DockerVolumeConfiguration& GetDockerVolumeConfiguration() const{ return m_dockerVolumeConfiguration; }
+
+    /**
+     * <p>The configuration for the Docker volume. This parameter is specified when
+     * using Docker volumes.</p>
+     */
+    inline void SetDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = value; }
+
+    /**
+     * <p>The configuration for the Docker volume. This parameter is specified when
+     * using Docker volumes.</p>
+     */
+    inline void SetDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for the Docker volume. This parameter is specified when
+     * using Docker volumes.</p>
+     */
+    inline Volume& WithDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { SetDockerVolumeConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for the Docker volume. This parameter is specified when
+     * using Docker volumes.</p>
+     */
+    inline Volume& WithDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { SetDockerVolumeConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -182,6 +229,9 @@ namespace Model
 
     HostVolumeProperties m_host;
     bool m_hostHasBeenSet;
+
+    DockerVolumeConfiguration m_dockerVolumeConfiguration;
+    bool m_dockerVolumeConfigurationHasBeenSet;
   };
 
 } // namespace Model

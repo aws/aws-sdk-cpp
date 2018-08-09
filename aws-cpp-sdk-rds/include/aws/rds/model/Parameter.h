@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ApplyMethod.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -389,6 +390,47 @@ namespace Model
      */
     inline Parameter& WithApplyMethod(ApplyMethod&& value) { SetApplyMethod(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The valid DB engine modes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
+
+    /**
+     * <p>The valid DB engine modes.</p>
+     */
+    inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = value; }
+
+    /**
+     * <p>The valid DB engine modes.</p>
+     */
+    inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::move(value); }
+
+    /**
+     * <p>The valid DB engine modes.</p>
+     */
+    inline Parameter& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
+
+    /**
+     * <p>The valid DB engine modes.</p>
+     */
+    inline Parameter& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
+
+    /**
+     * <p>The valid DB engine modes.</p>
+     */
+    inline Parameter& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
+    /**
+     * <p>The valid DB engine modes.</p>
+     */
+    inline Parameter& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The valid DB engine modes.</p>
+     */
+    inline Parameter& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_parameterName;
@@ -420,6 +462,9 @@ namespace Model
 
     ApplyMethod m_applyMethod;
     bool m_applyMethodHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedEngineModes;
+    bool m_supportedEngineModesHasBeenSet;
   };
 
 } // namespace Model

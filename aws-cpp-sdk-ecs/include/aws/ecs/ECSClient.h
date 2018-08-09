@@ -601,8 +601,10 @@ namespace Model
          * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services return a
-         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <code>ServiceNotFoundException</code> error.</p> </note> <important> <p>If you
+         * attempt to create a new service with the same name as an existing service in
+         * either <code>ACTIVE</code> or <code>DRAINING</code> status, you will receive an
+         * error.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
          * API Reference</a></p>
          */
@@ -623,8 +625,10 @@ namespace Model
          * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services return a
-         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <code>ServiceNotFoundException</code> error.</p> </note> <important> <p>If you
+         * attempt to create a new service with the same name as an existing service in
+         * either <code>ACTIVE</code> or <code>DRAINING</code> status, you will receive an
+         * error.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
          * API Reference</a></p>
          *
@@ -647,8 +651,10 @@ namespace Model
          * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services return a
-         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <code>ServiceNotFoundException</code> error.</p> </note> <important> <p>If you
+         * attempt to create a new service with the same name as an existing service in
+         * either <code>ACTIVE</code> or <code>DRAINING</code> status, you will receive an
+         * error.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
          * API Reference</a></p>
          *

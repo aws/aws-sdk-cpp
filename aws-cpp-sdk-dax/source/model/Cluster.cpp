@@ -46,7 +46,8 @@ Cluster::Cluster() :
     m_subnetGroupHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
-    m_parameterGroupHasBeenSet(false)
+    m_parameterGroupHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_subnetGroupHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
-    m_parameterGroupHasBeenSet(false)
+    m_parameterGroupHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -196,6 +198,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_parameterGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SSEDescription"))
+  {
+    m_sSEDescription = jsonValue.GetObject("SSEDescription");
+
+    m_sSEDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -311,6 +320,12 @@ JsonValue Cluster::Jsonize() const
   if(m_parameterGroupHasBeenSet)
   {
    payload.WithObject("ParameterGroup", m_parameterGroup.Jsonize());
+
+  }
+
+  if(m_sSEDescriptionHasBeenSet)
+  {
+   payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
 
   }
 
