@@ -157,7 +157,6 @@ EC2MetadataClient::EC2MetadataClient(const Client::ClientConfiguration& clientCo
 {
 }
 
-
 EC2MetadataClient::~EC2MetadataClient()
 {
 

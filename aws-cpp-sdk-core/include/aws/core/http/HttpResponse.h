@@ -114,6 +114,26 @@ namespace Aws
             NETWORK_CONNECT_TIMEOUT = 599
         };
 
+        inline bool IsRetryableHttpResponseCode(HttpResponseCode responseCode)
+        {
+            switch (responseCode)
+            {
+                case HttpResponseCode::INTERNAL_SERVER_ERROR:
+                case HttpResponseCode::SERVICE_UNAVAILABLE:
+                case HttpResponseCode::TOO_MANY_REQUESTS:
+                case HttpResponseCode::BANDWIDTH_LIMIT_EXCEEDED:
+                case HttpResponseCode::REQUEST_TIMEOUT:
+                case HttpResponseCode::AUTHENTICATION_TIMEOUT:
+                case HttpResponseCode::LOGIN_TIMEOUT:
+                case HttpResponseCode::GATEWAY_TIMEOUT:
+                case HttpResponseCode::NETWORK_READ_TIMEOUT:
+                case HttpResponseCode::NETWORK_CONNECT_TIMEOUT:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         /**
          * Abstract class for representing an Http Response.
          */

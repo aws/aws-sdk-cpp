@@ -574,15 +574,6 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
 }
 
-
-static bool isRetryableHttpResponseCode(HttpResponseCode responseCode)
-{
-    return
-        responseCode == HttpResponseCode::INTERNAL_SERVER_ERROR ||
-        responseCode == HttpResponseCode::SERVICE_UNAVAILABLE ||
-        responseCode == HttpResponseCode::GATEWAY_TIMEOUT;
-}
-
 AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
 {
@@ -602,7 +593,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
         Aws::StringStream ss;
         ss << "No response body.";
         error = AWSError<CoreErrors>(errorCode, "", ss.str(),
-            isRetryableHttpResponseCode(responseCode));
+            IsRetryableHttpResponseCode(responseCode));
     }
     else
     {
@@ -698,7 +689,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
         Aws::StringStream ss;
         ss << "No response body.";
-        error = AWSError<CoreErrors>(errorCode, "", ss.str(), isRetryableHttpResponseCode(responseCode));
+        error = AWSError<CoreErrors>(errorCode, "", ss.str(), IsRetryableHttpResponseCode(responseCode));
     }
     else
     {

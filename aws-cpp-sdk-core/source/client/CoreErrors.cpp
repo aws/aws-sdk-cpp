@@ -13,9 +13,9 @@
 * permissions and limitations under the License.
 */
 
-#include "aws/core/client/AWSError.h"
-#include "aws/core/client/CoreErrors.h"
-#include "aws/core/utils/HashingUtils.h"  
+#include <aws/core/client/AWSError.h>
+#include <aws/core/client/CoreErrors.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -177,23 +177,29 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
 AWS_CORE_API AWSError<CoreErrors> CoreErrorsMapper::GetErrorForHttpResponseCode(HttpResponseCode code)
 {
     // best effort attempt to map HTTP response codes to CoreErrors
+    bool retryable = IsRetryableHttpResponseCode(code);
     switch(code)
     {
         case HttpResponseCode::UNAUTHORIZED:
         case HttpResponseCode::FORBIDDEN:
-            return AWSError<CoreErrors>(CoreErrors::ACCESS_DENIED, false/*retry*/);
+            return AWSError<CoreErrors>(CoreErrors::ACCESS_DENIED, retryable);
         case HttpResponseCode::NOT_FOUND:
-            return AWSError<CoreErrors>(CoreErrors::RESOURCE_NOT_FOUND, false/*retry*/);
+            return AWSError<CoreErrors>(CoreErrors::RESOURCE_NOT_FOUND, retryable);
         case HttpResponseCode::TOO_MANY_REQUESTS:
-            return AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, true/*retry*/);
+            return AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, retryable);
         case HttpResponseCode::INTERNAL_SERVER_ERROR:
-            return AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, true/*retry*/);
+            return AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, retryable);
         case HttpResponseCode::BANDWIDTH_LIMIT_EXCEEDED:
-            return AWSError<CoreErrors>(CoreErrors::THROTTLING, true/*retry*/);
+            return AWSError<CoreErrors>(CoreErrors::THROTTLING, retryable);
         case HttpResponseCode::SERVICE_UNAVAILABLE:
-            return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true/*retry*/);
+            return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, retryable);
         case HttpResponseCode::REQUEST_TIMEOUT:
-            return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true/*retry*/);
+        case HttpResponseCode::AUTHENTICATION_TIMEOUT:
+        case HttpResponseCode::LOGIN_TIMEOUT:
+        case HttpResponseCode::GATEWAY_TIMEOUT:
+        case HttpResponseCode::NETWORK_READ_TIMEOUT:
+        case HttpResponseCode::NETWORK_CONNECT_TIMEOUT:
+            return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, retryable);
         default:
             int codeValue = static_cast<int>(code);
             return AWSError<CoreErrors>(CoreErrors::UNKNOWN, codeValue >= 500 && codeValue < 600);

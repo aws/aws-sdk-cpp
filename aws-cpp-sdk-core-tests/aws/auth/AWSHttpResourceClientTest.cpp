@@ -19,7 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
-
+#include <aws/core/client/DefaultRetryStrategy.h>
 #include <fstream>
 
 using namespace Aws::Utils;
@@ -28,15 +28,24 @@ using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 using namespace Aws::Internal;
 
-static const char* ALLOCATION_TAG = "AWSHttpResourceClientTest";
+static const char ALLOCATION_TAG[] = "AWSHttpResourceClientTest";
 
 namespace
 {
     class AWSHttpResourceClientTest : public ::testing::Test
     {
+    public:
+        AWSHttpResourceClientTest()
+        {
+            // Default retry strategy set maxRetry to be 4, and interval factor to be 1000ms
+            // In order to speed up our unit tests, we reset it here.
+            clientConfig.retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(ALLOCATION_TAG, 2/*maxRetry*/, 1/*Interval factor between retry (exp backoff), first retry wait 1ms, second retry wait 2ms*/);
+        }
+
     protected:
         std::shared_ptr<MockHttpClient> mockHttpClient;
         std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+        ClientConfiguration clientConfig;
 
         void SetUp()
         {
@@ -58,7 +67,7 @@ namespace
 
     TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithPermanentNullResponse)
     {
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -68,8 +77,8 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", result);
-        // 1 initial request + 4 retries should be done when request can't be made at all
-        ASSERT_EQ(5u, mockHttpClient->GetAllRequestsMade().size());
+        // 1 initial request + 2 retries should be done when request can't be made at all
+        ASSERT_EQ(3u, mockHttpClient->GetAllRequestsMade().size());
     }
 
     TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithEmptyResponse)
@@ -82,7 +91,7 @@ namespace
         response->GetResponseBody() << "";
         mockHttpClient->AddResponseToReturn(response);
 
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -106,7 +115,7 @@ namespace
         response->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response);
 
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -129,11 +138,13 @@ namespace
         response->SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
         response->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
 
-        // Add enough to respond to 1 initial request and 4 retries
-        for (int i = 0; i != 5; ++i)
+        // Add enough to respond to 1 initial request and 2 retries
+        for (int i = 0; i < 3; ++i)
+        {
             mockHttpClient->AddResponseToReturn(response);
+        }
 
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -143,8 +154,8 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", result);
-        // 1 initial request + 4 retries should be done for status code >= 500
-        ASSERT_EQ(5u, mockHttpClient->GetAllRequestsMade().size());
+        // 1 initial request + 2 retries should be done for status code >= 500
+        ASSERT_EQ(3u, mockHttpClient->GetAllRequestsMade().size());
     }
 
     TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientGetExpectedResource)
@@ -157,7 +168,7 @@ namespace
         response->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response);
 
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -183,7 +194,7 @@ namespace
         response2->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response2);
 
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -209,7 +220,7 @@ namespace
         response2->GetResponseBody() << "Any test string";
         mockHttpClient->AddResponseToReturn(response2);
 
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -238,7 +249,7 @@ namespace
         response2->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response2);
 
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -267,7 +278,7 @@ namespace
         response2->GetResponseBody() << "Any test string";
         mockHttpClient->AddResponseToReturn(response2);
 
-        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
         Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -284,7 +295,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientWithNullSecurityCredentialsStringResponse)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         auto cred = ec2MetadataClient->GetDefaultCredentials();
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -300,7 +311,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientWithEmptySecurityCredentialsStringResponse)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"), 
@@ -324,7 +335,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientWithMalformedSecurityCredentialsString)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"), 
@@ -372,7 +383,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetExpectedCredentials)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
         
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"), 
@@ -404,7 +415,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithNullResponse)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         auto region = ec2MetadataClient->GetCurrentRegion();
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -420,7 +431,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithEmptyResponse)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
@@ -444,7 +455,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithHttpBadRequest)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
@@ -468,7 +479,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasSingleDigitSubStringInsideString)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
@@ -491,7 +502,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasMultipleDigitSubStrings)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
@@ -514,7 +525,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseStartWithDigitSubString)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
@@ -537,7 +548,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasSingleDigitSubstringAtEnd)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
@@ -560,7 +571,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasNoDigit)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
-        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
@@ -583,7 +594,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestECSCredentialsClientWithNullResponse)
     {
         // Create EC2CredentialsClient with default endpoint http://169.254.170.2
-        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, "/path/to/res");
+        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, clientConfig, "/path/to/res");
 
         auto cred = ecsCredentialsClient->GetECSCredentials();
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
@@ -598,7 +609,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestECSCredentialsClientWithEmptyResponse)
     {
         // Create EC2CredentialsClient with default endpoint http://169.254.170.2
-        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, "/path/to/res");
+        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, clientConfig, "/path/to/res");
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> credRequest = CreateHttpRequest(URI("http://169.254.170.2/path/to/res"),
@@ -620,7 +631,7 @@ namespace
 
     TEST_F(AWSHttpResourceClientTest, TestECSCredentialsClientUsingFullUriAndAuthToken)
     {
-        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG,
+        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, clientConfig,
                 ""/*resource*/, "http://10.1.1.1/super/secret"/*endpoint*/, "TrustMeItIsMe"/*authToken*/);
 
         auto cred = ecsCredentialsClient->GetECSCredentials();
@@ -637,7 +648,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestECSCredentialsClientWithHttpBadRequest)
     {
         // Create EC2CredentialsClient with default endpoint http://169.254.170.2
-        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, "/path/to/res");
+        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, clientConfig, "/path/to/res");
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> credRequest = CreateHttpRequest(URI("http://169.254.170.2/path/to/res"),
@@ -660,7 +671,7 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestECSCredentialsClientGetExpectedCredentials)
     {
         // Create EC2CredentialsClient with default endpoint http://169.254.170.2
-        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, "/path/to/res");
+        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, clientConfig, "/path/to/res");
 
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> credRequest = CreateHttpRequest(URI("http://169.254.170.2/path/to/res"), 
