@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-MigrationHub;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.5.20170531.11;
+        version : 1.5.20170531.12;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Migration Hub);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.5.11
+            AWSSDKCPP-Core/1.5.12
        }
     }
 

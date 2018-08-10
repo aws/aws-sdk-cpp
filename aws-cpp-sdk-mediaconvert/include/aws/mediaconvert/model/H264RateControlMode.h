@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     VBR,
-    CBR
+    CBR,
+    QVBR
   };
 
 namespace H264RateControlModeMapper

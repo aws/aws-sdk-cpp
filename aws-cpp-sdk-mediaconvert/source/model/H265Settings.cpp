@@ -39,6 +39,8 @@ H265Settings::H265Settings() :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(H265CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_dynamicSubGop(H265DynamicSubGop::NOT_SET),
+    m_dynamicSubGopHasBeenSet(false),
     m_flickerAdaptiveQuantization(H265FlickerAdaptiveQuantization::NOT_SET),
     m_flickerAdaptiveQuantizationHasBeenSet(false),
     m_framerateControl(H265FramerateControl::NOT_SET),
@@ -79,6 +81,7 @@ H265Settings::H265Settings() :
     m_parNumeratorHasBeenSet(false),
     m_qualityTuningLevel(H265QualityTuningLevel::NOT_SET),
     m_qualityTuningLevelHasBeenSet(false),
+    m_qvbrSettingsHasBeenSet(false),
     m_rateControlMode(H265RateControlMode::NOT_SET),
     m_rateControlModeHasBeenSet(false),
     m_sampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode::NOT_SET),
@@ -117,6 +120,8 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(H265CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_dynamicSubGop(H265DynamicSubGop::NOT_SET),
+    m_dynamicSubGopHasBeenSet(false),
     m_flickerAdaptiveQuantization(H265FlickerAdaptiveQuantization::NOT_SET),
     m_flickerAdaptiveQuantizationHasBeenSet(false),
     m_framerateControl(H265FramerateControl::NOT_SET),
@@ -157,6 +162,7 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_parNumeratorHasBeenSet(false),
     m_qualityTuningLevel(H265QualityTuningLevel::NOT_SET),
     m_qualityTuningLevelHasBeenSet(false),
+    m_qvbrSettingsHasBeenSet(false),
     m_rateControlMode(H265RateControlMode::NOT_SET),
     m_rateControlModeHasBeenSet(false),
     m_sampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode::NOT_SET),
@@ -220,6 +226,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_codecProfile = H265CodecProfileMapper::GetH265CodecProfileForName(jsonValue.GetString("codecProfile"));
 
     m_codecProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamicSubGop"))
+  {
+    m_dynamicSubGop = H265DynamicSubGopMapper::GetH265DynamicSubGopForName(jsonValue.GetString("dynamicSubGop"));
+
+    m_dynamicSubGopHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("flickerAdaptiveQuantization"))
@@ -362,6 +375,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_qualityTuningLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("qvbrSettings"))
+  {
+    m_qvbrSettings = jsonValue.GetObject("qvbrSettings");
+
+    m_qvbrSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("rateControlMode"))
   {
     m_rateControlMode = H265RateControlModeMapper::GetH265RateControlModeForName(jsonValue.GetString("rateControlMode"));
@@ -479,6 +499,11 @@ JsonValue H265Settings::Jsonize() const
    payload.WithString("codecProfile", H265CodecProfileMapper::GetNameForH265CodecProfile(m_codecProfile));
   }
 
+  if(m_dynamicSubGopHasBeenSet)
+  {
+   payload.WithString("dynamicSubGop", H265DynamicSubGopMapper::GetNameForH265DynamicSubGop(m_dynamicSubGop));
+  }
+
   if(m_flickerAdaptiveQuantizationHasBeenSet)
   {
    payload.WithString("flickerAdaptiveQuantization", H265FlickerAdaptiveQuantizationMapper::GetNameForH265FlickerAdaptiveQuantization(m_flickerAdaptiveQuantization));
@@ -589,6 +614,12 @@ JsonValue H265Settings::Jsonize() const
   if(m_qualityTuningLevelHasBeenSet)
   {
    payload.WithString("qualityTuningLevel", H265QualityTuningLevelMapper::GetNameForH265QualityTuningLevel(m_qualityTuningLevel));
+  }
+
+  if(m_qvbrSettingsHasBeenSet)
+  {
+   payload.WithObject("qvbrSettings", m_qvbrSettings.Jsonize());
+
   }
 
   if(m_rateControlModeHasBeenSet)

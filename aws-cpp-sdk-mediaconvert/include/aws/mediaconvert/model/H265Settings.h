@@ -19,6 +19,7 @@
 #include <aws/mediaconvert/model/H265AlternateTransferFunctionSei.h>
 #include <aws/mediaconvert/model/H265CodecLevel.h>
 #include <aws/mediaconvert/model/H265CodecProfile.h>
+#include <aws/mediaconvert/model/H265DynamicSubGop.h>
 #include <aws/mediaconvert/model/H265FlickerAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H265FramerateControl.h>
 #include <aws/mediaconvert/model/H265FramerateConversionAlgorithm.h>
@@ -27,6 +28,7 @@
 #include <aws/mediaconvert/model/H265InterlaceMode.h>
 #include <aws/mediaconvert/model/H265ParControl.h>
 #include <aws/mediaconvert/model/H265QualityTuningLevel.h>
+#include <aws/mediaconvert/model/H265QvbrSettings.h>
 #include <aws/mediaconvert/model/H265RateControlMode.h>
 #include <aws/mediaconvert/model/H265SampleAdaptiveOffsetFilterMode.h>
 #include <aws/mediaconvert/model/H265SceneChangeDetect.h>
@@ -150,6 +152,57 @@ namespace Model
 
     
     inline H265Settings& WithCodecProfile(H265CodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
+
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline const H265DynamicSubGop& GetDynamicSubGop() const{ return m_dynamicSubGop; }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline void SetDynamicSubGop(const H265DynamicSubGop& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = value; }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline void SetDynamicSubGop(H265DynamicSubGop&& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = std::move(value); }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline H265Settings& WithDynamicSubGop(const H265DynamicSubGop& value) { SetDynamicSubGop(value); return *this;}
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline H265Settings& WithDynamicSubGop(H265DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
 
 
     
@@ -354,17 +407,20 @@ namespace Model
 
 
     /**
-     * Maximum bitrate in bits/second.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000. Required when Rate control mode is QVBR.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * Maximum bitrate in bits/second.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000. Required when Rate control mode is QVBR.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * Maximum bitrate in bits/second.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000. Required when Rate control mode is QVBR.
      */
     inline H265Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
@@ -500,6 +556,47 @@ namespace Model
 
     
     inline H265Settings& WithQualityTuningLevel(H265QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
+
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline const H265QvbrSettings& GetQvbrSettings() const{ return m_qvbrSettings; }
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline void SetQvbrSettings(const H265QvbrSettings& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = value; }
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline void SetQvbrSettings(H265QvbrSettings&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::move(value); }
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline H265Settings& WithQvbrSettings(const H265QvbrSettings& value) { SetQvbrSettings(value); return *this;}
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline H265Settings& WithQvbrSettings(H265QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
 
 
     
@@ -716,6 +813,9 @@ namespace Model
     H265CodecProfile m_codecProfile;
     bool m_codecProfileHasBeenSet;
 
+    H265DynamicSubGop m_dynamicSubGop;
+    bool m_dynamicSubGopHasBeenSet;
+
     H265FlickerAdaptiveQuantization m_flickerAdaptiveQuantization;
     bool m_flickerAdaptiveQuantizationHasBeenSet;
 
@@ -775,6 +875,9 @@ namespace Model
 
     H265QualityTuningLevel m_qualityTuningLevel;
     bool m_qualityTuningLevelHasBeenSet;
+
+    H265QvbrSettings m_qvbrSettings;
+    bool m_qvbrSettingsHasBeenSet;
 
     H265RateControlMode m_rateControlMode;
     bool m_rateControlModeHasBeenSet;

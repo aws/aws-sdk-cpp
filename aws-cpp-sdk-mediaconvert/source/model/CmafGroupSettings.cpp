@@ -44,6 +44,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_manifestDurationFormatHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_segmentControl(CmafSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -73,6 +75,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_manifestDurationFormatHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_segmentControl(CmafSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -150,6 +154,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_minBufferTime = jsonValue.GetInteger("minBufferTime");
 
     m_minBufferTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minFinalSegmentLength"))
+  {
+    m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
+
+    m_minFinalSegmentLengthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentControl"))
@@ -241,6 +252,12 @@ JsonValue CmafGroupSettings::Jsonize() const
   if(m_minBufferTimeHasBeenSet)
   {
    payload.WithInteger("minBufferTime", m_minBufferTime);
+
+  }
+
+  if(m_minFinalSegmentLengthHasBeenSet)
+  {
+   payload.WithDouble("minFinalSegmentLength", m_minFinalSegmentLength);
 
   }
 

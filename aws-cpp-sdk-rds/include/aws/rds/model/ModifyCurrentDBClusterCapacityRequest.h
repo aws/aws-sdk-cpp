@@ -150,10 +150,10 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB
-     * cluster and sets the capacity to the specified value as soon as possible.</p>
-     * <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling
-     * point is not found in the timeout period.</p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p>
      */
     inline const Aws::String& GetTimeoutAction() const{ return m_timeoutAction; }
 
@@ -161,10 +161,10 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB
-     * cluster and sets the capacity to the specified value as soon as possible.</p>
-     * <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling
-     * point is not found in the timeout period.</p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p>
      */
     inline void SetTimeoutAction(const Aws::String& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
 
@@ -172,10 +172,10 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB
-     * cluster and sets the capacity to the specified value as soon as possible.</p>
-     * <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling
-     * point is not found in the timeout period.</p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p>
      */
     inline void SetTimeoutAction(Aws::String&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
 
@@ -183,10 +183,10 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB
-     * cluster and sets the capacity to the specified value as soon as possible.</p>
-     * <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling
-     * point is not found in the timeout period.</p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p>
      */
     inline void SetTimeoutAction(const char* value) { m_timeoutActionHasBeenSet = true; m_timeoutAction.assign(value); }
 
@@ -194,10 +194,10 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB
-     * cluster and sets the capacity to the specified value as soon as possible.</p>
-     * <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling
-     * point is not found in the timeout period.</p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p>
      */
     inline ModifyCurrentDBClusterCapacityRequest& WithTimeoutAction(const Aws::String& value) { SetTimeoutAction(value); return *this;}
 
@@ -205,10 +205,10 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB
-     * cluster and sets the capacity to the specified value as soon as possible.</p>
-     * <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling
-     * point is not found in the timeout period.</p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p>
      */
     inline ModifyCurrentDBClusterCapacityRequest& WithTimeoutAction(Aws::String&& value) { SetTimeoutAction(std::move(value)); return *this;}
 
@@ -216,10 +216,10 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB
-     * cluster and sets the capacity to the specified value as soon as possible.</p>
-     * <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling
-     * point is not found in the timeout period.</p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p>
      */
     inline ModifyCurrentDBClusterCapacityRequest& WithTimeoutAction(const char* value) { SetTimeoutAction(value); return *this;}
 

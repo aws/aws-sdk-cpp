@@ -3206,8 +3206,12 @@ namespace Aws
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
          * Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
          * <important> <p>If you call <code>ModifyCurrentDBClusterCapacity</code> with the
-         * default <code>TimeoutAction</code>, connections to the DB cluster are dropped
-         * when the capacity is set.</p> </important><p><h3>See Also:</h3>   <a
+         * default <code>TimeoutAction</code>, connections that prevent Aurora Serverless
+         * from finding a scaling point might be dropped. For more information about
+         * scaling points, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+         * Autoscaling for Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
          * API Reference</a></p>
          */
@@ -3226,8 +3230,12 @@ namespace Aws
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
          * Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
          * <important> <p>If you call <code>ModifyCurrentDBClusterCapacity</code> with the
-         * default <code>TimeoutAction</code>, connections to the DB cluster are dropped
-         * when the capacity is set.</p> </important><p><h3>See Also:</h3>   <a
+         * default <code>TimeoutAction</code>, connections that prevent Aurora Serverless
+         * from finding a scaling point might be dropped. For more information about
+         * scaling points, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+         * Autoscaling for Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
          * API Reference</a></p>
          *
@@ -3248,8 +3256,12 @@ namespace Aws
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
          * Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
          * <important> <p>If you call <code>ModifyCurrentDBClusterCapacity</code> with the
-         * default <code>TimeoutAction</code>, connections to the DB cluster are dropped
-         * when the capacity is set.</p> </important><p><h3>See Also:</h3>   <a
+         * default <code>TimeoutAction</code>, connections that prevent Aurora Serverless
+         * from finding a scaling point might be dropped. For more information about
+         * scaling points, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+         * Autoscaling for Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
          * API Reference</a></p>
          *

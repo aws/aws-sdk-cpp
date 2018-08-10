@@ -46,6 +46,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
     m_manifestDurationFormatHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_minSegmentLength(0),
     m_minSegmentLengthHasBeenSet(false),
     m_outputSelection(HlsOutputSelection::NOT_SET),
@@ -89,6 +91,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
     m_manifestDurationFormatHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_minSegmentLength(0),
     m_minSegmentLengthHasBeenSet(false),
     m_outputSelection(HlsOutputSelection::NOT_SET),
@@ -198,6 +202,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_manifestDurationFormat = HlsManifestDurationFormatMapper::GetHlsManifestDurationFormatForName(jsonValue.GetString("manifestDurationFormat"));
 
     m_manifestDurationFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minFinalSegmentLength"))
+  {
+    m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
+
+    m_minFinalSegmentLengthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("minSegmentLength"))
@@ -352,6 +363,12 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_manifestDurationFormatHasBeenSet)
   {
    payload.WithString("manifestDurationFormat", HlsManifestDurationFormatMapper::GetNameForHlsManifestDurationFormat(m_manifestDurationFormat));
+  }
+
+  if(m_minFinalSegmentLengthHasBeenSet)
+  {
+   payload.WithDouble("minFinalSegmentLength", m_minFinalSegmentLength);
+
   }
 
   if(m_minSegmentLengthHasBeenSet)
