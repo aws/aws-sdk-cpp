@@ -35,7 +35,7 @@ namespace SageMakerEndpoint
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
     
     Aws::StringStream ss;
-    ss << "sagemaker" << ".";
+    ss << "api.sagemaker" << ".";
 
     if(useDualStack)
     {

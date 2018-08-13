@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Transfer;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.5.12;
+        version : 1.5.13;
 
         // Display name for package.
         title: AWS SDK for C++ (Transfer Manager);
@@ -48,8 +48,8 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.5.12,
-            AWSSDKCPP-S3/1.5.20060301.12
+            AWSSDKCPP-Core/1.5.13,
+            AWSSDKCPP-S3/1.5.20060301.13
        }
     }
 

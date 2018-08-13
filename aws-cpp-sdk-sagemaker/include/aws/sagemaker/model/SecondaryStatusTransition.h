@@ -121,36 +121,31 @@ namespace Model
 
     /**
      * <p>A timestamp that shows when the secondary status has ended and the job has
-     * transitioned into another secondary status. The <code>EndTime</code> timestamp
-     * is also set after the training job has ended.</p>
+     * transitioned into another secondary status. </p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>A timestamp that shows when the secondary status has ended and the job has
-     * transitioned into another secondary status. The <code>EndTime</code> timestamp
-     * is also set after the training job has ended.</p>
+     * transitioned into another secondary status. </p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>A timestamp that shows when the secondary status has ended and the job has
-     * transitioned into another secondary status. The <code>EndTime</code> timestamp
-     * is also set after the training job has ended.</p>
+     * transitioned into another secondary status. </p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>A timestamp that shows when the secondary status has ended and the job has
-     * transitioned into another secondary status. The <code>EndTime</code> timestamp
-     * is also set after the training job has ended.</p>
+     * transitioned into another secondary status. </p>
      */
     inline SecondaryStatusTransition& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>A timestamp that shows when the secondary status has ended and the job has
-     * transitioned into another secondary status. The <code>EndTime</code> timestamp
-     * is also set after the training job has ended.</p>
+     * transitioned into another secondary status. </p>
      */
     inline SecondaryStatusTransition& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

@@ -213,12 +213,7 @@ namespace Model
      * <p>Determines the number of records included in a single mini-batch.
      * <code>SingleRecord</code> means only one record is used per mini-batch.
      * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
 
@@ -226,12 +221,7 @@ namespace Model
      * <p>Determines the number of records included in a single mini-batch.
      * <code>SingleRecord</code> means only one record is used per mini-batch.
      * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline void SetBatchStrategy(const BatchStrategy& value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = value; }
 
@@ -239,12 +229,7 @@ namespace Model
      * <p>Determines the number of records included in a single mini-batch.
      * <code>SingleRecord</code> means only one record is used per mini-batch.
      * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline void SetBatchStrategy(BatchStrategy&& value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = std::move(value); }
 
@@ -252,12 +237,7 @@ namespace Model
      * <p>Determines the number of records included in a single mini-batch.
      * <code>SingleRecord</code> means only one record is used per mini-batch.
      * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline CreateTransformJobRequest& WithBatchStrategy(const BatchStrategy& value) { SetBatchStrategy(value); return *this;}
 
@@ -265,12 +245,7 @@ namespace Model
      * <p>Determines the number of records included in a single mini-batch.
      * <code>SingleRecord</code> means only one record is used per mini-batch.
      * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * that can fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline CreateTransformJobRequest& WithBatchStrategy(BatchStrategy&& value) { SetBatchStrategy(std::move(value)); return *this;}
 

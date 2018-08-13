@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-StorageGateway;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.5.20130630.12;
+        version : 1.5.20130630.13;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Storage Gateway);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.5.12
+            AWSSDKCPP-Core/1.5.13
        }
     }
 
