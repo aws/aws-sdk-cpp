@@ -45,7 +45,7 @@ namespace Model
 
 
     /**
-     * <p>The termination policies supported by Auto Scaling
+     * <p>The termination policies supported by Amazon EC2 Auto Scaling
      * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
@@ -53,7 +53,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetTerminationPolicyTypes() const{ return m_terminationPolicyTypes; }
 
     /**
-     * <p>The termination policies supported by Auto Scaling
+     * <p>The termination policies supported by Amazon EC2 Auto Scaling
      * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
@@ -61,7 +61,7 @@ namespace Model
     inline void SetTerminationPolicyTypes(const Aws::Vector<Aws::String>& value) { m_terminationPolicyTypes = value; }
 
     /**
-     * <p>The termination policies supported by Auto Scaling
+     * <p>The termination policies supported by Amazon EC2 Auto Scaling
      * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
@@ -69,7 +69,7 @@ namespace Model
     inline void SetTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { m_terminationPolicyTypes = std::move(value); }
 
     /**
-     * <p>The termination policies supported by Auto Scaling
+     * <p>The termination policies supported by Amazon EC2 Auto Scaling
      * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
@@ -77,7 +77,7 @@ namespace Model
     inline DescribeTerminationPolicyTypesResult& WithTerminationPolicyTypes(const Aws::Vector<Aws::String>& value) { SetTerminationPolicyTypes(value); return *this;}
 
     /**
-     * <p>The termination policies supported by Auto Scaling
+     * <p>The termination policies supported by Amazon EC2 Auto Scaling
      * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
@@ -85,7 +85,7 @@ namespace Model
     inline DescribeTerminationPolicyTypesResult& WithTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { SetTerminationPolicyTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The termination policies supported by Auto Scaling
+     * <p>The termination policies supported by Amazon EC2 Auto Scaling
      * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
@@ -93,7 +93,7 @@ namespace Model
     inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(const Aws::String& value) { m_terminationPolicyTypes.push_back(value); return *this; }
 
     /**
-     * <p>The termination policies supported by Auto Scaling
+     * <p>The termination policies supported by Amazon EC2 Auto Scaling
      * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
@@ -101,7 +101,7 @@ namespace Model
     inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(Aws::String&& value) { m_terminationPolicyTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The termination policies supported by Auto Scaling
+     * <p>The termination policies supported by Amazon EC2 Auto Scaling
      * (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>

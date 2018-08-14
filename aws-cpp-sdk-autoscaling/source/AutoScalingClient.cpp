@@ -30,6 +30,8 @@
 #include <aws/autoscaling/model/AttachInstancesRequest.h>
 #include <aws/autoscaling/model/AttachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/AttachLoadBalancersRequest.h>
+#include <aws/autoscaling/model/BatchDeleteScheduledActionRequest.h>
+#include <aws/autoscaling/model/BatchPutScheduledUpdateGroupActionRequest.h>
 #include <aws/autoscaling/model/CompleteLifecycleActionRequest.h>
 #include <aws/autoscaling/model/CreateAutoScalingGroupRequest.h>
 #include <aws/autoscaling/model/CreateLaunchConfigurationRequest.h>
@@ -258,6 +260,76 @@ void AutoScalingClient::AttachLoadBalancersAsync(const AttachLoadBalancersReques
 void AutoScalingClient::AttachLoadBalancersAsyncHelper(const AttachLoadBalancersRequest& request, const AttachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AttachLoadBalancers(request), context);
+}
+
+BatchDeleteScheduledActionOutcome AutoScalingClient::BatchDeleteScheduledAction(const BatchDeleteScheduledActionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return BatchDeleteScheduledActionOutcome(BatchDeleteScheduledActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchDeleteScheduledActionOutcome(outcome.GetError());
+  }
+}
+
+BatchDeleteScheduledActionOutcomeCallable AutoScalingClient::BatchDeleteScheduledActionCallable(const BatchDeleteScheduledActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteScheduledActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteScheduledAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::BatchDeleteScheduledActionAsync(const BatchDeleteScheduledActionRequest& request, const BatchDeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteScheduledActionAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::BatchDeleteScheduledActionAsyncHelper(const BatchDeleteScheduledActionRequest& request, const BatchDeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDeleteScheduledAction(request), context);
+}
+
+BatchPutScheduledUpdateGroupActionOutcome AutoScalingClient::BatchPutScheduledUpdateGroupAction(const BatchPutScheduledUpdateGroupActionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return BatchPutScheduledUpdateGroupActionOutcome(BatchPutScheduledUpdateGroupActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchPutScheduledUpdateGroupActionOutcome(outcome.GetError());
+  }
+}
+
+BatchPutScheduledUpdateGroupActionOutcomeCallable AutoScalingClient::BatchPutScheduledUpdateGroupActionCallable(const BatchPutScheduledUpdateGroupActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchPutScheduledUpdateGroupActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchPutScheduledUpdateGroupAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::BatchPutScheduledUpdateGroupActionAsync(const BatchPutScheduledUpdateGroupActionRequest& request, const BatchPutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchPutScheduledUpdateGroupActionAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::BatchPutScheduledUpdateGroupActionAsyncHelper(const BatchPutScheduledUpdateGroupActionRequest& request, const BatchPutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchPutScheduledUpdateGroupAction(request), context);
 }
 
 CompleteLifecycleActionOutcome AutoScalingClient::CompleteLifecycleAction(const CompleteLifecycleActionRequest& request) const

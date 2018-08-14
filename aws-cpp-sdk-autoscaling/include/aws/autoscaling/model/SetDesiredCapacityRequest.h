@@ -102,26 +102,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether Auto Scaling waits for the cooldown period to complete
-     * before initiating a scaling activity to set your Auto Scaling group to its new
-     * capacity. By default, Auto Scaling does not honor the cooldown period during
-     * manual scaling activities.</p>
+     * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
+     * complete before initiating a scaling activity to set your Auto Scaling group to
+     * its new capacity. By default, Amazon EC2 Auto Scaling does not honor the
+     * cooldown period during manual scaling activities.</p>
      */
     inline bool GetHonorCooldown() const{ return m_honorCooldown; }
 
     /**
-     * <p>Indicates whether Auto Scaling waits for the cooldown period to complete
-     * before initiating a scaling activity to set your Auto Scaling group to its new
-     * capacity. By default, Auto Scaling does not honor the cooldown period during
-     * manual scaling activities.</p>
+     * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
+     * complete before initiating a scaling activity to set your Auto Scaling group to
+     * its new capacity. By default, Amazon EC2 Auto Scaling does not honor the
+     * cooldown period during manual scaling activities.</p>
      */
     inline void SetHonorCooldown(bool value) { m_honorCooldownHasBeenSet = true; m_honorCooldown = value; }
 
     /**
-     * <p>Indicates whether Auto Scaling waits for the cooldown period to complete
-     * before initiating a scaling activity to set your Auto Scaling group to its new
-     * capacity. By default, Auto Scaling does not honor the cooldown period during
-     * manual scaling activities.</p>
+     * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
+     * complete before initiating a scaling activity to set your Auto Scaling group to
+     * its new capacity. By default, Amazon EC2 Auto Scaling does not honor the
+     * cooldown period during manual scaling activities.</p>
      */
     inline SetDesiredCapacityRequest& WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}
 

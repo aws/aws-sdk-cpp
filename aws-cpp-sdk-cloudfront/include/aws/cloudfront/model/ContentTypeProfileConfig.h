@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>The configuration for a field-level encryption content type-profile mapping.
    * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ContentTypeProfileConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ContentTypeProfileConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ContentTypeProfileConfig

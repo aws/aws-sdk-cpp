@@ -36,12 +36,16 @@
 #include <aws/es/model/DescribeElasticsearchInstanceTypeLimitsRequest.h>
 #include <aws/es/model/DescribeReservedElasticsearchInstanceOfferingsRequest.h>
 #include <aws/es/model/DescribeReservedElasticsearchInstancesRequest.h>
+#include <aws/es/model/GetCompatibleElasticsearchVersionsRequest.h>
+#include <aws/es/model/GetUpgradeHistoryRequest.h>
+#include <aws/es/model/GetUpgradeStatusRequest.h>
 #include <aws/es/model/ListElasticsearchInstanceTypesRequest.h>
 #include <aws/es/model/ListElasticsearchVersionsRequest.h>
 #include <aws/es/model/ListTagsRequest.h>
 #include <aws/es/model/PurchaseReservedElasticsearchInstanceOfferingRequest.h>
 #include <aws/es/model/RemoveTagsRequest.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigRequest.h>
+#include <aws/es/model/UpgradeElasticsearchDomainRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -463,6 +467,115 @@ void ElasticsearchServiceClient::DescribeReservedElasticsearchInstancesAsyncHelp
   handler(this, request, DescribeReservedElasticsearchInstances(request), context);
 }
 
+GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompatibleElasticsearchVersions(const GetCompatibleElasticsearchVersionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-01-01/es/compatibleVersions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCompatibleElasticsearchVersionsOutcome(GetCompatibleElasticsearchVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCompatibleElasticsearchVersionsOutcome(outcome.GetError());
+  }
+}
+
+GetCompatibleElasticsearchVersionsOutcomeCallable ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsCallable(const GetCompatibleElasticsearchVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCompatibleElasticsearchVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCompatibleElasticsearchVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsAsync(const GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCompatibleElasticsearchVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsAsyncHelper(const GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCompatibleElasticsearchVersions(request), context);
+}
+
+GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-01-01/es/upgradeDomain/";
+  ss << request.GetDomainName();
+  ss << "/history";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetUpgradeHistoryOutcome(GetUpgradeHistoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUpgradeHistoryOutcome(outcome.GetError());
+  }
+}
+
+GetUpgradeHistoryOutcomeCallable ElasticsearchServiceClient::GetUpgradeHistoryCallable(const GetUpgradeHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUpgradeHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUpgradeHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::GetUpgradeHistoryAsync(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUpgradeHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::GetUpgradeHistoryAsyncHelper(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUpgradeHistory(request), context);
+}
+
+GetUpgradeStatusOutcome ElasticsearchServiceClient::GetUpgradeStatus(const GetUpgradeStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-01-01/es/upgradeDomain/";
+  ss << request.GetDomainName();
+  ss << "/status";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetUpgradeStatusOutcome(GetUpgradeStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUpgradeStatusOutcome(outcome.GetError());
+  }
+}
+
+GetUpgradeStatusOutcomeCallable ElasticsearchServiceClient::GetUpgradeStatusCallable(const GetUpgradeStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUpgradeStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUpgradeStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::GetUpgradeStatusAsync(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUpgradeStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::GetUpgradeStatusAsyncHelper(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUpgradeStatus(request), context);
+}
+
 ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames() const
 {
   Aws::StringStream ss;
@@ -708,5 +821,40 @@ void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsync(const Upda
 void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsyncHelper(const UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateElasticsearchDomainConfig(request), context);
+}
+
+UpgradeElasticsearchDomainOutcome ElasticsearchServiceClient::UpgradeElasticsearchDomain(const UpgradeElasticsearchDomainRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-01-01/es/upgradeDomain";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpgradeElasticsearchDomainOutcome(UpgradeElasticsearchDomainResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpgradeElasticsearchDomainOutcome(outcome.GetError());
+  }
+}
+
+UpgradeElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::UpgradeElasticsearchDomainCallable(const UpgradeElasticsearchDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpgradeElasticsearchDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpgradeElasticsearchDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::UpgradeElasticsearchDomainAsync(const UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpgradeElasticsearchDomainAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::UpgradeElasticsearchDomainAsyncHelper(const UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpgradeElasticsearchDomain(request), context);
 }
 

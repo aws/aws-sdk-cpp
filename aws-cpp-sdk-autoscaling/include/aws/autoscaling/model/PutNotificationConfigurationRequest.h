@@ -128,56 +128,56 @@ namespace Model
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
-     * about notification types supported by Auto Scaling, see
+     * about notification types supported by Amazon EC2 Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationTypes() const{ return m_notificationTypes; }
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
-     * about notification types supported by Auto Scaling, see
+     * about notification types supported by Amazon EC2 Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline void SetNotificationTypes(const Aws::Vector<Aws::String>& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes = value; }
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
-     * about notification types supported by Auto Scaling, see
+     * about notification types supported by Amazon EC2 Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline void SetNotificationTypes(Aws::Vector<Aws::String>&& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes = std::move(value); }
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
-     * about notification types supported by Auto Scaling, see
+     * about notification types supported by Amazon EC2 Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline PutNotificationConfigurationRequest& WithNotificationTypes(const Aws::Vector<Aws::String>& value) { SetNotificationTypes(value); return *this;}
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
-     * about notification types supported by Auto Scaling, see
+     * about notification types supported by Amazon EC2 Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline PutNotificationConfigurationRequest& WithNotificationTypes(Aws::Vector<Aws::String>&& value) { SetNotificationTypes(std::move(value)); return *this;}
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
-     * about notification types supported by Auto Scaling, see
+     * about notification types supported by Amazon EC2 Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline PutNotificationConfigurationRequest& AddNotificationTypes(const Aws::String& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(value); return *this; }
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
-     * about notification types supported by Auto Scaling, see
+     * about notification types supported by Amazon EC2 Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline PutNotificationConfigurationRequest& AddNotificationTypes(Aws::String&& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
-     * about notification types supported by Auto Scaling, see
+     * about notification types supported by Amazon EC2 Auto Scaling, see
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline PutNotificationConfigurationRequest& AddNotificationTypes(const char* value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(value); return *this; }

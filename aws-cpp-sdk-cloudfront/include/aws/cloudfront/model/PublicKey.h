@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>A complex data type of public keys you add to CloudFront to use with features
    * like field-level encryption.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/PublicKey">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/PublicKey">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API PublicKey

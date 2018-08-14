@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex type that contains a Lambda function association.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/LambdaFunctionAssociation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/LambdaFunctionAssociation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API LambdaFunctionAssociation
@@ -192,6 +192,31 @@ namespace Model
      */
     inline LambdaFunctionAssociation& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A flag that allows a Lambda function to have read access to the body content.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">Accessing
+     * Body Content</a> in the Amazon CloudFront Developer Guide.</p>
+     */
+    inline bool GetIncludeBody() const{ return m_includeBody; }
+
+    /**
+     * <p>A flag that allows a Lambda function to have read access to the body content.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">Accessing
+     * Body Content</a> in the Amazon CloudFront Developer Guide.</p>
+     */
+    inline void SetIncludeBody(bool value) { m_includeBodyHasBeenSet = true; m_includeBody = value; }
+
+    /**
+     * <p>A flag that allows a Lambda function to have read access to the body content.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">Accessing
+     * Body Content</a> in the Amazon CloudFront Developer Guide.</p>
+     */
+    inline LambdaFunctionAssociation& WithIncludeBody(bool value) { SetIncludeBody(value); return *this;}
+
   private:
 
     Aws::String m_lambdaFunctionARN;
@@ -199,6 +224,9 @@ namespace Model
 
     EventType m_eventType;
     bool m_eventTypeHasBeenSet;
+
+    bool m_includeBody;
+    bool m_includeBodyHasBeenSet;
   };
 
 } // namespace Model

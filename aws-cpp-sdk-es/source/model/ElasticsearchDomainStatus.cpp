@@ -40,6 +40,8 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_endpointsHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
+    m_upgradeProcessing(false),
+    m_upgradeProcessingHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
@@ -65,6 +67,8 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(JsonView jsonValue) :
     m_endpointsHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
+    m_upgradeProcessing(false),
+    m_upgradeProcessingHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
@@ -138,6 +142,13 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(JsonView jsonVa
     m_processing = jsonValue.GetBool("Processing");
 
     m_processingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UpgradeProcessing"))
+  {
+    m_upgradeProcessing = jsonValue.GetBool("UpgradeProcessing");
+
+    m_upgradeProcessingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ElasticsearchVersion"))
@@ -273,6 +284,12 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
   if(m_processingHasBeenSet)
   {
    payload.WithBool("Processing", m_processing);
+
+  }
+
+  if(m_upgradeProcessingHasBeenSet)
+  {
+   payload.WithBool("UpgradeProcessing", m_upgradeProcessing);
 
   }
 

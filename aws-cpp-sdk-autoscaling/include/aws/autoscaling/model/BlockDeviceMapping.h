@@ -157,22 +157,22 @@ namespace Model
 
     /**
      * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. Auto Scaling launches a
-     * replacement instance if the instance fails the health check.</p>
+     * device, the instance might fail the EC2 health check. Amazon EC2 Auto Scaling
+     * launches a replacement instance if the instance fails the health check.</p>
      */
     inline bool GetNoDevice() const{ return m_noDevice; }
 
     /**
      * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. Auto Scaling launches a
-     * replacement instance if the instance fails the health check.</p>
+     * device, the instance might fail the EC2 health check. Amazon EC2 Auto Scaling
+     * launches a replacement instance if the instance fails the health check.</p>
      */
     inline void SetNoDevice(bool value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
     /**
      * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. Auto Scaling launches a
-     * replacement instance if the instance fails the health check.</p>
+     * device, the instance might fail the EC2 health check. Amazon EC2 Auto Scaling
+     * launches a replacement instance if the instance fails the health check.</p>
      */
     inline BlockDeviceMapping& WithNoDevice(bool value) { SetNoDevice(value); return *this;}
 

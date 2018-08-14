@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>The field-level encryption profile summary.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/FieldLevelEncryptionProfileSummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/FieldLevelEncryptionProfileSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldLevelEncryptionProfileSummary

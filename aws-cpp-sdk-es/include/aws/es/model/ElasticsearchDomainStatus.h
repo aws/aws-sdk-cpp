@@ -403,6 +403,28 @@ namespace Model
     inline ElasticsearchDomainStatus& WithProcessing(bool value) { SetProcessing(value); return *this;}
 
 
+    /**
+     * <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if
+     * Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code>
+     * if the configuration is active.</p>
+     */
+    inline bool GetUpgradeProcessing() const{ return m_upgradeProcessing; }
+
+    /**
+     * <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if
+     * Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code>
+     * if the configuration is active.</p>
+     */
+    inline void SetUpgradeProcessing(bool value) { m_upgradeProcessingHasBeenSet = true; m_upgradeProcessing = value; }
+
+    /**
+     * <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if
+     * Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code>
+     * if the configuration is active.</p>
+     */
+    inline ElasticsearchDomainStatus& WithUpgradeProcessing(bool value) { SetUpgradeProcessing(value); return *this;}
+
+
     
     inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
 
@@ -788,6 +810,9 @@ namespace Model
 
     bool m_processing;
     bool m_processingHasBeenSet;
+
+    bool m_upgradeProcessing;
+    bool m_upgradeProcessingHasBeenSet;
 
     Aws::String m_elasticsearchVersion;
     bool m_elasticsearchVersionHasBeenSet;
