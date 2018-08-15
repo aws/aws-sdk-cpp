@@ -101,6 +101,25 @@ namespace Model
 
 
     /**
+     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * true.</p>
+     */
+    inline bool GetVideoCapture() const{ return m_videoCapture; }
+
+    /**
+     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * true.</p>
+     */
+    inline void SetVideoCapture(bool value) { m_videoCaptureHasBeenSet = true; m_videoCapture = value; }
+
+    /**
+     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * true.</p>
+     */
+    inline ExecutionConfiguration& WithVideoCapture(bool value) { SetVideoCapture(value); return *this;}
+
+
+    /**
      * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
      * your app again. For public devices, Device Farm always signs your apps again and
      * this parameter has no effect.</p> <p>For more information about how Device Farm
@@ -137,6 +156,9 @@ namespace Model
 
     bool m_appPackagesCleanup;
     bool m_appPackagesCleanupHasBeenSet;
+
+    bool m_videoCapture;
+    bool m_videoCaptureHasBeenSet;
 
     bool m_skipAppResign;
     bool m_skipAppResignHasBeenSet;

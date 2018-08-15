@@ -1011,6 +1011,42 @@ namespace Model
      */
     inline Run& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification for the run.</p>
+     */
+    inline const Aws::String& GetTestSpecArn() const{ return m_testSpecArn; }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification for the run.</p>
+     */
+    inline void SetTestSpecArn(const Aws::String& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = value; }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification for the run.</p>
+     */
+    inline void SetTestSpecArn(Aws::String&& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification for the run.</p>
+     */
+    inline void SetTestSpecArn(const char* value) { m_testSpecArnHasBeenSet = true; m_testSpecArn.assign(value); }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification for the run.</p>
+     */
+    inline Run& WithTestSpecArn(const Aws::String& value) { SetTestSpecArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification for the run.</p>
+     */
+    inline Run& WithTestSpecArn(Aws::String&& value) { SetTestSpecArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification for the run.</p>
+     */
+    inline Run& WithTestSpecArn(const char* value) { SetTestSpecArn(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -1099,6 +1135,9 @@ namespace Model
 
     bool m_skipAppResign;
     bool m_skipAppResignHasBeenSet;
+
+    Aws::String m_testSpecArn;
+    bool m_testSpecArnHasBeenSet;
   };
 
 } // namespace Model

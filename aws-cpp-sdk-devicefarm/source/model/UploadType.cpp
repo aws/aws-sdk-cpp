@@ -46,6 +46,14 @@ namespace Aws
         static const int UIAUTOMATOR_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATOR_TEST_PACKAGE");
         static const int XCTEST_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_TEST_PACKAGE");
         static const int XCTEST_UI_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_UI_TEST_PACKAGE");
+        static const int APPIUM_JAVA_JUNIT_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_SPEC");
+        static const int APPIUM_JAVA_TESTNG_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_SPEC");
+        static const int APPIUM_PYTHON_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_PYTHON_TEST_SPEC");
+        static const int APPIUM_WEB_JAVA_JUNIT_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_SPEC");
+        static const int APPIUM_WEB_JAVA_TESTNG_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_SPEC");
+        static const int APPIUM_WEB_PYTHON_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_SPEC");
+        static const int INSTRUMENTATION_TEST_SPEC_HASH = HashingUtils::HashString("INSTRUMENTATION_TEST_SPEC");
+        static const int XCTEST_UI_TEST_SPEC_HASH = HashingUtils::HashString("XCTEST_UI_TEST_SPEC");
 
 
         UploadType GetUploadTypeForName(const Aws::String& name)
@@ -115,6 +123,38 @@ namespace Aws
           {
             return UploadType::XCTEST_UI_TEST_PACKAGE;
           }
+          else if (hashCode == APPIUM_JAVA_JUNIT_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_JAVA_JUNIT_TEST_SPEC;
+          }
+          else if (hashCode == APPIUM_JAVA_TESTNG_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_JAVA_TESTNG_TEST_SPEC;
+          }
+          else if (hashCode == APPIUM_PYTHON_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_PYTHON_TEST_SPEC;
+          }
+          else if (hashCode == APPIUM_WEB_JAVA_JUNIT_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_WEB_JAVA_JUNIT_TEST_SPEC;
+          }
+          else if (hashCode == APPIUM_WEB_JAVA_TESTNG_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_WEB_JAVA_TESTNG_TEST_SPEC;
+          }
+          else if (hashCode == APPIUM_WEB_PYTHON_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_WEB_PYTHON_TEST_SPEC;
+          }
+          else if (hashCode == INSTRUMENTATION_TEST_SPEC_HASH)
+          {
+            return UploadType::INSTRUMENTATION_TEST_SPEC;
+          }
+          else if (hashCode == XCTEST_UI_TEST_SPEC_HASH)
+          {
+            return UploadType::XCTEST_UI_TEST_SPEC;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -161,6 +201,22 @@ namespace Aws
             return "XCTEST_TEST_PACKAGE";
           case UploadType::XCTEST_UI_TEST_PACKAGE:
             return "XCTEST_UI_TEST_PACKAGE";
+          case UploadType::APPIUM_JAVA_JUNIT_TEST_SPEC:
+            return "APPIUM_JAVA_JUNIT_TEST_SPEC";
+          case UploadType::APPIUM_JAVA_TESTNG_TEST_SPEC:
+            return "APPIUM_JAVA_TESTNG_TEST_SPEC";
+          case UploadType::APPIUM_PYTHON_TEST_SPEC:
+            return "APPIUM_PYTHON_TEST_SPEC";
+          case UploadType::APPIUM_WEB_JAVA_JUNIT_TEST_SPEC:
+            return "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC";
+          case UploadType::APPIUM_WEB_JAVA_TESTNG_TEST_SPEC:
+            return "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC";
+          case UploadType::APPIUM_WEB_PYTHON_TEST_SPEC:
+            return "APPIUM_WEB_PYTHON_TEST_SPEC";
+          case UploadType::INSTRUMENTATION_TEST_SPEC:
+            return "INSTRUMENTATION_TEST_SPEC";
+          case UploadType::XCTEST_UI_TEST_SPEC:
+            return "XCTEST_UI_TEST_SPEC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

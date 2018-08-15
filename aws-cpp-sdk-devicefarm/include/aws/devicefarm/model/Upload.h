@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/devicefarm/model/UploadType.h>
 #include <aws/devicefarm/model/UploadStatus.h>
+#include <aws/devicefarm/model/UploadCategory.h>
 #include <utility>
 
 namespace Aws
@@ -465,6 +466,42 @@ namespace Model
      */
     inline Upload& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
+    /**
+     * <p>The upload's category. Allowed values include:</p> <ul> <li> <p>CURATED: An
+     * upload managed by AWS Device Farm.</p> </li> <li> <p>PRIVATE: An upload managed
+     * by the AWS Device Farm customer.</p> </li> </ul>
+     */
+    inline const UploadCategory& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>The upload's category. Allowed values include:</p> <ul> <li> <p>CURATED: An
+     * upload managed by AWS Device Farm.</p> </li> <li> <p>PRIVATE: An upload managed
+     * by the AWS Device Farm customer.</p> </li> </ul>
+     */
+    inline void SetCategory(const UploadCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>The upload's category. Allowed values include:</p> <ul> <li> <p>CURATED: An
+     * upload managed by AWS Device Farm.</p> </li> <li> <p>PRIVATE: An upload managed
+     * by the AWS Device Farm customer.</p> </li> </ul>
+     */
+    inline void SetCategory(UploadCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>The upload's category. Allowed values include:</p> <ul> <li> <p>CURATED: An
+     * upload managed by AWS Device Farm.</p> </li> <li> <p>PRIVATE: An upload managed
+     * by the AWS Device Farm customer.</p> </li> </ul>
+     */
+    inline Upload& WithCategory(const UploadCategory& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>The upload's category. Allowed values include:</p> <ul> <li> <p>CURATED: An
+     * upload managed by AWS Device Farm.</p> </li> <li> <p>PRIVATE: An upload managed
+     * by the AWS Device Farm customer.</p> </li> </ul>
+     */
+    inline Upload& WithCategory(UploadCategory&& value) { SetCategory(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -493,6 +530,9 @@ namespace Model
 
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
+    UploadCategory m_category;
+    bool m_categoryHasBeenSet;
   };
 
 } // namespace Model

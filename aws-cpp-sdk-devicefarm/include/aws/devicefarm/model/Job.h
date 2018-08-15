@@ -551,6 +551,61 @@ namespace Model
      */
     inline Job& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline const Aws::String& GetVideoEndpoint() const{ return m_videoEndpoint; }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline void SetVideoEndpoint(const Aws::String& value) { m_videoEndpointHasBeenSet = true; m_videoEndpoint = value; }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline void SetVideoEndpoint(Aws::String&& value) { m_videoEndpointHasBeenSet = true; m_videoEndpoint = std::move(value); }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline void SetVideoEndpoint(const char* value) { m_videoEndpointHasBeenSet = true; m_videoEndpoint.assign(value); }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline Job& WithVideoEndpoint(const Aws::String& value) { SetVideoEndpoint(value); return *this;}
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline Job& WithVideoEndpoint(Aws::String&& value) { SetVideoEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline Job& WithVideoEndpoint(const char* value) { SetVideoEndpoint(value); return *this;}
+
+
+    /**
+     * <p>This value is set to true if video capture is enabled; otherwise, it is set
+     * to false.</p>
+     */
+    inline bool GetVideoCapture() const{ return m_videoCapture; }
+
+    /**
+     * <p>This value is set to true if video capture is enabled; otherwise, it is set
+     * to false.</p>
+     */
+    inline void SetVideoCapture(bool value) { m_videoCaptureHasBeenSet = true; m_videoCapture = value; }
+
+    /**
+     * <p>This value is set to true if video capture is enabled; otherwise, it is set
+     * to false.</p>
+     */
+    inline Job& WithVideoCapture(bool value) { SetVideoCapture(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -591,6 +646,12 @@ namespace Model
 
     DeviceMinutes m_deviceMinutes;
     bool m_deviceMinutesHasBeenSet;
+
+    Aws::String m_videoEndpoint;
+    bool m_videoEndpointHasBeenSet;
+
+    bool m_videoCapture;
+    bool m_videoCaptureHasBeenSet;
   };
 
 } // namespace Model

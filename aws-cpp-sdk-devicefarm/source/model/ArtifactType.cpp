@@ -57,6 +57,7 @@ namespace Aws
         static const int VIDEO_HASH = HashingUtils::HashString("VIDEO");
         static const int CUSTOMER_ARTIFACT_HASH = HashingUtils::HashString("CUSTOMER_ARTIFACT");
         static const int CUSTOMER_ARTIFACT_LOG_HASH = HashingUtils::HashString("CUSTOMER_ARTIFACT_LOG");
+        static const int TESTSPEC_OUTPUT_HASH = HashingUtils::HashString("TESTSPEC_OUTPUT");
 
 
         ArtifactType GetArtifactTypeForName(const Aws::String& name)
@@ -170,6 +171,10 @@ namespace Aws
           {
             return ArtifactType::CUSTOMER_ARTIFACT_LOG;
           }
+          else if (hashCode == TESTSPEC_OUTPUT_HASH)
+          {
+            return ArtifactType::TESTSPEC_OUTPUT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -238,6 +243,8 @@ namespace Aws
             return "CUSTOMER_ARTIFACT";
           case ArtifactType::CUSTOMER_ARTIFACT_LOG:
             return "CUSTOMER_ARTIFACT_LOG";
+          case ArtifactType::TESTSPEC_OUTPUT:
+            return "TESTSPEC_OUTPUT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -35,6 +35,8 @@ ExecutionConfiguration::ExecutionConfiguration() :
     m_accountsCleanupHasBeenSet(false),
     m_appPackagesCleanup(false),
     m_appPackagesCleanupHasBeenSet(false),
+    m_videoCapture(false),
+    m_videoCaptureHasBeenSet(false),
     m_skipAppResign(false),
     m_skipAppResignHasBeenSet(false)
 {
@@ -47,6 +49,8 @@ ExecutionConfiguration::ExecutionConfiguration(JsonView jsonValue) :
     m_accountsCleanupHasBeenSet(false),
     m_appPackagesCleanup(false),
     m_appPackagesCleanupHasBeenSet(false),
+    m_videoCapture(false),
+    m_videoCaptureHasBeenSet(false),
     m_skipAppResign(false),
     m_skipAppResignHasBeenSet(false)
 {
@@ -74,6 +78,13 @@ ExecutionConfiguration& ExecutionConfiguration::operator =(JsonView jsonValue)
     m_appPackagesCleanup = jsonValue.GetBool("appPackagesCleanup");
 
     m_appPackagesCleanupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("videoCapture"))
+  {
+    m_videoCapture = jsonValue.GetBool("videoCapture");
+
+    m_videoCaptureHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("skipAppResign"))
@@ -105,6 +116,12 @@ JsonValue ExecutionConfiguration::Jsonize() const
   if(m_appPackagesCleanupHasBeenSet)
   {
    payload.WithBool("appPackagesCleanup", m_appPackagesCleanup);
+
+  }
+
+  if(m_videoCaptureHasBeenSet)
+  {
+   payload.WithBool("videoCapture", m_videoCapture);
 
   }
 

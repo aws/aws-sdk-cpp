@@ -81,6 +81,7 @@
 #include <aws/devicefarm/model/PurchaseOfferingRequest.h>
 #include <aws/devicefarm/model/RenewOfferingRequest.h>
 #include <aws/devicefarm/model/ScheduleRunRequest.h>
+#include <aws/devicefarm/model/StopJobRequest.h>
 #include <aws/devicefarm/model/StopRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/StopRunRequest.h>
 #include <aws/devicefarm/model/UpdateDeviceInstanceRequest.h>
@@ -88,6 +89,7 @@
 #include <aws/devicefarm/model/UpdateInstanceProfileRequest.h>
 #include <aws/devicefarm/model/UpdateNetworkProfileRequest.h>
 #include <aws/devicefarm/model/UpdateProjectRequest.h>
+#include <aws/devicefarm/model/UpdateUploadRequest.h>
 #include <aws/devicefarm/model/UpdateVPCEConfigurationRequest.h>
 
 using namespace Aws;
@@ -2044,6 +2046,41 @@ void DeviceFarmClient::ScheduleRunAsyncHelper(const ScheduleRunRequest& request,
   handler(this, request, ScheduleRun(request), context);
 }
 
+StopJobOutcome DeviceFarmClient::StopJob(const StopJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopJobOutcome(StopJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopJobOutcome(outcome.GetError());
+  }
+}
+
+StopJobOutcomeCallable DeviceFarmClient::StopJobCallable(const StopJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::StopJobAsync(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopJobAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::StopJobAsyncHelper(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopJob(request), context);
+}
+
 StopRemoteAccessSessionOutcome DeviceFarmClient::StopRemoteAccessSession(const StopRemoteAccessSessionRequest& request) const
 {
   Aws::StringStream ss;
@@ -2287,6 +2324,41 @@ void DeviceFarmClient::UpdateProjectAsync(const UpdateProjectRequest& request, c
 void DeviceFarmClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateProject(request), context);
+}
+
+UpdateUploadOutcome DeviceFarmClient::UpdateUpload(const UpdateUploadRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateUploadOutcome(UpdateUploadResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateUploadOutcome(outcome.GetError());
+  }
+}
+
+UpdateUploadOutcomeCallable DeviceFarmClient::UpdateUploadCallable(const UpdateUploadRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUpload(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::UpdateUploadAsync(const UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateUploadAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::UpdateUploadAsyncHelper(const UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateUpload(request), context);
 }
 
 UpdateVPCEConfigurationOutcome DeviceFarmClient::UpdateVPCEConfiguration(const UpdateVPCEConfigurationRequest& request) const

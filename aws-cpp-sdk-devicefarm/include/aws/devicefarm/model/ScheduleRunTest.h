@@ -177,6 +177,42 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline const Aws::String& GetTestSpecArn() const{ return m_testSpecArn; }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline void SetTestSpecArn(const Aws::String& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = value; }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline void SetTestSpecArn(Aws::String&& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline void SetTestSpecArn(const char* value) { m_testSpecArnHasBeenSet = true; m_testSpecArn.assign(value); }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline ScheduleRunTest& WithTestSpecArn(const Aws::String& value) { SetTestSpecArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline ScheduleRunTest& WithTestSpecArn(Aws::String&& value) { SetTestSpecArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline ScheduleRunTest& WithTestSpecArn(const char* value) { SetTestSpecArn(value); return *this;}
+
+
+    /**
      * <p>The test's filter.</p>
      */
     inline const Aws::String& GetFilter() const{ return m_filter; }
@@ -699,6 +735,9 @@ namespace Model
 
     Aws::String m_testPackageArn;
     bool m_testPackageArnHasBeenSet;
+
+    Aws::String m_testSpecArn;
+    bool m_testSpecArnHasBeenSet;
 
     Aws::String m_filter;
     bool m_filterHasBeenSet;

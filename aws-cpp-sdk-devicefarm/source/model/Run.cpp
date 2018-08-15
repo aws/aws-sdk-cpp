@@ -69,7 +69,8 @@ Run::Run() :
     m_customerArtifactPathsHasBeenSet(false),
     m_webUrlHasBeenSet(false),
     m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false)
+    m_skipAppResignHasBeenSet(false),
+    m_testSpecArnHasBeenSet(false)
 {
 }
 
@@ -114,7 +115,8 @@ Run::Run(JsonView jsonValue) :
     m_customerArtifactPathsHasBeenSet(false),
     m_webUrlHasBeenSet(false),
     m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false)
+    m_skipAppResignHasBeenSet(false),
+    m_testSpecArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -324,6 +326,13 @@ Run& Run::operator =(JsonView jsonValue)
     m_skipAppResignHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("testSpecArn"))
+  {
+    m_testSpecArn = jsonValue.GetString("testSpecArn");
+
+    m_testSpecArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -493,6 +502,12 @@ JsonValue Run::Jsonize() const
   if(m_skipAppResignHasBeenSet)
   {
    payload.WithBool("skipAppResign", m_skipAppResign);
+
+  }
+
+  if(m_testSpecArnHasBeenSet)
+  {
+   payload.WithString("testSpecArn", m_testSpecArn);
 
   }
 

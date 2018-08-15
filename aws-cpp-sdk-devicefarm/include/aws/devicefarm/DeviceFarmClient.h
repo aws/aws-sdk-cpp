@@ -75,6 +75,7 @@
 #include <aws/devicefarm/model/PurchaseOfferingResult.h>
 #include <aws/devicefarm/model/RenewOfferingResult.h>
 #include <aws/devicefarm/model/ScheduleRunResult.h>
+#include <aws/devicefarm/model/StopJobResult.h>
 #include <aws/devicefarm/model/StopRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/StopRunResult.h>
 #include <aws/devicefarm/model/UpdateDeviceInstanceResult.h>
@@ -82,6 +83,7 @@
 #include <aws/devicefarm/model/UpdateInstanceProfileResult.h>
 #include <aws/devicefarm/model/UpdateNetworkProfileResult.h>
 #include <aws/devicefarm/model/UpdateProjectResult.h>
+#include <aws/devicefarm/model/UpdateUploadResult.h>
 #include <aws/devicefarm/model/UpdateVPCEConfigurationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -177,6 +179,7 @@ namespace Model
         class PurchaseOfferingRequest;
         class RenewOfferingRequest;
         class ScheduleRunRequest;
+        class StopJobRequest;
         class StopRemoteAccessSessionRequest;
         class StopRunRequest;
         class UpdateDeviceInstanceRequest;
@@ -184,6 +187,7 @@ namespace Model
         class UpdateInstanceProfileRequest;
         class UpdateNetworkProfileRequest;
         class UpdateProjectRequest;
+        class UpdateUploadRequest;
         class UpdateVPCEConfigurationRequest;
 
         typedef Aws::Utils::Outcome<CreateDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateDevicePoolOutcome;
@@ -240,6 +244,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PurchaseOfferingResult, Aws::Client::AWSError<DeviceFarmErrors>> PurchaseOfferingOutcome;
         typedef Aws::Utils::Outcome<RenewOfferingResult, Aws::Client::AWSError<DeviceFarmErrors>> RenewOfferingOutcome;
         typedef Aws::Utils::Outcome<ScheduleRunResult, Aws::Client::AWSError<DeviceFarmErrors>> ScheduleRunOutcome;
+        typedef Aws::Utils::Outcome<StopJobResult, Aws::Client::AWSError<DeviceFarmErrors>> StopJobOutcome;
         typedef Aws::Utils::Outcome<StopRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<StopRunResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRunOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceInstanceResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateDeviceInstanceOutcome;
@@ -247,6 +252,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<UpdateUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateUploadOutcome;
         typedef Aws::Utils::Outcome<UpdateVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateVPCEConfigurationOutcome;
 
         typedef std::future<CreateDevicePoolOutcome> CreateDevicePoolOutcomeCallable;
@@ -303,6 +309,7 @@ namespace Model
         typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
         typedef std::future<RenewOfferingOutcome> RenewOfferingOutcomeCallable;
         typedef std::future<ScheduleRunOutcome> ScheduleRunOutcomeCallable;
+        typedef std::future<StopJobOutcome> StopJobOutcomeCallable;
         typedef std::future<StopRemoteAccessSessionOutcome> StopRemoteAccessSessionOutcomeCallable;
         typedef std::future<StopRunOutcome> StopRunOutcomeCallable;
         typedef std::future<UpdateDeviceInstanceOutcome> UpdateDeviceInstanceOutcomeCallable;
@@ -310,6 +317,7 @@ namespace Model
         typedef std::future<UpdateInstanceProfileOutcome> UpdateInstanceProfileOutcomeCallable;
         typedef std::future<UpdateNetworkProfileOutcome> UpdateNetworkProfileOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+        typedef std::future<UpdateUploadOutcome> UpdateUploadOutcomeCallable;
         typedef std::future<UpdateVPCEConfigurationOutcome> UpdateVPCEConfigurationOutcomeCallable;
 } // namespace Model
 
@@ -369,6 +377,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::RenewOfferingRequest&, const Model::RenewOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenewOfferingResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ScheduleRunRequest&, const Model::ScheduleRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScheduleRunResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::StopJobRequest&, const Model::StopJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopJobResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::StopRemoteAccessSessionRequest&, const Model::StopRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::StopRunRequest&, const Model::StopRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRunResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateDeviceInstanceRequest&, const Model::UpdateDeviceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceInstanceResponseReceivedHandler;
@@ -376,6 +385,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateInstanceProfileRequest&, const Model::UpdateInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateNetworkProfileRequest&, const Model::UpdateNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::UpdateUploadRequest&, const Model::UpdateUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUploadResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateVPCEConfigurationRequest&, const Model::UpdateVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVPCEConfigurationResponseReceivedHandler;
 
   /**
@@ -1958,6 +1968,49 @@ namespace Model
         virtual void ScheduleRunAsync(const Model::ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Initiates a stop request for the current job. AWS Device Farm will
+         * immediately stop the job on the device where tests have not started executing,
+         * and you will not be billed for this device. On the device where tests have
+         * started executing, Setup Suite and Teardown Suite tests will run to completion
+         * before stopping execution on the device. You will be billed for Setup, Teardown,
+         * and any tests that were in progress or already completed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopJobOutcome StopJob(const Model::StopJobRequest& request) const;
+
+        /**
+         * <p>Initiates a stop request for the current job. AWS Device Farm will
+         * immediately stop the job on the device where tests have not started executing,
+         * and you will not be billed for this device. On the device where tests have
+         * started executing, Setup Suite and Teardown Suite tests will run to completion
+         * before stopping execution on the device. You will be billed for Setup, Teardown,
+         * and any tests that were in progress or already completed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopJobOutcomeCallable StopJobCallable(const Model::StopJobRequest& request) const;
+
+        /**
+         * <p>Initiates a stop request for the current job. AWS Device Farm will
+         * immediately stop the job on the device where tests have not started executing,
+         * and you will not be billed for this device. On the device where tests have
+         * started executing, Setup Suite and Teardown Suite tests will run to completion
+         * before stopping execution on the device. You will be billed for Setup, Teardown,
+         * and any tests that were in progress or already completed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopJobAsync(const Model::StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Ends a specified remote access session.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">AWS
          * API Reference</a></p>
@@ -2169,6 +2222,34 @@ namespace Model
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update an uploaded test specification (test spec).</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateUploadOutcome UpdateUpload(const Model::UpdateUploadRequest& request) const;
+
+        /**
+         * <p>Update an uploaded test specification (test spec).</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateUploadOutcomeCallable UpdateUploadCallable(const Model::UpdateUploadRequest& request) const;
+
+        /**
+         * <p>Update an uploaded test specification (test spec).</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateUploadAsync(const Model::UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates information about an existing Amazon Virtual Private Cloud (VPC)
          * endpoint configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">AWS
@@ -2255,6 +2336,7 @@ namespace Model
         void PurchaseOfferingAsyncHelper(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenewOfferingAsyncHelper(const Model::RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ScheduleRunAsyncHelper(const Model::ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopJobAsyncHelper(const Model::StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopRemoteAccessSessionAsyncHelper(const Model::StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopRunAsyncHelper(const Model::StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceInstanceAsyncHelper(const Model::UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2262,6 +2344,7 @@ namespace Model
         void UpdateInstanceProfileAsyncHelper(const Model::UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNetworkProfileAsyncHelper(const Model::UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateUploadAsyncHelper(const Model::UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVPCEConfigurationAsyncHelper(const Model::UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

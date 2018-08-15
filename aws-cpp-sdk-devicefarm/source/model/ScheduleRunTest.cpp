@@ -32,6 +32,7 @@ ScheduleRunTest::ScheduleRunTest() :
     m_type(TestType::NOT_SET),
     m_typeHasBeenSet(false),
     m_testPackageArnHasBeenSet(false),
+    m_testSpecArnHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
@@ -41,6 +42,7 @@ ScheduleRunTest::ScheduleRunTest(JsonView jsonValue) :
     m_type(TestType::NOT_SET),
     m_typeHasBeenSet(false),
     m_testPackageArnHasBeenSet(false),
+    m_testSpecArnHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
@@ -61,6 +63,13 @@ ScheduleRunTest& ScheduleRunTest::operator =(JsonView jsonValue)
     m_testPackageArn = jsonValue.GetString("testPackageArn");
 
     m_testPackageArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("testSpecArn"))
+  {
+    m_testSpecArn = jsonValue.GetString("testSpecArn");
+
+    m_testSpecArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("filter"))
@@ -95,6 +104,12 @@ JsonValue ScheduleRunTest::Jsonize() const
   if(m_testPackageArnHasBeenSet)
   {
    payload.WithString("testPackageArn", m_testPackageArn);
+
+  }
+
+  if(m_testSpecArnHasBeenSet)
+  {
+   payload.WithString("testSpecArn", m_testSpecArn);
 
   }
 
