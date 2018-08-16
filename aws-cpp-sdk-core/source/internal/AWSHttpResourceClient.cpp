@@ -74,7 +74,7 @@ namespace {
     }
 }
 
-AWSHttpResourceClient::AWSHttpResourceClient(const Client::ClientConfiguration& clientConfiguration, const char* logtag)
+AWSHttpResourceClient::AWSHttpResourceClient(const Aws::Client::ClientConfiguration& clientConfiguration, const char* logtag)
 : m_logtag(logtag), m_retryStrategy(clientConfiguration.retryStrategy), m_httpClient(nullptr)
 {
     AWS_LOGSTREAM_INFO(m_logtag.c_str(),
@@ -152,7 +152,7 @@ EC2MetadataClient::EC2MetadataClient(const char* endpoint)
 {
 }
 
-EC2MetadataClient::EC2MetadataClient(const Client::ClientConfiguration& clientConfiguration, const char* endpoint)
+EC2MetadataClient::EC2MetadataClient(const Aws::Client::ClientConfiguration& clientConfiguration, const char* endpoint)
     : AWSHttpResourceClient(clientConfiguration, EC2_METADATA_CLIENT_LOG_TAG), m_endpoint(endpoint)
 {
 }
@@ -240,7 +240,7 @@ ECSCredentialsClient::ECSCredentialsClient(const char* resourcePath, const char*
 {
 }
 
-ECSCredentialsClient::ECSCredentialsClient(const Client::ClientConfiguration& clientConfiguration, const char* resourcePath, const char* endpoint, const char* token)
+ECSCredentialsClient::ECSCredentialsClient(const Aws::Client::ClientConfiguration& clientConfiguration, const char* resourcePath, const char* endpoint, const char* token)
     : AWSHttpResourceClient(clientConfiguration, ECS_CREDENTIALS_CLIENT_LOG_TAG),
     m_resourcePath(resourcePath), m_endpoint(endpoint), m_token(token)
 {
