@@ -29,9 +29,11 @@ namespace ApplicationDiscoveryServiceErrorMapper
 {
 
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int SERVER_INTERNAL_ERROR_HASH = HashingUtils::HashString("ServerInternalErrorException");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 static const int AUTHORIZATION_ERROR_HASH = HashingUtils::HashString("AuthorizationErrorException");
+static const int CONFLICT_ERROR_HASH = HashingUtils::HashString("ConflictErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -41,6 +43,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationDiscoveryServiceErrors::INVALID_PARAMETER), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationDiscoveryServiceErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == SERVER_INTERNAL_ERROR_HASH)
   {
@@ -53,6 +59,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == AUTHORIZATION_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationDiscoveryServiceErrors::AUTHORIZATION_ERROR), false);
+  }
+  else if (hashCode == CONFLICT_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationDiscoveryServiceErrors::CONFLICT_ERROR), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

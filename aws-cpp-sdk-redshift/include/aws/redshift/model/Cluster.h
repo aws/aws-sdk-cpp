@@ -1395,6 +1395,49 @@ namespace Model
      */
     inline Cluster& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
 
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline const Aws::String& GetElasticResizeNumberOfNodeOptions() const{ return m_elasticResizeNumberOfNodeOptions; }
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline void SetElasticResizeNumberOfNodeOptions(const Aws::String& value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions = value; }
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline void SetElasticResizeNumberOfNodeOptions(Aws::String&& value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions = std::move(value); }
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline void SetElasticResizeNumberOfNodeOptions(const char* value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions.assign(value); }
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline Cluster& WithElasticResizeNumberOfNodeOptions(const Aws::String& value) { SetElasticResizeNumberOfNodeOptions(value); return *this;}
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline Cluster& WithElasticResizeNumberOfNodeOptions(Aws::String&& value) { SetElasticResizeNumberOfNodeOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline Cluster& WithElasticResizeNumberOfNodeOptions(const char* value) { SetElasticResizeNumberOfNodeOptions(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1501,6 +1544,9 @@ namespace Model
 
     Aws::String m_maintenanceTrackName;
     bool m_maintenanceTrackNameHasBeenSet;
+
+    Aws::String m_elasticResizeNumberOfNodeOptions;
+    bool m_elasticResizeNumberOfNodeOptionsHasBeenSet;
   };
 
 } // namespace Model

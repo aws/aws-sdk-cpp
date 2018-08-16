@@ -784,7 +784,7 @@ namespace Model
         /**
          * <p>Associates the specified Systems Manager document with the specified
          * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
          * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
@@ -797,7 +797,7 @@ namespace Model
         /**
          * <p>Associates the specified Systems Manager document with the specified
          * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
          * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
@@ -812,7 +812,7 @@ namespace Model
         /**
          * <p>Associates the specified Systems Manager document with the specified
          * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
          * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
@@ -827,7 +827,7 @@ namespace Model
         /**
          * <p>Associates the specified Systems Manager document with the specified
          * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
          * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
@@ -840,7 +840,7 @@ namespace Model
         /**
          * <p>Associates the specified Systems Manager document with the specified
          * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
          * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
@@ -855,7 +855,7 @@ namespace Model
         /**
          * <p>Associates the specified Systems Manager document with the specified
          * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
          * the system throws the AssociationAlreadyExists exception.</p><p><h3>See

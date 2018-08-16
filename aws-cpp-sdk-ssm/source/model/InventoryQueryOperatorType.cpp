@@ -35,6 +35,7 @@ namespace Aws
         static const int BeginWith_HASH = HashingUtils::HashString("BeginWith");
         static const int LessThan_HASH = HashingUtils::HashString("LessThan");
         static const int GreaterThan_HASH = HashingUtils::HashString("GreaterThan");
+        static const int Exists_HASH = HashingUtils::HashString("Exists");
 
 
         InventoryQueryOperatorType GetInventoryQueryOperatorTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return InventoryQueryOperatorType::GreaterThan;
           }
+          else if (hashCode == Exists_HASH)
+          {
+            return InventoryQueryOperatorType::Exists;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "LessThan";
           case InventoryQueryOperatorType::GreaterThan:
             return "GreaterThan";
+          case InventoryQueryOperatorType::Exists:
+            return "Exists";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

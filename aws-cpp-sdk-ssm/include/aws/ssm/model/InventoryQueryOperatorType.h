@@ -30,7 +30,8 @@ namespace Model
     NotEqual,
     BeginWith,
     LessThan,
-    GreaterThan
+    GreaterThan,
+    Exists
   };
 
 namespace InventoryQueryOperatorTypeMapper

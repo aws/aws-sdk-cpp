@@ -76,6 +76,7 @@
 #include <aws/redshift/model/PurchaseReservedNodeOfferingResult.h>
 #include <aws/redshift/model/RebootClusterResult.h>
 #include <aws/redshift/model/ResetClusterParameterGroupResult.h>
+#include <aws/redshift/model/ResizeClusterResult.h>
 #include <aws/redshift/model/RestoreFromClusterSnapshotResult.h>
 #include <aws/redshift/model/RestoreTableFromClusterSnapshotResult.h>
 #include <aws/redshift/model/RevokeClusterSecurityGroupIngressResult.h>
@@ -190,6 +191,7 @@ namespace Model
         class PurchaseReservedNodeOfferingRequest;
         class RebootClusterRequest;
         class ResetClusterParameterGroupRequest;
+        class ResizeClusterRequest;
         class RestoreFromClusterSnapshotRequest;
         class RestoreTableFromClusterSnapshotRequest;
         class RevokeClusterSecurityGroupIngressRequest;
@@ -259,6 +261,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PurchaseReservedNodeOfferingResult, Aws::Client::AWSError<RedshiftErrors>> PurchaseReservedNodeOfferingOutcome;
         typedef Aws::Utils::Outcome<RebootClusterResult, Aws::Client::AWSError<RedshiftErrors>> RebootClusterOutcome;
         typedef Aws::Utils::Outcome<ResetClusterParameterGroupResult, Aws::Client::AWSError<RedshiftErrors>> ResetClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ResizeClusterResult, Aws::Client::AWSError<RedshiftErrors>> ResizeClusterOutcome;
         typedef Aws::Utils::Outcome<RestoreFromClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> RestoreFromClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<RestoreTableFromClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> RestoreTableFromClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<RevokeClusterSecurityGroupIngressResult, Aws::Client::AWSError<RedshiftErrors>> RevokeClusterSecurityGroupIngressOutcome;
@@ -328,6 +331,7 @@ namespace Model
         typedef std::future<PurchaseReservedNodeOfferingOutcome> PurchaseReservedNodeOfferingOutcomeCallable;
         typedef std::future<RebootClusterOutcome> RebootClusterOutcomeCallable;
         typedef std::future<ResetClusterParameterGroupOutcome> ResetClusterParameterGroupOutcomeCallable;
+        typedef std::future<ResizeClusterOutcome> ResizeClusterOutcomeCallable;
         typedef std::future<RestoreFromClusterSnapshotOutcome> RestoreFromClusterSnapshotOutcomeCallable;
         typedef std::future<RestoreTableFromClusterSnapshotOutcome> RestoreTableFromClusterSnapshotOutcomeCallable;
         typedef std::future<RevokeClusterSecurityGroupIngressOutcome> RevokeClusterSecurityGroupIngressOutcomeCallable;
@@ -400,6 +404,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::PurchaseReservedNodeOfferingRequest&, const Model::PurchaseReservedNodeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedNodeOfferingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RebootClusterRequest&, const Model::RebootClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ResetClusterParameterGroupRequest&, const Model::ResetClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetClusterParameterGroupResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::ResizeClusterRequest&, const Model::ResizeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResizeClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RestoreFromClusterSnapshotRequest&, const Model::RestoreFromClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreFromClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RestoreTableFromClusterSnapshotRequest&, const Model::RestoreTableFromClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreTableFromClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RevokeClusterSecurityGroupIngressRequest&, const Model::RevokeClusterSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeClusterSecurityGroupIngressResponseReceivedHandler;
@@ -3247,6 +3252,34 @@ namespace Model
         virtual void ResetClusterParameterGroupAsync(const Model::ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Changes the cluster's type, node type, or number of nodes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResizeClusterOutcome ResizeCluster(const Model::ResizeClusterRequest& request) const;
+
+        /**
+         * <p>Changes the cluster's type, node type, or number of nodes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResizeClusterOutcomeCallable ResizeClusterCallable(const Model::ResizeClusterRequest& request) const;
+
+        /**
+         * <p>Changes the cluster's type, node type, or number of nodes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResizeClusterAsync(const Model::ResizeClusterRequest& request, const ResizeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new cluster from a snapshot. By default, Amazon Redshift creates
          * the resulting cluster with the same configuration as the original cluster from
          * which the snapshot was created, except that the new cluster is created with the
@@ -3547,6 +3580,7 @@ namespace Model
         void PurchaseReservedNodeOfferingAsyncHelper(const Model::PurchaseReservedNodeOfferingRequest& request, const PurchaseReservedNodeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootClusterAsyncHelper(const Model::RebootClusterRequest& request, const RebootClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetClusterParameterGroupAsyncHelper(const Model::ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResizeClusterAsyncHelper(const Model::ResizeClusterRequest& request, const ResizeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreFromClusterSnapshotAsyncHelper(const Model::RestoreFromClusterSnapshotRequest& request, const RestoreFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreTableFromClusterSnapshotAsyncHelper(const Model::RestoreTableFromClusterSnapshotRequest& request, const RestoreTableFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeClusterSecurityGroupIngressAsyncHelper(const Model::RevokeClusterSecurityGroupIngressRequest& request, const RevokeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

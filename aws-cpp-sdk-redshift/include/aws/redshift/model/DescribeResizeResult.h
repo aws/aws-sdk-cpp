@@ -461,6 +461,85 @@ namespace Model
     inline DescribeResizeResult& WithEstimatedTimeToCompletionInSeconds(long long value) { SetEstimatedTimeToCompletionInSeconds(value); return *this;}
 
 
+    /**
+     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
+     * describe the type of resize operation being performed. </p>
+     */
+    inline const Aws::String& GetResizeType() const{ return m_resizeType; }
+
+    /**
+     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
+     * describe the type of resize operation being performed. </p>
+     */
+    inline void SetResizeType(const Aws::String& value) { m_resizeType = value; }
+
+    /**
+     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
+     * describe the type of resize operation being performed. </p>
+     */
+    inline void SetResizeType(Aws::String&& value) { m_resizeType = std::move(value); }
+
+    /**
+     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
+     * describe the type of resize operation being performed. </p>
+     */
+    inline void SetResizeType(const char* value) { m_resizeType.assign(value); }
+
+    /**
+     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
+     * describe the type of resize operation being performed. </p>
+     */
+    inline DescribeResizeResult& WithResizeType(const Aws::String& value) { SetResizeType(value); return *this;}
+
+    /**
+     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
+     * describe the type of resize operation being performed. </p>
+     */
+    inline DescribeResizeResult& WithResizeType(Aws::String&& value) { SetResizeType(std::move(value)); return *this;}
+
+    /**
+     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
+     * describe the type of resize operation being performed. </p>
+     */
+    inline DescribeResizeResult& WithResizeType(const char* value) { SetResizeType(value); return *this;}
+
+
+    /**
+     * <p>An optional string to provide additional details about the resize action.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>An optional string to provide additional details about the resize action.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_message = value; }
+
+    /**
+     * <p>An optional string to provide additional details about the resize action.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+
+    /**
+     * <p>An optional string to provide additional details about the resize action.</p>
+     */
+    inline void SetMessage(const char* value) { m_message.assign(value); }
+
+    /**
+     * <p>An optional string to provide additional details about the resize action.</p>
+     */
+    inline DescribeResizeResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>An optional string to provide additional details about the resize action.</p>
+     */
+    inline DescribeResizeResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional string to provide additional details about the resize action.</p>
+     */
+    inline DescribeResizeResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -501,6 +580,10 @@ namespace Model
     long long m_elapsedTimeInSeconds;
 
     long long m_estimatedTimeToCompletionInSeconds;
+
+    Aws::String m_resizeType;
+
+    Aws::String m_message;
 
     ResponseMetadata m_responseMetadata;
   };

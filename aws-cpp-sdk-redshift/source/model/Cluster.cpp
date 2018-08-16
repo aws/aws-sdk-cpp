@@ -71,7 +71,8 @@ Cluster::Cluster() :
     m_enhancedVpcRoutingHasBeenSet(false),
     m_iamRolesHasBeenSet(false),
     m_pendingActionsHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false)
+    m_maintenanceTrackNameHasBeenSet(false),
+    m_elasticResizeNumberOfNodeOptionsHasBeenSet(false)
 {
 }
 
@@ -116,7 +117,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_enhancedVpcRoutingHasBeenSet(false),
     m_iamRolesHasBeenSet(false),
     m_pendingActionsHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false)
+    m_maintenanceTrackNameHasBeenSet(false),
+    m_elasticResizeNumberOfNodeOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -379,6 +381,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_maintenanceTrackName = StringUtils::Trim(maintenanceTrackNameNode.GetText().c_str());
       m_maintenanceTrackNameHasBeenSet = true;
     }
+    XmlNode elasticResizeNumberOfNodeOptionsNode = resultNode.FirstChild("ElasticResizeNumberOfNodeOptions");
+    if(!elasticResizeNumberOfNodeOptionsNode.IsNull())
+    {
+      m_elasticResizeNumberOfNodeOptions = StringUtils::Trim(elasticResizeNumberOfNodeOptionsNode.GetText().c_str());
+      m_elasticResizeNumberOfNodeOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -613,6 +621,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
   }
 
+  if(m_elasticResizeNumberOfNodeOptionsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ElasticResizeNumberOfNodeOptions=" << StringUtils::URLEncode(m_elasticResizeNumberOfNodeOptions.c_str()) << "&";
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -808,6 +821,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_maintenanceTrackNameHasBeenSet)
   {
       oStream << location << ".MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
+  }
+  if(m_elasticResizeNumberOfNodeOptionsHasBeenSet)
+  {
+      oStream << location << ".ElasticResizeNumberOfNodeOptions=" << StringUtils::URLEncode(m_elasticResizeNumberOfNodeOptions.c_str()) << "&";
   }
 }
 

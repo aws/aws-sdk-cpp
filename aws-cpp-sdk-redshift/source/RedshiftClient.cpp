@@ -90,6 +90,7 @@
 #include <aws/redshift/model/PurchaseReservedNodeOfferingRequest.h>
 #include <aws/redshift/model/RebootClusterRequest.h>
 #include <aws/redshift/model/ResetClusterParameterGroupRequest.h>
+#include <aws/redshift/model/ResizeClusterRequest.h>
 #include <aws/redshift/model/RestoreFromClusterSnapshotRequest.h>
 #include <aws/redshift/model/RestoreTableFromClusterSnapshotRequest.h>
 #include <aws/redshift/model/RevokeClusterSecurityGroupIngressRequest.h>
@@ -2374,6 +2375,41 @@ void RedshiftClient::ResetClusterParameterGroupAsync(const ResetClusterParameter
 void RedshiftClient::ResetClusterParameterGroupAsyncHelper(const ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResetClusterParameterGroup(request), context);
+}
+
+ResizeClusterOutcome RedshiftClient::ResizeCluster(const ResizeClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ResizeClusterOutcome(ResizeClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResizeClusterOutcome(outcome.GetError());
+  }
+}
+
+ResizeClusterOutcomeCallable RedshiftClient::ResizeClusterCallable(const ResizeClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResizeClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResizeCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::ResizeClusterAsync(const ResizeClusterRequest& request, const ResizeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResizeClusterAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::ResizeClusterAsyncHelper(const ResizeClusterRequest& request, const ResizeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResizeCluster(request), context);
 }
 
 RestoreFromClusterSnapshotOutcome RedshiftClient::RestoreFromClusterSnapshot(const RestoreFromClusterSnapshotRequest& request) const
