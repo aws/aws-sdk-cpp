@@ -611,7 +611,7 @@ namespace Aws
         /**
         * Generates an auth token for connecting to an rds instance.
         */
-        Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
+        Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName, long long expirationInSeconds) const;
 
         
         /**

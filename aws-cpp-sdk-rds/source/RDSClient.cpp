@@ -3489,14 +3489,14 @@ void RDSClient::StopDBInstanceAsyncHelper(const StopDBInstanceRequest& request, 
 
 
 
-Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const
+Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName, long long expirationInSeconds) const
 {
     Aws::StringStream ss;
     ss << "http://" << dbHostName << ":" << port;
     URI uri(ss.str());
     uri.AddQueryStringParameter("Action", "connect");
     uri.AddQueryStringParameter("DBUser", dbUserName);
-    auto url = GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, dbRegion, "rds-db", 900/*15 minutes*/);
+    auto url = GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, dbRegion, "rds-db", expirationInSeconds);
     Aws::Utils::StringUtils::Replace(url, "http://", "");
 
     return url;
