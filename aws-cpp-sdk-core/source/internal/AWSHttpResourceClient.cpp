@@ -40,38 +40,36 @@ static const char* EC2_METADATA_CLIENT_LOG_TAG = "EC2MetadataClient";
 static const char* ECS_CREDENTIALS_CLIENT_LOG_TAG = "ECSCredentialsClient";
 
 
-namespace {
-    ClientConfiguration MakeDefaultHttpResourceClientConfiguration(const char *logtag)
-    {
-        ClientConfiguration res;
+static ClientConfiguration MakeDefaultHttpResourceClientConfiguration(const char *logtag)
+{
+    ClientConfiguration res;
 
-        res.maxConnections = 2;
-        res.scheme = Scheme::HTTP;
+    res.maxConnections = 2;
+    res.scheme = Scheme::HTTP;
 
-    #if defined(WIN32) && defined(BYPASS_DEFAULT_PROXY)
-        // For security reasons, we must bypass any proxy settings when fetching sensitive information, for example
-        // user credentials. On Windows, IXMLHttpRequest2 does not support bypasing proxy settings, therefore,
-        // we force using WinHTTP client. On POSIX systems, CURL is set to bypass proxy settings by default.
-        res.httpLibOverride = TransferLibType::WIN_HTTP_CLIENT;
-        AWS_LOGSTREAM_INFO(logtag, "Overriding the current HTTP client to WinHTTP to bypass proxy settings.");
-    #else
-        (void) logtag;  // To disable warning about unused variable
-    #endif
-        // Explicitly set the proxy settings to empty/zero to avoid relying on defaults that could potentially change
-        // in the future.
-        res.proxyHost = "";
-        res.proxyUserName = "";
-        res.proxyPassword = "";
-        res.proxyPort = 0;
+#if defined(WIN32) && defined(BYPASS_DEFAULT_PROXY)
+    // For security reasons, we must bypass any proxy settings when fetching sensitive information, for example
+    // user credentials. On Windows, IXMLHttpRequest2 does not support bypasing proxy settings, therefore,
+    // we force using WinHTTP client. On POSIX systems, CURL is set to bypass proxy settings by default.
+    res.httpLibOverride = TransferLibType::WIN_HTTP_CLIENT;
+    AWS_LOGSTREAM_INFO(logtag, "Overriding the current HTTP client to WinHTTP to bypass proxy settings.");
+#else
+    (void) logtag;  // To disable warning about unused variable
+#endif
+    // Explicitly set the proxy settings to empty/zero to avoid relying on defaults that could potentially change
+    // in the future.
+    res.proxyHost = "";
+    res.proxyUserName = "";
+    res.proxyPassword = "";
+    res.proxyPort = 0;
 
-        // EC2MetatadaService throttles by delaying the response so the service client should set a large read timeout.
-        // EC2MetatadaService delay is in order of seconds so it only make sense to retry after a couple of seconds.
-        res.connectTimeoutMs = 1000;
-        res.requestTimeoutMs = 5000;
-        res.retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG, 4, 1000);
+    // EC2MetatadaService throttles by delaying the response so the service client should set a large read timeout.
+    // EC2MetatadaService delay is in order of seconds so it only make sense to retry after a couple of seconds.
+    res.connectTimeoutMs = 1000;
+    res.requestTimeoutMs = 5000;
+    res.retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG, 4, 1000);
 
-        return res;
-    }
+    return res;
 }
 
 AWSHttpResourceClient::AWSHttpResourceClient(const Aws::Client::ClientConfiguration& clientConfiguration, const char* logtag)
