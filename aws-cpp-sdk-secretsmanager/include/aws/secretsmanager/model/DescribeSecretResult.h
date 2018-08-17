@@ -321,32 +321,32 @@ namespace Model
 
 
     /**
-     * <p>The last date and time that the Secrets Manager rotation process for this
-     * secret was invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret has never rotated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRotatedDate() const{ return m_lastRotatedDate; }
 
     /**
-     * <p>The last date and time that the Secrets Manager rotation process for this
-     * secret was invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret has never rotated.</p>
      */
     inline void SetLastRotatedDate(const Aws::Utils::DateTime& value) { m_lastRotatedDate = value; }
 
     /**
-     * <p>The last date and time that the Secrets Manager rotation process for this
-     * secret was invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret has never rotated.</p>
      */
     inline void SetLastRotatedDate(Aws::Utils::DateTime&& value) { m_lastRotatedDate = std::move(value); }
 
     /**
-     * <p>The last date and time that the Secrets Manager rotation process for this
-     * secret was invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret has never rotated.</p>
      */
     inline DescribeSecretResult& WithLastRotatedDate(const Aws::Utils::DateTime& value) { SetLastRotatedDate(value); return *this;}
 
     /**
-     * <p>The last date and time that the Secrets Manager rotation process for this
-     * secret was invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret has never rotated.</p>
      */
     inline DescribeSecretResult& WithLastRotatedDate(Aws::Utils::DateTime&& value) { SetLastRotatedDate(std::move(value)); return *this;}
 
@@ -506,8 +506,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -516,8 +516,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -526,8 +526,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -536,8 +536,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -546,8 +546,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -556,8 +556,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -566,8 +566,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -576,8 +576,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -586,8 +586,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -596,8 +596,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>
@@ -606,8 +606,8 @@ namespace Model
 
     /**
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
-     * labels and the <code>SecretVersionId</code> that each is attached to. Staging
-     * labels are used to keep track of the different versions during the rotation
+     * labels and the <code>VersionId</code> that each is attached to. Staging labels
+     * are used to keep track of the different versions during the rotation
      * process.</p> <note> <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
      * in this list.</p> </note>

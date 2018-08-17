@@ -103,17 +103,8 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
-     * there are failures and retries during the function's processing.</p> <ul> <li>
-     * <p>If the <code>ClientRequestToken</code> value isn't already associated with a
-     * version of the secret then a new version of the secret is created. </p> </li>
-     * <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are the same as
-     * the request, then the request is ignored (the operation is idempotent). </p>
-     * </li> <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from the request then an error occurs because you cannot modify an existing
-     * secret value.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * there are failures and retries during the function's processing. This value
+     * becomes the <code>VersionId</code> of the new version.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -131,17 +122,8 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
-     * there are failures and retries during the function's processing.</p> <ul> <li>
-     * <p>If the <code>ClientRequestToken</code> value isn't already associated with a
-     * version of the secret then a new version of the secret is created. </p> </li>
-     * <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are the same as
-     * the request, then the request is ignored (the operation is idempotent). </p>
-     * </li> <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from the request then an error occurs because you cannot modify an existing
-     * secret value.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * there are failures and retries during the function's processing. This value
+     * becomes the <code>VersionId</code> of the new version.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -159,17 +141,8 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
-     * there are failures and retries during the function's processing.</p> <ul> <li>
-     * <p>If the <code>ClientRequestToken</code> value isn't already associated with a
-     * version of the secret then a new version of the secret is created. </p> </li>
-     * <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are the same as
-     * the request, then the request is ignored (the operation is idempotent). </p>
-     * </li> <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from the request then an error occurs because you cannot modify an existing
-     * secret value.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * there are failures and retries during the function's processing. This value
+     * becomes the <code>VersionId</code> of the new version.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -187,17 +160,8 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
-     * there are failures and retries during the function's processing.</p> <ul> <li>
-     * <p>If the <code>ClientRequestToken</code> value isn't already associated with a
-     * version of the secret then a new version of the secret is created. </p> </li>
-     * <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are the same as
-     * the request, then the request is ignored (the operation is idempotent). </p>
-     * </li> <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from the request then an error occurs because you cannot modify an existing
-     * secret value.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * there are failures and retries during the function's processing. This value
+     * becomes the <code>VersionId</code> of the new version.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -215,17 +179,8 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
-     * there are failures and retries during the function's processing.</p> <ul> <li>
-     * <p>If the <code>ClientRequestToken</code> value isn't already associated with a
-     * version of the secret then a new version of the secret is created. </p> </li>
-     * <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are the same as
-     * the request, then the request is ignored (the operation is idempotent). </p>
-     * </li> <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from the request then an error occurs because you cannot modify an existing
-     * secret value.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * there are failures and retries during the function's processing. This value
+     * becomes the <code>VersionId</code> of the new version.</p>
      */
     inline RotateSecretRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -243,17 +198,8 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
-     * there are failures and retries during the function's processing.</p> <ul> <li>
-     * <p>If the <code>ClientRequestToken</code> value isn't already associated with a
-     * version of the secret then a new version of the secret is created. </p> </li>
-     * <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are the same as
-     * the request, then the request is ignored (the operation is idempotent). </p>
-     * </li> <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from the request then an error occurs because you cannot modify an existing
-     * secret value.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * there are failures and retries during the function's processing. This value
+     * becomes the <code>VersionId</code> of the new version.</p>
      */
     inline RotateSecretRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -271,17 +217,8 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
-     * there are failures and retries during the function's processing.</p> <ul> <li>
-     * <p>If the <code>ClientRequestToken</code> value isn't already associated with a
-     * version of the secret then a new version of the secret is created. </p> </li>
-     * <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are the same as
-     * the request, then the request is ignored (the operation is idempotent). </p>
-     * </li> <li> <p>If a version with this value already exists and that version's
-     * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from the request then an error occurs because you cannot modify an existing
-     * secret value.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * there are failures and retries during the function's processing. This value
+     * becomes the <code>VersionId</code> of the new version.</p>
      */
     inline RotateSecretRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

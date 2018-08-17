@@ -135,21 +135,33 @@ namespace Model
     /**
      * <p>Specifies that the generated password should not include punctuation
      * characters. The default if you do not include this switch parameter is that
-     * punctuation characters can be included.</p>
+     * punctuation characters can be included.</p> <p>The following are the punctuation
+     * characters that <i>can</i> be included in the generated password if you don't
+     * explicitly exclude them with <code>ExcludeCharacters</code> or
+     * <code>ExcludePunctuation</code>:</p> <p> <code>! " # $ % &amp; ' ( ) * + , - . /
+     * : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code> </p>
      */
     inline bool GetExcludePunctuation() const{ return m_excludePunctuation; }
 
     /**
      * <p>Specifies that the generated password should not include punctuation
      * characters. The default if you do not include this switch parameter is that
-     * punctuation characters can be included.</p>
+     * punctuation characters can be included.</p> <p>The following are the punctuation
+     * characters that <i>can</i> be included in the generated password if you don't
+     * explicitly exclude them with <code>ExcludeCharacters</code> or
+     * <code>ExcludePunctuation</code>:</p> <p> <code>! " # $ % &amp; ' ( ) * + , - . /
+     * : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code> </p>
      */
     inline void SetExcludePunctuation(bool value) { m_excludePunctuationHasBeenSet = true; m_excludePunctuation = value; }
 
     /**
      * <p>Specifies that the generated password should not include punctuation
      * characters. The default if you do not include this switch parameter is that
-     * punctuation characters can be included.</p>
+     * punctuation characters can be included.</p> <p>The following are the punctuation
+     * characters that <i>can</i> be included in the generated password if you don't
+     * explicitly exclude them with <code>ExcludeCharacters</code> or
+     * <code>ExcludePunctuation</code>:</p> <p> <code>! " # $ % &amp; ' ( ) * + , - . /
+     * : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code> </p>
      */
     inline GetRandomPasswordRequest& WithExcludePunctuation(bool value) { SetExcludePunctuation(value); return *this;}
 

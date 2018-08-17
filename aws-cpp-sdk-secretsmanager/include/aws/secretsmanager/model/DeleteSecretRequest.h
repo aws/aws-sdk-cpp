@@ -89,29 +89,32 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the number of days that Secrets Manager waits before it
-     * can delete the secret.</p> <p>This value can range from 7 to 30 days. The
-     * default value is 30.</p>
+     * can delete the secret. You can't use both this parameter and the
+     * <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.</p>
+     * <p>This value can range from 7 to 30 days. The default value is 30.</p>
      */
     inline long long GetRecoveryWindowInDays() const{ return m_recoveryWindowInDays; }
 
     /**
      * <p>(Optional) Specifies the number of days that Secrets Manager waits before it
-     * can delete the secret.</p> <p>This value can range from 7 to 30 days. The
-     * default value is 30.</p>
+     * can delete the secret. You can't use both this parameter and the
+     * <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.</p>
+     * <p>This value can range from 7 to 30 days. The default value is 30.</p>
      */
     inline void SetRecoveryWindowInDays(long long value) { m_recoveryWindowInDaysHasBeenSet = true; m_recoveryWindowInDays = value; }
 
     /**
      * <p>(Optional) Specifies the number of days that Secrets Manager waits before it
-     * can delete the secret.</p> <p>This value can range from 7 to 30 days. The
-     * default value is 30.</p>
+     * can delete the secret. You can't use both this parameter and the
+     * <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.</p>
+     * <p>This value can range from 7 to 30 days. The default value is 30.</p>
      */
     inline DeleteSecretRequest& WithRecoveryWindowInDays(long long value) { SetRecoveryWindowInDays(value); return *this;}
 
 
     /**
-     * <p>(Optional) Specifies that the secret is to be deleted immediately without any
-     * recovery window. You cannot use both this parameter and the
+     * <p>(Optional) Specifies that the secret is to be deleted without any recovery
+     * window. You can't use both this parameter and the
      * <code>RecoveryWindowInDays</code> parameter in the same API call.</p> <p>An
      * asynchronous background process performs the actual deletion, so there can be a
      * short delay before the operation completes. If you write code to delete and then
@@ -126,8 +129,8 @@ namespace Model
     inline bool GetForceDeleteWithoutRecovery() const{ return m_forceDeleteWithoutRecovery; }
 
     /**
-     * <p>(Optional) Specifies that the secret is to be deleted immediately without any
-     * recovery window. You cannot use both this parameter and the
+     * <p>(Optional) Specifies that the secret is to be deleted without any recovery
+     * window. You can't use both this parameter and the
      * <code>RecoveryWindowInDays</code> parameter in the same API call.</p> <p>An
      * asynchronous background process performs the actual deletion, so there can be a
      * short delay before the operation completes. If you write code to delete and then
@@ -142,8 +145,8 @@ namespace Model
     inline void SetForceDeleteWithoutRecovery(bool value) { m_forceDeleteWithoutRecoveryHasBeenSet = true; m_forceDeleteWithoutRecovery = value; }
 
     /**
-     * <p>(Optional) Specifies that the secret is to be deleted immediately without any
-     * recovery window. You cannot use both this parameter and the
+     * <p>(Optional) Specifies that the secret is to be deleted without any recovery
+     * window. You can't use both this parameter and the
      * <code>RecoveryWindowInDays</code> parameter in the same API call.</p> <p>An
      * asynchronous background process performs the actual deletion, so there can be a
      * short delay before the operation completes. If you write code to delete and then

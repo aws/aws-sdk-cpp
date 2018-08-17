@@ -119,8 +119,8 @@ namespace Model
      * version's <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
-     * secret values.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -146,8 +146,8 @@ namespace Model
      * version's <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
-     * secret values.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -173,8 +173,8 @@ namespace Model
      * version's <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
-     * secret values.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -200,8 +200,8 @@ namespace Model
      * version's <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
-     * secret values.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -227,8 +227,8 @@ namespace Model
      * version's <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
-     * secret values.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline PutSecretValueRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -254,8 +254,8 @@ namespace Model
      * version's <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
-     * secret values.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline PutSecretValueRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -281,8 +281,8 @@ namespace Model
      * version's <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
-     * secret values.</p> </li> </ul> <p>This value becomes the
-     * <code>SecretVersionId</code> of the new version.</p>
+     * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
+     * of the new version.</p>
      */
     inline PutSecretValueRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

@@ -275,23 +275,19 @@ namespace Model
     /**
      * <p> Provides granular information about the system state. For more information,
      * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>LaunchingMLInstances</code>
-     * - launching ML instances for the training job.</p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the
-     * training job.</p> </li> <li> <p> <code>Downloading</code> - downloading the
-     * input data.</p> </li> <li> <p> <code>DownloadingTrainingImage</code> -
-     * downloading the training algorithm image.</p> </li> <li> <p>
-     * <code>Training</code> - model training is in progress.</p> </li> <li> <p>
-     * <code>Uploading</code> - uploading the trained model.</p> </li> <li> <p>
-     * <code>Stopping</code> - stopping the training job.</p> </li> <li> <p>
-     * <code>Stopped</code> - the training job has stopped.</p> </li> <li> <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run
-     * time, which means the training job is stopping.</p> </li> <li> <p>
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
      * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is
-     * provided in the <code>StatusMessage</code>.</p> </li> </ul> <important> <p>The
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
      * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primary provide information on the progress of the training job.</p>
+     * primarily provide information on the progress of the training job.</p>
      * </important>
      */
     inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
@@ -299,23 +295,19 @@ namespace Model
     /**
      * <p> Provides granular information about the system state. For more information,
      * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>LaunchingMLInstances</code>
-     * - launching ML instances for the training job.</p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the
-     * training job.</p> </li> <li> <p> <code>Downloading</code> - downloading the
-     * input data.</p> </li> <li> <p> <code>DownloadingTrainingImage</code> -
-     * downloading the training algorithm image.</p> </li> <li> <p>
-     * <code>Training</code> - model training is in progress.</p> </li> <li> <p>
-     * <code>Uploading</code> - uploading the trained model.</p> </li> <li> <p>
-     * <code>Stopping</code> - stopping the training job.</p> </li> <li> <p>
-     * <code>Stopped</code> - the training job has stopped.</p> </li> <li> <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run
-     * time, which means the training job is stopping.</p> </li> <li> <p>
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
      * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is
-     * provided in the <code>StatusMessage</code>.</p> </li> </ul> <important> <p>The
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
      * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primary provide information on the progress of the training job.</p>
+     * primarily provide information on the progress of the training job.</p>
      * </important>
      */
     inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatus = value; }
@@ -323,23 +315,19 @@ namespace Model
     /**
      * <p> Provides granular information about the system state. For more information,
      * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>LaunchingMLInstances</code>
-     * - launching ML instances for the training job.</p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the
-     * training job.</p> </li> <li> <p> <code>Downloading</code> - downloading the
-     * input data.</p> </li> <li> <p> <code>DownloadingTrainingImage</code> -
-     * downloading the training algorithm image.</p> </li> <li> <p>
-     * <code>Training</code> - model training is in progress.</p> </li> <li> <p>
-     * <code>Uploading</code> - uploading the trained model.</p> </li> <li> <p>
-     * <code>Stopping</code> - stopping the training job.</p> </li> <li> <p>
-     * <code>Stopped</code> - the training job has stopped.</p> </li> <li> <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run
-     * time, which means the training job is stopping.</p> </li> <li> <p>
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
      * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is
-     * provided in the <code>StatusMessage</code>.</p> </li> </ul> <important> <p>The
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
      * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primary provide information on the progress of the training job.</p>
+     * primarily provide information on the progress of the training job.</p>
      * </important>
      */
     inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatus = std::move(value); }
@@ -347,23 +335,19 @@ namespace Model
     /**
      * <p> Provides granular information about the system state. For more information,
      * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>LaunchingMLInstances</code>
-     * - launching ML instances for the training job.</p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the
-     * training job.</p> </li> <li> <p> <code>Downloading</code> - downloading the
-     * input data.</p> </li> <li> <p> <code>DownloadingTrainingImage</code> -
-     * downloading the training algorithm image.</p> </li> <li> <p>
-     * <code>Training</code> - model training is in progress.</p> </li> <li> <p>
-     * <code>Uploading</code> - uploading the trained model.</p> </li> <li> <p>
-     * <code>Stopping</code> - stopping the training job.</p> </li> <li> <p>
-     * <code>Stopped</code> - the training job has stopped.</p> </li> <li> <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run
-     * time, which means the training job is stopping.</p> </li> <li> <p>
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
      * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is
-     * provided in the <code>StatusMessage</code>.</p> </li> </ul> <important> <p>The
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
      * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primary provide information on the progress of the training job.</p>
+     * primarily provide information on the progress of the training job.</p>
      * </important>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
@@ -371,23 +355,19 @@ namespace Model
     /**
      * <p> Provides granular information about the system state. For more information,
      * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>LaunchingMLInstances</code>
-     * - launching ML instances for the training job.</p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the
-     * training job.</p> </li> <li> <p> <code>Downloading</code> - downloading the
-     * input data.</p> </li> <li> <p> <code>DownloadingTrainingImage</code> -
-     * downloading the training algorithm image.</p> </li> <li> <p>
-     * <code>Training</code> - model training is in progress.</p> </li> <li> <p>
-     * <code>Uploading</code> - uploading the trained model.</p> </li> <li> <p>
-     * <code>Stopping</code> - stopping the training job.</p> </li> <li> <p>
-     * <code>Stopped</code> - the training job has stopped.</p> </li> <li> <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run
-     * time, which means the training job is stopping.</p> </li> <li> <p>
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
      * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is
-     * provided in the <code>StatusMessage</code>.</p> </li> </ul> <important> <p>The
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
      * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primary provide information on the progress of the training job.</p>
+     * primarily provide information on the progress of the training job.</p>
      * </important>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}
@@ -876,44 +856,51 @@ namespace Model
 
 
     /**
-     * <p>A log of time-ordered secondary statuses that a training job has
-     * transitioned.</p>
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
      */
     inline const Aws::Vector<SecondaryStatusTransition>& GetSecondaryStatusTransitions() const{ return m_secondaryStatusTransitions; }
 
     /**
-     * <p>A log of time-ordered secondary statuses that a training job has
-     * transitioned.</p>
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
      */
     inline void SetSecondaryStatusTransitions(const Aws::Vector<SecondaryStatusTransition>& value) { m_secondaryStatusTransitions = value; }
 
     /**
-     * <p>A log of time-ordered secondary statuses that a training job has
-     * transitioned.</p>
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
      */
     inline void SetSecondaryStatusTransitions(Aws::Vector<SecondaryStatusTransition>&& value) { m_secondaryStatusTransitions = std::move(value); }
 
     /**
-     * <p>A log of time-ordered secondary statuses that a training job has
-     * transitioned.</p>
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatusTransitions(const Aws::Vector<SecondaryStatusTransition>& value) { SetSecondaryStatusTransitions(value); return *this;}
 
     /**
-     * <p>A log of time-ordered secondary statuses that a training job has
-     * transitioned.</p>
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatusTransitions(Aws::Vector<SecondaryStatusTransition>&& value) { SetSecondaryStatusTransitions(std::move(value)); return *this;}
 
     /**
-     * <p>A log of time-ordered secondary statuses that a training job has
-     * transitioned.</p>
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
      */
     inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(const SecondaryStatusTransition& value) { m_secondaryStatusTransitions.push_back(value); return *this; }
 
     /**
-     * <p>A log of time-ordered secondary statuses that a training job has
-     * transitioned.</p>
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
      */
     inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(SecondaryStatusTransition&& value) { m_secondaryStatusTransitions.push_back(std::move(value)); return *this; }
 

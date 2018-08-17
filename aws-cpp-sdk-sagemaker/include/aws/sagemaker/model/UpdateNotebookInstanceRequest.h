@@ -177,6 +177,75 @@ namespace Model
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline const Aws::String& GetLifecycleConfigName() const{ return m_lifecycleConfigName; }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(const Aws::String& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = value; }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(Aws::String&& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = std::move(value); }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(const char* value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName.assign(value); }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(const Aws::String& value) { SetLifecycleConfigName(value); return *this;}
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(Aws::String&& value) { SetLifecycleConfigName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(const char* value) { SetLifecycleConfigName(value); return *this;}
+
+
+    /**
+     * <p>Set to <code>true</code> to remove the notebook instance lifecycle
+     * configuration currently associated with the notebook instance.</p>
+     */
+    inline bool GetDisassociateLifecycleConfig() const{ return m_disassociateLifecycleConfig; }
+
+    /**
+     * <p>Set to <code>true</code> to remove the notebook instance lifecycle
+     * configuration currently associated with the notebook instance.</p>
+     */
+    inline void SetDisassociateLifecycleConfig(bool value) { m_disassociateLifecycleConfigHasBeenSet = true; m_disassociateLifecycleConfig = value; }
+
+    /**
+     * <p>Set to <code>true</code> to remove the notebook instance lifecycle
+     * configuration currently associated with the notebook instance.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithDisassociateLifecycleConfig(bool value) { SetDisassociateLifecycleConfig(value); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
@@ -187,6 +256,12 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::String m_lifecycleConfigName;
+    bool m_lifecycleConfigNameHasBeenSet;
+
+    bool m_disassociateLifecycleConfig;
+    bool m_disassociateLifecycleConfigHasBeenSet;
   };
 
 } // namespace Model

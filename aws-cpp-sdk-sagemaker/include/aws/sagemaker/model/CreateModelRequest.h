@@ -87,35 +87,35 @@ namespace Model
     /**
      * <p>The location of the primary docker image containing inference code,
      * associated artifacts, and custom environment map that the inference code uses
-     * when the model is deployed into production. </p>
+     * when the model is deployed for predictions. </p>
      */
     inline const ContainerDefinition& GetPrimaryContainer() const{ return m_primaryContainer; }
 
     /**
      * <p>The location of the primary docker image containing inference code,
      * associated artifacts, and custom environment map that the inference code uses
-     * when the model is deployed into production. </p>
+     * when the model is deployed for predictions. </p>
      */
     inline void SetPrimaryContainer(const ContainerDefinition& value) { m_primaryContainerHasBeenSet = true; m_primaryContainer = value; }
 
     /**
      * <p>The location of the primary docker image containing inference code,
      * associated artifacts, and custom environment map that the inference code uses
-     * when the model is deployed into production. </p>
+     * when the model is deployed for predictions. </p>
      */
     inline void SetPrimaryContainer(ContainerDefinition&& value) { m_primaryContainerHasBeenSet = true; m_primaryContainer = std::move(value); }
 
     /**
      * <p>The location of the primary docker image containing inference code,
      * associated artifacts, and custom environment map that the inference code uses
-     * when the model is deployed into production. </p>
+     * when the model is deployed for predictions. </p>
      */
     inline CreateModelRequest& WithPrimaryContainer(const ContainerDefinition& value) { SetPrimaryContainer(value); return *this;}
 
     /**
      * <p>The location of the primary docker image containing inference code,
      * associated artifacts, and custom environment map that the inference code uses
-     * when the model is deployed into production. </p>
+     * when the model is deployed for predictions. </p>
      */
     inline CreateModelRequest& WithPrimaryContainer(ContainerDefinition&& value) { SetPrimaryContainer(std::move(value)); return *this;}
 
@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
-     * instances. Deploying on ML compute instances is part of model hosting. For more
-     * information, see <a
+     * instances or for batch transform jobs. Deploying on ML compute instances is part
+     * of model hosting. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -135,8 +135,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
-     * instances. Deploying on ML compute instances is part of model hosting. For more
-     * information, see <a
+     * instances or for batch transform jobs. Deploying on ML compute instances is part
+     * of model hosting. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -147,8 +147,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
-     * instances. Deploying on ML compute instances is part of model hosting. For more
-     * information, see <a
+     * instances or for batch transform jobs. Deploying on ML compute instances is part
+     * of model hosting. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -159,8 +159,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
-     * instances. Deploying on ML compute instances is part of model hosting. For more
-     * information, see <a
+     * instances or for batch transform jobs. Deploying on ML compute instances is part
+     * of model hosting. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -171,8 +171,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
-     * instances. Deploying on ML compute instances is part of model hosting. For more
-     * information, see <a
+     * instances or for batch transform jobs. Deploying on ML compute instances is part
+     * of model hosting. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -183,8 +183,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
-     * instances. Deploying on ML compute instances is part of model hosting. For more
-     * information, see <a
+     * instances or for batch transform jobs. Deploying on ML compute instances is part
+     * of model hosting. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -195,8 +195,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
-     * instances. Deploying on ML compute instances is part of model hosting. For more
-     * information, see <a
+     * instances or for batch transform jobs. Deploying on ML compute instances is part
+     * of model hosting. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -265,35 +265,40 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
+     * batch transform. For more information, see <a>host-vpc</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
+     * batch transform. For more information, see <a>host-vpc</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
+     * batch transform. For more information, see <a>host-vpc</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
+     * batch transform. For more information, see <a>host-vpc</a>.</p>
      */
     inline CreateModelRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
+     * batch transform. For more information, see <a>host-vpc</a>.</p>
      */
     inline CreateModelRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

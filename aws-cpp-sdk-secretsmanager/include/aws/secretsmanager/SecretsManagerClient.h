@@ -248,9 +248,9 @@ namespace Model
          * progress, it can leave the <code>VersionStage</code> labels in an unexpected
          * state. Depending on what step of the rotation was in progress, you might need to
          * remove the staging label <code>AWSPENDING</code> from the partially created
-         * version, specified by the <code>SecretVersionId</code> response value. You
-         * should also evaluate the partially rotated new version to see if it should be
-         * deleted, which you can do by removing all staging labels from the new version's
+         * version, specified by the <code>VersionId</code> response value. You should also
+         * evaluate the partially rotated new version to see if it should be deleted, which
+         * you can do by removing all staging labels from the new version's
          * <code>VersionStage</code> field.</p> </note> <p>To successfully start a
          * rotation, the staging label <code>AWSPENDING</code> must be in one of the
          * following states:</p> <ul> <li> <p>Not be attached to any version at all</p>
@@ -281,9 +281,9 @@ namespace Model
          * progress, it can leave the <code>VersionStage</code> labels in an unexpected
          * state. Depending on what step of the rotation was in progress, you might need to
          * remove the staging label <code>AWSPENDING</code> from the partially created
-         * version, specified by the <code>SecretVersionId</code> response value. You
-         * should also evaluate the partially rotated new version to see if it should be
-         * deleted, which you can do by removing all staging labels from the new version's
+         * version, specified by the <code>VersionId</code> response value. You should also
+         * evaluate the partially rotated new version to see if it should be deleted, which
+         * you can do by removing all staging labels from the new version's
          * <code>VersionStage</code> field.</p> </note> <p>To successfully start a
          * rotation, the staging label <code>AWSPENDING</code> must be in one of the
          * following states:</p> <ul> <li> <p>Not be attached to any version at all</p>
@@ -316,9 +316,9 @@ namespace Model
          * progress, it can leave the <code>VersionStage</code> labels in an unexpected
          * state. Depending on what step of the rotation was in progress, you might need to
          * remove the staging label <code>AWSPENDING</code> from the partially created
-         * version, specified by the <code>SecretVersionId</code> response value. You
-         * should also evaluate the partially rotated new version to see if it should be
-         * deleted, which you can do by removing all staging labels from the new version's
+         * version, specified by the <code>VersionId</code> response value. You should also
+         * evaluate the partially rotated new version to see if it should be deleted, which
+         * you can do by removing all staging labels from the new version's
          * <code>VersionStage</code> field.</p> </note> <p>To successfully start a
          * rotation, the staging label <code>AWSPENDING</code> must be in one of the
          * following states:</p> <ul> <li> <p>Not be attached to any version at all</p>
@@ -1109,7 +1109,7 @@ namespace Model
          * Secrets Manager also automatically moves the staging label
          * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
          * from.</p> </li> <li> <p>This operation is idempotent. If a version with a
-         * <code>SecretVersionId</code> with the same value as the
+         * <code>VersionId</code> with the same value as the
          * <code>ClientRequestToken</code> parameter already exists and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you cannot modify an
@@ -1169,7 +1169,7 @@ namespace Model
          * Secrets Manager also automatically moves the staging label
          * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
          * from.</p> </li> <li> <p>This operation is idempotent. If a version with a
-         * <code>SecretVersionId</code> with the same value as the
+         * <code>VersionId</code> with the same value as the
          * <code>ClientRequestToken</code> parameter already exists and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you cannot modify an
@@ -1231,7 +1231,7 @@ namespace Model
          * Secrets Manager also automatically moves the staging label
          * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
          * from.</p> </li> <li> <p>This operation is idempotent. If a version with a
-         * <code>SecretVersionId</code> with the same value as the
+         * <code>VersionId</code> with the same value as the
          * <code>ClientRequestToken</code> parameter already exists and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you cannot modify an
@@ -1334,24 +1334,30 @@ namespace Model
          * for your protected service, see <a
          * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
          * Secrets in AWS Secrets Manager</a> in the <i>AWS Secrets Manager User
-         * Guide</i>.</p> <p>The rotation function must end with the versions of the secret
-         * in one of two states:</p> <ul> <li> <p>The <code>AWSPENDING</code> and
-         * <code>AWSCURRENT</code> staging labels are attached to the same version of the
-         * secret, or</p> </li> <li> <p>The <code>AWSPENDING</code> staging label is not
-         * attached to any version of the secret.</p> </li> </ul> <p>If instead the
-         * <code>AWSPENDING</code> staging label is present but is not attached to the same
-         * version as <code>AWSCURRENT</code> then any later invocation of
-         * <code>RotateSecret</code> assumes that a previous rotation request is still in
-         * progress and returns an error.</p> <p> <b>Minimum permissions</b> </p> <p>To run
-         * this command, you must have the following permissions:</p> <ul> <li>
-         * <p>secretsmanager:RotateSecret</p> </li> <li> <p>lambda:InvokeFunction (on the
-         * function specified in the secret's metadata)</p> </li> </ul> <p> <b>Related
-         * operations</b> </p> <ul> <li> <p>To list the secrets in your account, use
-         * <a>ListSecrets</a>.</p> </li> <li> <p>To get the details for a version of a
-         * secret, use <a>DescribeSecret</a>.</p> </li> <li> <p>To create a new version of
-         * a secret, use <a>CreateSecret</a>.</p> </li> <li> <p>To attach staging labels to
-         * or remove staging labels from a version of a secret, use
-         * <a>UpdateSecretVersionStage</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>Secrets Manager schedules the next rotation when the previous
+         * one is complete. Secrets Manager schedules the date by adding the rotation
+         * interval (number of days) to the actual date of the last rotation. The service
+         * chooses the hour within that 24-hour date window randomly. The minute is also
+         * chosen somewhat randomly, but weighted towards the top of the hour and
+         * influenced by a variety of factors that help distribute load.</p> <p>The
+         * rotation function must end with the versions of the secret in one of two
+         * states:</p> <ul> <li> <p>The <code>AWSPENDING</code> and <code>AWSCURRENT</code>
+         * staging labels are attached to the same version of the secret, or</p> </li> <li>
+         * <p>The <code>AWSPENDING</code> staging label is not attached to any version of
+         * the secret.</p> </li> </ul> <p>If instead the <code>AWSPENDING</code> staging
+         * label is present but is not attached to the same version as
+         * <code>AWSCURRENT</code> then any later invocation of <code>RotateSecret</code>
+         * assumes that a previous rotation request is still in progress and returns an
+         * error.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
+         * have the following permissions:</p> <ul> <li> <p>secretsmanager:RotateSecret</p>
+         * </li> <li> <p>lambda:InvokeFunction (on the function specified in the secret's
+         * metadata)</p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To
+         * list the secrets in your account, use <a>ListSecrets</a>.</p> </li> <li> <p>To
+         * get the details for a version of a secret, use <a>DescribeSecret</a>.</p> </li>
+         * <li> <p>To create a new version of a secret, use <a>CreateSecret</a>.</p> </li>
+         * <li> <p>To attach staging labels to or remove staging labels from a version of a
+         * secret, use <a>UpdateSecretVersionStage</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">AWS
          * API Reference</a></p>
          */
@@ -1374,24 +1380,30 @@ namespace Model
          * for your protected service, see <a
          * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
          * Secrets in AWS Secrets Manager</a> in the <i>AWS Secrets Manager User
-         * Guide</i>.</p> <p>The rotation function must end with the versions of the secret
-         * in one of two states:</p> <ul> <li> <p>The <code>AWSPENDING</code> and
-         * <code>AWSCURRENT</code> staging labels are attached to the same version of the
-         * secret, or</p> </li> <li> <p>The <code>AWSPENDING</code> staging label is not
-         * attached to any version of the secret.</p> </li> </ul> <p>If instead the
-         * <code>AWSPENDING</code> staging label is present but is not attached to the same
-         * version as <code>AWSCURRENT</code> then any later invocation of
-         * <code>RotateSecret</code> assumes that a previous rotation request is still in
-         * progress and returns an error.</p> <p> <b>Minimum permissions</b> </p> <p>To run
-         * this command, you must have the following permissions:</p> <ul> <li>
-         * <p>secretsmanager:RotateSecret</p> </li> <li> <p>lambda:InvokeFunction (on the
-         * function specified in the secret's metadata)</p> </li> </ul> <p> <b>Related
-         * operations</b> </p> <ul> <li> <p>To list the secrets in your account, use
-         * <a>ListSecrets</a>.</p> </li> <li> <p>To get the details for a version of a
-         * secret, use <a>DescribeSecret</a>.</p> </li> <li> <p>To create a new version of
-         * a secret, use <a>CreateSecret</a>.</p> </li> <li> <p>To attach staging labels to
-         * or remove staging labels from a version of a secret, use
-         * <a>UpdateSecretVersionStage</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>Secrets Manager schedules the next rotation when the previous
+         * one is complete. Secrets Manager schedules the date by adding the rotation
+         * interval (number of days) to the actual date of the last rotation. The service
+         * chooses the hour within that 24-hour date window randomly. The minute is also
+         * chosen somewhat randomly, but weighted towards the top of the hour and
+         * influenced by a variety of factors that help distribute load.</p> <p>The
+         * rotation function must end with the versions of the secret in one of two
+         * states:</p> <ul> <li> <p>The <code>AWSPENDING</code> and <code>AWSCURRENT</code>
+         * staging labels are attached to the same version of the secret, or</p> </li> <li>
+         * <p>The <code>AWSPENDING</code> staging label is not attached to any version of
+         * the secret.</p> </li> </ul> <p>If instead the <code>AWSPENDING</code> staging
+         * label is present but is not attached to the same version as
+         * <code>AWSCURRENT</code> then any later invocation of <code>RotateSecret</code>
+         * assumes that a previous rotation request is still in progress and returns an
+         * error.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
+         * have the following permissions:</p> <ul> <li> <p>secretsmanager:RotateSecret</p>
+         * </li> <li> <p>lambda:InvokeFunction (on the function specified in the secret's
+         * metadata)</p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To
+         * list the secrets in your account, use <a>ListSecrets</a>.</p> </li> <li> <p>To
+         * get the details for a version of a secret, use <a>DescribeSecret</a>.</p> </li>
+         * <li> <p>To create a new version of a secret, use <a>CreateSecret</a>.</p> </li>
+         * <li> <p>To attach staging labels to or remove staging labels from a version of a
+         * secret, use <a>UpdateSecretVersionStage</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">AWS
          * API Reference</a></p>
          *
@@ -1416,24 +1428,30 @@ namespace Model
          * for your protected service, see <a
          * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
          * Secrets in AWS Secrets Manager</a> in the <i>AWS Secrets Manager User
-         * Guide</i>.</p> <p>The rotation function must end with the versions of the secret
-         * in one of two states:</p> <ul> <li> <p>The <code>AWSPENDING</code> and
-         * <code>AWSCURRENT</code> staging labels are attached to the same version of the
-         * secret, or</p> </li> <li> <p>The <code>AWSPENDING</code> staging label is not
-         * attached to any version of the secret.</p> </li> </ul> <p>If instead the
-         * <code>AWSPENDING</code> staging label is present but is not attached to the same
-         * version as <code>AWSCURRENT</code> then any later invocation of
-         * <code>RotateSecret</code> assumes that a previous rotation request is still in
-         * progress and returns an error.</p> <p> <b>Minimum permissions</b> </p> <p>To run
-         * this command, you must have the following permissions:</p> <ul> <li>
-         * <p>secretsmanager:RotateSecret</p> </li> <li> <p>lambda:InvokeFunction (on the
-         * function specified in the secret's metadata)</p> </li> </ul> <p> <b>Related
-         * operations</b> </p> <ul> <li> <p>To list the secrets in your account, use
-         * <a>ListSecrets</a>.</p> </li> <li> <p>To get the details for a version of a
-         * secret, use <a>DescribeSecret</a>.</p> </li> <li> <p>To create a new version of
-         * a secret, use <a>CreateSecret</a>.</p> </li> <li> <p>To attach staging labels to
-         * or remove staging labels from a version of a secret, use
-         * <a>UpdateSecretVersionStage</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>Secrets Manager schedules the next rotation when the previous
+         * one is complete. Secrets Manager schedules the date by adding the rotation
+         * interval (number of days) to the actual date of the last rotation. The service
+         * chooses the hour within that 24-hour date window randomly. The minute is also
+         * chosen somewhat randomly, but weighted towards the top of the hour and
+         * influenced by a variety of factors that help distribute load.</p> <p>The
+         * rotation function must end with the versions of the secret in one of two
+         * states:</p> <ul> <li> <p>The <code>AWSPENDING</code> and <code>AWSCURRENT</code>
+         * staging labels are attached to the same version of the secret, or</p> </li> <li>
+         * <p>The <code>AWSPENDING</code> staging label is not attached to any version of
+         * the secret.</p> </li> </ul> <p>If instead the <code>AWSPENDING</code> staging
+         * label is present but is not attached to the same version as
+         * <code>AWSCURRENT</code> then any later invocation of <code>RotateSecret</code>
+         * assumes that a previous rotation request is still in progress and returns an
+         * error.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
+         * have the following permissions:</p> <ul> <li> <p>secretsmanager:RotateSecret</p>
+         * </li> <li> <p>lambda:InvokeFunction (on the function specified in the secret's
+         * metadata)</p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To
+         * list the secrets in your account, use <a>ListSecrets</a>.</p> </li> <li> <p>To
+         * get the details for a version of a secret, use <a>DescribeSecret</a>.</p> </li>
+         * <li> <p>To create a new version of a secret, use <a>CreateSecret</a>.</p> </li>
+         * <li> <p>To attach staging labels to or remove staging labels from a version of a
+         * secret, use <a>UpdateSecretVersionStage</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">AWS
          * API Reference</a></p>
          *
@@ -1611,8 +1629,8 @@ namespace Model
          * the <code>SecretString</code> parameter and therefore limits you to encrypting
          * and storing only a text string. To encrypt and store binary data as part of the
          * version of a secret, you must use either the AWS CLI or one of the AWS SDKs.</p>
-         * </note> <ul> <li> <p>If a version with a <code>SecretVersionId</code> with the
-         * same value as the <code>ClientRequestToken</code> parameter already exists, the
+         * </note> <ul> <li> <p>If a version with a <code>VersionId</code> with the same
+         * value as the <code>ClientRequestToken</code> parameter already exists, the
          * operation results in an error. You cannot modify an existing version, you can
          * only create a new version.</p> </li> <li> <p>If you include
          * <code>SecretString</code> or <code>SecretBinary</code> to create a new secret
@@ -1665,8 +1683,8 @@ namespace Model
          * the <code>SecretString</code> parameter and therefore limits you to encrypting
          * and storing only a text string. To encrypt and store binary data as part of the
          * version of a secret, you must use either the AWS CLI or one of the AWS SDKs.</p>
-         * </note> <ul> <li> <p>If a version with a <code>SecretVersionId</code> with the
-         * same value as the <code>ClientRequestToken</code> parameter already exists, the
+         * </note> <ul> <li> <p>If a version with a <code>VersionId</code> with the same
+         * value as the <code>ClientRequestToken</code> parameter already exists, the
          * operation results in an error. You cannot modify an existing version, you can
          * only create a new version.</p> </li> <li> <p>If you include
          * <code>SecretString</code> or <code>SecretBinary</code> to create a new secret
@@ -1721,8 +1739,8 @@ namespace Model
          * the <code>SecretString</code> parameter and therefore limits you to encrypting
          * and storing only a text string. To encrypt and store binary data as part of the
          * version of a secret, you must use either the AWS CLI or one of the AWS SDKs.</p>
-         * </note> <ul> <li> <p>If a version with a <code>SecretVersionId</code> with the
-         * same value as the <code>ClientRequestToken</code> parameter already exists, the
+         * </note> <ul> <li> <p>If a version with a <code>VersionId</code> with the same
+         * value as the <code>ClientRequestToken</code> parameter already exists, the
          * operation results in an error. You cannot modify an existing version, you can
          * only create a new version.</p> </li> <li> <p>If you include
          * <code>SecretString</code> or <code>SecretBinary</code> to create a new secret
