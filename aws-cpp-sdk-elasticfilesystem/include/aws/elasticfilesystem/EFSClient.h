@@ -14,6 +14,7 @@
 */
 
 #pragma once
+#include <aws/core/utils/Outcome.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/elasticfilesystem/EFSErrors.h>
 #include <aws/core/client/AWSError.h>

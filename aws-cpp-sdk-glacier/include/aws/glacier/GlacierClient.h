@@ -14,6 +14,7 @@
 */
 
 #pragma once
+#include <aws/core/utils/Outcome.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/GlacierErrors.h>
 #include <aws/core/client/AWSError.h>

@@ -14,6 +14,7 @@
 */
 
 #pragma once
+#include <aws/core/utils/Outcome.h>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/CloudTrailErrors.h>
 #include <aws/core/client/AWSError.h>

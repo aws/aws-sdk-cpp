@@ -14,6 +14,7 @@
 */
 
 #pragma once
+#include <aws/core/utils/Outcome.h>
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitErrors.h>
 #include <aws/core/client/AWSError.h>

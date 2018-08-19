@@ -14,6 +14,7 @@
 */
 
 #pragma once
+#include <aws/core/utils/Outcome.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/NeptuneErrors.h>
 #include <aws/core/client/AWSError.h>
