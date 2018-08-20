@@ -21,8 +21,6 @@ using namespace Aws::Utils::Threading;
 
 static const char LOG_TAG[] = "EnumParseOverflowContainer";
 
-const Aws::String EnumParseOverflowContainer::m_emptyString("");
-
 const Aws::String& EnumParseOverflowContainer::RetrieveOverflow(int hashCode) const
 {
     ReaderLockGuard guard(m_overflowLock);

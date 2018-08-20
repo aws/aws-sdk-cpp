@@ -38,7 +38,7 @@ namespace Aws
         private:
             mutable Aws::Utils::Threading::ReaderWriterLock m_overflowLock;
             Aws::Map<int, Aws::String> m_overflowMap;
-            static const Aws::String m_emptyString;
+            Aws::String m_emptyString;
         };
     }
 }

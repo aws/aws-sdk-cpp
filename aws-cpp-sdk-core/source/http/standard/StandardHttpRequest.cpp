@@ -24,8 +24,6 @@ using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 
-const Aws::String StandardHttpRequest::m_emptyHeader = "";
-
 static bool IsDefaultPort(const URI& uri)
 {
     switch(uri.GetPort())
@@ -71,11 +69,7 @@ HeaderValueCollection StandardHttpRequest::GetHeaders() const
 const Aws::String& StandardHttpRequest::GetHeaderValue(const char* headerName) const
 {
     auto iter = headerMap.find(headerName);
-    if (iter == headerMap.end())
-    {
-        return m_emptyHeader;
-    }
-    
+    assert (iter != headerMap.end());
     return iter->second;
 }
 
