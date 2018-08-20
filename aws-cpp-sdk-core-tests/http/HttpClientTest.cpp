@@ -23,11 +23,9 @@
 using namespace Aws::Http;
 TEST(HttpClientTest, TestNullResponse)
 {
-	auto request = CreateHttpRequest(Aws::String("https://some.unknown1234xxx.test.website.com"), 
+	auto request = CreateHttpRequest(Aws::String("http://some.unknown1234xxx.test.aws"), 
             HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
 	auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
 	auto response = httpClient->MakeRequest(request);
 	ASSERT_EQ(nullptr, response);
 }
-
-

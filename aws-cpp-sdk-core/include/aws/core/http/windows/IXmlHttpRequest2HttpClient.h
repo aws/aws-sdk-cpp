@@ -74,6 +74,9 @@ namespace Aws
 
             void FillClientSettings(const HttpRequestComHandle&) const;
 
+            //we can't reuse these com objects like we do in other http clients, just put a new one back into the resource manager.
+            void ReturnHandleToResourceManager() const;
+
             mutable Aws::Utils::ExclusiveOwnershipResourceManager<HttpRequestComHandle> m_resourceManager;
             Aws::String m_proxyUserName;
             Aws::String m_proxyPassword;

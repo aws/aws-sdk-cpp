@@ -64,8 +64,8 @@ private:
     bool m_verifySSL;
     Aws::String m_caPath;
     Aws::String m_caFile;
+    bool m_disableExpectHeader;
     bool m_allowRedirects;
-
     static std::atomic<bool> isInit;
 
     void MakeRequestInternal(HttpRequest& request, std::shared_ptr<Standard::StandardHttpResponse>& response,

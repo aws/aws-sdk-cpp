@@ -98,9 +98,9 @@ namespace Aws
                     default:
                         return Aws::MakeShared<WinHttpSyncHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
                 }
-#endif                
+#endif // ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
 #elif ENABLE_CURL_CLIENT
-    return Aws::MakeShared<CurlHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
+                return Aws::MakeShared<CurlHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
 #else
                 // When neither of these clients is enabled, gcc gives a warning (converted
                 // to error by -Werror) about the unused clientConfiguration parameter. We

@@ -177,6 +177,10 @@ namespace Aws
                     {
                         m_response.SetResponseCode(HttpResponseCode::REQUEST_TIMEOUT);
                     }
+                    else if (FAILED(res))
+                    {
+                        m_response.SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
+                    }
                     else
                     {
                         m_response.SetResponseCode(HttpResponseCode::CLIENT_CLOSED_TO_REQUEST);
@@ -279,6 +283,17 @@ namespace Aws
             Windows::Foundation::Initialize(RO_INIT_MULTITHREADED);
         }
 
+        void IXmlHttpRequest2HttpClient::ReturnHandleToResourceManager() const
+        {
+            HttpRequestComHandle handle;
+#ifdef PLATFORM_WINDOWS
+            CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&handle));
+#else
+            CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_SERVER, IID_PPV_ARGS(&handle));
+#endif // PLATFORM_WINDOWS
+            m_resourceManager.Release(handle);   
+        }
+
         IXmlHttpRequest2HttpClient::IXmlHttpRequest2HttpClient(const Aws::Client::ClientConfiguration& clientConfig) :
             m_proxyUserName(clientConfig.proxyUserName), m_proxyPassword(clientConfig.proxyPassword), m_poolSize(clientConfig.maxConnections),
             m_followRedirects(clientConfig.followRedirects), m_verifySSL(clientConfig.verifySSL), m_totalTimeoutMs(clientConfig.requestTimeoutMs + clientConfig.connectTimeoutMs)
@@ -363,6 +378,7 @@ namespace Aws
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error opening http request with status code " << hrResult);
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "The http request is: " << uri.GetURIString());
                 response = nullptr;
+                ReturnHandleToResourceManager();
                 return;
             }
 
@@ -378,6 +394,7 @@ namespace Aws
                     AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error setting http header " << header.first << " With status code: " << hrResult);
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Corresponding header's value is: " << header.second);
                     response = nullptr;
+                    ReturnHandleToResourceManager();
                     return;
                 }
             }
@@ -404,17 +421,17 @@ namespace Aws
 
             hrResult = requestHandle->Send(requestStream.Get(), streamLength);
             callbacks->WaitUntilFinished();
-            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
-            //we can't reuse these com objects like we do in other http clients, just put a new one back into the resource manager.
-            HttpRequestComHandle handle;
-#ifdef PLATFORM_WINDOWS
-            CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&handle));
-#else
-            CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_SERVER, IID_PPV_ARGS(&handle));
-#endif // PLATFORM_WINDOWS
-            m_resourceManager.Release(handle);
-
-            response->GetResponseBody().flush();
+            if (FAILED(hrResult) || response->GetResponseCode() == Http::HttpResponseCode::REQUEST_NOT_MADE)
+            {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
+                response = nullptr;
+            }
+            else 
+            {
+                response->GetResponseBody().flush();
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
+            }
+            ReturnHandleToResourceManager();
         }
 
         void IXmlHttpRequest2HttpClient::FillClientSettings(const HttpRequestComHandle& handle) const

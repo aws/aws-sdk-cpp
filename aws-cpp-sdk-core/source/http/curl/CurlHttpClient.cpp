@@ -294,7 +294,9 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
     m_proxyPassword(clientConfig.proxyPassword), m_proxyScheme(SchemeMapper::ToString(clientConfig.proxyScheme)), m_proxyHost(clientConfig.proxyHost),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
-    m_caFile(clientConfig.caFile), m_allowRedirects(clientConfig.followRedirects)
+    m_caFile(clientConfig.caFile), 
+    m_disableExpectHeader(clientConfig.disableExpectHeader),
+    m_allowRedirects(clientConfig.followRedirects)
 {
 }
 
@@ -337,6 +339,12 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
     if (!request.HasHeader(Http::CONTENT_TYPE_HEADER))
     {
         headers = curl_slist_append(headers, "content-type:");
+    }
+
+    // Discard Expect header so as to avoid using multiple payloads to send a http request (header + body)
+    if (m_disableExpectHeader)
+    {
+        headers = curl_slist_append(headers, "Expect:");
     }
 
     CURL* connectionHandle = m_curlHandleContainer.AcquireCurlHandle();
