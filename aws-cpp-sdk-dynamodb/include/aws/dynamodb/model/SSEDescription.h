@@ -56,7 +56,8 @@ namespace Model
      * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
      * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
      * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * </ul>
+     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
+     * </li> </ul>
      */
     inline const SSEStatus& GetStatus() const{ return m_status; }
 
@@ -66,7 +67,8 @@ namespace Model
      * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
      * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
      * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * </ul>
+     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
+     * </li> </ul>
      */
     inline void SetStatus(const SSEStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -76,7 +78,8 @@ namespace Model
      * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
      * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
      * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * </ul>
+     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
+     * </li> </ul>
      */
     inline void SetStatus(SSEStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -86,7 +89,8 @@ namespace Model
      * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
      * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
      * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * </ul>
+     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
+     * </li> </ul>
      */
     inline SSEDescription& WithStatus(const SSEStatus& value) { SetStatus(value); return *this;}
 
@@ -96,7 +100,8 @@ namespace Model
      * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
      * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
      * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * </ul>
+     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
+     * </li> </ul>
      */
     inline SSEDescription& WithStatus(SSEStatus&& value) { SetStatus(std::move(value)); return *this;}
 

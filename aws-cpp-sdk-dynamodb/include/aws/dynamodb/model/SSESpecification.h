@@ -15,6 +15,9 @@
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
+#include <aws/dynamodb/model/SSEType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,10 +67,114 @@ namespace Model
      */
     inline SSESpecification& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * (default)</p> </li> </ul>
+     */
+    inline const SSEType& GetSSEType() const{ return m_sSEType; }
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * (default)</p> </li> </ul>
+     */
+    inline void SetSSEType(const SSEType& value) { m_sSETypeHasBeenSet = true; m_sSEType = value; }
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * (default)</p> </li> </ul>
+     */
+    inline void SetSSEType(SSEType&& value) { m_sSETypeHasBeenSet = true; m_sSEType = std::move(value); }
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * (default)</p> </li> </ul>
+     */
+    inline SSESpecification& WithSSEType(const SSEType& value) { SetSSEType(value); return *this;}
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * (default)</p> </li> </ul>
+     */
+    inline SSESpecification& WithSSEType(SSEType&& value) { SetSSEType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
+     */
+    inline const Aws::String& GetKMSMasterKeyId() const{ return m_kMSMasterKeyId; }
+
+    /**
+     * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
+     */
+    inline void SetKMSMasterKeyId(const Aws::String& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = value; }
+
+    /**
+     * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
+     */
+    inline void SetKMSMasterKeyId(Aws::String&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::move(value); }
+
+    /**
+     * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
+     */
+    inline void SetKMSMasterKeyId(const char* value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId.assign(value); }
+
+    /**
+     * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
+     */
+    inline SSESpecification& WithKMSMasterKeyId(const Aws::String& value) { SetKMSMasterKeyId(value); return *this;}
+
+    /**
+     * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
+     */
+    inline SSESpecification& WithKMSMasterKeyId(Aws::String&& value) { SetKMSMasterKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
+     */
+    inline SSESpecification& WithKMSMasterKeyId(const char* value) { SetKMSMasterKeyId(value); return *this;}
+
   private:
 
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    SSEType m_sSEType;
+    bool m_sSETypeHasBeenSet;
+
+    Aws::String m_kMSMasterKeyId;
+    bool m_kMSMasterKeyIdHasBeenSet;
   };
 
 } // namespace Model

@@ -27,7 +27,8 @@ UpdateTableRequest::UpdateTableRequest() :
     m_tableNameHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
     m_globalSecondaryIndexUpdatesHasBeenSet(false),
-    m_streamSpecificationHasBeenSet(false)
+    m_streamSpecificationHasBeenSet(false),
+    m_sSESpecificationHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_streamSpecificationHasBeenSet)
   {
    payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
+
+  }
+
+  if(m_sSESpecificationHasBeenSet)
+  {
+   payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
 
   }
 

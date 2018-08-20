@@ -47,37 +47,44 @@ namespace Model
 
 
     /**
-     * <p>The backups from the table specified by TableName are listed. </p>
+     * <p>The backups from the table specified by <code>TableName</code> are listed.
+     * </p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The backups from the table specified by TableName are listed. </p>
+     * <p>The backups from the table specified by <code>TableName</code> are listed.
+     * </p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The backups from the table specified by TableName are listed. </p>
+     * <p>The backups from the table specified by <code>TableName</code> are listed.
+     * </p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The backups from the table specified by TableName are listed. </p>
+     * <p>The backups from the table specified by <code>TableName</code> are listed.
+     * </p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The backups from the table specified by TableName are listed. </p>
+     * <p>The backups from the table specified by <code>TableName</code> are listed.
+     * </p>
      */
     inline ListBackupsRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The backups from the table specified by TableName are listed. </p>
+     * <p>The backups from the table specified by <code>TableName</code> are listed.
+     * </p>
      */
     inline ListBackupsRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The backups from the table specified by TableName are listed. </p>
+     * <p>The backups from the table specified by <code>TableName</code> are listed.
+     * </p>
      */
     inline ListBackupsRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
@@ -225,47 +232,52 @@ namespace Model
 
 
     /**
-     * <p>The backups from the table specified by BackupType are listed.</p> <p>Where
-     * BackupType can be:</p> <ul> <li> <p> <code>USER</code> - On demand backup
-     * created by you.</p> </li> <li> <p> <code>SYSTEM</code> - On demand backup
-     * automatically created by DynamoDB.</p> </li> <li> <p> <code>ALL</code> - All
-     * types of on demand backups (USER and SYSTEM).</p> </li> </ul>
+     * <p>The backups from the table specified by <code>BackupType</code> are
+     * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
+     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
+     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
+     * SYSTEM).</p> </li> </ul>
      */
     inline const BackupTypeFilter& GetBackupType() const{ return m_backupType; }
 
     /**
-     * <p>The backups from the table specified by BackupType are listed.</p> <p>Where
-     * BackupType can be:</p> <ul> <li> <p> <code>USER</code> - On demand backup
-     * created by you.</p> </li> <li> <p> <code>SYSTEM</code> - On demand backup
-     * automatically created by DynamoDB.</p> </li> <li> <p> <code>ALL</code> - All
-     * types of on demand backups (USER and SYSTEM).</p> </li> </ul>
+     * <p>The backups from the table specified by <code>BackupType</code> are
+     * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
+     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
+     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
+     * SYSTEM).</p> </li> </ul>
      */
     inline void SetBackupType(const BackupTypeFilter& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
 
     /**
-     * <p>The backups from the table specified by BackupType are listed.</p> <p>Where
-     * BackupType can be:</p> <ul> <li> <p> <code>USER</code> - On demand backup
-     * created by you.</p> </li> <li> <p> <code>SYSTEM</code> - On demand backup
-     * automatically created by DynamoDB.</p> </li> <li> <p> <code>ALL</code> - All
-     * types of on demand backups (USER and SYSTEM).</p> </li> </ul>
+     * <p>The backups from the table specified by <code>BackupType</code> are
+     * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
+     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
+     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
+     * SYSTEM).</p> </li> </ul>
      */
     inline void SetBackupType(BackupTypeFilter&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::move(value); }
 
     /**
-     * <p>The backups from the table specified by BackupType are listed.</p> <p>Where
-     * BackupType can be:</p> <ul> <li> <p> <code>USER</code> - On demand backup
-     * created by you.</p> </li> <li> <p> <code>SYSTEM</code> - On demand backup
-     * automatically created by DynamoDB.</p> </li> <li> <p> <code>ALL</code> - All
-     * types of on demand backups (USER and SYSTEM).</p> </li> </ul>
+     * <p>The backups from the table specified by <code>BackupType</code> are
+     * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
+     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
+     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
+     * SYSTEM).</p> </li> </ul>
      */
     inline ListBackupsRequest& WithBackupType(const BackupTypeFilter& value) { SetBackupType(value); return *this;}
 
     /**
-     * <p>The backups from the table specified by BackupType are listed.</p> <p>Where
-     * BackupType can be:</p> <ul> <li> <p> <code>USER</code> - On demand backup
-     * created by you.</p> </li> <li> <p> <code>SYSTEM</code> - On demand backup
-     * automatically created by DynamoDB.</p> </li> <li> <p> <code>ALL</code> - All
-     * types of on demand backups (USER and SYSTEM).</p> </li> </ul>
+     * <p>The backups from the table specified by <code>BackupType</code> are
+     * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
+     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
+     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
+     * SYSTEM).</p> </li> </ul>
      */
     inline ListBackupsRequest& WithBackupType(BackupTypeFilter&& value) { SetBackupType(std::move(value)); return *this;}
 

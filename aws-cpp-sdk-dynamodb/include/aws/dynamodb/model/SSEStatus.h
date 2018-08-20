@@ -29,7 +29,8 @@ namespace Model
     ENABLING,
     ENABLED,
     DISABLING,
-    DISABLED
+    DISABLED,
+    UPDATING
   };
 
 namespace SSEStatusMapper

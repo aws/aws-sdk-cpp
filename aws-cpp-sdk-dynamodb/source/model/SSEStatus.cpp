@@ -34,6 +34,7 @@ namespace Aws
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
         static const int DISABLING_HASH = HashingUtils::HashString("DISABLING");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 
         SSEStatus GetSSEStatusForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == DISABLED_HASH)
           {
             return SSEStatus::DISABLED;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return SSEStatus::UPDATING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "DISABLING";
           case SSEStatus::DISABLED:
             return "DISABLED";
+          case SSEStatus::UPDATING:
+            return "UPDATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

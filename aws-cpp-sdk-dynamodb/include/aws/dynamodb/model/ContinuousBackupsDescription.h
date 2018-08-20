@@ -50,31 +50,31 @@ namespace Model
 
 
     /**
-     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states :
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
      * ENABLED, DISABLED</p>
      */
     inline const ContinuousBackupsStatus& GetContinuousBackupsStatus() const{ return m_continuousBackupsStatus; }
 
     /**
-     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states :
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
      * ENABLED, DISABLED</p>
      */
     inline void SetContinuousBackupsStatus(const ContinuousBackupsStatus& value) { m_continuousBackupsStatusHasBeenSet = true; m_continuousBackupsStatus = value; }
 
     /**
-     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states :
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
      * ENABLED, DISABLED</p>
      */
     inline void SetContinuousBackupsStatus(ContinuousBackupsStatus&& value) { m_continuousBackupsStatusHasBeenSet = true; m_continuousBackupsStatus = std::move(value); }
 
     /**
-     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states :
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
      * ENABLED, DISABLED</p>
      */
     inline ContinuousBackupsDescription& WithContinuousBackupsStatus(const ContinuousBackupsStatus& value) { SetContinuousBackupsStatus(value); return *this;}
 
     /**
-     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states :
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
      * ENABLED, DISABLED</p>
      */
     inline ContinuousBackupsDescription& WithContinuousBackupsStatus(ContinuousBackupsStatus&& value) { SetContinuousBackupsStatus(std::move(value)); return *this;}
