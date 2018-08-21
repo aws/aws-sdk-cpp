@@ -19,6 +19,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <cassert>
 
 using namespace Aws::Http;
 using namespace Aws::Http::Standard;
