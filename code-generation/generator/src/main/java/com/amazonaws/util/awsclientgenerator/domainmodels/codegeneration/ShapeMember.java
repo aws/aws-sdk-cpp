@@ -50,4 +50,8 @@ public class ShapeMember {
     public boolean isUsedForPayload() {
         return !isUsedForHeader() && !isUsedForUri() && !isUsedForHttpStatusCode() && !isUsedForQueryString() && !streaming;
     }
+
+    public boolean requiresHeaderEncoding() {
+        return isUsedForHeader() && "x-amz-copy-source".equals(locationName);
+    }
 }

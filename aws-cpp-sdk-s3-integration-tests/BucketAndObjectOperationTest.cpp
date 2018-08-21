@@ -27,6 +27,7 @@
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/CopyObjectRequest.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
@@ -1133,5 +1134,39 @@ namespace
 
         Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_DNS_UNFRIENDLY_OBJ_KEY, HttpMethod::HTTP_PUT);
         ASSERT_EQ(0ul, presignedUrlPut.find("https://s3.amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY));
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestCopyingFromKeysWithUnicodeCharacters)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str());
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+
+        WaitForBucketToPropagate(fullBucketName);
+
+        auto objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
+        *objectStream << "Test Japanese & Chinese Unicode keys";
+        objectStream->flush();
+        const char encodedKeyName[] = "%E3%83%86%E3%82%B9%E3%83%88%20%E6%B5%8B%E8%AF%95.txt"; // "テスト 测试.txt";
+        Aws::String unicodekey = StringUtils::URLDecode(encodedKeyName);
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetContentLength(static_cast<long>(putObjectRequest.GetBody()->tellp()));
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.SetKey(unicodekey);
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        CopyObjectRequest copyRequest;
+        copyRequest.WithBucket(fullBucketName)
+            .WithKey("destination/" + unicodekey)
+            .WithCopySource(fullBucketName + "/" + unicodekey);
+
+        auto copyOutcome = Client->CopyObject(copyRequest);
+        ASSERT_TRUE(copyOutcome.IsSuccess());
     }
 }
