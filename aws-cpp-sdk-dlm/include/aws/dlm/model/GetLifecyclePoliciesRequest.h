@@ -155,107 +155,107 @@ namespace Model
 
 
     /**
-     * <p>The target tags.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p>
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetTags() const{ return m_targetTags; }
 
     /**
-     * <p>The target tags.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p>
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
      */
     inline void SetTargetTags(const Aws::Vector<Aws::String>& value) { m_targetTagsHasBeenSet = true; m_targetTags = value; }
 
     /**
-     * <p>The target tags.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p>
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
      */
     inline void SetTargetTags(Aws::Vector<Aws::String>&& value) { m_targetTagsHasBeenSet = true; m_targetTags = std::move(value); }
 
     /**
-     * <p>The target tags.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p>
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
      */
     inline GetLifecyclePoliciesRequest& WithTargetTags(const Aws::Vector<Aws::String>& value) { SetTargetTags(value); return *this;}
 
     /**
-     * <p>The target tags.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p>
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
      */
     inline GetLifecyclePoliciesRequest& WithTargetTags(Aws::Vector<Aws::String>&& value) { SetTargetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The target tags.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p>
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTargetTags(const Aws::String& value) { m_targetTagsHasBeenSet = true; m_targetTags.push_back(value); return *this; }
 
     /**
-     * <p>The target tags.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p>
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTargetTags(Aws::String&& value) { m_targetTagsHasBeenSet = true; m_targetTags.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The target tags.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p>
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTargetTags(const char* value) { m_targetTagsHasBeenSet = true; m_targetTags.push_back(value); return *this; }
 
 
     /**
-     * <p>The tags to add to the resources.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added
-     * lifecycle tags.</p>
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagsToAdd() const{ return m_tagsToAdd; }
 
     /**
-     * <p>The tags to add to the resources.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added
-     * lifecycle tags.</p>
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline void SetTagsToAdd(const Aws::Vector<Aws::String>& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = value; }
 
     /**
-     * <p>The tags to add to the resources.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added
-     * lifecycle tags.</p>
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline void SetTagsToAdd(Aws::Vector<Aws::String>&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = std::move(value); }
 
     /**
-     * <p>The tags to add to the resources.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added
-     * lifecycle tags.</p>
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& WithTagsToAdd(const Aws::Vector<Aws::String>& value) { SetTagsToAdd(value); return *this;}
 
     /**
-     * <p>The tags to add to the resources.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added
-     * lifecycle tags.</p>
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& WithTagsToAdd(Aws::Vector<Aws::String>&& value) { SetTagsToAdd(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to add to the resources.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added
-     * lifecycle tags.</p>
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTagsToAdd(const Aws::String& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
 
     /**
-     * <p>The tags to add to the resources.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added
-     * lifecycle tags.</p>
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTagsToAdd(Aws::String&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The tags to add to the resources.</p> <p>Tags are strings in the format
-     * <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added
-     * lifecycle tags.</p>
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTagsToAdd(const char* value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
 

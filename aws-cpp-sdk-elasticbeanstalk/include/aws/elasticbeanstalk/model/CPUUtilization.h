@@ -67,39 +67,39 @@ namespace Model
 
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over
-     * the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>Nice</code> state over the last 10 seconds.</p>
      */
     inline double GetNice() const{ return m_nice; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over
-     * the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>Nice</code> state over the last 10 seconds.</p>
      */
     inline void SetNice(double value) { m_niceHasBeenSet = true; m_nice = value; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over
-     * the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>Nice</code> state over the last 10 seconds.</p>
      */
     inline CPUUtilization& WithNice(double value) { SetNice(value); return *this;}
 
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>System</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>System</code> state over the last 10 seconds.</p>
      */
     inline double GetSystem() const{ return m_system; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>System</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>System</code> state over the last 10 seconds.</p>
      */
     inline void SetSystem(double value) { m_systemHasBeenSet = true; m_system = value; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>System</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>System</code> state over the last 10 seconds.</p>
      */
     inline CPUUtilization& WithSystem(double value) { SetSystem(value); return *this;}
 
@@ -124,60 +124,79 @@ namespace Model
 
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
      */
     inline double GetIOWait() const{ return m_iOWait; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
      */
     inline void SetIOWait(double value) { m_iOWaitHasBeenSet = true; m_iOWait = value; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
      */
     inline CPUUtilization& WithIOWait(double value) { SetIOWait(value); return *this;}
 
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over
-     * the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
      */
     inline double GetIRQ() const{ return m_iRQ; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over
-     * the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
      */
     inline void SetIRQ(double value) { m_iRQHasBeenSet = true; m_iRQ = value; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over
-     * the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
      */
     inline CPUUtilization& WithIRQ(double value) { SetIRQ(value); return *this;}
 
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
      */
     inline double GetSoftIRQ() const{ return m_softIRQ; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
      */
     inline void SetSoftIRQ(double value) { m_softIRQHasBeenSet = true; m_softIRQ = value; }
 
     /**
-     * <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state
-     * over the last 10 seconds.</p>
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
      */
     inline CPUUtilization& WithSoftIRQ(double value) { SetSoftIRQ(value); return *this;}
+
+
+    /**
+     * <p>Available on Windows environments only.</p> <p>Percentage of time that the
+     * CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
+     */
+    inline double GetPrivileged() const{ return m_privileged; }
+
+    /**
+     * <p>Available on Windows environments only.</p> <p>Percentage of time that the
+     * CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
+     */
+    inline void SetPrivileged(double value) { m_privilegedHasBeenSet = true; m_privileged = value; }
+
+    /**
+     * <p>Available on Windows environments only.</p> <p>Percentage of time that the
+     * CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
+     */
+    inline CPUUtilization& WithPrivileged(double value) { SetPrivileged(value); return *this;}
 
   private:
 
@@ -201,6 +220,9 @@ namespace Model
 
     double m_softIRQ;
     bool m_softIRQHasBeenSet;
+
+    double m_privileged;
+    bool m_privilegedHasBeenSet;
   };
 
 } // namespace Model

@@ -88,44 +88,44 @@ namespace Model
 
 
     /**
-     * <p>The tags to add to policy-created resources. These tags are added in addition
-     * to the default lifecycle tags.</p>
+     * <p>The tags to apply to policy-created resources. These user-defined tags are in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsToAdd() const{ return m_tagsToAdd; }
 
     /**
-     * <p>The tags to add to policy-created resources. These tags are added in addition
-     * to the default lifecycle tags.</p>
+     * <p>The tags to apply to policy-created resources. These user-defined tags are in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline void SetTagsToAdd(const Aws::Vector<Tag>& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = value; }
 
     /**
-     * <p>The tags to add to policy-created resources. These tags are added in addition
-     * to the default lifecycle tags.</p>
+     * <p>The tags to apply to policy-created resources. These user-defined tags are in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline void SetTagsToAdd(Aws::Vector<Tag>&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = std::move(value); }
 
     /**
-     * <p>The tags to add to policy-created resources. These tags are added in addition
-     * to the default lifecycle tags.</p>
+     * <p>The tags to apply to policy-created resources. These user-defined tags are in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline Schedule& WithTagsToAdd(const Aws::Vector<Tag>& value) { SetTagsToAdd(value); return *this;}
 
     /**
-     * <p>The tags to add to policy-created resources. These tags are added in addition
-     * to the default lifecycle tags.</p>
+     * <p>The tags to apply to policy-created resources. These user-defined tags are in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline Schedule& WithTagsToAdd(Aws::Vector<Tag>&& value) { SetTagsToAdd(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to add to policy-created resources. These tags are added in addition
-     * to the default lifecycle tags.</p>
+     * <p>The tags to apply to policy-created resources. These user-defined tags are in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline Schedule& AddTagsToAdd(const Tag& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
 
     /**
-     * <p>The tags to add to policy-created resources. These tags are added in addition
-     * to the default lifecycle tags.</p>
+     * <p>The tags to apply to policy-created resources. These user-defined tags are in
+     * addition to the AWS-added lifecycle tags.</p>
      */
     inline Schedule& AddTagsToAdd(Tag&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(std::move(value)); return *this; }
 

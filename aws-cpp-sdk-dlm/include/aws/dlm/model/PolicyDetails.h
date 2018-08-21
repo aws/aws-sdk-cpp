@@ -88,73 +88,73 @@ namespace Model
 
 
     /**
-     * <p>The target tags.</p>
+     * <p>The single tag that identifies targeted resources for this policy.</p>
      */
     inline const Aws::Vector<Tag>& GetTargetTags() const{ return m_targetTags; }
 
     /**
-     * <p>The target tags.</p>
+     * <p>The single tag that identifies targeted resources for this policy.</p>
      */
     inline void SetTargetTags(const Aws::Vector<Tag>& value) { m_targetTagsHasBeenSet = true; m_targetTags = value; }
 
     /**
-     * <p>The target tags.</p>
+     * <p>The single tag that identifies targeted resources for this policy.</p>
      */
     inline void SetTargetTags(Aws::Vector<Tag>&& value) { m_targetTagsHasBeenSet = true; m_targetTags = std::move(value); }
 
     /**
-     * <p>The target tags.</p>
+     * <p>The single tag that identifies targeted resources for this policy.</p>
      */
     inline PolicyDetails& WithTargetTags(const Aws::Vector<Tag>& value) { SetTargetTags(value); return *this;}
 
     /**
-     * <p>The target tags.</p>
+     * <p>The single tag that identifies targeted resources for this policy.</p>
      */
     inline PolicyDetails& WithTargetTags(Aws::Vector<Tag>&& value) { SetTargetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The target tags.</p>
+     * <p>The single tag that identifies targeted resources for this policy.</p>
      */
     inline PolicyDetails& AddTargetTags(const Tag& value) { m_targetTagsHasBeenSet = true; m_targetTags.push_back(value); return *this; }
 
     /**
-     * <p>The target tags.</p>
+     * <p>The single tag that identifies targeted resources for this policy.</p>
      */
     inline PolicyDetails& AddTargetTags(Tag&& value) { m_targetTagsHasBeenSet = true; m_targetTags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The schedule.</p>
+     * <p>The schedule of policy-defined actions.</p>
      */
     inline const Aws::Vector<Schedule>& GetSchedules() const{ return m_schedules; }
 
     /**
-     * <p>The schedule.</p>
+     * <p>The schedule of policy-defined actions.</p>
      */
     inline void SetSchedules(const Aws::Vector<Schedule>& value) { m_schedulesHasBeenSet = true; m_schedules = value; }
 
     /**
-     * <p>The schedule.</p>
+     * <p>The schedule of policy-defined actions.</p>
      */
     inline void SetSchedules(Aws::Vector<Schedule>&& value) { m_schedulesHasBeenSet = true; m_schedules = std::move(value); }
 
     /**
-     * <p>The schedule.</p>
+     * <p>The schedule of policy-defined actions.</p>
      */
     inline PolicyDetails& WithSchedules(const Aws::Vector<Schedule>& value) { SetSchedules(value); return *this;}
 
     /**
-     * <p>The schedule.</p>
+     * <p>The schedule of policy-defined actions.</p>
      */
     inline PolicyDetails& WithSchedules(Aws::Vector<Schedule>&& value) { SetSchedules(std::move(value)); return *this;}
 
     /**
-     * <p>The schedule.</p>
+     * <p>The schedule of policy-defined actions.</p>
      */
     inline PolicyDetails& AddSchedules(const Schedule& value) { m_schedulesHasBeenSet = true; m_schedules.push_back(value); return *this; }
 
     /**
-     * <p>The schedule.</p>
+     * <p>The schedule of policy-defined actions.</p>
      */
     inline PolicyDetails& AddSchedules(Schedule&& value) { m_schedulesHasBeenSet = true; m_schedules.push_back(std::move(value)); return *this; }
 

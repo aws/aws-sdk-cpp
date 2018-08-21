@@ -157,32 +157,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be
-     * re-used across lifecycle policies.</p>
+     * <p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot
+     * be re-used across lifecycle policies.</p>
      */
     inline const PolicyDetails& GetPolicyDetails() const{ return m_policyDetails; }
 
     /**
-     * <p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be
-     * re-used across lifecycle policies.</p>
+     * <p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot
+     * be re-used across lifecycle policies.</p>
      */
     inline void SetPolicyDetails(const PolicyDetails& value) { m_policyDetailsHasBeenSet = true; m_policyDetails = value; }
 
     /**
-     * <p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be
-     * re-used across lifecycle policies.</p>
+     * <p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot
+     * be re-used across lifecycle policies.</p>
      */
     inline void SetPolicyDetails(PolicyDetails&& value) { m_policyDetailsHasBeenSet = true; m_policyDetails = std::move(value); }
 
     /**
-     * <p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be
-     * re-used across lifecycle policies.</p>
+     * <p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot
+     * be re-used across lifecycle policies.</p>
      */
     inline CreateLifecyclePolicyRequest& WithPolicyDetails(const PolicyDetails& value) { SetPolicyDetails(value); return *this;}
 
     /**
-     * <p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be
-     * re-used across lifecycle policies.</p>
+     * <p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot
+     * be re-used across lifecycle policies.</p>
      */
     inline CreateLifecyclePolicyRequest& WithPolicyDetails(PolicyDetails&& value) { SetPolicyDetails(std::move(value)); return *this;}
 

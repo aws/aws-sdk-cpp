@@ -558,7 +558,9 @@ namespace Model
         /**
          * <p>Creates a configuration template. Templates are associated with a specific
          * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
+         * the same configuration settings.</p> <p>Templates aren't associated with any
+         * environment. The <code>EnvironmentName</code> response element is always
+         * <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
          * <a>ListAvailableSolutionStacks</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -570,7 +572,9 @@ namespace Model
         /**
          * <p>Creates a configuration template. Templates are associated with a specific
          * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
+         * the same configuration settings.</p> <p>Templates aren't associated with any
+         * environment. The <code>EnvironmentName</code> response element is always
+         * <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
          * <a>ListAvailableSolutionStacks</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -584,7 +588,9 @@ namespace Model
         /**
          * <p>Creates a configuration template. Templates are associated with a specific
          * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
+         * the same configuration settings.</p> <p>Templates aren't associated with any
+         * environment. The <code>EnvironmentName</code> response element is always
+         * <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
          * <a>ListAvailableSolutionStacks</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
