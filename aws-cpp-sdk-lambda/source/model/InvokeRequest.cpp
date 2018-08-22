@@ -55,18 +55,18 @@ Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() cons
   Aws::StringStream ss;
   if(m_invocationTypeHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-invocation-type", InvocationTypeMapper::GetNameForInvocationType(m_invocationType)));
+    headers.emplace("x-amz-invocation-type", InvocationTypeMapper::GetNameForInvocationType(m_invocationType));
   }
 
   if(m_logTypeHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-log-type", LogTypeMapper::GetNameForLogType(m_logType)));
+    headers.emplace("x-amz-log-type", LogTypeMapper::GetNameForLogType(m_logType));
   }
 
   if(m_clientContextHasBeenSet)
   {
     ss << m_clientContext;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
+    headers.emplace("x-amz-client-context",  ss.str());
     ss.str("");
   }
 

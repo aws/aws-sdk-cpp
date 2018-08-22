@@ -39,7 +39,7 @@ Aws::Http::HeaderValueCollection InvokeEndpointRequest::GetRequestSpecificHeader
   if(m_acceptHasBeenSet)
   {
     ss << m_accept;
-    headers.insert(Aws::Http::HeaderValuePair("accept", ss.str()));
+    headers.emplace("accept",  ss.str());
     ss.str("");
   }
 

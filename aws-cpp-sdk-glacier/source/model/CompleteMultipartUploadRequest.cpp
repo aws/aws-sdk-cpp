@@ -44,14 +44,14 @@ Aws::Http::HeaderValueCollection CompleteMultipartUploadRequest::GetRequestSpeci
   if(m_archiveSizeHasBeenSet)
   {
     ss << m_archiveSize;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-archive-size", ss.str()));
+    headers.emplace("x-amz-archive-size",  ss.str());
     ss.str("");
   }
 
   if(m_checksumHasBeenSet)
   {
     ss << m_checksum;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-sha256-tree-hash", ss.str()));
+    headers.emplace("x-amz-sha256-tree-hash",  ss.str());
     ss.str("");
   }
 

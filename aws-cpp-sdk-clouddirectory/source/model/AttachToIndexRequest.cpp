@@ -56,7 +56,7 @@ Aws::Http::HeaderValueCollection AttachToIndexRequest::GetRequestSpecificHeaders
   if(m_directoryArnHasBeenSet)
   {
     ss << m_directoryArn;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-data-partition", ss.str()));
+    headers.emplace("x-amz-data-partition",  ss.str());
     ss.str("");
   }
 

@@ -36,6 +36,7 @@ namespace Aws
         static const int InTransitToCustomer_HASH = HashingUtils::HashString("InTransitToCustomer");
         static const int WithCustomer_HASH = HashingUtils::HashString("WithCustomer");
         static const int InTransitToAWS_HASH = HashingUtils::HashString("InTransitToAWS");
+        static const int WithAWSSortingFacility_HASH = HashingUtils::HashString("WithAWSSortingFacility");
         static const int WithAWS_HASH = HashingUtils::HashString("WithAWS");
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
         static const int Complete_HASH = HashingUtils::HashString("Complete");
@@ -70,6 +71,10 @@ namespace Aws
           else if (hashCode == InTransitToAWS_HASH)
           {
             return JobState::InTransitToAWS;
+          }
+          else if (hashCode == WithAWSSortingFacility_HASH)
+          {
+            return JobState::WithAWSSortingFacility;
           }
           else if (hashCode == WithAWS_HASH)
           {
@@ -121,6 +126,8 @@ namespace Aws
             return "WithCustomer";
           case JobState::InTransitToAWS:
             return "InTransitToAWS";
+          case JobState::WithAWSSortingFacility:
+            return "WithAWSSortingFacility";
           case JobState::WithAWS:
             return "WithAWS";
           case JobState::InProgress:

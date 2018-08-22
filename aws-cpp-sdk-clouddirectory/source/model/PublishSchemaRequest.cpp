@@ -63,7 +63,7 @@ Aws::Http::HeaderValueCollection PublishSchemaRequest::GetRequestSpecificHeaders
   if(m_developmentSchemaArnHasBeenSet)
   {
     ss << m_developmentSchemaArn;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-data-partition", ss.str()));
+    headers.emplace("x-amz-data-partition",  ss.str());
     ss.str("");
   }
 

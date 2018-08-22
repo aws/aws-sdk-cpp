@@ -80,14 +80,14 @@ Aws::Http::HeaderValueCollection PutBucketVersioningRequest::GetRequestSpecificH
   if(m_contentMD5HasBeenSet)
   {
     ss << m_contentMD5;
-    headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
+    headers.emplace("content-md5",  ss.str());
     ss.str("");
   }
 
   if(m_mFAHasBeenSet)
   {
     ss << m_mFA;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-mfa", ss.str()));
+    headers.emplace("x-amz-mfa",  ss.str());
     ss.str("");
   }
 

@@ -41,7 +41,7 @@ Aws::Http::HeaderValueCollection CreateGroupCertificateAuthorityRequest::GetRequ
   if(m_amznClientTokenHasBeenSet)
   {
     ss << m_amznClientToken;
-    headers.insert(Aws::Http::HeaderValuePair("x-amzn-client-token", ss.str()));
+    headers.emplace("x-amzn-client-token",  ss.str());
     ss.str("");
   }
 

@@ -70,13 +70,13 @@ Aws::Http::HeaderValueCollection GetObjectAttributesRequest::GetRequestSpecificH
   if(m_directoryArnHasBeenSet)
   {
     ss << m_directoryArn;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-data-partition", ss.str()));
+    headers.emplace("x-amz-data-partition",  ss.str());
     ss.str("");
   }
 
   if(m_consistencyLevelHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-consistency-level", ConsistencyLevelMapper::GetNameForConsistencyLevel(m_consistencyLevel)));
+    headers.emplace("x-amz-consistency-level", ConsistencyLevelMapper::GetNameForConsistencyLevel(m_consistencyLevel));
   }
 
   return headers;

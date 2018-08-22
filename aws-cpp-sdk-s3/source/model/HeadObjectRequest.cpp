@@ -94,58 +94,58 @@ Aws::Http::HeaderValueCollection HeadObjectRequest::GetRequestSpecificHeaders() 
   if(m_ifMatchHasBeenSet)
   {
     ss << m_ifMatch;
-    headers.insert(Aws::Http::HeaderValuePair("if-match", ss.str()));
+    headers.emplace("if-match",  ss.str());
     ss.str("");
   }
 
   if(m_ifModifiedSinceHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("if-modified-since", m_ifModifiedSince.ToGmtString(DateFormat::RFC822)));
+    headers.emplace("if-modified-since", m_ifModifiedSince.ToGmtString(DateFormat::RFC822));
   }
 
   if(m_ifNoneMatchHasBeenSet)
   {
     ss << m_ifNoneMatch;
-    headers.insert(Aws::Http::HeaderValuePair("if-none-match", ss.str()));
+    headers.emplace("if-none-match",  ss.str());
     ss.str("");
   }
 
   if(m_ifUnmodifiedSinceHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("if-unmodified-since", m_ifUnmodifiedSince.ToGmtString(DateFormat::RFC822)));
+    headers.emplace("if-unmodified-since", m_ifUnmodifiedSince.ToGmtString(DateFormat::RFC822));
   }
 
   if(m_rangeHasBeenSet)
   {
     ss << m_range;
-    headers.insert(Aws::Http::HeaderValuePair("range", ss.str()));
+    headers.emplace("range",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerAlgorithmHasBeenSet)
   {
     ss << m_sSECustomerAlgorithm;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-algorithm",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerKeyHasBeenSet)
   {
     ss << m_sSECustomerKey;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-key",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerKeyMD5HasBeenSet)
   {
     ss << m_sSECustomerKeyMD5;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-key-md5",  ss.str());
     ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
   return headers;

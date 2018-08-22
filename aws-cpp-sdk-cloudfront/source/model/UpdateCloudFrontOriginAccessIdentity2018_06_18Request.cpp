@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection UpdateCloudFrontOriginAccessIdentity2018_06_18R
   if(m_ifMatchHasBeenSet)
   {
     ss << m_ifMatch;
-    headers.insert(Aws::Http::HeaderValuePair("if-match", ss.str()));
+    headers.emplace("if-match",  ss.str());
     ss.str("");
   }
 

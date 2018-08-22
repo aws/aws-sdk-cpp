@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection UpdateStreamingDistribution2018_06_18Request::G
   if(m_ifMatchHasBeenSet)
   {
     ss << m_ifMatch;
-    headers.insert(Aws::Http::HeaderValuePair("if-match", ss.str()));
+    headers.emplace("if-match",  ss.str());
     ss.str("");
   }
 
