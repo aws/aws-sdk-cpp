@@ -415,11 +415,14 @@ public class C2jModelToGeneratorModelTransformer {
             switch(name) {
                 case "CopyObjectResult":
                     newName = "CopyObjectResultDetails";
+                    renameShapeMember(shape, name, newName);
+                    break;
+                case "BatchUpdateScheduleResult":
+                    shapes.remove(name);                    
                     break;
                 default:
                     throw new RuntimeException("Unhandled shape name conflict: " + name);
             }
-            renameShapeMember(shape, name, newName);
         }
 
         Shape cloned = cloneShape(shape);
