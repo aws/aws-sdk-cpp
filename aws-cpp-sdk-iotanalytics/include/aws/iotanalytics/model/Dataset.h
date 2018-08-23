@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotanalytics/model/DatasetStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <aws/iotanalytics/model/DatasetAction.h>
 #include <aws/iotanalytics/model/DatasetTrigger.h>
 #include <utility>
@@ -125,37 +126,44 @@ namespace Model
 
 
     /**
-     * <p>The "DatasetAction" objects that create the data set.</p>
+     * <p>The "DatasetAction" objects that automatically create the data set
+     * contents.</p>
      */
     inline const Aws::Vector<DatasetAction>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The "DatasetAction" objects that create the data set.</p>
+     * <p>The "DatasetAction" objects that automatically create the data set
+     * contents.</p>
      */
     inline void SetActions(const Aws::Vector<DatasetAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The "DatasetAction" objects that create the data set.</p>
+     * <p>The "DatasetAction" objects that automatically create the data set
+     * contents.</p>
      */
     inline void SetActions(Aws::Vector<DatasetAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The "DatasetAction" objects that create the data set.</p>
+     * <p>The "DatasetAction" objects that automatically create the data set
+     * contents.</p>
      */
     inline Dataset& WithActions(const Aws::Vector<DatasetAction>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The "DatasetAction" objects that create the data set.</p>
+     * <p>The "DatasetAction" objects that automatically create the data set
+     * contents.</p>
      */
     inline Dataset& WithActions(Aws::Vector<DatasetAction>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The "DatasetAction" objects that create the data set.</p>
+     * <p>The "DatasetAction" objects that automatically create the data set
+     * contents.</p>
      */
     inline Dataset& AddActions(const DatasetAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The "DatasetAction" objects that create the data set.</p>
+     * <p>The "DatasetAction" objects that automatically create the data set
+     * contents.</p>
      */
     inline Dataset& AddActions(DatasetAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
@@ -280,6 +288,32 @@ namespace Model
      */
     inline Dataset& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>[Optional] How long, in days, message data is kept for the data set.</p>
+     */
+    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>[Optional] How long, in days, message data is kept for the data set.</p>
+     */
+    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
+
+    /**
+     * <p>[Optional] How long, in days, message data is kept for the data set.</p>
+     */
+    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
+
+    /**
+     * <p>[Optional] How long, in days, message data is kept for the data set.</p>
+     */
+    inline Dataset& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
+
+    /**
+     * <p>[Optional] How long, in days, message data is kept for the data set.</p>
+     */
+    inline Dataset& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -302,6 +336,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
+
+    RetentionPeriod m_retentionPeriod;
+    bool m_retentionPeriodHasBeenSet;
   };
 
 } // namespace Model

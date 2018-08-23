@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <utility>
 
 namespace Aws
@@ -113,11 +114,39 @@ namespace Model
      */
     inline CreateDatasetResult& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
 
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriod = value; }
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriod = std::move(value); }
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline CreateDatasetResult& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline CreateDatasetResult& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datasetName;
 
     Aws::String m_datasetArn;
+
+    RetentionPeriod m_retentionPeriod;
   };
 
 } // namespace Model

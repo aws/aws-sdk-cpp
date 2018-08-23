@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateIndexingConfigurationRequest::UpdateIndexingConfigurationRequest() : 
-    m_thingIndexingConfigurationHasBeenSet(false)
+    m_thingIndexingConfigurationHasBeenSet(false),
+    m_thingGroupIndexingConfigurationHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String UpdateIndexingConfigurationRequest::SerializePayload() const
   if(m_thingIndexingConfigurationHasBeenSet)
   {
    payload.WithObject("thingIndexingConfiguration", m_thingIndexingConfiguration.Jsonize());
+
+  }
+
+  if(m_thingGroupIndexingConfigurationHasBeenSet)
+  {
+   payload.WithObject("thingGroupIndexingConfiguration", m_thingGroupIndexingConfiguration.Jsonize());
 
   }
 

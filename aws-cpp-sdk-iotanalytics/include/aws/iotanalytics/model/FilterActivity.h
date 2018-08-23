@@ -85,43 +85,43 @@ namespace Model
 
 
     /**
-     * <p>An expression that looks like an SQL WHERE clause that must return a Boolean
+     * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
      * value.</p>
      */
     inline const Aws::String& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>An expression that looks like an SQL WHERE clause that must return a Boolean
+     * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
      * value.</p>
      */
     inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>An expression that looks like an SQL WHERE clause that must return a Boolean
+     * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
      * value.</p>
      */
     inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>An expression that looks like an SQL WHERE clause that must return a Boolean
+     * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
      * value.</p>
      */
     inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
 
     /**
-     * <p>An expression that looks like an SQL WHERE clause that must return a Boolean
+     * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
      * value.</p>
      */
     inline FilterActivity& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>An expression that looks like an SQL WHERE clause that must return a Boolean
+     * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
      * value.</p>
      */
     inline FilterActivity& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
-     * <p>An expression that looks like an SQL WHERE clause that must return a Boolean
+     * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
      * value.</p>
      */
     inline FilterActivity& WithFilter(const char* value) { SetFilter(value); return *this;}

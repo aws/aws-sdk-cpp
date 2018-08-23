@@ -165,6 +165,16 @@ namespace Model
     inline StartCelebrityRecognitionRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
 
 
+    
+    inline bool GetEnablePersonTracking() const{ return m_enablePersonTracking; }
+
+    
+    inline void SetEnablePersonTracking(bool value) { m_enablePersonTrackingHasBeenSet = true; m_enablePersonTracking = value; }
+
+    
+    inline StartCelebrityRecognitionRequest& WithEnablePersonTracking(bool value) { SetEnablePersonTracking(value); return *this;}
+
+
     /**
      * <p>Unique identifier you specify to identify the job in the completion status
      * published to the Amazon Simple Notification Service topic. </p>
@@ -217,6 +227,9 @@ namespace Model
 
     NotificationChannel m_notificationChannel;
     bool m_notificationChannelHasBeenSet;
+
+    bool m_enablePersonTracking;
+    bool m_enablePersonTrackingHasBeenSet;
 
     Aws::String m_jobTag;
     bool m_jobTagHasBeenSet;

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/ThingIndexingConfiguration.h>
+#include <aws/iot/model/ThingGroupIndexingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +68,37 @@ namespace Model
      */
     inline GetIndexingConfigurationResult& WithThingIndexingConfiguration(ThingIndexingConfiguration&& value) { SetThingIndexingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The index configuration.</p>
+     */
+    inline const ThingGroupIndexingConfiguration& GetThingGroupIndexingConfiguration() const{ return m_thingGroupIndexingConfiguration; }
+
+    /**
+     * <p>The index configuration.</p>
+     */
+    inline void SetThingGroupIndexingConfiguration(const ThingGroupIndexingConfiguration& value) { m_thingGroupIndexingConfiguration = value; }
+
+    /**
+     * <p>The index configuration.</p>
+     */
+    inline void SetThingGroupIndexingConfiguration(ThingGroupIndexingConfiguration&& value) { m_thingGroupIndexingConfiguration = std::move(value); }
+
+    /**
+     * <p>The index configuration.</p>
+     */
+    inline GetIndexingConfigurationResult& WithThingGroupIndexingConfiguration(const ThingGroupIndexingConfiguration& value) { SetThingGroupIndexingConfiguration(value); return *this;}
+
+    /**
+     * <p>The index configuration.</p>
+     */
+    inline GetIndexingConfigurationResult& WithThingGroupIndexingConfiguration(ThingGroupIndexingConfiguration&& value) { SetThingGroupIndexingConfiguration(std::move(value)); return *this;}
+
   private:
 
     ThingIndexingConfiguration m_thingIndexingConfiguration;
+
+    ThingGroupIndexingConfiguration m_thingGroupIndexingConfiguration;
   };
 
 } // namespace Model

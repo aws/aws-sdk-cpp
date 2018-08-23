@@ -25,6 +25,7 @@
 #include <aws/iotanalytics/model/CancelPipelineReprocessingResult.h>
 #include <aws/iotanalytics/model/CreateChannelResult.h>
 #include <aws/iotanalytics/model/CreateDatasetResult.h>
+#include <aws/iotanalytics/model/CreateDatasetContentResult.h>
 #include <aws/iotanalytics/model/CreateDatastoreResult.h>
 #include <aws/iotanalytics/model/CreatePipelineResult.h>
 #include <aws/iotanalytics/model/DescribeChannelResult.h>
@@ -122,7 +123,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CancelPipelineReprocessingResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CancelPipelineReprocessingOutcome;
         typedef Aws::Utils::Outcome<CreateChannelResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateChannelOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateDatasetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateDatasetContentOutcome;
+        typedef Aws::Utils::Outcome<CreateDatasetContentResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateDatasetContentOutcome;
         typedef Aws::Utils::Outcome<CreateDatastoreResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateDatastoreOutcome;
         typedef Aws::Utils::Outcome<CreatePipelineResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreatePipelineOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DeleteChannelOutcome;
@@ -361,9 +362,11 @@ namespace Model
 
         /**
          * <p>Creates a data set. A data set stores data retrieved from a data store by
-         * applying an SQL action.</p> <note> <p>This operation creates the skeleton of a
-         * data set. To populate the data set, call "CreateDatasetContent".</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * applying a "queryAction" (a SQL query) or a "containerAction" (executing a
+         * containerized application). This operation creates the skeleton of a data set.
+         * The data set can be populated manually by calling "CreateDatasetContent" or
+         * automatically according to a "trigger" you specify.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">AWS
          * API Reference</a></p>
          */
@@ -371,9 +374,11 @@ namespace Model
 
         /**
          * <p>Creates a data set. A data set stores data retrieved from a data store by
-         * applying an SQL action.</p> <note> <p>This operation creates the skeleton of a
-         * data set. To populate the data set, call "CreateDatasetContent".</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * applying a "queryAction" (a SQL query) or a "containerAction" (executing a
+         * containerized application). This operation creates the skeleton of a data set.
+         * The data set can be populated manually by calling "CreateDatasetContent" or
+         * automatically according to a "trigger" you specify.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">AWS
          * API Reference</a></p>
          *
@@ -383,9 +388,11 @@ namespace Model
 
         /**
          * <p>Creates a data set. A data set stores data retrieved from a data store by
-         * applying an SQL action.</p> <note> <p>This operation creates the skeleton of a
-         * data set. To populate the data set, call "CreateDatasetContent".</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * applying a "queryAction" (a SQL query) or a "containerAction" (executing a
+         * containerized application). This operation creates the skeleton of a data set.
+         * The data set can be populated manually by calling "CreateDatasetContent" or
+         * automatically according to a "trigger" you specify.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">AWS
          * API Reference</a></p>
          *
@@ -394,7 +401,7 @@ namespace Model
         virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the content of a data set by applying an SQL action.</p><p><h3>See
+         * <p>Creates the content of a data set by applying a SQL action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>
@@ -402,7 +409,7 @@ namespace Model
         virtual Model::CreateDatasetContentOutcome CreateDatasetContent(const Model::CreateDatasetContentRequest& request) const;
 
         /**
-         * <p>Creates the content of a data set by applying an SQL action.</p><p><h3>See
+         * <p>Creates the content of a data set by applying a SQL action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>
@@ -412,7 +419,7 @@ namespace Model
         virtual Model::CreateDatasetContentOutcomeCallable CreateDatasetContentCallable(const Model::CreateDatasetContentRequest& request) const;
 
         /**
-         * <p>Creates the content of a data set by applying an SQL action.</p><p><h3>See
+         * <p>Creates the content of a data set by applying a SQL action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>

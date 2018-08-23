@@ -18,6 +18,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotanalytics/model/DatasetStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotanalytics/model/DatasetTrigger.h>
+#include <aws/iotanalytics/model/DatasetActionSummary.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +165,92 @@ namespace Model
      */
     inline DatasetSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of triggers. A trigger causes data set content to be populated at a
+     * specified time interval or when another data set is populated. The list of
+     * triggers can be empty or contain up to five DataSetTrigger objects</p>
+     */
+    inline const Aws::Vector<DatasetTrigger>& GetTriggers() const{ return m_triggers; }
+
+    /**
+     * <p>A list of triggers. A trigger causes data set content to be populated at a
+     * specified time interval or when another data set is populated. The list of
+     * triggers can be empty or contain up to five DataSetTrigger objects</p>
+     */
+    inline void SetTriggers(const Aws::Vector<DatasetTrigger>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
+
+    /**
+     * <p>A list of triggers. A trigger causes data set content to be populated at a
+     * specified time interval or when another data set is populated. The list of
+     * triggers can be empty or contain up to five DataSetTrigger objects</p>
+     */
+    inline void SetTriggers(Aws::Vector<DatasetTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = std::move(value); }
+
+    /**
+     * <p>A list of triggers. A trigger causes data set content to be populated at a
+     * specified time interval or when another data set is populated. The list of
+     * triggers can be empty or contain up to five DataSetTrigger objects</p>
+     */
+    inline DatasetSummary& WithTriggers(const Aws::Vector<DatasetTrigger>& value) { SetTriggers(value); return *this;}
+
+    /**
+     * <p>A list of triggers. A trigger causes data set content to be populated at a
+     * specified time interval or when another data set is populated. The list of
+     * triggers can be empty or contain up to five DataSetTrigger objects</p>
+     */
+    inline DatasetSummary& WithTriggers(Aws::Vector<DatasetTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of triggers. A trigger causes data set content to be populated at a
+     * specified time interval or when another data set is populated. The list of
+     * triggers can be empty or contain up to five DataSetTrigger objects</p>
+     */
+    inline DatasetSummary& AddTriggers(const DatasetTrigger& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
+
+    /**
+     * <p>A list of triggers. A trigger causes data set content to be populated at a
+     * specified time interval or when another data set is populated. The list of
+     * triggers can be empty or contain up to five DataSetTrigger objects</p>
+     */
+    inline DatasetSummary& AddTriggers(DatasetTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of "DataActionSummary" objects.</p>
+     */
+    inline const Aws::Vector<DatasetActionSummary>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>A list of "DataActionSummary" objects.</p>
+     */
+    inline void SetActions(const Aws::Vector<DatasetActionSummary>& value) { m_actionsHasBeenSet = true; m_actions = value; }
+
+    /**
+     * <p>A list of "DataActionSummary" objects.</p>
+     */
+    inline void SetActions(Aws::Vector<DatasetActionSummary>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
+
+    /**
+     * <p>A list of "DataActionSummary" objects.</p>
+     */
+    inline DatasetSummary& WithActions(const Aws::Vector<DatasetActionSummary>& value) { SetActions(value); return *this;}
+
+    /**
+     * <p>A list of "DataActionSummary" objects.</p>
+     */
+    inline DatasetSummary& WithActions(Aws::Vector<DatasetActionSummary>&& value) { SetActions(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of "DataActionSummary" objects.</p>
+     */
+    inline DatasetSummary& AddActions(const DatasetActionSummary& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of "DataActionSummary" objects.</p>
+     */
+    inline DatasetSummary& AddActions(DatasetActionSummary&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_datasetName;
@@ -175,6 +264,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
+
+    Aws::Vector<DatasetTrigger> m_triggers;
+    bool m_triggersHasBeenSet;
+
+    Aws::Vector<DatasetActionSummary> m_actions;
+    bool m_actionsHasBeenSet;
   };
 
 } // namespace Model

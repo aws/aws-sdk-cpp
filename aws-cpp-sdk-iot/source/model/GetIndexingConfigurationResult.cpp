@@ -44,6 +44,12 @@ GetIndexingConfigurationResult& GetIndexingConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("thingGroupIndexingConfiguration"))
+  {
+    m_thingGroupIndexingConfiguration = jsonValue.GetObject("thingGroupIndexingConfiguration");
+
+  }
+
 
 
   return *this;

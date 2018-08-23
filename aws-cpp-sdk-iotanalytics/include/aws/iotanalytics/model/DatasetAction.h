@@ -17,6 +17,7 @@
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotanalytics/model/SqlQueryDatasetAction.h>
+#include <aws/iotanalytics/model/ContainerDatasetAction.h>
 #include <utility>
 
 namespace Aws
@@ -50,37 +51,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the data set action.</p>
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
 
     /**
-     * <p>The name of the data set action.</p>
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
      */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
-     * <p>The name of the data set action.</p>
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
      */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
-     * <p>The name of the data set action.</p>
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
      */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
 
     /**
-     * <p>The name of the data set action.</p>
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
      */
     inline DatasetAction& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
 
     /**
-     * <p>The name of the data set action.</p>
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
      */
     inline DatasetAction& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data set action.</p>
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
      */
     inline DatasetAction& WithActionName(const char* value) { SetActionName(value); return *this;}
 
@@ -115,6 +123,42 @@ namespace Model
      */
     inline DatasetAction& WithQueryAction(SqlQueryDatasetAction&& value) { SetQueryAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information which allows the system to run a containerized application in
+     * order to create the data set contents. The application must be in a Docker
+     * container along with any needed support libraries.</p>
+     */
+    inline const ContainerDatasetAction& GetContainerAction() const{ return m_containerAction; }
+
+    /**
+     * <p>Information which allows the system to run a containerized application in
+     * order to create the data set contents. The application must be in a Docker
+     * container along with any needed support libraries.</p>
+     */
+    inline void SetContainerAction(const ContainerDatasetAction& value) { m_containerActionHasBeenSet = true; m_containerAction = value; }
+
+    /**
+     * <p>Information which allows the system to run a containerized application in
+     * order to create the data set contents. The application must be in a Docker
+     * container along with any needed support libraries.</p>
+     */
+    inline void SetContainerAction(ContainerDatasetAction&& value) { m_containerActionHasBeenSet = true; m_containerAction = std::move(value); }
+
+    /**
+     * <p>Information which allows the system to run a containerized application in
+     * order to create the data set contents. The application must be in a Docker
+     * container along with any needed support libraries.</p>
+     */
+    inline DatasetAction& WithContainerAction(const ContainerDatasetAction& value) { SetContainerAction(value); return *this;}
+
+    /**
+     * <p>Information which allows the system to run a containerized application in
+     * order to create the data set contents. The application must be in a Docker
+     * container along with any needed support libraries.</p>
+     */
+    inline DatasetAction& WithContainerAction(ContainerDatasetAction&& value) { SetContainerAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actionName;
@@ -122,6 +166,9 @@ namespace Model
 
     SqlQueryDatasetAction m_queryAction;
     bool m_queryActionHasBeenSet;
+
+    ContainerDatasetAction m_containerAction;
+    bool m_containerActionHasBeenSet;
   };
 
 } // namespace Model

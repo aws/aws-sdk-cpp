@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Statistics information about the data store.</p><p><h3>See Also:</h3>   <a
+   * <p>Statistical information about the data store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastoreStatistics">AWS
    * API Reference</a></p>
    */

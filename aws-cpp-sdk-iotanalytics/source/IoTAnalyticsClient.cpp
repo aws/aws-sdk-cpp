@@ -279,7 +279,7 @@ CreateDatasetContentOutcome IoTAnalyticsClient::CreateDatasetContent(const Creat
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return CreateDatasetContentOutcome(NoResult());
+    return CreateDatasetContentOutcome(CreateDatasetContentResult(outcome.GetResult()));
   }
   else
   {

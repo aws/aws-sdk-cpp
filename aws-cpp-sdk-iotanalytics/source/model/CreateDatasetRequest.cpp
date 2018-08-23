@@ -26,6 +26,7 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_datasetNameHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_triggersHasBeenSet(false),
+    m_retentionPeriodHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -59,6 +60,12 @@ Aws::String CreateDatasetRequest::SerializePayload() const
      triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
    }
    payload.WithArray("triggers", std::move(triggersJsonList));
+
+  }
+
+  if(m_retentionPeriodHasBeenSet)
+  {
+   payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
 
   }
 

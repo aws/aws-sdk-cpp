@@ -20,6 +20,7 @@
 #include <aws/rekognition/model/VideoMetadata.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/PersonMatch.h>
+#include <aws/rekognition/model/Warning.h>
 #include <utility>
 
 namespace Aws
@@ -278,6 +279,60 @@ namespace Model
      */
     inline GetFaceSearchResult& AddPersons(PersonMatch&& value) { m_persons.push_back(std::move(value)); return *this; }
 
+
+    
+    inline int GetBillableDurationSeconds() const{ return m_billableDurationSeconds; }
+
+    
+    inline void SetBillableDurationSeconds(int value) { m_billableDurationSeconds = value; }
+
+    
+    inline GetFaceSearchResult& WithBillableDurationSeconds(int value) { SetBillableDurationSeconds(value); return *this;}
+
+
+    
+    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    
+    inline void SetErrorCode(const Aws::String& value) { m_errorCode = value; }
+
+    
+    inline void SetErrorCode(Aws::String&& value) { m_errorCode = std::move(value); }
+
+    
+    inline void SetErrorCode(const char* value) { m_errorCode.assign(value); }
+
+    
+    inline GetFaceSearchResult& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
+
+    
+    inline GetFaceSearchResult& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
+
+    
+    inline GetFaceSearchResult& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
+
+    
+    inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
+
+    
+    inline void SetWarnings(const Aws::Vector<Warning>& value) { m_warnings = value; }
+
+    
+    inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = std::move(value); }
+
+    
+    inline GetFaceSearchResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
+
+    
+    inline GetFaceSearchResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(std::move(value)); return *this;}
+
+    
+    inline GetFaceSearchResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
+
+    
+    inline GetFaceSearchResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
+
   private:
 
     VideoJobStatus m_jobStatus;
@@ -289,6 +344,12 @@ namespace Model
     VideoMetadata m_videoMetadata;
 
     Aws::Vector<PersonMatch> m_persons;
+
+    int m_billableDurationSeconds;
+
+    Aws::String m_errorCode;
+
+    Aws::Vector<Warning> m_warnings;
   };
 
 } // namespace Model

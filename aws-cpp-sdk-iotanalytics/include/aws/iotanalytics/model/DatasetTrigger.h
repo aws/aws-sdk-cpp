@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/iotanalytics/model/Schedule.h>
+#include <aws/iotanalytics/model/TriggeringDataset.h>
 #include <utility>
 
 namespace Aws
@@ -73,10 +74,44 @@ namespace Model
      */
     inline DatasetTrigger& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The data set whose content creation will trigger the creation of this data
+     * set's contents.</p>
+     */
+    inline const TriggeringDataset& GetDataset() const{ return m_dataset; }
+
+    /**
+     * <p>The data set whose content creation will trigger the creation of this data
+     * set's contents.</p>
+     */
+    inline void SetDataset(const TriggeringDataset& value) { m_datasetHasBeenSet = true; m_dataset = value; }
+
+    /**
+     * <p>The data set whose content creation will trigger the creation of this data
+     * set's contents.</p>
+     */
+    inline void SetDataset(TriggeringDataset&& value) { m_datasetHasBeenSet = true; m_dataset = std::move(value); }
+
+    /**
+     * <p>The data set whose content creation will trigger the creation of this data
+     * set's contents.</p>
+     */
+    inline DatasetTrigger& WithDataset(const TriggeringDataset& value) { SetDataset(value); return *this;}
+
+    /**
+     * <p>The data set whose content creation will trigger the creation of this data
+     * set's contents.</p>
+     */
+    inline DatasetTrigger& WithDataset(TriggeringDataset&& value) { SetDataset(std::move(value)); return *this;}
+
   private:
 
     Schedule m_schedule;
     bool m_scheduleHasBeenSet;
+
+    TriggeringDataset m_dataset;
+    bool m_datasetHasBeenSet;
   };
 
 } // namespace Model

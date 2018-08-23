@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/ThingDocument.h>
+#include <aws/iot/model/ThingGroupDocument.h>
 #include <utility>
 
 namespace Aws
@@ -122,11 +123,49 @@ namespace Model
      */
     inline SearchIndexResult& AddThings(ThingDocument&& value) { m_things.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The thing groups that match the search query.</p>
+     */
+    inline const Aws::Vector<ThingGroupDocument>& GetThingGroups() const{ return m_thingGroups; }
+
+    /**
+     * <p>The thing groups that match the search query.</p>
+     */
+    inline void SetThingGroups(const Aws::Vector<ThingGroupDocument>& value) { m_thingGroups = value; }
+
+    /**
+     * <p>The thing groups that match the search query.</p>
+     */
+    inline void SetThingGroups(Aws::Vector<ThingGroupDocument>&& value) { m_thingGroups = std::move(value); }
+
+    /**
+     * <p>The thing groups that match the search query.</p>
+     */
+    inline SearchIndexResult& WithThingGroups(const Aws::Vector<ThingGroupDocument>& value) { SetThingGroups(value); return *this;}
+
+    /**
+     * <p>The thing groups that match the search query.</p>
+     */
+    inline SearchIndexResult& WithThingGroups(Aws::Vector<ThingGroupDocument>&& value) { SetThingGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The thing groups that match the search query.</p>
+     */
+    inline SearchIndexResult& AddThingGroups(const ThingGroupDocument& value) { m_thingGroups.push_back(value); return *this; }
+
+    /**
+     * <p>The thing groups that match the search query.</p>
+     */
+    inline SearchIndexResult& AddThingGroups(ThingGroupDocument&& value) { m_thingGroups.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<ThingDocument> m_things;
+
+    Aws::Vector<ThingGroupDocument> m_thingGroups;
   };
 
 } // namespace Model

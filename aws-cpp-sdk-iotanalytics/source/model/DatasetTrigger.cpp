@@ -29,12 +29,14 @@ namespace Model
 {
 
 DatasetTrigger::DatasetTrigger() : 
-    m_scheduleHasBeenSet(false)
+    m_scheduleHasBeenSet(false),
+    m_datasetHasBeenSet(false)
 {
 }
 
 DatasetTrigger::DatasetTrigger(JsonView jsonValue) : 
-    m_scheduleHasBeenSet(false)
+    m_scheduleHasBeenSet(false),
+    m_datasetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ DatasetTrigger& DatasetTrigger::operator =(JsonView jsonValue)
     m_scheduleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataset"))
+  {
+    m_dataset = jsonValue.GetObject("dataset");
+
+    m_datasetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue DatasetTrigger::Jsonize() const
   if(m_scheduleHasBeenSet)
   {
    payload.WithObject("schedule", m_schedule.Jsonize());
+
+  }
+
+  if(m_datasetHasBeenSet)
+  {
+   payload.WithObject("dataset", m_dataset.Jsonize());
 
   }
 

@@ -50,6 +50,12 @@ CreateDatasetResult& CreateDatasetResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("retentionPeriod"))
+  {
+    m_retentionPeriod = jsonValue.GetObject("retentionPeriod");
+
+  }
+
 
 
   return *this;

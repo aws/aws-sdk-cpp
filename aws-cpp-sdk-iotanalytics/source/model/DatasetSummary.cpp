@@ -33,7 +33,9 @@ DatasetSummary::DatasetSummary() :
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_triggersHasBeenSet(false),
+    m_actionsHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ DatasetSummary::DatasetSummary(JsonView jsonValue) :
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_triggersHasBeenSet(false),
+    m_actionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +81,26 @@ DatasetSummary& DatasetSummary::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("triggers"))
+  {
+    Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
+    for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
+    {
+      m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());
+    }
+    m_triggersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("actions"))
+  {
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+    {
+      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
+    }
+    m_actionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +127,28 @@ JsonValue DatasetSummary::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_triggersHasBeenSet)
+  {
+   Array<JsonValue> triggersJsonList(m_triggers.size());
+   for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
+   {
+     triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
+   }
+   payload.WithArray("triggers", std::move(triggersJsonList));
+
+  }
+
+  if(m_actionsHasBeenSet)
+  {
+   Array<JsonValue> actionsJsonList(m_actions.size());
+   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+   {
+     actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
+   }
+   payload.WithArray("actions", std::move(actionsJsonList));
+
   }
 
   return payload;

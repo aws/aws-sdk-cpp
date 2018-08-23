@@ -34,7 +34,9 @@ Face::Face() :
     m_imageIdHasBeenSet(false),
     m_externalImageIdHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_associationScore(0.0),
+    m_associationScoreHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ Face::Face(JsonView jsonValue) :
     m_imageIdHasBeenSet(false),
     m_externalImageIdHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_associationScore(0.0),
+    m_associationScoreHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +90,13 @@ Face& Face::operator =(JsonView jsonValue)
     m_confidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssociationScore"))
+  {
+    m_associationScore = jsonValue.GetDouble("AssociationScore");
+
+    m_associationScoreHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +131,12 @@ JsonValue Face::Jsonize() const
   if(m_confidenceHasBeenSet)
   {
    payload.WithDouble("Confidence", m_confidence);
+
+  }
+
+  if(m_associationScoreHasBeenSet)
+  {
+   payload.WithDouble("AssociationScore", m_associationScore);
 
   }
 

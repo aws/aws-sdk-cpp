@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 UpdateDatasetRequest::UpdateDatasetRequest() : 
     m_datasetNameHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_triggersHasBeenSet(false)
+    m_triggersHasBeenSet(false),
+    m_retentionPeriodHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String UpdateDatasetRequest::SerializePayload() const
      triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
    }
    payload.WithArray("triggers", std::move(triggersJsonList));
+
+  }
+
+  if(m_retentionPeriodHasBeenSet)
+  {
+   payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
 
   }
 

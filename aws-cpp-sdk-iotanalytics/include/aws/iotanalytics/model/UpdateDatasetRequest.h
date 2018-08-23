@@ -18,6 +18,7 @@
 #include <aws/iotanalytics/IoTAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <aws/iotanalytics/model/DatasetAction.h>
 #include <aws/iotanalytics/model/DatasetTrigger.h>
 #include <utility>
@@ -82,44 +83,37 @@ namespace Model
 
 
     /**
-     * <p>A list of "DatasetAction" objects. Only one action is supported at this
-     * time.</p>
+     * <p>A list of "DatasetAction" objects.</p>
      */
     inline const Aws::Vector<DatasetAction>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>A list of "DatasetAction" objects. Only one action is supported at this
-     * time.</p>
+     * <p>A list of "DatasetAction" objects.</p>
      */
     inline void SetActions(const Aws::Vector<DatasetAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>A list of "DatasetAction" objects. Only one action is supported at this
-     * time.</p>
+     * <p>A list of "DatasetAction" objects.</p>
      */
     inline void SetActions(Aws::Vector<DatasetAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>A list of "DatasetAction" objects. Only one action is supported at this
-     * time.</p>
+     * <p>A list of "DatasetAction" objects.</p>
      */
     inline UpdateDatasetRequest& WithActions(const Aws::Vector<DatasetAction>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>A list of "DatasetAction" objects. Only one action is supported at this
-     * time.</p>
+     * <p>A list of "DatasetAction" objects.</p>
      */
     inline UpdateDatasetRequest& WithActions(Aws::Vector<DatasetAction>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of "DatasetAction" objects. Only one action is supported at this
-     * time.</p>
+     * <p>A list of "DatasetAction" objects.</p>
      */
     inline UpdateDatasetRequest& AddActions(const DatasetAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>A list of "DatasetAction" objects. Only one action is supported at this
-     * time.</p>
+     * <p>A list of "DatasetAction" objects.</p>
      */
     inline UpdateDatasetRequest& AddActions(DatasetAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
@@ -166,6 +160,32 @@ namespace Model
      */
     inline UpdateDatasetRequest& AddTriggers(DatasetTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline UpdateDatasetRequest& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline UpdateDatasetRequest& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datasetName;
@@ -176,6 +196,9 @@ namespace Model
 
     Aws::Vector<DatasetTrigger> m_triggers;
     bool m_triggersHasBeenSet;
+
+    RetentionPeriod m_retentionPeriod;
+    bool m_retentionPeriodHasBeenSet;
   };
 
 } // namespace Model

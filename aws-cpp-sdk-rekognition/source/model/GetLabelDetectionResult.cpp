@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetLabelDetectionResult::GetLabelDetectionResult() : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+    m_jobStatus(VideoJobStatus::NOT_SET),
+    m_billableDurationSeconds(0)
 {
 }
 
 GetLabelDetectionResult::GetLabelDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+    m_jobStatus(VideoJobStatus::NOT_SET),
+    m_billableDurationSeconds(0)
 {
   *this = result;
 }
@@ -70,6 +72,27 @@ GetLabelDetectionResult& GetLabelDetectionResult::operator =(const Aws::AmazonWe
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("BillableDurationSeconds"))
+  {
+    m_billableDurationSeconds = jsonValue.GetInteger("BillableDurationSeconds");
+
+  }
+
+  if(jsonValue.ValueExists("ErrorCode"))
+  {
+    m_errorCode = jsonValue.GetString("ErrorCode");
+
+  }
+
+  if(jsonValue.ValueExists("Warnings"))
+  {
+    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
+    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+    {
+      m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
     }
   }
 

@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     BUILDING,
     READY,
+    READY_BASIC_TESTING,
     FAILED,
     NOT_BUILT
   };

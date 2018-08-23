@@ -70,32 +70,32 @@ namespace Model
 
 
     /**
-     * <p>Statistics about the data store. Included if the 'includeStatistics'
-     * parameter is set to true in the request.</p>
+     * <p>Additional statistical information about the data store. Included if the
+     * 'includeStatistics' parameter is set to true in the request.</p>
      */
     inline const DatastoreStatistics& GetStatistics() const{ return m_statistics; }
 
     /**
-     * <p>Statistics about the data store. Included if the 'includeStatistics'
-     * parameter is set to true in the request.</p>
+     * <p>Additional statistical information about the data store. Included if the
+     * 'includeStatistics' parameter is set to true in the request.</p>
      */
     inline void SetStatistics(const DatastoreStatistics& value) { m_statistics = value; }
 
     /**
-     * <p>Statistics about the data store. Included if the 'includeStatistics'
-     * parameter is set to true in the request.</p>
+     * <p>Additional statistical information about the data store. Included if the
+     * 'includeStatistics' parameter is set to true in the request.</p>
      */
     inline void SetStatistics(DatastoreStatistics&& value) { m_statistics = std::move(value); }
 
     /**
-     * <p>Statistics about the data store. Included if the 'includeStatistics'
-     * parameter is set to true in the request.</p>
+     * <p>Additional statistical information about the data store. Included if the
+     * 'includeStatistics' parameter is set to true in the request.</p>
      */
     inline DescribeDatastoreResult& WithStatistics(const DatastoreStatistics& value) { SetStatistics(value); return *this;}
 
     /**
-     * <p>Statistics about the data store. Included if the 'includeStatistics'
-     * parameter is set to true in the request.</p>
+     * <p>Additional statistical information about the data store. Included if the
+     * 'includeStatistics' parameter is set to true in the request.</p>
      */
     inline DescribeDatastoreResult& WithStatistics(DatastoreStatistics&& value) { SetStatistics(std::move(value)); return *this;}
 

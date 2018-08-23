@@ -36,7 +36,8 @@ Dataset::Dataset() :
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_retentionPeriodHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Dataset::Dataset(JsonView jsonValue) :
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_retentionPeriodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,13 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("retentionPeriod"))
+  {
+    m_retentionPeriod = jsonValue.GetObject("retentionPeriod");
+
+    m_retentionPeriodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +173,12 @@ JsonValue Dataset::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_retentionPeriodHasBeenSet)
+  {
+   payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
+
   }
 
   return payload;

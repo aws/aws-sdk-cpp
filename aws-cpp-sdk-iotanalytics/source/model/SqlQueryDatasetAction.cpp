@@ -29,12 +29,14 @@ namespace Model
 {
 
 SqlQueryDatasetAction::SqlQueryDatasetAction() : 
-    m_sqlQueryHasBeenSet(false)
+    m_sqlQueryHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
 SqlQueryDatasetAction::SqlQueryDatasetAction(JsonView jsonValue) : 
-    m_sqlQueryHasBeenSet(false)
+    m_sqlQueryHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,16 @@ SqlQueryDatasetAction& SqlQueryDatasetAction::operator =(JsonView jsonValue)
     m_sqlQueryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("filters"))
+  {
+    Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
+    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+    {
+      m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
+    }
+    m_filtersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +70,17 @@ JsonValue SqlQueryDatasetAction::Jsonize() const
   if(m_sqlQueryHasBeenSet)
   {
    payload.WithString("sqlQuery", m_sqlQuery);
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("filters", std::move(filtersJsonList));
 
   }
 

@@ -27,6 +27,7 @@
 #include <aws/rekognition/model/DeleteCollectionResult.h>
 #include <aws/rekognition/model/DeleteFacesResult.h>
 #include <aws/rekognition/model/DeleteStreamProcessorResult.h>
+#include <aws/rekognition/model/DescribeCollectionResult.h>
 #include <aws/rekognition/model/DescribeStreamProcessorResult.h>
 #include <aws/rekognition/model/DetectFacesResult.h>
 #include <aws/rekognition/model/DetectLabelsResult.h>
@@ -100,6 +101,7 @@ namespace Model
         class DeleteCollectionRequest;
         class DeleteFacesRequest;
         class DeleteStreamProcessorRequest;
+        class DescribeCollectionRequest;
         class DescribeStreamProcessorRequest;
         class DetectFacesRequest;
         class DetectLabelsRequest;
@@ -134,6 +136,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteCollectionResult, Aws::Client::AWSError<RekognitionErrors>> DeleteCollectionOutcome;
         typedef Aws::Utils::Outcome<DeleteFacesResult, Aws::Client::AWSError<RekognitionErrors>> DeleteFacesOutcome;
         typedef Aws::Utils::Outcome<DeleteStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> DeleteStreamProcessorOutcome;
+        typedef Aws::Utils::Outcome<DescribeCollectionResult, Aws::Client::AWSError<RekognitionErrors>> DescribeCollectionOutcome;
         typedef Aws::Utils::Outcome<DescribeStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> DescribeStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<DetectFacesResult, Aws::Client::AWSError<RekognitionErrors>> DetectFacesOutcome;
         typedef Aws::Utils::Outcome<DetectLabelsResult, Aws::Client::AWSError<RekognitionErrors>> DetectLabelsOutcome;
@@ -168,6 +171,7 @@ namespace Model
         typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
         typedef std::future<DeleteFacesOutcome> DeleteFacesOutcomeCallable;
         typedef std::future<DeleteStreamProcessorOutcome> DeleteStreamProcessorOutcomeCallable;
+        typedef std::future<DescribeCollectionOutcome> DescribeCollectionOutcomeCallable;
         typedef std::future<DescribeStreamProcessorOutcome> DescribeStreamProcessorOutcomeCallable;
         typedef std::future<DetectFacesOutcome> DetectFacesOutcomeCallable;
         typedef std::future<DetectLabelsOutcome> DetectLabelsOutcomeCallable;
@@ -205,6 +209,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::DeleteCollectionRequest&, const Model::DeleteCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteFacesRequest&, const Model::DeleteFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteStreamProcessorRequest&, const Model::DeleteStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamProcessorResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DescribeCollectionRequest&, const Model::DescribeCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeStreamProcessorRequest&, const Model::DescribeStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectFacesRequest&, const Model::DetectFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectLabelsRequest&, const Model::DetectLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectLabelsResponseReceivedHandler;
@@ -588,6 +593,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteStreamProcessorAsync(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DescribeCollectionOutcome DescribeCollection(const Model::DescribeCollectionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCollectionOutcomeCallable DescribeCollectionCallable(const Model::DescribeCollectionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCollectionAsync(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about a stream processor created by . You can get
@@ -1652,7 +1676,7 @@ namespace Model
          * service for the input image. If you request all facial attributes (using the
          * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
          * facial attributes such as facial landmarks (for example, location of eye and
-         * mount) and other facial attributes such gender. If you provide the same image,
+         * mouth) and other facial attributes such gender. If you provide the same image,
          * specify the same collection, and use the same external ID in the
          * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
          * face metadata.</p> <p>For more information, see Adding Faces to a Collection in
@@ -1692,7 +1716,7 @@ namespace Model
          * service for the input image. If you request all facial attributes (using the
          * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
          * facial attributes such as facial landmarks (for example, location of eye and
-         * mount) and other facial attributes such gender. If you provide the same image,
+         * mouth) and other facial attributes such gender. If you provide the same image,
          * specify the same collection, and use the same external ID in the
          * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
          * face metadata.</p> <p>For more information, see Adding Faces to a Collection in
@@ -1734,7 +1758,7 @@ namespace Model
          * service for the input image. If you request all facial attributes (using the
          * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
          * facial attributes such as facial landmarks (for example, location of eye and
-         * mount) and other facial attributes such gender. If you provide the same image,
+         * mouth) and other facial attributes such gender. If you provide the same image,
          * specify the same collection, and use the same external ID in the
          * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
          * face metadata.</p> <p>For more information, see Adding Faces to a Collection in
@@ -2309,8 +2333,8 @@ namespace Model
          * check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call and pass the job identifier
          * (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For
-         * more information, see <a>collections-search-person</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * more information, see <a>procedure-person-search-videos</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">AWS
          * API Reference</a></p>
          */
@@ -2328,8 +2352,8 @@ namespace Model
          * check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call and pass the job identifier
          * (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For
-         * more information, see <a>collections-search-person</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * more information, see <a>procedure-person-search-videos</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">AWS
          * API Reference</a></p>
          *
@@ -2349,8 +2373,8 @@ namespace Model
          * check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call and pass the job identifier
          * (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For
-         * more information, see <a>collections-search-person</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * more information, see <a>procedure-person-search-videos</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">AWS
          * API Reference</a></p>
          *
@@ -2556,6 +2580,7 @@ namespace Model
         void DeleteCollectionAsyncHelper(const Model::DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFacesAsyncHelper(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamProcessorAsyncHelper(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCollectionAsyncHelper(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStreamProcessorAsyncHelper(const Model::DescribeStreamProcessorRequest& request, const DescribeStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectFacesAsyncHelper(const Model::DetectFacesRequest& request, const DetectFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectLabelsAsyncHelper(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

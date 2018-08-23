@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/BatchUpdateScheduleResult.h>
 #include <aws/medialive/model/CreateChannelResult.h>
 #include <aws/medialive/model/CreateInputResult.h>
 #include <aws/medialive/model/CreateInputSecurityGroupResult.h>
@@ -33,6 +34,7 @@
 #include <aws/medialive/model/DescribeInputSecurityGroupResult.h>
 #include <aws/medialive/model/DescribeOfferingResult.h>
 #include <aws/medialive/model/DescribeReservationResult.h>
+#include <aws/medialive/model/DescribeScheduleResult.h>
 #include <aws/medialive/model/ListChannelsResult.h>
 #include <aws/medialive/model/ListInputSecurityGroupsResult.h>
 #include <aws/medialive/model/ListInputsResult.h>
@@ -84,6 +86,7 @@ namespace MediaLive
 
 namespace Model
 {
+        class BatchUpdateScheduleRequest;
         class CreateChannelRequest;
         class CreateInputRequest;
         class CreateInputSecurityGroupRequest;
@@ -96,6 +99,7 @@ namespace Model
         class DescribeInputSecurityGroupRequest;
         class DescribeOfferingRequest;
         class DescribeReservationRequest;
+        class DescribeScheduleRequest;
         class ListChannelsRequest;
         class ListInputSecurityGroupsRequest;
         class ListInputsRequest;
@@ -108,6 +112,7 @@ namespace Model
         class UpdateInputRequest;
         class UpdateInputSecurityGroupRequest;
 
+        typedef Aws::Utils::Outcome<BatchUpdateScheduleResult, Aws::Client::AWSError<MediaLiveErrors>> BatchUpdateScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateChannelResult, Aws::Client::AWSError<MediaLiveErrors>> CreateChannelOutcome;
         typedef Aws::Utils::Outcome<CreateInputResult, Aws::Client::AWSError<MediaLiveErrors>> CreateInputOutcome;
         typedef Aws::Utils::Outcome<CreateInputSecurityGroupResult, Aws::Client::AWSError<MediaLiveErrors>> CreateInputSecurityGroupOutcome;
@@ -120,6 +125,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInputSecurityGroupResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeInputSecurityGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeOfferingResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeOfferingOutcome;
         typedef Aws::Utils::Outcome<DescribeReservationResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeReservationOutcome;
+        typedef Aws::Utils::Outcome<DescribeScheduleResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeScheduleOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, Aws::Client::AWSError<MediaLiveErrors>> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListInputSecurityGroupsResult, Aws::Client::AWSError<MediaLiveErrors>> ListInputSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<ListInputsResult, Aws::Client::AWSError<MediaLiveErrors>> ListInputsOutcome;
@@ -132,6 +138,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateInputResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateInputOutcome;
         typedef Aws::Utils::Outcome<UpdateInputSecurityGroupResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateInputSecurityGroupOutcome;
 
+        typedef std::future<BatchUpdateScheduleOutcome> BatchUpdateScheduleOutcomeCallable;
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
         typedef std::future<CreateInputOutcome> CreateInputOutcomeCallable;
         typedef std::future<CreateInputSecurityGroupOutcome> CreateInputSecurityGroupOutcomeCallable;
@@ -144,6 +151,7 @@ namespace Model
         typedef std::future<DescribeInputSecurityGroupOutcome> DescribeInputSecurityGroupOutcomeCallable;
         typedef std::future<DescribeOfferingOutcome> DescribeOfferingOutcomeCallable;
         typedef std::future<DescribeReservationOutcome> DescribeReservationOutcomeCallable;
+        typedef std::future<DescribeScheduleOutcome> DescribeScheduleOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListInputSecurityGroupsOutcome> ListInputSecurityGroupsOutcomeCallable;
         typedef std::future<ListInputsOutcome> ListInputsOutcomeCallable;
@@ -159,6 +167,7 @@ namespace Model
 
   class MediaLiveClient;
 
+    typedef std::function<void(const MediaLiveClient*, const Model::BatchUpdateScheduleRequest&, const Model::BatchUpdateScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateInputRequest&, const Model::CreateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateInputSecurityGroupRequest&, const Model::CreateInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputSecurityGroupResponseReceivedHandler;
@@ -171,6 +180,7 @@ namespace Model
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeInputSecurityGroupRequest&, const Model::DescribeInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputSecurityGroupResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeOfferingRequest&, const Model::DescribeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeReservationRequest&, const Model::DescribeReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservationResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DescribeScheduleRequest&, const Model::DescribeScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputSecurityGroupsRequest&, const Model::ListInputSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputsRequest&, const Model::ListInputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputsResponseReceivedHandler;
@@ -214,6 +224,31 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "medialive"; }
 
+
+        /**
+         * Update a channel schedule<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateScheduleOutcome BatchUpdateSchedule(const Model::BatchUpdateScheduleRequest& request) const;
+
+        /**
+         * Update a channel schedule<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchUpdateScheduleOutcomeCallable BatchUpdateScheduleCallable(const Model::BatchUpdateScheduleRequest& request) const;
+
+        /**
+         * Update a channel schedule<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchUpdateScheduleAsync(const Model::BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new channel<p><h3>See Also:</h3>   <a
@@ -519,6 +554,31 @@ namespace Model
         virtual void DescribeReservationAsync(const Model::DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Get a channel schedule<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeScheduleOutcome DescribeSchedule(const Model::DescribeScheduleRequest& request) const;
+
+        /**
+         * Get a channel schedule<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeScheduleOutcomeCallable DescribeScheduleCallable(const Model::DescribeScheduleRequest& request) const;
+
+        /**
+         * Get a channel schedule<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeScheduleAsync(const Model::DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Produces list of channels that have been created<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">AWS
          * API Reference</a></p>
@@ -801,6 +861,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void BatchUpdateScheduleAsyncHelper(const Model::BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInputAsyncHelper(const Model::CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInputSecurityGroupAsyncHelper(const Model::CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -813,6 +874,7 @@ namespace Model
         void DescribeInputSecurityGroupAsyncHelper(const Model::DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOfferingAsyncHelper(const Model::DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservationAsyncHelper(const Model::DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeScheduleAsyncHelper(const Model::DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInputSecurityGroupsAsyncHelper(const Model::ListInputSecurityGroupsRequest& request, const ListInputSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInputsAsyncHelper(const Model::ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

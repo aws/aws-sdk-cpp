@@ -85,17 +85,20 @@ namespace Model
 
 
     /**
-     * <p>If true, include statistics about the channel in the response.</p>
+     * <p>If true, additional statistical information about the channel is included in
+     * the response.</p>
      */
     inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
 
     /**
-     * <p>If true, include statistics about the channel in the response.</p>
+     * <p>If true, additional statistical information about the channel is included in
+     * the response.</p>
      */
     inline void SetIncludeStatistics(bool value) { m_includeStatisticsHasBeenSet = true; m_includeStatistics = value; }
 
     /**
-     * <p>If true, include statistics about the channel in the response.</p>
+     * <p>If true, additional statistical information about the channel is included in
+     * the response.</p>
      */
     inline DescribeChannelRequest& WithIncludeStatistics(bool value) { SetIncludeStatistics(value); return *this;}
 

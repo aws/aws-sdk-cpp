@@ -38,7 +38,9 @@ VideoMetadata::VideoMetadata() :
     m_frameHeight(0),
     m_frameHeightHasBeenSet(false),
     m_frameWidth(0),
-    m_frameWidthHasBeenSet(false)
+    m_frameWidthHasBeenSet(false),
+    m_rotation(0),
+    m_rotationHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ VideoMetadata::VideoMetadata(JsonView jsonValue) :
     m_frameHeight(0),
     m_frameHeightHasBeenSet(false),
     m_frameWidth(0),
-    m_frameWidthHasBeenSet(false)
+    m_frameWidthHasBeenSet(false),
+    m_rotation(0),
+    m_rotationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +105,13 @@ VideoMetadata& VideoMetadata::operator =(JsonView jsonValue)
     m_frameWidthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Rotation"))
+  {
+    m_rotation = jsonValue.GetInteger("Rotation");
+
+    m_rotationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +152,12 @@ JsonValue VideoMetadata::Jsonize() const
   if(m_frameWidthHasBeenSet)
   {
    payload.WithInt64("FrameWidth", m_frameWidth);
+
+  }
+
+  if(m_rotationHasBeenSet)
+  {
+   payload.WithInteger("Rotation", m_rotation);
 
   }
 

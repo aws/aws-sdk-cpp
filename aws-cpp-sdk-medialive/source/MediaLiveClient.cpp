@@ -27,6 +27,7 @@
 #include <aws/medialive/MediaLiveClient.h>
 #include <aws/medialive/MediaLiveEndpoint.h>
 #include <aws/medialive/MediaLiveErrorMarshaller.h>
+#include <aws/medialive/model/BatchUpdateScheduleRequest.h>
 #include <aws/medialive/model/CreateChannelRequest.h>
 #include <aws/medialive/model/CreateInputRequest.h>
 #include <aws/medialive/model/CreateInputSecurityGroupRequest.h>
@@ -39,6 +40,7 @@
 #include <aws/medialive/model/DescribeInputSecurityGroupRequest.h>
 #include <aws/medialive/model/DescribeOfferingRequest.h>
 #include <aws/medialive/model/DescribeReservationRequest.h>
+#include <aws/medialive/model/DescribeScheduleRequest.h>
 #include <aws/medialive/model/ListChannelsRequest.h>
 #include <aws/medialive/model/ListInputSecurityGroupsRequest.h>
 #include <aws/medialive/model/ListInputsRequest.h>
@@ -113,6 +115,43 @@ void MediaLiveClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdateScheduleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/channels/";
+  ss << request.GetChannelId();
+  ss << "/schedule";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchUpdateScheduleOutcome(BatchUpdateScheduleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchUpdateScheduleOutcome(outcome.GetError());
+  }
+}
+
+BatchUpdateScheduleOutcomeCallable MediaLiveClient::BatchUpdateScheduleCallable(const BatchUpdateScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::BatchUpdateScheduleAsync(const BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::BatchUpdateScheduleAsyncHelper(const BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchUpdateSchedule(request), context);
 }
 
 CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& request) const
@@ -542,6 +581,43 @@ void MediaLiveClient::DescribeReservationAsync(const DescribeReservationRequest&
 void MediaLiveClient::DescribeReservationAsyncHelper(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeReservation(request), context);
+}
+
+DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeScheduleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/channels/";
+  ss << request.GetChannelId();
+  ss << "/schedule";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeScheduleOutcome(DescribeScheduleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeScheduleOutcome(outcome.GetError());
+  }
+}
+
+DescribeScheduleOutcomeCallable MediaLiveClient::DescribeScheduleCallable(const DescribeScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::DescribeScheduleAsync(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::DescribeScheduleAsyncHelper(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSchedule(request), context);
 }
 
 ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& request) const

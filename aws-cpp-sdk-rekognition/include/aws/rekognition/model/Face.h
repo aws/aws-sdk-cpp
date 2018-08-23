@@ -202,6 +202,16 @@ namespace Model
      */
     inline Face& WithConfidence(double value) { SetConfidence(value); return *this;}
 
+
+    
+    inline double GetAssociationScore() const{ return m_associationScore; }
+
+    
+    inline void SetAssociationScore(double value) { m_associationScoreHasBeenSet = true; m_associationScore = value; }
+
+    
+    inline Face& WithAssociationScore(double value) { SetAssociationScore(value); return *this;}
+
   private:
 
     Aws::String m_faceId;
@@ -218,6 +228,9 @@ namespace Model
 
     double m_confidence;
     bool m_confidenceHasBeenSet;
+
+    double m_associationScore;
+    bool m_associationScoreHasBeenSet;
   };
 
 } // namespace Model
