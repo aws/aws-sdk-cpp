@@ -180,6 +180,7 @@ protected:
         config.writeRateLimiter = m_limiter;
         config.httpLibOverride = transferType;
         config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+        config.disableExpectHeader = true;
 
         //to test proxy functionality, uncomment the next two lines.
         //config.proxyHost = "localhost";
