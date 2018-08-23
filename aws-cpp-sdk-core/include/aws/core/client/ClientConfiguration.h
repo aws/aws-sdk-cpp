@@ -143,8 +143,8 @@ namespace Aws
              */
             bool followRedirects;
 
-#ifdef ENABLE_CURL_CLIENT
             /**
+             * Only works for Curl http client.
              * Curl will by default add "Expect: 100-Continue" header in a Http request so as to avoid sending http
              * payload to wire if server respond error immediately after receiving the header.
              * Set this option to true will tell Curl to send http request header and body together.
@@ -153,7 +153,6 @@ namespace Aws
              * The default value will be false.
              */
             bool disableExpectHeader;
-#endif
 
             /**
              * If set to true clock skew will be adjusted after each http attempt, default to true.
