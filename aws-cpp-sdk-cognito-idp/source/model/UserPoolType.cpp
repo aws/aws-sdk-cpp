@@ -57,6 +57,7 @@ UserPoolType::UserPoolType() :
     m_smsConfigurationFailureHasBeenSet(false),
     m_emailConfigurationFailureHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_customDomainHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
     m_userPoolAddOnsHasBeenSet(false),
     m_arnHasBeenSet(false)
@@ -92,6 +93,7 @@ UserPoolType::UserPoolType(JsonView jsonValue) :
     m_smsConfigurationFailureHasBeenSet(false),
     m_emailConfigurationFailureHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_customDomainHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
     m_userPoolAddOnsHasBeenSet(false),
     m_arnHasBeenSet(false)
@@ -291,6 +293,13 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     m_domainHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomDomain"))
+  {
+    m_customDomain = jsonValue.GetString("CustomDomain");
+
+    m_customDomainHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AdminCreateUserConfig"))
   {
     m_adminCreateUserConfig = jsonValue.GetObject("AdminCreateUserConfig");
@@ -487,6 +496,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_domainHasBeenSet)
   {
    payload.WithString("Domain", m_domain);
+
+  }
+
+  if(m_customDomainHasBeenSet)
+  {
+   payload.WithString("CustomDomain", m_customDomain);
 
   }
 

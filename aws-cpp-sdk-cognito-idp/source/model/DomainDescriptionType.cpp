@@ -36,7 +36,8 @@ DomainDescriptionType::DomainDescriptionType() :
     m_cloudFrontDistributionHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_status(DomainStatusType::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_customDomainConfigHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ DomainDescriptionType::DomainDescriptionType(JsonView jsonValue) :
     m_cloudFrontDistributionHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_status(DomainStatusType::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_customDomainConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ DomainDescriptionType& DomainDescriptionType::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomDomainConfig"))
+  {
+    m_customDomainConfig = jsonValue.GetObject("CustomDomainConfig");
+
+    m_customDomainConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -150,6 +159,12 @@ JsonValue DomainDescriptionType::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", DomainStatusTypeMapper::GetNameForDomainStatusType(m_status));
+  }
+
+  if(m_customDomainConfigHasBeenSet)
+  {
+   payload.WithObject("CustomDomainConfig", m_customDomainConfig.Jsonize());
+
   }
 
   return payload;

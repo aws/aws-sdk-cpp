@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateUserPoolDomainRequest::CreateUserPoolDomainRequest() : 
     m_domainHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false)
+    m_userPoolIdHasBeenSet(false),
+    m_customDomainConfigHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,12 @@ Aws::String CreateUserPoolDomainRequest::SerializePayload() const
   if(m_userPoolIdHasBeenSet)
   {
    payload.WithString("UserPoolId", m_userPoolId);
+
+  }
+
+  if(m_customDomainConfigHasBeenSet)
+  {
+   payload.WithObject("CustomDomainConfig", m_customDomainConfig.Jsonize());
 
   }
 

@@ -17,6 +17,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cognito-idp/model/CustomDomainConfigType.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,62 @@ namespace Model
      */
     inline CreateUserPoolDomainRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p> <p>Provide this parameter only if you want to
+     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
+     * information about the hosted domain and custom domains, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
+     * a User Pool Domain</a>.</p>
+     */
+    inline const CustomDomainConfigType& GetCustomDomainConfig() const{ return m_customDomainConfig; }
+
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p> <p>Provide this parameter only if you want to
+     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
+     * information about the hosted domain and custom domains, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
+     * a User Pool Domain</a>.</p>
+     */
+    inline void SetCustomDomainConfig(const CustomDomainConfigType& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = value; }
+
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p> <p>Provide this parameter only if you want to
+     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
+     * information about the hosted domain and custom domains, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
+     * a User Pool Domain</a>.</p>
+     */
+    inline void SetCustomDomainConfig(CustomDomainConfigType&& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p> <p>Provide this parameter only if you want to
+     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
+     * information about the hosted domain and custom domains, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
+     * a User Pool Domain</a>.</p>
+     */
+    inline CreateUserPoolDomainRequest& WithCustomDomainConfig(const CustomDomainConfigType& value) { SetCustomDomainConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p> <p>Provide this parameter only if you want to
+     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
+     * information about the hosted domain and custom domains, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
+     * a User Pool Domain</a>.</p>
+     */
+    inline CreateUserPoolDomainRequest& WithCustomDomainConfig(CustomDomainConfigType&& value) { SetCustomDomainConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domain;
@@ -122,6 +179,9 @@ namespace Model
 
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
+    CustomDomainConfigType m_customDomainConfig;
+    bool m_customDomainConfigHasBeenSet;
   };
 
 } // namespace Model

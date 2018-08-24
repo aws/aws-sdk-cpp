@@ -37,7 +37,13 @@ CreateUserPoolDomainResult::CreateUserPoolDomainResult(const Aws::AmazonWebServi
 
 CreateUserPoolDomainResult& CreateUserPoolDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("CloudFrontDomain"))
+  {
+    m_cloudFrontDomain = jsonValue.GetString("CloudFrontDomain");
+
+  }
+
 
 
   return *this;

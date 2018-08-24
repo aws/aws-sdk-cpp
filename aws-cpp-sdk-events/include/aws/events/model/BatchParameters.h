@@ -180,40 +180,40 @@ namespace Model
     /**
      * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job.
      * The retry strategy is the number of times to retry the failed job execution.
-     * Valid values are 1 to 10. When you specify a retry strategy here, it overrides
-     * the retry strategy defined in the job definition.</p>
+     * Valid values are 1–10. When you specify a retry strategy here, it overrides the
+     * retry strategy defined in the job definition.</p>
      */
     inline const BatchRetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
 
     /**
      * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job.
      * The retry strategy is the number of times to retry the failed job execution.
-     * Valid values are 1 to 10. When you specify a retry strategy here, it overrides
-     * the retry strategy defined in the job definition.</p>
+     * Valid values are 1–10. When you specify a retry strategy here, it overrides the
+     * retry strategy defined in the job definition.</p>
      */
     inline void SetRetryStrategy(const BatchRetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
 
     /**
      * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job.
      * The retry strategy is the number of times to retry the failed job execution.
-     * Valid values are 1 to 10. When you specify a retry strategy here, it overrides
-     * the retry strategy defined in the job definition.</p>
+     * Valid values are 1–10. When you specify a retry strategy here, it overrides the
+     * retry strategy defined in the job definition.</p>
      */
     inline void SetRetryStrategy(BatchRetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
 
     /**
      * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job.
      * The retry strategy is the number of times to retry the failed job execution.
-     * Valid values are 1 to 10. When you specify a retry strategy here, it overrides
-     * the retry strategy defined in the job definition.</p>
+     * Valid values are 1–10. When you specify a retry strategy here, it overrides the
+     * retry strategy defined in the job definition.</p>
      */
     inline BatchParameters& WithRetryStrategy(const BatchRetryStrategy& value) { SetRetryStrategy(value); return *this;}
 
     /**
      * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job.
      * The retry strategy is the number of times to retry the failed job execution.
-     * Valid values are 1 to 10. When you specify a retry strategy here, it overrides
-     * the retry strategy defined in the job definition.</p>
+     * Valid values are 1–10. When you specify a retry strategy here, it overrides the
+     * retry strategy defined in the job definition.</p>
      */
     inline BatchParameters& WithRetryStrategy(BatchRetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 

@@ -940,6 +940,28 @@ namespace Model
     inline UserPoolType& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
+    
+    inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
+
+    
+    inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
+
+    
+    inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
+
+    
+    inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
+
+    
+    inline UserPoolType& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
+
+    
+    inline UserPoolType& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
+
+    
+    inline UserPoolType& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
+
+
     /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
@@ -1103,6 +1125,9 @@ namespace Model
 
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
+    Aws::String m_customDomain;
+    bool m_customDomainHasBeenSet;
 
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;

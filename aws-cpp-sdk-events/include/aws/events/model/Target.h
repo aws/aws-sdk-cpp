@@ -40,10 +40,9 @@ namespace Model
 {
 
   /**
-   * <p>Targets are the resources to be invoked when a rule is triggered. Target
-   * types include EC2 instances, AWS Lambda functions, Amazon Kinesis streams,
-   * Amazon ECS tasks, AWS Step Functions state machines, Run Command, and built-in
-   * targets.</p><p><h3>See Also:</h3>   <a
+   * <p>Targets are the resources to be invoked when a rule is triggered. For a
+   * complete list of services and resources that can be set as a target, see
+   * <a>PutTargets</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target">AWS API
    * Reference</a></p>
    */
@@ -329,37 +328,37 @@ namespace Model
 
 
     /**
-     * <p>The custom parameter you can use to control shard assignment, when the target
-     * is an Amazon Kinesis stream. If you do not include this parameter, the default
-     * is to use the <code>eventId</code> as the partition key.</p>
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
+     * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline const KinesisParameters& GetKinesisParameters() const{ return m_kinesisParameters; }
 
     /**
-     * <p>The custom parameter you can use to control shard assignment, when the target
-     * is an Amazon Kinesis stream. If you do not include this parameter, the default
-     * is to use the <code>eventId</code> as the partition key.</p>
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
+     * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline void SetKinesisParameters(const KinesisParameters& value) { m_kinesisParametersHasBeenSet = true; m_kinesisParameters = value; }
 
     /**
-     * <p>The custom parameter you can use to control shard assignment, when the target
-     * is an Amazon Kinesis stream. If you do not include this parameter, the default
-     * is to use the <code>eventId</code> as the partition key.</p>
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
+     * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline void SetKinesisParameters(KinesisParameters&& value) { m_kinesisParametersHasBeenSet = true; m_kinesisParameters = std::move(value); }
 
     /**
-     * <p>The custom parameter you can use to control shard assignment, when the target
-     * is an Amazon Kinesis stream. If you do not include this parameter, the default
-     * is to use the <code>eventId</code> as the partition key.</p>
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
+     * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline Target& WithKinesisParameters(const KinesisParameters& value) { SetKinesisParameters(value); return *this;}
 
     /**
-     * <p>The custom parameter you can use to control shard assignment, when the target
-     * is an Amazon Kinesis stream. If you do not include this parameter, the default
-     * is to use the <code>eventId</code> as the partition key.</p>
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
+     * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline Target& WithKinesisParameters(KinesisParameters&& value) { SetKinesisParameters(std::move(value)); return *this;}
 
@@ -442,40 +441,40 @@ namespace Model
 
 
     /**
-     * <p>Contains the job definition, job name, and other parameters if the event
-     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * <p>If the event target is an AWS Batch job, this contains the job definition,
+     * job name, and other parameters. For more information, see <a
      * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline const BatchParameters& GetBatchParameters() const{ return m_batchParameters; }
 
     /**
-     * <p>Contains the job definition, job name, and other parameters if the event
-     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * <p>If the event target is an AWS Batch job, this contains the job definition,
+     * job name, and other parameters. For more information, see <a
      * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(const BatchParameters& value) { m_batchParametersHasBeenSet = true; m_batchParameters = value; }
 
     /**
-     * <p>Contains the job definition, job name, and other parameters if the event
-     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * <p>If the event target is an AWS Batch job, this contains the job definition,
+     * job name, and other parameters. For more information, see <a
      * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(BatchParameters&& value) { m_batchParametersHasBeenSet = true; m_batchParameters = std::move(value); }
 
     /**
-     * <p>Contains the job definition, job name, and other parameters if the event
-     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * <p>If the event target is an AWS Batch job, this contains the job definition,
+     * job name, and other parameters. For more information, see <a
      * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(const BatchParameters& value) { SetBatchParameters(value); return *this;}
 
     /**
-     * <p>Contains the job definition, job name, and other parameters if the event
-     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * <p>If the event target is an AWS Batch job, this contains the job definition,
+     * job name, and other parameters. For more information, see <a
      * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
@@ -484,26 +483,36 @@ namespace Model
 
     /**
      * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     * <p>If you specify an SQS FIFO queue as a target, the queue must have
+     * content-based deduplication enabled.</p>
      */
     inline const SqsParameters& GetSqsParameters() const{ return m_sqsParameters; }
 
     /**
      * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     * <p>If you specify an SQS FIFO queue as a target, the queue must have
+     * content-based deduplication enabled.</p>
      */
     inline void SetSqsParameters(const SqsParameters& value) { m_sqsParametersHasBeenSet = true; m_sqsParameters = value; }
 
     /**
      * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     * <p>If you specify an SQS FIFO queue as a target, the queue must have
+     * content-based deduplication enabled.</p>
      */
     inline void SetSqsParameters(SqsParameters&& value) { m_sqsParametersHasBeenSet = true; m_sqsParameters = std::move(value); }
 
     /**
      * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     * <p>If you specify an SQS FIFO queue as a target, the queue must have
+     * content-based deduplication enabled.</p>
      */
     inline Target& WithSqsParameters(const SqsParameters& value) { SetSqsParameters(value); return *this;}
 
     /**
      * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     * <p>If you specify an SQS FIFO queue as a target, the queue must have
+     * content-based deduplication enabled.</p>
      */
     inline Target& WithSqsParameters(SqsParameters&& value) { SetSqsParameters(std::move(value)); return *this;}
 

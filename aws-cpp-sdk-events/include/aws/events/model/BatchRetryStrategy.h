@@ -48,20 +48,20 @@ namespace Model
 
 
     /**
-     * <p>The number of times to attempt to retry, if the job fails. Valid values are 1
-     * to 10.</p>
+     * <p>The number of times to attempt to retry, if the job fails. Valid values are
+     * 1–10.</p>
      */
     inline int GetAttempts() const{ return m_attempts; }
 
     /**
-     * <p>The number of times to attempt to retry, if the job fails. Valid values are 1
-     * to 10.</p>
+     * <p>The number of times to attempt to retry, if the job fails. Valid values are
+     * 1–10.</p>
      */
     inline void SetAttempts(int value) { m_attemptsHasBeenSet = true; m_attempts = value; }
 
     /**
-     * <p>The number of times to attempt to retry, if the job fails. Valid values are 1
-     * to 10.</p>
+     * <p>The number of times to attempt to retry, if the job fails. Valid values are
+     * 1–10.</p>
      */
     inline BatchRetryStrategy& WithAttempts(int value) { SetAttempts(value); return *this;}
 
