@@ -37,24 +37,25 @@ using namespace Aws::Internal;
 using Aws::Utils::Threading::ReaderLockGuard;
 using Aws::Utils::Threading::WriterLockGuard;
 
-static const char* ACCESS_KEY_ENV_VARIABLE = "AWS_ACCESS_KEY_ID";
-static const char* SECRET_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
-static const char* SESSION_TOKEN_ENV_VARIABLE = "AWS_SESSION_TOKEN";
-static const char* DEFAULT_PROFILE = "default";
-static const char* AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_DEFAULT_PROFILE";
+static const char ACCESS_KEY_ENV_VAR[] = "AWS_ACCESS_KEY_ID";
+static const char SECRET_KEY_ENV_VAR[] = "AWS_SECRET_ACCESS_KEY";
+static const char SESSION_TOKEN_ENV_VAR[] = "AWS_SESSION_TOKEN";
+static const char DEFAULT_PROFILE[] = "default";
+static const char AWS_PROFILE_ENV_VAR[] = "AWS_PROFILE";
+static const char AWS_PROFILE_DEFAULT_ENV_VAR[] = "AWS_DEFAULT_PROFILE";
 
-static const char* AWS_CREDENTIAL_PROFILES_FILE = "AWS_SHARED_CREDENTIALS_FILE";
+static const char AWS_CREDENTIAL_PROFILES_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
 
-static const char* PROFILE_DEFAULT_FILENAME = "credentials";
-static const char* CONFIG_FILENAME = "config";
+static const char PROFILE_DEFAULT_FILENAME[] = "credentials";
+static const char CONFIG_FILENAME[] = "config";
 
 #ifndef _WIN32
-static const char* PROFILE_DIRECTORY = "/.aws";
-static const char* DIRECTORY_JOIN = "/";
+static const char PROFILE_DIRECTORY[] = "/.aws";
+static const char DIRECTORY_JOIN[] = "/";
 
 #else
-    static const char* PROFILE_DIRECTORY = "\\.aws";
-    static const char* DIRECTORY_JOIN = "\\";
+    static const char PROFILE_DIRECTORY[] = "\\.aws";
+    static const char DIRECTORY_JOIN[] = "\\";
 #endif // _WIN32
 
 
@@ -80,7 +81,7 @@ static const char* ENVIRONMENT_LOG_TAG = "EnvironmentAWSCredentialsProvider";
 
 AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 {
-    auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VARIABLE);
+    auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VAR);
     AWSCredentials credentials("", "", "");
 
     if (!accessKey.empty())
@@ -96,7 +97,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
             AWS_LOGSTREAM_INFO(ENVIRONMENT_LOG_TAG, "Found secret key");
         }
 
-        auto sessionToken = Aws::Environment::GetEnv(SESSION_TOKEN_ENV_VARIABLE);
+        auto sessionToken = Aws::Environment::GetEnv(SESSION_TOKEN_ENV_VAR);
 
         if(!sessionToken.empty())
         {
@@ -154,7 +155,12 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
         m_credentialsFileLoader(Aws::MakeShared<Aws::Config::AWSConfigFileProfileConfigLoader>(PROFILE_LOG_TAG, GetCredentialsProfileFilename())),
         m_loadFrequencyMs(refreshRateMs)
 {
-    auto profileFromVar = Aws::Environment::GetEnv(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+    auto profileFromVar = Aws::Environment::GetEnv(AWS_PROFILE_DEFAULT_ENV_VAR);
+    if (profileFromVar.empty())
+    {
+        profileFromVar = Aws::Environment::GetEnv(AWS_PROFILE_ENV_VAR);
+    }
+
     if (!profileFromVar.empty())
     {
         m_profileToUse = profileFromVar;

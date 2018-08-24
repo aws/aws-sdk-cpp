@@ -106,6 +106,7 @@ public:
     {
         SaveVariable("AWS_SHARED_CREDENTIALS_FILE");  
         SaveVariable("AWS_DEFAULT_PROFILE");
+        SaveVariable("AWS_PROFILE");
         SaveVariable("AWS_ACCESS_KEY_ID");
         SaveVariable("AWS_SECRET_ACCESS_KEY");
         SaveVariable("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
@@ -135,13 +136,58 @@ public:
     Aws::Map<Aws::String, Aws::String> m_environment;
 };
 
+TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
+{
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
+
+
+    configFile << "[default_profile]" << std::endl;
+    configFile << " aws_access_key_id = DefaultProfileAccessKey " << std::endl;
+    configFile << "aws_secret_access_key= DefaultProfileSecretKey" << std::endl;
+    configFile << std::endl;
+
+    configFile << "[default]" << std::endl;
+    configFile << " aws_access_key_id = DefaultAccessKey " << std::endl;
+    configFile << "aws_secret_access_key= DefaultSecretKey" << std::endl;
+    configFile << std::endl;
+
+    configFile << "[profile]" << std::endl;
+    configFile << " aws_access_key_id = ProfileAccessKey " << std::endl;
+    configFile << "aws_secret_access_key =ProfileSecretKey" << std::endl;
+    configFile << std::endl;
+
+    configFile.flush();
+    configFile.close();
+
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "default_profile", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_PROFILE", "profile", 1/*override*/);
+
+    ProfileConfigFileAWSCredentialsProvider providerDefaultProfile(10);
+    EXPECT_STREQ("DefaultProfileAccessKey", providerDefaultProfile.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("DefaultProfileSecretKey", providerDefaultProfile.GetAWSCredentials().GetAWSSecretKey().c_str());
+
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_PROFILE", "profile", 1/*override*/);
+    ProfileConfigFileAWSCredentialsProvider providerProfile(10);
+    EXPECT_STREQ("ProfileAccessKey", providerProfile.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProfileSecretKey", providerProfile.GetAWSCredentials().GetAWSSecretKey().c_str());
+
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_PROFILE", "", 1/*override*/);
+    ProfileConfigFileAWSCredentialsProvider providerDefault(10);
+    EXPECT_STREQ("DefaultAccessKey", providerDefault.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("DefaultSecretKey", providerDefault.GetAWSCredentials().GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 {
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
   
-    Aws::String oldValue = Aws::Environment::GetEnv("AWS_SHARED_CREDENTIALS_FILE");
     Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
-    Aws::String oldProfileValue = Aws::Environment::GetEnv("AWS_DEFAULT_PROFILE");
     const char* profile = "someProfile";
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
