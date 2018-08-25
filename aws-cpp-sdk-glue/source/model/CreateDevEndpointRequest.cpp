@@ -32,7 +32,8 @@ CreateDevEndpointRequest::CreateDevEndpointRequest() :
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_extraPythonLibsS3PathHasBeenSet(false),
-    m_extraJarsS3PathHasBeenSet(false)
+    m_extraJarsS3PathHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,12 @@ Aws::String CreateDevEndpointRequest::SerializePayload() const
   if(m_extraJarsS3PathHasBeenSet)
   {
    payload.WithString("ExtraJarsS3Path", m_extraJarsS3Path);
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
 
   }
 

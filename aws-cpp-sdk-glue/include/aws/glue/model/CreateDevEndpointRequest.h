@@ -473,6 +473,49 @@ namespace Model
      */
     inline CreateDevEndpointRequest& WithExtraJarsS3Path(const char* value) { SetExtraJarsS3Path(value); return *this;}
 
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -501,6 +544,9 @@ namespace Model
 
     Aws::String m_extraJarsS3Path;
     bool m_extraJarsS3PathHasBeenSet;
+
+    Aws::String m_securityConfiguration;
+    bool m_securityConfigurationHasBeenSet;
   };
 
 } // namespace Model

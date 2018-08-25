@@ -610,17 +610,26 @@ namespace Model
 
 
     /**
-     * <p>The job run timeout in minutes.</p>
+     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
+     * value set in the parent job.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The job run timeout in minutes.</p>
+     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
+     * value set in the parent job.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The job run timeout in minutes.</p>
+     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
+     * value set in the parent job.</p>
      */
     inline JobRun& WithTimeout(int value) { SetTimeout(value); return *this;}
 
@@ -649,6 +658,127 @@ namespace Model
      * <p>Specifies configuration properties of a job run notification.</p>
      */
     inline JobRun& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline JobRun& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline JobRun& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline JobRun& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+
+
+    /**
+     * <p>The name of the log group for secure logging, that can be server-side
+     * encrypted in CloudWatch using KMS. This name can be
+     * <code>/aws-glue/jobs/</code>, in which case the default encryption is
+     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
+     * other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
+     * that security configuration will be used to encrypt the log group.</p>
+     */
+    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
+    /**
+     * <p>The name of the log group for secure logging, that can be server-side
+     * encrypted in CloudWatch using KMS. This name can be
+     * <code>/aws-glue/jobs/</code>, in which case the default encryption is
+     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
+     * other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
+     * that security configuration will be used to encrypt the log group.</p>
+     */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /**
+     * <p>The name of the log group for secure logging, that can be server-side
+     * encrypted in CloudWatch using KMS. This name can be
+     * <code>/aws-glue/jobs/</code>, in which case the default encryption is
+     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
+     * other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
+     * that security configuration will be used to encrypt the log group.</p>
+     */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the log group for secure logging, that can be server-side
+     * encrypted in CloudWatch using KMS. This name can be
+     * <code>/aws-glue/jobs/</code>, in which case the default encryption is
+     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
+     * other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
+     * that security configuration will be used to encrypt the log group.</p>
+     */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
+
+    /**
+     * <p>The name of the log group for secure logging, that can be server-side
+     * encrypted in CloudWatch using KMS. This name can be
+     * <code>/aws-glue/jobs/</code>, in which case the default encryption is
+     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
+     * other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
+     * that security configuration will be used to encrypt the log group.</p>
+     */
+    inline JobRun& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the log group for secure logging, that can be server-side
+     * encrypted in CloudWatch using KMS. This name can be
+     * <code>/aws-glue/jobs/</code>, in which case the default encryption is
+     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
+     * other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
+     * that security configuration will be used to encrypt the log group.</p>
+     */
+    inline JobRun& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the log group for secure logging, that can be server-side
+     * encrypted in CloudWatch using KMS. This name can be
+     * <code>/aws-glue/jobs/</code>, in which case the default encryption is
+     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
+     * other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
+     * that security configuration will be used to encrypt the log group.</p>
+     */
+    inline JobRun& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
   private:
 
@@ -699,6 +829,12 @@ namespace Model
 
     NotificationProperty m_notificationProperty;
     bool m_notificationPropertyHasBeenSet;
+
+    Aws::String m_securityConfiguration;
+    bool m_securityConfigurationHasBeenSet;
+
+    Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
   };
 
 } // namespace Model

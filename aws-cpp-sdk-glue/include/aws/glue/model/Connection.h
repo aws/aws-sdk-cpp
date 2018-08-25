@@ -198,57 +198,244 @@ namespace Model
 
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
+     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether SSL with hostname matching will be enforced for
+     * the JDBC connection on the client. The default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

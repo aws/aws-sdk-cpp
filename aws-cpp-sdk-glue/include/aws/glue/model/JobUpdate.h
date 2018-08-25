@@ -447,17 +447,23 @@ namespace Model
 
 
     /**
-     * <p>The job timeout in minutes. The default is 2880 minutes (48 hours).</p>
+     * <p>The job timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours).</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The job timeout in minutes. The default is 2880 minutes (48 hours).</p>
+     * <p>The job timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours).</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The job timeout in minutes. The default is 2880 minutes (48 hours).</p>
+     * <p>The job timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours).</p>
      */
     inline JobUpdate& WithTimeout(int value) { SetTimeout(value); return *this;}
 
@@ -486,6 +492,42 @@ namespace Model
      * <p>Specifies configuration properties of a job notification.</p>
      */
     inline JobUpdate& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
+     */
+    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
+     */
+    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
+     */
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
+     */
+    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
+     */
+    inline JobUpdate& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
+     */
+    inline JobUpdate& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
+     */
+    inline JobUpdate& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
   private:
 
@@ -521,6 +563,9 @@ namespace Model
 
     NotificationProperty m_notificationProperty;
     bool m_notificationPropertyHasBeenSet;
+
+    Aws::String m_securityConfiguration;
+    bool m_securityConfigurationHasBeenSet;
   };
 
 } // namespace Model

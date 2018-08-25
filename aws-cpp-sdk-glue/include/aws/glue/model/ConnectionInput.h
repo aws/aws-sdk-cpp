@@ -198,57 +198,57 @@ namespace Model
 
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline ConnectionInput& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline ConnectionInput& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline ConnectionInput& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline ConnectionInput& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline ConnectionInput& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline ConnectionInput& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline ConnectionInput& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of key-value pairs used as parameters for this connection.</p>
+     * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline ConnectionInput& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

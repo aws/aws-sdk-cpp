@@ -32,7 +32,8 @@ CreateCrawlerRequest::CreateCrawlerRequest() :
     m_classifiersHasBeenSet(false),
     m_tablePrefixHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_crawlerSecurityConfigurationHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,12 @@ Aws::String CreateCrawlerRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithString("Configuration", m_configuration);
+
+  }
+
+  if(m_crawlerSecurityConfigurationHasBeenSet)
+  {
+   payload.WithString("CrawlerSecurityConfiguration", m_crawlerSecurityConfiguration);
 
   }
 

@@ -248,62 +248,62 @@ namespace Model
 
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Partition parameters, in the form of a list of key-value pairs.</p>
+     * <p>These key-value pairs define partition parameters.</p>
      */
     inline Partition& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

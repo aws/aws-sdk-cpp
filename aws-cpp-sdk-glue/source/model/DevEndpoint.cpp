@@ -50,7 +50,8 @@ DevEndpoint::DevEndpoint() :
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
-    m_publicKeysHasBeenSet(false)
+    m_publicKeysHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ DevEndpoint::DevEndpoint(JsonView jsonValue) :
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
-    m_publicKeysHasBeenSet(false)
+    m_publicKeysHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -229,6 +231,13 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
     m_publicKeysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityConfiguration"))
+  {
+    m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
+
+    m_securityConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -361,6 +370,12 @@ JsonValue DevEndpoint::Jsonize() const
      publicKeysJsonList[publicKeysIndex].AsString(m_publicKeys[publicKeysIndex]);
    }
    payload.WithArray("PublicKeys", std::move(publicKeysJsonList));
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
 
   }
 

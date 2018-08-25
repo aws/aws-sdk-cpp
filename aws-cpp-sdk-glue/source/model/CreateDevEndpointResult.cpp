@@ -123,6 +123,12 @@ CreateDevEndpointResult& CreateDevEndpointResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("SecurityConfiguration"))
+  {
+    m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");

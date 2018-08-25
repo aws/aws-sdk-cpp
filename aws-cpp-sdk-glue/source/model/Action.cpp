@@ -33,7 +33,8 @@ Action::Action() :
     m_argumentsHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Action::Action(JsonView jsonValue) :
     m_argumentsHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_notificationPropertyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityConfiguration"))
+  {
+    m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
+
+    m_securityConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +122,12 @@ JsonValue Action::Jsonize() const
   if(m_notificationPropertyHasBeenSet)
   {
    payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
 
   }
 

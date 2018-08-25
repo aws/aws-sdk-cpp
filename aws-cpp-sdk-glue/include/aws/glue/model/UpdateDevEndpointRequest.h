@@ -160,42 +160,42 @@ namespace Model
 
 
     /**
-     * <p>The list of public keys to be deleted from the DevEndpoint. </p>
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeletePublicKeys() const{ return m_deletePublicKeys; }
 
     /**
-     * <p>The list of public keys to be deleted from the DevEndpoint. </p>
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
      */
     inline void SetDeletePublicKeys(const Aws::Vector<Aws::String>& value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys = value; }
 
     /**
-     * <p>The list of public keys to be deleted from the DevEndpoint. </p>
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
      */
     inline void SetDeletePublicKeys(Aws::Vector<Aws::String>&& value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys = std::move(value); }
 
     /**
-     * <p>The list of public keys to be deleted from the DevEndpoint. </p>
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
      */
     inline UpdateDevEndpointRequest& WithDeletePublicKeys(const Aws::Vector<Aws::String>& value) { SetDeletePublicKeys(value); return *this;}
 
     /**
-     * <p>The list of public keys to be deleted from the DevEndpoint. </p>
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
      */
     inline UpdateDevEndpointRequest& WithDeletePublicKeys(Aws::Vector<Aws::String>&& value) { SetDeletePublicKeys(std::move(value)); return *this;}
 
     /**
-     * <p>The list of public keys to be deleted from the DevEndpoint. </p>
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
      */
     inline UpdateDevEndpointRequest& AddDeletePublicKeys(const Aws::String& value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys.push_back(value); return *this; }
 
     /**
-     * <p>The list of public keys to be deleted from the DevEndpoint. </p>
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
      */
     inline UpdateDevEndpointRequest& AddDeletePublicKeys(Aws::String&& value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of public keys to be deleted from the DevEndpoint. </p>
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
      */
     inline UpdateDevEndpointRequest& AddDeletePublicKeys(const char* value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys.push_back(value); return *this; }
 

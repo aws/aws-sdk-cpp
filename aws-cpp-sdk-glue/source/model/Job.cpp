@@ -45,7 +45,8 @@ Job::Job() :
     m_allocatedCapacityHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Job::Job(JsonView jsonValue) :
     m_allocatedCapacityHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -174,6 +176,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_notificationPropertyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityConfiguration"))
+  {
+    m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
+
+    m_securityConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -265,6 +274,12 @@ JsonValue Job::Jsonize() const
   if(m_notificationPropertyHasBeenSet)
   {
    payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
 
   }
 

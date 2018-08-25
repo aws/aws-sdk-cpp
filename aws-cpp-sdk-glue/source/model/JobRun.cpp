@@ -49,7 +49,9 @@ JobRun::JobRun() :
     m_executionTimeHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false),
+    m_logGroupNameHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ JobRun::JobRun(JsonView jsonValue) :
     m_executionTimeHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false),
+    m_logGroupNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -199,6 +203,20 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_notificationPropertyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityConfiguration"))
+  {
+    m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
+
+    m_securityConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogGroupName"))
+  {
+    m_logGroupName = jsonValue.GetString("LogGroupName");
+
+    m_logGroupNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -305,6 +323,18 @@ JsonValue JobRun::Jsonize() const
   if(m_notificationPropertyHasBeenSet)
   {
    payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("LogGroupName", m_logGroupName);
 
   }
 

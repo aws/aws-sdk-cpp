@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ImportExport;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.5.20100601.22;
+        version : 1.5.20100601.23;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Import/Export);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.5.22
+            AWSSDKCPP-Core/1.5.23
        }
     }
 

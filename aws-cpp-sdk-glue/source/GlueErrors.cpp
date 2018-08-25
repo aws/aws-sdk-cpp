@@ -40,6 +40,7 @@ static const int SCHEDULER_RUNNING_HASH = HashingUtils::HashString("SchedulerRun
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
+static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
 static const int CRAWLER_RUNNING_HASH = HashingUtils::HashString("CrawlerRunningException");
 static const int CRAWLER_STOPPING_HASH = HashingUtils::HashString("CrawlerStoppingException");
 static const int NO_SCHEDULE_HASH = HashingUtils::HashString("NoScheduleException");
@@ -98,6 +99,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::RESOURCE_NUMBER_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == GLUE_ENCRYPTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::GLUE_ENCRYPTION), false);
   }
   else if (hashCode == CRAWLER_RUNNING_HASH)
   {
