@@ -46,6 +46,7 @@
 #include <aws/iotanalytics/model/DescribePipelineRequest.h>
 #include <aws/iotanalytics/model/GetDatasetContentRequest.h>
 #include <aws/iotanalytics/model/ListChannelsRequest.h>
+#include <aws/iotanalytics/model/ListDatasetContentsRequest.h>
 #include <aws/iotanalytics/model/ListDatasetsRequest.h>
 #include <aws/iotanalytics/model/ListDatastoresRequest.h>
 #include <aws/iotanalytics/model/ListPipelinesRequest.h>
@@ -805,6 +806,43 @@ void IoTAnalyticsClient::ListChannelsAsync(const ListChannelsRequest& request, c
 void IoTAnalyticsClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannels(request), context);
+}
+
+ListDatasetContentsOutcome IoTAnalyticsClient::ListDatasetContents(const ListDatasetContentsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/datasets/";
+  ss << request.GetDatasetName();
+  ss << "/contents";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDatasetContentsOutcome(ListDatasetContentsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDatasetContentsOutcome(outcome.GetError());
+  }
+}
+
+ListDatasetContentsOutcomeCallable IoTAnalyticsClient::ListDatasetContentsCallable(const ListDatasetContentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDatasetContentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetContents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTAnalyticsClient::ListDatasetContentsAsync(const ListDatasetContentsRequest& request, const ListDatasetContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetContentsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTAnalyticsClient::ListDatasetContentsAsyncHelper(const ListDatasetContentsRequest& request, const ListDatasetContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDatasetContents(request), context);
 }
 
 ListDatasetsOutcome IoTAnalyticsClient::ListDatasets(const ListDatasetsRequest& request) const

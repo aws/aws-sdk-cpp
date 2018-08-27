@@ -3252,16 +3252,30 @@ namespace Model
         virtual void ResetClusterParameterGroupAsync(const Model::ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the cluster's type, node type, or number of nodes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes the size of the cluster. You can change the cluster's type, or change
+         * the number or type of nodes. The default behavior is to use the elastic resize
+         * method. With an elastic resize your cluster is avaialble for read and write
+         * operations more quickly than with the classic resize method. </p> <p>Elastic
+         * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
+         * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
+         * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
+         * <p>ds2.8xlarge</p> </li> </ul> </li> <li> <p>The type of nodes you add must
+         * match the node type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::ResizeClusterOutcome ResizeCluster(const Model::ResizeClusterRequest& request) const;
 
         /**
-         * <p>Changes the cluster's type, node type, or number of nodes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes the size of the cluster. You can change the cluster's type, or change
+         * the number or type of nodes. The default behavior is to use the elastic resize
+         * method. With an elastic resize your cluster is avaialble for read and write
+         * operations more quickly than with the classic resize method. </p> <p>Elastic
+         * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
+         * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
+         * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
+         * <p>ds2.8xlarge</p> </li> </ul> </li> <li> <p>The type of nodes you add must
+         * match the node type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          *
@@ -3270,8 +3284,15 @@ namespace Model
         virtual Model::ResizeClusterOutcomeCallable ResizeClusterCallable(const Model::ResizeClusterRequest& request) const;
 
         /**
-         * <p>Changes the cluster's type, node type, or number of nodes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes the size of the cluster. You can change the cluster's type, or change
+         * the number or type of nodes. The default behavior is to use the elastic resize
+         * method. With an elastic resize your cluster is avaialble for read and write
+         * operations more quickly than with the classic resize method. </p> <p>Elastic
+         * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
+         * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
+         * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
+         * <p>ds2.8xlarge</p> </li> </ul> </li> <li> <p>The type of nodes you add must
+         * match the node type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          *

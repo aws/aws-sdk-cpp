@@ -30,13 +30,11 @@ namespace Model
 {
 
 CodeSigningSignature::CodeSigningSignature() : 
-    m_streamHasBeenSet(false),
     m_inlineDocumentHasBeenSet(false)
 {
 }
 
 CodeSigningSignature::CodeSigningSignature(JsonView jsonValue) : 
-    m_streamHasBeenSet(false),
     m_inlineDocumentHasBeenSet(false)
 {
   *this = jsonValue;
@@ -44,13 +42,6 @@ CodeSigningSignature::CodeSigningSignature(JsonView jsonValue) :
 
 CodeSigningSignature& CodeSigningSignature::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("stream"))
-  {
-    m_stream = jsonValue.GetObject("stream");
-
-    m_streamHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("inlineDocument"))
   {
     m_inlineDocument = HashingUtils::Base64Decode(jsonValue.GetString("inlineDocument"));
@@ -63,12 +54,6 @@ CodeSigningSignature& CodeSigningSignature::operator =(JsonView jsonValue)
 JsonValue CodeSigningSignature::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_streamHasBeenSet)
-  {
-   payload.WithObject("stream", m_stream.Jsonize());
-
-  }
 
   if(m_inlineDocumentHasBeenSet)
   {

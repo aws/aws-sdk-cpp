@@ -31,7 +31,7 @@ namespace Model
 OTAUpdateFile::OTAUpdateFile() : 
     m_fileNameHasBeenSet(false),
     m_fileVersionHasBeenSet(false),
-    m_fileSourceHasBeenSet(false),
+    m_fileLocationHasBeenSet(false),
     m_codeSigningHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
@@ -40,7 +40,7 @@ OTAUpdateFile::OTAUpdateFile() :
 OTAUpdateFile::OTAUpdateFile(JsonView jsonValue) : 
     m_fileNameHasBeenSet(false),
     m_fileVersionHasBeenSet(false),
-    m_fileSourceHasBeenSet(false),
+    m_fileLocationHasBeenSet(false),
     m_codeSigningHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
@@ -63,11 +63,11 @@ OTAUpdateFile& OTAUpdateFile::operator =(JsonView jsonValue)
     m_fileVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("fileSource"))
+  if(jsonValue.ValueExists("fileLocation"))
   {
-    m_fileSource = jsonValue.GetObject("fileSource");
+    m_fileLocation = jsonValue.GetObject("fileLocation");
 
-    m_fileSourceHasBeenSet = true;
+    m_fileLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("codeSigning"))
@@ -106,9 +106,9 @@ JsonValue OTAUpdateFile::Jsonize() const
 
   }
 
-  if(m_fileSourceHasBeenSet)
+  if(m_fileLocationHasBeenSet)
   {
-   payload.WithObject("fileSource", m_fileSource.Jsonize());
+   payload.WithObject("fileLocation", m_fileLocation.Jsonize());
 
   }
 

@@ -30,12 +30,14 @@ namespace Model
 
 CodeSigning::CodeSigning() : 
     m_awsSignerJobIdHasBeenSet(false),
+    m_startSigningJobParameterHasBeenSet(false),
     m_customCodeSigningHasBeenSet(false)
 {
 }
 
 CodeSigning::CodeSigning(JsonView jsonValue) : 
     m_awsSignerJobIdHasBeenSet(false),
+    m_startSigningJobParameterHasBeenSet(false),
     m_customCodeSigningHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +50,13 @@ CodeSigning& CodeSigning::operator =(JsonView jsonValue)
     m_awsSignerJobId = jsonValue.GetString("awsSignerJobId");
 
     m_awsSignerJobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startSigningJobParameter"))
+  {
+    m_startSigningJobParameter = jsonValue.GetObject("startSigningJobParameter");
+
+    m_startSigningJobParameterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("customCodeSigning"))
@@ -67,6 +76,12 @@ JsonValue CodeSigning::Jsonize() const
   if(m_awsSignerJobIdHasBeenSet)
   {
    payload.WithString("awsSignerJobId", m_awsSignerJobId);
+
+  }
+
+  if(m_startSigningJobParameterHasBeenSet)
+  {
+   payload.WithObject("startSigningJobParameter", m_startSigningJobParameter.Jsonize());
 
   }
 

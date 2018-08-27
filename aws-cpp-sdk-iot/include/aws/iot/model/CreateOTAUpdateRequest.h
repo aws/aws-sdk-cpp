@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/TargetSelection.h>
+#include <aws/iot/model/AwsJobExecutionsRolloutConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iot/model/OTAUpdateFile.h>
 #include <utility>
@@ -211,6 +212,32 @@ namespace Model
 
 
     /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline const AwsJobExecutionsRolloutConfig& GetAwsJobExecutionsRolloutConfig() const{ return m_awsJobExecutionsRolloutConfig; }
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline void SetAwsJobExecutionsRolloutConfig(const AwsJobExecutionsRolloutConfig& value) { m_awsJobExecutionsRolloutConfigHasBeenSet = true; m_awsJobExecutionsRolloutConfig = value; }
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline void SetAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig&& value) { m_awsJobExecutionsRolloutConfigHasBeenSet = true; m_awsJobExecutionsRolloutConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline CreateOTAUpdateRequest& WithAwsJobExecutionsRolloutConfig(const AwsJobExecutionsRolloutConfig& value) { SetAwsJobExecutionsRolloutConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline CreateOTAUpdateRequest& WithAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig&& value) { SetAwsJobExecutionsRolloutConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The files to be streamed by the OTA update.</p>
      */
     inline const Aws::Vector<OTAUpdateFile>& GetFiles() const{ return m_files; }
@@ -355,6 +382,9 @@ namespace Model
 
     TargetSelection m_targetSelection;
     bool m_targetSelectionHasBeenSet;
+
+    AwsJobExecutionsRolloutConfig m_awsJobExecutionsRolloutConfig;
+    bool m_awsJobExecutionsRolloutConfigHasBeenSet;
 
     Aws::Vector<OTAUpdateFile> m_files;
     bool m_filesHasBeenSet;

@@ -35,6 +35,7 @@ OTAUpdateInfo::OTAUpdateInfo() :
     m_lastModifiedDateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_targetsHasBeenSet(false),
+    m_awsJobExecutionsRolloutConfigHasBeenSet(false),
     m_targetSelection(TargetSelection::NOT_SET),
     m_targetSelectionHasBeenSet(false),
     m_otaUpdateFilesHasBeenSet(false),
@@ -54,6 +55,7 @@ OTAUpdateInfo::OTAUpdateInfo(JsonView jsonValue) :
     m_lastModifiedDateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_targetsHasBeenSet(false),
+    m_awsJobExecutionsRolloutConfigHasBeenSet(false),
     m_targetSelection(TargetSelection::NOT_SET),
     m_targetSelectionHasBeenSet(false),
     m_otaUpdateFilesHasBeenSet(false),
@@ -112,6 +114,13 @@ OTAUpdateInfo& OTAUpdateInfo::operator =(JsonView jsonValue)
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
     }
     m_targetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("awsJobExecutionsRolloutConfig"))
+  {
+    m_awsJobExecutionsRolloutConfig = jsonValue.GetObject("awsJobExecutionsRolloutConfig");
+
+    m_awsJobExecutionsRolloutConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("targetSelection"))
@@ -212,6 +221,12 @@ JsonValue OTAUpdateInfo::Jsonize() const
      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
    }
    payload.WithArray("targets", std::move(targetsJsonList));
+
+  }
+
+  if(m_awsJobExecutionsRolloutConfigHasBeenSet)
+  {
+   payload.WithObject("awsJobExecutionsRolloutConfig", m_awsJobExecutionsRolloutConfig.Jsonize());
 
   }
 

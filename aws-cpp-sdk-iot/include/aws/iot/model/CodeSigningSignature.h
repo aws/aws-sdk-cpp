@@ -15,7 +15,6 @@
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/model/Stream.h>
 #include <aws/core/utils/Array.h>
 #include <utility>
 
@@ -49,32 +48,6 @@ namespace Model
 
 
     /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline const Stream& GetStream() const{ return m_stream; }
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline void SetStream(const Stream& value) { m_streamHasBeenSet = true; m_stream = value; }
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline void SetStream(Stream&& value) { m_streamHasBeenSet = true; m_stream = std::move(value); }
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline CodeSigningSignature& WithStream(const Stream& value) { SetStream(value); return *this;}
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline CodeSigningSignature& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
-
-
-    /**
      * <p>A base64 encoded binary representation of the code signing signature.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetInlineDocument() const{ return m_inlineDocument; }
@@ -100,9 +73,6 @@ namespace Model
     inline CodeSigningSignature& WithInlineDocument(Aws::Utils::ByteBuffer&& value) { SetInlineDocument(std::move(value)); return *this;}
 
   private:
-
-    Stream m_stream;
-    bool m_streamHasBeenSet;
 
     Aws::Utils::ByteBuffer m_inlineDocument;
     bool m_inlineDocumentHasBeenSet;

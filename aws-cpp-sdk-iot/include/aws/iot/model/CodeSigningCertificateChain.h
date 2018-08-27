@@ -15,7 +15,6 @@
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/model/Stream.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -47,32 +46,6 @@ namespace Model
     CodeSigningCertificateChain(Aws::Utils::Json::JsonView jsonValue);
     CodeSigningCertificateChain& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>A stream of the certificate chain files.</p>
-     */
-    inline const Stream& GetStream() const{ return m_stream; }
-
-    /**
-     * <p>A stream of the certificate chain files.</p>
-     */
-    inline void SetStream(const Stream& value) { m_streamHasBeenSet = true; m_stream = value; }
-
-    /**
-     * <p>A stream of the certificate chain files.</p>
-     */
-    inline void SetStream(Stream&& value) { m_streamHasBeenSet = true; m_stream = std::move(value); }
-
-    /**
-     * <p>A stream of the certificate chain files.</p>
-     */
-    inline CodeSigningCertificateChain& WithStream(const Stream& value) { SetStream(value); return *this;}
-
-    /**
-     * <p>A stream of the certificate chain files.</p>
-     */
-    inline CodeSigningCertificateChain& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
 
 
     /**
@@ -154,9 +127,6 @@ namespace Model
     inline CodeSigningCertificateChain& WithInlineDocument(const char* value) { SetInlineDocument(value); return *this;}
 
   private:
-
-    Stream m_stream;
-    bool m_streamHasBeenSet;
 
     Aws::String m_certificateName;
     bool m_certificateNameHasBeenSet;

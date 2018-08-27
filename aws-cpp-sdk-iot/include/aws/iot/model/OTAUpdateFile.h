@@ -16,7 +16,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/iot/model/Stream.h>
+#include <aws/iot/model/FileLocation.h>
 #include <aws/iot/model/CodeSigning.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -124,29 +124,29 @@ namespace Model
 
 
     /**
-     * <p>The source of the file.</p>
+     * <p>The location of the updated firmware.</p>
      */
-    inline const Stream& GetFileSource() const{ return m_fileSource; }
+    inline const FileLocation& GetFileLocation() const{ return m_fileLocation; }
 
     /**
-     * <p>The source of the file.</p>
+     * <p>The location of the updated firmware.</p>
      */
-    inline void SetFileSource(const Stream& value) { m_fileSourceHasBeenSet = true; m_fileSource = value; }
+    inline void SetFileLocation(const FileLocation& value) { m_fileLocationHasBeenSet = true; m_fileLocation = value; }
 
     /**
-     * <p>The source of the file.</p>
+     * <p>The location of the updated firmware.</p>
      */
-    inline void SetFileSource(Stream&& value) { m_fileSourceHasBeenSet = true; m_fileSource = std::move(value); }
+    inline void SetFileLocation(FileLocation&& value) { m_fileLocationHasBeenSet = true; m_fileLocation = std::move(value); }
 
     /**
-     * <p>The source of the file.</p>
+     * <p>The location of the updated firmware.</p>
      */
-    inline OTAUpdateFile& WithFileSource(const Stream& value) { SetFileSource(value); return *this;}
+    inline OTAUpdateFile& WithFileLocation(const FileLocation& value) { SetFileLocation(value); return *this;}
 
     /**
-     * <p>The source of the file.</p>
+     * <p>The location of the updated firmware.</p>
      */
-    inline OTAUpdateFile& WithFileSource(Stream&& value) { SetFileSource(std::move(value)); return *this;}
+    inline OTAUpdateFile& WithFileLocation(FileLocation&& value) { SetFileLocation(std::move(value)); return *this;}
 
 
     /**
@@ -243,8 +243,8 @@ namespace Model
     Aws::String m_fileVersion;
     bool m_fileVersionHasBeenSet;
 
-    Stream m_fileSource;
-    bool m_fileSourceHasBeenSet;
+    FileLocation m_fileLocation;
+    bool m_fileLocationHasBeenSet;
 
     CodeSigning m_codeSigning;
     bool m_codeSigningHasBeenSet;
