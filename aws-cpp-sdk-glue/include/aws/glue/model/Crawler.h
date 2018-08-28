@@ -509,85 +509,57 @@ namespace Model
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline Crawler& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline Crawler& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline Crawler& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 

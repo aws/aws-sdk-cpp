@@ -175,42 +175,50 @@ namespace Model
 
 
     /**
-     * <p>A list of the IDs of versions to be deleted.</p>
+     * <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersionIds() const{ return m_versionIds; }
 
     /**
-     * <p>A list of the IDs of versions to be deleted.</p>
+     * <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline void SetVersionIds(const Aws::Vector<Aws::String>& value) { m_versionIdsHasBeenSet = true; m_versionIds = value; }
 
     /**
-     * <p>A list of the IDs of versions to be deleted.</p>
+     * <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline void SetVersionIds(Aws::Vector<Aws::String>&& value) { m_versionIdsHasBeenSet = true; m_versionIds = std::move(value); }
 
     /**
-     * <p>A list of the IDs of versions to be deleted.</p>
+     * <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline BatchDeleteTableVersionRequest& WithVersionIds(const Aws::Vector<Aws::String>& value) { SetVersionIds(value); return *this;}
 
     /**
-     * <p>A list of the IDs of versions to be deleted.</p>
+     * <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline BatchDeleteTableVersionRequest& WithVersionIds(Aws::Vector<Aws::String>&& value) { SetVersionIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the IDs of versions to be deleted.</p>
+     * <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline BatchDeleteTableVersionRequest& AddVersionIds(const Aws::String& value) { m_versionIdsHasBeenSet = true; m_versionIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of the IDs of versions to be deleted.</p>
+     * <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline BatchDeleteTableVersionRequest& AddVersionIds(Aws::String&& value) { m_versionIdsHasBeenSet = true; m_versionIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of the IDs of versions to be deleted.</p>
+     * <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline BatchDeleteTableVersionRequest& AddVersionIds(const char* value) { m_versionIdsHasBeenSet = true; m_versionIds.push_back(value); return *this; }
 
