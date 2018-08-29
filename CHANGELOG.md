@@ -1,5 +1,11 @@
 # Breaking changes in AWS SDK for C++
 
+## [1.6.0](https://github.com/aws/aws-sdk-cpp/tree/1.6.0) (2018-08-28)
+
+### aws-cpp-sdk-core
+
+Code for future SDK instrumentation and telemetry
+
 ## [1.5.0](https://github.com/aws/aws-sdk-cpp/tree/1.5.0) (2018-07-25)
 
 ### aws-cpp-sdk-core
