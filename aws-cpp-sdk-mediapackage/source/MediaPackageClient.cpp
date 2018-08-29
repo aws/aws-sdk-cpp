@@ -35,7 +35,7 @@
 #include <aws/mediapackage/model/DescribeOriginEndpointRequest.h>
 #include <aws/mediapackage/model/ListChannelsRequest.h>
 #include <aws/mediapackage/model/ListOriginEndpointsRequest.h>
-#include <aws/mediapackage/model/RotateChannelCredentialsRequest.h>
+#include <aws/mediapackage/model/RotateIngestEndpointCredentialsRequest.h>
 #include <aws/mediapackage/model/UpdateChannelRequest.h>
 #include <aws/mediapackage/model/UpdateOriginEndpointRequest.h>
 
@@ -387,41 +387,43 @@ void MediaPackageClient::ListOriginEndpointsAsyncHelper(const ListOriginEndpoint
   handler(this, request, ListOriginEndpoints(request), context);
 }
 
-RotateChannelCredentialsOutcome MediaPackageClient::RotateChannelCredentials(const RotateChannelCredentialsRequest& request) const
+RotateIngestEndpointCredentialsOutcome MediaPackageClient::RotateIngestEndpointCredentials(const RotateIngestEndpointCredentialsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/channels/";
   ss << request.GetId();
+  ss << "/ingest_endpoints/";
+  ss << request.GetIngestEndpointId();
   ss << "/credentials";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return RotateChannelCredentialsOutcome(RotateChannelCredentialsResult(outcome.GetResult()));
+    return RotateIngestEndpointCredentialsOutcome(RotateIngestEndpointCredentialsResult(outcome.GetResult()));
   }
   else
   {
-    return RotateChannelCredentialsOutcome(outcome.GetError());
+    return RotateIngestEndpointCredentialsOutcome(outcome.GetError());
   }
 }
 
-RotateChannelCredentialsOutcomeCallable MediaPackageClient::RotateChannelCredentialsCallable(const RotateChannelCredentialsRequest& request) const
+RotateIngestEndpointCredentialsOutcomeCallable MediaPackageClient::RotateIngestEndpointCredentialsCallable(const RotateIngestEndpointCredentialsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RotateChannelCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RotateChannelCredentials(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RotateIngestEndpointCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RotateIngestEndpointCredentials(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void MediaPackageClient::RotateChannelCredentialsAsync(const RotateChannelCredentialsRequest& request, const RotateChannelCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::RotateIngestEndpointCredentialsAsync(const RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RotateChannelCredentialsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->RotateIngestEndpointCredentialsAsyncHelper( request, handler, context ); } );
 }
 
-void MediaPackageClient::RotateChannelCredentialsAsyncHelper(const RotateChannelCredentialsRequest& request, const RotateChannelCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void MediaPackageClient::RotateIngestEndpointCredentialsAsyncHelper(const RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RotateChannelCredentials(request), context);
+  handler(this, request, RotateIngestEndpointCredentials(request), context);
 }
 
 UpdateChannelOutcome MediaPackageClient::UpdateChannel(const UpdateChannelRequest& request) const

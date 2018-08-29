@@ -138,7 +138,7 @@ namespace Model
 
         virtual ~MacieClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "macie"; }
+        inline virtual const char* GetServiceClientName() const override { return "Macie"; }
 
 
         /**

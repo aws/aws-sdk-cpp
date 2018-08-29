@@ -148,7 +148,7 @@ namespace Model
 
         virtual ~MediaStoreClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mediastore"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaStore"; }
 
 
         /**

@@ -326,7 +326,7 @@ namespace Model
 
         virtual ~DatabaseMigrationServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "dms"; }
+        inline virtual const char* GetServiceClientName() const override { return "Database Migration Service"; }
 
 
         /**

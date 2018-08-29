@@ -226,7 +226,7 @@ namespace Model
 
         virtual ~EMRClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "elasticmapreduce"; }
+        inline virtual const char* GetServiceClientName() const override { return "EMR"; }
 
 
         /**

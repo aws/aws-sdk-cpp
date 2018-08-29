@@ -452,7 +452,7 @@ namespace Model
 
         virtual ~PinpointClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mobiletargeting"; }
+        inline virtual const char* GetServiceClientName() const override { return "Pinpoint"; }
 
 
         /**

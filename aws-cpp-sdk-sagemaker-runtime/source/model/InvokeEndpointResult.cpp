@@ -33,7 +33,8 @@ InvokeEndpointResult::InvokeEndpointResult()
 InvokeEndpointResult::InvokeEndpointResult(InvokeEndpointResult&& toMove) : 
     m_body(std::move(toMove.m_body)),
     m_contentType(std::move(toMove.m_contentType)),
-    m_invokedProductionVariant(std::move(toMove.m_invokedProductionVariant))
+    m_invokedProductionVariant(std::move(toMove.m_invokedProductionVariant)),
+    m_customAttributes(std::move(toMove.m_customAttributes))
 {
 }
 
@@ -47,6 +48,7 @@ InvokeEndpointResult& InvokeEndpointResult::operator=(InvokeEndpointResult&& toM
    m_body = std::move(toMove.m_body);
    m_contentType = std::move(toMove.m_contentType);
    m_invokedProductionVariant = std::move(toMove.m_invokedProductionVariant);
+   m_customAttributes = std::move(toMove.m_customAttributes);
 
    return *this;
 }
@@ -71,6 +73,12 @@ InvokeEndpointResult& InvokeEndpointResult::operator =(Aws::AmazonWebServiceResu
   if(invokedProductionVariantIter != headers.end())
   {
     m_invokedProductionVariant = invokedProductionVariantIter->second;
+  }
+
+  const auto& customAttributesIter = headers.find("x-amzn-sagemaker-custom-attributes");
+  if(customAttributesIter != headers.end())
+  {
+    m_customAttributes = customAttributesIter->second;
   }
 
    return *this;

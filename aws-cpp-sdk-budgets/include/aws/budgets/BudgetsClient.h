@@ -188,7 +188,7 @@ namespace Model
 
         virtual ~BudgetsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "budgets"; }
+        inline virtual const char* GetServiceClientName() const override { return "Budgets"; }
 
 
         /**

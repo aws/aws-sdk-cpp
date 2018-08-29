@@ -485,7 +485,7 @@ namespace Model
 
         virtual ~StorageGatewayClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "storagegateway"; }
+        inline virtual const char* GetServiceClientName() const override { return "Storage Gateway"; }
 
 
         /**

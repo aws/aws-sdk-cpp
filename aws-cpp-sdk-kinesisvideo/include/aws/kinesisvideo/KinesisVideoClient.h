@@ -147,7 +147,7 @@ namespace Model
 
         virtual ~KinesisVideoClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "kinesisvideo"; }
+        inline virtual const char* GetServiceClientName() const override { return "Kinesis Video"; }
 
 
         /**

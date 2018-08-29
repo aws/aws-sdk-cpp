@@ -162,7 +162,7 @@ namespace Model
 
         virtual ~IoT1ClickProjectsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "iot1click"; }
+        inline virtual const char* GetServiceClientName() const override { return "IoT 1Click Projects"; }
 
 
         /**

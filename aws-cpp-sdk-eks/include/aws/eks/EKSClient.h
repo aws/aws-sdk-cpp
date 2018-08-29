@@ -135,7 +135,7 @@ namespace Model
 
         virtual ~EKSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "eks"; }
+        inline virtual const char* GetServiceClientName() const override { return "EKS"; }
 
 
         /**

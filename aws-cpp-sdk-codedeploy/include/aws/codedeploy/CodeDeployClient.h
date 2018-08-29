@@ -334,7 +334,7 @@ namespace Model
 
         virtual ~CodeDeployClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "codedeploy"; }
+        inline virtual const char* GetServiceClientName() const override { return "CodeDeploy"; }
 
 
         /**

@@ -125,7 +125,7 @@ namespace Model
 
         virtual ~MediaTailorClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mediatailor"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaTailor"; }
 
 
         /**

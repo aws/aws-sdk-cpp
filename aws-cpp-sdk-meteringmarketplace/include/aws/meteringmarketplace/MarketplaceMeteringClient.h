@@ -125,7 +125,7 @@ namespace Model
 
         virtual ~MarketplaceMeteringClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "aws-marketplace"; }
+        inline virtual const char* GetServiceClientName() const override { return "metering.marketplace"; }
 
 
         /**

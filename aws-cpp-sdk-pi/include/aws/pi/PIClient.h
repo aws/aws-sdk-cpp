@@ -122,7 +122,7 @@ namespace Model
 
         virtual ~PIClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "pi"; }
+        inline virtual const char* GetServiceClientName() const override { return "PI"; }
 
 
         /**

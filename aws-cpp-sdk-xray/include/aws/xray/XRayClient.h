@@ -168,7 +168,7 @@ namespace Model
 
         virtual ~XRayClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "xray"; }
+        inline virtual const char* GetServiceClientName() const override { return "XRay"; }
 
 
         /**

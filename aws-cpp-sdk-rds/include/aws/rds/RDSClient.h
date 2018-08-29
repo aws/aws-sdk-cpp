@@ -600,7 +600,7 @@ namespace Aws
 
         virtual ~RDSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "rds"; }
+        inline virtual const char* GetServiceClientName() const override { return "RDS"; }
 
     
         /**

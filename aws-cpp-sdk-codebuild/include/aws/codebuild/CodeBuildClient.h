@@ -217,7 +217,7 @@ namespace Model
 
         virtual ~CodeBuildClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "codebuild"; }
+        inline virtual const char* GetServiceClientName() const override { return "CodeBuild"; }
 
 
         /**

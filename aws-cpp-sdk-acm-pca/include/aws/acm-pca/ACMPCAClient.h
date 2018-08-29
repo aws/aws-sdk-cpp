@@ -199,7 +199,7 @@ namespace Model
 
         virtual ~ACMPCAClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "acm-pca"; }
+        inline virtual const char* GetServiceClientName() const override { return "ACM PCA"; }
 
 
         /**

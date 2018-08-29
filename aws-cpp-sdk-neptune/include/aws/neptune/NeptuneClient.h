@@ -400,7 +400,7 @@ namespace Model
 
         virtual ~NeptuneClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "rds"; }
+        inline virtual const char* GetServiceClientName() const override { return "Neptune"; }
 
 
        /**

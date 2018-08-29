@@ -348,7 +348,7 @@ namespace Model
 
         virtual ~AlexaForBusinessClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "a4b"; }
+        inline virtual const char* GetServiceClientName() const override { return "Alexa For Business"; }
 
 
         /**

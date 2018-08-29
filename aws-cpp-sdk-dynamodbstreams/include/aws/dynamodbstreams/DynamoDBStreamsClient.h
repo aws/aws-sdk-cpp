@@ -134,7 +134,7 @@ namespace Model
 
         virtual ~DynamoDBStreamsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "dynamodb"; }
+        inline virtual const char* GetServiceClientName() const override { return "streams.dynamodb"; }
 
 
         /**

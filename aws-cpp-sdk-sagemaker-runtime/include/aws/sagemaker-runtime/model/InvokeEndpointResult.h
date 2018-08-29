@@ -48,12 +48,18 @@ namespace Model
 
 
     /**
-     * <p>Includes the inference provided by the model.</p>
+     * <p>Includes the inference provided by the model.</p> <p>For information about
+     * the format of the response body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
+     * Data Formats—Inference</a>.</p>
      */
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     /**
-     * <p>Includes the inference provided by the model.</p>
+     * <p>Includes the inference provided by the model.</p> <p>For information about
+     * the format of the response body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
+     * Data Formats—Inference</a>.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
     
@@ -129,6 +135,42 @@ namespace Model
      */
     inline InvokeEndpointResult& WithInvokedProductionVariant(const char* value) { SetInvokedProductionVariant(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetCustomAttributes() const{ return m_customAttributes; }
+
+    /**
+     * <p/>
+     */
+    inline void SetCustomAttributes(const Aws::String& value) { m_customAttributes = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetCustomAttributes(Aws::String&& value) { m_customAttributes = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetCustomAttributes(const char* value) { m_customAttributes.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline InvokeEndpointResult& WithCustomAttributes(const Aws::String& value) { SetCustomAttributes(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline InvokeEndpointResult& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline InvokeEndpointResult& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
+
   private:
 
   Aws::Utils::Stream::ResponseStream m_body;
@@ -136,6 +178,8 @@ namespace Model
     Aws::String m_contentType;
 
     Aws::String m_invokedProductionVariant;
+
+    Aws::String m_customAttributes;
   };
 
 } // namespace Model

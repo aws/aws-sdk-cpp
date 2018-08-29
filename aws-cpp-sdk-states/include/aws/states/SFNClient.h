@@ -208,7 +208,7 @@ namespace Model
 
         virtual ~SFNClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "states"; }
+        inline virtual const char* GetServiceClientName() const override { return "SFN"; }
 
 
         /**

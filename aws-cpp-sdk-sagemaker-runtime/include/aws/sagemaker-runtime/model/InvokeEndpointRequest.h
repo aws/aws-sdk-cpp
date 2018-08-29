@@ -135,6 +135,42 @@ namespace Model
      */
     inline InvokeEndpointRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetCustomAttributes() const{ return m_customAttributes; }
+
+    /**
+     * <p/>
+     */
+    inline void SetCustomAttributes(const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetCustomAttributes(Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetCustomAttributes(const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline InvokeEndpointRequest& WithCustomAttributes(const Aws::String& value) { SetCustomAttributes(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline InvokeEndpointRequest& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline InvokeEndpointRequest& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -143,6 +179,9 @@ namespace Model
 
     Aws::String m_accept;
     bool m_acceptHasBeenSet;
+
+    Aws::String m_customAttributes;
+    bool m_customAttributesHasBeenSet;
   };
 
 } // namespace Model

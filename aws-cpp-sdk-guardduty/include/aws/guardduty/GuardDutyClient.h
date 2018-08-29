@@ -308,7 +308,7 @@ namespace Model
 
         virtual ~GuardDutyClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "guardduty"; }
+        inline virtual const char* GetServiceClientName() const override { return "GuardDuty"; }
 
 
         /**

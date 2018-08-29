@@ -222,7 +222,7 @@ namespace Model
 
         virtual ~MediaLiveClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "medialive"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaLive"; }
 
 
         /**

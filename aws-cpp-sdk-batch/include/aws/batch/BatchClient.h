@@ -192,7 +192,7 @@ namespace Model
 
         virtual ~BatchClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "batch"; }
+        inline virtual const char* GetServiceClientName() const override { return "Batch"; }
 
 
         /**

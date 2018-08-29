@@ -191,7 +191,7 @@ namespace Model
 
         virtual ~ServerlessApplicationRepositoryClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "serverlessrepo"; }
+        inline virtual const char* GetServiceClientName() const override { return "ServerlessApplicationRepository"; }
 
 
         /**

@@ -303,7 +303,7 @@ namespace Model
 
         virtual ~SageMakerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "sagemaker"; }
+        inline virtual const char* GetServiceClientName() const override { return "SageMaker"; }
 
 
         /**

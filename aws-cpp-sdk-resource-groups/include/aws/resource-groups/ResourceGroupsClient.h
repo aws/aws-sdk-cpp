@@ -180,7 +180,7 @@ namespace Model
 
         virtual ~ResourceGroupsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "resource-groups"; }
+        inline virtual const char* GetServiceClientName() const override { return "Resource Groups"; }
 
 
         /**

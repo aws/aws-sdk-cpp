@@ -146,7 +146,7 @@ namespace Model
 
         virtual ~PollyClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "polly"; }
+        inline virtual const char* GetServiceClientName() const override { return "Polly"; }
 
 
         /**

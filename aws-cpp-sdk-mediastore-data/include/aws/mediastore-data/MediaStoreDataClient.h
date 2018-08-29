@@ -124,7 +124,7 @@ namespace Model
 
         virtual ~MediaStoreDataClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mediastore"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaStore Data"; }
 
 
         /**

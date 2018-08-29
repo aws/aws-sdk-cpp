@@ -13,30 +13,24 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/glue/model/GetResourcePolicyRequest.h>
+#include <aws/mediapackage/model/RotateIngestEndpointCredentialsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
-using namespace Aws::Glue::Model;
+using namespace Aws::MediaPackage::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourcePolicyRequest::GetResourcePolicyRequest()
+RotateIngestEndpointCredentialsRequest::RotateIngestEndpointCredentialsRequest() : 
+    m_idHasBeenSet(false),
+    m_ingestEndpointIdHasBeenSet(false)
 {
 }
 
-Aws::String GetResourcePolicyRequest::SerializePayload() const
+Aws::String RotateIngestEndpointCredentialsRequest::SerializePayload() const
 {
   return "";
-}
-
-Aws::Http::HeaderValueCollection GetResourcePolicyRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.GetResourcePolicy"));
-  return headers;
-
 }
 
 

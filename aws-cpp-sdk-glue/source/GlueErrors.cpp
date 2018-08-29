@@ -42,7 +42,6 @@ static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServi
 static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
 static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
 static const int CRAWLER_RUNNING_HASH = HashingUtils::HashString("CrawlerRunningException");
-static const int CONDITION_CHECK_FAILURE_HASH = HashingUtils::HashString("ConditionCheckFailureException");
 static const int CRAWLER_STOPPING_HASH = HashingUtils::HashString("CrawlerStoppingException");
 static const int NO_SCHEDULE_HASH = HashingUtils::HashString("NoScheduleException");
 static const int CONCURRENT_RUNS_EXCEEDED_HASH = HashingUtils::HashString("ConcurrentRunsExceededException");
@@ -108,10 +107,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CRAWLER_RUNNING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CRAWLER_RUNNING), false);
-  }
-  else if (hashCode == CONDITION_CHECK_FAILURE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CONDITION_CHECK_FAILURE), false);
   }
   else if (hashCode == CRAWLER_STOPPING_HASH)
   {

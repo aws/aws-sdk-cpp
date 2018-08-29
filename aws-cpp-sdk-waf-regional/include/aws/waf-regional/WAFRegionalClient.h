@@ -472,7 +472,7 @@ namespace Model
 
         virtual ~WAFRegionalClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "waf-regional"; }
+        inline virtual const char* GetServiceClientName() const override { return "WAF Regional"; }
 
 
         /**

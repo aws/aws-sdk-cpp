@@ -272,7 +272,7 @@ namespace Model
 
         virtual ~LexModelBuildingServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "lex"; }
+        inline virtual const char* GetServiceClientName() const override { return "Lex Model Building Service"; }
 
 
         /**

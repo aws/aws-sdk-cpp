@@ -130,7 +130,7 @@ namespace Model
 
         virtual ~AutoScalingPlansClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "autoscaling-plans"; }
+        inline virtual const char* GetServiceClientName() const override { return "Auto Scaling Plans"; }
 
 
         /**

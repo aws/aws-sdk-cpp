@@ -130,7 +130,7 @@ namespace Model
 
         virtual ~PricingClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "pricing"; }
+        inline virtual const char* GetServiceClientName() const override { return "api.pricing"; }
 
 
         /**

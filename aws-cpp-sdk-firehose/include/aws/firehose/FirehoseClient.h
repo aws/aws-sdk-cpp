@@ -150,7 +150,7 @@ namespace Model
 
         virtual ~FirehoseClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "firehose"; }
+        inline virtual const char* GetServiceClientName() const override { return "Firehose"; }
 
 
         /**

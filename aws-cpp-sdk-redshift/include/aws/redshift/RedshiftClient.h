@@ -461,7 +461,7 @@ namespace Model
 
         virtual ~RedshiftClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "redshift"; }
+        inline virtual const char* GetServiceClientName() const override { return "Redshift"; }
 
 
        /**

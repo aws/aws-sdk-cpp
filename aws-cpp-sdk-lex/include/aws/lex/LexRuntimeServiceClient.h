@@ -117,7 +117,7 @@ namespace Model
 
         virtual ~LexRuntimeServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "lex"; }
+        inline virtual const char* GetServiceClientName() const override { return "Lex Runtime Service"; }
 
 
         /**

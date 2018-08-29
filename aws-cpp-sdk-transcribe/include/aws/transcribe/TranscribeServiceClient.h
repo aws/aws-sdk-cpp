@@ -137,7 +137,7 @@ namespace Model
 
         virtual ~TranscribeServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "transcribe"; }
+        inline virtual const char* GetServiceClientName() const override { return "Transcribe"; }
 
 
         /**

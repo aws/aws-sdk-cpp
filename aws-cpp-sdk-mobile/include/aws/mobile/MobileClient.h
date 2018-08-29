@@ -145,7 +145,7 @@ namespace Model
 
         virtual ~MobileClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "AWSMobileHubService"; }
+        inline virtual const char* GetServiceClientName() const override { return "mobile"; }
 
 
         /**

@@ -207,7 +207,7 @@ namespace Model
 
         virtual ~DAXClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "dax"; }
+        inline virtual const char* GetServiceClientName() const override { return "DAX"; }
 
 
         /**

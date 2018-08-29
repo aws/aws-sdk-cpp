@@ -245,7 +245,7 @@ namespace Model
 
         virtual ~ComprehendClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "comprehend"; }
+        inline virtual const char* GetServiceClientName() const override { return "Comprehend"; }
 
 
         /**

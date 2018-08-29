@@ -279,7 +279,7 @@ namespace Model
 
         virtual ~AppStreamClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "appstream"; }
+        inline virtual const char* GetServiceClientName() const override { return "AppStream"; }
 
 
         /**

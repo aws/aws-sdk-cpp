@@ -181,7 +181,7 @@ namespace Model
 
         virtual ~ConnectClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "connect"; }
+        inline virtual const char* GetServiceClientName() const override { return "Connect"; }
 
 
         /**

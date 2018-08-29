@@ -379,7 +379,7 @@ namespace Model
 
         virtual ~OrganizationsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "organizations"; }
+        inline virtual const char* GetServiceClientName() const override { return "Organizations"; }
 
 
         /**

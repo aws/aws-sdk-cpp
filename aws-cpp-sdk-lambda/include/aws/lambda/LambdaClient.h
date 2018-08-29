@@ -243,7 +243,7 @@ namespace Model
 
         virtual ~LambdaClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "lambda"; }
+        inline virtual const char* GetServiceClientName() const override { return "Lambda"; }
 
 
         /**

@@ -135,7 +135,7 @@ namespace Model
 
         virtual ~CostExplorerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ce"; }
+        inline virtual const char* GetServiceClientName() const override { return "Cost Explorer"; }
 
 
         /**

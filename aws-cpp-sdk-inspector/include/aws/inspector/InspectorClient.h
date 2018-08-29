@@ -277,7 +277,7 @@ namespace Model
 
         virtual ~InspectorClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "inspector"; }
+        inline virtual const char* GetServiceClientName() const override { return "Inspector"; }
 
 
         /**

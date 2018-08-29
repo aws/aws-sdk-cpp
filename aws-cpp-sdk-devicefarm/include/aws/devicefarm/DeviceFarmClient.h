@@ -419,7 +419,7 @@ namespace Model
 
         virtual ~DeviceFarmClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "devicefarm"; }
+        inline virtual const char* GetServiceClientName() const override { return "Device Farm"; }
 
 
         /**

@@ -112,7 +112,7 @@ namespace Model
 
         virtual ~KinesisVideoArchivedMediaClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "kinesisvideo"; }
+        inline virtual const char* GetServiceClientName() const override { return "Kinesis Video Archived Media"; }
 
 
         /**

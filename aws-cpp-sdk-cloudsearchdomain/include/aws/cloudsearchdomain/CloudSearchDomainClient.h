@@ -121,7 +121,7 @@ namespace Model
 
         virtual ~CloudSearchDomainClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "cloudsearch"; }
+        inline virtual const char* GetServiceClientName() const override { return "cloudsearchdomain"; }
 
 
         /**

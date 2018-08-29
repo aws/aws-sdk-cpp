@@ -103,7 +103,7 @@ namespace Model
 
         virtual ~TranslateClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "translate"; }
+        inline virtual const char* GetServiceClientName() const override { return "Translate"; }
 
 
         /**

@@ -158,7 +158,7 @@ namespace Model
 
         virtual ~FMSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "fms"; }
+        inline virtual const char* GetServiceClientName() const override { return "FMS"; }
 
 
         /**

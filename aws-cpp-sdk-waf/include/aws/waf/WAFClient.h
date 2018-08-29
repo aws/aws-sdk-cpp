@@ -450,7 +450,7 @@ namespace Model
 
         virtual ~WAFClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "waf"; }
+        inline virtual const char* GetServiceClientName() const override { return "WAF"; }
 
 
         /**

@@ -327,7 +327,7 @@ namespace Model
 
         virtual ~ElasticBeanstalkClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "elasticbeanstalk"; }
+        inline virtual const char* GetServiceClientName() const override { return "Elastic Beanstalk"; }
 
 
        /**

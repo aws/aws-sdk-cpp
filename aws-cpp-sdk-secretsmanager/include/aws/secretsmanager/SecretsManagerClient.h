@@ -236,7 +236,7 @@ namespace Model
 
         virtual ~SecretsManagerClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "secretsmanager"; }
+        inline virtual const char* GetServiceClientName() const override { return "Secrets Manager"; }
 
 
         /**

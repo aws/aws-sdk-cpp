@@ -278,7 +278,7 @@ namespace Model
 
         virtual ~IoTAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "iotanalytics"; }
+        inline virtual const char* GetServiceClientName() const override { return "IoTAnalytics"; }
 
 
         /**

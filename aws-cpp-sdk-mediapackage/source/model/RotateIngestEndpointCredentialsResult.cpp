@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/glue/model/GetResourcePolicyResult.h>
+#include <aws/mediapackage/model/RotateIngestEndpointCredentialsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -21,44 +21,44 @@
 
 #include <utility>
 
-using namespace Aws::Glue::Model;
+using namespace Aws::MediaPackage::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourcePolicyResult::GetResourcePolicyResult()
+RotateIngestEndpointCredentialsResult::RotateIngestEndpointCredentialsResult()
 {
 }
 
-GetResourcePolicyResult::GetResourcePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+RotateIngestEndpointCredentialsResult::RotateIngestEndpointCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetResourcePolicyResult& GetResourcePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+RotateIngestEndpointCredentialsResult& RotateIngestEndpointCredentialsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("PolicyInJson"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_policyInJson = jsonValue.GetString("PolicyInJson");
+    m_arn = jsonValue.GetString("arn");
 
   }
 
-  if(jsonValue.ValueExists("PolicyHash"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_policyHash = jsonValue.GetString("PolicyHash");
+    m_description = jsonValue.GetString("description");
 
   }
 
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("hlsIngest"))
   {
-    m_createTime = jsonValue.GetDouble("CreateTime");
+    m_hlsIngest = jsonValue.GetObject("hlsIngest");
 
   }
 
-  if(jsonValue.ValueExists("UpdateTime"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_updateTime = jsonValue.GetDouble("UpdateTime");
+    m_id = jsonValue.GetString("id");
 
   }
 

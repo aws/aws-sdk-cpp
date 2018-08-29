@@ -205,7 +205,7 @@ namespace Model
 
         virtual ~ElasticsearchServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "es"; }
+        inline virtual const char* GetServiceClientName() const override { return "Elasticsearch Service"; }
 
 
         /**

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-DatabaseMigrationService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.5.20160101.25;
+        version : 1.6.20160101.1;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Database Migration Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.5.25
+            AWSSDKCPP-Core/1.6.1
        }
     }
 

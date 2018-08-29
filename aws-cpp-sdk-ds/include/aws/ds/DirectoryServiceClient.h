@@ -317,7 +317,7 @@ namespace Model
 
         virtual ~DirectoryServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ds"; }
+        inline virtual const char* GetServiceClientName() const override { return "Directory Service"; }
 
 
         /**

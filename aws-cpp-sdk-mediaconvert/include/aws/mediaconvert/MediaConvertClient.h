@@ -212,7 +212,7 @@ namespace Model
 
         virtual ~MediaConvertClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mediaconvert"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaConvert"; }
 
 
         /**

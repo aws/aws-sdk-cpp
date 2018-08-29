@@ -35,12 +35,12 @@ namespace MediaPackage
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGE_API RotateChannelCredentialsResult
+  class AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsResult
   {
   public:
-    RotateChannelCredentialsResult();
-    RotateChannelCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RotateChannelCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RotateIngestEndpointCredentialsResult();
+    RotateIngestEndpointCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RotateIngestEndpointCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -66,17 +66,17 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) assigned to the Channel.
      */
-    inline RotateChannelCredentialsResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * The Amazon Resource Name (ARN) assigned to the Channel.
      */
-    inline RotateChannelCredentialsResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * The Amazon Resource Name (ARN) assigned to the Channel.
      */
-    inline RotateChannelCredentialsResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -102,17 +102,17 @@ namespace Model
     /**
      * A short text description of the Channel.
      */
-    inline RotateChannelCredentialsResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * A short text description of the Channel.
      */
-    inline RotateChannelCredentialsResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * A short text description of the Channel.
      */
-    inline RotateChannelCredentialsResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     
@@ -125,10 +125,10 @@ namespace Model
     inline void SetHlsIngest(HlsIngest&& value) { m_hlsIngest = std::move(value); }
 
     
-    inline RotateChannelCredentialsResult& WithHlsIngest(const HlsIngest& value) { SetHlsIngest(value); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithHlsIngest(const HlsIngest& value) { SetHlsIngest(value); return *this;}
 
     
-    inline RotateChannelCredentialsResult& WithHlsIngest(HlsIngest&& value) { SetHlsIngest(std::move(value)); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithHlsIngest(HlsIngest&& value) { SetHlsIngest(std::move(value)); return *this;}
 
 
     /**
@@ -154,17 +154,17 @@ namespace Model
     /**
      * The ID of the Channel.
      */
-    inline RotateChannelCredentialsResult& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * The ID of the Channel.
      */
-    inline RotateChannelCredentialsResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The ID of the Channel.
      */
-    inline RotateChannelCredentialsResult& WithId(const char* value) { SetId(value); return *this;}
+    inline RotateIngestEndpointCredentialsResult& WithId(const char* value) { SetId(value); return *this;}
 
   private:
 
