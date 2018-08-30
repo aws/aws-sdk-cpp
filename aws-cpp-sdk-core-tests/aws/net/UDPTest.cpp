@@ -83,6 +83,7 @@ TEST(UDPTEST, TestBlockingUDPSendReceivePacketsSequencialy)
     exec.Submit(sender);
 }
 
+#if 0
 TEST(UDPTEST, TestUDPSendReceivePacketsNonblockingBatch)
 {
     static Semaphore sockEv(0, 1);
@@ -130,3 +131,4 @@ TEST(UDPTEST, TestUDPSendReceivePacketsNonblockingBatch)
     exec.Submit(receiver);
     exec.Submit(sender);
 }
+#endif
