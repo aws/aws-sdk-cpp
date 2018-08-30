@@ -545,6 +545,42 @@ namespace Model
      */
     inline ProjectSource& WithInsecureSsl(bool value) { SetInsecureSsl(value); return *this;}
 
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline ProjectSource& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline ProjectSource& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline ProjectSource& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
+
   private:
 
     SourceType m_type;
@@ -567,6 +603,9 @@ namespace Model
 
     bool m_insecureSsl;
     bool m_insecureSslHasBeenSet;
+
+    Aws::String m_sourceIdentifier;
+    bool m_sourceIdentifierHasBeenSet;
   };
 
 } // namespace Model

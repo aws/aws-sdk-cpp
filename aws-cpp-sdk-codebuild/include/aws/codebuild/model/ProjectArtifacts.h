@@ -730,6 +730,42 @@ namespace Model
      */
     inline ProjectArtifacts& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
 
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline const Aws::String& GetArtifactIdentifier() const{ return m_artifactIdentifier; }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(const Aws::String& value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier = value; }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(Aws::String&& value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier = std::move(value); }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(const char* value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier.assign(value); }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline ProjectArtifacts& WithArtifactIdentifier(const Aws::String& value) { SetArtifactIdentifier(value); return *this;}
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline ProjectArtifacts& WithArtifactIdentifier(Aws::String&& value) { SetArtifactIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline ProjectArtifacts& WithArtifactIdentifier(const char* value) { SetArtifactIdentifier(value); return *this;}
+
   private:
 
     ArtifactsType m_type;
@@ -755,6 +791,9 @@ namespace Model
 
     bool m_encryptionDisabled;
     bool m_encryptionDisabledHasBeenSet;
+
+    Aws::String m_artifactIdentifier;
+    bool m_artifactIdentifierHasBeenSet;
   };
 
 } // namespace Model

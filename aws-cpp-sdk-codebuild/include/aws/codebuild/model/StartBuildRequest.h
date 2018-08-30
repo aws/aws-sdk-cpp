@@ -17,13 +17,15 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/CodeBuildRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/codebuild/model/ProjectArtifacts.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codebuild/model/ProjectArtifacts.h>
 #include <aws/codebuild/model/SourceType.h>
 #include <aws/codebuild/model/SourceAuth.h>
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/codebuild/model/ProjectCache.h>
+#include <aws/codebuild/model/ProjectSource.h>
+#include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
 #include <utility>
 
@@ -86,6 +88,92 @@ namespace Model
      * <p>The name of the AWS CodeBuild build project to start running a build.</p>
      */
     inline StartBuildRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline const Aws::Vector<ProjectSource>& GetSecondarySourcesOverride() const{ return m_secondarySourcesOverride; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline void SetSecondarySourcesOverride(const Aws::Vector<ProjectSource>& value) { m_secondarySourcesOverrideHasBeenSet = true; m_secondarySourcesOverride = value; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline void SetSecondarySourcesOverride(Aws::Vector<ProjectSource>&& value) { m_secondarySourcesOverrideHasBeenSet = true; m_secondarySourcesOverride = std::move(value); }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline StartBuildRequest& WithSecondarySourcesOverride(const Aws::Vector<ProjectSource>& value) { SetSecondarySourcesOverride(value); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline StartBuildRequest& WithSecondarySourcesOverride(Aws::Vector<ProjectSource>&& value) { SetSecondarySourcesOverride(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline StartBuildRequest& AddSecondarySourcesOverride(const ProjectSource& value) { m_secondarySourcesOverrideHasBeenSet = true; m_secondarySourcesOverride.push_back(value); return *this; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline StartBuildRequest& AddSecondarySourcesOverride(ProjectSource&& value) { m_secondarySourcesOverrideHasBeenSet = true; m_secondarySourcesOverride.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
+     * more versions of the project's secondary sources to be used for this build only.
+     * </p>
+     */
+    inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourcesVersionOverride() const{ return m_secondarySourcesVersionOverride; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
+     * more versions of the project's secondary sources to be used for this build only.
+     * </p>
+     */
+    inline void SetSecondarySourcesVersionOverride(const Aws::Vector<ProjectSourceVersion>& value) { m_secondarySourcesVersionOverrideHasBeenSet = true; m_secondarySourcesVersionOverride = value; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
+     * more versions of the project's secondary sources to be used for this build only.
+     * </p>
+     */
+    inline void SetSecondarySourcesVersionOverride(Aws::Vector<ProjectSourceVersion>&& value) { m_secondarySourcesVersionOverrideHasBeenSet = true; m_secondarySourcesVersionOverride = std::move(value); }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
+     * more versions of the project's secondary sources to be used for this build only.
+     * </p>
+     */
+    inline StartBuildRequest& WithSecondarySourcesVersionOverride(const Aws::Vector<ProjectSourceVersion>& value) { SetSecondarySourcesVersionOverride(value); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
+     * more versions of the project's secondary sources to be used for this build only.
+     * </p>
+     */
+    inline StartBuildRequest& WithSecondarySourcesVersionOverride(Aws::Vector<ProjectSourceVersion>&& value) { SetSecondarySourcesVersionOverride(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
+     * more versions of the project's secondary sources to be used for this build only.
+     * </p>
+     */
+    inline StartBuildRequest& AddSecondarySourcesVersionOverride(const ProjectSourceVersion& value) { m_secondarySourcesVersionOverrideHasBeenSet = true; m_secondarySourcesVersionOverride.push_back(value); return *this; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
+     * more versions of the project's secondary sources to be used for this build only.
+     * </p>
+     */
+    inline StartBuildRequest& AddSecondarySourcesVersionOverride(ProjectSourceVersion&& value) { m_secondarySourcesVersionOverrideHasBeenSet = true; m_secondarySourcesVersionOverride.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -244,6 +332,42 @@ namespace Model
      * ones already defined in the build project.</p>
      */
     inline StartBuildRequest& WithArtifactsOverride(ProjectArtifacts&& value) { SetArtifactsOverride(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline const Aws::Vector<ProjectArtifacts>& GetSecondaryArtifactsOverride() const{ return m_secondaryArtifactsOverride; }
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline void SetSecondaryArtifactsOverride(const Aws::Vector<ProjectArtifacts>& value) { m_secondaryArtifactsOverrideHasBeenSet = true; m_secondaryArtifactsOverride = value; }
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline void SetSecondaryArtifactsOverride(Aws::Vector<ProjectArtifacts>&& value) { m_secondaryArtifactsOverrideHasBeenSet = true; m_secondaryArtifactsOverride = std::move(value); }
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline StartBuildRequest& WithSecondaryArtifactsOverride(const Aws::Vector<ProjectArtifacts>& value) { SetSecondaryArtifactsOverride(value); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline StartBuildRequest& WithSecondaryArtifactsOverride(Aws::Vector<ProjectArtifacts>&& value) { SetSecondaryArtifactsOverride(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline StartBuildRequest& AddSecondaryArtifactsOverride(const ProjectArtifacts& value) { m_secondaryArtifactsOverrideHasBeenSet = true; m_secondaryArtifactsOverride.push_back(value); return *this; }
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline StartBuildRequest& AddSecondaryArtifactsOverride(ProjectArtifacts&& value) { m_secondaryArtifactsOverrideHasBeenSet = true; m_secondaryArtifactsOverride.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -832,11 +956,20 @@ namespace Model
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;
 
+    Aws::Vector<ProjectSource> m_secondarySourcesOverride;
+    bool m_secondarySourcesOverrideHasBeenSet;
+
+    Aws::Vector<ProjectSourceVersion> m_secondarySourcesVersionOverride;
+    bool m_secondarySourcesVersionOverrideHasBeenSet;
+
     Aws::String m_sourceVersion;
     bool m_sourceVersionHasBeenSet;
 
     ProjectArtifacts m_artifactsOverride;
     bool m_artifactsOverrideHasBeenSet;
+
+    Aws::Vector<ProjectArtifacts> m_secondaryArtifactsOverride;
+    bool m_secondaryArtifactsOverrideHasBeenSet;
 
     Aws::Vector<EnvironmentVariable> m_environmentVariablesOverride;
     bool m_environmentVariablesOverrideHasBeenSet;

@@ -33,7 +33,9 @@ Project::Project() :
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_secondarySourcesHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
@@ -54,7 +56,9 @@ Project::Project(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_secondarySourcesHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
@@ -101,11 +105,31 @@ Project& Project::operator =(JsonView jsonValue)
     m_sourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("secondarySources"))
+  {
+    Array<JsonView> secondarySourcesJsonList = jsonValue.GetArray("secondarySources");
+    for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
+    {
+      m_secondarySources.push_back(secondarySourcesJsonList[secondarySourcesIndex].AsObject());
+    }
+    m_secondarySourcesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("artifacts"))
   {
     m_artifacts = jsonValue.GetObject("artifacts");
 
     m_artifactsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secondaryArtifacts"))
+  {
+    Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
+    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+    {
+      m_secondaryArtifacts.push_back(secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject());
+    }
+    m_secondaryArtifactsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("cache"))
@@ -219,9 +243,31 @@ JsonValue Project::Jsonize() const
 
   }
 
+  if(m_secondarySourcesHasBeenSet)
+  {
+   Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
+   for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
+   {
+     secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
+   }
+   payload.WithArray("secondarySources", std::move(secondarySourcesJsonList));
+
+  }
+
   if(m_artifactsHasBeenSet)
   {
    payload.WithObject("artifacts", m_artifacts.Jsonize());
+
+  }
+
+  if(m_secondaryArtifactsHasBeenSet)
+  {
+   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+   {
+     secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
+   }
+   payload.WithArray("secondaryArtifacts", std::move(secondaryArtifactsJsonList));
 
   }
 

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/TransformInstanceType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +111,56 @@ namespace Model
      */
     inline TransformResources& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the batch transform job.</p>
+     */
+    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the batch transform job.</p>
+     */
+    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the batch transform job.</p>
+     */
+    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the batch transform job.</p>
+     */
+    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the batch transform job.</p>
+     */
+    inline TransformResources& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the batch transform job.</p>
+     */
+    inline TransformResources& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the batch transform job.</p>
+     */
+    inline TransformResources& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+
   private:
 
     TransformInstanceType m_instanceType;
@@ -117,6 +168,9 @@ namespace Model
 
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
+    Aws::String m_volumeKmsKeyId;
+    bool m_volumeKmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

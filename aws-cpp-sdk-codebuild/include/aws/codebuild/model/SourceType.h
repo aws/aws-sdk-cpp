@@ -31,7 +31,8 @@ namespace Model
     GITHUB,
     S3,
     BITBUCKET,
-    GITHUB_ENTERPRISE
+    GITHUB_ENTERPRISE,
+    NO_SOURCE
   };
 
 namespace SourceTypeMapper

@@ -39,7 +39,8 @@ ProjectSource::ProjectSource() :
     m_reportBuildStatus(false),
     m_reportBuildStatusHasBeenSet(false),
     m_insecureSsl(false),
-    m_insecureSslHasBeenSet(false)
+    m_insecureSslHasBeenSet(false),
+    m_sourceIdentifierHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ ProjectSource::ProjectSource(JsonView jsonValue) :
     m_reportBuildStatus(false),
     m_reportBuildStatusHasBeenSet(false),
     m_insecureSsl(false),
-    m_insecureSslHasBeenSet(false)
+    m_insecureSslHasBeenSet(false),
+    m_sourceIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,13 @@ ProjectSource& ProjectSource::operator =(JsonView jsonValue)
     m_insecureSslHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceIdentifier"))
+  {
+    m_sourceIdentifier = jsonValue.GetString("sourceIdentifier");
+
+    m_sourceIdentifierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +164,12 @@ JsonValue ProjectSource::Jsonize() const
   if(m_insecureSslHasBeenSet)
   {
    payload.WithBool("insecureSsl", m_insecureSsl);
+
+  }
+
+  if(m_sourceIdentifierHasBeenSet)
+  {
+   payload.WithString("sourceIdentifier", m_sourceIdentifier);
 
   }
 
