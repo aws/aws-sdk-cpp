@@ -39,7 +39,8 @@ Cluster::Cluster() :
     m_status(ClusterStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_certificateAuthorityHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_platformVersionHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_status(ClusterStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_certificateAuthorityHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_platformVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +133,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_clientRequestTokenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("platformVersion"))
+  {
+    m_platformVersion = jsonValue.GetString("platformVersion");
+
+    m_platformVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +202,12 @@ JsonValue Cluster::Jsonize() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("platformVersion", m_platformVersion);
 
   }
 

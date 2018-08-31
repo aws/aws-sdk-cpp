@@ -421,6 +421,56 @@ namespace Model
      */
     inline Cluster& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
+
+    /**
+     * <p>The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
+
+    /**
+     * <p>The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
+
+    /**
+     * <p>The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline Cluster& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
+
+    /**
+     * <p>The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline Cluster& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline Cluster& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -452,6 +502,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::String m_platformVersion;
+    bool m_platformVersionHasBeenSet;
   };
 
 } // namespace Model

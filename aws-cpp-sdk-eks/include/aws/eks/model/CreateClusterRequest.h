@@ -128,7 +128,7 @@ namespace Model
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
-     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -137,7 +137,7 @@ namespace Model
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
-     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -146,7 +146,7 @@ namespace Model
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
-     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -155,7 +155,7 @@ namespace Model
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
-     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -164,7 +164,7 @@ namespace Model
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
-     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline CreateClusterRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -173,7 +173,7 @@ namespace Model
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
-     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline CreateClusterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -182,7 +182,7 @@ namespace Model
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
-     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline CreateClusterRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -194,7 +194,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
-     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
+     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * recommend that you use a dedicated security group for your cluster control
+     * plane.</p>
      */
     inline const VpcConfigRequest& GetResourcesVpcConfig() const{ return m_resourcesVpcConfig; }
 
@@ -205,7 +208,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
-     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
+     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * recommend that you use a dedicated security group for your cluster control
+     * plane.</p>
      */
     inline void SetResourcesVpcConfig(const VpcConfigRequest& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = value; }
 
@@ -216,7 +222,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
-     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
+     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * recommend that you use a dedicated security group for your cluster control
+     * plane.</p>
      */
     inline void SetResourcesVpcConfig(VpcConfigRequest&& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = std::move(value); }
 
@@ -227,7 +236,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
-     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
+     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * recommend that you use a dedicated security group for your cluster control
+     * plane.</p>
      */
     inline CreateClusterRequest& WithResourcesVpcConfig(const VpcConfigRequest& value) { SetResourcesVpcConfig(value); return *this;}
 
@@ -238,7 +250,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
-     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
+     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * recommend that you use a dedicated security group for your cluster control
+     * plane.</p>
      */
     inline CreateClusterRequest& WithResourcesVpcConfig(VpcConfigRequest&& value) { SetResourcesVpcConfig(std::move(value)); return *this;}
 

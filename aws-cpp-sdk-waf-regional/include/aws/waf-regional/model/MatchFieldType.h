@@ -30,7 +30,9 @@ namespace Model
     QUERY_STRING,
     HEADER,
     METHOD,
-    BODY
+    BODY,
+    SINGLE_QUERY_ARG,
+    ALL_QUERY_ARGS
   };
 
 namespace MatchFieldTypeMapper

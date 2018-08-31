@@ -112,7 +112,14 @@ namespace Model
      * <code>8192</code> bytes of the request body are forwarded to AWS WAF for
      * inspection. To allow or block requests based on the length of the body, you can
      * create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul> <p>If <code>TargetString</code>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * instead of inspecting a single parameter, AWS WAF inspects all parameters within
+     * the query string for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul> <p>If <code>TargetString</code>
      * includes alphabetic characters A-Z and a-z, note that the value is case
      * sensitive.</p> <p> <b>If you're using the AWS WAF API</b> </p> <p>Specify a
      * base64-encoded version of the value. The maximum length of the value before you
@@ -151,7 +158,14 @@ namespace Model
      * <code>8192</code> bytes of the request body are forwarded to AWS WAF for
      * inspection. To allow or block requests based on the length of the body, you can
      * create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul> <p>If <code>TargetString</code>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * instead of inspecting a single parameter, AWS WAF inspects all parameters within
+     * the query string for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul> <p>If <code>TargetString</code>
      * includes alphabetic characters A-Z and a-z, note that the value is case
      * sensitive.</p> <p> <b>If you're using the AWS WAF API</b> </p> <p>Specify a
      * base64-encoded version of the value. The maximum length of the value before you
@@ -190,7 +204,14 @@ namespace Model
      * <code>8192</code> bytes of the request body are forwarded to AWS WAF for
      * inspection. To allow or block requests based on the length of the body, you can
      * create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul> <p>If <code>TargetString</code>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * instead of inspecting a single parameter, AWS WAF inspects all parameters within
+     * the query string for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul> <p>If <code>TargetString</code>
      * includes alphabetic characters A-Z and a-z, note that the value is case
      * sensitive.</p> <p> <b>If you're using the AWS WAF API</b> </p> <p>Specify a
      * base64-encoded version of the value. The maximum length of the value before you
@@ -229,7 +250,14 @@ namespace Model
      * <code>8192</code> bytes of the request body are forwarded to AWS WAF for
      * inspection. To allow or block requests based on the length of the body, you can
      * create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul> <p>If <code>TargetString</code>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * instead of inspecting a single parameter, AWS WAF inspects all parameters within
+     * the query string for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul> <p>If <code>TargetString</code>
      * includes alphabetic characters A-Z and a-z, note that the value is case
      * sensitive.</p> <p> <b>If you're using the AWS WAF API</b> </p> <p>Specify a
      * base64-encoded version of the value. The maximum length of the value before you
@@ -268,7 +296,14 @@ namespace Model
      * <code>8192</code> bytes of the request body are forwarded to AWS WAF for
      * inspection. To allow or block requests based on the length of the body, you can
      * create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul> <p>If <code>TargetString</code>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * instead of inspecting a single parameter, AWS WAF inspects all parameters within
+     * the query string for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul> <p>If <code>TargetString</code>
      * includes alphabetic characters A-Z and a-z, note that the value is case
      * sensitive.</p> <p> <b>If you're using the AWS WAF API</b> </p> <p>Specify a
      * base64-encoded version of the value. The maximum length of the value before you
@@ -288,11 +323,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>TargetString</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
@@ -324,11 +360,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>TargetString</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
@@ -360,11 +397,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>TargetString</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
@@ -396,11 +434,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>TargetString</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
@@ -432,11 +471,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>TargetString</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>

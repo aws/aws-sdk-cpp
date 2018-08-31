@@ -42,6 +42,7 @@
 #include <aws/waf/model/DeleteByteMatchSetRequest.h>
 #include <aws/waf/model/DeleteGeoMatchSetRequest.h>
 #include <aws/waf/model/DeleteIPSetRequest.h>
+#include <aws/waf/model/DeleteLoggingConfigurationRequest.h>
 #include <aws/waf/model/DeletePermissionPolicyRequest.h>
 #include <aws/waf/model/DeleteRateBasedRuleRequest.h>
 #include <aws/waf/model/DeleteRegexMatchSetRequest.h>
@@ -57,6 +58,7 @@
 #include <aws/waf/model/GetChangeTokenStatusRequest.h>
 #include <aws/waf/model/GetGeoMatchSetRequest.h>
 #include <aws/waf/model/GetIPSetRequest.h>
+#include <aws/waf/model/GetLoggingConfigurationRequest.h>
 #include <aws/waf/model/GetPermissionPolicyRequest.h>
 #include <aws/waf/model/GetRateBasedRuleRequest.h>
 #include <aws/waf/model/GetRateBasedRuleManagedKeysRequest.h>
@@ -73,6 +75,7 @@
 #include <aws/waf/model/ListByteMatchSetsRequest.h>
 #include <aws/waf/model/ListGeoMatchSetsRequest.h>
 #include <aws/waf/model/ListIPSetsRequest.h>
+#include <aws/waf/model/ListLoggingConfigurationsRequest.h>
 #include <aws/waf/model/ListRateBasedRulesRequest.h>
 #include <aws/waf/model/ListRegexMatchSetsRequest.h>
 #include <aws/waf/model/ListRegexPatternSetsRequest.h>
@@ -83,6 +86,7 @@
 #include <aws/waf/model/ListSubscribedRuleGroupsRequest.h>
 #include <aws/waf/model/ListWebACLsRequest.h>
 #include <aws/waf/model/ListXssMatchSetsRequest.h>
+#include <aws/waf/model/PutLoggingConfigurationRequest.h>
 #include <aws/waf/model/PutPermissionPolicyRequest.h>
 #include <aws/waf/model/UpdateByteMatchSetRequest.h>
 #include <aws/waf/model/UpdateGeoMatchSetRequest.h>
@@ -686,6 +690,41 @@ void WAFClient::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request, const 
   handler(this, request, DeleteIPSet(request), context);
 }
 
+DeleteLoggingConfigurationOutcome WAFClient::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteLoggingConfigurationOutcome(DeleteLoggingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteLoggingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteLoggingConfigurationOutcomeCallable WAFClient::DeleteLoggingConfigurationCallable(const DeleteLoggingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLoggingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFClient::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoggingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WAFClient::DeleteLoggingConfigurationAsyncHelper(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLoggingConfiguration(request), context);
+}
+
 DeletePermissionPolicyOutcome WAFClient::DeletePermissionPolicy(const DeletePermissionPolicyRequest& request) const
 {
   Aws::StringStream ss;
@@ -1209,6 +1248,41 @@ void WAFClient::GetIPSetAsync(const GetIPSetRequest& request, const GetIPSetResp
 void WAFClient::GetIPSetAsyncHelper(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetIPSet(request), context);
+}
+
+GetLoggingConfigurationOutcome WAFClient::GetLoggingConfiguration(const GetLoggingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetLoggingConfigurationOutcome(GetLoggingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetLoggingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetLoggingConfigurationOutcomeCallable WAFClient::GetLoggingConfigurationCallable(const GetLoggingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLoggingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFClient::GetLoggingConfigurationAsync(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLoggingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WAFClient::GetLoggingConfigurationAsyncHelper(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLoggingConfiguration(request), context);
 }
 
 GetPermissionPolicyOutcome WAFClient::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
@@ -1771,6 +1845,41 @@ void WAFClient::ListIPSetsAsyncHelper(const ListIPSetsRequest& request, const Li
   handler(this, request, ListIPSets(request), context);
 }
 
+ListLoggingConfigurationsOutcome WAFClient::ListLoggingConfigurations(const ListLoggingConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListLoggingConfigurationsOutcome(ListLoggingConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListLoggingConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+ListLoggingConfigurationsOutcomeCallable WAFClient::ListLoggingConfigurationsCallable(const ListLoggingConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLoggingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLoggingConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFClient::ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLoggingConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFClient::ListLoggingConfigurationsAsyncHelper(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLoggingConfigurations(request), context);
+}
+
 ListRateBasedRulesOutcome WAFClient::ListRateBasedRules(const ListRateBasedRulesRequest& request) const
 {
   Aws::StringStream ss;
@@ -2119,6 +2228,41 @@ void WAFClient::ListXssMatchSetsAsync(const ListXssMatchSetsRequest& request, co
 void WAFClient::ListXssMatchSetsAsyncHelper(const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListXssMatchSets(request), context);
+}
+
+PutLoggingConfigurationOutcome WAFClient::PutLoggingConfiguration(const PutLoggingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutLoggingConfigurationOutcome(PutLoggingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutLoggingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutLoggingConfigurationOutcomeCallable WAFClient::PutLoggingConfigurationCallable(const PutLoggingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLoggingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFClient::PutLoggingConfigurationAsync(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutLoggingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WAFClient::PutLoggingConfigurationAsyncHelper(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutLoggingConfiguration(request), context);
 }
 
 PutPermissionPolicyOutcome WAFClient::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const

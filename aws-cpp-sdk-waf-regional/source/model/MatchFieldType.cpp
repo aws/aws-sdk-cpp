@@ -35,6 +35,8 @@ namespace Aws
         static const int HEADER_HASH = HashingUtils::HashString("HEADER");
         static const int METHOD_HASH = HashingUtils::HashString("METHOD");
         static const int BODY_HASH = HashingUtils::HashString("BODY");
+        static const int SINGLE_QUERY_ARG_HASH = HashingUtils::HashString("SINGLE_QUERY_ARG");
+        static const int ALL_QUERY_ARGS_HASH = HashingUtils::HashString("ALL_QUERY_ARGS");
 
 
         MatchFieldType GetMatchFieldTypeForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return MatchFieldType::BODY;
           }
+          else if (hashCode == SINGLE_QUERY_ARG_HASH)
+          {
+            return MatchFieldType::SINGLE_QUERY_ARG;
+          }
+          else if (hashCode == ALL_QUERY_ARGS_HASH)
+          {
+            return MatchFieldType::ALL_QUERY_ARGS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +94,10 @@ namespace Aws
             return "METHOD";
           case MatchFieldType::BODY:
             return "BODY";
+          case MatchFieldType::SINGLE_QUERY_ARG:
+            return "SINGLE_QUERY_ARG";
+          case MatchFieldType::ALL_QUERY_ARGS:
+            return "ALL_QUERY_ARGS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
