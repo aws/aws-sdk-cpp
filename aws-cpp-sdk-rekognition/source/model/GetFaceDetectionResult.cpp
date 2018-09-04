@@ -27,14 +27,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetFaceDetectionResult::GetFaceDetectionResult() : 
-    m_jobStatus(VideoJobStatus::NOT_SET),
-    m_billableDurationSeconds(0)
+    m_jobStatus(VideoJobStatus::NOT_SET)
 {
 }
 
 GetFaceDetectionResult::GetFaceDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET),
-    m_billableDurationSeconds(0)
+    m_jobStatus(VideoJobStatus::NOT_SET)
 {
   *this = result;
 }
@@ -72,27 +70,6 @@ GetFaceDetectionResult& GetFaceDetectionResult::operator =(const Aws::AmazonWebS
     for(unsigned facesIndex = 0; facesIndex < facesJsonList.GetLength(); ++facesIndex)
     {
       m_faces.push_back(facesJsonList[facesIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("BillableDurationSeconds"))
-  {
-    m_billableDurationSeconds = jsonValue.GetInteger("BillableDurationSeconds");
-
-  }
-
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
-    m_errorCode = jsonValue.GetString("ErrorCode");
-
-  }
-
-  if(jsonValue.ValueExists("Warnings"))
-  {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
-    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
-    {
-      m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
     }
   }
 

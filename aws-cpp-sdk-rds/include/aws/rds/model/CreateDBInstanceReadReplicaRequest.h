@@ -114,7 +114,8 @@ namespace Model
      * instance is in a different AWS Region than the Read Replica, specify a valid DB
      * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetSourceDBInstanceIdentifier() const{ return m_sourceDBInstanceIdentifier; }
 
@@ -133,7 +134,8 @@ namespace Model
      * instance is in a different AWS Region than the Read Replica, specify a valid DB
      * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
 
@@ -152,7 +154,8 @@ namespace Model
      * instance is in a different AWS Region than the Read Replica, specify a valid DB
      * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = std::move(value); }
 
@@ -171,7 +174,8 @@ namespace Model
      * instance is in a different AWS Region than the Read Replica, specify a valid DB
      * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier.assign(value); }
 
@@ -190,7 +194,8 @@ namespace Model
      * instance is in a different AWS Region than the Read Replica, specify a valid DB
      * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(const Aws::String& value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
@@ -209,7 +214,8 @@ namespace Model
      * instance is in a different AWS Region than the Read Replica, specify a valid DB
      * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(std::move(value)); return *this;}
 
@@ -228,7 +234,8 @@ namespace Model
      * instance is in a different AWS Region than the Read Replica, specify a valid DB
      * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(const char* value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
@@ -782,9 +789,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
+     * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
+     * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
 
@@ -794,9 +801,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
+     * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
+     * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
 
@@ -806,9 +813,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
+     * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
+     * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
 
@@ -818,9 +825,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
+     * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
+     * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
 
@@ -830,9 +837,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
+     * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
+     * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -842,9 +849,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
+     * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
+     * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
 
@@ -854,9 +861,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
+     * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
+     * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -1290,8 +1297,7 @@ namespace Model
      * <p>True to enable Performance Insights for the read replica, and otherwise
      * false. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
@@ -1299,8 +1305,7 @@ namespace Model
      * <p>True to enable Performance Insights for the read replica, and otherwise
      * false. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
@@ -1308,8 +1313,7 @@ namespace Model
      * <p>True to enable Performance Insights for the read replica, and otherwise
      * false. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -1388,8 +1392,8 @@ namespace Model
      * The values in the list depend on the DB engine being used. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
@@ -1398,8 +1402,8 @@ namespace Model
      * The values in the list depend on the DB engine being used. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
@@ -1408,8 +1412,8 @@ namespace Model
      * The values in the list depend on the DB engine being used. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
@@ -1418,8 +1422,8 @@ namespace Model
      * The values in the list depend on the DB engine being used. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
@@ -1428,8 +1432,8 @@ namespace Model
      * The values in the list depend on the DB engine being used. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
@@ -1438,8 +1442,8 @@ namespace Model
      * The values in the list depend on the DB engine being used. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -1448,8 +1452,8 @@ namespace Model
      * The values in the list depend on the DB engine being used. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
@@ -1458,8 +1462,8 @@ namespace Model
      * The values in the list depend on the DB engine being used. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 

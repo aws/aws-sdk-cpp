@@ -184,16 +184,6 @@ namespace Model
      */
     inline VideoMetadata& WithFrameWidth(long long value) { SetFrameWidth(value); return *this;}
 
-
-    
-    inline int GetRotation() const{ return m_rotation; }
-
-    
-    inline void SetRotation(int value) { m_rotationHasBeenSet = true; m_rotation = value; }
-
-    
-    inline VideoMetadata& WithRotation(int value) { SetRotation(value); return *this;}
-
   private:
 
     Aws::String m_codec;
@@ -213,9 +203,6 @@ namespace Model
 
     long long m_frameWidth;
     bool m_frameWidthHasBeenSet;
-
-    int m_rotation;
-    bool m_rotationHasBeenSet;
   };
 
 } // namespace Model

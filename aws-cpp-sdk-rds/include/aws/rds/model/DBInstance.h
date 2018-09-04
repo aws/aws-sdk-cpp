@@ -967,50 +967,74 @@ namespace Model
 
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaDBClusterIdentifiers() const{ return m_readReplicaDBClusterIdentifiers; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline void SetReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = value; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline void SetReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = std::move(value); }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaDBClusterIdentifiers(value); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaDBClusterIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const Aws::String& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(Aws::String&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
@@ -1714,8 +1738,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
 
@@ -1723,8 +1748,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
@@ -1732,8 +1758,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p>
      */
     inline DBInstance& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 

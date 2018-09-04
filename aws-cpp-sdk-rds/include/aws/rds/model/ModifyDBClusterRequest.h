@@ -180,13 +180,14 @@ namespace Model
      * this parameter is set to <code>false</code>, changes to the DB cluster are
      * applied during the next maintenance window.</p> <p>The
      * <code>ApplyImmediately</code> parameter only affects the
-     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
-     * If you set the <code>ApplyImmediately</code> parameter value to false, then
-     * changes to the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values are applied during the next maintenance
-     * window. All other changes are applied immediately, regardless of the value of
-     * the <code>ApplyImmediately</code> parameter.</p> <p>Default: <code>false</code>
-     * </p>
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
+     * and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
+     * and <code>NewDBClusterIdentifier</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately, regardless of the
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
@@ -197,13 +198,14 @@ namespace Model
      * this parameter is set to <code>false</code>, changes to the DB cluster are
      * applied during the next maintenance window.</p> <p>The
      * <code>ApplyImmediately</code> parameter only affects the
-     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
-     * If you set the <code>ApplyImmediately</code> parameter value to false, then
-     * changes to the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values are applied during the next maintenance
-     * window. All other changes are applied immediately, regardless of the value of
-     * the <code>ApplyImmediately</code> parameter.</p> <p>Default: <code>false</code>
-     * </p>
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
+     * and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
+     * and <code>NewDBClusterIdentifier</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately, regardless of the
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
@@ -214,13 +216,14 @@ namespace Model
      * this parameter is set to <code>false</code>, changes to the DB cluster are
      * applied during the next maintenance window.</p> <p>The
      * <code>ApplyImmediately</code> parameter only affects the
-     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
-     * If you set the <code>ApplyImmediately</code> parameter value to false, then
-     * changes to the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values are applied during the next maintenance
-     * window. All other changes are applied immediately, regardless of the value of
-     * the <code>ApplyImmediately</code> parameter.</p> <p>Default: <code>false</code>
-     * </p>
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
+     * and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
+     * and <code>NewDBClusterIdentifier</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately, regardless of the
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline ModifyDBClusterRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
@@ -500,12 +503,13 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
      * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -514,12 +518,13 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
      * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -528,12 +533,13 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
      * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -542,12 +548,13 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
      * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -556,12 +563,13 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
      * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -570,12 +578,13 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
      * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -584,12 +593,13 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
      * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -600,10 +610,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -613,10 +623,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -626,10 +636,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -639,10 +649,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -652,10 +662,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline ModifyDBClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -665,10 +675,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline ModifyDBClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -678,10 +688,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
+     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline ModifyDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 

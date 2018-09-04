@@ -595,19 +595,37 @@ namespace Model
         virtual void DeleteStreamProcessorAsync(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Describes the specified collection. You can use
+         * <code>DescribeCollection</code> to get information, such as the number of faces
+         * indexed into a collection and the version of the model used by the collection
+         * for face detection.</p> <p>For more information, see Describing a Collection in
+         * the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCollectionOutcome DescribeCollection(const Model::DescribeCollectionRequest& request) const;
 
         /**
-         * 
+         * <p>Describes the specified collection. You can use
+         * <code>DescribeCollection</code> to get information, such as the number of faces
+         * indexed into a collection and the version of the model used by the collection
+         * for face detection.</p> <p>For more information, see Describing a Collection in
+         * the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeCollectionOutcomeCallable DescribeCollectionCallable(const Model::DescribeCollectionRequest& request) const;
 
         /**
-         * 
+         * <p>Describes the specified collection. You can use
+         * <code>DescribeCollection</code> to get information, such as the number of faces
+         * indexed into a collection and the version of the model used by the collection
+         * for face detection.</p> <p>For more information, see Describing a Collection in
+         * the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -921,7 +939,7 @@ namespace Model
          * <code>DetectText</code> operation returns multiple lines.</p> <p>To determine
          * whether a <code>TextDetection</code> element is a line of text or a word, use
          * the <code>TextDetection</code> object <code>Type</code> field. </p> <p>To be
-         * detected, text must be within +/- 30 degrees orientation of the horizontal
+         * detected, text must be within +/- 90 degrees orientation of the horizontal
          * axis.</p> <p>For more information, see DetectText in the Amazon Rekognition
          * Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
@@ -951,7 +969,7 @@ namespace Model
          * <code>DetectText</code> operation returns multiple lines.</p> <p>To determine
          * whether a <code>TextDetection</code> element is a line of text or a word, use
          * the <code>TextDetection</code> object <code>Type</code> field. </p> <p>To be
-         * detected, text must be within +/- 30 degrees orientation of the horizontal
+         * detected, text must be within +/- 90 degrees orientation of the horizontal
          * axis.</p> <p>For more information, see DetectText in the Amazon Rekognition
          * Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
@@ -983,7 +1001,7 @@ namespace Model
          * <code>DetectText</code> operation returns multiple lines.</p> <p>To determine
          * whether a <code>TextDetection</code> element is a line of text or a word, use
          * the <code>TextDetection</code> object <code>Type</code> field. </p> <p>To be
-         * detected, text must be within +/- 30 degrees orientation of the horizontal
+         * detected, text must be within +/- 90 degrees orientation of the horizontal
          * axis.</p> <p>For more information, see DetectText in the Amazon Rekognition
          * Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
@@ -1657,23 +1675,25 @@ namespace Model
          * underlying detection algorithm first detects the faces in the input image, and
          * for each face extracts facial features into a feature vector, and stores it in
          * the back-end database. Amazon Rekognition uses feature vectors when performing
-         * face match and search operations using the and operations.</p> <p>If you are
-         * using version 1.0 of the face detection model, <code>IndexFaces</code> indexes
-         * the 15 largest faces in the input image. Later versions of the face detection
-         * model index the 100 largest faces in the input image. To determine which version
-         * of the model you are using, check the the value of <code>FaceModelVersion</code>
-         * in the response from <code>IndexFaces</code>. </p> <p>For more information, see
-         * Model Versioning in the Amazon Rekognition Developer Guide.</p> <p>If you
-         * provide the optional <code>ExternalImageID</code> for the input image you
-         * provided, Amazon Rekognition associates this ID with all faces that it detects.
-         * When you call the operation, the response returns the external ID. You can use
-         * this external image ID to create a client-side index to associate the faces with
-         * each image. You can then use the index to find all faces in an image. </p> <p>In
-         * response, the operation returns an array of metadata for all detected faces.
-         * This includes, the bounding box of the detected face, confidence value
-         * (indicating the bounding box contains a face), a face ID assigned by the service
-         * for each face that is detected and stored, and an image ID assigned by the
-         * service for the input image. If you request all facial attributes (using the
+         * face match and search operations using the and operations.</p> <p>To get the
+         * number of faces in a collection, call . </p> <p>If you are using version 1.0 of
+         * the face detection model, <code>IndexFaces</code> indexes the 15 largest faces
+         * in the input image. Later versions of the face detection model index the 100
+         * largest faces in the input image. To determine which version of the model you
+         * are using, call and supply the collection ID. You also get the model version
+         * from the value of <code>FaceModelVersion</code> in the response from
+         * <code>IndexFaces</code>. </p> <p>For more information, see Model Versioning in
+         * the Amazon Rekognition Developer Guide.</p> <p>If you provide the optional
+         * <code>ExternalImageID</code> for the input image you provided, Amazon
+         * Rekognition associates this ID with all faces that it detects. When you call the
+         * operation, the response returns the external ID. You can use this external image
+         * ID to create a client-side index to associate the faces with each image. You can
+         * then use the index to find all faces in an image. </p> <p>In response, the
+         * operation returns an array of metadata for all detected faces. This includes,
+         * the bounding box of the detected face, confidence value (indicating the bounding
+         * box contains a face), a face ID assigned by the service for each face that is
+         * detected and stored, and an image ID assigned by the service for the input
+         * image. If you request all facial attributes (using the
          * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
          * facial attributes such as facial landmarks (for example, location of eye and
          * mouth) and other facial attributes such gender. If you provide the same image,
@@ -1697,23 +1717,25 @@ namespace Model
          * underlying detection algorithm first detects the faces in the input image, and
          * for each face extracts facial features into a feature vector, and stores it in
          * the back-end database. Amazon Rekognition uses feature vectors when performing
-         * face match and search operations using the and operations.</p> <p>If you are
-         * using version 1.0 of the face detection model, <code>IndexFaces</code> indexes
-         * the 15 largest faces in the input image. Later versions of the face detection
-         * model index the 100 largest faces in the input image. To determine which version
-         * of the model you are using, check the the value of <code>FaceModelVersion</code>
-         * in the response from <code>IndexFaces</code>. </p> <p>For more information, see
-         * Model Versioning in the Amazon Rekognition Developer Guide.</p> <p>If you
-         * provide the optional <code>ExternalImageID</code> for the input image you
-         * provided, Amazon Rekognition associates this ID with all faces that it detects.
-         * When you call the operation, the response returns the external ID. You can use
-         * this external image ID to create a client-side index to associate the faces with
-         * each image. You can then use the index to find all faces in an image. </p> <p>In
-         * response, the operation returns an array of metadata for all detected faces.
-         * This includes, the bounding box of the detected face, confidence value
-         * (indicating the bounding box contains a face), a face ID assigned by the service
-         * for each face that is detected and stored, and an image ID assigned by the
-         * service for the input image. If you request all facial attributes (using the
+         * face match and search operations using the and operations.</p> <p>To get the
+         * number of faces in a collection, call . </p> <p>If you are using version 1.0 of
+         * the face detection model, <code>IndexFaces</code> indexes the 15 largest faces
+         * in the input image. Later versions of the face detection model index the 100
+         * largest faces in the input image. To determine which version of the model you
+         * are using, call and supply the collection ID. You also get the model version
+         * from the value of <code>FaceModelVersion</code> in the response from
+         * <code>IndexFaces</code>. </p> <p>For more information, see Model Versioning in
+         * the Amazon Rekognition Developer Guide.</p> <p>If you provide the optional
+         * <code>ExternalImageID</code> for the input image you provided, Amazon
+         * Rekognition associates this ID with all faces that it detects. When you call the
+         * operation, the response returns the external ID. You can use this external image
+         * ID to create a client-side index to associate the faces with each image. You can
+         * then use the index to find all faces in an image. </p> <p>In response, the
+         * operation returns an array of metadata for all detected faces. This includes,
+         * the bounding box of the detected face, confidence value (indicating the bounding
+         * box contains a face), a face ID assigned by the service for each face that is
+         * detected and stored, and an image ID assigned by the service for the input
+         * image. If you request all facial attributes (using the
          * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
          * facial attributes such as facial landmarks (for example, location of eye and
          * mouth) and other facial attributes such gender. If you provide the same image,
@@ -1739,23 +1761,25 @@ namespace Model
          * underlying detection algorithm first detects the faces in the input image, and
          * for each face extracts facial features into a feature vector, and stores it in
          * the back-end database. Amazon Rekognition uses feature vectors when performing
-         * face match and search operations using the and operations.</p> <p>If you are
-         * using version 1.0 of the face detection model, <code>IndexFaces</code> indexes
-         * the 15 largest faces in the input image. Later versions of the face detection
-         * model index the 100 largest faces in the input image. To determine which version
-         * of the model you are using, check the the value of <code>FaceModelVersion</code>
-         * in the response from <code>IndexFaces</code>. </p> <p>For more information, see
-         * Model Versioning in the Amazon Rekognition Developer Guide.</p> <p>If you
-         * provide the optional <code>ExternalImageID</code> for the input image you
-         * provided, Amazon Rekognition associates this ID with all faces that it detects.
-         * When you call the operation, the response returns the external ID. You can use
-         * this external image ID to create a client-side index to associate the faces with
-         * each image. You can then use the index to find all faces in an image. </p> <p>In
-         * response, the operation returns an array of metadata for all detected faces.
-         * This includes, the bounding box of the detected face, confidence value
-         * (indicating the bounding box contains a face), a face ID assigned by the service
-         * for each face that is detected and stored, and an image ID assigned by the
-         * service for the input image. If you request all facial attributes (using the
+         * face match and search operations using the and operations.</p> <p>To get the
+         * number of faces in a collection, call . </p> <p>If you are using version 1.0 of
+         * the face detection model, <code>IndexFaces</code> indexes the 15 largest faces
+         * in the input image. Later versions of the face detection model index the 100
+         * largest faces in the input image. To determine which version of the model you
+         * are using, call and supply the collection ID. You also get the model version
+         * from the value of <code>FaceModelVersion</code> in the response from
+         * <code>IndexFaces</code>. </p> <p>For more information, see Model Versioning in
+         * the Amazon Rekognition Developer Guide.</p> <p>If you provide the optional
+         * <code>ExternalImageID</code> for the input image you provided, Amazon
+         * Rekognition associates this ID with all faces that it detects. When you call the
+         * operation, the response returns the external ID. You can use this external image
+         * ID to create a client-side index to associate the faces with each image. You can
+         * then use the index to find all faces in an image. </p> <p>In response, the
+         * operation returns an array of metadata for all detected faces. This includes,
+         * the bounding box of the detected face, confidence value (indicating the bounding
+         * box contains a face), a face ID assigned by the service for each face that is
+         * detected and stored, and an image ID assigned by the service for the input
+         * image. If you request all facial attributes (using the
          * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
          * facial attributes such as facial landmarks (for example, location of eye and
          * mouth) and other facial attributes such gender. If you provide the same image,

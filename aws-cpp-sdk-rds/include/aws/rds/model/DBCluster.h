@@ -1470,8 +1470,8 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
 
@@ -1479,8 +1479,8 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
 
@@ -1488,8 +1488,8 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
 
@@ -1497,8 +1497,8 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
 
@@ -1506,8 +1506,8 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
 
@@ -1515,8 +1515,8 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -1524,8 +1524,8 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
@@ -1533,8 +1533,8 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 

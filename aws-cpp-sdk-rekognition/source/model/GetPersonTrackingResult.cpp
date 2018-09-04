@@ -27,14 +27,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetPersonTrackingResult::GetPersonTrackingResult() : 
-    m_jobStatus(VideoJobStatus::NOT_SET),
-    m_billableDurationSeconds(0)
+    m_jobStatus(VideoJobStatus::NOT_SET)
 {
 }
 
 GetPersonTrackingResult::GetPersonTrackingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET),
-    m_billableDurationSeconds(0)
+    m_jobStatus(VideoJobStatus::NOT_SET)
 {
   *this = result;
 }
@@ -72,27 +70,6 @@ GetPersonTrackingResult& GetPersonTrackingResult::operator =(const Aws::AmazonWe
     for(unsigned personsIndex = 0; personsIndex < personsJsonList.GetLength(); ++personsIndex)
     {
       m_persons.push_back(personsJsonList[personsIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("BillableDurationSeconds"))
-  {
-    m_billableDurationSeconds = jsonValue.GetInteger("BillableDurationSeconds");
-
-  }
-
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
-    m_errorCode = jsonValue.GetString("ErrorCode");
-
-  }
-
-  if(jsonValue.ValueExists("Warnings"))
-  {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
-    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
-    {
-      m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
     }
   }
 

@@ -204,7 +204,7 @@ namespace Model
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-     * topic in the Amazon RDS User Guide or by using the
+     * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
@@ -213,7 +213,7 @@ namespace Model
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-     * topic in the Amazon RDS User Guide or by using the
+     * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
@@ -222,7 +222,7 @@ namespace Model
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-     * topic in the Amazon RDS User Guide or by using the
+     * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
@@ -231,7 +231,7 @@ namespace Model
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-     * topic in the Amazon RDS User Guide or by using the
+     * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
     inline ModifyEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
@@ -240,7 +240,7 @@ namespace Model
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-     * topic in the Amazon RDS User Guide or by using the
+     * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
     inline ModifyEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
@@ -249,7 +249,7 @@ namespace Model
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-     * topic in the Amazon RDS User Guide or by using the
+     * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
@@ -258,7 +258,7 @@ namespace Model
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-     * topic in the Amazon RDS User Guide or by using the
+     * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
@@ -267,7 +267,7 @@ namespace Model
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-     * topic in the Amazon RDS User Guide or by using the
+     * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }

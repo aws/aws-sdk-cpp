@@ -28,8 +28,6 @@ StartFaceSearchRequest::StartFaceSearchRequest() :
     m_faceMatchThreshold(0.0),
     m_faceMatchThresholdHasBeenSet(false),
     m_collectionIdHasBeenSet(false),
-    m_enablePersonTracking(false),
-    m_enablePersonTrackingHasBeenSet(false),
     m_notificationChannelHasBeenSet(false),
     m_jobTagHasBeenSet(false)
 {
@@ -60,12 +58,6 @@ Aws::String StartFaceSearchRequest::SerializePayload() const
   if(m_collectionIdHasBeenSet)
   {
    payload.WithString("CollectionId", m_collectionId);
-
-  }
-
-  if(m_enablePersonTrackingHasBeenSet)
-  {
-   payload.WithBool("EnablePersonTracking", m_enablePersonTracking);
 
   }
 

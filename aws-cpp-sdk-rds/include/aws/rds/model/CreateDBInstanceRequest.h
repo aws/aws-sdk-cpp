@@ -1359,14 +1359,15 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
-     * 30-minute window selected at random from an 8-hour block of time for each AWS
-     * Region. To see the time blocks available, see <a
+     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
+     * random from an 8-hour block of time for each AWS Region. To see the time blocks
+     * available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1378,14 +1379,15 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
-     * 30-minute window selected at random from an 8-hour block of time for each AWS
-     * Region. To see the time blocks available, see <a
+     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
+     * random from an 8-hour block of time for each AWS Region. To see the time blocks
+     * available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1397,14 +1399,15 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
-     * 30-minute window selected at random from an 8-hour block of time for each AWS
-     * Region. To see the time blocks available, see <a
+     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
+     * random from an 8-hour block of time for each AWS Region. To see the time blocks
+     * available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1416,14 +1419,15 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
-     * 30-minute window selected at random from an 8-hour block of time for each AWS
-     * Region. To see the time blocks available, see <a
+     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
+     * random from an 8-hour block of time for each AWS Region. To see the time blocks
+     * available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1435,14 +1439,15 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
-     * 30-minute window selected at random from an 8-hour block of time for each AWS
-     * Region. To see the time blocks available, see <a
+     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
+     * random from an 8-hour block of time for each AWS Region. To see the time blocks
+     * available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1454,14 +1459,15 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
-     * 30-minute window selected at random from an 8-hour block of time for each AWS
-     * Region. To see the time blocks available, see <a
+     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
+     * random from an 8-hour block of time for each AWS Region. To see the time blocks
+     * available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1473,14 +1479,15 @@ namespace Model
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
-     * 30-minute window selected at random from an 8-hour block of time for each AWS
-     * Region. To see the time blocks available, see <a
+     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
+     * random from an 8-hour block of time for each AWS Region. To see the time blocks
+     * available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -1816,11 +1823,11 @@ namespace Model
      * initially allocated for the DB instance. For information about valid Iops
      * values, see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
-     * Must be a multiple between 1 and 50 of the storage amount for the DB instance.
-     * Must also be an integer multiple of 1000. For example, if the size of your DB
-     * instance is 500 GiB, then your <code>Iops</code> value can be 2000, 3000, 4000,
-     * or 5000. </p>
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
+     * storage amount for the DB instance. Must also be an integer multiple of 1000.
+     * For example, if the size of your DB instance is 500 GiB, then your
+     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -1829,11 +1836,11 @@ namespace Model
      * initially allocated for the DB instance. For information about valid Iops
      * values, see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
-     * Must be a multiple between 1 and 50 of the storage amount for the DB instance.
-     * Must also be an integer multiple of 1000. For example, if the size of your DB
-     * instance is 500 GiB, then your <code>Iops</code> value can be 2000, 3000, 4000,
-     * or 5000. </p>
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
+     * storage amount for the DB instance. Must also be an integer multiple of 1000.
+     * For example, if the size of your DB instance is 500 GiB, then your
+     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -1842,11 +1849,11 @@ namespace Model
      * initially allocated for the DB instance. For information about valid Iops
      * values, see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
-     * Must be a multiple between 1 and 50 of the storage amount for the DB instance.
-     * Must also be an integer multiple of 1000. For example, if the size of your DB
-     * instance is 500 GiB, then your <code>Iops</code> value can be 2000, 3000, 4000,
-     * or 5000. </p>
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
+     * storage amount for the DB instance. Must also be an integer multiple of 1000.
+     * For example, if the size of your DB instance is 500 GiB, then your
+     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -1978,7 +1985,7 @@ namespace Model
      * default VPC in the target region has an Internet gateway attached to it, the DB
      * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
      * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn��t have an
      * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
      * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
      * the DB instance is public.</p> </li> </ul>
@@ -1998,7 +2005,7 @@ namespace Model
      * default VPC in the target region has an Internet gateway attached to it, the DB
      * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
      * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn��t have an
      * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
      * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
      * the DB instance is public.</p> </li> </ul>
@@ -2018,7 +2025,7 @@ namespace Model
      * default VPC in the target region has an Internet gateway attached to it, the DB
      * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
      * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn��t have an
      * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
      * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
      * the DB instance is public.</p> </li> </ul>
@@ -2468,9 +2475,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
+     * must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
 
@@ -2480,9 +2487,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
+     * must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
 
@@ -2492,9 +2499,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
+     * must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
 
@@ -2504,9 +2511,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
+     * must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
 
@@ -2516,9 +2523,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
+     * must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -2528,9 +2535,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
+     * must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
 
@@ -2540,9 +2547,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>.</p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value.</p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
+     * must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -2594,9 +2601,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
-     * Values: 0 - 15</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
 
@@ -2604,9 +2611,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
-     * Values: 0 - 15</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
@@ -2614,9 +2621,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
-     * Values: 0 - 15</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline CreateDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 

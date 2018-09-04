@@ -26,8 +26,6 @@ StartCelebrityRecognitionRequest::StartCelebrityRecognitionRequest() :
     m_videoHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_notificationChannelHasBeenSet(false),
-    m_enablePersonTracking(false),
-    m_enablePersonTrackingHasBeenSet(false),
     m_jobTagHasBeenSet(false)
 {
 }
@@ -51,12 +49,6 @@ Aws::String StartCelebrityRecognitionRequest::SerializePayload() const
   if(m_notificationChannelHasBeenSet)
   {
    payload.WithObject("NotificationChannel", m_notificationChannel.Jsonize());
-
-  }
-
-  if(m_enablePersonTrackingHasBeenSet)
-  {
-   payload.WithBool("EnablePersonTracking", m_enablePersonTracking);
 
   }
 

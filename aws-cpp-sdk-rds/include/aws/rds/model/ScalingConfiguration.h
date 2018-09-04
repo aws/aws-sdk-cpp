@@ -34,9 +34,9 @@ namespace Model
   /**
    * <p>Contains the scaling configuration of an Aurora Serverless DB cluster.</p>
    * <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
-   * Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+   * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ScalingConfiguration">AWS
    * API Reference</a></p>
    */

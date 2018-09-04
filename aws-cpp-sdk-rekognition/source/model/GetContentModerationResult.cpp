@@ -27,14 +27,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetContentModerationResult::GetContentModerationResult() : 
-    m_jobStatus(VideoJobStatus::NOT_SET),
-    m_billableDurationSeconds(0)
+    m_jobStatus(VideoJobStatus::NOT_SET)
 {
 }
 
 GetContentModerationResult::GetContentModerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET),
-    m_billableDurationSeconds(0)
+    m_jobStatus(VideoJobStatus::NOT_SET)
 {
   *this = result;
 }
@@ -73,27 +71,6 @@ GetContentModerationResult& GetContentModerationResult::operator =(const Aws::Am
   {
     m_nextToken = jsonValue.GetString("NextToken");
 
-  }
-
-  if(jsonValue.ValueExists("BillableDurationSeconds"))
-  {
-    m_billableDurationSeconds = jsonValue.GetInteger("BillableDurationSeconds");
-
-  }
-
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
-    m_errorCode = jsonValue.GetString("ErrorCode");
-
-  }
-
-  if(jsonValue.ValueExists("Warnings"))
-  {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
-    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
-    {
-      m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
-    }
   }
 
 

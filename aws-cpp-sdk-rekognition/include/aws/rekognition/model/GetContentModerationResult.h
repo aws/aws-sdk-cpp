@@ -20,7 +20,6 @@
 #include <aws/rekognition/model/VideoMetadata.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/ContentModerationDetection.h>
-#include <aws/rekognition/model/Warning.h>
 #include <utility>
 
 namespace Aws
@@ -237,60 +236,6 @@ namespace Model
      */
     inline GetContentModerationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    
-    inline int GetBillableDurationSeconds() const{ return m_billableDurationSeconds; }
-
-    
-    inline void SetBillableDurationSeconds(int value) { m_billableDurationSeconds = value; }
-
-    
-    inline GetContentModerationResult& WithBillableDurationSeconds(int value) { SetBillableDurationSeconds(value); return *this;}
-
-
-    
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    
-    inline void SetErrorCode(const Aws::String& value) { m_errorCode = value; }
-
-    
-    inline void SetErrorCode(Aws::String&& value) { m_errorCode = std::move(value); }
-
-    
-    inline void SetErrorCode(const char* value) { m_errorCode.assign(value); }
-
-    
-    inline GetContentModerationResult& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    
-    inline GetContentModerationResult& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    
-    inline GetContentModerationResult& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
-
-
-    
-    inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
-
-    
-    inline void SetWarnings(const Aws::Vector<Warning>& value) { m_warnings = value; }
-
-    
-    inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = std::move(value); }
-
-    
-    inline GetContentModerationResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
-
-    
-    inline GetContentModerationResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(std::move(value)); return *this;}
-
-    
-    inline GetContentModerationResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
-
-    
-    inline GetContentModerationResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
-
   private:
 
     VideoJobStatus m_jobStatus;
@@ -302,12 +247,6 @@ namespace Model
     Aws::Vector<ContentModerationDetection> m_moderationLabels;
 
     Aws::String m_nextToken;
-
-    int m_billableDurationSeconds;
-
-    Aws::String m_errorCode;
-
-    Aws::Vector<Warning> m_warnings;
   };
 
 } // namespace Model

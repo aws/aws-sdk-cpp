@@ -189,16 +189,6 @@ namespace Model
     inline StartFaceSearchRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
 
 
-    
-    inline bool GetEnablePersonTracking() const{ return m_enablePersonTracking; }
-
-    
-    inline void SetEnablePersonTracking(bool value) { m_enablePersonTrackingHasBeenSet = true; m_enablePersonTracking = value; }
-
-    
-    inline StartFaceSearchRequest& WithEnablePersonTracking(bool value) { SetEnablePersonTracking(value); return *this;}
-
-
     /**
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
      * publish the completion status of the search. </p>
@@ -285,9 +275,6 @@ namespace Model
 
     Aws::String m_collectionId;
     bool m_collectionIdHasBeenSet;
-
-    bool m_enablePersonTracking;
-    bool m_enablePersonTrackingHasBeenSet;
 
     NotificationChannel m_notificationChannel;
     bool m_notificationChannelHasBeenSet;
