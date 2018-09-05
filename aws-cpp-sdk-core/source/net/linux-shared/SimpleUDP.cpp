@@ -20,12 +20,15 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <cassert>
+#include <string.h>
 #include <aws/core/net/SimpleUDP.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 namespace Aws
 {
     namespace Net
     {
+        static const char ALLOC_TAG[] = "SimpleUDP";
         static void BuildLocalAddrInfoIPV4(sockaddr_in* addrinfo, short port)
         {
             addrinfo->sin_family = AF_INET;
@@ -76,13 +79,23 @@ namespace Aws
             // if sendBufSize is not zero, try to set send buffer size
             if (sendBufSize)
             {
-                setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &sendBufSize, sizeof(sendBufSize));
+                int ret = setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &sendBufSize, sizeof(sendBufSize));
+                if (ret)
+                {
+                    AWS_LOGSTREAM_WARN(ALLOC_TAG, "Failed to set UDP send buffer size to " << sendBufSize << " for socket " << sock << " error message: " << strerror(errno));
+                }
+                assert(ret == 0);
             }
 
-            // if sendBufSize is not zero, try to set receive buffer size
+            // if receiveBufSize is not zero, try to set receive buffer size
             if (receiveBufSize)
             {
-                setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &receiveBufSize, sizeof(receiveBufSize));
+                int ret = setsockopt(sock, SOL_SOCKET, SO_RCVBUF, &receiveBufSize, sizeof(receiveBufSize));
+                if (ret)
+                {
+                    AWS_LOGSTREAM_WARN(ALLOC_TAG, "Failed to set UDP receive buffer size to " << receiveBufSize << " for socket " << sock << " error message: " << strerror(errno));
+                }
+                assert(ret == 0);
             }
 
             SetUnderlyingSocket(sock);
