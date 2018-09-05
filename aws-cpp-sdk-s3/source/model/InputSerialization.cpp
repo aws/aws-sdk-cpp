@@ -34,7 +34,8 @@ InputSerialization::InputSerialization() :
     m_cSVHasBeenSet(false),
     m_compressionType(CompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
-    m_jSONHasBeenSet(false)
+    m_jSONHasBeenSet(false),
+    m_parquetHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ InputSerialization::InputSerialization(const XmlNode& xmlNode) :
     m_cSVHasBeenSet(false),
     m_compressionType(CompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
-    m_jSONHasBeenSet(false)
+    m_jSONHasBeenSet(false),
+    m_parquetHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +73,12 @@ InputSerialization& InputSerialization::operator =(const XmlNode& xmlNode)
       m_jSON = jSONNode;
       m_jSONHasBeenSet = true;
     }
+    XmlNode parquetNode = resultNode.FirstChild("Parquet");
+    if(!parquetNode.IsNull())
+    {
+      m_parquet = parquetNode;
+      m_parquetHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -95,6 +103,12 @@ void InputSerialization::AddToNode(XmlNode& parentNode) const
   {
    XmlNode jSONNode = parentNode.CreateChildElement("JSON");
    m_jSON.AddToNode(jSONNode);
+  }
+
+  if(m_parquetHasBeenSet)
+  {
+   XmlNode parquetNode = parentNode.CreateChildElement("Parquet");
+   m_parquet.AddToNode(parquetNode);
   }
 
 }

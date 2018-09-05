@@ -18,6 +18,7 @@
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/ApplicationSettings.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/UserSetting.h>
 #include <utility>
@@ -312,6 +313,42 @@ namespace Model
      */
     inline CreateStackRequest& AddUserSettings(UserSetting&& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline const ApplicationSettings& GetApplicationSettings() const{ return m_applicationSettings; }
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline void SetApplicationSettings(const ApplicationSettings& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = value; }
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline void SetApplicationSettings(ApplicationSettings&& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = std::move(value); }
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline CreateStackRequest& WithApplicationSettings(const ApplicationSettings& value) { SetApplicationSettings(value); return *this;}
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline CreateStackRequest& WithApplicationSettings(ApplicationSettings&& value) { SetApplicationSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -334,6 +371,9 @@ namespace Model
 
     Aws::Vector<UserSetting> m_userSettings;
     bool m_userSettingsHasBeenSet;
+
+    ApplicationSettings m_applicationSettings;
+    bool m_applicationSettingsHasBeenSet;
   };
 
 } // namespace Model

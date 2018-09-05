@@ -810,16 +810,16 @@ namespace Model
         virtual void DescribeImageBuildersAsync(const Model::DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list that describes the permissions for a private image that you
-         * own. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the permissions for shared AWS account IDs on
+         * a private image that you own. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImagePermissionsOutcome DescribeImagePermissions(const Model::DescribeImagePermissionsRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes the permissions for a private image that you
-         * own. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the permissions for shared AWS account IDs on
+         * a private image that you own. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">AWS
          * API Reference</a></p>
          *
@@ -828,8 +828,8 @@ namespace Model
         virtual Model::DescribeImagePermissionsOutcomeCallable DescribeImagePermissionsCallable(const Model::DescribeImagePermissionsRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes the permissions for a private image that you
-         * own. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the permissions for shared AWS account IDs on
+         * a private image that you own. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">AWS
          * API Reference</a></p>
          *
@@ -839,7 +839,7 @@ namespace Model
 
         /**
          * <p>Retrieves a list that describes one or more specified images, if the image
-         * names are provided. Otherwise, all images in the account are
+         * names or image ARNs are provided. Otherwise, all images in the account are
          * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
@@ -848,7 +848,7 @@ namespace Model
 
         /**
          * <p>Retrieves a list that describes one or more specified images, if the image
-         * names are provided. Otherwise, all images in the account are
+         * names or image ARNs are provided. Otherwise, all images in the account are
          * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
@@ -859,7 +859,7 @@ namespace Model
 
         /**
          * <p>Retrieves a list that describes one or more specified images, if the image
-         * names are provided. Otherwise, all images in the account are
+         * names or image ARNs are provided. Otherwise, all images in the account are
          * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>

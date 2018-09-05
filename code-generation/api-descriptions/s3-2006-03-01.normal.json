@@ -3693,6 +3693,10 @@
         "JSON":{
           "shape":"JSONInput",
           "documentation":"<p>Specifies JSON as object's input serialization format.</p>"
+        },
+        "Parquet":{
+          "shape":"ParquetInput",
+          "documentation":"<p>Specifies Parquet as object's input serialization format.</p>"
         }
       },
       "documentation":"<p>Describes the serialization format of the object.</p>"
@@ -5001,6 +5005,11 @@
     "OwnerOverride":{
       "type":"string",
       "enum":["Destination"]
+    },
+    "ParquetInput":{
+      "type":"structure",
+      "members":{
+      }
     },
     "Part":{
       "type":"structure",

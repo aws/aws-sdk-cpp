@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/ApplicationSettingsResponse.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/StackError.h>
 #include <aws/appstream/model/UserSetting.h>
@@ -415,6 +416,32 @@ namespace Model
      */
     inline Stack& AddUserSettings(UserSetting&& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline const ApplicationSettingsResponse& GetApplicationSettings() const{ return m_applicationSettings; }
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline void SetApplicationSettings(const ApplicationSettingsResponse& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = value; }
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline void SetApplicationSettings(ApplicationSettingsResponse&& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = std::move(value); }
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline Stack& WithApplicationSettings(const ApplicationSettingsResponse& value) { SetApplicationSettings(value); return *this;}
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline Stack& WithApplicationSettings(ApplicationSettingsResponse&& value) { SetApplicationSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -446,6 +473,9 @@ namespace Model
 
     Aws::Vector<UserSetting> m_userSettings;
     bool m_userSettingsHasBeenSet;
+
+    ApplicationSettingsResponse m_applicationSettings;
+    bool m_applicationSettingsHasBeenSet;
   };
 
 } // namespace Model

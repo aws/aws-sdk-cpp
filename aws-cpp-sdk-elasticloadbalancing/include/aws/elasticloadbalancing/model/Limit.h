@@ -52,43 +52,50 @@ namespace Model
 
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
-     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> </ul>
+     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
+     * <p>classic-registered-instances</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
-     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> </ul>
+     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
+     * <p>classic-registered-instances</p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
-     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> </ul>
+     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
+     * <p>classic-registered-instances</p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
-     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> </ul>
+     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
+     * <p>classic-registered-instances</p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
-     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> </ul>
+     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
+     * <p>classic-registered-instances</p> </li> </ul>
      */
     inline Limit& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
-     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> </ul>
+     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
+     * <p>classic-registered-instances</p> </li> </ul>
      */
     inline Limit& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
-     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> </ul>
+     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
+     * <p>classic-registered-instances</p> </li> </ul>
      */
     inline Limit& WithName(const char* value) { SetName(value); return *this;}
 

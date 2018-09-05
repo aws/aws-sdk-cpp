@@ -18,6 +18,7 @@
 #include <aws/s3/model/CSVInput.h>
 #include <aws/s3/model/CompressionType.h>
 #include <aws/s3/model/JSONInput.h>
+#include <aws/s3/model/ParquetInput.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +133,32 @@ namespace Model
      */
     inline InputSerialization& WithJSON(JSONInput&& value) { SetJSON(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies Parquet as object's input serialization format.</p>
+     */
+    inline const ParquetInput& GetParquet() const{ return m_parquet; }
+
+    /**
+     * <p>Specifies Parquet as object's input serialization format.</p>
+     */
+    inline void SetParquet(const ParquetInput& value) { m_parquetHasBeenSet = true; m_parquet = value; }
+
+    /**
+     * <p>Specifies Parquet as object's input serialization format.</p>
+     */
+    inline void SetParquet(ParquetInput&& value) { m_parquetHasBeenSet = true; m_parquet = std::move(value); }
+
+    /**
+     * <p>Specifies Parquet as object's input serialization format.</p>
+     */
+    inline InputSerialization& WithParquet(const ParquetInput& value) { SetParquet(value); return *this;}
+
+    /**
+     * <p>Specifies Parquet as object's input serialization format.</p>
+     */
+    inline InputSerialization& WithParquet(ParquetInput&& value) { SetParquet(std::move(value)); return *this;}
+
   private:
 
     CSVInput m_cSV;
@@ -142,6 +169,9 @@ namespace Model
 
     JSONInput m_jSON;
     bool m_jSONHasBeenSet;
+
+    ParquetInput m_parquet;
+    bool m_parquetHasBeenSet;
   };
 
 } // namespace Model

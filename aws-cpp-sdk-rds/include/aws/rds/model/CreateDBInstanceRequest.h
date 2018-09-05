@@ -1985,7 +1985,7 @@ namespace Model
      * default VPC in the target region has an Internet gateway attached to it, the DB
      * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
      * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn��t have an
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
      * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
      * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
      * the DB instance is public.</p> </li> </ul>
@@ -2005,7 +2005,7 @@ namespace Model
      * default VPC in the target region has an Internet gateway attached to it, the DB
      * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
      * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn��t have an
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
      * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
      * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
      * the DB instance is public.</p> </li> </ul>
@@ -2025,7 +2025,7 @@ namespace Model
      * default VPC in the target region has an Internet gateway attached to it, the DB
      * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
      * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn��t have an
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
      * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
      * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
      * the DB instance is public.</p> </li> </ul>

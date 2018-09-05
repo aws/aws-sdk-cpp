@@ -38,7 +38,8 @@ Stack::Stack() :
     m_redirectURLHasBeenSet(false),
     m_feedbackURLHasBeenSet(false),
     m_stackErrorsHasBeenSet(false),
-    m_userSettingsHasBeenSet(false)
+    m_userSettingsHasBeenSet(false),
+    m_applicationSettingsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Stack::Stack(JsonView jsonValue) :
     m_redirectURLHasBeenSet(false),
     m_feedbackURLHasBeenSet(false),
     m_stackErrorsHasBeenSet(false),
-    m_userSettingsHasBeenSet(false)
+    m_userSettingsHasBeenSet(false),
+    m_applicationSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -138,6 +140,13 @@ Stack& Stack::operator =(JsonView jsonValue)
     m_userSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationSettings"))
+  {
+    m_applicationSettings = jsonValue.GetObject("ApplicationSettings");
+
+    m_applicationSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -216,6 +225,12 @@ JsonValue Stack::Jsonize() const
      userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
    }
    payload.WithArray("UserSettings", std::move(userSettingsJsonList));
+
+  }
+
+  if(m_applicationSettingsHasBeenSet)
+  {
+   payload.WithObject("ApplicationSettings", m_applicationSettings.Jsonize());
 
   }
 
