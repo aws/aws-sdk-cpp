@@ -42,6 +42,8 @@ namespace Aws
             inline void SetRegion(const Aws::String& value) { m_region = value; }
             inline const Aws::String& GetRoleArn() const { return m_roleArn; }
             inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+            inline const Aws::String& GetExternalId() const { return m_externalId; }
+            inline void SetExternalId(const Aws::String& value) { m_externalId = value; }
             inline const Aws::String& GetSourceProfile() const { return m_sourceProfile; }
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
             inline void SetAllKeyValPairs(const Aws::Map<Aws::String, Aws::String>& map) { m_allKeyValPairs = map; }
@@ -57,6 +59,7 @@ namespace Aws
             Aws::String m_region;
             Aws::Auth::AWSCredentials m_credentials;
             Aws::String m_roleArn;
+            Aws::String m_externalId;
             Aws::String m_sourceProfile;
 
             Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;

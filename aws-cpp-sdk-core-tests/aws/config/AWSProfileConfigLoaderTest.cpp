@@ -36,6 +36,7 @@ static void WriteDefaultConfigFile(Aws::OStream& stream, bool useProfilePrefix =
 
     stream << "[ " << profilePrefix << "assumes_role]" << std::endl;
     stream << "role_arn =arn:aws:iam::123456789:role/foo" << std::endl;
+    stream << "external_id = some-random-characters" << std::endl;
     stream << "source_profile= default" << std::endl;
     stream << "region = us-west-2" << std::endl;
 }
@@ -63,6 +64,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
     ASSERT_TRUE(profiles["default"].GetSourceProfile().empty());
 
     ASSERT_STREQ("arn:aws:iam::123456789:role/foo", profiles["assumes_role"].GetRoleArn().c_str());
+    ASSERT_STREQ("some-random-characters", profiles["assumes_role"].GetExternalId().c_str());
     ASSERT_STREQ("default", profiles["assumes_role"].GetSourceProfile().c_str());
     ASSERT_STREQ("us-west-2", profiles["assumes_role"].GetRegion().c_str());
     ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSAccessKeyId().empty());
