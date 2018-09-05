@@ -67,6 +67,7 @@ namespace Aws
         static const char* const SECRET_KEY_KEY = "aws_secret_access_key";
         static const char* const SESSION_TOKEN_KEY = "aws_session_token";
         static const char* const ROLE_ARN_KEY = "role_arn";
+        static const char* const EXTERNAL_ID_KEY = "external_id";
         static const char* const SOURCE_PROFILE_KEY = "source_profile";
         static const char* const PROFILE_PREFIX = "profile ";
         static const char EQ = '=';
@@ -186,6 +187,13 @@ namespace Aws
                     {
                         AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found role arn " << assumeRoleArnIter->second);
                         profile.SetRoleArn(assumeRoleArnIter->second);
+                    }
+
+                    auto externalIdIter = m_profileKeyValuePairs.find(EXTERNAL_ID_KEY);
+                    if (externalIdIter != m_profileKeyValuePairs.end())
+                    {
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found external id " << externalIdIter->second);
+                        profile.SetExternalId(externalIdIter->second);
                     }
 
                     auto sourceProfileIter = m_profileKeyValuePairs.find(SOURCE_PROFILE_KEY);
