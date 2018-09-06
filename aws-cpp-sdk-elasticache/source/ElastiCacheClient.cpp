@@ -36,6 +36,7 @@
 #include <aws/elasticache/model/CreateCacheSubnetGroupRequest.h>
 #include <aws/elasticache/model/CreateReplicationGroupRequest.h>
 #include <aws/elasticache/model/CreateSnapshotRequest.h>
+#include <aws/elasticache/model/DecreaseReplicaCountRequest.h>
 #include <aws/elasticache/model/DeleteCacheClusterRequest.h>
 #include <aws/elasticache/model/DeleteCacheParameterGroupRequest.h>
 #include <aws/elasticache/model/DeleteCacheSecurityGroupRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/elasticache/model/DescribeReservedCacheNodesRequest.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesOfferingsRequest.h>
 #include <aws/elasticache/model/DescribeSnapshotsRequest.h>
+#include <aws/elasticache/model/IncreaseReplicaCountRequest.h>
 #include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>
 #include <aws/elasticache/model/ListTagsForResourceRequest.h>
 #include <aws/elasticache/model/ModifyCacheClusterRequest.h>
@@ -456,6 +458,41 @@ void ElastiCacheClient::CreateSnapshotAsync(const CreateSnapshotRequest& request
 void ElastiCacheClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSnapshot(request), context);
+}
+
+DecreaseReplicaCountOutcome ElastiCacheClient::DecreaseReplicaCount(const DecreaseReplicaCountRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DecreaseReplicaCountOutcome(DecreaseReplicaCountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DecreaseReplicaCountOutcome(outcome.GetError());
+  }
+}
+
+DecreaseReplicaCountOutcomeCallable ElastiCacheClient::DecreaseReplicaCountCallable(const DecreaseReplicaCountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DecreaseReplicaCountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DecreaseReplicaCount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DecreaseReplicaCountAsync(const DecreaseReplicaCountRequest& request, const DecreaseReplicaCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DecreaseReplicaCountAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DecreaseReplicaCountAsyncHelper(const DecreaseReplicaCountRequest& request, const DecreaseReplicaCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DecreaseReplicaCount(request), context);
 }
 
 DeleteCacheClusterOutcome ElastiCacheClient::DeleteCacheCluster(const DeleteCacheClusterRequest& request) const
@@ -1086,6 +1123,41 @@ void ElastiCacheClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& r
 void ElastiCacheClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSnapshots(request), context);
+}
+
+IncreaseReplicaCountOutcome ElastiCacheClient::IncreaseReplicaCount(const IncreaseReplicaCountRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return IncreaseReplicaCountOutcome(IncreaseReplicaCountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return IncreaseReplicaCountOutcome(outcome.GetError());
+  }
+}
+
+IncreaseReplicaCountOutcomeCallable ElastiCacheClient::IncreaseReplicaCountCallable(const IncreaseReplicaCountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< IncreaseReplicaCountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->IncreaseReplicaCount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::IncreaseReplicaCountAsync(const IncreaseReplicaCountRequest& request, const IncreaseReplicaCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->IncreaseReplicaCountAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::IncreaseReplicaCountAsyncHelper(const IncreaseReplicaCountRequest& request, const IncreaseReplicaCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, IncreaseReplicaCount(request), context);
 }
 
 ListAllowedNodeTypeModificationsOutcome ElastiCacheClient::ListAllowedNodeTypeModifications(const ListAllowedNodeTypeModificationsRequest& request) const

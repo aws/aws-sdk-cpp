@@ -29,14 +29,16 @@ using namespace Aws;
 CreateStageResult::CreateStageResult() : 
     m_cacheClusterEnabled(false),
     m_cacheClusterSize(CacheClusterSize::NOT_SET),
-    m_cacheClusterStatus(CacheClusterStatus::NOT_SET)
+    m_cacheClusterStatus(CacheClusterStatus::NOT_SET),
+    m_tracingEnabled(false)
 {
 }
 
 CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_cacheClusterEnabled(false),
     m_cacheClusterSize(CacheClusterSize::NOT_SET),
-    m_cacheClusterStatus(CacheClusterStatus::NOT_SET)
+    m_cacheClusterStatus(CacheClusterStatus::NOT_SET),
+    m_tracingEnabled(false)
 {
   *this = result;
 }
@@ -119,6 +121,12 @@ CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("canarySettings"))
   {
     m_canarySettings = jsonValue.GetObject("canarySettings");
+
+  }
+
+  if(jsonValue.ValueExists("tracingEnabled"))
+  {
+    m_tracingEnabled = jsonValue.GetBool("tracingEnabled");
 
   }
 

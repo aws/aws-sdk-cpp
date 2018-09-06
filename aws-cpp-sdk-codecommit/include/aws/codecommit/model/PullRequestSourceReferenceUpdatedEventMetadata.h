@@ -169,6 +169,49 @@ namespace Model
      */
     inline PullRequestSourceReferenceUpdatedEventMetadata& WithAfterCommitId(const char* value) { SetAfterCommitId(value); return *this;}
 
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline const Aws::String& GetMergeBase() const{ return m_mergeBase; }
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline void SetMergeBase(const Aws::String& value) { m_mergeBaseHasBeenSet = true; m_mergeBase = value; }
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline void SetMergeBase(Aws::String&& value) { m_mergeBaseHasBeenSet = true; m_mergeBase = std::move(value); }
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline void SetMergeBase(const char* value) { m_mergeBaseHasBeenSet = true; m_mergeBase.assign(value); }
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline PullRequestSourceReferenceUpdatedEventMetadata& WithMergeBase(const Aws::String& value) { SetMergeBase(value); return *this;}
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline PullRequestSourceReferenceUpdatedEventMetadata& WithMergeBase(Aws::String&& value) { SetMergeBase(std::move(value)); return *this;}
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline PullRequestSourceReferenceUpdatedEventMetadata& WithMergeBase(const char* value) { SetMergeBase(value); return *this;}
+
   private:
 
     Aws::String m_repositoryName;
@@ -179,6 +222,9 @@ namespace Model
 
     Aws::String m_afterCommitId;
     bool m_afterCommitIdHasBeenSet;
+
+    Aws::String m_mergeBase;
+    bool m_mergeBaseHasBeenSet;
   };
 
 } // namespace Model

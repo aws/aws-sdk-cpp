@@ -1124,7 +1124,8 @@ namespace Model
         virtual void PostCommentReplyAsync(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates a file in an AWS CodeCommit repository.</p><p><h3>See
+         * <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and
+         * generates a commit for the addition in the specified branch.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">AWS
          * API Reference</a></p>
@@ -1132,7 +1133,8 @@ namespace Model
         virtual Model::PutFileOutcome PutFile(const Model::PutFileRequest& request) const;
 
         /**
-         * <p>Adds or updates a file in an AWS CodeCommit repository.</p><p><h3>See
+         * <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and
+         * generates a commit for the addition in the specified branch.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">AWS
          * API Reference</a></p>
@@ -1142,7 +1144,8 @@ namespace Model
         virtual Model::PutFileOutcomeCallable PutFileCallable(const Model::PutFileRequest& request) const;
 
         /**
-         * <p>Adds or updates a file in an AWS CodeCommit repository.</p><p><h3>See
+         * <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and
+         * generates a commit for the addition in the specified branch.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">AWS
          * API Reference</a></p>

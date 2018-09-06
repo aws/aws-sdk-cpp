@@ -32,12 +32,6 @@ Aws::String UntagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
   if(m_tagKeysHasBeenSet)
   {
    Array<JsonValue> tagKeysJsonList(m_tagKeys.size());

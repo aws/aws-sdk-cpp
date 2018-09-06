@@ -298,7 +298,7 @@ namespace Model
      * created nodes are located in different Availability Zones. For instructions on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline const AZMode& GetAZMode() const{ return m_aZMode; }
@@ -314,7 +314,7 @@ namespace Model
      * created nodes are located in different Availability Zones. For instructions on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline void SetAZMode(const AZMode& value) { m_aZModeHasBeenSet = true; m_aZMode = value; }
@@ -330,7 +330,7 @@ namespace Model
      * created nodes are located in different Availability Zones. For instructions on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline void SetAZMode(AZMode&& value) { m_aZModeHasBeenSet = true; m_aZMode = std::move(value); }
@@ -346,7 +346,7 @@ namespace Model
      * created nodes are located in different Availability Zones. For instructions on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithAZMode(const AZMode& value) { SetAZMode(value); return *this;}
@@ -362,7 +362,7 @@ namespace Model
      * created nodes are located in different Availability Zones. For instructions on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithAZMode(AZMode&& value) { SetAZMode(std::move(value)); return *this;}
@@ -391,7 +391,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -434,7 +434,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -477,7 +477,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -520,7 +520,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -563,7 +563,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -606,7 +606,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -649,7 +649,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -692,7 +692,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -1128,7 +1128,7 @@ namespace Model
     /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster and create it anew with the earlier engine version. </p>
@@ -1138,7 +1138,7 @@ namespace Model
     /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster and create it anew with the earlier engine version. </p>
@@ -1148,7 +1148,7 @@ namespace Model
     /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster and create it anew with the earlier engine version. </p>
@@ -1158,7 +1158,7 @@ namespace Model
     /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster and create it anew with the earlier engine version. </p>
@@ -1168,7 +1168,7 @@ namespace Model
     /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster and create it anew with the earlier engine version. </p>
@@ -1178,7 +1178,7 @@ namespace Model
     /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster and create it anew with the earlier engine version. </p>
@@ -1188,7 +1188,7 @@ namespace Model
     /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster and create it anew with the earlier engine version. </p>

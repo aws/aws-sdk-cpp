@@ -539,6 +539,25 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline bool GetTracingEnabled() const{ return m_tracingEnabled; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline void SetTracingEnabled(bool value) { m_tracingEnabled = value; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline UpdateStageResult& WithTracingEnabled(bool value) { SetTracingEnabled(value); return *this;}
+
+
+    /**
      * <p>The collection of tags. Each tag element is associated with a given
      * resource.</p>
      */
@@ -687,6 +706,8 @@ namespace Model
     AccessLogSettings m_accessLogSettings;
 
     CanarySettings m_canarySettings;
+
+    bool m_tracingEnabled;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

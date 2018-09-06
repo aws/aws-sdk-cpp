@@ -689,7 +689,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -701,7 +701,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -713,7 +713,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -725,7 +725,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -737,7 +737,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -749,7 +749,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -761,7 +761,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -913,42 +913,6 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
-
-    /**
-     * <p>The name of the Node Group (called shard in the console).</p>
-     */
-    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
-
-    /**
-     * <p>The name of the Node Group (called shard in the console).</p>
-     */
-    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
-
-    /**
-     * <p>The name of the Node Group (called shard in the console).</p>
-     */
-    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
-
-    /**
-     * <p>The name of the Node Group (called shard in the console).</p>
-     */
-    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
-
-    /**
-     * <p>The name of the Node Group (called shard in the console).</p>
-     */
-    inline ModifyReplicationGroupRequest& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
-
-    /**
-     * <p>The name of the Node Group (called shard in the console).</p>
-     */
-    inline ModifyReplicationGroupRequest& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Node Group (called shard in the console).</p>
-     */
-    inline ModifyReplicationGroupRequest& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
-
   private:
 
     Aws::String m_replicationGroupId;
@@ -1001,9 +965,6 @@ namespace Model
 
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
-
-    Aws::String m_nodeGroupId;
-    bool m_nodeGroupIdHasBeenSet;
   };
 
 } // namespace Model

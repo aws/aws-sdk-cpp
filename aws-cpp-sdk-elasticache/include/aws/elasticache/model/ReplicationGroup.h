@@ -209,42 +209,50 @@ namespace Model
 
 
     /**
-     * <p>The identifiers of all the nodes that are part of this replication group.</p>
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMemberClusters() const{ return m_memberClusters; }
 
     /**
-     * <p>The identifiers of all the nodes that are part of this replication group.</p>
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
      */
     inline void SetMemberClusters(const Aws::Vector<Aws::String>& value) { m_memberClustersHasBeenSet = true; m_memberClusters = value; }
 
     /**
-     * <p>The identifiers of all the nodes that are part of this replication group.</p>
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
      */
     inline void SetMemberClusters(Aws::Vector<Aws::String>&& value) { m_memberClustersHasBeenSet = true; m_memberClusters = std::move(value); }
 
     /**
-     * <p>The identifiers of all the nodes that are part of this replication group.</p>
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
      */
     inline ReplicationGroup& WithMemberClusters(const Aws::Vector<Aws::String>& value) { SetMemberClusters(value); return *this;}
 
     /**
-     * <p>The identifiers of all the nodes that are part of this replication group.</p>
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
      */
     inline ReplicationGroup& WithMemberClusters(Aws::Vector<Aws::String>&& value) { SetMemberClusters(std::move(value)); return *this;}
 
     /**
-     * <p>The identifiers of all the nodes that are part of this replication group.</p>
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
      */
     inline ReplicationGroup& AddMemberClusters(const Aws::String& value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(value); return *this; }
 
     /**
-     * <p>The identifiers of all the nodes that are part of this replication group.</p>
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
      */
     inline ReplicationGroup& AddMemberClusters(Aws::String&& value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identifiers of all the nodes that are part of this replication group.</p>
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
      */
     inline ReplicationGroup& AddMemberClusters(const char* value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(value); return *this; }
 
@@ -615,7 +623,9 @@ namespace Model
      * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
 
@@ -624,7 +634,9 @@ namespace Model
      * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
@@ -633,7 +645,9 @@ namespace Model
      * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline ReplicationGroup& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
 
@@ -643,7 +657,9 @@ namespace Model
      * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
      * cluster is created. To enable encryption at-rest on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
 
@@ -652,7 +668,9 @@ namespace Model
      * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
      * cluster is created. To enable encryption at-rest on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
 
@@ -661,7 +679,9 @@ namespace Model
      * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
      * cluster is created. To enable encryption at-rest on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline ReplicationGroup& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
 

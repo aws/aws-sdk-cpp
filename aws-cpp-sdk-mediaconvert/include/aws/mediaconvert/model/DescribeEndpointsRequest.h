@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/MediaConvertRequest.h>
+#include <aws/mediaconvert/model/DescribeEndpointsMode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -64,6 +65,22 @@ namespace Model
     inline DescribeEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
+    
+    inline const DescribeEndpointsMode& GetMode() const{ return m_mode; }
+
+    
+    inline void SetMode(const DescribeEndpointsMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    
+    inline void SetMode(DescribeEndpointsMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    
+    inline DescribeEndpointsRequest& WithMode(const DescribeEndpointsMode& value) { SetMode(value); return *this;}
+
+    
+    inline DescribeEndpointsRequest& WithMode(DescribeEndpointsMode&& value) { SetMode(std::move(value)); return *this;}
+
+
     /**
      * Use this string, provided with the response to a previous request, to request
      * the next batch of endpoints.
@@ -110,6 +127,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    DescribeEndpointsMode m_mode;
+    bool m_modeHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

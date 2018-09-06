@@ -34,6 +34,8 @@ CreateStageRequest::CreateStageRequest() :
     m_variablesHasBeenSet(false),
     m_documentationVersionHasBeenSet(false),
     m_canarySettingsHasBeenSet(false),
+    m_tracingEnabled(false),
+    m_tracingEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -91,6 +93,12 @@ Aws::String CreateStageRequest::SerializePayload() const
   if(m_canarySettingsHasBeenSet)
   {
    payload.WithObject("canarySettings", m_canarySettings.Jsonize());
+
+  }
+
+  if(m_tracingEnabledHasBeenSet)
+  {
+   payload.WithBool("tracingEnabled", m_tracingEnabled);
 
   }
 

@@ -44,6 +44,8 @@ Stage::Stage() :
     m_documentationVersionHasBeenSet(false),
     m_accessLogSettingsHasBeenSet(false),
     m_canarySettingsHasBeenSet(false),
+    m_tracingEnabled(false),
+    m_tracingEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
@@ -66,6 +68,8 @@ Stage::Stage(JsonView jsonValue) :
     m_documentationVersionHasBeenSet(false),
     m_accessLogSettingsHasBeenSet(false),
     m_canarySettingsHasBeenSet(false),
+    m_tracingEnabled(false),
+    m_tracingEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
@@ -163,6 +167,13 @@ Stage& Stage::operator =(JsonView jsonValue)
     m_canarySettings = jsonValue.GetObject("canarySettings");
 
     m_canarySettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tracingEnabled"))
+  {
+    m_tracingEnabled = jsonValue.GetBool("tracingEnabled");
+
+    m_tracingEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -273,6 +284,12 @@ JsonValue Stage::Jsonize() const
   if(m_canarySettingsHasBeenSet)
   {
    payload.WithObject("canarySettings", m_canarySettings.Jsonize());
+
+  }
+
+  if(m_tracingEnabledHasBeenSet)
+  {
+   payload.WithBool("tracingEnabled", m_tracingEnabled);
 
   }
 

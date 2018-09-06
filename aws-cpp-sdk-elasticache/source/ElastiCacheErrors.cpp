@@ -40,7 +40,9 @@ static const int REPLICATION_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::Has
 static const int CACHE_SUBNET_GROUP_IN_USE_HASH = HashingUtils::HashString("CacheSubnetGroupInUse");
 static const int TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH = HashingUtils::HashString("TagQuotaPerResourceExceeded");
 static const int INVALID_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSnapshotState");
+static const int NO_OPERATION_FAULT_HASH = HashingUtils::HashString("NoOperationFault");
 static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
+static const int SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ServiceLinkedRoleNotFoundFault");
 static const int NODE_GROUPS_PER_REPLICATION_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeGroupsPerReplicationGroupQuotaExceeded");
 static const int NODE_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("NodeGroupNotFoundFault");
 static const int INVALID_CACHE_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidCacheParameterGroupState");
@@ -126,9 +128,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::INVALID_SNAPSHOT_STATE_FAULT), false);
   }
+  else if (hashCode == NO_OPERATION_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::NO_OPERATION_FAULT), false);
+  }
   else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), false);
+  }
+  else if (hashCode == SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::SERVICE_LINKED_ROLE_NOT_FOUND_FAULT), false);
   }
   else if (hashCode == NODE_GROUPS_PER_REPLICATION_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {

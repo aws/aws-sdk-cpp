@@ -744,9 +744,9 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Tag a MediaConvert queue, preset, or job template. For information about these
-         * resource types, see the User Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Add tags to a MediaConvert queue, preset, or job template. For information about
+         * tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource">AWS
          * API Reference</a></p>
@@ -754,9 +754,9 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * Tag a MediaConvert queue, preset, or job template. For information about these
-         * resource types, see the User Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Add tags to a MediaConvert queue, preset, or job template. For information about
+         * tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource">AWS
          * API Reference</a></p>
@@ -766,9 +766,9 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * Tag a MediaConvert queue, preset, or job template. For information about these
-         * resource types, see the User Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Add tags to a MediaConvert queue, preset, or job template. For information about
+         * tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource">AWS
          * API Reference</a></p>
@@ -778,9 +778,9 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Untag a MediaConvert queue, preset, or job template. For information about these
-         * resource types, see the User Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Remove tags from a MediaConvert queue, preset, or job template. For information
+         * about tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource">AWS
          * API Reference</a></p>
@@ -788,9 +788,9 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * Untag a MediaConvert queue, preset, or job template. For information about these
-         * resource types, see the User Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Remove tags from a MediaConvert queue, preset, or job template. For information
+         * about tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource">AWS
          * API Reference</a></p>
@@ -800,9 +800,9 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * Untag a MediaConvert queue, preset, or job template. For information about these
-         * resource types, see the User Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Remove tags from a MediaConvert queue, preset, or job template. For information
+         * about tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource">AWS
          * API Reference</a></p>

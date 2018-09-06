@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Describes account specific API endpoint<p><h3>See Also:</h3>   <a
+   * Describes an account-specific API endpoint.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Endpoint">AWS
    * API Reference</a></p>
    */

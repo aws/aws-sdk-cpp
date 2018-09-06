@@ -83,37 +83,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the branch where you want to add or update the file.</p>
+     * <p>The name of the branch where you want to add or update the file. If this is
+     * an empty repository, this branch will be created.</p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
-     * <p>The name of the branch where you want to add or update the file.</p>
+     * <p>The name of the branch where you want to add or update the file. If this is
+     * an empty repository, this branch will be created.</p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
-     * <p>The name of the branch where you want to add or update the file.</p>
+     * <p>The name of the branch where you want to add or update the file. If this is
+     * an empty repository, this branch will be created.</p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
-     * <p>The name of the branch where you want to add or update the file.</p>
+     * <p>The name of the branch where you want to add or update the file. If this is
+     * an empty repository, this branch will be created.</p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
-     * <p>The name of the branch where you want to add or update the file.</p>
+     * <p>The name of the branch where you want to add or update the file. If this is
+     * an empty repository, this branch will be created.</p>
      */
     inline PutFileRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
-     * <p>The name of the branch where you want to add or update the file.</p>
+     * <p>The name of the branch where you want to add or update the file. If this is
+     * an empty repository, this branch will be created.</p>
      */
     inline PutFileRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the branch where you want to add or update the file.</p>
+     * <p>The name of the branch where you want to add or update the file. If this is
+     * an empty repository, this branch will be created.</p>
      */
     inline PutFileRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
@@ -234,57 +241,64 @@ namespace Model
 
     /**
      * <p>The full commit ID of the head commit in the branch where you want to add or
-     * update the file. If the commit ID does not match the ID of the head commit at
-     * the time of the operation, an error will occur, and the file will not be added
-     * or updated.</p>
+     * update the file. If this is an empty repository, no commit ID is required. If
+     * this is not an empty repository, a commit ID is required. </p> <p>The commit ID
+     * must match the ID of the head commit at the time of the operation, or an error
+     * will occur, and the file will not be added or updated.</p>
      */
     inline const Aws::String& GetParentCommitId() const{ return m_parentCommitId; }
 
     /**
      * <p>The full commit ID of the head commit in the branch where you want to add or
-     * update the file. If the commit ID does not match the ID of the head commit at
-     * the time of the operation, an error will occur, and the file will not be added
-     * or updated.</p>
+     * update the file. If this is an empty repository, no commit ID is required. If
+     * this is not an empty repository, a commit ID is required. </p> <p>The commit ID
+     * must match the ID of the head commit at the time of the operation, or an error
+     * will occur, and the file will not be added or updated.</p>
      */
     inline void SetParentCommitId(const Aws::String& value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId = value; }
 
     /**
      * <p>The full commit ID of the head commit in the branch where you want to add or
-     * update the file. If the commit ID does not match the ID of the head commit at
-     * the time of the operation, an error will occur, and the file will not be added
-     * or updated.</p>
+     * update the file. If this is an empty repository, no commit ID is required. If
+     * this is not an empty repository, a commit ID is required. </p> <p>The commit ID
+     * must match the ID of the head commit at the time of the operation, or an error
+     * will occur, and the file will not be added or updated.</p>
      */
     inline void SetParentCommitId(Aws::String&& value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId = std::move(value); }
 
     /**
      * <p>The full commit ID of the head commit in the branch where you want to add or
-     * update the file. If the commit ID does not match the ID of the head commit at
-     * the time of the operation, an error will occur, and the file will not be added
-     * or updated.</p>
+     * update the file. If this is an empty repository, no commit ID is required. If
+     * this is not an empty repository, a commit ID is required. </p> <p>The commit ID
+     * must match the ID of the head commit at the time of the operation, or an error
+     * will occur, and the file will not be added or updated.</p>
      */
     inline void SetParentCommitId(const char* value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId.assign(value); }
 
     /**
      * <p>The full commit ID of the head commit in the branch where you want to add or
-     * update the file. If the commit ID does not match the ID of the head commit at
-     * the time of the operation, an error will occur, and the file will not be added
-     * or updated.</p>
+     * update the file. If this is an empty repository, no commit ID is required. If
+     * this is not an empty repository, a commit ID is required. </p> <p>The commit ID
+     * must match the ID of the head commit at the time of the operation, or an error
+     * will occur, and the file will not be added or updated.</p>
      */
     inline PutFileRequest& WithParentCommitId(const Aws::String& value) { SetParentCommitId(value); return *this;}
 
     /**
      * <p>The full commit ID of the head commit in the branch where you want to add or
-     * update the file. If the commit ID does not match the ID of the head commit at
-     * the time of the operation, an error will occur, and the file will not be added
-     * or updated.</p>
+     * update the file. If this is an empty repository, no commit ID is required. If
+     * this is not an empty repository, a commit ID is required. </p> <p>The commit ID
+     * must match the ID of the head commit at the time of the operation, or an error
+     * will occur, and the file will not be added or updated.</p>
      */
     inline PutFileRequest& WithParentCommitId(Aws::String&& value) { SetParentCommitId(std::move(value)); return *this;}
 
     /**
      * <p>The full commit ID of the head commit in the branch where you want to add or
-     * update the file. If the commit ID does not match the ID of the head commit at
-     * the time of the operation, an error will occur, and the file will not be added
-     * or updated.</p>
+     * update the file. If this is an empty repository, no commit ID is required. If
+     * this is not an empty repository, a commit ID is required. </p> <p>The commit ID
+     * must match the ID of the head commit at the time of the operation, or an error
+     * will occur, and the file will not be added or updated.</p>
      */
     inline PutFileRequest& WithParentCommitId(const char* value) { SetParentCommitId(value); return *this;}
 

@@ -30,6 +30,8 @@ namespace Model
 
 Job::Job() : 
     m_arnHasBeenSet(false),
+    m_billingTagsSource(BillingTagsSource::NOT_SET),
+    m_billingTagsSourceHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_errorCode(0),
     m_errorCodeHasBeenSet(false),
@@ -49,6 +51,8 @@ Job::Job() :
 
 Job::Job(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_billingTagsSource(BillingTagsSource::NOT_SET),
+    m_billingTagsSourceHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_errorCode(0),
     m_errorCodeHasBeenSet(false),
@@ -74,6 +78,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("billingTagsSource"))
+  {
+    m_billingTagsSource = BillingTagsSourceMapper::GetBillingTagsSourceForName(jsonValue.GetString("billingTagsSource"));
+
+    m_billingTagsSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -177,6 +188,11 @@ JsonValue Job::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_billingTagsSourceHasBeenSet)
+  {
+   payload.WithString("billingTagsSource", BillingTagsSourceMapper::GetNameForBillingTagsSource(m_billingTagsSource));
   }
 
   if(m_createdAtHasBeenSet)

@@ -58,7 +58,10 @@ namespace Model
    * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
    * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
    * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-   * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+   * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+   * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+   * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+   * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
    * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
    * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
    * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -68,12 +71,14 @@ namespace Model
    * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
    * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
    * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-   * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-   * ElastiCache Product Features and Details</a> and either <a
-   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-   * Node Type-Specific Parameters for Memcached</a> or <a
-   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-   * Node Type-Specific Parameters for Redis</a>.</p><p><h3>See Also:</h3>   <a
+   * specifications, see:</p> <ul> <li> <p> <a
+   * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+   * Features and Details</a> </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+   * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+   * Node Type-Specific Parameters for Redis</a> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNode">AWS
    * API Reference</a></p>
    */

@@ -384,6 +384,25 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithCanarySettings(DeploymentCanarySettings&& value) { SetCanarySettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline bool GetTracingEnabled() const{ return m_tracingEnabled; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline void SetTracingEnabled(bool value) { m_tracingEnabledHasBeenSet = true; m_tracingEnabled = value; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline CreateDeploymentRequest& WithTracingEnabled(bool value) { SetTracingEnabled(value); return *this;}
+
   private:
 
     Aws::String m_restApiId;
@@ -409,6 +428,9 @@ namespace Model
 
     DeploymentCanarySettings m_canarySettings;
     bool m_canarySettingsHasBeenSet;
+
+    bool m_tracingEnabled;
+    bool m_tracingEnabledHasBeenSet;
   };
 
 } // namespace Model

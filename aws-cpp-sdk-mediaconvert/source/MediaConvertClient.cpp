@@ -793,9 +793,10 @@ UntagResourceOutcome MediaConvertClient::UntagResource(const UntagResourceReques
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-08-29/tags";
+  ss << "/2017-08-29/tags/";
+  ss << request.GetArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));

@@ -115,37 +115,44 @@ namespace Model
 
 
     /**
-     * <p>Tree information for the commit that contains this file change.</p>
+     * <p>The full SHA-1 pointer of the tree information for the commit that contains
+     * this file change.</p>
      */
     inline const Aws::String& GetTreeId() const{ return m_treeId; }
 
     /**
-     * <p>Tree information for the commit that contains this file change.</p>
+     * <p>The full SHA-1 pointer of the tree information for the commit that contains
+     * this file change.</p>
      */
     inline void SetTreeId(const Aws::String& value) { m_treeId = value; }
 
     /**
-     * <p>Tree information for the commit that contains this file change.</p>
+     * <p>The full SHA-1 pointer of the tree information for the commit that contains
+     * this file change.</p>
      */
     inline void SetTreeId(Aws::String&& value) { m_treeId = std::move(value); }
 
     /**
-     * <p>Tree information for the commit that contains this file change.</p>
+     * <p>The full SHA-1 pointer of the tree information for the commit that contains
+     * this file change.</p>
      */
     inline void SetTreeId(const char* value) { m_treeId.assign(value); }
 
     /**
-     * <p>Tree information for the commit that contains this file change.</p>
+     * <p>The full SHA-1 pointer of the tree information for the commit that contains
+     * this file change.</p>
      */
     inline PutFileResult& WithTreeId(const Aws::String& value) { SetTreeId(value); return *this;}
 
     /**
-     * <p>Tree information for the commit that contains this file change.</p>
+     * <p>The full SHA-1 pointer of the tree information for the commit that contains
+     * this file change.</p>
      */
     inline PutFileResult& WithTreeId(Aws::String&& value) { SetTreeId(std::move(value)); return *this;}
 
     /**
-     * <p>Tree information for the commit that contains this file change.</p>
+     * <p>The full SHA-1 pointer of the tree information for the commit that contains
+     * this file change.</p>
      */
     inline PutFileResult& WithTreeId(const char* value) { SetTreeId(value); return *this;}
 

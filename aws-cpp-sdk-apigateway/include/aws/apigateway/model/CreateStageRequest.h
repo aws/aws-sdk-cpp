@@ -390,6 +390,25 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline bool GetTracingEnabled() const{ return m_tracingEnabled; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline void SetTracingEnabled(bool value) { m_tracingEnabledHasBeenSet = true; m_tracingEnabled = value; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline CreateStageRequest& WithTracingEnabled(bool value) { SetTracingEnabled(value); return *this;}
+
+
+    /**
      * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
      * tag key can be up to 128 characters and must not start with <code>aws:</code>.
      * The tag value can be up to 256 characters.</p>
@@ -501,6 +520,9 @@ namespace Model
 
     CanarySettings m_canarySettings;
     bool m_canarySettingsHasBeenSet;
+
+    bool m_tracingEnabled;
+    bool m_tracingEnabledHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

@@ -75,49 +75,49 @@ namespace Model
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheNodeIdsToRemove() const{ return m_cacheNodeIdsToRemove; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline void SetCacheNodeIdsToRemove(const Aws::Vector<Aws::String>& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = value; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline void SetCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = std::move(value); }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& WithCacheNodeIdsToRemove(const Aws::Vector<Aws::String>& value) { SetCacheNodeIdsToRemove(value); return *this;}
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& WithCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { SetCacheNodeIdsToRemove(std::move(value)); return *this;}
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& AddCacheNodeIdsToRemove(const Aws::String& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& AddCacheNodeIdsToRemove(Aws::String&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& AddCacheNodeIdsToRemove(const char* value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
