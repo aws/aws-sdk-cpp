@@ -267,14 +267,14 @@ protected:
 
         functionCode.SetZipFile(Aws::Utils::ByteBuffer((unsigned char*)buffer.str().c_str(), buffer.str().length()));
         createFunctionRequest.SetCode(functionCode);
-        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs4_3);
+        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs8_10);
 
         CreateFunctionOutcome createFunctionOutcome = m_client->CreateFunction(createFunctionRequest);
         ASSERT_TRUE(createFunctionOutcome.IsSuccess());
         ASSERT_EQ(functionName,createFunctionOutcome.GetResult().GetFunctionName());
         ASSERT_EQ("test.handler",createFunctionOutcome.GetResult().GetHandler());
         ASSERT_EQ(roleARN,createFunctionOutcome.GetResult().GetRole());
-        ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs4_3, createFunctionOutcome.GetResult().GetRuntime());
+        ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs8_10, createFunctionOutcome.GetResult().GetRuntime());
         functionArnMapping[functionName] = createFunctionOutcome.GetResult().GetFunctionArn();
 
         WaitForFunctionStatus(functionName, ResourceStatusType::READY);
@@ -414,7 +414,7 @@ TEST_F(FunctionTest, TestGetFunction)
     EXPECT_TRUE(getFunctionOutcome.IsSuccess());
 
     GetFunctionResult getFunctionResult = getFunctionOutcome.GetResult();
-    EXPECT_EQ(Runtime::nodejs4_3, getFunctionResult.GetConfiguration().GetRuntime());
+    EXPECT_EQ(Runtime::nodejs8_10, getFunctionResult.GetConfiguration().GetRuntime());
     EXPECT_EQ("test.handler",getFunctionResult.GetConfiguration().GetHandler());
     EXPECT_EQ(simpleFunctionName,getFunctionResult.GetConfiguration().GetFunctionName());
     //Just see that is looks like an aws url
@@ -432,7 +432,7 @@ TEST_F(FunctionTest, TestGetFunctionConfiguration)
     EXPECT_TRUE(getFunctionConfigurationOutcome.IsSuccess());
 
     GetFunctionConfigurationResult getFunctionConfigurationResult = getFunctionConfigurationOutcome.GetResult();
-    EXPECT_EQ(Runtime::nodejs4_3, getFunctionConfigurationResult.GetRuntime());
+    EXPECT_EQ(Runtime::nodejs8_10, getFunctionConfigurationResult.GetRuntime());
     EXPECT_EQ("test.handler",getFunctionConfigurationResult.GetHandler());
     EXPECT_EQ(simpleFunctionName,getFunctionConfigurationResult.GetFunctionName());
 }
