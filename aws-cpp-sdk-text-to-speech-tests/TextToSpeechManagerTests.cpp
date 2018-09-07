@@ -465,3 +465,11 @@ TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
     ASSERT_EQ(0u, buffers.size());
     pollyClient = nullptr;
 }
+
+TEST(TextToSpeechManagerTests, TestListingVoices)
+{
+    auto polly = Aws::MakeShared<PollyClient>(ALLOC_TAG);
+    auto manager = TextToSpeechManager::Create(polly);
+    auto voices = manager->ListAvailableVoices();
+    ASSERT_GE(voices.size(), 0u); // we're not mocking this API call, which means it will fail and return zero voices on machines without valid creds.
+}

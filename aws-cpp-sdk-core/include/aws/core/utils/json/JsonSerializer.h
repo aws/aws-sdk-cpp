@@ -315,10 +315,15 @@ namespace Aws
                 Aws::Map<Aws::String, JsonView> GetAllObjects() const;
 
                 /**
-                 * Test whether or not a value exists at the current node level for the given key.
-                 * Returns true if a values has been found, false otherwise.
+                 * Tests whether a value exists at the current node level for the given key.
+                 * Returns true if a value has been found and its value is not null, false otherwise.
                  */
                 bool ValueExists(const Aws::String& key) const;
+
+                /**
+                 * Tests whether a key exists at the current node level.
+                 */
+                bool KeyExists(const Aws::String& key) const;
 
                 /**
                  * Tests whether the current value is a JSON object.
@@ -350,6 +355,11 @@ namespace Aws
                  * Tests whether the current value is a JSON array.
                  */
                 bool IsListType() const;
+
+                /**
+                 * Tests whether the current value is NULL.
+                 */
+                bool IsNull() const;
 
                 /**
                  * Writes the current JSON view without whitespace characters starting at the current level to a string.

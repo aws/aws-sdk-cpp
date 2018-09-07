@@ -300,6 +300,24 @@ TEST(JsonSerializerTest, TestNullSanity)
     ASSERT_FALSE(view.ValueExists("null"));
 }
 
+TEST(JsonSerializerTest, TestKeyValueExists)
+{
+    auto input = R"({"AWS" : {
+    "Key1" : "value1",
+    "Key2" : null
+    }})";
+    JsonValue doc(input);
+    auto json = doc.View().GetObject("AWS");
+
+    ASSERT_TRUE(json.ValueExists("Key1"));
+    ASSERT_FALSE(json.ValueExists("Key2"));
+    ASSERT_FALSE(json.ValueExists("Key3"));
+
+    ASSERT_TRUE(json.KeyExists("Key1"));
+    ASSERT_TRUE(json.KeyExists("Key2"));
+    ASSERT_FALSE(json.KeyExists("Key3"));
+}
+
 TEST(JsonSerializerTest, TestCopy)
 {
     JsonValue value;
