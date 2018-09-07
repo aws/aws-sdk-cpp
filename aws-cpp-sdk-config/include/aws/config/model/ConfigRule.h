@@ -480,6 +480,56 @@ namespace Model
      */
     inline ConfigRule& WithConfigRuleState(ConfigRuleState&& value) { SetConfigRuleState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline ConfigRule& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline ConfigRule& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline ConfigRule& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+
   private:
 
     Aws::String m_configRuleName;
@@ -508,6 +558,9 @@ namespace Model
 
     ConfigRuleState m_configRuleState;
     bool m_configRuleStateHasBeenSet;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet;
   };
 
 } // namespace Model

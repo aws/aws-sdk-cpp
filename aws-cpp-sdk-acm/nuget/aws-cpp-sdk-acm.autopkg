@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ACM;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20151208.6;
+        version : 1.6.20151208.7;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Certificate Manager);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.6
+            AWSSDKCPP-Core/1.6.7
        }
     }
 
