@@ -274,3 +274,18 @@ macro(AWSSDK_LIB_DEPS HIGH_LEVEL_LIB_NAME OUTPUT_VAR)
     list(APPEND ${OUTPUT_VAR} "core")
     list(REMOVE_DUPLICATES ${OUTPUT_VAR})
 endmacro(AWSSDK_LIB_DEPS)
+
+if (AWSSDK_FIND_COMPONENTS)
+    message(STATUS "Components specified for AWSSDK: ${AWSSDK_FIND_COMPONENTS}")
+    AWSSDK_DETERMINE_LIBS_TO_LINK(AWSSDK_FIND_COMPONENTS AWSSDK_LINK_LIBRARIES)
+    set(AWSSDK_TARGETS ${AWSSDK_LINK_LIBRARIES})
+    # for static sdk, platform dependencies will be included in AWSSDK_LINK_LIBRARIES.
+    list(REMOVE_ITEM AWSSDK_TARGETS ${AWSSDK_PLATFORM_DEPS})
+    list(REVERSE AWSSDK_TARGETS)
+
+    foreach(TARGET IN LISTS AWSSDK_TARGETS)
+        message(STATUS "Try finding ${TARGET}")
+        find_package(${TARGET} REQUIRED)
+        message(STATUS "Found ${TARGET}")
+    endforeach()
+endif()
