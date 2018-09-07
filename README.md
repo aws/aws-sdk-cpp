@@ -259,7 +259,7 @@ Install custom memory manager:
 Override default http client factory:
 ```
     Aws::SDKOptions options;
-    options.httpOptions.httpClientFactory_create_fn = [](){ return Aws::MakeShared<MyCustomHttpClientFactory>("ALLOC_TAG", arg1); };
+    options.httpOptions.httpClientFactory_create_fn = [](){ return Aws::MakeShared<MyCustomHttpClientFactory>("ALLOC_TAG"); };
     Aws::InitAPI(options);
     .....
     Aws::ShutdownAPI(options);
